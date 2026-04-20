@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+};
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const phone = '010-0000-0000';
+---
+
+<BaseLayout title={`${post.data.title} | opsoult`} description={post.data.description}>
+  <article>
+    <header class="article-head">
+      <div class="container">
+        <a href="/blog" class="back-link">← 블로그로 돌아가기</a>
+
+        <div class="meta">
+          {post.data.region && <span class="region-pill">{post.data.region}</span>}
+          {post.data.category && <span class="region-pill alt">{post.data.category}</span>}
+          <time>
+            {post.data.pubDate.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </time>
+        </div>
+
+        <div class="hero-emoji">{post.data.heroEmoji}</div>
+        <h1>{post.data.title}</h1>
+        <p class="lede">{post.data.description}</p>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+
+    <section class="post-cta">
+      <div class="container">
+        <h2>이 지역도 빠른 설치 가능합니다</h2>
+        <p>한 통화로 우리 매장에 맞는 장비를 추천해 드립니다.</p>
+        <a href={`tel:${phone}`} class="cta-phone-btn">
+          📞 {phone}
+        </a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-head {
+    padding: 60px 0 50px;
+    background: var(--paper-2);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .back-link {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 32px;
+    transition: color .2s;
+  }
+  .back-link:hover { color: var(--accent); }
+  .meta {
+    display: flex; justify-content: center; align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .region-pill {
+    padding: 4px 12px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+  }
+  .region-pill.alt { background: var(--accent); }
+  .hero-emoji {
+    font-size: 72px;
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+  .article-head h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+  .lede {
+    font-size: 19px;
+    color: var(--ink-2);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .prose { padding: 60px 0; }
+
+  .post-cta {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 70px 0;
+    text-align: center;
+  }
+  .post-cta h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  .post-cta p {
+    color: rgba(245,241,234,0.7);
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  .cta-phone-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--paper); color: var(--ink);
+    padding: 18px 36px;
+    border-radius: 100px;
+    font-family: 'Fraunces', serif;
+    font-size: 22px; font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: transform .2s, background .2s;
+  }
+  .cta-phone-btn:hover {
+    background: var(--accent);
+    color: var(--paper);
+    transform: translateY(-2px);
+  }
+</style>

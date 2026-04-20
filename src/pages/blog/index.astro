@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="설치 사례 & 가이드 | opsoult"
+  description="전국 매장 설비 설치 사례와 운영 가이드를 한 곳에서 확인하세요."
+>
+  <section class="block">
+    <div class="container">
+      <div class="page-head reveal">
+        <div class="section-tag">Blog</div>
+        <h1 class="section-title">설치 사례<br /><em>& 운영 가이드</em></h1>
+        <p class="section-desc">전국 매장에서 일어난 진짜 이야기. 우리 매장에 적용할 인사이트를 찾아보세요.</p>
+      </div>
+
+      {posts.length === 0 ? (
+        <div class="empty">
+          <div class="empty-emoji">📝</div>
+          <h3>아직 작성된 글이 없어요</h3>
+          <p><code>src/content/blog/</code> 폴더에 마크다운 파일을 추가하면<br />이곳에 자동으로 표시됩니다.</p>
+        </div>
+      ) : (
+        <div class="posts-grid">
+          {posts.map((post) => (
+            <a href={`/blog/${post.id}`} class="post-card reveal">
+              <div class="post-emoji">{post.data.heroEmoji}</div>
+              {post.data.region && <span class="post-region">{post.data.region}</span>}
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <span class="post-date">
+                {post.data.pubDate.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-head { margin-bottom: 56px; max-width: 720px; }
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .post-card {
+    background: var(--paper-2);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: all .3s;
+    border: 1px solid transparent;
+    display: block;
+    position: relative;
+  }
+  .post-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+  .post-emoji { font-size: 36px; margin-bottom: 16px; }
+  .post-region {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .post-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px; font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+  .post-card p {
+    font-size: 14px; color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+  .post-date {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .empty {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--paper-2);
+    border-radius: var(--radius);
+    border: 2px dashed var(--line);
+  }
+  .empty-emoji { font-size: 56px; margin-bottom: 20px; }
+  .empty h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px; font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .empty p { color: var(--muted); line-height: 1.7; }
+  .empty code {
+    background: var(--paper);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  @media (max-width: 960px) {
+    .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .posts-grid { grid-template-columns: 1fr; }
+  }
+</style>
