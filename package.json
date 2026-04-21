@@ -16,7 +16,3 @@
 },
   }
 }
-"dependencies": {
-    "astro": "^5.0.0",
-    "@astrojs/sitemap": "^3.2.0"
-  },
