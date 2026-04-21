@@ -211,6 +211,65 @@ const REGIONS = [
 // [02-B] SIGUNGU_DETAILS 시군구 상세 데이터 (동적 페이지용) ======
 // 각 시군구마다 고유한 상권 특성을 담아 1,500자 본문 자동 생성에 사용
 // 페이지 유사도 최소화를 위해 지역마다 다른 데이터로 채움
+// 서울 25개 자치구 - 5대 권역 그룹핑 (서울시 공식 생활권 분류)
+const SEOUL_DISTRICT_GROUPS = [
+  {
+    name: '도심권', emoji: '🏛️',
+    desc: '서울 중심부 · 행정·업무·관광 상권',
+    districts: [
+      { name: '종로구', slug: 'jongro' },
+      { name: '중구', slug: 'junggu' },
+      { name: '용산구', slug: 'yongsan' },
+    ],
+  },
+  {
+    name: '동북권', emoji: '🌆',
+    desc: '대학·주거 밀집 · 동부 생활 상권',
+    districts: [
+      { name: '성동구', slug: 'seongdong' },
+      { name: '광진구', slug: 'gwangjin' },
+      { name: '동대문구', slug: 'dongdaemun' },
+      { name: '중랑구', slug: 'jungrang' },
+      { name: '성북구', slug: 'seongbuk' },
+      { name: '강북구', slug: 'gangbuk' },
+      { name: '도봉구', slug: 'dobong' },
+      { name: '노원구', slug: 'nowon' },
+    ],
+  },
+  {
+    name: '서북권', emoji: '🌉',
+    desc: '대학가·문화·미디어 상권',
+    districts: [
+      { name: '은평구', slug: 'eunpyeong' },
+      { name: '서대문구', slug: 'seodaemun' },
+      { name: '마포구', slug: 'mapo' },
+    ],
+  },
+  {
+    name: '서남권', emoji: '🌇',
+    desc: '공항·물류·주거 복합 상권',
+    districts: [
+      { name: '양천구', slug: 'yangcheon' },
+      { name: '강서구', slug: 'gangseo' },
+      { name: '구로구', slug: 'guro' },
+      { name: '금천구', slug: 'geumcheon' },
+      { name: '영등포구', slug: 'yeongdeungpo' },
+      { name: '동작구', slug: 'dongjak' },
+      { name: '관악구', slug: 'gwanak' },
+    ],
+  },
+  {
+    name: '동남권', emoji: '🏙️',
+    desc: '프리미엄 상권 · 강남 3구 + 강동',
+    districts: [
+      { name: '서초구', slug: 'seocho' },
+      { name: '강남구', slug: 'gangnam' },
+      { name: '송파구', slug: 'songpa' },
+      { name: '강동구', slug: 'gangdong' },
+    ],
+  },
+];
+
 // URL: /region/{sidoSlug}/{slug} 예) /region/seoul/gangnam
 const SIGUNGU_DETAILS = [
   {
@@ -814,6 +873,30 @@ footer .logo{color:#fff}
 
 .sg-related .related-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .tag-related{display:inline-block;padding:8px 16px;background:var(--ink);color:#fff;border-radius:100px;font-size:13px;font-weight:500}
+
+/* 서울 5대 권역 그리드 */
+.seoul-districts h2{font-family:'GmarketSansTTF','Gmarket Sans',Pretendard,sans-serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:10px;letter-spacing:-0.02em}
+.seoul-districts-lead{font-size:15px;color:var(--muted);margin-bottom:22px;line-height:1.7}
+.seoul-districts-grid{display:grid;gap:14px}
+.seoul-dgroup{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:22px 24px;transition:border-color .2s,transform .2s}
+.seoul-dgroup:hover{border-color:var(--ink-3)}
+.seoul-dgroup-head{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.seoul-dgroup-emoji{font-size:28px;flex-shrink:0;line-height:1}
+.seoul-dgroup-text{flex:1;min-width:0}
+.seoul-dgroup-text h4{margin:0;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1.3}
+.seoul-dgroup-desc{display:block;font-size:13px;color:var(--muted);margin-top:3px;font-weight:400}
+.seoul-dgroup-count{background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:3px 10px;border-radius:100px;flex-shrink:0}
+.seoul-dgroup-pills{display:flex;flex-wrap:wrap;gap:8px}
+.seoul-dpill{background:#fff;border:1px solid var(--line);padding:9px 16px;border-radius:999px;font-size:14px;font-weight:500;color:var(--ink-2);text-decoration:none;transition:all .15s ease;line-height:1.3}
+.seoul-dpill:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-1px)}
+@media (max-width: 600px){
+  .seoul-dgroup{padding:18px 16px}
+  .seoul-dgroup-emoji{font-size:24px}
+  .seoul-dgroup-text h4{font-size:15px}
+  .seoul-dgroup-desc{font-size:12px}
+  .seoul-dpill{padding:7px 13px;font-size:13px}
+  .seoul-districts h2{font-size:20px}
+}
 
 .sg-cta{background:var(--ink);color:#fff;border-radius:18px;padding:40px 32px;text-align:center;margin-top:40px}
 .sg-cta h3{color:#fff;font-family:'GmarketSansTTF','Gmarket Sans',Pretendard,sans-serif;font-size:24px;font-weight:700;margin-bottom:10px;letter-spacing:-0.02em}
@@ -1484,6 +1567,16 @@ ${PRODUCTS.slice(0, 4).map(p => `<a href="/${region.slug}/${p.slug}" class="rela
 </div>
 </section>
 
+${region.slug === 'seoul' ? `
+<section class="detail-body" style="padding-top:0">
+<div class="container">
+<div class="prose">
+${renderSeoulDistrictGrid()}
+</div>
+</div>
+</section>
+` : ''}
+
 <section class="related-section">
 <div class="container">
 <div class="section-head" style="margin-bottom:24px"><div class="section-tag">Products</div><h2 class="section-title" style="font-size:32px">${region.name} 제품별 <em>설치 페이지</em></h2></div>
@@ -1675,6 +1768,38 @@ ${PRODUCTS.filter(p => p.slug !== product.slug).slice(0, 4).map(p => `<a href="/
 
 // [11-B] 시군구 상세 페이지 렌더 /region/{sidoSlug}/{slug} ============
 // 1,500자 본문, 10개 태그, FAQ, 관련 아티클 포함 — 네이버 SEO 최적화
+// 서울 5대 권역 그리드 (renderSigunguPage, renderRegionPage에서 재사용)
+function renderSeoulDistrictGrid(currentSlug = null) {
+  const groups = SEOUL_DISTRICT_GROUPS.map(g => {
+    const pills = g.districts.map(d => {
+      const isCurrent = d.slug === currentSlug;
+      const cls = isCurrent ? 'seoul-dpill' + ' ' + 'seoul-dpill-current' : 'seoul-dpill';
+      const style = isCurrent ? ' style="background:var(--ink);color:#fff;border-color:var(--ink);pointer-events:none"' : '';
+      return `<a href="/region/seoul/${d.slug}" class="${cls}"${style}>${d.name}</a>`;
+    }).join('');
+
+    return `
+<div class="seoul-dgroup">
+  <div class="seoul-dgroup-head">
+    <span class="seoul-dgroup-emoji">${g.emoji}</span>
+    <div class="seoul-dgroup-text">
+      <h4>${g.name}</h4>
+      <span class="seoul-dgroup-desc">${g.desc}</span>
+    </div>
+    <span class="seoul-dgroup-count">${g.districts.length}개 구</span>
+  </div>
+  <div class="seoul-dgroup-pills">${pills}</div>
+</div>`;
+  }).join('');
+
+  return `
+<section class="sg-block seoul-districts">
+  <h2>🏙️ 서울 지역별 바로가기</h2>
+  <p class="seoul-districts-lead">서울 25개 자치구를 5대 권역으로 나눠 정리했습니다. 내 매장이 있는 구를 선택하면 상권 정보와 설치 가이드를 확인할 수 있습니다.</p>
+  <div class="seoul-districts-grid">${groups}</div>
+</section>`;
+}
+
 function renderSigunguPage(sg) {
   const region = findRegion(sg.sidoSlug);
 
@@ -1829,6 +1954,8 @@ function renderSigunguPage(sg) {
         <h2>🔗 관련 지역 설치 안내</h2>
         <div class="sg-related-grid">${relatedCards}</div>
       </section>
+
+      ${sg.sidoSlug === 'seoul' ? renderSeoulDistrictGrid(sg.slug) : ''}
 
       <section class="sg-block sg-bottom-cta">
         <h2>📞 ${sg.name} 무료 견적 받기</h2>
