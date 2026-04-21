@@ -577,9 +577,12 @@ footer .logo{color:#fff}
 .foot-bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;font-size:13px;color:#64748b;flex-wrap:wrap;gap:12px}
 
 /* Floating CTA */
-.floating-call{position:fixed;bottom:28px;right:28px;background:var(--ink);color:#fff;padding:16px 22px;border-radius:100px;font-weight:500;font-size:14px;box-shadow:0 12px 30px rgba(15,23,42,0.3);z-index:40;display:inline-flex;align-items:center;gap:10px;transition:all .2s}
+.floating-stack{position:fixed;bottom:28px;right:28px;z-index:40;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.floating-call{background:var(--ink);color:#fff;padding:16px 22px;border-radius:100px;font-weight:500;font-size:14px;box-shadow:0 12px 30px rgba(15,23,42,0.3);display:inline-flex;align-items:center;gap:10px;transition:all .2s}
 .floating-call:hover{transform:scale(1.05);background:var(--ink-2)}
 .floating-call svg{width:18px;height:18px}
+.floating-inquiry{background:var(--accent,#e8512c);box-shadow:0 12px 30px rgba(232,81,44,0.4)}
+.floating-inquiry:hover{background:#d63e1d}
 
 /* Detail pages */
 .detail-hero{padding:80px 0 50px;background:var(--paper-2);border-bottom:1px solid var(--line)}
@@ -636,8 +639,53 @@ footer .logo{color:#fff}
 .index-card h3{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;font-weight:600;margin-bottom:8px;letter-spacing:-0.02em;color:var(--ink)}
 .index-card p{font-size:13.5px;color:var(--muted);line-height:1.6}
 
-/* Responsive */
-@media (max-width: 1024px){
+/* Contact page */
+.contact-wrap{background:var(--paper-2);padding:80px 0 100px;min-height:70vh}
+.contact-container{max-width:720px;margin:0 auto;padding:0 20px}
+.contact-header{text-align:center;margin-bottom:40px}
+.contact-header h1{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(28px,3.6vw,38px);font-weight:600;letter-spacing:-0.03em;color:var(--ink);margin-bottom:14px;display:inline-flex;align-items:center;gap:12px}
+.contact-header h1 svg{width:32px;height:32px;color:var(--accent,#e8512c)}
+.contact-header p{color:var(--muted);font-size:15px;line-height:1.7}
+.contact-phone-card{background:#e6f9ef;border:1px solid #b8eacf;border-radius:var(--radius);padding:22px 26px;margin-bottom:24px;display:flex;align-items:center;gap:18px}
+.contact-phone-card .pi{width:52px;height:52px;border-radius:14px;background:#18b368;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-phone-card .pi svg{width:24px;height:24px;color:#fff}
+.contact-phone-card .pt{flex:1}
+.contact-phone-card .pt a{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:24px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;display:inline-block;margin-bottom:2px}
+.contact-phone-card .pt .ps{font-size:13px;color:var(--muted)}
+.contact-form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px}
+.contact-form-card h2{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:19px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.contact-form-card h2::before{content:"";display:inline-block;width:4px;height:20px;background:var(--accent,#e8512c);border-radius:2px}
+.field{margin-bottom:18px}
+.field label{display:block;font-size:13.5px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.field label .req{color:#dc2626;margin-left:2px}
+.field input[type=text],.field input[type=tel],.field select,.field textarea{width:100%;padding:12px 14px;font-size:14.5px;font-family:inherit;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(15,23,42,0.05)}
+.field textarea{min-height:110px;resize:vertical;line-height:1.55}
+.field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.field-row{display:flex;gap:8px}
+.field-row input{flex:1}
+.field-row button{padding:0 18px;background:var(--ink);color:#fff;border:0;border-radius:10px;font-size:13.5px;font-weight:600;font-family:inherit;cursor:pointer;white-space:nowrap;transition:background .2s}
+.field-row button:hover{background:var(--ink-2)}
+.submit-btn{width:100%;padding:16px;background:var(--ink);color:#fff;border:0;border-radius:12px;font-size:16px;font-weight:600;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,sans-serif;letter-spacing:-0.01em;cursor:pointer;transition:all .2s;margin-top:8px}
+.submit-btn:hover{background:var(--ink-2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(15,23,42,0.15)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-bottom-note{text-align:center;margin-top:22px;padding-top:22px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted);line-height:1.7}
+.form-bottom-note strong{color:var(--ink-2)}
+.form-bottom-note .quick{color:var(--ink);font-weight:600}
+.privacy-box{background:var(--paper-2);border-radius:10px;padding:16px 18px;margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.65}
+.privacy-box .title{color:var(--ink-2);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.privacy-box p{margin:0;line-height:1.7}
+.privacy-box ul{margin:4px 0 0 18px;padding:0}
+.privacy-box li{margin-bottom:2px}
+.privacy-check{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:13.5px;color:var(--ink-2)}
+.privacy-check input{width:16px;height:16px;cursor:pointer;accent-color:var(--ink)}
+.success-view{display:none;text-align:center;padding:60px 20px}
+.success-view .sch{width:72px;height:72px;border-radius:50%;background:#e6f9ef;display:inline-flex;align-items:center;justify-content:center;margin-bottom:24px}
+.success-view .sch svg{width:36px;height:36px;color:#18b368}
+.success-view h3{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,sans-serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:12px}
+.success-view p{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:24px}
+.error-msg{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;padding:12px 16px;border-radius:10px;font-size:13.5px;margin-bottom:16px;display:none}
+
   .hero-grid{grid-template-columns:1fr;gap:60px}
   .hero-visual{max-width:400px;margin:0 auto}
 }
@@ -667,7 +715,8 @@ footer .logo{color:#fff}
   .products-grid{grid-template-columns:1fr}
   .region-grid{grid-template-columns:repeat(3,1fr)}
   .foot-bottom{flex-direction:column;align-items:flex-start}
-  .floating-call{padding:14px 18px;font-size:13px;bottom:20px;right:20px}
+  .floating-stack{bottom:20px;right:20px;gap:8px}
+  .floating-call{padding:14px 18px;font-size:13px}
   .strengths-grid{grid-template-columns:1fr}
   .related-grid{grid-template-columns:1fr}
   .index-grid.cols-4,.index-grid.cols-3{grid-template-columns:1fr}
@@ -760,7 +809,7 @@ function renderHeader() {
 <li><a href="/region">지역별 설치</a></li>
 <li><a href="/product">제품 안내</a></li>
 <li><a href="/industry">업종별</a></li>
-<li><a href="/#contact">문의하기</a></li>
+<li><a href="/contact">문의하기</a></li>
 </ul>
 <a href="tel:${SITE.phone}" class="nav-cta">${ICONS.phone.replace('<svg ', '<svg style="width:14px;height:14px" ')} 무료 상담 ${SITE.phoneDisplay}</a>
 </div>
@@ -783,7 +832,10 @@ function renderFooter() {
 }
 
 function renderFloatingCTA() {
-  return `<a href="tel:${SITE.phone}" class="floating-call">${ICONS.phone} 전화 상담</a>`;
+  return `<div class="floating-stack">
+<a href="/contact" class="floating-call floating-inquiry">${ICONS.chat} 무료 상담 받기</a>
+<a href="tel:${SITE.phone}" class="floating-call">${ICONS.phone} 전화 상담</a>
+</div>`;
 }
 
 // [08] 메인 페이지 렌더 =======================================
@@ -1300,6 +1352,257 @@ function renderIndustryPage(industry) {
 
 function findIndustry(slug) { return INDUSTRIES.find(i => i.slug === slug); }
 
+// [12-1] 문의(상담) 페이지 — /contact ==========================
+function renderContactPage() {
+  const productOptions = PRODUCTS.map(p => `<option value="${p.name}">${p.emoji} ${p.name}</option>`).join('');
+  const industryOptions = INDUSTRIES.map(i => `<option value="${i.name}">${i.emoji} ${i.name}</option>`).join('');
+
+  const body = `
+<section class="contact-wrap">
+<div class="contact-container">
+
+<div class="contact-header">
+<h1>${ICONS.phone} 상담 문의</h1>
+<p>카드단말기·포스기·키오스크·CCTV·테이블오더·매장 철거까지<br>무엇이든 편하게 문의하세요.</p>
+</div>
+
+<div class="contact-phone-card">
+<div class="pi">${ICONS.phone}</div>
+<div class="pt">
+<a href="tel:${SITE.phone}">${SITE.phoneDisplay}</a>
+<div class="ps">전화 상담 (가장 빠른 방법)</div>
+</div>
+</div>
+
+<div class="contact-form-card">
+<div id="formView">
+<h2>온라인 문의</h2>
+
+<div class="error-msg" id="errorMsg"></div>
+
+<form id="inquiryForm" novalidate>
+
+<div class="field">
+<label for="fname">상호(이름) <span class="req">*</span></label>
+<input type="text" id="fname" name="name" placeholder="상호 또는 이름을 입력하세요" required>
+</div>
+
+<div class="field">
+<label for="fphone">연락처 <span class="req">*</span></label>
+<input type="tel" id="fphone" name="phone" placeholder="010-0000-0000" required>
+</div>
+
+<div class="field">
+<label for="faddr">주소 <span class="req">*</span></label>
+<div class="field-row">
+<input type="text" id="faddr" name="address" placeholder="주소 검색을 클릭하세요" readonly required>
+<button type="button" onclick="openAddressSearch()">주소 검색</button>
+</div>
+<input type="text" id="faddr_detail" name="address_detail" placeholder="상세주소 입력 (건물명, 층, 호수 등)" style="margin-top:8px">
+</div>
+
+<div class="field">
+<label for="fproduct">문의 제품 <span class="req">*</span></label>
+<select id="fproduct" name="product" required>
+<option value="">선택해주세요</option>
+${productOptions}
+<option value="여러 제품">여러 제품 / 전체 문의</option>
+</select>
+</div>
+
+<div class="field">
+<label for="findustry">업종</label>
+<select id="findustry" name="industry">
+<option value="">선택해주세요</option>
+${industryOptions}
+<option value="기타">기타</option>
+</select>
+</div>
+
+<div class="field">
+<label for="fmessage">문의 내용</label>
+<textarea id="fmessage" name="message" placeholder="매장 위치, 현재 사용 장비, 궁금한 점 등을 자유롭게 적어주세요."></textarea>
+</div>
+
+<label class="privacy-check">
+<input type="checkbox" id="fagree" name="agree" required>
+<span>개인정보 수집·이용에 동의합니다 <span class="req">*</span></span>
+</label>
+
+<button type="submit" class="submit-btn" id="submitBtn">문의 접수하기</button>
+
+<div class="form-bottom-note">
+접수 후 영업시간 내 빠르게 연락드리겠습니다.<br>
+급하시면 <span class="quick">${ICONS.phone} <a href="tel:${SITE.phone}" style="color:var(--ink);text-decoration:underline">${SITE.phoneDisplay}</a></span>로 전화 주세요.
+</div>
+
+</form>
+
+<div class="privacy-box">
+<div class="title">📋 개인정보 수집·이용 동의</div>
+<p><strong>· 수집 항목:</strong> 상호(이름), 연락처, 주소, 문의 내용</p>
+<p><strong>· 수집 목적:</strong> 상담 문의 접수 및 답변, 견적 안내</p>
+<p><strong>· 보유 기간:</strong> 문의 처리 완료 후 1년 보관 후 파기</p>
+<p style="margin-top:6px">※ 동의를 거부할 수 있으며, 거부 시 문의 접수가 제한됩니다.<br>※ 문의 접수 시 위 내용에 동의한 것으로 간주합니다.</p>
+</div>
+
+</div>
+
+<div class="success-view" id="successView">
+<div class="sch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+<h3>문의가 접수되었습니다</h3>
+<p>빠르게 확인 후 연락드리겠습니다.<br>급하시면 <strong>${SITE.phoneDisplay}</strong>로 전화 주세요.</p>
+<a href="/" class="btn btn-ghost">홈으로 돌아가기</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+function openAddressSearch() {
+  new daum.Postcode({
+    oncomplete: function(data) {
+      document.getElementById('faddr').value = data.roadAddress || data.jibunAddress;
+      document.getElementById('faddr_detail').focus();
+    }
+  }).open();
+}
+
+document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = document.getElementById('submitBtn');
+  var errorEl = document.getElementById('errorMsg');
+  errorEl.style.display = 'none';
+
+  // Basic validation
+  if (!form.name.value.trim()) return showError(errorEl, '상호(이름)을 입력해주세요.');
+  if (!form.phone.value.trim()) return showError(errorEl, '연락처를 입력해주세요.');
+  if (!form.address.value.trim()) return showError(errorEl, '주소를 검색해주세요.');
+  if (!form.product.value) return showError(errorEl, '문의 제품을 선택해주세요.');
+  if (!form.agree.checked) return showError(errorEl, '개인정보 수집에 동의해주세요.');
+
+  btn.disabled = true;
+  btn.textContent = '전송 중...';
+
+  try {
+    var res = await fetch('/contact/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: form.name.value.trim(),
+        phone: form.phone.value.trim(),
+        address: form.address.value.trim(),
+        address_detail: form.address_detail.value.trim(),
+        product: form.product.value,
+        industry: form.industry.value,
+        message: form.message.value.trim(),
+      })
+    });
+    if (!res.ok) throw new Error('전송 실패');
+
+    document.getElementById('formView').style.display = 'none';
+    document.getElementById('successView').style.display = 'block';
+    window.scrollTo({ top: document.querySelector('.contact-wrap').offsetTop, behavior: 'smooth' });
+  } catch (err) {
+    showError(errorEl, '문의 전송 중 오류가 발생했습니다. 잠시 후 다시 시도하거나 전화로 문의해주세요.');
+    btn.disabled = false;
+    btn.textContent = '문의 접수하기';
+  }
+});
+
+function showError(el, msg) {
+  el.textContent = msg;
+  el.style.display = 'block';
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+`;
+
+  return htmlWrap({
+    title: '상담 문의 · 무료 견적 · 빠른 설치',
+    description: '카드단말기·포스기·키오스크·CCTV·테이블오더 등 매장 설비 무료 상담. 전국 출장 설치 전문.',
+    canonical: `${SITE.domain}/contact`,
+    body,
+  });
+}
+
+// POST /contact/submit - 폼 제출 처리
+async function handleContactSubmit(request, env) {
+  try {
+    const data = await request.json();
+
+    // Basic validation
+    if (!data.name || !data.phone || !data.address || !data.product) {
+      return new Response(JSON.stringify({ ok: false, error: '필수 항목 누락' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
+
+    // 이메일 발송 준비 (Resend API — 환경변수에 RESEND_API_KEY 설정되면 자동 작동)
+    const now = new Date();
+    const kstNow = new Date(now.getTime() + 9 * 60 * 60 * 1000).toISOString().replace('T', ' ').slice(0, 19);
+    const emailBody = `
+[opsoult.com 상담 문의 접수]
+
+접수일시: ${kstNow} (KST)
+
+● 상호/이름: ${data.name}
+● 연락처: ${data.phone}
+● 주소: ${data.address} ${data.address_detail || ''}
+● 문의 제품: ${data.product}
+● 업종: ${data.industry || '(미입력)'}
+
+● 문의 내용:
+${data.message || '(문의 내용 없음)'}
+
+---
+이 메일은 opsoult.com 문의 폼에서 자동 발송됐습니다.
+`.trim();
+
+    // Resend API 키가 있으면 이메일 전송
+    if (env && env.RESEND_API_KEY) {
+      const resendRes = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: env.RESEND_FROM || 'onboarding@resend.dev',
+          to: [env.CONTACT_EMAIL || 'a01048275592@gmail.com'],
+          reply_to: `${data.name} <noreply@opsoult.com>`,
+          subject: `[opsoult 문의] ${data.name} - ${data.product}`,
+          text: emailBody,
+        }),
+      });
+
+      if (!resendRes.ok) {
+        const errText = await resendRes.text();
+        console.error('Resend error:', errText);
+        // 이메일 전송 실패해도 접수는 성공으로 처리 (로그만 남김)
+      }
+    } else {
+      // API 키 없을 때는 로그만 (Cloudflare Workers 로그에서 확인 가능)
+      console.log('Contact form submission (no email sent):', emailBody);
+    }
+
+    return new Response(JSON.stringify({ ok: true }), {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (err) {
+    console.error('Contact submit error:', err);
+    return new Response(JSON.stringify({ ok: false, error: err.message }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+}
+
 // [13] sitemap.xml ============================================
 function renderSitemap() {
   const today = new Date().toISOString().slice(0, 10);
@@ -1308,6 +1611,7 @@ function renderSitemap() {
   urls.push({ loc: SITE.domain + '/region', priority: '0.9' });
   urls.push({ loc: SITE.domain + '/product', priority: '0.9' });
   urls.push({ loc: SITE.domain + '/industry', priority: '0.9' });
+  urls.push({ loc: SITE.domain + '/contact', priority: '0.9' });
   for (const r of REGIONS) {
     urls.push({ loc: `${SITE.domain}/region/${r.slug}`, priority: '0.8' });
   }
@@ -1384,7 +1688,7 @@ function findProduct(slug) { return PRODUCTS.find(p => p.slug === slug); }
 
 // [16] fetch 라우터 (핵심) ====================================
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const url = new URL(request.url);
     let pathname = url.pathname;
     // Normalize: trailing slash 제거 (/ 자체는 유지)
@@ -1439,6 +1743,16 @@ export default {
     if (industryMatch) {
       const industry = findIndustry(industryMatch[1]);
       if (industry) return new Response(renderIndustryPage(industry), { headers: htmlHeaders });
+    }
+
+    // 상담 문의 페이지
+    if (pathname === '/contact') {
+      return new Response(renderContactPage(), { headers: htmlHeaders });
+    }
+
+    // 상담 문의 폼 제출 (POST)
+    if (pathname === '/contact/submit' && request.method === 'POST') {
+      return handleContactSubmit(request, env);
     }
 
     // 지역 상세 /region/{slug}
