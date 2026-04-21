@@ -572,13 +572,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 /* Footer */
 footer{background:#000;color:#cbd5e1;padding:80px 0 40px}
 footer .logo{color:#fff}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:56px}
-.foot-brand p{font-size:14px;color:#94a3b8;margin-top:16px;max-width:280px;line-height:1.7}
-.foot-col h6{font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:20px}
-.foot-col ul{list-style:none}
-.foot-col li{margin-bottom:12px;font-size:14px;color:#94a3b8}
-.foot-col a{transition:color .2s}
-.foot-col a:hover{color:#fff}
+.foot-brand{margin-bottom:40px}
+.foot-brand p{font-size:14px;color:#94a3b8;margin-top:16px;max-width:480px;line-height:1.7}
 .foot-bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;font-size:13px;color:#64748b;flex-wrap:wrap;gap:12px}
 
 /* Floating CTA */
@@ -660,7 +655,6 @@ footer .logo{color:#fff}
   .feature-cell:nth-last-child(-n+1){border-bottom:0}
   .reviews-grid{grid-template-columns:1fr;gap:14px}
   .why-grid{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr 1fr;gap:36px}
   .nav-menu{display:none}
   .nav{gap:12px}
   .related-grid{grid-template-columns:repeat(2,1fr)}
@@ -672,7 +666,6 @@ footer .logo{color:#fff}
   .container{padding:0 20px}
   .products-grid{grid-template-columns:1fr}
   .region-grid{grid-template-columns:repeat(3,1fr)}
-  .foot-grid{grid-template-columns:1fr}
   .foot-bottom{flex-direction:column;align-items:flex-start}
   .floating-call{padding:14px 18px;font-size:13px;bottom:20px;right:20px}
   .strengths-grid{grid-template-columns:1fr}
@@ -775,36 +768,11 @@ function renderHeader() {
 }
 
 function renderFooter() {
-  const topProducts = PRODUCTS.slice(0, 4).map(p => `<li><a href="/product/${p.slug}">${p.name}</a></li>`).join('');
-  const topRegions = REGIONS.slice(0, 4).map(r => `<li><a href="/region/${r.slug}">${r.name}</a></li>`).join('');
-  const topIndustries = INDUSTRIES.slice(0, 4).map(i => `<li><a href="/industry/${i.slug}">${i.name}</a></li>`).join('');
   return `<footer>
 <div class="container">
-<div class="foot-grid">
 <div class="foot-brand">
 <a href="/" class="logo"><span class="logo-dot">${ICONS.brandLogo}</span>${SITE.brandName}</a>
 <p>1인 매장부터 프랜차이즈까지. 매장 운영에 필요한 설비를 한 곳에서, 정확하게.</p>
-</div>
-<div class="foot-col">
-<h6>제품</h6>
-<ul>${topProducts}<li><a href="/product">전체 보기</a></li></ul>
-</div>
-<div class="foot-col">
-<h6>지역</h6>
-<ul>${topRegions}<li><a href="/region">전체 보기</a></li></ul>
-</div>
-<div class="foot-col">
-<h6>업종</h6>
-<ul>${topIndustries}<li><a href="/industry">전체 보기</a></li></ul>
-</div>
-<div class="foot-col">
-<h6>고객센터</h6>
-<ul>
-<li><a href="tel:${SITE.phone}">📞 ${SITE.phoneDisplay}</a></li>
-<li>${SITE.businessHours}</li>
-<li>일/공휴일 휴무</li>
-</ul>
-</div>
 </div>
 <div class="foot-bottom">
 <span>© 2026 ${SITE.brandName}. All rights reserved.</span>
@@ -947,7 +915,6 @@ ${ICONS.kiosk}
 <span class="eyebrow">무료 상담 · 빠른 설치</span>
 <h2 class="cta-lead">카드단말기·포스기·키오스크·<br>CCTV·테이블오더<br><span class="cta-lead-accent">매장에 필요한 모든 장비,<br>한 통화로 해결하세요</span></h2>
 <a href="tel:${SITE.phone}" class="cta-phone">${ICONS.phone} ${SITE.phoneDisplay}</a>
-<div class="cta-hours">${SITE.businessHours} · 카카오톡 상담도 가능합니다</div>
 </div>
 </section>
 `;
