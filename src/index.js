@@ -395,7 +395,8 @@ const REVIEWS = [
 
 // [06] 공통 스타일 =============================================
 const STYLES = `
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800&family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap');
+@import url('https://hangeul.pstatic.net/hangeul_static/css/gmarket-sans.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');
 :root{
   --ink:#0f172a;--ink-2:#1e293b;--ink-3:#334155;
   --paper:#fafaf9;--paper-2:#f4f4f2;--paper-3:#ebebe8;
@@ -406,7 +407,7 @@ const STYLES = `
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'IBM Plex Sans KR',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Noto Sans KR',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:inherit;text-decoration:none}
 img,svg{max-width:100%;display:block}
 .container{max-width:var(--max);margin:0 auto;padding:0 28px}
@@ -415,7 +416,7 @@ img,svg{max-width:100%;display:block}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:#fff;border:1px solid var(--line);border-radius:100px;font-size:12.5px;font-weight:500;color:var(--ink-2);letter-spacing:.02em}
 .eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--ink);display:inline-block}
 .section-tag{font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:18px}
-.section-title{font-family:'Fraunces',serif;font-size:clamp(30px,3.6vw,44px);line-height:1.12;letter-spacing:-0.025em;font-weight:600;color:var(--ink)}
+.section-title{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(30px,3.6vw,44px);line-height:1.12;letter-spacing:-0.025em;font-weight:600;color:var(--ink)}
 .section-title em{font-style:italic;color:var(--ink)}
 .section-desc{margin-top:16px;font-size:16px;color:var(--muted);line-height:1.7;max-width:640px}
 section.block{padding:120px 0}
@@ -432,7 +433,7 @@ section.block{padding:120px 0}
 /* Header */
 header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
-.logo{font-family:'Fraunces',serif;font-weight:700;font-size:22px;letter-spacing:-0.03em;display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
+.logo{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.03em;display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
 .logo-dot{width:28px;height:28px;background:var(--ink);border-radius:8px;display:inline-flex;align-items:center;justify-content:center}
 .logo-dot::after{content:"";width:10px;height:10px;background:#fff;border-radius:3px;transform:rotate(45deg)}
 .nav-menu{list-style:none;display:flex;gap:36px;font-size:14.5px;font-weight:500;margin:0 auto 0 40px}
@@ -445,7 +446,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 /* Hero */
 .hero{padding:90px 0 100px;position:relative;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
-.hero h1{font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(40px,5.4vw,72px);line-height:1.15;letter-spacing:-0.035em;font-weight:700;margin:22px 0 26px;color:var(--ink)}
+.hero h1{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(40px,5.4vw,72px);line-height:1.15;letter-spacing:-0.035em;font-weight:700;margin:22px 0 26px;color:var(--ink)}
 .hero h1 em{font-style:normal;font-weight:700;color:var(--accent)}
 .hero h1 .hl{position:relative;display:inline-block;white-space:nowrap}
 .hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:6%;height:14%;background:var(--ink);opacity:.08;z-index:-1;border-radius:4px}
@@ -453,7 +454,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
 .hero-trust{display:flex;gap:28px;align-items:center;padding-top:32px;border-top:1px solid var(--line);flex-wrap:wrap}
 .trust-item{display:flex;flex-direction:column;gap:2px}
-.trust-item .tn{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1}
+.trust-item .tn{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1}
 .trust-item .tn span{color:var(--muted)}
 .trust-item .tl{font-size:12px;color:var(--muted);letter-spacing:.02em}
 
@@ -463,12 +464,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .hv-main{inset:20px 20px 20% 20%;background:var(--ink);color:#fff;border-color:transparent;display:flex;flex-direction:column;justify-content:space-between}
 .hv-main svg{width:100%;height:auto;max-height:60%;margin:auto}
 .hv-main .tag{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;opacity:.6;font-weight:600}
-.hv-main .title{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-top:auto}
+.hv-main .title{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-top:auto}
 .hv-side1{top:10%;right:0;width:40%;aspect-ratio:1/1;transform:rotate(3deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#fff}
 .hv-side1 svg{width:70%;height:auto}
 .hv-side1 .lbl{font-size:12px;color:var(--muted);margin-top:10px;font-weight:500}
 .hv-side2{bottom:0;left:8%;width:45%;background:#fff;transform:rotate(-2deg);padding:20px}
-.hv-side2 .big{font-family:'Fraunces',serif;font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-0.03em;line-height:1}
+.hv-side2 .big{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-0.03em;line-height:1}
 .hv-side2 .small{font-size:12px;color:var(--muted);margin-top:4px}
 .hv-side2 .bar{height:4px;background:var(--paper-2);border-radius:100px;margin-top:14px;overflow:hidden}
 .hv-side2 .bar span{display:block;height:100%;background:var(--ink);width:94%;border-radius:100px}
@@ -478,7 +479,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .stat-card{text-align:center;padding:0 20px;border-right:1px solid rgba(255,255,255,0.08)}
 .stat-card:last-child{border-right:0}
-.stat-card .n{font-family:'Fraunces',serif;font-size:44px;font-weight:700;letter-spacing:-0.03em;line-height:1}
+.stat-card .n{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:44px;font-weight:700;letter-spacing:-0.03em;line-height:1}
 .stat-card .n span{color:var(--muted-2)}
 .stat-card .l{font-size:13px;color:var(--muted-2);margin-top:8px;letter-spacing:.02em}
 
@@ -488,7 +489,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .strength-card:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:0 16px 40px rgba(15,23,42,0.06)}
 .strength-card .sicon{width:48px;height:48px;border-radius:12px;background:var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#fff}
 .strength-card .sicon svg{width:24px;height:24px}
-.strength-card .sval{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1;margin-bottom:8px}
+.strength-card .sval{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1;margin-bottom:8px}
 .strength-card h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}
 .strength-card p{font-size:13.5px;color:var(--muted);line-height:1.55}
 
@@ -502,7 +503,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .product-illust svg{width:80px;height:80px;transition:transform .3s}
 .product-card:hover .product-illust svg{transform:scale(1.08)}
 .product-tag{display:inline-block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
-.product-card h3{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;color:var(--ink)}
+.product-card h3{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;color:var(--ink)}
 .product-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px}
 .product-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--ink);padding-top:16px;border-top:1px solid var(--line)}
 .product-more::after{content:"→";transition:transform .2s}
@@ -529,7 +530,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .feature-cell:hover{background:var(--paper-2)}
 .feature-cell .ficon{width:44px;height:44px;background:var(--ink);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
 .feature-cell .ficon svg{width:22px;height:22px}
-.feature-cell h4{font-family:'Fraunces',serif;font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;color:var(--ink)}
+.feature-cell h4{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;color:var(--ink)}
 .feature-cell p{font-size:14px;color:var(--muted);line-height:1.65}
 
 /* Why us */
@@ -539,7 +540,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .why-item:hover{border-color:var(--ink);transform:translateY(-2px)}
 .why-item .wicon{width:52px;height:52px;background:var(--ink);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .why-item .wicon svg{width:26px;height:26px}
-.why-item h4{font-family:'Fraunces',serif;font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;color:var(--ink)}
+.why-item h4{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;color:var(--ink)}
 .why-item p{font-size:14.5px;color:var(--muted);line-height:1.65}
 
 /* Reviews */
@@ -549,7 +550,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .review-card:hover{border-color:var(--ink);transform:translateY(-2px)}
 .review-stars{color:var(--ink);font-size:14px;margin-bottom:16px;letter-spacing:3px}
 .review-badge{display:inline-block;padding:4px 12px;background:var(--paper-2);color:var(--ink);border-radius:100px;font-size:11.5px;font-weight:600;margin-bottom:14px;letter-spacing:.02em}
-.review-card h5{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:10px;color:var(--ink);line-height:1.3;letter-spacing:-0.01em}
+.review-card h5{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:17px;font-weight:600;margin-bottom:10px;color:var(--ink);line-height:1.3;letter-spacing:-0.01em}
 .review-card p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:18px}
 .review-author{padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);font-weight:500}
 
@@ -559,11 +560,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .cta-section > *{position:relative;z-index:1}
 .cta-section .eyebrow{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff}
 .cta-section .eyebrow::before{background:#fff}
-.cta-section h2{font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(26px,3.6vw,38px);font-weight:500;letter-spacing:-0.02em;line-height:1.45;margin:20px 0 36px;color:#fff}
+.cta-section h2{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(26px,3.6vw,38px);font-weight:500;letter-spacing:-0.02em;line-height:1.45;margin:20px 0 36px;color:#fff}
 .cta-section h2 .cta-lead-accent{display:inline-block;margin-top:16px;font-weight:700;color:#fff}
 .cta-section h2 em{font-style:normal}
 .cta-section p.sub{font-size:17px;color:var(--muted-2);max-width:560px;margin:0 auto 40px}
-.cta-phone{display:inline-flex;align-items:center;gap:14px;background:#fff;color:var(--ink);padding:22px 44px;border-radius:100px;font-family:'Fraunces',serif;font-size:26px;font-weight:700;letter-spacing:-0.01em;transition:transform .2s,box-shadow .2s}
+.cta-phone{display:inline-flex;align-items:center;gap:14px;background:#fff;color:var(--ink);padding:22px 44px;border-radius:100px;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-0.01em;transition:transform .2s,box-shadow .2s}
 .cta-phone:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
 .cta-phone svg{width:28px;height:28px}
 .cta-hours{margin-top:24px;font-size:13.5px;color:var(--muted-2)}
@@ -593,27 +594,27 @@ footer .logo-dot::after{background:#000}
 .breadcrumb a{color:var(--muted);transition:color .2s}
 .breadcrumb a:hover{color:var(--ink)}
 .breadcrumb .sep{margin:0 10px;opacity:.5}
-.detail-title{font-family:'Fraunces',serif;font-size:clamp(32px,4.5vw,52px);letter-spacing:-0.03em;line-height:1.12;font-weight:600;margin-bottom:18px;color:var(--ink)}
+.detail-title{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(32px,4.5vw,52px);letter-spacing:-0.03em;line-height:1.12;font-weight:600;margin-bottom:18px;color:var(--ink)}
 .detail-title em{font-style:italic}
 .detail-sub{font-size:17.5px;color:var(--ink-3);max-width:720px;line-height:1.6}
 .detail-body{padding:80px 0}
 .detail-body .prose{max-width:760px;margin:0 auto;font-size:16.5px;line-height:1.85;color:var(--ink-3)}
 .detail-body .prose p{margin-bottom:22px}
-.detail-body h2{font-family:'Fraunces',serif;font-size:30px;font-weight:600;letter-spacing:-0.02em;margin:52px 0 18px;color:var(--ink)}
-.detail-body h3{font-family:'Fraunces',serif;font-size:21px;font-weight:600;margin:36px 0 14px;color:var(--ink)}
+.detail-body h2{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:30px;font-weight:600;letter-spacing:-0.02em;margin:52px 0 18px;color:var(--ink)}
+.detail-body h3{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:21px;font-weight:600;margin:36px 0 14px;color:var(--ink)}
 .detail-body ul,.detail-body ol{margin:0 0 24px 1.4em}
 .detail-body li{margin-bottom:10px}
 .detail-body strong{color:var(--ink);font-weight:600}
 
 .info-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:32px;margin:32px 0}
-.info-card h4{font-family:'Fraunces',serif;font-size:20px;margin-bottom:18px;font-weight:600;color:var(--ink)}
+.info-card h4{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;margin-bottom:18px;font-weight:600;color:var(--ink)}
 .info-card .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-top:14px}
 .info-card .grid-2 div{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
 .info-card .grid-2 div strong{color:var(--ink);margin-right:10px}
 
 .feat-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
 .feat-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px}
-.feat-card h5{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+.feat-card h5{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:17px;font-weight:600;margin-bottom:8px;color:var(--ink)}
 .feat-card p{font-size:13.5px;color:var(--muted);line-height:1.6}
 
 .related-section{background:var(--paper-2);padding:90px 0}
@@ -624,13 +625,13 @@ footer .logo-dot::after{background:#000}
 .related-item .name{font-size:13.5px;font-weight:500}
 
 .cta-inline{background:var(--ink);color:#fff;border-radius:var(--radius);padding:36px 32px;margin-top:56px;text-align:center}
-.cta-inline h4{font-family:'Fraunces',serif;font-size:20px;margin-bottom:14px;font-weight:600}
-.cta-inline .phone{font-family:'Fraunces',serif;font-size:32px;font-weight:700;display:inline-block;margin:8px 0;color:#fff;letter-spacing:-0.02em}
+.cta-inline h4{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;margin-bottom:14px;font-weight:600}
+.cta-inline .phone{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:32px;font-weight:700;display:inline-block;margin:8px 0;color:#fff;letter-spacing:-0.02em}
 .cta-inline p{font-size:14px;color:var(--muted-2);margin-top:10px}
 
 /* Index pages */
 .index-header{padding:90px 0 50px;background:var(--paper-2);border-bottom:1px solid var(--line)}
-.index-header h1{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;font-weight:600;margin-bottom:18px;color:var(--ink)}
+.index-header h1{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;font-weight:600;margin-bottom:18px;color:var(--ink)}
 .index-header h1 em{font-style:italic}
 .index-header p{font-size:17px;color:var(--muted);max-width:720px;line-height:1.6}
 .index-grid{display:grid;gap:16px;padding:60px 0 120px}
@@ -639,7 +640,7 @@ footer .logo-dot::after{background:#000}
 .index-card{background:#fff;border-radius:var(--radius);padding:30px 26px;border:1px solid var(--line);transition:all .25s;display:block;color:var(--ink)}
 .index-card:hover{border-color:var(--ink);transform:translateY(-3px);box-shadow:0 16px 40px rgba(15,23,42,0.06)}
 .index-card .big{font-size:32px;margin-bottom:14px}
-.index-card h3{font-family:'Fraunces',serif;font-size:20px;font-weight:600;margin-bottom:8px;letter-spacing:-0.02em;color:var(--ink)}
+.index-card h3{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;font-weight:600;margin-bottom:8px;letter-spacing:-0.02em;color:var(--ink)}
 .index-card p{font-size:13.5px;color:var(--muted);line-height:1.6}
 
 /* Responsive */
@@ -1010,7 +1011,7 @@ ${PRODUCTS.slice(0, 4).map(p => `<a href="/${region.slug}/${p.slug}" class="rela
 <div class="info-card" style="background:var(--accent);color:var(--paper);margin-top:48px">
 <h4 style="color:var(--paper)">📞 ${region.name} 설치 문의</h4>
 <p style="font-size:17px;margin:12px 0">
-<strong style="color:var(--paper);font-family:'Fraunces',serif;font-size:28px">${SITE.phoneDisplay}</strong>
+<strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
 </p>
 <p style="opacity:.9;font-size:14px">${region.name} 전 지역 ${region.installTime}. 무료 견적 상담을 받아보세요.</p>
 </div>
@@ -1085,7 +1086,7 @@ function renderProductPage(product) {
 <div class="info-card" style="background:var(--accent);color:var(--paper);margin-top:48px">
 <h4 style="color:var(--paper)">📞 ${product.name} 설치 문의</h4>
 <p style="font-size:17px;margin:12px 0">
-<strong style="color:var(--paper);font-family:'Fraunces',serif;font-size:28px">${SITE.phoneDisplay}</strong>
+<strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
 </p>
 <p style="opacity:.9;font-size:14px">무료 견적·상담. 전국 당일~3일 이내 설치.</p>
 </div>
@@ -1176,7 +1177,7 @@ function renderInstallPage(region, product) {
 <div class="info-card" style="background:var(--accent);color:var(--paper);margin-top:48px">
 <h4 style="color:var(--paper)">📞 ${region.name} ${product.name} 설치 문의</h4>
 <p style="font-size:17px;margin:12px 0">
-<strong style="color:var(--paper);font-family:'Fraunces',serif;font-size:28px">${SITE.phoneDisplay}</strong>
+<strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
 </p>
 <p style="opacity:.9;font-size:14px">${region.name} ${region.installTime}. 지금 전화하시면 오늘 견적을 받으실 수 있습니다.</p>
 </div>
@@ -1392,7 +1393,7 @@ function render404() {
   const body = `
 <section class="block" style="text-align:center;padding:120px 0">
 <div class="container">
-<div style="font-family:'Fraunces',serif;font-size:120px;font-weight:800;color:var(--accent);letter-spacing:-0.05em;line-height:1">404</div>
+<div style="font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:120px;font-weight:800;color:var(--accent);letter-spacing:-0.05em;line-height:1">404</div>
 <h1 class="section-title" style="margin:20px 0">페이지를 찾을 수 없습니다</h1>
 <p class="section-desc" style="margin:0 auto 32px">요청하신 페이지가 존재하지 않거나 이동되었습니다.</p>
 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
