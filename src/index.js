@@ -32,7 +32,7 @@ const SITE = {
   description: '전국 매장 설비 설치 전문. 카드단말기·포스기·키오스크·테이블오더·CCTV까지 원스톱 설치.',
   naverVerification: '669cd60625b7336f4e33d5cc0a3af618bc9fbfbb',
   stats: {
-    totalInstalls: '350+',
+    totalInstalls: '254,692',
     satisfaction: '98%',
     installRate: '94%',
     renewalRate: '87%',
@@ -302,7 +302,7 @@ const PRODUCTS = [
 
 // [04] COMPANY 강점·특장점 =====================================
 const STRENGTHS = [
-  { icon: '🏆', stat: '350+', title: '누적 설치 건수', desc: '전국 직접 출장 설치' },
+  { icon: '🏆', stat: '254,692', title: '누적 설치 건수', desc: '전국 직접 출장 설치' },
   { icon: '⚡', stat: '빠른', title: '신속 설치 완료', desc: '상담 후 빠른 설치' },
   { icon: '💰', stat: '무료', title: '무료 견적·상담', desc: '부담 없이 비교하세요' },
   { icon: '🔧', stat: 'A/S', title: '빠른 사후 지원', desc: '장애 시 빠른 출동' },
@@ -883,7 +883,7 @@ ${ICONS.kiosk}
 <div class="container">
 <div class="section-head">
 <div class="section-tag">Smart Features</div>
-<h2 class="section-title">설치만 하는 게 아닙니다<br><em>매장 운영이 달라집니다</em></h2>
+<h2 class="section-title">매장이 쉬워집니다<br><em>운영은 더 똑똑해집니다</em></h2>
 </div>
 <div class="features-grid">${smartFeatures}</div>
 </div>
