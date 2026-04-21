@@ -448,13 +448,13 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .nav-cta{background:var(--ink);color:#fff;padding:10px 20px;border-radius:100px;font-size:13.5px;font-weight:500;display:inline-flex;align-items:center;gap:6px;transition:background .2s}
 .nav-cta:hover{background:var(--ink-2)}
 
-/* Hero Banner Section (상단 배너) */
-.hero-banner-section{padding:40px 0 0}
-.hero-banner{width:100%;border-radius:20px;overflow:hidden;background:#0c0f14;line-height:0;box-shadow:0 24px 60px rgba(15,23,42,0.18)}
+/* Hero Banner Section (상단 배너 - 풀폭 검정 배경) */
+.hero-banner-section{background:#0c0f14;padding:0;margin-top:0;line-height:0}
+.hero-banner{max-width:var(--max);margin:0 auto;line-height:0}
 .hero-banner img{width:100%;height:auto;display:block}
 
 /* Hero */
-.hero{padding:60px 0 80px;position:relative;overflow:hidden}
+.hero{padding:70px 0 80px;position:relative;overflow:hidden}
 .hero-grid{max-width:820px}
 .hero h1{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(40px,5.4vw,72px);line-height:1.15;letter-spacing:-0.035em;font-weight:700;margin:22px 0 26px;color:var(--ink)}
 .hero h1 em{font-style:normal;font-weight:700;color:var(--accent)}
@@ -684,9 +684,7 @@ footer .logo{color:#fff}
 .error-msg{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;padding:12px 16px;border-radius:10px;font-size:13.5px;margin-bottom:16px;display:none}
 
 @media (max-width: 860px){
-  .hero-banner-section{padding:24px 0 0}
-  .hero-banner{border-radius:12px}
-  .hero{padding:40px 0 60px}
+  .hero{padding:48px 0 60px}
   section.block{padding:80px 0}
   .products-section,.regions-section,.features-section,.why-section,.reviews-section{padding:80px 0}
   .cta-section{padding:80px 0}
@@ -857,10 +855,8 @@ function renderHome() {
 
   const body = `
 <section class="hero-banner-section">
-<div class="container">
 <div class="hero-banner">
 <img src="${HERO_BANNER}" alt="${SITE.brandNameKo} - 매장 운영에 필요한 설비를 한곳에서. 전국 매장 설비 설치 플랫폼" />
-</div>
 </div>
 </section>
 
