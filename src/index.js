@@ -445,34 +445,18 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 
 /* Hero */
 .hero{padding:90px 0 100px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
+.hero-grid{max-width:820px}
 .hero h1{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(40px,5.4vw,72px);line-height:1.15;letter-spacing:-0.035em;font-weight:700;margin:22px 0 26px;color:var(--ink)}
 .hero h1 em{font-style:normal;font-weight:700;color:var(--accent)}
 .hero h1 .hl{position:relative;display:inline-block;white-space:nowrap}
 .hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:6%;height:14%;background:var(--ink);opacity:.08;z-index:-1;border-radius:4px}
-.hero-sub{font-size:17.5px;color:var(--ink-3);line-height:1.65;max-width:500px;margin-bottom:36px}
+.hero-sub{font-size:17.5px;color:var(--ink-3);line-height:1.65;max-width:560px;margin-bottom:36px}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
 .hero-trust{display:flex;gap:28px;align-items:center;padding-top:32px;border-top:1px solid var(--line);flex-wrap:wrap}
 .trust-item{display:flex;flex-direction:column;gap:2px}
 .trust-item .tn{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:26px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1}
 .trust-item .tn span{color:var(--muted)}
 .trust-item .tl{font-size:12px;color:var(--muted);letter-spacing:.02em}
-
-/* Hero visual - stacked SVG illustration cards */
-.hero-visual{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;margin-left:auto}
-.hv-card{position:absolute;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 50px rgba(15,23,42,0.08),0 4px 12px rgba(15,23,42,0.03);padding:24px;transition:transform .3s}
-.hv-main{inset:20px 20px 20% 20%;background:var(--ink);color:#fff;border-color:transparent;display:flex;flex-direction:column;justify-content:space-between}
-.hv-main svg{width:100%;height:auto;max-height:60%;margin:auto}
-.hv-main .tag{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;opacity:.6;font-weight:600}
-.hv-main .title{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-top:auto}
-.hv-side1{top:10%;right:0;width:40%;aspect-ratio:1/1;transform:rotate(3deg);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:#fff}
-.hv-side1 svg{width:70%;height:auto}
-.hv-side1 .lbl{font-size:12px;color:var(--muted);margin-top:10px;font-weight:500}
-.hv-side2{bottom:0;left:8%;width:45%;background:#fff;transform:rotate(-2deg);padding:20px}
-.hv-side2 .big{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-0.03em;line-height:1}
-.hv-side2 .small{font-size:12px;color:var(--muted);margin-top:4px}
-.hv-side2 .bar{height:4px;background:var(--paper-2);border-radius:100px;margin-top:14px;overflow:hidden}
-.hv-side2 .bar span{display:block;height:100%;background:var(--ink);width:94%;border-radius:100px}
 
 /* Trust bar (stats) */
 .stats-section{background:var(--ink);color:#fff;padding:56px 0}
@@ -694,9 +678,6 @@ footer .logo{color:#fff}
 .success-view p{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:24px}
 .error-msg{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;padding:12px 16px;border-radius:10px;font-size:13.5px;margin-bottom:16px;display:none}
 
-  .hero-grid{grid-template-columns:1fr;gap:60px}
-  .hero-visual{max-width:400px;margin:0 auto}
-}
 @media (max-width: 860px){
   section.block{padding:80px 0}
   .products-section,.regions-section,.features-section,.why-section,.reviews-section{padding:80px 0}
@@ -874,7 +855,7 @@ function renderHome() {
 <div>
 <span class="eyebrow">전국 매장 설비 설치 플랫폼</span>
 <h1>매장에 꼭 맞는 장비를<br><span class="hl">정확하게,</span> <em>빠르게.</em></h1>
-<p class="hero-sub">카드단말기부터 포스기, 키오스크, 테이블오더, CCTV까지. 업종과 동선을 분석해 매장에 최적화된 조합을 제안하고 ${SITE.stats.coverage}에서 당일 설치까지 원스톱으로 진행합니다.</p>
+<p class="hero-sub">카드단말기·포스기·키오스크·CCTV.<br>매장에 필요한 모든 설비를, 전화 한 통으로.</p>
 <div class="hero-ctas">
 <a href="tel:${SITE.phone}" class="btn btn-primary">${ICONS.phone.replace('<svg ', '<svg style="width:16px;height:16px" ')} 무료 견적 받기</a>
 <a href="#products" class="btn btn-ghost">제품 둘러보기</a>
@@ -883,22 +864,6 @@ function renderHome() {
 <div class="trust-item"><div class="tn">${SITE.stats.totalInstalls}</div><div class="tl">누적 설치</div></div>
 <div class="trust-item"><div class="tn">${SITE.stats.satisfaction}</div><div class="tl">설치 만족도</div></div>
 <div class="trust-item"><div class="tn">${SITE.stats.installRate}</div><div class="tl">당일 설치율</div></div>
-</div>
-</div>
-<div class="hero-visual">
-<div class="hv-card hv-main">
-<span class="tag">Featured Install</span>
-${ICONS.pos}
-<span class="title">포스기 · 당일 설치</span>
-</div>
-<div class="hv-card hv-side1">
-${ICONS.kiosk}
-<span class="lbl">키오스크</span>
-</div>
-<div class="hv-card hv-side2">
-<div class="big">${SITE.stats.renewalRate}</div>
-<div class="small">재계약·추천률</div>
-<div class="bar"><span></span></div>
 </div>
 </div>
 </div>
