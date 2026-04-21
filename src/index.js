@@ -342,7 +342,8 @@ const REVIEWS = [
 
 // [06] 공통 스타일 =============================================
 const STYLES = `
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,600&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');
 :root{
   --ink:#0c0f14;--ink-2:#1b212c;--paper:#f5f1ea;--paper-2:#ece6db;
   --accent:#e8512c;--accent-2:#ffb347;--line:#d7cfc2;--muted:#6b7280;
@@ -350,7 +351,7 @@ const STYLES = `
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'IBM Plex Sans KR',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,'Noto Sans KR',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-weight:400;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 .serif{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.02em}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
