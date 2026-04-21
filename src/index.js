@@ -314,10 +314,46 @@ const PRODUCTS = [
 
 // [04] COMPANY 강점·특장점 =====================================
 const STRENGTHS = [
-  { icon: '🏆', stat: '254,692', title: '누적 설치 건수', desc: '전국 직접 출장 설치' },
-  { icon: '⚡', stat: '빠른', title: '신속 설치 완료', desc: '상담 후 빠른 설치' },
-  { icon: '💰', stat: '무료', title: '무료 견적·상담', desc: '부담 없이 비교하세요' },
-  { icon: '🔧', stat: 'A/S', title: '빠른 사후 지원', desc: '장애 시 빠른 출동' },
+  {
+    num: '01',
+    menuTitle: '254,692건 누적 설치',
+    headline: '전국 사장님이 선택한 설치 전문가',
+    body: '17개 시도, 5,000+ 읍면동에서 진행된 254,692건의 설치 경험이 쌓여 있습니다. 업종별·매장 규모별 최적의 장비 조합을 가장 정확하게 제안드립니다.',
+    note: '* 계약 건수 기준, 2014년 ~ 현재까지 누적',
+    photo: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=700&q=80',
+  },
+  {
+    num: '02',
+    menuTitle: '당일·익일 신속 설치',
+    headline: '기다림 없는 빠른 설치',
+    body: '오전 상담 시 당일 출장이 원칙입니다. 전체 설치의 94%가 당일 또는 다음 날까지 완료됩니다. 오픈 일정에 쫓기는 매장도 일정 맞춰드립니다.',
+    note: '* 지역·재고 상황에 따라 일정 조율 가능',
+    photo: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80',
+  },
+  {
+    num: '03',
+    menuTitle: '전국 어디든 출장 OK',
+    headline: '5,000+ 읍면동 전국 출장 설치',
+    body: '서울·수도권부터 제주·도서 지역까지 전국 어디든 직접 방문하여 설치합니다. 장비 택배·DIY 설치가 아닌, 전문 설치 기사가 직접 매장을 방문합니다.',
+    note: '* 도서 산간 지역은 사전 일정 조율 필요',
+    photo: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=700&q=80',
+  },
+  {
+    num: '04',
+    menuTitle: 'VAN사 수수료 비교',
+    headline: '10개 이상 VAN사 비교, 최저가 제안',
+    body: '10개 이상 VAN사와 협력하여 매장 매출 규모·업종에 가장 유리한 수수료 조건을 선별합니다. 기존 단말기 대비 월 3~7만원, 연 40~80만원의 수수료 절감이 가능합니다.',
+    note: '* 계약 조건·카드사별 수수료 차등 적용',
+    photo: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&q=80',
+  },
+  {
+    num: '05',
+    menuTitle: '24시간 A/S · 원격 지원',
+    headline: '설치 후가 진짜 시작입니다',
+    body: '장애 발생 시 원격 지원이 1차, 필요하면 현장 출동까지 24시간 대응 체계를 갖추고 있습니다. 재계약·추천률 87%의 비결은 꾸준한 사후 관리입니다.',
+    note: '* 원격 지원은 24시간, 현장 출동은 업무시간 기준',
+    photo: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=700&q=80',
+  },
 ];
 
 const SMART_FEATURES = [
@@ -480,14 +516,32 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .stat-card .l{font-size:13px;color:var(--muted-2);margin-top:8px;letter-spacing:.02em}
 
 /* Strengths */
-.strengths-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
-.strength-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px 28px;transition:all .25s}
-.strength-card:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:0 16px 40px rgba(15,23,42,0.06)}
-.strength-card .sicon{width:48px;height:48px;border-radius:12px;background:var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:#fff}
-.strength-card .sicon svg{width:24px;height:24px}
-.strength-card .sval{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1;margin-bottom:8px}
-.strength-card h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}
-.strength-card p{font-size:13.5px;color:var(--muted);line-height:1.55}
+/* Strengths Section — 탭 레이아웃 */
+.strengths-section{padding:120px 0;background:var(--paper-2)}
+.strengths-tabs{display:grid;grid-template-columns:340px 1fr;gap:32px;margin-top:56px;align-items:stretch}
+.strength-menu{display:flex;flex-direction:column;gap:12px}
+.strength-tab{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:18px 26px;cursor:pointer;transition:all .25s;font-family:inherit;text-align:left;font-size:15px;color:var(--ink-2);width:100%}
+.strength-tab:hover{border-color:var(--ink-3);transform:translateX(4px)}
+.strength-tab.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.strength-tab .st-num{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0.05em;flex-shrink:0}
+.strength-tab.active .st-num{color:rgba(255,255,255,0.5)}
+.strength-tab .st-title{flex:1;font-weight:600;color:var(--ink);letter-spacing:-0.01em;line-height:1.4}
+.strength-tab.active .st-title{color:#fff}
+.strength-tab .st-check{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:transparent;flex-shrink:0}
+.strength-tab.active .st-check{background:#fff;color:var(--ink)}
+.strength-panels{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-height:440px}
+.strength-panel{position:absolute;inset:0;display:none;grid-template-columns:1fr 1fr;gap:0}
+.strength-panel.active{display:grid;animation:fadePanel .5s ease}
+@keyframes fadePanel{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.strength-panel .sp-content{padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
+.strength-panel .sp-icon{width:52px;height:52px;border-radius:12px;background:var(--paper-2);display:flex;align-items:center;justify-content:center;margin-bottom:24px;color:var(--ink)}
+.strength-panel .sp-icon svg{width:26px;height:26px}
+.strength-panel .sp-headline{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-0.025em;line-height:1.3;color:var(--ink);margin-bottom:18px}
+.strength-panel .sp-body{font-size:15px;color:var(--ink-3);line-height:1.75;margin-bottom:16px}
+.strength-panel .sp-note{font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:26px}
+.strength-panel .sp-cta{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--accent);padding:12px 22px;border:1.5px solid var(--accent);border-radius:100px;text-decoration:none;transition:all .2s;align-self:flex-start}
+.strength-panel .sp-cta:hover{background:var(--accent);color:#fff}
+.strength-panel .sp-photo{background-size:cover;background-position:center;background-color:var(--paper-2);min-height:440px}
 
 /* Products section — 슬라이더 + 사진 카드 */
 .products-section{padding:120px 0;background:var(--paper-2);overflow:hidden}
@@ -701,7 +755,12 @@ footer .logo{color:#fff}
   .product-photo{height:180px}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px}
   .stat-card{border-right:0}
-  .strengths-grid{grid-template-columns:repeat(2,1fr)}
+  .strengths-section{padding:80px 0}
+  .strengths-tabs{grid-template-columns:1fr;gap:20px}
+  .strength-panels{min-height:auto}
+  .strength-panel.active{grid-template-columns:1fr;display:flex;flex-direction:column}
+  .strength-panel .sp-photo{min-height:240px;order:-1}
+  .strength-panel .sp-content{padding:32px 28px}
   .region-grid{grid-template-columns:repeat(4,1fr)}
   .features-grid{grid-template-columns:1fr}
   .feature-cell{border-right:0}
@@ -726,7 +785,8 @@ footer .logo{color:#fff}
   .foot-bottom{flex-direction:column;align-items:flex-start}
   .floating-stack{bottom:20px;right:20px;gap:8px}
   .floating-call{padding:14px 18px;font-size:13px}
-  .strengths-grid{grid-template-columns:1fr}
+  .strength-tab{padding:16px 22px;font-size:14px}
+  .strength-panel .sp-headline{font-size:22px}
   .related-grid{grid-template-columns:1fr}
   .index-grid.cols-4,.index-grid.cols-3{grid-template-columns:1fr}
   .cta-phone{font-size:22px;padding:18px 32px;gap:10px}
@@ -755,6 +815,7 @@ const ICONS = {
   box: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
   coin: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>`,
   wrench: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  briefcase: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
   pen: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
   chart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>`,
   plug: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 2v6"/><path d="M15 2v6"/><path d="M8 8h8a2 2 0 0 1 2 2v3a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4v-3a2 2 0 0 1 2-2Z"/><path d="M12 17v5"/></svg>`,
@@ -855,7 +916,8 @@ function renderHome() {
   const productCards = PRODUCTS.map(p => `<a href="/product/${p.slug}" class="product-card"><div class="product-photo" style="background-image:url('${p.photo}')"></div><div class="product-body"><span class="product-tag">${p.emoji} ${p.name}</span><h3>${p.name}</h3><p>${p.shortDesc}</p><span class="product-more">자세히 보기</span></div></a>`).join('');
 
   const strengthIcons = [ICONS.target, ICONS.bolt, ICONS.coin, ICONS.wrench];
-  const strengths = STRENGTHS.map((s, i) => `<div class="strength-card"><div class="sicon">${strengthIcons[i] || ICONS.star}</div><div class="sval">${s.stat}</div><h4>${s.title}</h4><p>${s.desc}</p></div>`).join('');
+  const strengthsMenu = STRENGTHS.map((s, i) => `<button class="strength-tab${i === 0 ? ' active' : ''}" data-tab="${i}" onclick="selectStrength(${i})"><span class="st-num">${s.num}</span><span class="st-title">${s.menuTitle}</span><span class="st-check">✓</span></button>`).join('');
+  const strengthsPanels = STRENGTHS.map((s, i) => `<div class="strength-panel${i === 0 ? ' active' : ''}" data-panel="${i}"><div class="sp-content"><div class="sp-icon">${ICONS.briefcase || ICONS.star}</div><h3 class="sp-headline">${s.headline}</h3><p class="sp-body">${s.body}</p><p class="sp-note">${s.note}</p><a href="/contact" class="sp-cta">지금 상담받기 →</a></div><div class="sp-photo" style="background-image:url('${s.photo}')"></div></div>`).join('');
 
   const featureIcons = [ICONS.layout, ICONS.chart, ICONS.wifi, ICONS.brain, ICONS.clipboard, ICONS.chat];
   const smartFeatures = SMART_FEATURES.map((f, i) => `<div class="feature-cell"><div class="ficon">${featureIcons[i] || ICONS.star}</div><h4>${f.title}</h4><p>${f.desc}</p></div>`).join('');
@@ -894,15 +956,48 @@ function renderHome() {
 </div>
 </section>
 
-<section class="block">
+<section class="block strengths-section">
 <div class="container">
-<div class="section-head" style="margin-bottom:20px">
+<div class="section-head" style="margin-bottom:20px;text-align:center">
 <div class="section-tag">Why ${SITE.brandName}</div>
-<h2 class="section-title">전국 사장님이 선택한<br><em>${SITE.brandNameKo}의 강점</em></h2>
+<h2 class="section-title" style="text-align:center">전국 사장님이 선택한<br><em>${SITE.brandNameKo}의 강점</em></h2>
 </div>
-<div class="strengths-grid">${strengths}</div>
+<div class="strengths-tabs" id="strengthsTabs">
+<div class="strength-menu">${strengthsMenu}</div>
+<div class="strength-panels">${strengthsPanels}</div>
+</div>
 </div>
 </section>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.strength-tab');
+  var panels = document.querySelectorAll('.strength-panel');
+  var wrap = document.getElementById('strengthsTabs');
+  if(!tabs.length || !panels.length || !wrap) return;
+
+  var current = 0;
+  var autoTimer = null;
+  var paused = false;
+
+  function show(idx){
+    if(idx < 0) idx = tabs.length - 1;
+    if(idx >= tabs.length) idx = 0;
+    current = idx;
+    tabs.forEach(function(t, i){ t.classList.toggle('active', i === idx); });
+    panels.forEach(function(p, i){ p.classList.toggle('active', i === idx); });
+  }
+
+  window.selectStrength = function(idx){ show(idx); restartAuto(); };
+
+  function startAuto(){ autoTimer = setInterval(function(){ if(!paused) show(current + 1); }, 5000); }
+  function restartAuto(){ if(autoTimer) clearInterval(autoTimer); startAuto(); }
+
+  wrap.addEventListener('mouseenter', function(){ paused = true; });
+  wrap.addEventListener('mouseleave', function(){ paused = false; });
+  startAuto();
+})();
+</script>
 
 <section class="products-section" id="products">
 <div class="container">
