@@ -23,8 +23,8 @@
 
 // [01] SITE 기본 설정 =========================================
 const SITE = {
-  brandName: 'opsoult',
-  brandNameKo: '옵솔트',
+  brandName: '오페리오솔루션',
+  brandNameKo: '오페리오솔루션',
   domain: 'https://opsoult.com',
   phone: '010-4827-5592',
   phoneDisplay: '010-4827-5592',
@@ -204,7 +204,7 @@ const PRODUCTS = [
     slug: 'card-terminal',
     name: '카드단말기', emoji: '💳',
     shortDesc: '유선·무선·블루투스·토스단말기까지. VAN사 수수료 비교로 최저가 제공.',
-    longDesc: '카드단말기는 매장 결제의 기본이자 핵심 장비입니다. 옵솔트는 10개 이상의 VAN사와 협력해 매장 매출 규모와 업종에 맞는 최적의 수수료 조건을 제안합니다. 유선·무선·블루투스·토스 단말기 등 전 기종을 취급하며, 당일 출장 설치와 사용법 교육까지 원스톱으로 제공합니다. 기존 단말기 교체 시에는 VAN사 비교를 통해 월 평균 3-7만원, 연 40-80만원의 수수료를 절약할 수 있습니다.',
+    longDesc: '카드단말기는 매장 결제의 기본이자 핵심 장비입니다. 오페리오솔루션는 10개 이상의 VAN사와 협력해 매장 매출 규모와 업종에 맞는 최적의 수수료 조건을 제안합니다. 유선·무선·블루투스·토스 단말기 등 전 기종을 취급하며, 당일 출장 설치와 사용법 교육까지 원스톱으로 제공합니다. 기존 단말기 교체 시에는 VAN사 비교를 통해 월 평균 3-7만원, 연 40-80만원의 수수료를 절약할 수 있습니다.',
     keywords: '카드단말기 설치, VAN사 비교, 카드결제기, 신용카드 단말기',
     features: [
       { title: 'VAN사 수수료 비교', desc: '10개 이상 VAN사 중 매장에 유리한 조건 선별' },
@@ -260,7 +260,7 @@ const PRODUCTS = [
     slug: 'cctv',
     name: 'CCTV', emoji: '📷',
     shortDesc: 'HD~4K 고화질, AI 움직임 감지, 스마트폰 원격 모니터링까지.',
-    longDesc: '매장 CCTV는 도난·사고 방지, 직원 관리, 보험료 절감을 위한 필수 장비입니다. 옵솔트는 HD부터 4K까지 다양한 화질 선택과 AI 움직임 감지, 스마트폰 원격 확인, POS 연동 영상 매칭까지 제공합니다. 결제 시점 영상 자동 매칭으로 매출 누락을 사전 방지하며, CCTV 설치 매장은 화재·도난 보험료 10-20% 할인 혜택을 받을 수 있습니다.',
+    longDesc: '매장 CCTV는 도난·사고 방지, 직원 관리, 보험료 절감을 위한 필수 장비입니다. 오페리오솔루션는 HD부터 4K까지 다양한 화질 선택과 AI 움직임 감지, 스마트폰 원격 확인, POS 연동 영상 매칭까지 제공합니다. 결제 시점 영상 자동 매칭으로 매출 누락을 사전 방지하며, CCTV 설치 매장은 화재·도난 보험료 10-20% 할인 혜택을 받을 수 있습니다.',
     keywords: 'CCTV 설치, 매장 CCTV, 원격 감시, 4K CCTV, AI CCTV',
     features: [
       { title: '스마트폰 원격 확인', desc: '언제 어디서나 매장 실시간 확인' },
@@ -288,7 +288,7 @@ const PRODUCTS = [
     slug: 'removal',
     name: '매장철거', emoji: '🔨',
     shortDesc: '매장·사무실 철거 + 원상복구 원스톱. 보증금 반환까지 책임.',
-    longDesc: '매장 철거는 폐업·이전 시 보증금 반환에 직결되는 중요한 공정입니다. 옵솔트는 정밀 현장 분석부터 철거·원상복구·폐기물 처리까지 원스톱으로 처리하며, 시공 보증서 발급으로 사후 책임까지 확실히 합니다. 추가 비용 없는 정찰제 운영과 실시간 공정 보고로 임대인과의 분쟁을 사전 예방합니다.',
+    longDesc: '매장 철거는 폐업·이전 시 보증금 반환에 직결되는 중요한 공정입니다. 오페리오솔루션는 정밀 현장 분석부터 철거·원상복구·폐기물 처리까지 원스톱으로 처리하며, 시공 보증서 발급으로 사후 책임까지 확실히 합니다. 추가 비용 없는 정찰제 운영과 실시간 공정 보고로 임대인과의 분쟁을 사전 예방합니다.',
     keywords: '매장 철거, 원상복구, 사무실 철거, 상가 철거',
     features: [
       { title: '정확한 정찰 견적', desc: '현장 실측 후 확정, 추가비 없음' },
@@ -322,6 +322,59 @@ const WHY_US = [
   { icon: '📦', title: '전 제품 원스톱 통합 설치', desc: '카드단말기부터 CCTV까지 매장에 필요한 모든 장비를 한번에 설치합니다.' },
   { icon: '💰', title: 'VAN사 수수료 비교·절감', desc: 'VAN사별 수수료를 비교 분석해 가장 유리한 조건을 찾아드립니다. 연 수십만원 절약.' },
   { icon: '🔧', title: '설치 후 A/S·유지보수 보장', desc: '장애 발생 시 원격 지원으로 빠르게 해결하며, 필요 시 현장 출동합니다.' },
+];
+
+// [04-1] INDUSTRIES 업종 데이터 ==============================
+// 새 업종 추가 시 slug는 영문 소문자. 키워드는 SEO 에 노출됨.
+const INDUSTRIES = [
+  {
+    slug: 'restaurant', name: '음식점', emoji: '🍽️',
+    shortDesc: '일반식당·한식·중식·분식·주점 — 주문부터 결제까지 회전율을 끌어올리는 조합',
+    recommended: ['pos', 'card-terminal', 'table-order', 'kiosk', 'cctv'],
+    description: '좌석 회전율과 주문 정확도가 매출에 직결되는 음식점에는 POS · 카드단말기 · 테이블오더 · 키오스크 조합이 가장 효과적입니다. 주방 프린터 자동 연동으로 주문 누락을 방지하고, 배달앱 통합 매출 관리로 정산까지 한 번에 처리합니다.',
+  },
+  {
+    slug: 'cafe', name: '카페·디저트', emoji: '☕',
+    shortDesc: '스페셜티 카페·디저트샵·베이커리 — 감성 매장에 맞는 깔끔한 결제 동선',
+    recommended: ['pos', 'kiosk', 'card-terminal', 'table-order'],
+    description: '피크타임 대기열 관리가 핵심인 카페에는 미니 키오스크 · POS · 무선 단말기 조합을 추천합니다. 포장·매장·배달 주문 분리, 스탬프·포인트 적립 연동까지 완벽 지원합니다.',
+  },
+  {
+    slug: 'convenience-store', name: '편의점·소매점', emoji: '🏪',
+    shortDesc: '편의점·슈퍼·잡화점·무인매장 — 재고·매출 관리 자동화 솔루션',
+    recommended: ['pos', 'card-terminal', 'cctv', 'vending'],
+    description: '다품목 재고 관리가 중요한 소매 매장에는 POS 재고 자동 차감 · 바코드 스캐너 · CCTV 연동 패키지가 효과적입니다. 24시간 무인 운영도 가능합니다.',
+  },
+  {
+    slug: 'salon', name: '미용실·네일', emoji: '💇',
+    shortDesc: '헤어살롱·네일샵·에스테틱·피부관리 — 예약과 결제가 매끄럽게',
+    recommended: ['pos', 'card-terminal', 'table-order'],
+    description: '예약 관리와 회원 포인트가 중요한 미용 업종은 POS 회원 관리 · 카드단말기 · 결제 연동 예약 시스템 조합이 유리합니다. 시술별 매출 분석으로 수익성 높은 메뉴를 파악할 수 있습니다.',
+  },
+  {
+    slug: 'franchise', name: '프랜차이즈', emoji: '🏢',
+    shortDesc: '다점포 운영·본사 관리 — 통합 매출·재고 대시보드',
+    recommended: ['pos', 'kiosk', 'table-order', 'cctv', 'card-terminal'],
+    description: '프랜차이즈 본사 또는 다점포 운영자는 매장별 매출·재고 통합 관리가 핵심입니다. 본사 대시보드에서 전 매장 실시간 확인, 신규 매장 오픈 시 풀패키지 원스톱 설치를 제공합니다.',
+  },
+  {
+    slug: 'academy', name: '학원·스터디카페', emoji: '📚',
+    shortDesc: '학원·독서실·스터디카페·무인 스터디룸 — 출입·결제 자동화',
+    recommended: ['kiosk', 'card-terminal', 'cctv', 'vending'],
+    description: '무인 운영이 확산되는 스터디카페·독서실에는 키오스크 · 자동판매기 · CCTV 조합이 필수입니다. 좌석 예약, 시간제 결제, 보안 모니터링까지 한 번에 구축할 수 있습니다.',
+  },
+  {
+    slug: 'fitness', name: '헬스장·필라테스', emoji: '💪',
+    shortDesc: '헬스장·필라테스·요가·PT — 회원권 결제와 출입 관리',
+    recommended: ['pos', 'card-terminal', 'kiosk', 'cctv'],
+    description: '회원권 관리가 매출의 핵심인 피트니스 업종은 POS 회원 관리 · 자동 결제 · 출입 연동 시스템을 권장합니다. 락커·라커룸 CCTV 설치로 회원 신뢰도도 높일 수 있습니다.',
+  },
+  {
+    slug: 'medical', name: '병원·약국', emoji: '🏥',
+    shortDesc: '병원·의원·약국·한의원 — 접수부터 수납까지 효율화',
+    recommended: ['pos', 'kiosk', 'card-terminal', 'cctv'],
+    description: '접수·수납 대기가 긴 의료 업종에는 키오스크 · 카드단말기 · CCTV 패키지가 효과적입니다. 환자 개인정보 보호와 영상 기록으로 의료 분쟁 대응까지 가능합니다.',
+  },
 ];
 
 // [05] REVIEWS 후기 (12개) ====================================
@@ -392,8 +445,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 /* Hero */
 .hero{padding:90px 0 100px;position:relative;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
-.hero h1{font-family:'Fraunces',serif;font-size:clamp(40px,5.4vw,72px);line-height:1.02;letter-spacing:-0.035em;font-weight:600;margin:22px 0 26px;color:var(--ink)}
-.hero h1 em{font-style:italic;font-weight:600}
+.hero h1{font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(40px,5.4vw,72px);line-height:1.15;letter-spacing:-0.035em;font-weight:700;margin:22px 0 26px;color:var(--ink)}
+.hero h1 em{font-style:normal;font-weight:700;color:var(--accent)}
 .hero h1 .hl{position:relative;display:inline-block;white-space:nowrap}
 .hero h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:6%;height:14%;background:var(--ink);opacity:.08;z-index:-1;border-radius:4px}
 .hero-sub{font-size:17.5px;color:var(--ink-3);line-height:1.65;max-width:500px;margin-bottom:36px}
@@ -506,8 +559,9 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .cta-section > *{position:relative;z-index:1}
 .cta-section .eyebrow{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff}
 .cta-section .eyebrow::before{background:#fff}
-.cta-section h2{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,56px);font-weight:600;letter-spacing:-0.03em;line-height:1.08;margin:20px 0 18px}
-.cta-section h2 em{font-style:italic}
+.cta-section h2{font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(26px,3.6vw,38px);font-weight:500;letter-spacing:-0.02em;line-height:1.45;margin:20px 0 36px;color:#fff}
+.cta-section h2 .cta-lead-accent{display:inline-block;margin-top:16px;font-weight:700;color:#fff}
+.cta-section h2 em{font-style:normal}
 .cta-section p.sub{font-size:17px;color:var(--muted-2);max-width:560px;margin:0 auto 40px}
 .cta-phone{display:inline-flex;align-items:center;gap:14px;background:#fff;color:var(--ink);padding:22px 44px;border-radius:100px;font-family:'Fraunces',serif;font-size:26px;font-weight:700;letter-spacing:-0.01em;transition:transform .2s,box-shadow .2s}
 .cta-phone:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
@@ -519,7 +573,7 @@ footer{background:#000;color:#cbd5e1;padding:80px 0 40px}
 footer .logo{color:#fff}
 footer .logo-dot{background:#fff}
 footer .logo-dot::after{background:#000}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:50px;margin-bottom:56px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:56px}
 .foot-brand p{font-size:14px;color:#94a3b8;margin-top:16px;max-width:280px;line-height:1.7}
 .foot-col h6{font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:20px}
 .foot-col ul{list-style:none}
@@ -655,6 +709,11 @@ const ICONS = {
   fork: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M18 2v20"/><path d="M6 2v7a3 3 0 0 0 6 0V2"/><path d="M9 2v7"/></svg>`,
   star: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2" fill="currentColor"/></svg>`,
   phone: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
+  layout: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>`,
+  wifi: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>`,
+  brain: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2z"/></svg>`,
+  clipboard: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>`,
+  chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="8" y1="10" x2="8.01" y2="10"/><line x1="12" y1="10" x2="12.01" y2="10"/><line x1="16" y1="10" x2="16.01" y2="10"/></svg>`,
 };
 
 function getProductIcon(slug) {
@@ -705,12 +764,12 @@ function renderHeader() {
 <div class="container nav">
 <a href="/" class="logo"><span class="logo-dot"></span>${SITE.brandName}</a>
 <ul class="nav-menu">
-<li><a href="/product">제품</a></li>
 <li><a href="/region">지역별 설치</a></li>
-<li><a href="/#features">특장점</a></li>
-<li><a href="/#reviews">후기</a></li>
+<li><a href="/product">제품 안내</a></li>
+<li><a href="/industry">업종별</a></li>
+<li><a href="/#contact">문의하기</a></li>
 </ul>
-<a href="tel:${SITE.phone}" class="nav-cta">${ICONS.phone.replace('<svg ', '<svg style="width:14px;height:14px" ')} 무료 상담</a>
+<a href="tel:${SITE.phone}" class="nav-cta">${ICONS.phone.replace('<svg ', '<svg style="width:14px;height:14px" ')} 무료 상담 ${SITE.phoneDisplay}</a>
 </div>
 </header>`;
 }
@@ -718,6 +777,7 @@ function renderHeader() {
 function renderFooter() {
   const topProducts = PRODUCTS.slice(0, 4).map(p => `<li><a href="/product/${p.slug}">${p.name}</a></li>`).join('');
   const topRegions = REGIONS.slice(0, 4).map(r => `<li><a href="/region/${r.slug}">${r.name}</a></li>`).join('');
+  const topIndustries = INDUSTRIES.slice(0, 4).map(i => `<li><a href="/industry/${i.slug}">${i.name}</a></li>`).join('');
   return `<footer>
 <div class="container">
 <div class="foot-grid">
@@ -732,6 +792,10 @@ function renderFooter() {
 <div class="foot-col">
 <h6>지역</h6>
 <ul>${topRegions}<li><a href="/region">전체 보기</a></li></ul>
+</div>
+<div class="foot-col">
+<h6>업종</h6>
+<ul>${topIndustries}<li><a href="/industry">전체 보기</a></li></ul>
 </div>
 <div class="foot-col">
 <h6>고객센터</h6>
@@ -762,7 +826,7 @@ function renderHome() {
   const strengthIcons = [ICONS.target, ICONS.bolt, ICONS.coin, ICONS.wrench];
   const strengths = STRENGTHS.map((s, i) => `<div class="strength-card"><div class="sicon">${strengthIcons[i] || ICONS.star}</div><div class="sval">${s.stat}</div><h4>${s.title}</h4><p>${s.desc}</p></div>`).join('');
 
-  const featureIcons = [ICONS.pen, ICONS.chart, ICONS.plug, ICONS.bulb, ICONS.fork, ICONS.star];
+  const featureIcons = [ICONS.layout, ICONS.chart, ICONS.wifi, ICONS.brain, ICONS.clipboard, ICONS.chat];
   const smartFeatures = SMART_FEATURES.map((f, i) => `<div class="feature-cell"><div class="ficon">${featureIcons[i] || ICONS.star}</div><h4>${f.title}</h4><p>${f.desc}</p></div>`).join('');
 
   const whyIcons = [ICONS.target, ICONS.box, ICONS.coin, ICONS.wrench];
@@ -881,8 +945,7 @@ ${ICONS.kiosk}
 <section class="cta-section" id="contact">
 <div class="container">
 <span class="eyebrow">무료 상담 · 빠른 설치</span>
-<h2>지금 전화하면<br><em>오늘 견적</em> 받습니다</h2>
-<p class="sub">카드단말기·포스기·키오스크·CCTV·테이블오더 — 매장에 필요한 모든 장비를 한 통화로 해결하세요.</p>
+<h2 class="cta-lead">카드단말기·포스기·키오스크·<br>CCTV·테이블오더<br><span class="cta-lead-accent">매장에 필요한 모든 장비,<br>한 통화로 해결하세요</span></h2>
 <a href="tel:${SITE.phone}" class="cta-phone">${ICONS.phone} ${SITE.phoneDisplay}</a>
 <div class="cta-hours">${SITE.businessHours} · 카카오톡 상담도 가능합니다</div>
 </div>
@@ -1187,6 +1250,89 @@ function renderProductIndex() {
   });
 }
 
+// 업종별 인덱스 (/industry)
+function renderIndustryIndex() {
+  const cards = INDUSTRIES.map(i => `<a href="/industry/${i.slug}" class="index-card"><div class="big">${i.emoji}</div><h3>${i.name}</h3><p>${i.shortDesc}</p></a>`).join('');
+  const body = `
+<section class="index-header">
+<div class="container">
+<div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span>업종별</div>
+<h1>업종별 <em>맞춤 설치 가이드</em></h1>
+<p>음식점·카페·편의점·미용실 등 업종마다 필요한 장비가 다릅니다. 업종별 추천 조합과 설치 사례를 확인하세요.</p>
+</div>
+</section>
+<section class="container">
+<div class="index-grid cols-4">${cards}</div>
+</section>
+`;
+  return htmlWrap({
+    title: '업종별 맞춤 설치 · 음식점·카페·편의점·프랜차이즈',
+    description: '업종별 매장 설비 추천. 음식점·카페·편의점·미용실·프랜차이즈·학원·병원 맞춤 솔루션.',
+    canonical: `${SITE.domain}/industry`,
+    body,
+  });
+}
+
+// 업종별 상세 (/industry/{slug})
+function renderIndustryPage(industry) {
+  const recommendedProducts = industry.recommended
+    .map(slug => PRODUCTS.find(p => p.slug === slug))
+    .filter(Boolean);
+  const productCards = recommendedProducts.map(p => `<a href="/product/${p.slug}" class="index-card"><div class="big">${p.emoji}</div><h3>${p.name}</h3><p>${p.shortDesc}</p></a>`).join('');
+
+  const body = `
+<section class="detail-hero">
+<div class="container">
+<div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/industry">업종별</a><span class="sep">›</span>${industry.name}</div>
+<h1 class="detail-title">${industry.emoji} ${industry.name} <em>맞춤 설치</em></h1>
+<p class="detail-sub">${industry.shortDesc}</p>
+</div>
+</section>
+
+<section class="detail-body">
+<div class="container">
+<div class="prose">
+<h2>${industry.name}에 맞는 설치 가이드</h2>
+<p>${industry.description}</p>
+
+<p>${SITE.brandNameKo}는 ${industry.name} 업종 수백 곳의 설치 경험을 바탕으로, 매장 규모·동선·주요 시간대를 분석해 가장 효과적인 장비 조합을 제안합니다. 초기 투자비용과 월 운영비용을 모두 고려한 합리적 견적을 받아보세요.</p>
+
+<h2>${industry.name} 추천 장비 조합</h2>
+<p>아래는 ${industry.name} 매장에서 가장 많이 설치되는 장비입니다. 매장 상황에 따라 필요한 것만 골라 구성할 수도 있습니다.</p>
+
+<div class="index-grid cols-3" style="margin:32px 0">${productCards}</div>
+
+<h2>설치 절차</h2>
+<ol>
+<li><strong>무료 상담</strong> — ${SITE.phoneDisplay} 또는 카카오톡으로 매장 정보(업종·평수·예상 좌석 수)를 알려주세요.</li>
+<li><strong>현장 방문 견적</strong> — 담당 엔지니어가 매장 동선과 네트워크·전기 조건을 점검합니다.</li>
+<li><strong>맞춤 패키지 제안</strong> — ${industry.name} 특성에 맞춘 최적 조합을 여러 옵션으로 제시합니다.</li>
+<li><strong>설치·교육</strong> — 짧게는 당일, 풀패키지도 1-2일 내 설치 완료 후 사용 교육까지 진행합니다.</li>
+<li><strong>사후 관리</strong> — A/S 발생 시 원격 우선 대응, 필요 시 현장 출동합니다.</li>
+</ol>
+
+<div class="info-card" style="background:var(--accent);color:#fff;margin-top:48px">
+<h4 style="color:#fff">📞 ${industry.name} 설치 문의</h4>
+<p style="font-size:17px;margin:12px 0">
+<strong style="color:#fff;font-size:28px">${SITE.phoneDisplay}</strong>
+</p>
+<p style="opacity:.9;font-size:14px">${industry.name} 전문 상담원이 무료로 맞춤 견적을 드립니다.</p>
+</div>
+</div>
+</div>
+</section>
+`;
+
+  return htmlWrap({
+    title: `${industry.name} 매장 설비 설치 · 추천 장비 조합`,
+    description: `${industry.name} 맞춤 설치. ${industry.shortDesc}`,
+    canonical: `${SITE.domain}/industry/${industry.slug}`,
+    body,
+  });
+}
+
+function findIndustry(slug) { return INDUSTRIES.find(i => i.slug === slug); }
+
 // [13] sitemap.xml ============================================
 function renderSitemap() {
   const today = new Date().toISOString().slice(0, 10);
@@ -1194,11 +1340,15 @@ function renderSitemap() {
   urls.push({ loc: SITE.domain + '/', priority: '1.0' });
   urls.push({ loc: SITE.domain + '/region', priority: '0.9' });
   urls.push({ loc: SITE.domain + '/product', priority: '0.9' });
+  urls.push({ loc: SITE.domain + '/industry', priority: '0.9' });
   for (const r of REGIONS) {
     urls.push({ loc: `${SITE.domain}/region/${r.slug}`, priority: '0.8' });
   }
   for (const p of PRODUCTS) {
     urls.push({ loc: `${SITE.domain}/product/${p.slug}`, priority: '0.8' });
+  }
+  for (const i of INDUSTRIES) {
+    urls.push({ loc: `${SITE.domain}/industry/${i.slug}`, priority: '0.8' });
   }
   for (const r of REGIONS) {
     for (const p of PRODUCTS) {
@@ -1310,6 +1460,18 @@ export default {
     // 제품 인덱스
     if (pathname === '/product') {
       return new Response(renderProductIndex(), { headers: htmlHeaders });
+    }
+
+    // 업종별 인덱스
+    if (pathname === '/industry') {
+      return new Response(renderIndustryIndex(), { headers: htmlHeaders });
+    }
+
+    // 업종별 상세 /industry/{slug}
+    const industryMatch = pathname.match(/^\/industry\/([a-z-]+)$/);
+    if (industryMatch) {
+      const industry = findIndustry(industryMatch[1]);
+      if (industry) return new Response(renderIndustryPage(industry), { headers: htmlHeaders });
     }
 
     // 지역 상세 /region/{slug}
