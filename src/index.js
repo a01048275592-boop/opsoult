@@ -544,15 +544,25 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .why-item p{font-size:14.5px;color:var(--muted);line-height:1.65}
 
 /* Reviews */
-.reviews-section{padding:120px 0}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px}
-.review-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:all .2s}
-.review-card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.reviews-section{padding:120px 0;overflow:hidden}
+.reviews-slider{position:relative;max-width:1200px;margin:56px auto 0;padding:0 60px}
+.reviews-viewport{overflow:hidden;margin:0 -10px}
+.reviews-track{display:flex;gap:20px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;padding:8px 10px}
+.review-card{flex:0 0 calc((100% - 40px) / 3);background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:border-color .2s,transform .2s,box-shadow .2s;min-width:0}
+.review-card:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 12px 30px rgba(15,23,42,0.06)}
 .review-stars{color:var(--ink);font-size:14px;margin-bottom:16px;letter-spacing:3px}
 .review-badge{display:inline-block;padding:4px 12px;background:var(--paper-2);color:var(--ink);border-radius:100px;font-size:11.5px;font-weight:600;margin-bottom:14px;letter-spacing:.02em}
 .review-card h5{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:17px;font-weight:600;margin-bottom:10px;color:var(--ink);line-height:1.3;letter-spacing:-0.01em}
 .review-card p{font-size:14px;color:var(--muted);line-height:1.65;margin-bottom:18px}
 .review-author{padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-3);font-weight:500}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--ink);font-size:22px;font-family:inherit;cursor:pointer;z-index:2;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(15,23,42,0.08);transition:all .2s;line-height:1;padding:0 0 3px}
+.slider-arrow:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-50%) scale(1.05)}
+.slider-prev{left:0}
+.slider-next{right:0}
+.slider-dots{display:flex;gap:8px;justify-content:center;margin-top:36px}
+.slider-dot{width:8px;height:8px;border-radius:50%;background:var(--line-2);border:0;cursor:pointer;transition:all .25s;padding:0}
+.slider-dot.active{background:var(--ink);width:24px;border-radius:4px}
+.slider-dot:hover{background:var(--ink-3)}
 
 /* CTA block */
 .cta-section{background:var(--ink);color:#fff;padding:110px 0;text-align:center;position:relative;overflow:hidden}
@@ -653,6 +663,7 @@ footer .logo{color:#fff}
 .contact-phone-card .pt a{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:24px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;display:inline-block;margin-bottom:2px}
 .contact-phone-card .pt .ps{font-size:13px;color:var(--muted)}
 .contact-form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px}
+.contact-form-card svg{max-width:100%;max-height:28px}
 .contact-form-card h2{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:19px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
 .contact-form-card h2::before{content:"";display:inline-block;width:4px;height:20px;background:var(--accent,#e8512c);border-radius:2px}
 .field{margin-bottom:18px}
@@ -669,9 +680,6 @@ footer .logo{color:#fff}
 .submit-btn{width:100%;padding:16px;background:var(--ink);color:#fff;border:0;border-radius:12px;font-size:16px;font-weight:600;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,sans-serif;letter-spacing:-0.01em;cursor:pointer;transition:all .2s;margin-top:8px}
 .submit-btn:hover{background:var(--ink-2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(15,23,42,0.15)}
 .submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-.form-bottom-note{text-align:center;margin-top:22px;padding-top:22px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted);line-height:1.7}
-.form-bottom-note strong{color:var(--ink-2)}
-.form-bottom-note .quick{color:var(--ink);font-weight:600}
 .privacy-box{background:var(--paper-2);border-radius:10px;padding:16px 18px;margin-top:18px;font-size:12.5px;color:var(--muted);line-height:1.65}
 .privacy-box .title{color:var(--ink-2);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px}
 .privacy-box p{margin:0;line-height:1.7}
@@ -701,7 +709,9 @@ footer .logo{color:#fff}
   .features-grid{grid-template-columns:1fr}
   .feature-cell{border-right:0}
   .feature-cell:nth-last-child(-n+1){border-bottom:0}
-  .reviews-grid{grid-template-columns:1fr;gap:14px}
+  .reviews-slider{padding:0 48px}
+  .review-card{flex:0 0 calc((100% - 20px) / 2)}
+  .slider-arrow{width:40px;height:40px;font-size:20px}
   .why-grid{grid-template-columns:1fr}
   .nav-menu{display:none}
   .nav{gap:12px}
@@ -724,6 +734,10 @@ footer .logo{color:#fff}
   .trust-item .tn{font-size:22px}
   .cta-phone{font-size:22px;padding:18px 32px;gap:10px}
   .cta-phone svg{width:22px;height:22px}
+  .reviews-slider{padding:0 8px}
+  .review-card{flex:0 0 100%;padding:24px}
+  .slider-arrow{display:none}
+  .slider-dots{margin-top:24px}
 }
 `;
 
@@ -852,7 +866,7 @@ function renderHome() {
   const whyIcons = [ICONS.target, ICONS.box, ICONS.coin, ICONS.wrench];
   const whyUs = WHY_US.map((w, i) => `<div class="why-item"><div class="wicon">${whyIcons[i] || ICONS.star}</div><div><h4>${w.title}</h4><p>${w.desc}</p></div></div>`).join('');
 
-  const reviews = REVIEWS.slice(0, 6).map(r => `<div class="review-card"><div class="review-stars">★★★★★</div><span class="review-badge">${r.badge}</span><h5>${r.title}</h5><p>${r.body}</p><div class="review-author">— ${r.author}</div></div>`).join('');
+  const reviews = REVIEWS.map(r => `<div class="review-card"><div class="review-stars">★★★★★</div><span class="review-badge">${r.badge}</span><h5>${r.title}</h5><p>${r.body}</p><div class="review-author">— ${r.author}</div></div>`).join('');
 
   const body = `
 <section class="hero">
@@ -955,12 +969,101 @@ ${ICONS.kiosk}
 <div class="container">
 <div class="section-head">
 <div class="section-tag">Real Reviews</div>
-<h2 class="section-title">전국 사장님들의<br><em>생생한 설치 후기</em></h2>
-<p class="section-desc">매장 매출 상승부터 인건비 절감까지. 실제 사용 경험을 들려드립니다.</p>
+<h2 class="section-title">사장님들이<br><em>먼저 말해주십니다</em></h2>
+<p class="section-desc">서비스 후 달라진 매장 이야기 · 254,692건 중 직접 전해주신 몇 줄</p>
 </div>
-<div class="reviews-grid">${reviews}</div>
+</div>
+<div class="reviews-slider" id="reviewsSlider">
+<button class="slider-arrow slider-prev" aria-label="이전 후기" onclick="slideReviews(-1)">‹</button>
+<div class="reviews-viewport">
+<div class="reviews-track" id="reviewsTrack">${reviews}</div>
+</div>
+<button class="slider-arrow slider-next" aria-label="다음 후기" onclick="slideReviews(1)">›</button>
+<div class="slider-dots" id="sliderDots"></div>
 </div>
 </section>
+
+<script>
+(function(){
+  var track = document.getElementById('reviewsTrack');
+  var viewport = document.querySelector('.reviews-viewport');
+  var slider = document.getElementById('reviewsSlider');
+  var dotsWrap = document.getElementById('sliderDots');
+  if(!track || !viewport) return;
+  var cards = track.children;
+  if(cards.length === 0) return;
+
+  var current = 0;
+  var autoTimer = null;
+  var paused = false;
+
+  function cardsPerView(){
+    var w = viewport.offsetWidth;
+    if(w < 640) return 1;
+    if(w < 960) return 2;
+    return 3;
+  }
+
+  function totalPages(){
+    return Math.max(1, cards.length - cardsPerView() + 1);
+  }
+
+  function go(idx){
+    var max = totalPages() - 1;
+    if(idx < 0) idx = max;
+    if(idx > max) idx = 0;
+    current = idx;
+    var cardW = cards[0].offsetWidth + 20;
+    track.style.transform = 'translateX(-' + (cardW * current) + 'px)';
+    renderDots();
+  }
+
+  function renderDots(){
+    var pages = totalPages();
+    dotsWrap.innerHTML = '';
+    for(var i=0; i<pages; i++){
+      var d = document.createElement('button');
+      d.className = 'slider-dot' + (i === current ? ' active' : '');
+      d.setAttribute('aria-label', (i+1) + '번째 후기');
+      (function(ix){ d.onclick = function(){ go(ix); restartAuto(); }; })(i);
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  window.slideReviews = function(dir){
+    go(current + dir);
+    restartAuto();
+  };
+
+  function startAuto(){
+    autoTimer = setInterval(function(){
+      if(!paused) go(current + 1);
+    }, 4500);
+  }
+
+  function restartAuto(){
+    if(autoTimer) clearInterval(autoTimer);
+    startAuto();
+  }
+
+  slider.addEventListener('mouseenter', function(){ paused = true; });
+  slider.addEventListener('mouseleave', function(){ paused = false; });
+
+  // Touch swipe for mobile
+  var startX = 0;
+  viewport.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; paused = true; }, {passive:true});
+  viewport.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
+    paused = false;
+    restartAuto();
+  }, {passive:true});
+
+  window.addEventListener('resize', function(){ go(current); });
+  renderDots();
+  startAuto();
+})();
+</script>
 
 <section class="cta-section" id="contact">
 <div class="container">
@@ -1430,11 +1533,6 @@ ${industryOptions}
 </label>
 
 <button type="submit" class="submit-btn" id="submitBtn">문의 접수하기</button>
-
-<div class="form-bottom-note">
-접수 후 영업시간 내 빠르게 연락드리겠습니다.<br>
-급하시면 <span class="quick">${ICONS.phone} <a href="tel:${SITE.phone}" style="color:var(--ink);text-decoration:underline">${SITE.phoneDisplay}</a></span>로 전화 주세요.
-</div>
 
 </form>
 
