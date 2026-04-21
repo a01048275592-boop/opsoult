@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
-import sitemap from '@astrojs/sitemap';  // ← 이 줄
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://opsoult.com',
-  integrations: [sitemap()],  // ← 이 줄
+  integrations: [sitemap()],
 });
