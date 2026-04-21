@@ -21,14 +21,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={canonicalURL} />
-
-    <title>{title}</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="naver-site-verification" content="669cd60625b7336f4e33d5cc0a3af618bc9fbfbb" />
+  <title>{title}</title>
     <meta name="description" content={description} />
 
     <!-- Open Graph -->
