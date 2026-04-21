@@ -854,7 +854,7 @@ function renderFloatingCTA() {
 
 // [08] 메인 페이지 렌더 =======================================
 function renderHome() {
-  const regionChips = REGIONS.map(r => `<a href="/region/${r.slug}" class="region-chip"><span class="re">${r.emoji}</span><span class="rn">${r.name}</span></a>`).join('');
+  const regionChips = REGIONS.map(r => `<a href="/region/${r.slug}" class="region-chip"><span class="re">🔎</span><span class="rn">${r.name}</span></a>`).join('');
   const productCards = PRODUCTS.map(p => `<a href="/product/${p.slug}" class="product-card"><div class="product-illust">${getProductIcon(p.slug)}</div><span class="product-tag">${p.emoji} ${p.name}</span><h3>${p.name}</h3><p>${p.shortDesc}</p><span class="product-more">자세히 보기</span></a>`).join('');
 
   const strengthIcons = [ICONS.target, ICONS.bolt, ICONS.coin, ICONS.wrench];
@@ -959,7 +959,7 @@ ${ICONS.kiosk}
 <div class="container">
 <div class="section-head">
 <div class="section-tag">Our Commitment</div>
-<h2 class="section-title">단순 장비 판매가 아닙니다<br><em>왜 ${SITE.brandNameKo}인가요?</em></h2>
+<h2 class="section-title">견적이 끝이 아닙니다<br><em>설치 후가 진짜 시작입니다</em></h2>
 </div>
 <div class="why-grid">${whyUs}</div>
 </div>
