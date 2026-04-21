@@ -434,8 +434,8 @@ section.block{padding:120px 0}
 header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
 .logo{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-weight:700;font-size:22px;letter-spacing:-0.03em;display:inline-flex;align-items:center;gap:10px;color:var(--ink)}
-.logo-dot{width:28px;height:28px;background:var(--ink);border-radius:8px;display:inline-flex;align-items:center;justify-content:center}
-.logo-dot::after{content:"";width:10px;height:10px;background:#fff;border-radius:3px;transform:rotate(45deg)}
+.logo-dot{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-dot svg{width:100%;height:100%;display:block}
 .nav-menu{list-style:none;display:flex;gap:36px;font-size:14.5px;font-weight:500;margin:0 auto 0 40px}
 .nav-menu a{color:var(--ink-2);transition:color .2s;position:relative}
 .nav-menu a:hover{color:var(--ink)}
@@ -572,8 +572,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 /* Footer */
 footer{background:#000;color:#cbd5e1;padding:80px 0 40px}
 footer .logo{color:#fff}
-footer .logo-dot{background:#fff}
-footer .logo-dot::after{background:#000}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:56px}
 .foot-brand p{font-size:14px;color:#94a3b8;margin-top:16px;max-width:280px;line-height:1.7}
 .foot-col h6{font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;color:#fff;font-weight:600;margin-bottom:20px}
@@ -691,6 +689,7 @@ footer .logo-dot::after{background:#000}
 
 // SVG 아이콘 라이브러리 (재사용)
 const ICONS = {
+  brandLogo: `<svg viewBox="0 0 64 64" fill="none"><rect width="64" height="64" rx="14" fill="#0c0f14"/><rect x="14" y="14" width="16" height="16" rx="3" fill="#e8512c"/><rect x="34" y="14" width="16" height="16" rx="3" fill="#f5f1ea"/><rect x="14" y="34" width="16" height="16" rx="3" fill="#f5f1ea"/><rect x="34" y="34" width="16" height="16" rx="3" fill="#e8512c"/></svg>`,
   cardTerminal: `<svg viewBox="0 0 80 80" fill="none"><rect x="12" y="16" width="56" height="50" rx="4" fill="#0f172a"/><rect x="18" y="22" width="44" height="14" rx="2" fill="#334155"/><circle cx="24" cy="46" r="2.5" fill="#94a3b8"/><circle cx="32" cy="46" r="2.5" fill="#94a3b8"/><circle cx="40" cy="46" r="2.5" fill="#94a3b8"/><circle cx="48" cy="46" r="2.5" fill="#94a3b8"/><circle cx="56" cy="46" r="2.5" fill="#94a3b8"/><circle cx="24" cy="54" r="2.5" fill="#94a3b8"/><circle cx="32" cy="54" r="2.5" fill="#94a3b8"/><circle cx="40" cy="54" r="2.5" fill="#94a3b8"/><circle cx="48" cy="54" r="2.5" fill="#94a3b8"/><circle cx="56" cy="54" r="2.5" fill="#94a3b8"/></svg>`,
   pos: `<svg viewBox="0 0 80 80" fill="none"><rect x="10" y="14" width="60" height="42" rx="3" fill="#0f172a"/><rect x="14" y="18" width="52" height="34" fill="#3b82f6"/><rect x="30" y="58" width="20" height="8" fill="#0f172a"/><rect x="24" y="66" width="32" height="4" rx="1" fill="#0f172a"/><circle cx="20" cy="24" r="1" fill="#fff"/><circle cx="24" cy="24" r="1" fill="#fff"/></svg>`,
   kiosk: `<svg viewBox="0 0 80 80" fill="none"><rect x="24" y="6" width="32" height="60" rx="3" fill="#0f172a"/><rect x="28" y="10" width="24" height="40" fill="#3b82f6"/><circle cx="40" cy="58" r="2.5" fill="#94a3b8"/><rect x="32" y="66" width="16" height="6" rx="1" fill="#334155"/><rect x="28" y="72" width="24" height="4" rx="1" fill="#334155"/></svg>`,
@@ -763,7 +762,7 @@ function escapeHtml(s) {
 function renderHeader() {
   return `<header>
 <div class="container nav">
-<a href="/" class="logo"><span class="logo-dot"></span>${SITE.brandName}</a>
+<a href="/" class="logo"><span class="logo-dot">${ICONS.brandLogo}</span>${SITE.brandName}</a>
 <ul class="nav-menu">
 <li><a href="/region">지역별 설치</a></li>
 <li><a href="/product">제품 안내</a></li>
@@ -783,7 +782,7 @@ function renderFooter() {
 <div class="container">
 <div class="foot-grid">
 <div class="foot-brand">
-<a href="/" class="logo"><span class="logo-dot"></span>${SITE.brandName}</a>
+<a href="/" class="logo"><span class="logo-dot">${ICONS.brandLogo}</span>${SITE.brandName}</a>
 <p>1인 매장부터 프랜차이즈까지. 매장 운영에 필요한 설비를 한 곳에서, 정확하게.</p>
 </div>
 <div class="foot-col">
