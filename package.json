@@ -1,25 +1,5 @@
 {
   "name": "opsoult",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "deploy": "astro build && wrangler deploy",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.0.0",
-    "@astrojs/sitemap": "^3.2.0"
-  },
-  "devDependencies": {
-    "wrangler": "^4.0.0"
-  }
-}
-{
-  "name": "opsoult",
   "version": "1.0.0",
   "private": true,
   "scripts": {
