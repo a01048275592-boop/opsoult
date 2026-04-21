@@ -209,6 +209,7 @@ const PRODUCTS = [
     slug: 'card-terminal',
     name: '카드단말기', emoji: '💳',
     shortDesc: '유선·무선·블루투스·토스단말기까지. VAN사 수수료 비교로 최저가 제공.',
+    photo: 'https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?w=600&q=80',
     longDesc: '카드단말기는 매장 결제의 기본이자 핵심 장비입니다. 오페리오솔루션는 10개 이상의 VAN사와 협력해 매장 매출 규모와 업종에 맞는 최적의 수수료 조건을 제안합니다. 유선·무선·블루투스·토스 단말기 등 전 기종을 취급하며, 당일 출장 설치와 사용법 교육까지 원스톱으로 제공합니다. 기존 단말기 교체 시에는 VAN사 비교를 통해 월 평균 3-7만원, 연 40-80만원의 수수료를 절약할 수 있습니다.',
     keywords: '카드단말기 설치, VAN사 비교, 카드결제기, 신용카드 단말기',
     features: [
@@ -223,6 +224,7 @@ const PRODUCTS = [
     slug: 'pos',
     name: '포스기', emoji: '🖥️',
     shortDesc: '주문·결제·매출·재고를 한 번에. 배달앱·오프라인 통합 대시보드.',
+    photo: 'https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=600&q=80',
     longDesc: 'POS 시스템은 주문 접수부터 결제, 재고 관리, 매출 분석까지 매장 운영의 모든 데이터를 한 곳에서 관리하는 핵심 장비입니다. 배달의민족, 쿠팡이츠, 요기요 등 주요 배달앱과 오프라인 매출을 통합해 실시간 대시보드로 확인할 수 있습니다. 직원 근태 관리, 세무 보고서 자동 생성 기능까지 포함해 매장 운영 효율을 극대화합니다.',
     keywords: '포스기 설치, POS 시스템, 매장 포스기, 음식점 포스',
     features: [
@@ -237,6 +239,7 @@ const PRODUCTS = [
     slug: 'kiosk',
     name: '키오스크', emoji: '🤖',
     shortDesc: '무인 주문·결제 시스템으로 인건비 절감. 소형·대형 모두 지원.',
+    photo: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80',
     longDesc: '키오스크는 고객이 직접 주문·결제를 완료하는 무인 시스템으로, 인건비 절감과 주문 정확도 향상을 동시에 달성합니다. 21~32인치 대형 키오스크부터 10인치 미니 키오스크까지 매장 규모에 맞는 기종을 제안하며, POS·테이블오더와 완벽 연동됩니다. 다국어 지원으로 외국인 고객도 쉽게 주문할 수 있으며, 평균 객단가 15-25% 상승 효과가 검증되었습니다.',
     keywords: '키오스크 설치, 무인 주문기, 셀프오더, 키오스크 대여',
     features: [
@@ -251,6 +254,7 @@ const PRODUCTS = [
     slug: 'table-order',
     name: '테이블오더', emoji: '📋',
     shortDesc: 'QR·태블릿 기반 주문 시스템. 객단가 상승과 홀 인력 절감 동시에.',
+    photo: 'https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?w=600&q=80',
     longDesc: '테이블오더는 고객이 자리에서 직접 주문·결제하는 시스템으로, 홀 직원의 주문 받기·결제 업무를 없애 객단가 상승과 인력 절감 효과를 동시에 제공합니다. 태블릿 설치형과 QR 스캔 방식을 매장 특성에 맞게 선택할 수 있으며, POS 연동으로 주문 즉시 주방 프린터 출력까지 자동 처리됩니다. 메뉴 사진 노출로 추가 주문이 평균 22% 증가합니다.',
     keywords: '테이블오더 설치, QR 주문, 태블릿 주문, 스마트오더',
     features: [
@@ -265,6 +269,7 @@ const PRODUCTS = [
     slug: 'cctv',
     name: 'CCTV', emoji: '📷',
     shortDesc: 'HD~4K 고화질, AI 움직임 감지, 스마트폰 원격 모니터링까지.',
+    photo: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&q=80',
     longDesc: '매장 CCTV는 도난·사고 방지, 직원 관리, 보험료 절감을 위한 필수 장비입니다. 오페리오솔루션는 HD부터 4K까지 다양한 화질 선택과 AI 움직임 감지, 스마트폰 원격 확인, POS 연동 영상 매칭까지 제공합니다. 결제 시점 영상 자동 매칭으로 매출 누락을 사전 방지하며, CCTV 설치 매장은 화재·도난 보험료 10-20% 할인 혜택을 받을 수 있습니다.',
     keywords: 'CCTV 설치, 매장 CCTV, 원격 감시, 4K CCTV, AI CCTV',
     features: [
@@ -279,6 +284,7 @@ const PRODUCTS = [
     slug: 'vending',
     name: '밴딩머신', emoji: '🏭',
     shortDesc: '판매 + 광고 이중 수익. 23인치 터치스크린 자동판매기.',
+    photo: 'https://images.unsplash.com/photo-1627634777217-c864268db30c?w=600&q=80',
     longDesc: '최신 LK 밴딩머신은 판매 수익과 광고 수익을 동시에 창출하는 차세대 자판기입니다. 23.4인치 터치스크린으로 광고 송출, 매장 공지, 메뉴판 표시까지 가능하며, 원격 재고 관리와 매출 분석 기능을 제공합니다. 카드·삼성페이·카카오페이·제로페이 등 모든 간편결제를 지원해 무인 운영 환경에서도 안정적인 결제가 가능합니다.',
     keywords: '밴딩머신, 자동판매기, 자판기 설치, 터치스크린 자판기',
     features: [
@@ -293,6 +299,7 @@ const PRODUCTS = [
     slug: 'removal',
     name: '매장철거', emoji: '🔨',
     shortDesc: '매장·사무실 철거 + 원상복구 원스톱. 보증금 반환까지 책임.',
+    photo: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
     longDesc: '매장 철거는 폐업·이전 시 보증금 반환에 직결되는 중요한 공정입니다. 오페리오솔루션는 정밀 현장 분석부터 철거·원상복구·폐기물 처리까지 원스톱으로 처리하며, 시공 보증서 발급으로 사후 책임까지 확실히 합니다. 추가 비용 없는 정찰제 운영과 실시간 공정 보고로 임대인과의 분쟁을 사전 예방합니다.',
     keywords: '매장 철거, 원상복구, 사무실 철거, 상가 철거',
     features: [
@@ -482,18 +489,19 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .strength-card h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}
 .strength-card p{font-size:13.5px;color:var(--muted);line-height:1.55}
 
-/* Products section */
-.products-section{padding:120px 0;background:var(--paper-2)}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
-.product-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px;transition:all .3s;cursor:pointer;position:relative;overflow:hidden;display:block;color:var(--ink)}
+/* Products section — 슬라이더 + 사진 카드 */
+.products-section{padding:120px 0;background:var(--paper-2);overflow:hidden}
+.products-slider{position:relative;max-width:1200px;margin:56px auto 0;padding:0 60px}
+.products-viewport{overflow:hidden;margin:0 -10px}
+.products-track{display:flex;gap:20px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;padding:8px 10px}
+.product-card{flex:0 0 calc((100% - 40px) / 3);background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;min-width:0;display:flex;flex-direction:column;color:var(--ink)}
 .product-card:hover{border-color:var(--ink);transform:translateY(-4px);box-shadow:0 20px 50px rgba(15,23,42,0.1)}
-.product-illust{width:100%;height:120px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;background:var(--paper-2);border-radius:12px;transition:background .3s}
-.product-card:hover .product-illust{background:var(--ink)}
-.product-illust svg{width:80px;height:80px;transition:transform .3s}
-.product-card:hover .product-illust svg{transform:scale(1.08)}
+.product-photo{width:100%;height:200px;background-size:cover;background-position:center;background-color:var(--paper-2);transition:transform .4s ease}
+.product-card:hover .product-photo{transform:scale(1.05)}
+.product-body{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
 .product-tag{display:inline-block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
 .product-card h3{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:22px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;color:var(--ink)}
-.product-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+.product-card p{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:16px;flex:1}
 .product-more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--ink);padding-top:16px;border-top:1px solid var(--line)}
 .product-more::after{content:"→";transition:transform .2s}
 .product-card:hover .product-more::after{transform:translateX(4px)}
@@ -688,7 +696,9 @@ footer .logo{color:#fff}
   section.block{padding:80px 0}
   .products-section,.regions-section,.features-section,.why-section,.reviews-section{padding:80px 0}
   .cta-section{padding:80px 0}
-  .products-grid{grid-template-columns:repeat(2,1fr)}
+  .products-slider{padding:0 48px}
+  .product-card{flex:0 0 calc((100% - 20px) / 2)}
+  .product-photo{height:180px}
   .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px}
   .stat-card{border-right:0}
   .strengths-grid{grid-template-columns:repeat(2,1fr)}
@@ -709,7 +719,9 @@ footer .logo{color:#fff}
 }
 @media (max-width: 560px){
   .container{padding:0 20px}
-  .products-grid{grid-template-columns:1fr}
+  .products-slider{padding:0 8px}
+  .product-card{flex:0 0 100%}
+  .product-photo{height:220px}
   .region-grid{grid-template-columns:repeat(3,1fr)}
   .foot-bottom{flex-direction:column;align-items:flex-start}
   .floating-stack{bottom:20px;right:20px;gap:8px}
@@ -840,7 +852,7 @@ function renderFloatingCTA() {
 // [08] 메인 페이지 렌더 =======================================
 function renderHome() {
   const regionChips = REGIONS.map(r => `<a href="/region/${r.slug}" class="region-chip"><span class="re">🔎</span><span class="rn">${r.name}</span></a>`).join('');
-  const productCards = PRODUCTS.map(p => `<a href="/product/${p.slug}" class="product-card"><div class="product-illust">${getProductIcon(p.slug)}</div><span class="product-tag">${p.emoji} ${p.name}</span><h3>${p.name}</h3><p>${p.shortDesc}</p><span class="product-more">자세히 보기</span></a>`).join('');
+  const productCards = PRODUCTS.map(p => `<a href="/product/${p.slug}" class="product-card"><div class="product-photo" style="background-image:url('${p.photo}')"></div><div class="product-body"><span class="product-tag">${p.emoji} ${p.name}</span><h3>${p.name}</h3><p>${p.shortDesc}</p><span class="product-more">자세히 보기</span></div></a>`).join('');
 
   const strengthIcons = [ICONS.target, ICONS.bolt, ICONS.coin, ICONS.wrench];
   const strengths = STRENGTHS.map((s, i) => `<div class="strength-card"><div class="sicon">${strengthIcons[i] || ICONS.star}</div><div class="sval">${s.stat}</div><h4>${s.title}</h4><p>${s.desc}</p></div>`).join('');
@@ -899,9 +911,83 @@ function renderHome() {
 <h2 class="section-title">매장에 필요한 모든 장비,<br><em>한 곳에서</em></h2>
 <p class="section-desc">1인 매장부터 프랜차이즈까지. 업종과 매장 규모에 맞춰 최적의 조합을 제안합니다.</p>
 </div>
-<div class="products-grid">${productCards}</div>
+</div>
+<div class="products-slider" id="productsSlider">
+<button class="slider-arrow slider-prev" aria-label="이전 제품" onclick="slideProducts(-1)">‹</button>
+<div class="products-viewport">
+<div class="products-track" id="productsTrack">${productCards}</div>
+</div>
+<button class="slider-arrow slider-next" aria-label="다음 제품" onclick="slideProducts(1)">›</button>
+<div class="slider-dots" id="productsDots"></div>
 </div>
 </section>
+
+<script>
+(function(){
+  var track = document.getElementById('productsTrack');
+  var viewport = document.querySelector('.products-viewport');
+  var slider = document.getElementById('productsSlider');
+  var dotsWrap = document.getElementById('productsDots');
+  if(!track || !viewport) return;
+  var cards = track.children;
+  if(cards.length === 0) return;
+
+  var current = 0;
+  var autoTimer = null;
+  var paused = false;
+
+  function cardsPerView(){
+    var w = viewport.offsetWidth;
+    if(w < 640) return 1;
+    if(w < 960) return 2;
+    return 3;
+  }
+  function totalPages(){ return Math.max(1, cards.length - cardsPerView() + 1); }
+
+  function go(idx){
+    var max = totalPages() - 1;
+    if(idx < 0) idx = max;
+    if(idx > max) idx = 0;
+    current = idx;
+    var cardW = cards[0].offsetWidth + 20;
+    track.style.transform = 'translateX(-' + (cardW * current) + 'px)';
+    renderDots();
+  }
+
+  function renderDots(){
+    var pages = totalPages();
+    dotsWrap.innerHTML = '';
+    for(var i=0; i<pages; i++){
+      var d = document.createElement('button');
+      d.className = 'slider-dot' + (i === current ? ' active' : '');
+      d.setAttribute('aria-label', (i+1) + '번째 제품');
+      (function(ix){ d.onclick = function(){ go(ix); restartAuto(); }; })(i);
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  window.slideProducts = function(dir){ go(current + dir); restartAuto(); };
+
+  function startAuto(){ autoTimer = setInterval(function(){ if(!paused) go(current + 1); }, 3000); }
+  function restartAuto(){ if(autoTimer) clearInterval(autoTimer); startAuto(); }
+
+  slider.addEventListener('mouseenter', function(){ paused = true; });
+  slider.addEventListener('mouseleave', function(){ paused = false; });
+
+  var startX = 0;
+  viewport.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; paused = true; }, {passive:true});
+  viewport.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
+    paused = false;
+    restartAuto();
+  }, {passive:true});
+
+  window.addEventListener('resize', function(){ go(current); });
+  renderDots();
+  startAuto();
+})();
+</script>
 
 <section class="regions-section" id="regions">
 <div class="container">
