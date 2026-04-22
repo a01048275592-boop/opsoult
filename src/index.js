@@ -1457,13 +1457,6 @@ function renderRegionPage(region) {
 
 <ul>${areasList}</ul>
 
-<h2>${region.name}에서 추천하는 매장 설비</h2>
-<p>${region.name} 지역 상권 특성을 고려할 때, 다음 7개 제품 카테고리를 모두 조합해 매장에 최적화된 패키지를 구성하는 것을 추천합니다. 각 제품 페이지에서 ${region.name} 기준 설치 정보를 확인하실 수 있습니다.</p>
-
-<div class="related-grid" style="margin-top:32px">
-${PRODUCTS.slice(0, 4).map(p => `<a href="/${region.slug}/${p.slug}" class="related-item"><span class="emoji">${p.emoji}</span><span class="name">${p.name}</span></a>`).join('')}
-</div>
-
 <h2>설치 절차</h2>
 <ol>
 <li><strong>무료 상담</strong> — 전화 또는 카카오톡으로 매장 정보를 알려주세요.</li>
