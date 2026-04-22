@@ -874,6 +874,10 @@ footer .logo{color:#fff}
 .related-item .emoji{font-size:26px;display:block;margin-bottom:10px}
 .related-item .name{font-size:13.5px;font-weight:500}
 
+.seoul-gu-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.seoul-gu-chip{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:100px;font-size:14px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;line-height:1.2;min-width:72px}
+@media (max-width:600px){.seoul-gu-chip{padding:8px 14px;font-size:13px;min-width:56px}}
+
 .cta-inline{background:var(--ink);color:#fff;border-radius:var(--radius);padding:36px 32px;margin-top:56px;text-align:center}
 .cta-inline h4{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;margin-bottom:14px;font-weight:600}
 .cta-inline .phone{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:32px;font-weight:700;display:inline-block;margin:8px 0;color:#fff;letter-spacing:-0.02em}
@@ -1483,6 +1487,15 @@ function renderRegionPage(region) {
 <div class="index-grid cols-4">${productsHtml}</div>
 </div>
 </section>
+${region.slug === 'seoul' ? `
+<section class="related-section" style="background:var(--paper)">
+<div class="container">
+<div class="section-head" style="margin-bottom:24px"><div class="section-tag">Districts</div><h2 class="section-title" style="font-size:32px">🏙️ 서울 <em>지역별 바로가기</em></h2></div>
+<div class="seoul-gu-grid">
+${['종로구','중구','용산구','성동구','광진구','동대문구','중랑구','성북구','강북구','도봉구','노원구','은평구','서대문구','마포구','양천구','강서구','구로구','금천구','영등포구','동작구','관악구','서초구','강남구','송파구','강동구'].map(g => `<span class="seoul-gu-chip">${g}</span>`).join('')}
+</div>
+</div>
+</section>` : ''}
 `;
 
   const title = `${region.name} 매장 설비 설치 · 카드단말기·포스기·키오스크 ${region.installTime}`;
