@@ -898,7 +898,7 @@ footer .logo{color:#fff}
 .sgu-bc a{color:#64748b;text-decoration:none}
 .sgu-bc span{margin:0 6px;color:#cbd5e1}
 .sgu-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:22px;aspect-ratio:16/5;min-height:160px;background:#1e293b}
-.sgu-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('https://images.unsplash.com/photo-1726137569854-ce11cc10cf67?fm=jpg&q=80&w=1400&auto=format&fit=crop') center/cover}
+.sgu-hero-bg{position:absolute;inset:0;background:#1e293b}
 .sgu-hero-ov{position:absolute;inset:0;padding:24px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center}
 .sgu-hero-title{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
 .sgu-hero-sub{font-size:12.5px;opacity:0.82}
@@ -947,7 +947,7 @@ footer .logo{color:#fff}
 
 /* DONG PAGE */
 .sdo-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:14px;aspect-ratio:16/5;min-height:160px;background:#1e293b}
-.sdo-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('https://images.unsplash.com/photo-1726137569854-ce11cc10cf67?fm=jpg&q=80&w=1400&auto=format&fit=crop') center/cover}
+.sdo-hero-bg{position:absolute;inset:0;background:#1e293b}
 .sdo-hero-tag{position:absolute;top:14px;right:14px;background:#fff;color:#0f172a;font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:100px;letter-spacing:-0.01em}
 .sdo-hero-ov{position:absolute;inset:0;padding:24px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center}
 .sdo-hero-title{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
@@ -1826,6 +1826,15 @@ ${PRODUCTS.filter(p => p.slug !== product.slug).slice(0, 4).map(p => `<a href="/
 function _seoulHash(s) { let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))|0; return Math.abs(h); }
 function _seoulPick(salt, arr) { return arr[_seoulHash(salt)%arr.length]; }
 
+// 히어로 이미지 풀 (모두 Unsplash License — 상업용 자유 사용, 출처 표기 의무 없음)
+const _SEOUL_HERO_POOL = [
+  'https://images.unsplash.com/photo-1726137569854-ce11cc10cf67?fm=jpg&q=80&w=1400&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1758519289714-519a9d9b96e3?fm=jpg&q=80&w=1400&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1742240216264-f0aac25ef4ba?fm=jpg&q=80&w=1400&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1726137569825-7535962addcd?fm=jpg&q=80&w=1400&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1400&auto=format&fit=crop',
+];
+
 // 상권 특성 변형 뱅크 (구 페이지용) - 지역명 {name} 치환
 const _SEOUL_MARKET_V = [
   '{name}은 서울 주요 상권 중 하나로, 관광·직장인·주거 수요가 함께 모이는 지역입니다. 대로변 프랜차이즈부터 골목의 한식당, 카페, 의류 편집샵까지 업종 폭이 유난히 넓어 한 가지 장비 세팅으로 모든 매장을 대응하기는 어렵습니다.',
@@ -1865,6 +1874,9 @@ function renderSeoulGuPage(gu) {
   const kioskCtx = _seoulPick('kio-'+gu.slug, _SEOUL_KIOSK_CONTEXT_V).replace(/\{name\}/g, name);
   const faq1A = _seoulPick('fq1-'+gu.slug, _SEOUL_FAQ1A_V).replace(/\{name\}/g, name);
   
+  const heroImg = _seoulPick('hero-'+gu.slug, _SEOUL_HERO_POOL);
+  const heroBgStyle = `background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('${heroImg}') center/cover`;
+  
   const dongChips = gu.dongs.map(d => `<a href="/region/seoul/${gu.slug}/${d.slug}" class="sgu-dong-chip">${d.name}</a>`).join('');
   
   const body = `
@@ -1874,7 +1886,7 @@ function renderSeoulGuPage(gu) {
 <div class="sgu-bc"><a href="/">홈</a><span>›</span><a href="/region">지역별 설치</a><span>›</span><a href="/region/seoul">서울</a><span>›</span>${name}</div>
 
 <div class="sgu-hero">
-  <div class="sgu-hero-bg"></div>
+  <div class="sgu-hero-bg" style="${heroBgStyle}"></div>
   <div class="sgu-hero-ov">
     <div class="sgu-hero-title">${name} 카드단말기·포스기·키오스크 설치 전문</div>
     <div class="sgu-hero-sub">${name} 매장 당일 출장 | 설치비 무료 | VAN사 수수료 비교 견적</div>
@@ -2044,6 +2056,9 @@ function renderSeoulDongPage(dong) {
   const parent = gu.name;
   const dc = gu.dongs.length;
   
+  const heroImg = _seoulPick('dhero-'+gu.slug+'-'+dong.slug, _SEOUL_HERO_POOL);
+  const heroBgStyle = `background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('${heroImg}') center/cover`;
+  
   // 인근 동 (같은 구 내 앞뒤 5개)
   const idx = gu.dongs.findIndex(d => d.slug === dong.slug);
   const neighbors = [];
@@ -2058,7 +2073,7 @@ function renderSeoulDongPage(dong) {
 <div class="container sdo-wrap">
 
 <div class="sdo-hero">
-  <div class="sdo-hero-bg"></div>
+  <div class="sdo-hero-bg" style="${heroBgStyle}"></div>
   <div class="sdo-hero-tag">카드단말기 설치</div>
   <div class="sdo-hero-ov">
     <div class="sdo-hero-title">${name} 카드단말기·포스기·키오스크·CCTV 설치, 구매, 상담</div>
