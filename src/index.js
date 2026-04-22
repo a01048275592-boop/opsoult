@@ -256,6 +256,19 @@ const SIGUNGU_DETAILS = [
 ];
 
 
+// [SEOUL-DATA] 서울 25개 구 + 467개 법정동 (국토교통부 법정동코드 2025-08-05 기준)
+const SEOUL_GUS = [{"slug":"jongno","name":"종로구","code":"1111000000","neighbors":["jung","yongsan","seongdong","dongdaemun","seongbuk"],"dongs":[{"code":"1111010100","name":"청운동","slug":"cheongun"},{"code":"1111010200","name":"신교동","slug":"singyo"},{"code":"1111010300","name":"궁정동","slug":"gungjeong"},{"code":"1111010400","name":"효자동","slug":"hyoja"},{"code":"1111010500","name":"창성동","slug":"changseong"},{"code":"1111010600","name":"통의동","slug":"tongui"},{"code":"1111010700","name":"적선동","slug":"jeokseon"},{"code":"1111010800","name":"통인동","slug":"tongin"},{"code":"1111010900","name":"누상동","slug":"nusang"},{"code":"1111011000","name":"누하동","slug":"nuha"},{"code":"1111011100","name":"옥인동","slug":"ogin"},{"code":"1111011200","name":"체부동","slug":"chebu"},{"code":"1111011300","name":"필운동","slug":"pirun"},{"code":"1111011400","name":"내자동","slug":"naeja"},{"code":"1111011500","name":"사직동","slug":"sajik"},{"code":"1111011600","name":"도렴동","slug":"doryeom"},{"code":"1111011700","name":"당주동","slug":"dangju"},{"code":"1111011800","name":"내수동","slug":"naesu"},{"code":"1111011900","name":"세종로","slug":"sejongno"},{"code":"1111012000","name":"신문로1가","slug":"sinmunno1ga"},{"code":"1111012100","name":"신문로2가","slug":"sinmunno2ga"},{"code":"1111012200","name":"청진동","slug":"cheongjin"},{"code":"1111012300","name":"서린동","slug":"seorin"},{"code":"1111012400","name":"수송동","slug":"susong"},{"code":"1111012500","name":"중학동","slug":"junghak"},{"code":"1111012600","name":"종로1가","slug":"jongno1ga"},{"code":"1111012700","name":"공평동","slug":"gongpyeong"},{"code":"1111012800","name":"관훈동","slug":"gwanhun"},{"code":"1111012900","name":"견지동","slug":"gyeonji"},{"code":"1111013000","name":"와룡동","slug":"waryong"},{"code":"1111013100","name":"권농동","slug":"gwonnong"},{"code":"1111013200","name":"운니동","slug":"unni"},{"code":"1111013300","name":"익선동","slug":"ikseon"},{"code":"1111013400","name":"경운동","slug":"gyeongun"},{"code":"1111013500","name":"관철동","slug":"gwancheol"},{"code":"1111013600","name":"인사동","slug":"insa"},{"code":"1111013700","name":"낙원동","slug":"nagwon"},{"code":"1111013800","name":"종로2가","slug":"jongno2ga"},{"code":"1111013900","name":"팔판동","slug":"palpan"},{"code":"1111014000","name":"삼청동","slug":"samcheong"},{"code":"1111014100","name":"안국동","slug":"anguk"},{"code":"1111014200","name":"소격동","slug":"sogyeok"},{"code":"1111014300","name":"화동","slug":"hwa"},{"code":"1111014400","name":"사간동","slug":"sagan"},{"code":"1111014500","name":"송현동","slug":"songhyeon"},{"code":"1111014600","name":"가회동","slug":"gahoe"},{"code":"1111014700","name":"재동","slug":"jae"},{"code":"1111014800","name":"계동","slug":"gye"},{"code":"1111014900","name":"원서동","slug":"wonseo"},{"code":"1111015000","name":"훈정동","slug":"hunjeong"},{"code":"1111015100","name":"묘동","slug":"myo"},{"code":"1111015200","name":"봉익동","slug":"bongik"},{"code":"1111015300","name":"돈의동","slug":"donui"},{"code":"1111015400","name":"장사동","slug":"jangsa"},{"code":"1111015500","name":"관수동","slug":"gwansu"},{"code":"1111015600","name":"종로3가","slug":"jongno3ga"},{"code":"1111015700","name":"인의동","slug":"inui"},{"code":"1111015800","name":"예지동","slug":"yeji"},{"code":"1111015900","name":"원남동","slug":"wonnam"},{"code":"1111016000","name":"연지동","slug":"yeonji"},{"code":"1111016100","name":"종로4가","slug":"jongno4ga"},{"code":"1111016200","name":"효제동","slug":"hyoje"},{"code":"1111016300","name":"종로5가","slug":"jongno5ga"},{"code":"1111016400","name":"종로6가","slug":"jongno6ga"},{"code":"1111016500","name":"이화동","slug":"ihwa"},{"code":"1111016600","name":"연건동","slug":"yeongeon"},{"code":"1111016700","name":"충신동","slug":"chungsin"},{"code":"1111016800","name":"동숭동","slug":"dongsung"},{"code":"1111016900","name":"혜화동","slug":"hyehwa"},{"code":"1111017000","name":"명륜1가","slug":"myeongnyun1ga"},{"code":"1111017100","name":"명륜2가","slug":"myeongnyun2ga"},{"code":"1111017200","name":"명륜4가","slug":"myeongnyun4ga"},{"code":"1111017300","name":"명륜3가","slug":"myeongnyun3ga"},{"code":"1111017400","name":"창신동","slug":"changsin"},{"code":"1111017500","name":"숭인동","slug":"sungin"},{"code":"1111017600","name":"교남동","slug":"gyonam"},{"code":"1111017700","name":"평동","slug":"pyeong"},{"code":"1111017800","name":"송월동","slug":"songwol"},{"code":"1111017900","name":"홍파동","slug":"hongpa"},{"code":"1111018000","name":"교북동","slug":"gyobuk"},{"code":"1111018100","name":"행촌동","slug":"haengchon"},{"code":"1111018200","name":"구기동","slug":"gugi"},{"code":"1111018300","name":"평창동","slug":"pyeongchang"},{"code":"1111018400","name":"부암동","slug":"buam"},{"code":"1111018500","name":"홍지동","slug":"hongji"},{"code":"1111018600","name":"신영동","slug":"sinyeong"},{"code":"1111018700","name":"무악동","slug":"muak"}]},{"slug":"jung","name":"중구","code":"1114000000","neighbors":["jongno","yongsan","seongdong","seodaemun","mapo"],"dongs":[{"code":"1114010100","name":"무교동","slug":"mugyo"},{"code":"1114010200","name":"다동","slug":"da"},{"code":"1114010300","name":"태평로1가","slug":"taepyeongno1ga"},{"code":"1114010400","name":"을지로1가","slug":"euljiro1ga"},{"code":"1114010500","name":"을지로2가","slug":"euljiro2ga"},{"code":"1114010600","name":"남대문로1가","slug":"namdaemunno1ga"},{"code":"1114010700","name":"삼각동","slug":"samgak"},{"code":"1114010800","name":"수하동","slug":"suha"},{"code":"1114010900","name":"장교동","slug":"janggyo"},{"code":"1114011000","name":"수표동","slug":"supyo"},{"code":"1114011100","name":"소공동","slug":"sogong"},{"code":"1114011200","name":"남창동","slug":"namchang"},{"code":"1114011300","name":"북창동","slug":"bukchang"},{"code":"1114011400","name":"태평로2가","slug":"taepyeongno2ga"},{"code":"1114011500","name":"남대문로2가","slug":"namdaemunno2ga"},{"code":"1114011600","name":"남대문로3가","slug":"namdaemunno3ga"},{"code":"1114011700","name":"남대문로4가","slug":"namdaemunno4ga"},{"code":"1114011800","name":"남대문로5가","slug":"namdaemunno5ga"},{"code":"1114011900","name":"봉래동1가","slug":"bongnae1ga"},{"code":"1114012000","name":"봉래동2가","slug":"bongnae2ga"},{"code":"1114012100","name":"회현동1가","slug":"hoehyeon1ga"},{"code":"1114012200","name":"회현동2가","slug":"hoehyeon2ga"},{"code":"1114012300","name":"회현동3가","slug":"hoehyeon3ga"},{"code":"1114012400","name":"충무로1가","slug":"chungmuro1ga"},{"code":"1114012500","name":"충무로2가","slug":"chungmuro2ga"},{"code":"1114012600","name":"명동1가","slug":"myeong1ga"},{"code":"1114012700","name":"명동2가","slug":"myeong2ga"},{"code":"1114012800","name":"남산동1가","slug":"namsan1ga"},{"code":"1114012900","name":"남산동2가","slug":"namsan2ga"},{"code":"1114013000","name":"남산동3가","slug":"namsan3ga"},{"code":"1114013100","name":"저동1가","slug":"jeo1ga"},{"code":"1114013200","name":"충무로4가","slug":"chungmuro4ga"},{"code":"1114013300","name":"충무로5가","slug":"chungmuro5ga"},{"code":"1114013400","name":"인현동2가","slug":"inhyeon2ga"},{"code":"1114013500","name":"예관동","slug":"yegwan"},{"code":"1114013600","name":"묵정동","slug":"mukjeong"},{"code":"1114013700","name":"필동1가","slug":"pil1ga"},{"code":"1114013800","name":"필동2가","slug":"pil2ga"},{"code":"1114013900","name":"필동3가","slug":"pil3ga"},{"code":"1114014000","name":"남학동","slug":"namhak"},{"code":"1114014100","name":"주자동","slug":"juja"},{"code":"1114014200","name":"예장동","slug":"yejang"},{"code":"1114014300","name":"장충동1가","slug":"jangchung1ga"},{"code":"1114014400","name":"장충동2가","slug":"jangchung2ga"},{"code":"1114014500","name":"광희동1가","slug":"gwanghui1ga"},{"code":"1114014600","name":"광희동2가","slug":"gwanghui2ga"},{"code":"1114014700","name":"쌍림동","slug":"ssangnim"},{"code":"1114014800","name":"을지로6가","slug":"euljiro6ga"},{"code":"1114014900","name":"을지로7가","slug":"euljiro7ga"},{"code":"1114015000","name":"을지로4가","slug":"euljiro4ga"},{"code":"1114015100","name":"을지로5가","slug":"euljiro5ga"},{"code":"1114015200","name":"주교동","slug":"jugyo"},{"code":"1114015300","name":"방산동","slug":"bangsan"},{"code":"1114015400","name":"오장동","slug":"ojang"},{"code":"1114015500","name":"을지로3가","slug":"euljiro3ga"},{"code":"1114015600","name":"입정동","slug":"ipjeong"},{"code":"1114015700","name":"산림동","slug":"sanlim"},{"code":"1114015800","name":"충무로3가","slug":"chungmuro3ga"},{"code":"1114015900","name":"초동","slug":"cho"},{"code":"1114016000","name":"인현동1가","slug":"inhyeon1ga"},{"code":"1114016100","name":"저동2가","slug":"jeo2ga"},{"code":"1114016200","name":"신당동","slug":"sindang"},{"code":"1114016300","name":"흥인동","slug":"heungin"},{"code":"1114016400","name":"무학동","slug":"muhak"},{"code":"1114016500","name":"황학동","slug":"hwanghak"},{"code":"1114016600","name":"서소문동","slug":"seosomun"},{"code":"1114016700","name":"정동","slug":"jeong"},{"code":"1114016800","name":"순화동","slug":"sunhwa"},{"code":"1114016900","name":"의주로1가","slug":"uijuro1ga"},{"code":"1114017000","name":"충정로1가","slug":"chungjeongno1ga"},{"code":"1114017100","name":"중림동","slug":"jungnim"},{"code":"1114017200","name":"의주로2가","slug":"uijuro2ga"},{"code":"1114017300","name":"만리동1가","slug":"malli1ga"},{"code":"1114017400","name":"만리동2가","slug":"malli2ga"}]},{"slug":"yongsan","name":"용산구","code":"1117000000","neighbors":["jongno","jung","seongdong","mapo","dongjak"],"dongs":[{"code":"1117010100","name":"후암동","slug":"huam"},{"code":"1117010200","name":"용산동2가","slug":"yongsan2ga"},{"code":"1117010300","name":"용산동4가","slug":"yongsan4ga"},{"code":"1117010400","name":"갈월동","slug":"galwol"},{"code":"1117010500","name":"남영동","slug":"namyeong"},{"code":"1117010600","name":"용산동1가","slug":"yongsan1ga"},{"code":"1117010700","name":"동자동","slug":"dongja"},{"code":"1117010800","name":"서계동","slug":"seogye"},{"code":"1117010900","name":"청파동1가","slug":"cheongpa1ga"},{"code":"1117011000","name":"청파동2가","slug":"cheongpa2ga"},{"code":"1117011100","name":"청파동3가","slug":"cheongpa3ga"},{"code":"1117011200","name":"원효로1가","slug":"wonhyoro1ga"},{"code":"1117011300","name":"원효로2가","slug":"wonhyoro2ga"},{"code":"1117011400","name":"신창동","slug":"sinchang"},{"code":"1117011500","name":"산천동","slug":"sancheon"},{"code":"1117011600","name":"청암동","slug":"cheongam"},{"code":"1117011700","name":"원효로3가","slug":"wonhyoro3ga"},{"code":"1117011800","name":"원효로4가","slug":"wonhyoro4ga"},{"code":"1117011900","name":"효창동","slug":"hyochang"},{"code":"1117012000","name":"도원동","slug":"dowon"},{"code":"1117012100","name":"용문동","slug":"yongmun"},{"code":"1117012200","name":"문배동","slug":"munbae"},{"code":"1117012300","name":"신계동","slug":"singye"},{"code":"1117012400","name":"한강로1가","slug":"hangangno1ga"},{"code":"1117012500","name":"한강로2가","slug":"hangangno2ga"},{"code":"1117012600","name":"용산동3가","slug":"yongsan3ga"},{"code":"1117012700","name":"용산동5가","slug":"yongsan5ga"},{"code":"1117012800","name":"한강로3가","slug":"hangangno3ga"},{"code":"1117012900","name":"이촌동","slug":"ichon"},{"code":"1117013000","name":"이태원동","slug":"itaewon"},{"code":"1117013100","name":"한남동","slug":"hannam"},{"code":"1117013200","name":"동빙고동","slug":"dongbinggo"},{"code":"1117013300","name":"서빙고동","slug":"seobinggo"},{"code":"1117013400","name":"주성동","slug":"juseong"},{"code":"1117013500","name":"용산동6가","slug":"yongsan6ga"},{"code":"1117013600","name":"보광동","slug":"bogwang"}]},{"slug":"seongdong","name":"성동구","code":"1120000000","neighbors":["jongno","dongdaemun","gwangjin","jungnang","gangnam"],"dongs":[{"code":"1120010100","name":"상왕십리동","slug":"sangwangsimni"},{"code":"1120010200","name":"하왕십리동","slug":"hawangsimni"},{"code":"1120010300","name":"홍익동","slug":"hongik"},{"code":"1120010400","name":"도선동","slug":"doseon"},{"code":"1120010500","name":"마장동","slug":"majang"},{"code":"1120010600","name":"사근동","slug":"sageun"},{"code":"1120010700","name":"행당동","slug":"haengdang"},{"code":"1120010800","name":"응봉동","slug":"eungbong"},{"code":"1120010900","name":"금호동1가","slug":"geumho1ga"},{"code":"1120011000","name":"금호동2가","slug":"geumho2ga"},{"code":"1120011100","name":"금호동3가","slug":"geumho3ga"},{"code":"1120011200","name":"금호동4가","slug":"geumho4ga"},{"code":"1120011300","name":"옥수동","slug":"oksu"},{"code":"1120011400","name":"성수동1가","slug":"seongsu1ga"},{"code":"1120011500","name":"성수동2가","slug":"seongsu2ga"},{"code":"1120011800","name":"송정동","slug":"songjeong"},{"code":"1120012200","name":"용답동","slug":"yongdap"}]},{"slug":"gwangjin","name":"광진구","code":"1121500000","neighbors":["seongdong","dongdaemun","jungnang","gangdong","songpa"],"dongs":[{"code":"1121510100","name":"중곡동","slug":"junggok"},{"code":"1121510200","name":"능동","slug":"neung"},{"code":"1121510300","name":"구의동","slug":"guui"},{"code":"1121510400","name":"광장동","slug":"gwangjang"},{"code":"1121510500","name":"자양동","slug":"jayang"},{"code":"1121510700","name":"화양동","slug":"hwayang"},{"code":"1121510900","name":"군자동","slug":"gunja"}]},{"slug":"dongdaemun","name":"동대문구","code":"1123000000","neighbors":["seongdong","gwangjin","jungnang","seongbuk","jongno"],"dongs":[{"code":"1123010100","name":"신설동","slug":"sinseol"},{"code":"1123010200","name":"용두동","slug":"yongdu"},{"code":"1123010300","name":"제기동","slug":"jegi"},{"code":"1123010400","name":"전농동","slug":"jeonnong"},{"code":"1123010500","name":"답십리동","slug":"dapsimni"},{"code":"1123010600","name":"장안동","slug":"jangan"},{"code":"1123010700","name":"청량리동","slug":"cheongnyangni"},{"code":"1123010800","name":"회기동","slug":"hoegi"},{"code":"1123010900","name":"휘경동","slug":"hwigyeong"},{"code":"1123011000","name":"이문동","slug":"imun"}]},{"slug":"jungnang","name":"중랑구","code":"1126000000","neighbors":["gwangjin","dongdaemun","seongbuk","nowon","gangbuk"],"dongs":[{"code":"1126010100","name":"면목동","slug":"myeonmok"},{"code":"1126010200","name":"상봉동","slug":"sangbong"},{"code":"1126010300","name":"중화동","slug":"junghwa"},{"code":"1126010400","name":"묵동","slug":"muk"},{"code":"1126010500","name":"망우동","slug":"mangu"},{"code":"1126010600","name":"신내동","slug":"sinnae"}]},{"slug":"seongbuk","name":"성북구","code":"1129000000","neighbors":["jongno","dongdaemun","jungnang","gangbuk","dobong"],"dongs":[{"code":"1129010100","name":"성북동","slug":"seongbuk"},{"code":"1129010200","name":"성북동1가","slug":"seongbuk1ga"},{"code":"1129010300","name":"돈암동","slug":"donam"},{"code":"1129010400","name":"동소문동1가","slug":"dongsomun1ga"},{"code":"1129010500","name":"동소문동2가","slug":"dongsomun2ga"},{"code":"1129010600","name":"동소문동3가","slug":"dongsomun3ga"},{"code":"1129010700","name":"동소문동4가","slug":"dongsomun4ga"},{"code":"1129010800","name":"동소문동5가","slug":"dongsomun5ga"},{"code":"1129010900","name":"동소문동6가","slug":"dongsomun6ga"},{"code":"1129011000","name":"동소문동7가","slug":"dongsomun7ga"},{"code":"1129011100","name":"삼선동1가","slug":"samseon1ga"},{"code":"1129011200","name":"삼선동2가","slug":"samseon2ga"},{"code":"1129011300","name":"삼선동3가","slug":"samseon3ga"},{"code":"1129011400","name":"삼선동4가","slug":"samseon4ga"},{"code":"1129011500","name":"삼선동5가","slug":"samseon5ga"},{"code":"1129011600","name":"동선동1가","slug":"dongseon1ga"},{"code":"1129011700","name":"동선동2가","slug":"dongseon2ga"},{"code":"1129011800","name":"동선동3가","slug":"dongseon3ga"},{"code":"1129011900","name":"동선동4가","slug":"dongseon4ga"},{"code":"1129012000","name":"동선동5가","slug":"dongseon5ga"},{"code":"1129012100","name":"안암동1가","slug":"anam1ga"},{"code":"1129012200","name":"안암동2가","slug":"anam2ga"},{"code":"1129012300","name":"안암동3가","slug":"anam3ga"},{"code":"1129012400","name":"안암동4가","slug":"anam4ga"},{"code":"1129012500","name":"안암동5가","slug":"anam5ga"},{"code":"1129012600","name":"보문동4가","slug":"bomun4ga"},{"code":"1129012700","name":"보문동5가","slug":"bomun5ga"},{"code":"1129012800","name":"보문동6가","slug":"bomun6ga"},{"code":"1129012900","name":"보문동7가","slug":"bomun7ga"},{"code":"1129013000","name":"보문동1가","slug":"bomun1ga"},{"code":"1129013100","name":"보문동2가","slug":"bomun2ga"},{"code":"1129013200","name":"보문동3가","slug":"bomun3ga"},{"code":"1129013300","name":"정릉동","slug":"jeongneung"},{"code":"1129013400","name":"길음동","slug":"gireum"},{"code":"1129013500","name":"종암동","slug":"jongam"},{"code":"1129013600","name":"하월곡동","slug":"hawolgok"},{"code":"1129013700","name":"상월곡동","slug":"sangwolgok"},{"code":"1129013800","name":"장위동","slug":"jangwi"},{"code":"1129013900","name":"석관동","slug":"seokgwan"}]},{"slug":"gangbuk","name":"강북구","code":"1130500000","neighbors":["seongbuk","dobong","nowon","jungnang"],"dongs":[{"code":"1130510100","name":"미아동","slug":"mia"},{"code":"1130510200","name":"번동","slug":"beon"},{"code":"1130510300","name":"수유동","slug":"suyu"},{"code":"1130510400","name":"우이동","slug":"ui"}]},{"slug":"dobong","name":"도봉구","code":"1132000000","neighbors":["gangbuk","nowon","seongbuk"],"dongs":[{"code":"1132010500","name":"쌍문동","slug":"ssangmun"},{"code":"1132010600","name":"방학동","slug":"banghak"},{"code":"1132010700","name":"창동","slug":"chang"},{"code":"1132010800","name":"도봉동","slug":"dobong"}]},{"slug":"nowon","name":"노원구","code":"1135000000","neighbors":["dobong","gangbuk","jungnang","dongdaemun"],"dongs":[{"code":"1135010200","name":"월계동","slug":"wolgye"},{"code":"1135010300","name":"공릉동","slug":"gongneung"},{"code":"1135010400","name":"하계동","slug":"hagye"},{"code":"1135010500","name":"상계동","slug":"sanggye"},{"code":"1135010600","name":"중계동","slug":"junggye"}]},{"slug":"eunpyeong","name":"은평구","code":"1138000000","neighbors":["jongno","seodaemun","mapo"],"dongs":[{"code":"1138010100","name":"수색동","slug":"susaek"},{"code":"1138010200","name":"녹번동","slug":"nokbeon"},{"code":"1138010300","name":"불광동","slug":"bulgwang"},{"code":"1138010400","name":"갈현동","slug":"galhyeon"},{"code":"1138010500","name":"구산동","slug":"gusan"},{"code":"1138010600","name":"대조동","slug":"daejo"},{"code":"1138010700","name":"응암동","slug":"eungam"},{"code":"1138010800","name":"역촌동","slug":"yeokchon"},{"code":"1138010900","name":"신사동","slug":"sinsa_gn"},{"code":"1138011000","name":"증산동","slug":"jeungsan"},{"code":"1138011400","name":"진관동","slug":"jingwan"}]},{"slug":"seodaemun","name":"서대문구","code":"1141000000","neighbors":["jongno","jung","mapo","eunpyeong"],"dongs":[{"code":"1141010100","name":"충정로2가","slug":"chungjeongno2ga"},{"code":"1141010200","name":"충정로3가","slug":"chungjeongno3ga"},{"code":"1141010300","name":"합동","slug":"hap"},{"code":"1141010400","name":"미근동","slug":"migeun"},{"code":"1141010500","name":"냉천동","slug":"naengcheon"},{"code":"1141010600","name":"천연동","slug":"cheonyeon"},{"code":"1141010700","name":"옥천동","slug":"okcheon"},{"code":"1141010800","name":"영천동","slug":"yeongcheon"},{"code":"1141010900","name":"현저동","slug":"hyeonjeo"},{"code":"1141011000","name":"북아현동","slug":"bukahyeon"},{"code":"1141011100","name":"홍제동","slug":"hongje"},{"code":"1141011200","name":"대현동","slug":"daehyeon"},{"code":"1141011300","name":"대신동","slug":"daesin"},{"code":"1141011400","name":"신촌동","slug":"sinchon"},{"code":"1141011500","name":"봉원동","slug":"bongwon"},{"code":"1141011600","name":"창천동","slug":"changcheon"},{"code":"1141011700","name":"연희동","slug":"yeonhui"},{"code":"1141011800","name":"홍은동","slug":"hongeun"},{"code":"1141011900","name":"북가좌동","slug":"bukgajwa"},{"code":"1141012000","name":"남가좌동","slug":"namgajwa"}]},{"slug":"mapo","name":"마포구","code":"1144000000","neighbors":["jung","yongsan","seodaemun","eunpyeong","yeongdeungpo"],"dongs":[{"code":"1144010100","name":"아현동","slug":"ahyeon"},{"code":"1144010200","name":"공덕동","slug":"gongdeok"},{"code":"1144010300","name":"신공덕동","slug":"singongdeok"},{"code":"1144010400","name":"도화동","slug":"dohwa"},{"code":"1144010500","name":"용강동","slug":"yonggang"},{"code":"1144010600","name":"토정동","slug":"tojeong"},{"code":"1144010700","name":"마포동","slug":"mapodong"},{"code":"1144010800","name":"대흥동","slug":"daeheung"},{"code":"1144010900","name":"염리동","slug":"yeomni"},{"code":"1144011000","name":"노고산동","slug":"nogosan"},{"code":"1144011100","name":"신수동","slug":"sinsu"},{"code":"1144011200","name":"현석동","slug":"hyeonseok"},{"code":"1144011300","name":"구수동","slug":"gusu"},{"code":"1144011400","name":"창전동","slug":"changjeon"},{"code":"1144011500","name":"상수동","slug":"sangsu"},{"code":"1144011600","name":"하중동","slug":"hajung"},{"code":"1144011700","name":"신정동","slug":"sinjeong"},{"code":"1144011800","name":"당인동","slug":"dangin"},{"code":"1144012000","name":"서교동","slug":"seogyo"},{"code":"1144012100","name":"동교동","slug":"donggyo"},{"code":"1144012200","name":"합정동","slug":"hapjeong"},{"code":"1144012300","name":"망원동","slug":"mangwon"},{"code":"1144012400","name":"연남동","slug":"yeonnam"},{"code":"1144012500","name":"성산동","slug":"seongsan"},{"code":"1144012600","name":"중동","slug":"jungdong"},{"code":"1144012700","name":"상암동","slug":"sangam"}]},{"slug":"yangcheon","name":"양천구","code":"1147000000","neighbors":["gangseo","guro","yeongdeungpo","gwanak"],"dongs":[{"code":"1147010100","name":"신정동","slug":"sinjeong"},{"code":"1147010200","name":"목동","slug":"mok"},{"code":"1147010300","name":"신월동","slug":"sinwol"}]},{"slug":"gangseo","name":"강서구","code":"1150000000","neighbors":["yangcheon","guro","mapo"],"dongs":[{"code":"1150010100","name":"염창동","slug":"yeomchang"},{"code":"1150010200","name":"등촌동","slug":"deungchon"},{"code":"1150010300","name":"화곡동","slug":"hwagok"},{"code":"1150010400","name":"가양동","slug":"gayang"},{"code":"1150010500","name":"마곡동","slug":"magok"},{"code":"1150010600","name":"내발산동","slug":"naebalsan"},{"code":"1150010700","name":"외발산동","slug":"oebalsan"},{"code":"1150010800","name":"공항동","slug":"gonghang"},{"code":"1150010900","name":"방화동","slug":"banghwa"},{"code":"1150011000","name":"개화동","slug":"gaehwa"},{"code":"1150011100","name":"과해동","slug":"gwahae"},{"code":"1150011200","name":"오곡동","slug":"ogok"},{"code":"1150011300","name":"오쇠동","slug":"osoe"}]},{"slug":"guro","name":"구로구","code":"1153000000","neighbors":["yangcheon","geumcheon","yeongdeungpo","gwanak","dongjak"],"dongs":[{"code":"1153010100","name":"신도림동","slug":"sindorim"},{"code":"1153010200","name":"구로동","slug":"guro"},{"code":"1153010300","name":"가리봉동","slug":"garibong"},{"code":"1153010600","name":"고척동","slug":"gocheok"},{"code":"1153010700","name":"개봉동","slug":"gaebong"},{"code":"1153010800","name":"오류동","slug":"oryu"},{"code":"1153010900","name":"궁동","slug":"gung"},{"code":"1153011000","name":"온수동","slug":"onsu"},{"code":"1153011100","name":"천왕동","slug":"cheonwang"},{"code":"1153011200","name":"항동","slug":"hang"}]},{"slug":"geumcheon","name":"금천구","code":"1154500000","neighbors":["guro","gwanak","yeongdeungpo"],"dongs":[{"code":"1154510100","name":"가산동","slug":"gasan"},{"code":"1154510200","name":"독산동","slug":"doksan"},{"code":"1154510300","name":"시흥동","slug":"siheung"}]},{"slug":"yeongdeungpo","name":"영등포구","code":"1156000000","neighbors":["mapo","yongsan","dongjak","gwanak","guro","yangcheon"],"dongs":[{"code":"1156010100","name":"영등포동","slug":"yeongdeungpo"},{"code":"1156010200","name":"영등포동1가","slug":"yeongdeungpo1ga"},{"code":"1156010300","name":"영등포동2가","slug":"yeongdeungpo2ga"},{"code":"1156010400","name":"영등포동3가","slug":"yeongdeungpo3ga"},{"code":"1156010500","name":"영등포동4가","slug":"yeongdeungpo4ga"},{"code":"1156010600","name":"영등포동5가","slug":"yeongdeungpo5ga"},{"code":"1156010700","name":"영등포동6가","slug":"yeongdeungpo6ga"},{"code":"1156010800","name":"영등포동7가","slug":"yeongdeungpo7ga"},{"code":"1156010900","name":"영등포동8가","slug":"yeongdeungpo8ga"},{"code":"1156011000","name":"여의도동","slug":"yeouido"},{"code":"1156011100","name":"당산동1가","slug":"dangsan1ga"},{"code":"1156011200","name":"당산동2가","slug":"dangsan2ga"},{"code":"1156011300","name":"당산동3가","slug":"dangsan3ga"},{"code":"1156011400","name":"당산동4가","slug":"dangsan4ga"},{"code":"1156011500","name":"당산동5가","slug":"dangsan5ga"},{"code":"1156011600","name":"당산동6가","slug":"dangsan6ga"},{"code":"1156011700","name":"당산동","slug":"dangsan"},{"code":"1156011800","name":"도림동","slug":"dorim"},{"code":"1156011900","name":"문래동1가","slug":"mullae1ga"},{"code":"1156012000","name":"문래동2가","slug":"mullae2ga"},{"code":"1156012100","name":"문래동3가","slug":"mullae3ga"},{"code":"1156012200","name":"문래동4가","slug":"mullae4ga"},{"code":"1156012300","name":"문래동5가","slug":"mullae5ga"},{"code":"1156012400","name":"문래동6가","slug":"mullae6ga"},{"code":"1156012500","name":"양평동1가","slug":"yangpyeong1ga"},{"code":"1156012600","name":"양평동2가","slug":"yangpyeong2ga"},{"code":"1156012700","name":"양평동3가","slug":"yangpyeong3ga"},{"code":"1156012800","name":"양평동4가","slug":"yangpyeong4ga"},{"code":"1156012900","name":"양평동5가","slug":"yangpyeong5ga"},{"code":"1156013000","name":"양평동6가","slug":"yangpyeong6ga"},{"code":"1156013100","name":"양화동","slug":"yanghwa"},{"code":"1156013200","name":"신길동","slug":"singil"},{"code":"1156013300","name":"대림동","slug":"daerim"},{"code":"1156013400","name":"양평동","slug":"yangpyeong"}]},{"slug":"dongjak","name":"동작구","code":"1159000000","neighbors":["yongsan","yeongdeungpo","gwanak","seocho","guro"],"dongs":[{"code":"1159010100","name":"노량진동","slug":"noryangjin"},{"code":"1159010200","name":"상도동","slug":"sangdo"},{"code":"1159010300","name":"상도1동","slug":"sangdo1"},{"code":"1159010400","name":"본동","slug":"bon"},{"code":"1159010500","name":"흑석동","slug":"heukseok"},{"code":"1159010600","name":"동작동","slug":"dongjak"},{"code":"1159010700","name":"사당동","slug":"sadang"},{"code":"1159010800","name":"대방동","slug":"daebang"},{"code":"1159010900","name":"신대방동","slug":"sindaebang"}]},{"slug":"gwanak","name":"관악구","code":"1162000000","neighbors":["geumcheon","yeongdeungpo","dongjak","seocho","guro"],"dongs":[{"code":"1162010100","name":"봉천동","slug":"bongcheon"},{"code":"1162010200","name":"신림동","slug":"sillim"},{"code":"1162010300","name":"남현동","slug":"namhyeon"}]},{"slug":"seocho","name":"서초구","code":"1165000000","neighbors":["dongjak","gwanak","gangnam","songpa","yongsan"],"dongs":[{"code":"1165010100","name":"방배동","slug":"bangbae"},{"code":"1165010200","name":"양재동","slug":"yangjae"},{"code":"1165010300","name":"우면동","slug":"umyeon"},{"code":"1165010400","name":"원지동","slug":"wonji"},{"code":"1165010600","name":"잠원동","slug":"jamwon"},{"code":"1165010700","name":"반포동","slug":"banpo"},{"code":"1165010800","name":"서초동","slug":"seocho"},{"code":"1165010900","name":"내곡동","slug":"naegok"},{"code":"1165011000","name":"염곡동","slug":"yeomgok"},{"code":"1165011100","name":"신원동","slug":"sinwon"}]},{"slug":"gangnam","name":"강남구","code":"1168000000","neighbors":["seocho","songpa","seongdong","yongsan"],"dongs":[{"code":"1168010100","name":"역삼동","slug":"yeoksam"},{"code":"1168010300","name":"개포동","slug":"gaepo"},{"code":"1168010400","name":"청담동","slug":"cheongdam"},{"code":"1168010500","name":"삼성동","slug":"samseong"},{"code":"1168010600","name":"대치동","slug":"daechi"},{"code":"1168010700","name":"신사동","slug":"sinsa_gn"},{"code":"1168010800","name":"논현동","slug":"nonhyeon"},{"code":"1168011000","name":"압구정동","slug":"apgujeong"},{"code":"1168011100","name":"세곡동","slug":"segok"},{"code":"1168011200","name":"자곡동","slug":"jagok"},{"code":"1168011300","name":"율현동","slug":"yulhyeon"},{"code":"1168011400","name":"일원동","slug":"ilwon"},{"code":"1168011500","name":"수서동","slug":"suseo"},{"code":"1168011800","name":"도곡동","slug":"dogok"}]},{"slug":"songpa","name":"송파구","code":"1171000000","neighbors":["gangnam","seocho","gangdong","gwangjin"],"dongs":[{"code":"1171010100","name":"잠실동","slug":"jamsil"},{"code":"1171010200","name":"신천동","slug":"sincheon"},{"code":"1171010300","name":"풍납동","slug":"pungnap"},{"code":"1171010400","name":"송파동","slug":"songpadong"},{"code":"1171010500","name":"석촌동","slug":"seokchon"},{"code":"1171010600","name":"삼전동","slug":"samjeon"},{"code":"1171010700","name":"가락동","slug":"garak"},{"code":"1171010800","name":"문정동","slug":"munjeong"},{"code":"1171010900","name":"장지동","slug":"jangji"},{"code":"1171011100","name":"방이동","slug":"bangi"},{"code":"1171011200","name":"오금동","slug":"ogeum"},{"code":"1171011300","name":"거여동","slug":"geoyeo"},{"code":"1171011400","name":"마천동","slug":"macheon"}]},{"slug":"gangdong","name":"강동구","code":"1174000000","neighbors":["songpa","gwangjin","jungnang"],"dongs":[{"code":"1174010100","name":"명일동","slug":"myeongil"},{"code":"1174010200","name":"고덕동","slug":"godeok"},{"code":"1174010300","name":"상일동","slug":"sangil"},{"code":"1174010500","name":"길동","slug":"gil"},{"code":"1174010600","name":"둔촌동","slug":"dunchon"},{"code":"1174010700","name":"암사동","slug":"amsa"},{"code":"1174010800","name":"성내동","slug":"seongnae"},{"code":"1174010900","name":"천호동","slug":"cheonho"},{"code":"1174011000","name":"강일동","slug":"gangil"}]}];
+
+function findSeoulGu(slug) {
+  return SEOUL_GUS.find(g => g.slug === slug);
+}
+function findSeoulDong(guSlug, dongSlug) {
+  const gu = findSeoulGu(guSlug);
+  if (!gu) return null;
+  const d = gu.dongs.find(x => x.slug === dongSlug);
+  return d ? { ...d, gu } : null;
+}
+
 const PRODUCTS = [
   {
     slug: 'card-terminal',
@@ -875,8 +888,134 @@ footer .logo{color:#fff}
 .related-item .name{font-size:13.5px;font-weight:500}
 
 .seoul-gu-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.seoul-gu-chip{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:100px;font-size:14px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;line-height:1.2;min-width:72px}
+.seoul-gu-chip{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:100px;font-size:14px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;line-height:1.2;min-width:72px;text-decoration:none;transition:all .12s}a.seoul-gu-chip:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-1px)}
 @media (max-width:600px){.seoul-gu-chip{padding:8px 14px;font-size:13px;min-width:56px}}
+/* ===== [SEOUL GU/DONG PAGES] ===== */
+.sgu-wrap,.sdo-wrap{max-width:880px;margin:0 auto;padding:24px 20px 60px;font-family:'Pretendard','Malgun Gothic',sans-serif;color:#1e293b;line-height:1.6}
+
+/* GU PAGE */
+.sgu-bc{font-size:12.5px;color:#64748b;margin-bottom:16px}
+.sgu-bc a{color:#64748b;text-decoration:none}
+.sgu-bc span{margin:0 6px;color:#cbd5e1}
+.sgu-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:22px;aspect-ratio:16/5;min-height:160px;background:#1e293b}
+.sgu-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('https://images.unsplash.com/photo-1726137569854-ce11cc10cf67?fm=jpg&q=80&w=1400&auto=format&fit=crop') center/cover}
+.sgu-hero-ov{position:absolute;inset:0;padding:24px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.sgu-hero-title{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
+.sgu-hero-sub{font-size:12.5px;opacity:0.82}
+.sgu-h1{font-size:22px;font-weight:700;letter-spacing:-0.025em;margin:14px 0 20px;line-height:1.35;color:#0f172a}
+.sgu-body{}
+.sgu-sec{margin:0 0 20px}
+.sgu-h2{font-size:17px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;color:#0f172a;display:flex;align-items:center;gap:6px}
+.sgu-ic{color:#dc2626}
+.sgu-sec p{font-size:13px;line-height:1.8;color:#334155;margin-bottom:8px}
+.sgu-sec p:last-child{margin-bottom:0}
+.sgu-sec strong,.sgu-sec b{font-weight:700;color:#0f172a}
+.sgu-reco{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.sgu-reco-item{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;transition:all .15s}
+.sgu-reco-item:hover{border-color:#0f172a;background:#f8fafc}
+.sgu-reco-item::before{content:"💬";flex-shrink:0;font-size:15px;line-height:1.4}
+.sgu-reco-q{font-size:13.5px;color:#0f172a;font-weight:500;line-height:1.5}
+.sgu-proc{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:6px;padding:0}
+.sgu-proc li{display:flex;align-items:flex-start;gap:9px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:11px 14px;font-size:12.5px;line-height:1.55;color:#166534}
+.sgu-check{color:#16a34a;font-weight:700;flex-shrink:0;margin-top:1px}
+.sgu-tip{background:#fefce8;border-left:3px solid #eab308;border-radius:8px;padding:13px 16px;margin:18px 0}
+.sgu-tip-h{font-size:13px;font-weight:700;margin-bottom:5px;color:#0f172a}
+.sgu-tip p{font-size:12.5px;color:#374151;line-height:1.7;margin:0}
+.sgu-why{list-style:none;display:flex;flex-direction:column;gap:6px;padding:0}
+.sgu-why li{display:flex;align-items:flex-start;gap:8px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:10px 14px;font-size:12.5px;line-height:1.55;color:#166534}
+.sgu-prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px}
+.sgu-prod{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:18px 10px;text-align:center;text-decoration:none;color:#334155;transition:all .15s}
+.sgu-prod:hover{border-color:#0f172a;transform:translateY(-2px)}
+.sgu-prod-ic{font-size:22px;margin-bottom:6px}
+.sgu-prod-name{font-size:12px;font-weight:500}
+.sgu-faqs{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.sgu-faq-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px}
+.sgu-faq-q{font-size:13px;font-weight:600;margin-bottom:5px;line-height:1.5;color:#0f172a}
+.sgu-faq-q-mark{color:#dc2626;margin-right:4px}
+.sgu-faq-a{font-size:12px;color:#475569;line-height:1.7}
+.sgu-dong-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.sgu-dong-chip{display:inline-flex;align-items:center;justify-content:center;padding:6px 12px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:100px;font-size:11.5px;color:#475569;text-decoration:none;line-height:1.2;transition:all .12s}
+.sgu-dong-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.sgu-cta{background:#fefce8;border:1px solid #fde68a;border-radius:12px;padding:20px;text-align:center;margin-top:20px}
+.sgu-cta-h{font-size:15px;font-weight:700;margin-bottom:4px;color:#0f172a}
+.sgu-cta-sub{font-size:12px;color:#78716c;margin-bottom:14px}
+.sgu-cta-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.sgu-cta-btn{display:inline-flex;align-items:center;gap:4px;padding:10px 16px;border-radius:100px;font-size:12.5px;font-weight:600;text-decoration:none;border:1px solid #e2e8f0;background:#fff;color:#0f172a;transition:all .15s}
+.sgu-cta-btn:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.sgu-cta-btn-primary{background:#0f172a;color:#fff;border-color:#0f172a}
+.sgu-cta-btn-primary:hover{background:#334155;border-color:#334155}
+
+/* DONG PAGE */
+.sdo-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:14px;aspect-ratio:16/5;min-height:160px;background:#1e293b}
+.sdo-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('https://images.unsplash.com/photo-1726137569854-ce11cc10cf67?fm=jpg&q=80&w=1400&auto=format&fit=crop') center/cover}
+.sdo-hero-tag{position:absolute;top:14px;right:14px;background:#fff;color:#0f172a;font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:100px;letter-spacing:-0.01em}
+.sdo-hero-ov{position:absolute;inset:0;padding:24px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.sdo-hero-title{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
+.sdo-hero-sub{font-size:12.5px;opacity:0.85}
+.sdo-meta{display:flex;align-items:center;gap:10px;font-size:12px;color:#64748b;margin-bottom:14px;flex-wrap:wrap}
+.sdo-meta-tag{background:#f1f5f9;padding:3px 10px;border-radius:100px;font-size:11.5px;font-weight:500;color:#475569}
+.sdo-meta-sep{color:#cbd5e1}
+.sdo-h1{font-size:23px;font-weight:700;letter-spacing:-0.025em;margin:8px 0 18px;line-height:1.4;color:#0f172a}
+.sdo-intro{font-size:13px;line-height:1.8;color:#334155;margin-bottom:24px}
+.sdo-intro strong{color:#0f172a;font-weight:700}
+.sdo-body{overflow:hidden}
+.sdo-side-boxes{float:right;width:190px;margin:0 0 16px 24px;display:flex;flex-direction:column;gap:10px}
+.sdo-side-box{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px}
+.sdo-side-box-h{font-size:13px;font-weight:700;margin-bottom:9px;color:#0f172a;letter-spacing:-0.01em}
+.sdo-side-box ul{list-style:none;padding:0}
+.sdo-side-box li{font-size:12px;color:#475569;margin:5px 0;padding-left:10px;position:relative}
+.sdo-side-box li::before{content:"•";position:absolute;left:0;color:#94a3b8}
+.sdo-side-box li a{color:#475569;text-decoration:none}
+.sdo-side-box li a:hover{color:#0f172a;text-decoration:underline}
+.sdo-reco{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.sdo-reco-item{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;transition:all .15s}
+.sdo-reco-item:hover{border-color:#0f172a;background:#f8fafc}
+.sdo-reco-item::before{content:"💬";flex-shrink:0;font-size:15px;line-height:1.4}
+.sdo-reco-q{font-size:13.5px;color:#0f172a;font-weight:500;line-height:1.5}
+.sdo-sec{margin:0 0 22px}
+.sdo-h2{font-size:17px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;color:#0f172a;display:flex;align-items:center;gap:6px}
+.sdo-ic{color:#dc2626}
+.sdo-sec p{font-size:13px;line-height:1.85;color:#334155;margin-bottom:10px}
+.sdo-sec p:last-child{margin-bottom:0}
+.sdo-sec strong,.sdo-sec b{font-weight:700;color:#0f172a}
+.sdo-ind-card{background:#fef9e7;border:1px solid #fde68a;border-radius:10px;padding:14px 16px;margin:10px 0}
+.sdo-ind-card-h{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:10px;display:flex;align-items:center;gap:5px}
+.sdo-ind-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.sdo-ind-chip{display:inline-flex;align-items:center;padding:5px 12px;background:#fff;border:1px solid #fde68a;border-radius:100px;font-size:11.5px;color:#78716c;font-weight:500}
+.sdo-ind-note{font-size:11.5px;color:#78716c;margin-top:6px}
+.sdo-tip{background:#fefce8;border-left:3px solid #eab308;border-radius:8px;padding:12px 16px;margin:12px 0 20px}
+.sdo-tip-h{font-size:12.5px;font-weight:700;margin-bottom:4px;color:#0f172a}
+.sdo-tip p{font-size:12px;color:#374151;line-height:1.7;margin:0}
+.sdo-check-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin:8px 0 0;padding:0}
+.sdo-check-list li{display:flex;align-items:flex-start;gap:9px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:10px 14px;font-size:12.5px;line-height:1.6;color:#166534}
+.sdo-check-mark{color:#16a34a;font-weight:700;flex-shrink:0;margin-top:1px}
+.sdo-pkg{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:14px 16px;margin:10px 0}
+.sdo-pkg-h{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:10px;display:flex;align-items:center;gap:5px}
+.sdo-pkg ul{list-style:none;display:flex;flex-direction:column;gap:6px;padding:0}
+.sdo-pkg li{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#166534;line-height:1.55}
+.sdo-pkg li::before{content:"✓";color:#16a34a;font-weight:700;flex-shrink:0}
+.sdo-faqs{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.sdo-faq-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px}
+.sdo-faq-q{font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.5;color:#0f172a}
+.sdo-faq-q-mark{color:#dc2626;margin-right:4px}
+.sdo-faq-a{font-size:12px;color:#475569;line-height:1.75}
+.sdo-cta{background:#fefce8;border:1px solid #fde68a;border-radius:12px;padding:20px;text-align:center;margin-top:24px}
+.sdo-cta-h{font-size:15px;font-weight:700;margin-bottom:4px;color:#0f172a}
+.sdo-cta-sub{font-size:12px;color:#78716c;margin-bottom:4px;line-height:1.6}
+.sdo-cta-prod{font-size:12px;color:#78716c;margin-bottom:14px}
+.sdo-cta-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.sdo-cta-btn{display:inline-flex;align-items:center;gap:4px;padding:10px 16px;border-radius:100px;font-size:12.5px;font-weight:600;text-decoration:none;border:1px solid #e2e8f0;background:#fff;color:#0f172a;transition:all .15s}
+.sdo-cta-btn:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.sdo-cta-btn-primary{background:#0f172a;color:#fff;border-color:#0f172a}
+.sdo-cta-btn-primary:hover{background:#334155;border-color:#334155}
+
+@media (max-width:640px){
+  .sgu-prod-grid{grid-template-columns:repeat(3,1fr)}
+  .sgu-h1,.sdo-h1{font-size:19px}
+  .sgu-h2,.sdo-h2{font-size:15px}
+  .sdo-side-boxes{float:none;width:100%;margin:0 0 16px 0;flex-direction:row;flex-wrap:wrap}
+  .sdo-side-box{flex:1;min-width:140px}
+}
 
 .cta-inline{background:var(--ink);color:#fff;border-radius:var(--radius);padding:36px 32px;margin-top:56px;text-align:center}
 .cta-inline h4{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;margin-bottom:14px;font-weight:600}
@@ -1492,7 +1631,7 @@ ${region.slug === 'seoul' ? `
 <div class="container">
 <div class="section-head" style="margin-bottom:24px"><div class="section-tag">Districts</div><h2 class="section-title" style="font-size:32px">🏙️ 서울 <em>지역별 바로가기</em></h2></div>
 <div class="seoul-gu-grid">
-${['종로구','중구','용산구','성동구','광진구','동대문구','중랑구','성북구','강북구','도봉구','노원구','은평구','서대문구','마포구','양천구','강서구','구로구','금천구','영등포구','동작구','관악구','서초구','강남구','송파구','강동구'].map(g => `<span class="seoul-gu-chip">${g}</span>`).join('')}
+${SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="seoul-gu-chip">${g.name}</a>`).join('')}
 </div>
 </div>
 </section>` : ''}
@@ -1681,6 +1820,429 @@ ${PRODUCTS.filter(p => p.slug !== product.slug).slice(0, 4).map(p => `<a href="/
 
 // [11-B] 시군구 상세 페이지 렌더 /region/{sidoSlug}/{slug} ============
 // 1,500자 본문, 10개 태그, FAQ, 관련 아티클 포함 — 네이버 SEO 최적화
+// [SEOUL-ENGINE] 서울 구/동 동적 페이지 렌더
+// preview-jongno.html + preview-cheongun.html 기반
+
+function _seoulHash(s) { let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))|0; return Math.abs(h); }
+function _seoulPick(salt, arr) { return arr[_seoulHash(salt)%arr.length]; }
+
+// 상권 특성 변형 뱅크 (구 페이지용) - 지역명 {name} 치환
+const _SEOUL_MARKET_V = [
+  '{name}은 서울 주요 상권 중 하나로, 관광·직장인·주거 수요가 함께 모이는 지역입니다. 대로변 프랜차이즈부터 골목의 한식당, 카페, 의류 편집샵까지 업종 폭이 유난히 넓어 한 가지 장비 세팅으로 모든 매장을 대응하기는 어렵습니다.',
+  '서울 내에서도 매장 회전율이 높은 {name}은 카페·음식점·편의점·의류·뷰티 중심의 다양한 업종이 밀집한 상권입니다. 업종과 매장 위치에 따라 요구되는 결제 장비와 주문 관리 방식이 크게 달라집니다.',
+  '{name}은 유동 인구와 상주 인구가 균형 잡힌 서울 핵심 상권 중 하나로, 매장 오픈이나 리모델링 시 카드단말기부터 CCTV까지 한번에 세팅하는 사장님들이 빠르게 늘고 있습니다.',
+];
+
+const _SEOUL_FLOW_V = [
+  '오페리오솔루션은 {name}에서 매장을 여시는 사장님의 <strong>동선과 피크타임</strong>을 먼저 살피고 시작합니다. 오피스 상권은 점심 2시간에 매출이 몰리는 구조라 결제 지연이 바로 이탈로 이어지고, 주거·배달 상권은 POS·배달앱 연동이 더 중요합니다. 매장이 자리한 위치와 업종을 보고 필요한 장비만 골라드리는 것이 저희 방식입니다.',
+  '{name} 매장은 상권 성격에 따라 필요한 장비 조합이 완전히 다릅니다. 오페리오솔루션은 현장을 직접 방문해 카운터 구조·동선·결제 수단 비중을 확인한 뒤, 카드단말기·포스기·키오스크 중 <strong>실제로 필요한 것만</strong> 제안드립니다. 불필요한 장비는 권하지 않습니다.',
+  '{name}에서 매장을 준비하신다면 오픈 전 2~3주가 가장 중요합니다. 오페리오솔루션은 오픈 일정을 먼저 여쭤본 뒤 <strong>설치·메뉴 등록·직원 교육</strong>까지 역산해서 일정을 짜드립니다. 당일 영업 개시에 지장이 없도록 사전 테스트까지 끝내드립니다.',
+];
+
+const _SEOUL_POS_CONTEXT_V = [
+  '{name}의 카페·음식점·편의점은 특히 <strong>배달 3사(배민·요기요·쿠팡이츠)</strong> 주문이 많아서, 포스·배달앱·주방 프린터가 엉키지 않게 연결하는 게 핵심입니다. 오페리오솔루션은 업종별로 검증된 기종만 가지고 방문해 바로 세팅해드리고, 사장님이 직접 쓰시는 방법까지 손에 익히실 때까지 1:1로 알려드립니다. 설치비·월 이용료·교육비 모두 들지 않습니다.',
+  '{name} 매장은 업종 다양성이 커서 POS 기종 선택이 까다롭습니다. 음식점용·카페용·미용실용·학원용 POS 기능이 모두 다르기 때문에 잘못 선택하면 매달 쓸 수 있는 기능이 절반도 안 되는 경우가 생깁니다. 오페리오솔루션은 업종별 검증 기종만 권해드리고, 배달 플랫폼 연동과 매출 리포트 세팅까지 하루 안에 끝냅니다.',
+];
+
+const _SEOUL_KIOSK_CONTEXT_V = [
+  '테이블오더는 자리에 앉아 바로 주문·결제까지 끝내는 방식이라 홀을 오가는 직원의 손이 눈에 띄게 줄어듭니다. {name}에서는 카페·브런치 매장·프랜차이즈 음식점이 빠르게 도입하고 있습니다. 포스·주방 프린터와 자동 연동되어 주문이 누락될 일이 없고, 메뉴 이미지·옵션 구성·직원 교육까지 오페리오솔루션에서 한자리에서 처리해드립니다.',
+  '{name} 매장에 키오스크를 세워두면 사장님은 주문 응대 공백 없이 주방·서빙에 집중하실 수 있고, 고객은 메뉴를 천천히 고르기 때문에 추천 메뉴 선택 비율이 자연스럽게 오릅니다. 테이블오더와 함께 설치하시면 홀 직원 의존도가 크게 낮아져 1인 운영 매장도 피크타임을 거뜬히 소화할 수 있습니다.',
+];
+
+const _SEOUL_FAQ1A_V = [
+  '{name} 전 지역을 직접 방문합니다. 오전에 연락 주시면 오후 설치가 가능한 경우가 많지만, 당일 일정은 지역과 장비 재고에 따라 다르니 먼저 전화 상담으로 확인하시는 게 빠릅니다.',
+  '{name} 전 지역 출장 설치 가능합니다. 재고 확인 후 가장 빠른 일정으로 설치해드리며, 긴급하시면 당일 처리도 됩니다. 먼저 전화로 업종·매장 규모를 말씀해 주시면 일정이 바로 잡힙니다.',
+];
+
+// ========== 서울 구 페이지 ==========
+function renderSeoulGuPage(gu) {
+  const name = gu.name;
+  const dc = gu.dongs.length;
+  
+  const marketP = _seoulPick('mkt-'+gu.slug, _SEOUL_MARKET_V).replace(/\{name\}/g, name);
+  const flowP = _seoulPick('flw-'+gu.slug, _SEOUL_FLOW_V).replace(/\{name\}/g, name);
+  const posCtx = _seoulPick('pos-'+gu.slug, _SEOUL_POS_CONTEXT_V).replace(/\{name\}/g, name);
+  const kioskCtx = _seoulPick('kio-'+gu.slug, _SEOUL_KIOSK_CONTEXT_V).replace(/\{name\}/g, name);
+  const faq1A = _seoulPick('fq1-'+gu.slug, _SEOUL_FAQ1A_V).replace(/\{name\}/g, name);
+  
+  const dongChips = gu.dongs.map(d => `<a href="/region/seoul/${gu.slug}/${d.slug}" class="sgu-dong-chip">${d.name}</a>`).join('');
+  
+  const body = `
+<section class="sgu-page">
+<div class="container sgu-wrap">
+
+<div class="sgu-bc"><a href="/">홈</a><span>›</span><a href="/region">지역별 설치</a><span>›</span><a href="/region/seoul">서울</a><span>›</span>${name}</div>
+
+<div class="sgu-hero">
+  <div class="sgu-hero-bg"></div>
+  <div class="sgu-hero-ov">
+    <div class="sgu-hero-title">${name} 카드단말기·포스기·키오스크 설치 전문</div>
+    <div class="sgu-hero-sub">${name} 매장 당일 출장 | 설치비 무료 | VAN사 수수료 비교 견적</div>
+  </div>
+</div>
+
+<h1 class="sgu-h1">${name} 카드단말기·포스기·키오스크 설치</h1>
+
+<div class="sgu-body">
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">📍</span>${name} 상권 특성</div>
+  <p>${marketP}</p>
+  <p>${flowP}</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">✨</span>이런 분들에게 추천해요</div>
+  <div class="sgu-reco">
+    <div class="sgu-reco-item"><div class="sgu-reco-q">${name}에서 매장 오픈을 준비 중이신가요?</div></div>
+    <div class="sgu-reco-item"><div class="sgu-reco-q">기존 단말기 수수료가 높아 고민이신가요?</div></div>
+    <div class="sgu-reco-item"><div class="sgu-reco-q">폐업·이전·리모델링을 앞두고 계신가요?</div></div>
+    <div class="sgu-reco-item"><div class="sgu-reco-q">A/S 때문에 스트레스 받고 계신가요?</div></div>
+  </div>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">💳</span>${name} 카드단말기 설치</div>
+  <p>카드단말기는 처음 한 번 놓는 비용보다 <strong>매달 나가는 VAN사 수수료</strong>가 몇 년 쌓이면 훨씬 큰 금액이 됩니다. 오페리오솔루션은 ${name} 매장에 단말기를 들이기 전에, 10여 곳의 VAN사 견적을 수수료·할부 조건까지 함께 펼쳐서 비교해드립니다. 같은 결제라도 어느 VAN사와 계약했느냐에 따라 1년에 수십만 원이 차이 납니다.</p>
+  <p>단말기 종류도 한 가지만 고집하지 않습니다. 좁은 카운터에 맞는 일체형 유선, 홀 서빙용 무선, 배달 대응 블루투스, 토스·페이코 등 간편결제 중심 모델까지 매장 동선을 보고 맞춰드리며, <strong>IC·NFC·QR·삼성페이</strong>가 한 대에서 모두 돌아가도록 세팅합니다. 설치비와 월 이용료는 부과되지 않습니다.</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">🖥️</span>${name} 포스기(POS) 설치</div>
+  <p>포스기는 "매출을 찍는 기계"가 아니라 매장 하루 전체를 기록하는 장부입니다. 누가 몇 시에 뭘 주문했고, 재고는 얼마나 남았으며, 어떤 직원이 오늘 몇 시간 일했는지가 한 화면에 정리되지 않으면 월말 정산에서 반드시 오차가 생깁니다.</p>
+  <p>${posCtx}</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">🤖</span>${name} 키오스크·테이블오더 설치</div>
+  <p>키오스크 한 대가 사람 한 명의 역할을 한다는 건 과장이 아닙니다. ${name}처럼 점심 한 시간에 매출이 몰리는 상권에서는 주문을 받느라 주방을 비우는 5분이 결정적입니다. 키오스크를 세워두면 그 시간에 사장님은 주방에 집중하실 수 있고, 고객은 메뉴를 천천히 고르기 때문에 추천 메뉴 선택 비율이 오르면서 <strong>객단가가 자연스럽게 같이 올라갑니다</strong>.</p>
+  <p>${kioskCtx}</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">📷</span>${name} CCTV 설치</div>
+  <p>CCTV를 도난 예방 목적으로만 생각하시면 활용도가 절반밖에 안 나옵니다. ${name} 매장에서 CCTV가 실제로 쓰이는 상황은 ① 결제 오입력 확인, ② 폐업·이전 시 원상복구 증빙, ③ 고객 컴플레인 상황 재구성, ④ 직원 근태 확인 등입니다. 포스기와 연동되면 결제가 일어난 순간의 영상이 바로 매칭되어, 카드·현금 정산 차이를 그 자리에서 찾을 수 있습니다.</p>
+  <p>HD·QHD·4K 중 매장 평수와 카메라 위치에 맞는 사양을 골라드리고, 스마트폰에서 실시간 확인이 되도록 설정까지 마쳐드립니다. 화재·도난 보험 중 상당수가 CCTV 설치 매장에 <strong>보험료 할인</strong>을 적용하므로, 설치 완료 후 보험사 제출용 사양서까지 발급해드립니다.</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">🔨</span>${name} 매장·사무실 철거</div>
+  <p>폐업을 결정하실 때쯤이면 이미 많이 힘드신 상태입니다. 그 뒤에 남는 철거·원상복구·폐기물 처리까지 사장님이 직접 챙기시다 보면 마지막까지 진이 빠지게 됩니다.</p>
+  <p>오페리오솔루션은 ${name} 현장을 먼저 방문해 임대차 계약서상 <strong>원상복구 범위를 임대인과 같이 확인</strong>한 뒤 정찰제로 견적을 드립니다. "이건 추가입니다"가 중간에 끼어들지 않는 구조라 예산이 흔들리지 않습니다. 철거 후 폐기물은 업종별 분리 배출 기준에 맞춰 처리하고, 완료 보증서도 같이 드립니다. 소상공인진흥공단 <strong>희망리턴패키지</strong>로 철거비 일부를 정부가 지원하는데, 신청서 작성이 복잡해 포기하시는 분이 많아서 이 서류도 저희가 같이 챙겨드립니다.</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">⚡</span>${name} 설치 프로세스</div>
+  <ul class="sgu-proc">
+    <li><span class="sgu-check">✓</span><div><strong>1단계 전화 상담</strong> — 업종·매장 평수·필요 장비를 간단히 말씀해 주시면 예상 견적까지 바로 안내드립니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>2단계 현장 방문</strong> — ${name} 매장에 직접 들러 전원·인터넷·카운터 공간을 점검하며 정확한 견적을 확정합니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>3단계 장비 입고·세팅</strong> — VAN사 계약·메뉴 등록·배달앱 연동·포스 설정까지 하루 안에 끝냅니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>4단계 사용 교육·A/S 연결</strong> — 사장님과 직원분이 직접 조작해보실 때까지 곁에서 같이 써봅니다</div></li>
+  </ul>
+</section>
+
+<div class="sgu-tip">
+  <div class="sgu-tip-h">💡 ${name} 사장님 Tip</div>
+  <p><strong>오픈 전 2~3주가 가장 중요합니다.</strong> 장비만 도착한다고 영업이 시작되는 게 아니라, 메뉴 등록·배달앱 연동·직원 교육까지 끝나야 문을 열 수 있습니다. 오페리오솔루션은 오픈 일정을 먼저 여쭤보고 거기서 거꾸로 계산해 설치 일정을 잡습니다. 당일 설치가 급하시면 일정 조율해드리고, 여유가 있으시면 교육 시간을 충분히 확보하는 쪽을 권해드립니다.</p>
+</div>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">💰</span>${name} 설치 비용 안내</div>
+  <p>장비 설치비가 "무료"라고 하면 이상하게 들리실 수 있습니다. 저희가 VAN사와 제휴 계약을 맺고 있어서, 사장님이 카드결제를 받으실 때 발생하는 VAN사 수수료에서 단말기 원가가 상쇄되는 구조입니다. 그래서 사장님께서 <strong>내시는 설치비는 0원</strong>이 됩니다.</p>
+  <p>포스기·키오스크·테이블오더도 오페리오솔루션 패키지로 묶어 설치하시면 설치비가 들지 않습니다. CCTV는 매장 면적·카메라 대수에 따라 따로 견적이 나옵니다. 철거는 정찰제이며, 희망리턴패키지 보조금이 적용되면 사장님 부담이 상당 부분 줄어듭니다.</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">📊</span>${name} 매장 운영 가이드</div>
+  <p>설치가 끝났다고 오페리오솔루션의 일이 끝난 건 아닙니다. 포스기에는 매장의 모든 움직임이 기록되기 때문에, 이 데이터를 들여다보면 재고·인력·메뉴 구성까지 개선 포인트가 제법 많이 나옵니다.</p>
+  <p>요일별·시간대별 매출 패턴을 보고 피크타임 직원 수를 조정하거나, 배달 3사 매출을 하나로 모아 플랫폼별 수수료를 역산해보는 것부터 시작합니다. 메뉴별 판매량 추이를 보면 계절 메뉴 결정 타이밍도 잡히고, VAN사 수수료는 시장 변화가 빨라서 정기적으로 재검토해 <strong>더 좋은 조건이 나오면 무상으로 전환</strong>해드립니다. 이 리포트 해석은 무상 컨설팅으로 지원하며, 필요하시면 월 1회 방문해 숫자를 함께 봐드립니다.</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">✅</span>${name}에서 오페리오솔루션을 선택해야 하는 이유</div>
+  <ul class="sgu-why">
+    <li><span class="sgu-check">✓</span><div><strong>VAN사 견적을 10곳 이상 비교</strong> — 사장님이 직접 알아보시면 1~2곳이 한계지만, 저희는 업계 관계로 한 번에 비교해드립니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>설치비·월 이용료·교육비 모두 0원</strong> — 카드단말기·포스기·키오스크·테이블오더 모두 동일. VAN사 수수료만 결제 건당 부과됩니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>${name} 담당 기사 고정 배정</strong> — 처음 오신 기사가 A/S도 끝까지 담당하기 때문에 매장 상황을 매번 처음부터 설명하실 필요가 없습니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>업종에 쓸 장비만 추천</strong> — 음식점에 필요 없는 예약 관리 POS, 미용실에 과한 테이블오더는 권해드리지 않습니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>오픈 일정 역산 설계</strong> — 장비 배송·설치·교육까지 오픈일에 맞춰 거꾸로 일정을 짜드립니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>A/S는 전화 한 통</strong> — 원격 지원으로 대부분 해결되고, 필요하면 ${name} 내 당일 출동합니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>폐업 때도 저희가 남아있습니다</strong> — 철거·원상복구·폐기물 처리·희망리턴패키지 보조금 신청까지 연결해드립니다</div></li>
+  </ul>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">📦</span>${name} 제품별 설치 안내</div>
+  <div class="sgu-prod-grid">
+    <a href="/product/card-terminal" class="sgu-prod"><div class="sgu-prod-ic">💳</div><div class="sgu-prod-name">카드단말기</div></a>
+    <a href="/product/pos" class="sgu-prod"><div class="sgu-prod-ic">🖥️</div><div class="sgu-prod-name">포스기</div></a>
+    <a href="/product/kiosk" class="sgu-prod"><div class="sgu-prod-ic">🤖</div><div class="sgu-prod-name">키오스크</div></a>
+    <a href="/product/cctv" class="sgu-prod"><div class="sgu-prod-ic">📷</div><div class="sgu-prod-name">CCTV</div></a>
+    <a href="/product/table-order" class="sgu-prod"><div class="sgu-prod-ic">📋</div><div class="sgu-prod-name">테이블오더</div></a>
+    <a href="/product/removal" class="sgu-prod"><div class="sgu-prod-ic">🔨</div><div class="sgu-prod-name">철거</div></a>
+    <a href="/product/vending" class="sgu-prod"><div class="sgu-prod-ic">🥤</div><div class="sgu-prod-name">밴딩머신</div></a>
+  </div>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">❓</span>${name} 설치 자주 묻는 질문</div>
+  <div class="sgu-faqs">
+    <div class="sgu-faq-item">
+      <div class="sgu-faq-q"><span class="sgu-faq-q-mark">Q.</span>${name} 어디까지 출장이 가능한가요?</div>
+      <div class="sgu-faq-a">${faq1A}</div>
+    </div>
+    <div class="sgu-faq-item">
+      <div class="sgu-faq-q"><span class="sgu-faq-q-mark">Q.</span>정말 설치비가 안 드나요?</div>
+      <div class="sgu-faq-a">네. 저희가 VAN사와 맺은 제휴 계약 구조상 단말기 원가가 VAN사 쪽에서 상쇄되는 방식입니다. 사장님께서 내시는 설치비·월 이용료·교육비는 0원이고, 카드결제 발생 시 건당 VAN사 수수료만 정상 부과됩니다. 계약서에도 동일하게 명시됩니다.</div>
+    </div>
+    <div class="sgu-faq-item">
+      <div class="sgu-faq-q"><span class="sgu-faq-q-mark">Q.</span>한 번에 여러 장비를 놓으면 뭐가 좋나요?</div>
+      <div class="sgu-faq-a">카드단말기·포스·키오스크·테이블오더·CCTV가 서로 연동되도록 한 번에 세팅합니다. 나중에 따로따로 설치하시면 연동 호환성 문제가 생기거나 같은 작업을 두세 번 하게 됩니다. 한 번에 설치하시면 패키지 할인도 들어가고, 한 명의 기사가 끝까지 책임지기 때문에 A/S 책임 소재도 명확해집니다.</div>
+    </div>
+    <div class="sgu-faq-item">
+      <div class="sgu-faq-q"><span class="sgu-faq-q-mark">Q.</span>고장 나면 어떻게 대응하세요?</div>
+      <div class="sgu-faq-a">먼저 전화 또는 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${name} 담당 기사가 직접 매장으로 출동하며, 긴급한 경우 당일 처리됩니다.</div>
+    </div>
+    <div class="sgu-faq-item">
+      <div class="sgu-faq-q"><span class="sgu-faq-q-mark">Q.</span>매장을 정리하는데 철거도 해주시나요?</div>
+      <div class="sgu-faq-a">${name} 내 매장·사무실·상가 철거까지 전문 엔지니어팀이 시공합니다. 임대인 원상복구 조건을 먼저 확인해 정찰제로 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 희망리턴패키지 보조금 신청서도 같이 준비해드립니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">🏘️</span>${name} 읍면동 바로가기</div>
+  <div class="sgu-dong-grid">${dongChips}</div>
+</section>
+
+<div class="sgu-cta">
+  <div class="sgu-cta-h">📞 ${name} 무료 상담 · 견적</div>
+  <div class="sgu-cta-sub">전화 한 통이면 예상 견적까지 바로 안내드립니다</div>
+  <div class="sgu-cta-btns">
+    <a href="tel:${SITE.phone}" class="sgu-cta-btn sgu-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
+    <a href="sms:${SITE.phone}" class="sgu-cta-btn">💬 문자상담</a>
+    <a href="/contact" class="sgu-cta-btn">📝 상담 문의</a>
+  </div>
+</div>
+
+</div>
+</div>
+</section>`;
+  
+  return htmlWrap({
+    title: `${name} 카드단말기·포스기·키오스크 설치 - ${name} 전 지역 출장 전문 | 오페리오솔루션`,
+    description: `서울 ${name} 카드단말기·포스기·키오스크·CCTV·테이블오더 설치. ${name} 전 지역 무료 견적·빠른 출장. 설치비 무료, VAN사 수수료 비교.`,
+    canonical: `${SITE.domain}/region/seoul/${gu.slug}`,
+    body,
+  });
+}
+
+// ========== 서울 동 페이지 ==========
+function renderSeoulDongPage(dong) {
+  const gu = dong.gu;
+  const name = dong.name;
+  const parent = gu.name;
+  const dc = gu.dongs.length;
+  
+  // 인근 동 (같은 구 내 앞뒤 5개)
+  const idx = gu.dongs.findIndex(d => d.slug === dong.slug);
+  const neighbors = [];
+  for (let i=1; neighbors.length<5 && i<30; i++) {
+    if (gu.dongs[idx-i] && neighbors.length < 5) neighbors.push(gu.dongs[idx-i]);
+    if (gu.dongs[idx+i] && neighbors.length < 5) neighbors.push(gu.dongs[idx+i]);
+  }
+  const neighborItems = neighbors.map(n => `<li><a href="/region/seoul/${gu.slug}/${n.slug}">${n.name}</a></li>`).join('');
+  
+  const body = `
+<section class="sdo-page">
+<div class="container sdo-wrap">
+
+<div class="sdo-hero">
+  <div class="sdo-hero-bg"></div>
+  <div class="sdo-hero-tag">카드단말기 설치</div>
+  <div class="sdo-hero-ov">
+    <div class="sdo-hero-title">${name} 카드단말기·포스기·키오스크·CCTV 설치, 구매, 상담</div>
+    <div class="sdo-hero-sub">서울특별시 ${parent} ${name} · 무료 설치 · 문의 ${SITE.phoneDisplay}</div>
+  </div>
+</div>
+
+<div class="sdo-meta">
+  <span class="sdo-meta-tag">카드단말기 설치</span>
+  <span>빠른 설치 · 당일 상담</span>
+  <span class="sdo-meta-sep">·</span>
+  <span>📍 서울특별시 ${parent} ${name}</span>
+</div>
+
+<h1 class="sdo-h1">${name} 카드단말기 설치 완벽 가이드</h1>
+
+<p class="sdo-intro">서울특별시 ${parent} ${name}에서 카드단말기·포스기 설치를 고민하고 계신가요? 오페리오솔루션은 <strong>${name} 전 지역</strong>을 직접 방문해 무료 견적·빠른 설치·A/S까지 책임집니다. 카드단말기·포스기·키오스크·테이블오더는 설치비 무료입니다. 이 글에서는 ${name} 사장님들이 꼭 알아야 할 카드단말기·포스기 선택 기준, 비용 절감 방법, 키오스크·CCTV 연동 혜택을 빠짐없이 안내드립니다.</p>
+
+<div class="sdo-body">
+
+<div class="sdo-side-boxes">
+  <div class="sdo-side-box">
+    <div class="sdo-side-box-h">📍 ${name} 인근 동</div>
+    <ul>${neighborItems}</ul>
+  </div>
+  <div class="sdo-side-box">
+    <div class="sdo-side-box-h">🛒 ${name} 제품별 설치</div>
+    <ul>
+      <li>${name} 카드단말기</li>
+      <li>${name} 포스기</li>
+      <li>${name} 키오스크</li>
+      <li>${name} CCTV</li>
+      <li>${name} 테이블오더</li>
+      <li>${name} 철거</li>
+      <li>${name} 밴딩머신</li>
+    </ul>
+  </div>
+</div>
+
+<section class="sdo-sec">
+  <div class="sdo-h2"><span class="sdo-ic">✨</span>이런 분들에게 추천해요</div>
+  <div class="sdo-reco">
+    <div class="sdo-reco-item"><div class="sdo-reco-q">${name}에서 매장 오픈을 준비 중이신가요?</div></div>
+    <div class="sdo-reco-item"><div class="sdo-reco-q">기존 단말기 수수료가 높아 고민이신가요?</div></div>
+    <div class="sdo-reco-item"><div class="sdo-reco-q">폐업·이전·리모델링을 앞두고 계신가요?</div></div>
+    <div class="sdo-reco-item"><div class="sdo-reco-q">A/S 때문에 스트레스 받고 계신가요?</div></div>
+  </div>
+</section>
+
+<section class="sdo-sec">
+  <div class="sdo-h2"><span class="sdo-ic">📍</span>${name} 상권 특성과 필요한 결제 장비</div>
+  <p>서울특별시 ${parent} ${name}은 도심 상업 지역으로, 유동 인구가 많고 경쟁이 치열한 지역입니다. ${name}에서 주로 운영되는 업종으로는 카페, 음식점, 편의점, 의류매장 등이 있으며, 각 업종 특성에 맞는 카드단말기와 포스기 설치가 필요합니다.</p>
+
+  <div class="sdo-ind-card">
+    <div class="sdo-ind-card-h">💳 ${name} 주요 업종 — 카드단말기 의무 설치 대상</div>
+    <div class="sdo-ind-chips">
+      <span class="sdo-ind-chip">카페</span>
+      <span class="sdo-ind-chip">음식점</span>
+      <span class="sdo-ind-chip">편의점</span>
+      <span class="sdo-ind-chip">의류매장</span>
+      <span class="sdo-ind-chip">뷰티샵</span>
+      <span class="sdo-ind-chip">병원·약국</span>
+      <span class="sdo-ind-chip">학원</span>
+      <span class="sdo-ind-chip">마트</span>
+    </div>
+    <div class="sdo-ind-note">포스기·키오스크·CCTV 연동 시 운영 효율이 크게 높아집니다.</div>
+  </div>
+
+  <p>${name} 지역 사장님들께 드리는 핵심 조언: 유동 인구가 많아 결제 속도와 안정성이 매출에 직결됩니다. 빠른 처리의 최신 카드단말기가 필수입니다.</p>
+</section>
+
+<div class="sdo-tip">
+  <div class="sdo-tip-h">💡 ${name} 사장님 Tip</div>
+  <p>카드단말기 단독 설치보다 <strong>포스기와 함께 설치</strong>하면 월 수수료 절감 + 재고·매출 자동 관리가 가능합니다. 오페리오솔루션 패키지 설치 시 추가 할인 혜택을 드립니다.</p>
+</div>
+
+<section class="sdo-sec">
+  <div class="sdo-h2"><span class="sdo-ic">🖥️</span>${name} 포스기 설치 — 매출 관리의 핵심</div>
+  <p>${name}에서 포스기를 도입하면 <strong>재고 관리, 직원 근태, 매출 통계, 고객 관리</strong>까지 하나의 시스템으로 운영합니다. ${name} 지역 카페, 음식점 사장님들께 포스기는 이미 필수 장비가 됐습니다.</p>
+  <ul class="sdo-check-list">
+    <li><span class="sdo-check-mark">✓</span><div>카드단말기·포스기 연동으로 이중 입력 없이 자동 매출 기록</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>테이블 오더·주방 프린터 연결로 홀 운영 효율 극대화</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>일·주·월 매출 리포트 자동 생성 — 세금 신고 준비 간소화</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>포인트·쿠폰·멤버십 관리로 <strong>${name} 단골 고객</strong> 확보</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>재고 부족 자동 알림 — 품절로 인한 매출 손실 방지</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>클라우드 백업으로 장비 교체 시에도 데이터 완벽 보존</div></li>
+  </ul>
+</section>
+
+<section class="sdo-sec">
+  <div class="sdo-h2"><span class="sdo-ic">🤖</span>${name} 키오스크 설치 — 인건비 절감의 정답</div>
+  <p>${name}에서도 키오스크 도입이 빠르게 늘고 있습니다. 특히 점심 피크타임에 주문이 몰리는 매장, 1인 운영 매장, 외국인 관광객 응대가 잦은 매장에서 효과가 큽니다.</p>
+  <ul class="sdo-check-list">
+    <li><span class="sdo-check-mark">✓</span><div>점심 12~13시 주문 병목 완화 — 대기 줄 3명 이상 줄어듭니다</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>사장님이 주방·서빙에 집중 가능 — 주문 응대 공백 해소</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>메뉴 이미지·옵션을 크게 보여줘 추천 메뉴 선택률 상승</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>다국어(영어·중국어·일본어) 지원으로 외국인 응대 스트레스 제로</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>영수증·포인트 적립·배달앱 연동까지 포스기와 자동 동기화</div></li>
+    <li><span class="sdo-check-mark">✓</span><div>야간 무인 운영 가능 — 24시간 매장 확장 기반 마련</div></li>
+  </ul>
+  <p>${name} 지역 카페·음식점에서 <strong>키오스크 + 포스기 + 카드단말기</strong>를 오페리오솔루션에서 함께 설치하시면 별도 시스템 없이 통합 관리, 메뉴 세팅·직원 교육까지 원스톱으로 지원됩니다.</p>
+</section>
+
+<section class="sdo-sec">
+  <div class="sdo-h2"><span class="sdo-ic">📷</span>${name} CCTV 설치 — 보안과 비용 절감을 동시에</div>
+  <p>${name} 매장에 CCTV를 설치하면 <strong>원격 모니터링, 직원 관리, 보험료 절감</strong>까지 실질적인 효과를 얻을 수 있습니다.</p>
+  <div class="sdo-pkg">
+    <div class="sdo-pkg-h">👉 오페리오솔루션 CCTV 설치 패키지</div>
+    <ul>
+      <li>Full HD·4K 고화질 카메라 — 야간에도 선명</li>
+      <li>스마트폰 원격 모니터링 — 어디서든 ${name} 매장 실시간 확인</li>
+      <li>AI 움직임 감지 알림 — 이상 상황 즉시 푸시 알림</li>
+      <li>30일 이상 저장 용량 — 분쟁·사고 시 증거 확보</li>
+      <li>포스기·키오스크와 통합 대시보드 연동</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sdo-sec">
+  <div class="sdo-h2"><span class="sdo-ic">📋</span>${name} 매장 오픈 체크리스트</div>
+  <p>${name}에서 매장을 오픈하시기 전에 카드단말기·포스기·키오스크·CCTV까지 빠짐없이 준비하셔야 오픈 당일 매끄럽게 영업을 시작하실 수 있습니다. 오페리오솔루션이 정리한 <strong>${name} 매장 필수 준비 항목</strong>입니다.</p>
+  <ul class="sdo-check-list">
+    <li><span class="sdo-check-mark">✓</span><div><strong>사업자등록증·임대차계약서 사본 준비</strong> — 카드단말기 VAN사 심사에 필요한 기본 서류입니다</div></li>
+    <li><span class="sdo-check-mark">✓</span><div><strong>${name} 매장 평수·카운터 위치 확인</strong> — 카드단말기 유선/무선, 포스기 설치 위치가 여기서 결정됩니다</div></li>
+    <li><span class="sdo-check-mark">✓</span><div><strong>업종별 포스기 기종 선택</strong> — 음식점·카페·편의점·의류·학원에 따라 추천 기종과 기능이 다릅니다</div></li>
+    <li><span class="sdo-check-mark">✓</span><div><strong>배달 플랫폼 등록 계획 확정</strong> — 배민·요기요·쿠팡이츠 연동이 필요하면 포스기 선택 단계에서 미리 확인하셔야 합니다</div></li>
+    <li><span class="sdo-check-mark">✓</span><div><strong>키오스크 설치 여부 결정</strong> — 점심 피크타임이 몰리는 매장, 1인 운영 매장, 외국인 응대가 많은 ${name} 상권에 특히 권장드립니다</div></li>
+    <li><span class="sdo-check-mark">✓</span><div><strong>CCTV 설치 위치 계획</strong> — 출입구·카운터·주방 3대 이상이 ${name} 매장 기준 평균입니다</div></li>
+    <li><span class="sdo-check-mark">✓</span><div><strong>VAN사 수수료 조건 비교</strong> — 최소 3곳 이상 비교, 카드결제 비중 높은 매장일수록 더 까다롭게 검토하셔야 합니다</div></li>
+    <li><span class="sdo-check-mark">✓</span><div><strong>인터넷·전기·통신선 확보</strong> — 포스기·키오스크·CCTV는 모두 안정적 회선이 필수이므로 오픈 전 체크하셔야 합니다</div></li>
+  </ul>
+  <p>위 체크리스트를 오페리오솔루션에 맡기시면 <strong>${name} 전 지역 무료 상담</strong>으로 한 번에 정리해드리며, 오픈 일정에 맞춰 설치부터 교육까지 원스톱으로 진행합니다.</p>
+</section>
+
+<section class="sdo-sec">
+  <div class="sdo-h2"><span class="sdo-ic">❓</span>${name} 사장님 자주 묻는 질문</div>
+  <div class="sdo-faqs">
+    <div class="sdo-faq-item">
+      <div class="sdo-faq-q"><span class="sdo-faq-q-mark">Q.</span>${name}에서 빠른 설치가 가능한가요?</div>
+      <div class="sdo-faq-a">네, 가능합니다. 오페리오솔루션은 서울특별시 전 지역 직접 방문 서비스를 제공하며, 상담 후 빠른 설치를 진행합니다. 장비 재고에 따라 익일 설치도 될 수 있으니 사전 확인 권장합니다.</div>
+    </div>
+    <div class="sdo-faq-item">
+      <div class="sdo-faq-q"><span class="sdo-faq-q-mark">Q.</span>${name} 설치 후 A/S는 어떻게 되나요?</div>
+      <div class="sdo-faq-a">장비 장애 시 원격 지원 또는 빠른 A/S를 제공하며, 서울특별시 전 지역 A/S 네트워크를 운영합니다.</div>
+    </div>
+    <div class="sdo-faq-item">
+      <div class="sdo-faq-q"><span class="sdo-faq-q-mark">Q.</span>기존 포스기가 있는데 카드단말기만 교체할 수 있나요?</div>
+      <div class="sdo-faq-a">물론입니다. 기존 포스기와 호환되는 카드단말기를 연동해 드립니다. 오래된 포스기는 호환성 확인이 필요하므로 사전 상담을 권장합니다.</div>
+    </div>
+    <div class="sdo-faq-item">
+      <div class="sdo-faq-q"><span class="sdo-faq-q-mark">Q.</span>카드단말기·포스기·키오스크·CCTV를 따로 계약해야 하나요?</div>
+      <div class="sdo-faq-a">오페리오솔루션은 원스톱 통합 계약으로 처리됩니다. 한 번의 상담으로 ${name} 매장에 최적화된 솔루션을 제안드립니다.</div>
+    </div>
+    <div class="sdo-faq-item">
+      <div class="sdo-faq-q"><span class="sdo-faq-q-mark">Q.</span>${name} 견적은 어떻게 받나요?</div>
+      <div class="sdo-faq-a">전화(${SITE.phoneDisplay}) 또는 카카오톡으로 문의 주시면 됩니다. 업종과 매장 규모를 말씀해 주시면 <strong>1분 안에 예상 견적</strong>을 안내드리며 무료 견적도 가능합니다.</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div class="sdo-cta">
+  <div class="sdo-cta-h">📞 ${name} 카드단말기 무료 견적 받기</div>
+  <div class="sdo-cta-sub">서울특별시 ${parent} ${name} 매장에 딱 맞는 장비를 전문가가 직접 추천해 드립니다.</div>
+  <div class="sdo-cta-prod">카드단말기 · 포스기 · 키오스크 · CCTV 통합 상담</div>
+  <div class="sdo-cta-btns">
+    <a href="tel:${SITE.phone}" class="sdo-cta-btn sdo-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
+    <a href="sms:${SITE.phone}" class="sdo-cta-btn">💬 문자상담</a>
+    <a href="/contact" class="sdo-cta-btn">📝 상담 문의</a>
+  </div>
+</div>
+
+</div>
+</section>`;
+  
+  return htmlWrap({
+    title: `${name} 카드단말기 설치 완벽 가이드 — 포스기·키오스크·CCTV 연동 | 오페리오솔루션`,
+    description: `서울 ${parent} ${name} 카드단말기·포스기·키오스크·CCTV 설치. 무료 견적·빠른 방문·설치비 무료. ${name} 매장 오픈 필수 장비를 전문가가 세팅합니다.`,
+    canonical: `${SITE.domain}/region/seoul/${gu.slug}/${dong.slug}`,
+    body,
+  });
+}
+
 function renderSigunguPage(sg) {
   const region = findRegion(sg.sidoSlug);
 
@@ -2387,6 +2949,18 @@ export default {
     }
 
     // 지역×시군구 상세 /region/{sidoSlug}/{slug} — 반드시 단일 패턴보다 먼저!
+    // [서울] 동 페이지: /region/seoul/{gu}/{dong}
+    const seoulDongMatch = pathname.match(/^\/region\/seoul\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
+    if (seoulDongMatch) {
+      const dong = findSeoulDong(seoulDongMatch[1], seoulDongMatch[2]);
+      if (dong) return new Response(renderSeoulDongPage(dong), { headers: htmlHeaders });
+    }
+    // [서울] 구 페이지: /region/seoul/{gu}
+    const seoulGuMatch = pathname.match(/^\/region\/seoul\/([a-z0-9-]+)$/);
+    if (seoulGuMatch) {
+      const gu = findSeoulGu(seoulGuMatch[1]);
+      if (gu) return new Response(renderSeoulGuPage(gu), { headers: htmlHeaders });
+    }
     const sigunguMatch = pathname.match(/^\/region\/([a-z-]+)\/([a-z-]+)$/);
     if (sigunguMatch) {
       const sg = findSigungu(sigunguMatch[1], sigunguMatch[2]);
