@@ -58,7 +58,7 @@ const REGIONS = [
     majorDistricts: ['강남구', '서초구', '송파구', '마포구', '종로구', '용산구', '성동구', '광진구', '영등포구', '동작구'],
     landmarks: '강남역, 명동, 홍대, 이태원, 여의도, 광화문, 잠실, 성수동',
     commercialAreas: ['강남역 상권', '홍대 상권', '명동 상권', '가로수길', '성수동 카페거리'],
-    description: '대한민국 수도 서울은 전국에서 매장 설비 수요가 가장 많은 지역입니다. 카페·음식점·미용실·편의점 등 업종을 불문하고 결제·주문 시스템이 매출에 직결되는 치열한 상권 환경입니다.',
+    description: '대한민국 수도 서울은 전국에서 매장 설비 수요가 가장 많은 지역입니다. 카페·음식점·미용실·편의점까지 업종을 가리지 않고, 결제·주문 시스템이 매출에 바로 영향을 주는 경쟁 밀도 높은 상권입니다.',
     installTime: '당일 설치 가능',
     coverage: '서울 25개 자치구 전 지역',
   },
@@ -899,6 +899,96 @@ footer .logo{color:#fff}
 .seoul-districts-inline{margin:40px 0 48px;padding:28px 28px 32px;background:var(--paper-2);border:1px solid var(--line);border-radius:16px}
 .seoul-districts-inline h2{margin-top:0 !important;font-size:22px !important;letter-spacing:-0.02em}
 .seoul-districts-inline .seoul-gu-grid{display:flex;flex-wrap:wrap;gap:8px}
+
+/* Seoul region page - VS comparison cards */
+.region-vs-wrap{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch;margin:20px 0 28px}
+.region-vs-card{position:relative;padding:22px 20px;border-radius:14px;border:1.5px solid;background:#fff;display:flex;flex-direction:column;transition:transform .2s}
+.region-vs-card:hover{transform:translateY(-2px)}
+.region-vs-bad{border-color:#fecaca;background:linear-gradient(180deg,#fef2f2 0%,#fff 60%)}
+.region-vs-good{border-color:#0f172a;background:linear-gradient(180deg,#f0fdf4 0%,#fff 60%);box-shadow:0 4px 16px rgba(15,23,42,0.08)}
+.region-vs-ribbon{position:absolute;top:-10px;right:16px;background:var(--ink);color:var(--paper);font-size:11.5px;font-weight:700;padding:4px 12px;border-radius:100px;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;letter-spacing:0.01em}
+.region-vs-head{display:flex;align-items:center;gap:10px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(15,23,42,0.08)}
+.region-vs-icon{font-size:24px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:#fff;border-radius:50%;flex-shrink:0;box-shadow:0 1px 2px rgba(15,23,42,0.06)}
+.region-vs-bad .region-vs-label{color:#991b1b}
+.region-vs-good .region-vs-label{color:#0f172a}
+.region-vs-label{font-size:17px;font-weight:700;letter-spacing:-0.01em;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif}
+.region-vs-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.region-vs-list li{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;line-height:1.55}
+.region-vs-k{flex-shrink:0;width:78px;font-size:12px;font-weight:700;color:var(--muted);padding-top:2px;letter-spacing:-0.01em}
+.region-vs-v{flex:1;color:var(--ink-2)}
+.region-vs-good .region-vs-v strong{color:#059669;font-weight:700}
+.region-vs-divider{display:flex;align-items:center;justify-content:center;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:18px;font-weight:700;color:var(--muted);letter-spacing:0.05em;padding:0 4px;position:relative;align-self:center}
+@media (max-width:700px){
+  .region-vs-wrap{grid-template-columns:1fr;gap:12px}
+  .region-vs-divider{padding:2px 0;font-size:14px}
+  .region-vs-card{padding:18px 16px}
+  .region-vs-k{width:66px;font-size:11.5px}
+  .region-vs-list li{font-size:13px}
+}
+
+/* Seoul region page - industry combo slider (auto-slide with buttons) */
+.region-combo-wrap{position:relative;margin:18px 0 28px}
+.region-combo-grid{display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;padding:4px 0 4px;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
+.region-combo-grid::-webkit-scrollbar{display:none;width:0;height:0}
+.region-combo-card{flex:0 0 280px;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;transition:all .18s;box-shadow:0 1px 3px rgba(15,23,42,0.04)}
+.region-combo-card:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 6px 16px rgba(15,23,42,0.08)}
+.region-combo-head{display:flex;align-items:center;gap:10px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+.region-combo-emoji{font-size:26px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--paper-2);border-radius:10px;flex-shrink:0}
+.region-combo-name{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-0.01em;line-height:1.25;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif}
+.region-combo-row{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+.region-combo-label{flex-shrink:0;width:32px;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;padding-top:3px}
+.region-combo-tip{margin-top:12px;padding:10px 12px;background:#fef9e7;border:1px solid #fde68a;border-radius:8px;font-size:12.5px;color:#78350f;line-height:1.6}
+.region-combo-hint{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:12px;color:var(--muted);margin-bottom:10px}
+.region-combo-dots{display:flex;gap:5px}
+.region-combo-dot{width:6px;height:6px;border-radius:50%;background:#cbd5e1;transition:all .2s}
+.region-combo-dot.active{background:var(--ink);width:18px;border-radius:3px}
+/* Arrow buttons */
+.region-combo-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--ink);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(15,23,42,0.08);transition:all .15s;z-index:5;user-select:none;line-height:1}
+.region-combo-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 4px 14px rgba(15,23,42,0.15)}
+.region-combo-btn-prev{left:-8px}
+.region-combo-btn-next{right:-8px}
+.region-combo-btn:disabled{opacity:0.35;cursor:not-allowed}
+.region-combo-btn:disabled:hover{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:0 2px 8px rgba(15,23,42,0.08)}
+@media (max-width:640px){
+  .region-combo-card{flex:0 0 260px;padding:16px 18px}
+  .region-combo-btn{width:36px;height:36px;font-size:14px}
+  .region-combo-btn-prev{left:-4px}
+  .region-combo-btn-next{right:-4px}
+}
+
+/* Seoul region page - comparison table */
+.region-combo-tbl{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:14px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.region-combo-tbl th{background:var(--ink);color:var(--paper);padding:14px 16px;text-align:left;font-weight:700;font-size:13.5px;letter-spacing:-0.01em}
+.region-combo-tbl td{padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.65;color:var(--ink-2)}
+.region-combo-tbl tr:last-child td{border-bottom:none}
+.region-combo-tbl tr:nth-child(even) td{background:var(--paper-2)}
+.region-combo-tbl td strong{color:var(--ink);font-weight:700}
+.region-combo-tbl td.region-good{color:#059669;font-weight:600}
+
+.region-top5{list-style:none;counter-reset:top5;padding:0;margin:18px 0 28px}
+.region-top5 li{counter-increment:top5;padding:16px 20px 16px 64px;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;margin-bottom:10px;position:relative;font-size:14px;line-height:1.7;color:var(--ink-2)}
+.region-top5 li::before{content:counter(top5);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif}
+.region-top5 li strong{display:block;color:var(--ink);font-weight:700;margin-bottom:4px;font-size:15px;letter-spacing:-0.01em}
+
+.region-timeline{list-style:none;padding:0;margin:18px 0 28px;position:relative}
+.region-timeline::before{content:"";position:absolute;left:11px;top:14px;bottom:14px;width:2px;background:var(--line)}
+.region-timeline li{position:relative;padding:10px 0 10px 40px;font-size:14px;line-height:1.75;color:var(--ink-2)}
+.region-timeline li::before{content:"";position:absolute;left:4px;top:18px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--ink);box-sizing:border-box}
+.region-timeline li strong{display:inline-block;color:var(--ink);font-weight:700;margin-right:8px;min-width:90px;font-size:13.5px;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;letter-spacing:-0.01em}
+
+.region-faqs{display:flex;flex-direction:column;gap:10px;margin:18px 0 28px}
+.region-faq-item{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.region-faq-q{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:8px;line-height:1.5;letter-spacing:-0.01em}
+.region-faq-q span{color:var(--accent);margin-right:6px;font-weight:700}
+.region-faq-a{font-size:14px;color:var(--ink-2);line-height:1.75}
+.region-faq-a strong{color:var(--ink);font-weight:700}
+@media (max-width:640px){
+  .region-combo-tbl{font-size:12.5px}
+  .region-combo-tbl th,.region-combo-tbl td{padding:10px 11px}
+  .region-top5 li{padding:14px 16px 14px 54px;font-size:13px}
+  .region-top5 li::before{width:28px;height:28px;font-size:13px;left:14px}
+  .region-timeline li strong{display:block;min-width:0;margin-bottom:2px}
+}
 @media (max-width:600px){.seoul-districts-inline{padding:20px 18px 22px}}
 /* ===== [SEOUL GU/DONG PAGES] ===== */
 .sgu-wrap,.sdo-wrap{max-width:880px;margin:0 auto;padding:24px 20px 60px;font-family:'Pretendard','Malgun Gothic',sans-serif;color:#1e293b;line-height:1.6}
@@ -1663,7 +1753,11 @@ function renderRegionPage(region) {
 <div class="container">
 <div class="prose">
 <h2>${region.name} 지역 개요</h2>
-<p>${region.description} ${SITE.brandNameKo}는 ${region.coverage}에서 카드단말기·포스기·키오스크·테이블오더·CCTV·밴딩머신·철거까지 모든 매장 설비를 ${region.installTime} 원스톱으로 설치합니다. 업종과 매장 동선에 맞춘 1:1 컨설팅으로 신규 오픈부터 기존 매장 업그레이드까지 최적의 솔루션을 제안합니다.</p>
+<p>${region.description} ${SITE.brandNameKo}은 ${region.coverage}에서 카드단말기·포스기·키오스크·테이블오더·CCTV·밴딩머신·철거까지 매장 운영에 필요한 모든 설비를 원스톱으로 설치합니다. 업종과 매장 동선을 먼저 살펴본 뒤 1:1 컨설팅으로 조합을 맞춰드리기 때문에, 신규 오픈이든 기존 매장 리뉴얼이든 장비 선택으로 고민하실 일이 없습니다.</p>
+${region.slug === 'seoul' ? `
+<p>서울은 전국 매장 수의 약 25%가 몰려 있는 초고밀도 상권입니다. 강남·홍대·성수 같은 메이저 상권부터 주택가 골목의 동네 가게까지 스펙트럼이 워낙 넓어서, <strong>같은 카페라도 강남역 메인도로와 연남동 골목은 필요한 장비가 완전히 다릅니다</strong>. 그래서 "카페는 이 조합이면 된다"는 식의 일괄 추천은 서울에서는 잘 맞지 않습니다. 오페리오솔루션은 서울 25개 자치구 467개 읍면동의 상권 데이터를 기반으로, 매장 위치·업종·평수에 맞춰 조합을 다르게 제안드립니다.</p>
+<p>참고로 최근 서울에서 새로 오픈하시는 매장은 <strong>카드단말기·포스기·키오스크를 동시에 들이시는 경우가 약 80%</strong>입니다. 장비를 따로따로 구매해 설치하시는 것보다 패키지로 한번에 하시는 쪽이 비용도 낮고 장비 간 연동 문제도 없어서, 처음 시작하시는 분들께는 이 방식을 권해드리고 있습니다.</p>
+` : ''}
 ${region.slug === 'seoul' ? `
 <div class="seoul-districts-inline">
 <h2>🏙️ 서울 <em>지역별 바로가기</em></h2>
@@ -1671,11 +1765,239 @@ ${region.slug === 'seoul' ? `
 ${SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="seoul-gu-chip">${g.name}</a>`).join('')}
 </div>
 </div>
+<h2>🛒 서울 제품별 <em>설치 페이지</em></h2>
+<div class="index-grid cols-4" style="margin:18px 0 28px">${productsHtml}</div>
+` : ''}
+${region.slug === 'seoul' ? `
+<h2>🏪 서울 매장, 업종별로 달라지는 설비 조합</h2>
+<p>서울에서 매장을 오픈하실 때 가장 흔하게 놓치시는 게 <strong>"같은 업종이라도 평수·고객층에 따라 설비 조합이 다르다"</strong>는 점입니다. 아래는 서울 내 설치 실적 기준으로 업종별로 자주 나가는 조합 정리입니다.</p>
+
+<div class="region-combo-hint">
+  <span>좌우 버튼으로 조작하거나 드래그하세요 · 자동 전환</span>
+  <div class="region-combo-dots" id="comboDots"></div>
+</div>
+<div class="region-combo-wrap">
+<button class="region-combo-btn region-combo-btn-prev" id="comboPrev" aria-label="이전">‹</button>
+<button class="region-combo-btn region-combo-btn-next" id="comboNext" aria-label="다음">›</button>
+<div class="region-combo-grid" id="comboGrid">
+  <div class="region-combo-card">
+    <div class="region-combo-head">
+      <div class="region-combo-emoji">🍚</div>
+      <div class="region-combo-name">한식·분식</div>
+    </div>
+    <div class="region-combo-row"><span class="region-combo-label">기본</span><span>자동커팅 단말기 + 포스기</span></div>
+    <div class="region-combo-row"><span class="region-combo-label">추가</span><span>주방 프린터, 테이블오더</span></div>
+    <div class="region-combo-tip">💡 종로·을지로는 점심 피크 회전율이 높아 주문 속도가 핵심</div>
+  </div>
+  <div class="region-combo-card">
+    <div class="region-combo-head">
+      <div class="region-combo-emoji">☕</div>
+      <div class="region-combo-name">카페·베이커리</div>
+    </div>
+    <div class="region-combo-row"><span class="region-combo-label">기본</span><span>스마트 단말기 + 포스기</span></div>
+    <div class="region-combo-row"><span class="region-combo-label">추가</span><span>키오스크, CCTV</span></div>
+    <div class="region-combo-tip">💡 홍대·성수·연남은 간편결제 비중 60% 이상</div>
+  </div>
+  <div class="region-combo-card">
+    <div class="region-combo-head">
+      <div class="region-combo-emoji">🏪</div>
+      <div class="region-combo-name">편의점·마트</div>
+    </div>
+    <div class="region-combo-row"><span class="region-combo-label">기본</span><span>유선 단말기 + 포스기</span></div>
+    <div class="region-combo-row"><span class="region-combo-label">추가</span><span>CCTV 4채널 이상</span></div>
+    <div class="region-combo-tip">💡 강남·여의도 오피스가는 심야 매출 비중도 확인 필수</div>
+  </div>
+  <div class="region-combo-card">
+    <div class="region-combo-head">
+      <div class="region-combo-emoji">💇</div>
+      <div class="region-combo-name">미용실·네일샵</div>
+    </div>
+    <div class="region-combo-row"><span class="region-combo-label">기본</span><span>무선 블루투스 단말기</span></div>
+    <div class="region-combo-row"><span class="region-combo-label">추가</span><span>예약앱 연동 포스</span></div>
+    <div class="region-combo-tip">💡 청담·압구정은 고객단가 높아 결제 안정성 우선</div>
+  </div>
+  <div class="region-combo-card">
+    <div class="region-combo-head">
+      <div class="region-combo-emoji">👕</div>
+      <div class="region-combo-name">의류·편집샵</div>
+    </div>
+    <div class="region-combo-row"><span class="region-combo-label">기본</span><span>간편결제 특화 단말기</span></div>
+    <div class="region-combo-row"><span class="region-combo-label">추가</span><span>CCTV, 패션 POS</span></div>
+    <div class="region-combo-tip">💡 성수·가로수길은 QR·페이 비중 압도적</div>
+  </div>
+  <div class="region-combo-card">
+    <div class="region-combo-head">
+      <div class="region-combo-emoji">📚</div>
+      <div class="region-combo-name">스터디카페</div>
+    </div>
+    <div class="region-combo-row"><span class="region-combo-label">기본</span><span>키오스크 + 무인 CCTV</span></div>
+    <div class="region-combo-row"><span class="region-combo-label">추가</span><span>자동문 연동, 좌석 관리</span></div>
+    <div class="region-combo-tip">💡 대학가(신촌·흑석)는 월회원 비중 70% 이상</div>
+  </div>
+  <div class="region-combo-card">
+    <div class="region-combo-head">
+      <div class="region-combo-emoji">🤖</div>
+      <div class="region-combo-name">무인 매장</div>
+    </div>
+    <div class="region-combo-row"><span class="region-combo-label">기본</span><span>CCTV + 자판기·셀프 결제</span></div>
+    <div class="region-combo-row"><span class="region-combo-label">추가</span><span>원격 모니터링</span></div>
+    <div class="region-combo-tip">💡 서울 전 지역 무인 운영 수요 증가 중</div>
+  </div>
+</div>
+</div>
+<script>
+(function(){
+  var grid = document.getElementById('comboGrid');
+  var prevBtn = document.getElementById('comboPrev');
+  var nextBtn = document.getElementById('comboNext');
+  var dotsBox = document.getElementById('comboDots');
+  if (!grid || !prevBtn || !nextBtn) return;
+  var cards = grid.querySelectorAll('.region-combo-card');
+  var total = cards.length;
+  var current = 0;
+  var autoTimer = null;
+  var AUTO_INTERVAL = 4500;
+
+  // Build dots
+  for (var i = 0; i < total; i++) {
+    var d = document.createElement('div');
+    d.className = 'region-combo-dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('data-idx', i);
+    dotsBox.appendChild(d);
+  }
+  var dots = dotsBox.querySelectorAll('.region-combo-dot');
+
+  function scrollTo(idx){
+    if (idx < 0) idx = 0;
+    if (idx >= total) idx = total - 1;
+    current = idx;
+    var card = cards[idx];
+    if (card) {
+      grid.scrollTo({ left: card.offsetLeft - grid.offsetLeft, behavior: 'smooth' });
+    }
+    updateUI();
+  }
+  function updateUI(){
+    for (var i = 0; i < dots.length; i++) {
+      dots[i].classList.toggle('active', i === current);
+    }
+    prevBtn.disabled = (current === 0);
+    nextBtn.disabled = (current >= total - 1);
+  }
+  function next(){
+    if (current >= total - 1) { scrollTo(0); }
+    else { scrollTo(current + 1); }
+  }
+  function prev(){
+    scrollTo(current - 1);
+  }
+  function startAuto(){
+    stopAuto();
+    autoTimer = setInterval(next, AUTO_INTERVAL);
+  }
+  function stopAuto(){
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+  }
+
+  prevBtn.addEventListener('click', function(){ prev(); stopAuto(); startAuto(); });
+  nextBtn.addEventListener('click', function(){ next(); stopAuto(); startAuto(); });
+  for (var j = 0; j < dots.length; j++) {
+    (function(idx){
+      dots[idx].addEventListener('click', function(){ scrollTo(idx); stopAuto(); startAuto(); });
+    })(j);
+  }
+
+  // Pause auto-slide on hover
+  var wrap = grid.parentElement;
+  wrap.addEventListener('mouseenter', stopAuto);
+  wrap.addEventListener('mouseleave', startAuto);
+
+  // Sync current index with manual scroll
+  var scrollDebounce;
+  grid.addEventListener('scroll', function(){
+    clearTimeout(scrollDebounce);
+    scrollDebounce = setTimeout(function(){
+      var scrollLeft = grid.scrollLeft;
+      var closest = 0;
+      var minDist = Infinity;
+      for (var k = 0; k < cards.length; k++) {
+        var dist = Math.abs(cards[k].offsetLeft - grid.offsetLeft - scrollLeft);
+        if (dist < minDist) { minDist = dist; closest = k; }
+      }
+      if (closest !== current) { current = closest; updateUI(); }
+    }, 120);
+  });
+
+  // Pause auto-slide when not visible (save battery)
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) startAuto(); else stopAuto();
+      });
+    }, { threshold: 0.3 });
+    io.observe(wrap);
+  } else {
+    startAuto();
+  }
+})();
+</script>
+
+<h2>📊 서울에서 가장 많이 설치되는 매장 설비 TOP 5</h2>
+<p>오페리오솔루션이 서울 지역에서 최근 1년간 시공한 데이터를 기준으로 정리한 설치 빈도 순위입니다. 매장 오픈하시기 전에 어떤 장비가 주류인지 감 잡으시는 데 참고하시면 좋습니다.</p>
+<ol class="region-top5">
+<li><strong>카드단말기 (자동커팅형)</strong> — 음식점·카페 중심으로 압도적 1위. 영수증 자동 절단 기능이 피크타임 회전율에 직결됩니다.</li>
+<li><strong>통합 포스기</strong> — 배달 3사(배민·요기요·쿠팡이츠) 자동 연동은 서울 배달 비중이 높은 매장에 필수입니다.</li>
+<li><strong>키오스크 (셀프 오더형)</strong> — 인건비 부담 + 최저임금 상승 영향으로 1인 운영 매장에서 빠르게 확산 중입니다.</li>
+<li><strong>CCTV 패키지 (4채널 이상)</strong> — 도난·분쟁 대응 외에 화재·도난 보험료 할인 목적의 설치 비율이 증가했습니다.</li>
+<li><strong>테이블오더 시스템</strong> — 홀 직원 의존도를 낮추고 객단가를 올리는 용도로 중형 이상 음식점에서 설치가 늘어나고 있습니다.</li>
+</ol>
 ` : ''}
 <h2>${region.name} 주요 상권과 랜드마크</h2>
 <p>${region.name}에는 <strong>${region.landmarks}</strong> 등 핵심 랜드마크가 있으며, 주변으로 다양한 상권이 형성되어 있습니다. 특히 다음 지역들은 카페·음식점·소매점 집중도가 높아 매장 설비 설치 문의가 가장 많이 들어오는 곳입니다.</p>
 
 <ul>${areasList}</ul>
+
+${region.slug === 'seoul' ? `
+<h2>📦 따로 사기 vs 한번에 설치, 뭐가 나을까?</h2>
+<p>서울에서 매장 설비 견적을 여러 군데 받으시다 보면 "개별로 각각 사는 게 싸지 않냐"고 생각하시게 됩니다. 실제로 계산해보면 한번에 패키지로 설치하시는 쪽이 1년 총비용에서 더 유리합니다. 6가지 항목으로 쉽게 비교해드립니다.</p>
+
+<div class="region-vs-wrap">
+  <div class="region-vs-card region-vs-bad">
+    <div class="region-vs-head">
+      <div class="region-vs-icon">❌</div>
+      <div class="region-vs-label">따로 구매·설치</div>
+    </div>
+    <ul class="region-vs-list">
+      <li><span class="region-vs-k">설치비</span><span class="region-vs-v">장비마다 별도 청구</span></li>
+      <li><span class="region-vs-k">호환성</span><span class="region-vs-v">브랜드마다 다름, 연동 문제 가능</span></li>
+      <li><span class="region-vs-k">A/S</span><span class="region-vs-v">장비사·설치사·VAN사 여러 곳</span></li>
+      <li><span class="region-vs-k">교육</span><span class="region-vs-v">장비별 개별 교육 필요</span></li>
+      <li><span class="region-vs-k">소요 시간</span><span class="region-vs-v">며칠 걸림</span></li>
+      <li><span class="region-vs-k">수수료 협상</span><span class="region-vs-v">개별 계약이라 협상력 약함</span></li>
+    </ul>
+  </div>
+
+  <div class="region-vs-divider">VS</div>
+
+  <div class="region-vs-card region-vs-good">
+    <div class="region-vs-ribbon">추천</div>
+    <div class="region-vs-head">
+      <div class="region-vs-icon">✅</div>
+      <div class="region-vs-label">패키지 일괄 설치</div>
+    </div>
+    <ul class="region-vs-list">
+      <li><span class="region-vs-k">설치비</span><span class="region-vs-v"><strong>통합 무료</strong></span></li>
+      <li><span class="region-vs-k">호환성</span><span class="region-vs-v"><strong>완벽 연동 보장</strong></span></li>
+      <li><span class="region-vs-k">A/S</span><span class="region-vs-v"><strong>단일 창구 처리</strong></span></li>
+      <li><span class="region-vs-k">교육</span><span class="region-vs-v"><strong>한 번에 통합 교육</strong></span></li>
+      <li><span class="region-vs-k">소요 시간</span><span class="region-vs-v"><strong>반나절 내 완료</strong></span></li>
+      <li><span class="region-vs-k">수수료 협상</span><span class="region-vs-v"><strong>묶음 조건 적용</strong></span></li>
+    </ul>
+  </div>
+</div>
+
+<p>특히 서울처럼 오픈 일정이 빡빡한 상권에서는 <strong>설치 소요 시간이 며칠 vs 반나절</strong> 차이가 영업 시작일에 직접 영향을 줍니다. 저희 실적상 서울 신규 오픈 매장 중 약 80%가 패키지 일괄 설치로 진행되고 있습니다.</p>
+` : ''}
 
 <h2>설치 절차</h2>
 <ol>
@@ -1685,16 +2007,29 @@ ${SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="seoul-gu-chip">${
 <li><strong>설치 및 교육</strong> — 평균 2~3시간 내 설치 완료, 사용법 교육 진행.</li>
 <li><strong>사후 관리</strong> — A/S 발생 시 원격 우선, 필요 시 ${region.name} 내 당일 출장 대응.</li>
 </ol>
+
+${region.slug === 'seoul' ? `
+<h2>❓ 서울 매장 설비 설치 자주 묻는 질문</h2>
+<div class="region-faqs">
+<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 서울 안에서 당일 설치가 정말 가능한가요?</div><div class="region-faq-a">서울 25개 자치구 내에서는 오전 10시 전 상담 시 당일 오후 설치가 가능한 경우가 많습니다. 일반 카드단말기·무선 단말기는 대부분 당일, 키오스크·CCTV처럼 맞춤 세팅이 필요한 장비는 1~3일 소요됩니다.</div></div>
+<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 서울 외곽(도봉·노원·강동 등)도 출장 설치되나요?</div><div class="region-faq-a">네, 서울 25개 자치구 전 지역 출장 가능합니다. 도봉·노원·강동·강서·구로·금천 등 외곽 지역도 강남·종로와 같은 조건으로 시공해드리며, 출장비 별도 청구 없습니다.</div></div>
+<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 설치비는 정말 무료인가요? 숨겨진 비용은요?</div><div class="region-faq-a">설치비는 VAN사 제휴로 무료 지원합니다. 다만 <strong>월 이용료는 기종·VAN사 조건에 따라 부과</strong>될 수 있으므로 상담 시 정확한 조건을 안내드립니다. 계약서에 명시되지 않은 숨겨진 비용은 일절 없습니다.</div></div>
+<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 기존 장비가 있는 매장도 교체 설치 가능한가요?</div><div class="region-faq-a">가능합니다. 기존 카드단말기·포스기의 VAN사 계약 잔여 기간, 위약금 여부를 사전에 확인해드리고, 교체 시점을 최적화해드립니다. 기존 장비 회수도 저희가 책임지며 회수 확인서를 발급해드립니다.</div></div>
+<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 여러 매장을 한번에 설치하려면 어떻게 하나요?</div><div class="region-faq-a">프랜차이즈·다점포 사장님을 위한 다점포 설치 서비스를 제공합니다. 매장별 동시 시공, 통합 계약, 본사-지점 매출 리포트 연동까지 한 번에 처리됩니다. 상담 시 매장 수를 미리 알려주시면 맞춤 제안드립니다.</div></div>
+</div>
+` : ''}
 </div>
 </div>
 </section>
 
+${region.slug !== 'seoul' ? `
 <section class="related-section">
 <div class="container">
 <div class="section-head" style="margin-bottom:24px"><div class="section-tag">Products</div><h2 class="section-title" style="font-size:32px">${region.name} 제품별 <em>설치 페이지</em></h2></div>
 <div class="index-grid cols-4">${productsHtml}</div>
 </div>
 </section>
+` : ''}
 
 <section class="detail-body" style="padding-top:0">
 <div class="container">
