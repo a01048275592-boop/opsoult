@@ -853,6 +853,12 @@ footer .logo{color:#fff}
 
 /* Detail hero */
 .detail-hero{padding:80px 0 50px;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.detail-hero.seoul-hero{position:relative;padding:120px 0 90px;background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop') center/cover;border-bottom:none}
+.detail-hero.seoul-hero .breadcrumb, .detail-hero.seoul-hero .breadcrumb a{color:rgba(255,255,255,0.78)}
+.detail-hero.seoul-hero .breadcrumb .sep{color:rgba(255,255,255,0.4)}
+.detail-hero.seoul-hero .detail-title{color:#fff}
+.detail-hero.seoul-hero .detail-sub{color:rgba(255,255,255,0.88)}
+@media (max-width:640px){.detail-hero.seoul-hero{padding:80px 0 60px}}
 .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:24px}
 .breadcrumb a{color:var(--muted);transition:color .2s}
 .breadcrumb a:hover{color:var(--ink)}
@@ -890,6 +896,10 @@ footer .logo{color:#fff}
 .seoul-gu-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .seoul-gu-chip{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:100px;font-size:14px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;line-height:1.2;min-width:72px;text-decoration:none;transition:all .12s}a.seoul-gu-chip:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-1px)}
 @media (max-width:600px){.seoul-gu-chip{padding:8px 14px;font-size:13px;min-width:56px}}
+.seoul-districts-inline{margin:40px 0 48px;padding:28px 28px 32px;background:var(--paper-2);border:1px solid var(--line);border-radius:16px}
+.seoul-districts-inline h2{margin-top:0 !important;font-size:22px !important;letter-spacing:-0.02em}
+.seoul-districts-inline .seoul-gu-grid{display:flex;flex-wrap:wrap;gap:8px}
+@media (max-width:600px){.seoul-districts-inline{padding:20px 18px 22px}}
 /* ===== [SEOUL GU/DONG PAGES] ===== */
 .sgu-wrap,.sdo-wrap{max-width:880px;margin:0 auto;padding:24px 20px 60px;font-family:'Pretendard','Malgun Gothic',sans-serif;color:#1e293b;line-height:1.6}
 
@@ -1575,7 +1585,7 @@ function renderRegionPage(region) {
   const areasList = region.commercialAreas.map(a => `<li>${a}</li>`).join('');
 
   const body = `
-<section class="detail-hero">
+<section class="detail-hero${region.slug === 'seoul' ? ' seoul-hero' : ''}">
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/region">지역별 설치</a><span class="sep">›</span>${region.name}</div>
 <h1 class="detail-title">${region.emoji} ${region.fullName} <em>매장 설비 설치</em></h1>
@@ -1588,13 +1598,14 @@ function renderRegionPage(region) {
 <div class="prose">
 <h2>${region.name} 지역 개요</h2>
 <p>${region.description} ${SITE.brandNameKo}는 ${region.coverage}에서 카드단말기·포스기·키오스크·테이블오더·CCTV·밴딩머신·철거까지 모든 매장 설비를 ${region.installTime} 원스톱으로 설치합니다. 업종과 매장 동선에 맞춘 1:1 컨설팅으로 신규 오픈부터 기존 매장 업그레이드까지 최적의 솔루션을 제안합니다.</p>
-
-<div class="info-card">
-<h4>📍 ${region.name} 빠른 설치 가능 지역</h4>
-<div class="grid-2">${districtsList.replace(/<li>/g, '<div><strong>•</strong>').replace(/<\/li>/g, '</div>')}</div>
-<p style="font-size:13px;color:var(--muted);margin-top:16px">그 외 ${region.coverage} 출장 설치 가능</p>
+${region.slug === 'seoul' ? `
+<div class="seoul-districts-inline">
+<h2>🏙️ 서울 <em>지역별 바로가기</em></h2>
+<div class="seoul-gu-grid" style="margin-top:16px">
+${SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="seoul-gu-chip">${g.name}</a>`).join('')}
 </div>
-
+</div>
+` : ''}
 <h2>${region.name} 주요 상권과 랜드마크</h2>
 <p>${region.name}에는 <strong>${region.landmarks}</strong> 등 핵심 랜드마크가 있으며, 주변으로 다양한 상권이 형성되어 있습니다. 특히 다음 지역들은 카페·음식점·소매점 집중도가 높아 매장 설비 설치 문의가 가장 많이 들어오는 곳입니다.</p>
 
@@ -1608,14 +1619,6 @@ function renderRegionPage(region) {
 <li><strong>설치 및 교육</strong> — 평균 2~3시간 내 설치 완료, 사용법 교육 진행.</li>
 <li><strong>사후 관리</strong> — A/S 발생 시 원격 우선, 필요 시 ${region.name} 내 당일 출장 대응.</li>
 </ol>
-
-<div class="info-card" style="background:var(--accent);color:var(--paper);margin-top:48px">
-<h4 style="color:var(--paper)">📞 ${region.name} 설치 문의</h4>
-<p style="font-size:17px;margin:12px 0">
-<strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
-</p>
-<p style="opacity:.9;font-size:14px">${region.name} 전 지역 ${region.installTime}. 무료 견적 상담을 받아보세요.</p>
-</div>
 </div>
 </div>
 </section>
@@ -1626,15 +1629,20 @@ function renderRegionPage(region) {
 <div class="index-grid cols-4">${productsHtml}</div>
 </div>
 </section>
-${region.slug === 'seoul' ? `
-<section class="related-section" style="background:var(--paper)">
+
+<section class="detail-body" style="padding-top:0">
 <div class="container">
-<div class="section-head" style="margin-bottom:24px"><div class="section-tag">Districts</div><h2 class="section-title" style="font-size:32px">🏙️ 서울 <em>지역별 바로가기</em></h2></div>
-<div class="seoul-gu-grid">
-${SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="seoul-gu-chip">${g.name}</a>`).join('')}
+<div class="prose">
+<div class="info-card" style="background:var(--accent);color:var(--paper);margin-top:0">
+<h4 style="color:var(--paper)">📞 ${region.name} 설치 문의</h4>
+<p style="font-size:17px;margin:12px 0">
+<strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
+</p>
+<p style="opacity:.9;font-size:14px">${region.name} 전 지역 ${region.installTime}. 무료 견적 상담을 받아보세요.</p>
 </div>
 </div>
-</section>` : ''}
+</div>
+</section>
 `;
 
   const title = `${region.name} 매장 설비 설치 · 카드단말기·포스기·키오스크 ${region.installTime}`;
