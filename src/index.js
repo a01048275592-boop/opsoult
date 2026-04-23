@@ -1011,6 +1011,77 @@ footer .logo{color:#fff}
 .sgu-sec p{font-size:13px;line-height:1.8;color:#334155;margin-bottom:8px}
 .sgu-sec p:last-child{margin-bottom:0}
 .sgu-sec strong,.sgu-sec b{font-weight:700;color:#0f172a}
+/* [시 페이지 전용] 시각적 구조 강화 CSS */
+.sct-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:6px 0 14px}
+.sct-stat{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 10px;text-align:center}
+.sct-stat-num{font-size:20px;font-weight:700;color:#dc2626;letter-spacing:-0.02em;line-height:1.2}
+.sct-stat-lbl{font-size:11.5px;color:#64748b;margin-top:4px}
+@media(max-width:600px){.sct-stats{grid-template-columns:repeat(2,1fr)}}
+.sct-features{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0 6px}
+.sct-feature{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 14px;transition:all .15s}
+.sct-feature:hover{border-color:#0f172a;background:#f8fafc}
+.sct-feature-ic{font-size:20px;margin-bottom:6px}
+.sct-feature-t{font-size:13.5px;font-weight:700;color:#0f172a;margin-bottom:4px;letter-spacing:-0.01em}
+.sct-feature-d{font-size:12px;line-height:1.55;color:#475569}
+@media(max-width:600px){.sct-features{grid-template-columns:1fr}}
+.sct-checks{list-style:none;display:flex;flex-direction:column;gap:7px;margin:10px 0 0;padding:0}
+.sct-checks li{display:flex;align-items:flex-start;gap:10px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:10px 13px;font-size:12.5px;line-height:1.55;color:#166534}
+.sct-checks li::before{content:"✓";flex-shrink:0;color:#16a34a;font-weight:700;font-size:14px;line-height:1.3}
+.sct-checks li b,.sct-checks li strong{color:#0f172a;font-weight:700}
+.sct-vs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:10px 0 0}
+.sct-vs-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 16px 14px;position:relative}
+.sct-vs-card h4{font-size:14px;font-weight:700;margin:0 0 8px;color:#0f172a;display:flex;align-items:center;gap:6px}
+.sct-vs-card ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+.sct-vs-card li{font-size:12px;color:#475569;line-height:1.55;display:flex;gap:6px}
+.sct-vs-card li::before{content:"•";color:#dc2626;flex-shrink:0}
+@media(max-width:600px){.sct-vs{grid-template-columns:1fr}}
+.sct-cost-table{width:100%;border-collapse:collapse;margin:10px 0 6px;font-size:12.5px;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden}
+.sct-cost-table th{background:#f8fafc;color:#0f172a;font-weight:700;padding:10px 12px;text-align:left;border-bottom:1px solid #e2e8f0;font-size:12px}
+.sct-cost-table td{padding:10px 12px;border-bottom:1px solid #f1f5f9;color:#475569;line-height:1.55}
+.sct-cost-table tr:last-child td{border-bottom:none}
+.sct-cost-table .sct-free{color:#16a34a;font-weight:700}
+.sct-cost-table .sct-paid{color:#dc2626;font-weight:700}
+.sct-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0 6px}
+.sct-step{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px 12px;position:relative}
+.sct-step-n{display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;background:#dc2626;color:#fff;border-radius:50%;font-size:11px;font-weight:700;margin-bottom:6px}
+.sct-step-t{font-size:12.5px;font-weight:700;color:#0f172a;margin-bottom:3px;letter-spacing:-0.01em}
+.sct-step-d{font-size:11.5px;line-height:1.5;color:#64748b}
+@media(max-width:600px){.sct-steps{grid-template-columns:repeat(2,1fr)}}
+.sct-guide{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0 6px}
+.sct-guide-item{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 14px}
+.sct-guide-t{font-size:13px;font-weight:700;color:#92400e;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.sct-guide-d{font-size:12px;line-height:1.55;color:#78350f}
+@media(max-width:600px){.sct-guide{grid-template-columns:1fr}}
+.sct-why-wrap{position:relative;margin:10px 0 0}
+.sct-why{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 2px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.sct-why::-webkit-scrollbar{display:none}
+.sct-why-item{flex:0 0 calc(50% - 5px);min-width:calc(50% - 5px);background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px 16px 14px;transition:all .15s;scroll-snap-align:start;box-sizing:border-box}
+.sct-why-item:hover{border-color:#16a34a;background:#f0fdf4}
+.sct-why-ic{font-size:24px;margin-bottom:8px}
+.sct-why-t{font-size:13.5px;font-weight:700;color:#0f172a;margin-bottom:4px;letter-spacing:-0.01em}
+.sct-why-d{font-size:12px;line-height:1.55;color:#475569}
+.sct-why-btn{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;cursor:pointer;font-size:16px;color:#0f172a;display:flex;align-items:center;justify-content:center;z-index:3;box-shadow:0 2px 10px rgba(15,23,42,0.08);transition:all .15s;padding:0}
+.sct-why-btn:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.sct-why-btn-prev{left:-10px}
+.sct-why-btn-next{right:-10px}
+.sct-why-btn:disabled{opacity:0.3;cursor:not-allowed}
+.sct-why-dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+.sct-why-dot{width:6px;height:6px;border-radius:50%;background:#cbd5e1;transition:all .2s;cursor:pointer;border:none;padding:0}
+.sct-why-dot.active{background:#0f172a;width:18px;border-radius:3px}
+@media(max-width:600px){
+  .sct-why-item{flex:0 0 calc(85% - 5px);min-width:calc(85% - 5px)}
+  .sct-why-btn{display:none}
+}
+.sct-faq{display:flex;flex-direction:column;gap:8px;margin:10px 0 0}
+.sct-faq-item{background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;transition:all .15s}
+.sct-faq-item[open]{border-color:#0f172a}
+.sct-faq-item summary{padding:14px 16px;font-size:13.5px;font-weight:600;color:#0f172a;cursor:pointer;list-style:none;display:flex;align-items:flex-start;gap:10px;letter-spacing:-0.01em;line-height:1.5}
+.sct-faq-item summary::-webkit-details-marker{display:none}
+.sct-faq-item summary::before{content:"Q.";color:#dc2626;font-weight:700;flex-shrink:0}
+.sct-faq-item summary::after{content:"+";margin-left:auto;color:#94a3b8;font-weight:400;font-size:18px;line-height:1;transition:transform .2s;flex-shrink:0}
+.sct-faq-item[open] summary::after{content:"−"}
+.sct-faq-item summary:hover{background:#f8fafc}
+.sct-faq-item .sct-faq-a{padding:4px 16px 16px 32px;font-size:12.5px;line-height:1.75;color:#475569;border-top:1px solid #f1f5f9;margin-top:0;background:#fafbfc}
 .sgu-reco{display:flex;flex-direction:column;gap:8px;margin-top:6px}
 .sgu-reco-item{display:flex;align-items:flex-start;gap:10px;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;transition:all .15s}
 .sgu-reco-item:hover{border-color:#0f172a;background:#f8fafc}
@@ -1039,14 +1110,24 @@ footer .logo{color:#fff}
 .sgu-dong-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .sgu-dong-chip{display:inline-flex;align-items:center;justify-content:center;padding:6px 12px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:100px;font-size:11.5px;color:#475569;text-decoration:none;line-height:1.2;transition:all .12s}
 .sgu-dong-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
-.sgu-cta{background:#fefce8;border:1px solid #fde68a;border-radius:12px;padding:20px;text-align:center;margin-top:20px}
-.sgu-cta-h{font-size:15px;font-weight:700;margin-bottom:4px;color:#0f172a}
-.sgu-cta-sub{font-size:12px;color:#78716c;margin-bottom:14px}
-.sgu-cta-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.sgu-cta-btn{display:inline-flex;align-items:center;gap:4px;padding:10px 16px;border-radius:100px;font-size:12.5px;font-weight:600;text-decoration:none;border:1px solid #e2e8f0;background:#fff;color:#0f172a;transition:all .15s}
-.sgu-cta-btn:hover{background:#0f172a;color:#fff;border-color:#0f172a}
-.sgu-cta-btn-primary{background:#0f172a;color:#fff;border-color:#0f172a}
+.sgu-cta{background:#fefce8;border:1px solid #fde68a;border-radius:16px;padding:32px 24px;text-align:center;margin-top:28px}
+.sgu-cta h3{font-size:20px;font-weight:700;margin:0 0 6px;color:#0f172a;letter-spacing:-0.02em}
+.sgu-cta p{font-size:14px;color:#78716c;margin:0 0 18px;line-height:1.5}
+.sgu-cta-h{font-size:20px;font-weight:700;margin-bottom:6px;color:#0f172a}
+.sgu-cta-sub{font-size:14px;color:#78716c;margin-bottom:18px}
+.sgu-cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.sgu-cta-btn{display:inline-flex;align-items:center;gap:6px;padding:13px 22px;border-radius:100px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid #e2e8f0;background:#fff;color:#0f172a;transition:all .15s;letter-spacing:-0.01em}
+.sgu-cta-btn:hover{background:#0f172a;color:#fff;border-color:#0f172a;transform:translateY(-1px)}
+.sgu-cta-btn-primary{background:#0f172a;color:#fff;border-color:#0f172a;padding:13px 26px;font-size:15px}
 .sgu-cta-btn-primary:hover{background:#334155;border-color:#334155}
+@media(max-width:600px){
+  .sgu-cta{padding:26px 18px}
+  .sgu-cta h3,.sgu-cta-h{font-size:17px}
+  .sgu-cta p,.sgu-cta-sub{font-size:13px;margin-bottom:14px}
+  .sgu-cta-btn{padding:11px 18px;font-size:13px;flex:1;min-width:0;justify-content:center}
+  .sgu-cta-btn-primary{padding:11px 20px;font-size:14px;flex:0 0 100%}
+  .sgu-cta-btns{gap:8px}
+}
 
 /* DONG PAGE */
 .sdo-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:14px;aspect-ratio:16/5;min-height:160px;background:#1e293b}
@@ -1783,7 +1864,14 @@ ${region.slug === 'seoul' ? `
 ${SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="seoul-gu-chip">${g.name}</a>`).join('')}
 </div>
 </div>
-` : ''}
+` : (SUBCITIES_DATA[region.slug] ? `
+<div class="seoul-districts-inline">
+<h2>🏙️ ${region.name} <em>지역별 바로가기</em></h2>
+<div class="seoul-gu-grid" style="margin-top:16px">
+${SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug}" class="seoul-gu-chip">${c.name}</a>`).join('')}
+</div>
+</div>
+` : '')}
 <h2>🛒 ${region.name} 제품별 <em>설치 페이지</em></h2>
 <div class="index-grid cols-4" style="margin:18px 0 28px">${productsHtml}</div>
 
@@ -2913,6 +3001,291 @@ function findRegionDong(sidoSlug, guSlug, dongSlug) {
   const dong = gu.dongs.find(d => d.slug === dongSlug);
   if (!dong) return null;
   return { ...dong, gu, sidoSlug };
+}
+
+
+
+// [SUBCITIES_DATA] 도 → 시/군 그룹화 (경량, 구 상세는 REGIONS_DATA 참조)
+const SUBCITIES_DATA = {"busan":[{"slug":"jung","name":"중구","leaf":1},{"slug":"seo","name":"서구","leaf":1},{"slug":"dong","name":"동구","leaf":1},{"slug":"yeongdo","name":"영도구","leaf":1},{"slug":"busanjin","name":"부산진구","leaf":1},{"slug":"dongrae","name":"동래구","leaf":1},{"slug":"nam","name":"남구","leaf":1},{"slug":"buk","name":"북구","leaf":1},{"slug":"haeundae","name":"해운대구","leaf":1},{"slug":"saha","name":"사하구","leaf":1},{"slug":"geumjeong","name":"금정구","leaf":1},{"slug":"gangseo","name":"강서구","leaf":1},{"slug":"yeonje","name":"연제구","leaf":1},{"slug":"suyeong","name":"수영구","leaf":1},{"slug":"sasang","name":"사상구","leaf":1},{"slug":"gijang","name":"기장군","leaf":1}],"daegu":[{"slug":"jung","name":"중구","leaf":1},{"slug":"dong","name":"동구","leaf":1},{"slug":"seo","name":"서구","leaf":1},{"slug":"nam","name":"남구","leaf":1},{"slug":"buk","name":"북구","leaf":1},{"slug":"suseong","name":"수성구","leaf":1},{"slug":"dalseo","name":"달서구","leaf":1},{"slug":"dalseong","name":"달성군","leaf":1},{"slug":"gunwi","name":"군위군","leaf":1}],"incheon":[{"slug":"jung","name":"중구","leaf":1},{"slug":"dong","name":"동구","leaf":1},{"slug":"michuhol","name":"미추홀구","leaf":1},{"slug":"yeonsu","name":"연수구","leaf":1},{"slug":"namdong","name":"남동구","leaf":1},{"slug":"bupyeong","name":"부평구","leaf":1},{"slug":"gyeyang","name":"계양구","leaf":1},{"slug":"seo","name":"서구","leaf":1},{"slug":"ganghwa","name":"강화군","leaf":1},{"slug":"ongjin","name":"옹진군","leaf":1}],"gwangju":[{"slug":"dong","name":"동구","leaf":1},{"slug":"seo","name":"서구","leaf":1},{"slug":"nam","name":"남구","leaf":1},{"slug":"buk","name":"북구","leaf":1},{"slug":"gwangsan","name":"광산구","leaf":1}],"daejeon":[{"slug":"dong","name":"동구","leaf":1},{"slug":"jung","name":"중구","leaf":1},{"slug":"seo","name":"서구","leaf":1},{"slug":"yuseong","name":"유성구","leaf":1},{"slug":"daedeok","name":"대덕구","leaf":1}],"ulsan":[{"slug":"jung","name":"중구","leaf":1},{"slug":"nam","name":"남구","leaf":1},{"slug":"dong","name":"동구","leaf":1},{"slug":"buk","name":"북구","leaf":1},{"slug":"ulju","name":"울주군","leaf":1}],"gyeonggi":[{"slug":"suwon","name":"수원시","subGuSlugs":["suwon-jangan","suwon-gwonseon","suwon-paldal","suwon-yeongtong"]},{"slug":"seongnam","name":"성남시","subGuSlugs":["seongnam-sujeong","seongnam-jungwon","seongnam-bundang"]},{"slug":"uijeongbu","name":"의정부시","leaf":1},{"slug":"anyang","name":"안양시","subGuSlugs":["anyang-manan","anyang-dongan"]},{"slug":"bucheon","name":"부천시","subGuSlugs":["bucheon-wonmi","bucheon-sosa","bucheon-ojeong"]},{"slug":"gwangmyeong","name":"광명시","leaf":1},{"slug":"pyeongtaek","name":"평택시","leaf":1},{"slug":"dongducheon","name":"동두천시","leaf":1},{"slug":"ansan","name":"안산시","subGuSlugs":["ansan-sangrok","ansan-danwon"]},{"slug":"goyang","name":"고양시","subGuSlugs":["goyang-deokyang","goyang-ilsandong","goyang-ilsanseo"]},{"slug":"gwacheon","name":"과천시","leaf":1},{"slug":"guri","name":"구리시","leaf":1},{"slug":"namyangju","name":"남양주시","leaf":1},{"slug":"osan","name":"오산시","leaf":1},{"slug":"siheung","name":"시흥시","leaf":1},{"slug":"gunpo","name":"군포시","leaf":1},{"slug":"uiwang","name":"의왕시","leaf":1},{"slug":"hanam","name":"하남시","leaf":1},{"slug":"yongin","name":"용인시","subGuSlugs":["yongin-cheoin","yongin-giheung","yongin-suji"]},{"slug":"paju","name":"파주시","leaf":1},{"slug":"icheon","name":"이천시","leaf":1},{"slug":"anseong","name":"안성시","leaf":1},{"slug":"gimpo","name":"김포시","leaf":1},{"slug":"hwaseong","name":"화성시","leaf":1},{"slug":"gwangju","name":"광주시","leaf":1},{"slug":"yangju","name":"양주시","leaf":1},{"slug":"pocheon","name":"포천시","leaf":1},{"slug":"yeoju","name":"여주시","leaf":1},{"slug":"yeoncheon","name":"연천군","leaf":1},{"slug":"gapyeong","name":"가평군","leaf":1},{"slug":"yangpyeong","name":"양평군","leaf":1}],"gangwon":[{"slug":"chuncheon","name":"춘천시","leaf":1},{"slug":"wonju","name":"원주시","leaf":1},{"slug":"gangreung","name":"강릉시","leaf":1},{"slug":"donghae","name":"동해시","leaf":1},{"slug":"taebaek","name":"태백시","leaf":1},{"slug":"sokcho","name":"속초시","leaf":1},{"slug":"samcheok","name":"삼척시","leaf":1},{"slug":"hongcheon","name":"홍천군","leaf":1},{"slug":"hoengseong","name":"횡성군","leaf":1},{"slug":"yeongwol","name":"영월군","leaf":1},{"slug":"pyeongchang","name":"평창군","leaf":1},{"slug":"jeongseon","name":"정선군","leaf":1},{"slug":"cheolwon","name":"철원군","leaf":1},{"slug":"hwacheon","name":"화천군","leaf":1},{"slug":"yanggu","name":"양구군","leaf":1},{"slug":"inje","name":"인제군","leaf":1},{"slug":"goseong","name":"고성군","leaf":1},{"slug":"yangyang","name":"양양군","leaf":1}],"chungbuk":[{"slug":"cheongju","name":"청주시","subGuSlugs":["cheongju-sangdang","cheongju-seowon","cheongju-heungdeok","cheongju-cheongwon"]},{"slug":"chungju","name":"충주시","leaf":1},{"slug":"jecheon","name":"제천시","leaf":1},{"slug":"boeun","name":"보은군","leaf":1},{"slug":"okcheon","name":"옥천군","leaf":1},{"slug":"yeongdong","name":"영동군","leaf":1},{"slug":"jeungpyeong","name":"증평군","leaf":1},{"slug":"jincheon","name":"진천군","leaf":1},{"slug":"goesan","name":"괴산군","leaf":1},{"slug":"eumseong","name":"음성군","leaf":1},{"slug":"danyang","name":"단양군","leaf":1}],"chungnam":[{"slug":"cheonan","name":"천안시","subGuSlugs":["cheonan-dongnam","cheonan-seobuk"]},{"slug":"gongju","name":"공주시","leaf":1},{"slug":"boryeong","name":"보령시","leaf":1},{"slug":"asan","name":"아산시","leaf":1},{"slug":"seosan","name":"서산시","leaf":1},{"slug":"nonsan","name":"논산시","leaf":1},{"slug":"gyeryong","name":"계룡시","leaf":1},{"slug":"dangjin","name":"당진시","leaf":1},{"slug":"geumsan","name":"금산군","leaf":1},{"slug":"buyeo","name":"부여군","leaf":1},{"slug":"seocheon","name":"서천군","leaf":1},{"slug":"cheongyang","name":"청양군","leaf":1},{"slug":"hongseong","name":"홍성군","leaf":1},{"slug":"yesan","name":"예산군","leaf":1},{"slug":"taean","name":"태안군","leaf":1}],"jeonbuk":[{"slug":"jeonju","name":"전주시","subGuSlugs":["jeonju-wansan","jeonju-deokjin"]},{"slug":"gunsan","name":"군산시","leaf":1},{"slug":"iksan","name":"익산시","leaf":1},{"slug":"jeongeub","name":"정읍시","leaf":1},{"slug":"namwon","name":"남원시","leaf":1},{"slug":"gimje","name":"김제시","leaf":1},{"slug":"wanju","name":"완주군","leaf":1},{"slug":"jinan","name":"진안군","leaf":1},{"slug":"muju","name":"무주군","leaf":1},{"slug":"jangsu","name":"장수군","leaf":1},{"slug":"imsil","name":"임실군","leaf":1},{"slug":"sunchang","name":"순창군","leaf":1},{"slug":"gochang","name":"고창군","leaf":1},{"slug":"buan","name":"부안군","leaf":1}],"jeonnam":[{"slug":"mokpo","name":"목포시","leaf":1},{"slug":"yeosu","name":"여수시","leaf":1},{"slug":"suncheon","name":"순천시","leaf":1},{"slug":"naju","name":"나주시","leaf":1},{"slug":"gwangyang","name":"광양시","leaf":1},{"slug":"damyang","name":"담양군","leaf":1},{"slug":"gokseong","name":"곡성군","leaf":1},{"slug":"gurye","name":"구례군","leaf":1},{"slug":"goheung","name":"고흥군","leaf":1},{"slug":"boseong","name":"보성군","leaf":1},{"slug":"hwasun","name":"화순군","leaf":1},{"slug":"jangheung","name":"장흥군","leaf":1},{"slug":"gangjin","name":"강진군","leaf":1},{"slug":"haenam","name":"해남군","leaf":1},{"slug":"yeongam","name":"영암군","leaf":1},{"slug":"muan","name":"무안군","leaf":1},{"slug":"hampyeong","name":"함평군","leaf":1},{"slug":"yeonggwang","name":"영광군","leaf":1},{"slug":"jangseong","name":"장성군","leaf":1},{"slug":"wando","name":"완도군","leaf":1},{"slug":"jindo","name":"진도군","leaf":1},{"slug":"sinan","name":"신안군","leaf":1}],"gyeongbuk":[{"slug":"pohang","name":"포항시","subGuSlugs":["pohang-nam","pohang-buk"]},{"slug":"gyeongju","name":"경주시","leaf":1},{"slug":"gimcheon","name":"김천시","leaf":1},{"slug":"andong","name":"안동시","leaf":1},{"slug":"gumi","name":"구미시","leaf":1},{"slug":"yeongju","name":"영주시","leaf":1},{"slug":"yeongcheon","name":"영천시","leaf":1},{"slug":"sangju","name":"상주시","leaf":1},{"slug":"mungyeong","name":"문경시","leaf":1},{"slug":"gyeongsan","name":"경산시","leaf":1},{"slug":"uiseong","name":"의성군","leaf":1},{"slug":"cheongsong","name":"청송군","leaf":1},{"slug":"yeongyang","name":"영양군","leaf":1},{"slug":"yeongdeok","name":"영덕군","leaf":1},{"slug":"cheongdo","name":"청도군","leaf":1},{"slug":"goryeong","name":"고령군","leaf":1},{"slug":"seongju","name":"성주군","leaf":1},{"slug":"chilgok","name":"칠곡군","leaf":1},{"slug":"yecheon","name":"예천군","leaf":1},{"slug":"bonghwa","name":"봉화군","leaf":1},{"slug":"uljin","name":"울진군","leaf":1},{"slug":"ulreung","name":"울릉군","leaf":1}],"gyeongnam":[{"slug":"changwon","name":"창원시","subGuSlugs":["changwon-uichang","changwon-seongsan","changwon-masanhabpo","changwon-masanhoewon","changwon-jinhae"]},{"slug":"jinju","name":"진주시","leaf":1},{"slug":"tongyeong","name":"통영시","leaf":1},{"slug":"sacheon","name":"사천시","leaf":1},{"slug":"gimhae","name":"김해시","leaf":1},{"slug":"milyang","name":"밀양시","leaf":1},{"slug":"geoje","name":"거제시","leaf":1},{"slug":"yangsan","name":"양산시","leaf":1},{"slug":"uiryeong","name":"의령군","leaf":1},{"slug":"haman","name":"함안군","leaf":1},{"slug":"changnyeong","name":"창녕군","leaf":1},{"slug":"goseong","name":"고성군","leaf":1},{"slug":"namhae","name":"남해군","leaf":1},{"slug":"hadong","name":"하동군","leaf":1},{"slug":"sancheong","name":"산청군","leaf":1},{"slug":"hamyang","name":"함양군","leaf":1},{"slug":"geochang","name":"거창군","leaf":1},{"slug":"habcheon","name":"합천군","leaf":1}],"jeju":[{"slug":"jeju","name":"제주시","leaf":1},{"slug":"seogwipo","name":"서귀포시","leaf":1}]};
+
+// 시 찾기 (REGIONS_DATA에서 구 상세 hydrate)
+function findSubcity(sidoSlug, citySlug) {
+  const cities = SUBCITIES_DATA[sidoSlug];
+  if (!cities) return null;
+  const city = cities.find(c => c.slug === citySlug);
+  if (!city) return null;
+  if (city.leaf || !city.subGuSlugs || city.subGuSlugs.length === 0) return null;
+  // REGIONS_DATA에서 실제 구 객체 lookup
+  const allGus = REGIONS_DATA[sidoSlug] || [];
+  const subGus = city.subGuSlugs.map(s => allGus.find(g => g.slug === s)).filter(Boolean);
+  if (subGus.length === 0) return null;
+  return { slug: city.slug, name: city.name, subGus, sidoSlug };
+}
+
+function renderSubcityPage(city) {
+  const sidoSlug = city.sidoSlug;
+  const region = findRegion(sidoSlug);
+  if (!region) return null;
+  const regionName = region.name;
+  const name = city.name;
+  const dc = city.subGus.length;
+  
+  const varKey = sidoSlug + '-city-' + city.slug;
+  const marketP = _seoulPick('mkt-'+varKey, _SEOUL_MARKET_V).replace(/\{name\}/g, name);
+  const flowP = _seoulPick('flw-'+varKey, _SEOUL_FLOW_V).replace(/\{name\}/g, name);
+  const posCtx = _seoulPick('pos-'+varKey, _SEOUL_POS_CONTEXT_V).replace(/\{name\}/g, name);
+  const kioskCtx = _seoulPick('kio-'+varKey, _SEOUL_KIOSK_CONTEXT_V).replace(/\{name\}/g, name);
+  const faq1A = _seoulPick('fq1-'+varKey, _SEOUL_FAQ1A_V).replace(/\{name\}/g, name);
+  
+  const heroImg = _seoulPick('chero-'+varKey, _SEOUL_HERO_POOL);
+  const heroBgStyle = `background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('${heroImg}') center/cover`;
+  
+  const guChips = city.subGus.map(g => {
+    const shortName = g.name.includes(' ') ? g.name.split(' ')[1] : g.name;
+    return `<a href="/region/${sidoSlug}/${g.slug}" class="sgu-dong-chip">${shortName}</a>`;
+  }).join('');
+  
+  const productCards = PRODUCTS.map(p => {
+    const imgSrc = PRODUCT_IMAGES[p.slug];
+    const thumb = imgSrc ? `<img src="${imgSrc}" alt="${p.name}" loading="lazy">` : p.emoji;
+    return `<a href="/product/${p.slug}" class="sgu-prod sgu-prod-img"><div class="sgu-prod-ic">${thumb}</div><div class="sgu-prod-name">${p.name}</div></a>`;
+  }).join('');
+  
+  const body = `
+<section class="sgu-page">
+<div class="container sgu-wrap">
+
+<div class="sgu-bc"><a href="/">홈</a><span>›</span><a href="/region">지역별 설치</a><span>›</span><a href="/region/${sidoSlug}">${regionName}</a><span>›</span>${name}</div>
+
+<div class="sgu-hero">
+  <div class="sgu-hero-bg" style="${heroBgStyle}"></div>
+  <div class="sgu-hero-ov">
+    <div class="sgu-hero-title">${name} 카드단말기·포스기·키오스크 설치 전문</div>
+    <div class="sgu-hero-sub">${name} 매장 당일 출장 | 설치비 무료 | VAN사 수수료 비교 견적</div>
+  </div>
+</div>
+
+<h1 class="sgu-h1">${name} 카드단말기·포스기·키오스크 설치</h1>
+
+<div class="sgu-body">
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">📍</span>${name} 상권 특성</div>
+  <div class="sct-stats">
+    <div class="sct-stat"><div class="sct-stat-num">${city.subGus.length}</div><div class="sct-stat-lbl">자치구</div></div>
+    <div class="sct-stat"><div class="sct-stat-num">${city.subGus.reduce((s,g)=>s+g.dongs.length,0)}</div><div class="sct-stat-lbl">읍·면·동</div></div>
+    <div class="sct-stat"><div class="sct-stat-num">당일</div><div class="sct-stat-lbl">출장 가능</div></div>
+    <div class="sct-stat"><div class="sct-stat-num">0원</div><div class="sct-stat-lbl">설치비</div></div>
+  </div>
+  <p>${marketP}</p>
+  <p>${flowP}</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">🏙️</span>${name} 구별 바로가기</div>
+  <div class="sgu-dong-grid">${guChips}</div>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">✨</span>이런 분들에게 추천해요</div>
+  <div class="sgu-reco">
+    <div class="sgu-reco-item"><div class="sgu-reco-q">${name}에서 매장 오픈을 준비 중이신가요?</div></div>
+    <div class="sgu-reco-item"><div class="sgu-reco-q">기존 단말기 수수료가 높아 고민이신가요?</div></div>
+    <div class="sgu-reco-item"><div class="sgu-reco-q">폐업·이전·리모델링을 앞두고 계신가요?</div></div>
+    <div class="sgu-reco-item"><div class="sgu-reco-q">A/S 때문에 스트레스 받고 계신가요?</div></div>
+  </div>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">🖥️</span>${name} 포스기(POS) 설치</div>
+  <p>${posCtx}</p>
+  <ul class="sct-checks">
+    <li><b>카드단말기·포스 자동 연동</b> — 이중 입력 없이 매출이 자동 기록되어 마감이 간결해집니다</li>
+    <li><b>배달 3사(배민·요기요·쿠팡이츠) 통합</b> — 주문이 자동으로 떨어져 피크타임 주문 누락 방지</li>
+    <li><b>매출 리포트 자동 생성</b> — 일·주·월 단위 리포트로 세금 신고 준비 간소화</li>
+    <li><b>클라우드 백업</b> — 장비 교체 시에도 데이터 완벽 보존</li>
+    <li><b>직원 1:1 실무 교육</b> — 사장님과 직원이 손에 익을 때까지 무상 교육</li>
+  </ul>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">🤖</span>${name} 키오스크·테이블오더 설치</div>
+  <p>${kioskCtx}</p>
+  <div class="sct-vs">
+    <div class="sct-vs-card">
+      <h4>🖱️ 키오스크</h4>
+      <p style="font-size:12px;color:#64748b;margin:0 0 6px">입구·카운터에 세워 손님이 직접 주문</p>
+      <ul>
+        <li>점심 피크타임 병목 해소</li>
+        <li>1인 운영 매장에 적합</li>
+        <li>다국어(영·중·일) 지원</li>
+        <li>추천 메뉴 노출로 객단가 상승</li>
+      </ul>
+    </div>
+    <div class="sct-vs-card">
+      <h4>📋 테이블오더</h4>
+      <p style="font-size:12px;color:#64748b;margin:0 0 6px">테이블에서 QR·태블릿으로 주문</p>
+      <ul>
+        <li>홀 이동 없이 추가 주문</li>
+        <li>프랜차이즈 음식점에 인기</li>
+        <li>포스·주방 프린터 자동 연동</li>
+        <li>주문 누락 제로</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">📷</span>${name} CCTV 설치</div>
+  <p>${name} 매장에서 CCTV는 도난 예방을 넘어 매장 운영 전반에 활용됩니다.</p>
+  <div class="sct-features">
+    <div class="sct-feature"><div class="sct-feature-ic">💳</div><div class="sct-feature-t">결제 오입력 확인</div><div class="sct-feature-d">포스 연동으로 결제 순간의 영상이 바로 매칭</div></div>
+    <div class="sct-feature"><div class="sct-feature-ic">📑</div><div class="sct-feature-t">원상복구 증빙</div><div class="sct-feature-d">폐업·이전 시 임대인과 분쟁 방지용 영상 보관</div></div>
+    <div class="sct-feature"><div class="sct-feature-ic">👥</div><div class="sct-feature-t">고객 컴플레인 대응</div><div class="sct-feature-d">상황 재구성으로 분쟁 시 빠른 해결</div></div>
+    <div class="sct-feature"><div class="sct-feature-ic">🛡️</div><div class="sct-feature-t">보험료 할인</div><div class="sct-feature-d">화재·도난 보험 할인 적용 사양서 발급</div></div>
+  </div>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">🔨</span>${name} 매장 사무실 철거</div>
+  <p>폐업을 결정하실 때부터 이미 힘드신 상태입니다. 원상복구·폐기물 처리까지 한 번에 끝내드리고, 희망리턴패키지 정부 보조금 신청서도 같이 챙겨드립니다.</p>
+  <div class="sct-steps">
+    <div class="sct-step"><span class="sct-step-n">1</span><div class="sct-step-t">현장 방문</div><div class="sct-step-d">임대차 원상복구 범위를 임대인과 함께 확인</div></div>
+    <div class="sct-step"><span class="sct-step-n">2</span><div class="sct-step-t">정찰제 견적</div><div class="sct-step-d">중간 추가 금액 없이 확정 견적</div></div>
+    <div class="sct-step"><span class="sct-step-n">3</span><div class="sct-step-t">철거·폐기물 처리</div><div class="sct-step-d">업종별 기준에 맞춰 적법 처리, 완료 보증서 발급</div></div>
+    <div class="sct-step"><span class="sct-step-n">4</span><div class="sct-step-t">보조금 신청 지원</div><div class="sct-step-d">희망리턴패키지 서류 작성 동행</div></div>
+  </div>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">⚡</span>${name} 설치 프로세스</div>
+  <div class="sct-steps">
+    <div class="sct-step"><span class="sct-step-n">1</span><div class="sct-step-t">전화 상담</div><div class="sct-step-d">업종·평수·필요 장비 확인 후 예상 견적 안내</div></div>
+    <div class="sct-step"><span class="sct-step-n">2</span><div class="sct-step-t">현장 방문</div><div class="sct-step-d">${name} 매장 전원·인터넷·카운터 점검</div></div>
+    <div class="sct-step"><span class="sct-step-n">3</span><div class="sct-step-t">장비 입고·세팅</div><div class="sct-step-d">VAN 계약·메뉴 등록·배달앱 연동 하루 완료</div></div>
+    <div class="sct-step"><span class="sct-step-n">4</span><div class="sct-step-t">교육·A/S 연결</div><div class="sct-step-d">직원 조작 교육 후 담당 기사 고정 배정</div></div>
+  </div>
+</section>
+
+<div class="sgu-tip-box">
+  <h4>💡 ${name} 사장님 Tip</h4>
+  <p>오픈 전 2~3일이 가장 중요합니다. 장비만 도착한다고 영업이 시작되는 게 아니라, 메뉴 등록·배달앱 연동·직원 교육까지 끝나야 문을 열 수 있습니다. 오페리오솔루션은 오픈 일정을 먼저 여쭤보고 거기서 역산해 방문 일정을 잡습니다.</p>
+</div>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">💰</span>${name} 설치 비용 안내</div>
+  <table class="sct-cost-table">
+    <thead><tr><th>항목</th><th>설치비</th><th>월 이용료</th><th>비고</th></tr></thead>
+    <tbody>
+      <tr><td>카드단말기</td><td class="sct-free">0원</td><td class="sct-free">0원</td><td>VAN 수수료만 건당 부과</td></tr>
+      <tr><td>포스기(POS)</td><td class="sct-free">0원</td><td class="sct-free">0원</td><td>교육비 포함 무료</td></tr>
+      <tr><td>키오스크</td><td class="sct-free">0원</td><td class="sct-free">0원</td><td>1대 기준, 2대 이상 별도 문의</td></tr>
+      <tr><td>테이블오더</td><td class="sct-free">0원</td><td class="sct-free">0원</td><td>QR 태블릿 포함</td></tr>
+      <tr><td>CCTV</td><td class="sct-paid">견적</td><td class="sct-free">0원</td><td>평수·카메라 대수별 견적</td></tr>
+      <tr><td>철거 / 원상복구</td><td class="sct-paid">견적</td><td>-</td><td>희망리턴패키지 보조금 대상</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:#64748b;margin-top:6px">* VAN 수수료는 카드 결제 발생 시 건당 부과되며, 오페리오솔루션이 최저 조건으로 계약 지원</p>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">✅</span>${name}에서 오페리오솔루션을 선택해야 하는 이유</div>
+  <div class="sct-why-wrap">
+    <button class="sct-why-btn sct-why-btn-prev" id="whyPrev" aria-label="이전">‹</button>
+    <button class="sct-why-btn sct-why-btn-next" id="whyNext" aria-label="다음">›</button>
+    <div class="sct-why" id="whyTrack">
+      <div class="sct-why-item">
+        <div class="sct-why-ic">🔎</div>
+        <div class="sct-why-t">VAN사 10곳 이상 비교</div>
+        <div class="sct-why-d">사장님이 직접 알아보시면 1~2곳이 한계. 저희는 업계 관계로 한 번에 비교</div>
+      </div>
+      <div class="sct-why-item">
+        <div class="sct-why-ic">🎁</div>
+        <div class="sct-why-t">설치·이용료·교육비 0원</div>
+        <div class="sct-why-d">카드·포스·키오스크·테이블오더 모두 무료. VAN 수수료만 결제 건당 부과</div>
+      </div>
+      <div class="sct-why-item">
+        <div class="sct-why-ic">👨‍🔧</div>
+        <div class="sct-why-t">담당 기사 고정 배정</div>
+        <div class="sct-why-d">처음 오신 기사가 A/S도 끝까지 담당. 매장 상황을 다시 설명할 필요 없음</div>
+      </div>
+      <div class="sct-why-item">
+        <div class="sct-why-ic">🏪</div>
+        <div class="sct-why-t">업종 맞춤 추천</div>
+        <div class="sct-why-d">음식점에 불필요한 예약 POS, 미용실에 과한 테이블오더는 권하지 않음</div>
+      </div>
+      <div class="sct-why-item">
+        <div class="sct-why-ic">📅</div>
+        <div class="sct-why-t">오픈 일정 역산 설계</div>
+        <div class="sct-why-d">장비 배송·설치·교육까지 오픈일에 맞춰 거꾸로 일정 조율</div>
+      </div>
+      <div class="sct-why-item">
+        <div class="sct-why-ic">📞</div>
+        <div class="sct-why-t">A/S는 전화 한 통</div>
+        <div class="sct-why-d">원격 지원으로 대부분 해결. 필요 시 ${name} 내 당일 출동</div>
+      </div>
+      <div class="sct-why-item">
+        <div class="sct-why-ic">🔨</div>
+        <div class="sct-why-t">폐업까지 원스톱</div>
+        <div class="sct-why-d">철거·원상복구·폐기물·희망리턴패키지 보조금 신청까지 연결</div>
+      </div>
+    </div>
+    <div class="sct-why-dots" id="whyDots"></div>
+  </div>
+  <script>(function(){var t=document.getElementById('whyTrack');if(!t)return;var p=document.getElementById('whyPrev'),n=document.getElementById('whyNext'),d=document.getElementById('whyDots');var items=t.querySelectorAll('.sct-why-item');var perPage=window.innerWidth<=600?1:2;var pages=Math.ceil(items.length/perPage);for(var i=0;i<pages;i++){var b=document.createElement('button');b.className='sct-why-dot'+(i===0?' active':'');b.setAttribute('aria-label','페이지 '+(i+1));(function(idx){b.onclick=function(){t.scrollTo({left:idx*perPage*(items[0].offsetWidth+10),behavior:'smooth'})}})(i);d.appendChild(b)}function update(){var dots=d.querySelectorAll('.sct-why-dot');var idx=Math.round(t.scrollLeft/((items[0].offsetWidth+10)*perPage));dots.forEach(function(dot,i){dot.classList.toggle('active',i===idx)});if(p)p.disabled=t.scrollLeft<=5;if(n)n.disabled=t.scrollLeft>=t.scrollWidth-t.clientWidth-5}t.addEventListener('scroll',update);if(p)p.onclick=function(){t.scrollBy({left:-(items[0].offsetWidth+10)*perPage,behavior:'smooth'})};if(n)n.onclick=function(){t.scrollBy({left:(items[0].offsetWidth+10)*perPage,behavior:'smooth'})};update()})();</script>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">📦</span>${name} 제품별 설치 안내</div>
+  <div class="sgu-prod-grid">${productCards}</div>
+</section>
+
+<section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">❓</span>${name} 설치 자주 묻는 질문</div>
+  <div class="sct-faq">
+    <details class="sct-faq-item" open>
+      <summary>${name} 전 지역 당일 출장이 가능한가요?</summary>
+      <div class="sct-faq-a">${faq1A}</div>
+    </details>
+    <details class="sct-faq-item">
+      <summary>정말 설치비가 안 드나요?</summary>
+      <div class="sct-faq-a">네, 저희가 VAN사와의 제휴 계약 구조상 단말기 원가가 VAN사 쪽에서 상쇄되는 방식입니다. 사장님께서 내시는 설치비·이용료·교육비는 0원이고, 카드결제 발생 시 건당 VAN사 수수료만 정상 부과됩니다. 계약서에도 동일하게 명시됩니다.</div>
+    </details>
+    <details class="sct-faq-item">
+      <summary>한 번에 여러 장비를 놓으면 싸지나요?</summary>
+      <div class="sct-faq-a">카드단말기·포스기·키오스크·테이블오더·CCTV 서로 연동되도록 한 번에 세팅합니다. 나중에 따로따로 설치하시면 연동 호환 문제가 생기거나 같은 작업을 두 번 반복하게 됩니다. 한 번에 설치하시면 패키지 할인도 들어가고, 한 명의 기사가 끝까지 책임지기 때문에 A/S 책임 소재도 명확해집니다.</div>
+    </details>
+    <details class="sct-faq-item">
+      <summary>고장 나면 어떻게 대응하세요?</summary>
+      <div class="sct-faq-a">먼저 전화로 1차 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${name} 담당 기사가 직접 매장으로 출동하며, 긴급한 건은 당일 처리됩니다.</div>
+    </details>
+    <details class="sct-faq-item">
+      <summary>매장 철거만 따로 맡겨도 되나요?</summary>
+      <div class="sct-faq-a">${name} 내 매장 철거·사무실·상가 철거까지 전문 엔지니어팀이 시공합니다. 임대차 원상복구 조건을 먼저 확인해 정찰제로 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 희망리턴패키지 보조금 신청서도 같이 준비해드립니다.</div>
+    </details>
+  </div>
+</section>
+
+<div class="sgu-cta">
+  <h3>📞 ${name} 무료 상담·견적</h3>
+  <p>전화 한 통이면 예상 견적까지 바로 안내드립니다</p>
+  <div class="sgu-cta-btns">
+    <a href="tel:${SITE.phone}" class="sgu-cta-btn sgu-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
+    <a href="sms:${SITE.phone}" class="sgu-cta-btn">💬 문자상담</a>
+    <a href="/contact" class="sgu-cta-btn">📝 상담 문의</a>
+  </div>
+</div>
+
+</div>
+</div>
+</section>`;
+  
+  return htmlWrap({
+    title: `${regionName} ${name} 카드단말기·포스기·키오스크 설치 - ${name} 전 지역 출장 전문 | 오페리오솔루션`,
+    description: `${regionName} ${name} 카드단말기·포스기·키오스크·CCTV·테이블오더 설치. ${name} 전 지역 무료 견적·빠른 출장. 설치비 무료, VAN사 수수료 비교.`,
+    canonical: `${SITE.domain}/region/${sidoSlug}/${city.slug}`,
+    body,
+  });
 }
 
 
@@ -4249,6 +4622,15 @@ export default {
           const html = renderSeoulDongPage(dong, regionDongMatch[1], region.name);
           if (html) return new Response(html, { headers: htmlHeaders });
         }
+      }
+    }
+    // [서울 외] 시 페이지 (수원시·성남시 등): /region/{sido}/{city}
+    const subcityMatch = pathname.match(/^\/region\/([a-z-]+)\/([a-z0-9-]+)$/);
+    if (subcityMatch) {
+      const city = findSubcity(subcityMatch[1], subcityMatch[2]);
+      if (city) {
+        const html = renderSubcityPage(city);
+        if (html) return new Response(html, { headers: htmlHeaders });
       }
     }
     // [서울 외 16개 광역시도] 구 페이지: /region/{sido}/{gu}
