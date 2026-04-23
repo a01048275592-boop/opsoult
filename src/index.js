@@ -939,9 +939,10 @@ footer .logo{color:#fff}
 .region-combo-label{flex-shrink:0;width:32px;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;padding-top:3px}
 .region-combo-tip{margin-top:12px;padding:10px 12px;background:#fef9e7;border:1px solid #fde68a;border-radius:8px;font-size:12.5px;color:#78350f;line-height:1.6}
 .region-combo-hint{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:12px;color:var(--muted);margin-bottom:10px}
-.region-combo-dots{display:flex;gap:5px}
-.region-combo-dot{width:6px;height:6px;border-radius:50%;background:#cbd5e1;transition:all .2s}
-.region-combo-dot.active{background:var(--ink);width:18px;border-radius:3px}
+.region-combo-dots{display:flex;gap:6px;justify-content:center;align-items:center;margin:14px 0 10px}
+.region-combo-dot{width:7px;height:7px;border-radius:50%;background:#cbd5e1;transition:all .2s;cursor:pointer}
+.region-combo-dot.active{background:var(--ink);width:22px;border-radius:4px}
+.region-combo-dot:hover{background:#94a3b8}
 /* Arrow buttons */
 .region-combo-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--ink);font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(15,23,42,0.08);transition:all .15s;z-index:5;user-select:none;line-height:1}
 .region-combo-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 4px 14px rgba(15,23,42,0.15)}
@@ -1744,7 +1745,7 @@ function renderRegionPage(region) {
 <section class="detail-hero${region.slug === 'seoul' ? ' seoul-hero' : ''}">
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/region">지역별 설치</a><span class="sep">›</span>${region.name}</div>
-<h1 class="detail-title">${region.emoji} ${region.fullName} <em>매장 설비 설치</em></h1>
+<h1 class="detail-title">${region.emoji} ${region.slug === 'seoul' ? region.name : region.fullName} <em>매장 설비 설치</em></h1>
 <p class="detail-sub">${region.description}</p>
 </div>
 </section>
@@ -1772,10 +1773,6 @@ ${region.slug === 'seoul' ? `
 <h2>🏪 서울 매장, 업종별로 달라지는 설비 조합</h2>
 <p>서울에서 매장을 오픈하실 때 가장 흔하게 놓치시는 게 <strong>"같은 업종이라도 평수·고객층에 따라 설비 조합이 다르다"</strong>는 점입니다. 아래는 서울 내 설치 실적 기준으로 업종별로 자주 나가는 조합 정리입니다.</p>
 
-<div class="region-combo-hint">
-  <span>좌우 버튼으로 조작하거나 드래그하세요 · 자동 전환</span>
-  <div class="region-combo-dots" id="comboDots"></div>
-</div>
 <div class="region-combo-wrap">
 <button class="region-combo-btn region-combo-btn-prev" id="comboPrev" aria-label="이전">‹</button>
 <button class="region-combo-btn region-combo-btn-next" id="comboNext" aria-label="다음">›</button>
@@ -1845,6 +1842,7 @@ ${region.slug === 'seoul' ? `
   </div>
 </div>
 </div>
+<div class="region-combo-dots" id="comboDots"></div>
 <script>
 (function(){
   var grid = document.getElementById('comboGrid');
