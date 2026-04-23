@@ -3332,6 +3332,11 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
 </section>
 
 <section class="sgu-sec">
+  <div class="sgu-h2"><span class="sgu-ic">🏘️</span>${name} 읍면동 바로가기</div>
+  <div class="sgu-dong-grid">${dongChips}</div>
+</section>
+
+<section class="sgu-sec">
   <div class="sgu-h2"><span class="sgu-ic">✨</span>이런 분들에게 추천해요</div>
   <div class="sgu-reco">
     <div class="sgu-reco-item"><div class="sgu-reco-q">${name}에서 매장 오픈을 준비 중이신가요?</div></div>
@@ -3446,11 +3451,6 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
       <div class="sgu-faq-a">${name} 내 매장·사무실·상가 철거까지 전문 엔지니어팀이 시공합니다. 임대인 원상복구 조건을 먼저 확인해 정찰제로 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 희망리턴패키지 보조금 신청서도 같이 준비해드립니다.</div>
     </div>
   </div>
-</section>
-
-<section class="sgu-sec">
-  <div class="sgu-h2"><span class="sgu-ic">🏘️</span>${name} 읍면동 바로가기</div>
-  <div class="sgu-dong-grid">${dongChips}</div>
 </section>
 
 <div class="sgu-cta">
