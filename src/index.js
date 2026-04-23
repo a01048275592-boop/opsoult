@@ -1019,6 +1019,72 @@ footer .logo{color:#fff}
 .sdo-cta-btn-primary{background:#0f172a;color:#fff;border-color:#0f172a}
 .sdo-cta-btn-primary:hover{background:#334155;border-color:#334155}
 
+/* ===== SEOUL PRODUCT PAGES ===== */
+.spp-wrap{max-width:880px;margin:0 auto;padding:0 20px 60px;font-family:'Pretendard','Malgun Gothic',sans-serif;color:#1e293b;line-height:1.6}
+.spp-bc{font-size:12.5px;color:#64748b;padding:16px 0}
+.spp-bc a{color:#64748b;text-decoration:none}
+.spp-bc span{margin:0 6px;color:#cbd5e1}
+.spp-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:20px;aspect-ratio:16/5;min-height:190px;background:#1e293b}
+.spp-hero-bg{position:absolute;inset:0}
+.spp-hero-ov{position:absolute;inset:0;padding:28px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.spp-hero-meta{font-size:12px;opacity:0.8;margin-bottom:10px;letter-spacing:-0.01em}
+.spp-hero-title{font-size:26px;font-weight:700;letter-spacing:-0.025em;line-height:1.2}
+.spp-h1{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin:8px 0 14px;color:#0f172a}
+.spp-intro{font-size:13px;line-height:1.85;color:#334155;margin-bottom:20px}
+.spp-intro strong{color:#0f172a;font-weight:700}
+.spp-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0 24px}
+.spp-stat{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:18px 14px;text-align:center}
+.spp-stat-ic{font-size:24px;margin-bottom:6px}
+.spp-stat-l{font-size:11.5px;color:#64748b;margin-bottom:4px}
+.spp-stat-v{font-size:18px;font-weight:700;color:#0f172a;letter-spacing:-0.02em}
+.spp-sec{margin-bottom:22px}
+.spp-sec-h{font-size:16px;font-weight:700;letter-spacing:-0.02em;margin-bottom:10px;color:#0f172a;display:flex;align-items:center;gap:6px}
+.spp-sec p{font-size:13px;line-height:1.85;color:#334155;margin-bottom:10px}
+.spp-sec p:last-child{margin-bottom:0}
+.spp-sec strong,.spp-sec b{font-weight:700;color:#0f172a}
+.spp-check-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin:6px 0 0;padding:0}
+.spp-check-list li{display:flex;align-items:flex-start;gap:9px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:10px 14px;font-size:12.5px;line-height:1.65;color:#166534}
+.spp-check{color:#16a34a;font-weight:700;flex-shrink:0;margin-top:1px}
+.spp-tbl{width:100%;border-collapse:collapse;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin:10px 0}
+.spp-tbl th,.spp-tbl td{padding:10px 12px;font-size:12.5px;text-align:left;border-bottom:1px solid #e2e8f0}
+.spp-tbl th{background:#f1f5f9;font-weight:700;color:#0f172a}
+.spp-tbl tr:last-child td{border-bottom:none}
+.spp-tip{background:#fefce8;border-left:3px solid #eab308;border-radius:8px;padding:13px 16px;margin:14px 0}
+.spp-tip-h{font-size:12.5px;font-weight:700;margin-bottom:4px;color:#0f172a}
+.spp-tip p{font-size:12.5px;color:#374151;line-height:1.75;margin:0}
+.spp-faqs{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.spp-faq-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px}
+.spp-faq-q{font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.5;color:#0f172a}
+.spp-faq-q-mark{color:#dc2626;margin-right:4px}
+.spp-faq-a{font-size:12.5px;color:#475569;line-height:1.75}
+.spp-gu-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.spp-gu-chip{display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:100px;font-size:12px;color:#475569;text-decoration:none;line-height:1.2;transition:all .12s}
+.spp-gu-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.spp-tags{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 24px;padding:14px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px}
+.spp-tags-h{width:100%;font-size:12px;color:#64748b;font-weight:600;margin-bottom:4px}
+.spp-tag{display:inline-flex;align-items:center;padding:4px 10px;background:#fff;border:1px solid #cbd5e1;border-radius:100px;font-size:11px;color:#475569}
+.spp-cta{background:#fefce8;border:1px solid #fde68a;border-radius:12px;padding:22px 20px;text-align:center;margin-top:24px}
+.spp-cta-h{font-size:16px;font-weight:700;margin-bottom:6px;color:#0f172a}
+.spp-cta-sub{font-size:12px;color:#78716c;margin-bottom:14px}
+.spp-cta-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.spp-cta-btn{display:inline-flex;align-items:center;gap:4px;padding:10px 16px;border-radius:100px;font-size:12.5px;font-weight:600;text-decoration:none;border:1px solid #e2e8f0;background:#fff;color:#0f172a;transition:all .15s}
+.spp-cta-btn:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.spp-cta-btn-primary{background:#0f172a;color:#fff;border-color:#0f172a}
+.spp-cta-btn-primary:hover{background:#334155;border-color:#334155}
+.spp-side-nav{margin-top:26px;padding:14px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px}
+.spp-side-nav-h{font-size:12.5px;font-weight:700;color:#0f172a;margin-bottom:8px;display:flex;align-items:center;gap:5px}
+.spp-side-nav-grid{display:flex;flex-wrap:wrap;gap:6px}
+.spp-other-chip{display:inline-flex;align-items:center;padding:5px 11px;background:#fff;border:1px solid #e2e8f0;border-radius:100px;font-size:11.5px;color:#475569;text-decoration:none;transition:all .12s}
+.spp-other-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.spp-prod-nav{display:flex;flex-wrap:wrap;gap:7px}
+.spp-prod-chip{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:100px;font-size:11.5px;color:#475569;text-decoration:none}
+.spp-prod-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+@media (max-width:640px){
+  .spp-hero-title{font-size:20px}
+  .spp-h1{font-size:18px}
+  .spp-sec-h{font-size:14.5px}
+}
+
 @media (max-width:640px){
   .sgu-prod-grid{grid-template-columns:repeat(3,1fr)}
   .sgu-h1,.sdo-h1{font-size:19px}
@@ -1732,7 +1798,598 @@ function renderProductPage(product) {
 }
 
 // [11] 지역x제품 설치 페이지 렌더 (/{region}/{product}) ========
+// [SEOUL-PRODUCT-ENGINE] 서울 × 7개 제품 동적 페이지
+// preview-seoul-card-terminal.html 기반 + 이미지 6종(포스/키오스크/CCTV/테이블오더/철거/밴딩머신) 반영
+// 제품별 섹션 제목·변형 뱅크로 유사도 최소화
+
+// 제품별 설정 (용어/키워드/섹션 제목 커스터마이즈)
+const _SPP_CONFIG = {
+  'card-terminal': {
+    kw: '카드단말기', action: '설치', actionH: '설치',
+    emoji: '💳',
+    heroImg: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    statLabel: '설치비', statValue: '무료',
+    introLead: '카드단말기 설치',
+    introBody: '설치비 무료, 월 이용료 무료로 진행되며, A/S를 지원합니다. 자동커팅단말기·유선단말기·무선단말기·토스단말기·블루투스단말기 등 매장 환경에 맞는 단말기를 추천합니다. 카드·삼성페이·카카오페이·네이버페이·제로페이 등 모든 간편결제 방식을 한 대로 처리합니다',
+    tags: ['서울카드단말기','서울카드단말기설치','VAN사수수료비교','설치비무료','자동커팅단말기','무선단말기','토스단말기','삼성페이','IC카드결제','서울매장설치'],
+  },
+  'pos': {
+    kw: '포스기', action: '설치', actionH: '설치',
+    emoji: '🖥️',
+    heroImg: 'https://images.unsplash.com/photo-1742240216264-f0aac25ef4ba?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    statLabel: '설치비', statValue: '무료',
+    introLead: '포스기 설치',
+    introBody: '설치비 무료, 월 이용료 무료로 진행되며, A/S를 지원합니다. 배달 3사(배민·요기요·쿠팡이츠) 자동 연동, 실시간 매출 분석 대시보드, 요일별·시간대별 매출 패턴 분석으로 최적화된 매장 운영을 지원합니다',
+    tags: ['서울포스기','서울포스기설치','배달3사연동','실시간매출분석','무료포스기','업종별포스기','포스기추천','서울매장관리','재고관리시스템','직원근태관리'],
+  },
+  'kiosk': {
+    kw: '키오스크', action: '설치', actionH: '설치',
+    emoji: '🤖',
+    heroImg: 'https://images.unsplash.com/photo-1726137569825-7535962addcd?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    statLabel: '설치비', statValue: '무료',
+    introLead: '키오스크 설치',
+    introBody: '설치비 무료, 월 이용료 무료로 진행되며, A/S를 지원합니다. 스탠드형·벽걸이형·테이블형 등 매장 면적과 동선에 맞는 키오스크를 추천하며, 메뉴 사진 촬영·등록까지 무료로 대행합니다',
+    tags: ['서울키오스크','서울키오스크설치','무인결제','인건비절감','키오스크렌탈','주문키오스크','셀프오더','무인매장솔루션','스탠드형키오스크','서울피크타임대응'],
+  },
+  'cctv': {
+    kw: 'CCTV', action: '설치', actionH: '설치',
+    emoji: '📷',
+    heroImg: 'https://images.unsplash.com/photo-1758519289714-519a9d9b96e3?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    statLabel: '설치비', statValue: '무료',
+    introLead: 'CCTV 설치',
+    introBody: '설치비 무료, 월 이용료 무료로 진행되며, A/S를 지원합니다. 4채널·8채널·16채널 등 매장 규모에 맞게 설계하며, 30일 이상 영상 저장을 보장합니다. 화재·도난 보험료 할인 혜택도 받을 수 있습니다',
+    tags: ['서울CCTV','서울CCTV설치','4K CCTV','스마트폰원격모니터링','AI움직임감지','매장보안','화재도난보험할인','POS연동CCTV','서울CCTV무료견적','30일영상저장'],
+  },
+  'table-order': {
+    kw: '테이블오더', action: '설치', actionH: '설치',
+    emoji: '📋',
+    heroImg: 'https://images.unsplash.com/photo-1726137569854-ce11cc10cf67?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    statLabel: '설치비', statValue: '무료',
+    introLead: '테이블오더 설치',
+    introBody: '설치비 무료, 월 이용료 무료로 진행되며, A/S를 지원합니다. QR코드 발급·메뉴 사진 촬영·등록까지 무료로 대행합니다. 한국어·영어·중국어·일본어 다국어 지원으로 외국인 관광객이 많은 매장에서 주문 자동 연동으로 주문 누락이 없습니다',
+    tags: ['서울테이블오더','서울테이블오더설치','QR주문','셀프오더','테이블결제','객단가상승','다국어주문','홀직원감축','테이블오더렌탈','서울카페오더'],
+  },
+  'removal': {
+    kw: '철거', action: '전문', actionH: '전문',
+    emoji: '🔨',
+    heroImg: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    statLabel: '견적비', statValue: '무료',
+    introLead: '철거 전문',
+    introBody: '전문 엔지니어팀이 정밀 현장 분석 후 정찰제 견적을 확정하며, 원상복구·폐기물 적법 처리까지 원스톱으로 처리합니다. 음식점·카페·편의점·미용실·사무실 등 모든 업종의 철거를 전문적으로 시공하며, 폐기물 처리 확인증과 시공 보증서를 발급합니다. 소상공인진흥공단 희망리턴패키지를 통해 철거비 보조금을 지원받을 수도 있도록 신청 절차까지 안내',
+    tags: ['서울철거','서울매장철거','상가철거','사무실철거','원상복구','희망리턴패키지','폐기물적법처리','정찰제철거','서울인테리어철거','임대인원상복구'],
+  },
+  'vending': {
+    kw: '밴딩머신', action: '설치', actionH: '설치',
+    emoji: '🥤',
+    heroImg: 'https://images.unsplash.com/photo-1742240216264-f0aac25ef4ba?fm=jpg&q=80&w=1600&auto=format&fit=crop',
+    statLabel: '설치비', statValue: '무료',
+    introLead: '밴딩머신 설치',
+    introBody: '설치비 무료, 월 이용료 무료로 진행되며, A/S를 지원합니다. 음료·과자·커피·컵밥·아이스크림 등 다양한 자동판매기(자판기)를 설치합니다. 무인 매장, 오피스, 학교, 병원, 공장 등 유동인구가 있는 곳이면 전국 어디든 설치 가능합니다',
+    tags: ['서울밴딩머신','서울자동판매기','음료자판기','과자자판기','무인매장자판기','오피스자판기','공장자판기','컵밥자판기','아이스크림자판기','자판기렌탈'],
+  },
+};
+
+// 섹션별 변형 문단 뱅크 (제품 슬러그로 해시해서 제품마다 다른 문단)
+const _SPP_V = {
+  // 설치 안내 섹션
+  install: [
+    '서울특별시에 {kw}를 {action}하면 매장 운영 효율이 획기적으로 개선됩니다. 오페리오솔루션은 서울특별시 전 지역에 업종별 최적화된 {kw}를 직접 방문 {action}합니다. 카드단말기·포스기·키오스크·테이블오더는 설치비 무료이며, CCTV는 별도 견적입니다. VAN사 수수료 비교를 통해 가장 유리한 조건을 찾아드립니다.',
+    '서울특별시에서 {kw}를 {action}하는 것은 단순히 장비를 놓는 일이 아닙니다. 매장 동선·업종·결제 수단 비중을 종합적으로 분석한 뒤 {kw}를 추천드리는 게 오페리오솔루션 방식입니다. 카드단말기·포스기·키오스크·테이블오더는 설치비 무료로 제공되며, VAN사 제휴를 통해 월 이용료까지 0원 구조로 세팅해드립니다.',
+    '서울 전 지역에서 {kw} {action} 전문 서비스를 제공하고 있습니다. 서울 25개 시군구, 467개 읍면동 어디든 직접 방문이 가능하며, 매장 오픈일에 맞춰 거꾸로 일정을 계산해 설치를 완료해드립니다. 설치비 무료, 월 이용료 무료 조건으로 진행되며 A/S까지 끝까지 책임집니다.',
+  ],
+  // 비용 안내 섹션
+  cost: [
+    '오페리오솔루션은 서울특별시에서 {kw}를 합리적인 비용으로 {action}합니다. 카드단말기·포스기·키오스크·테이블오더는 설치비 무료이며, CCTV는 별도 견적입니다. 패키지 {action} 시 추가 할인이 적용됩니다.',
+    '서울특별시 {kw} {action} 비용은 VAN사 제휴 구조 덕분에 사장님께서 내시는 금액이 0원으로 책정됩니다. 카드결제 시 발생하는 VAN사 수수료에서 장비 원가가 상쇄되는 방식이라 설치비·월 이용료·교육비가 모두 무료입니다. 여러 장비를 패키지로 묶어 {action}하시면 추가 할인도 들어갑니다.',
+    '서울 {kw} {action} 비용 구조는 투명합니다. 사장님이 내시는 설치비는 0원이며, 카드 결제가 발생할 때만 VAN사 수수료가 정상 부과됩니다. 숨겨진 월정액이나 위약금 조항이 없으며 계약서에도 동일하게 명시됩니다.',
+  ],
+  // 상세 안내 섹션 (제품별로 더 많은 변형)
+  detail: {
+    'card-terminal': [
+      '서울특별시 매장에서 카드단말기를 도입하면 매출과 운영 흐름이 눈에 띄게 개선됩니다. 자동커팅단말기·유선카드단말기·토스단말기·무선단말기·블루투스단말기 등 매장 환경에 맞는 단말기를 추천합니다. 카드·삼성페이·카카오페이·네이버페이·제로페이 등 모든 간편결제 방식을 한 대로 처리합니다. 오페리오솔루션은 서울 전 지역 25개 시군구, 467개 읍면동에서 직접 방문 설치를 진행하며, 설치 시 매장 환경에 맞게 장비 세팅을 마친 후 사용법 교육까지 무상으로 진행합니다.',
+    ],
+    'pos': [
+      '서울특별시 매장에 포스기를 도입하면 매출과 운영 흐름이 눈에 띄게 개선됩니다. 배달 3사(배민·요기요·쿠팡이츠) 자동 연동, 실시간 매출 분석 대시보드, 요일별·시간대별 매출 패턴 분석으로 최적화된 매장 운영을 지원합니다. 설치 시 매장 환경에 맞게 장비를 세팅하고 직원 교육까지 무상으로 완료합니다.',
+    ],
+    'kiosk': [
+      '서울특별시 매장에 키오스크를 도입하면 매출과 운영 흐름이 눈에 띄게 개선됩니다. 스탠드형·벽걸이형·테이블형 등 매장 면적과 동선에 맞는 키오스크를 추천하며, 메뉴 사진 촬영·등록까지 무료로 대행합니다. 오페리오솔루션은 서울 전 지역 25개 시군구, 467개 읍면동에서 직접 방문 설치를 진행하며, 설치 시 매장 환경에 맞게 장비를 세팅하고 직원 교육까지 무상으로 완료합니다.',
+    ],
+    'cctv': [
+      '서울특별시 매장에 CCTV를 도입하면 매출과 운영 흐름이 눈에 띄게 개선됩니다. 4채널·8채널·16채널 등 매장 규모에 맞게 설계하며, 화재·도난 보험료 할인 혜택도 받을 수 있습니다. 오페리오솔루션은 서울 전 지역 25개 시군구, 467개 읍면동에서 직접 방문 설치를 진행하며, 설치 시 매장 환경에 맞게 장비를 세팅하고 지속적인 관리를 제공합니다.',
+    ],
+    'table-order': [
+      '서울특별시 매장에 테이블오더를 도입하면 매출과 운영 흐름이 눈에 띄게 개선됩니다. QR코드 발급·메뉴 사진 촬영·등록까지 무료로 대행합니다. 한국어·영어·중국어·일본어 다국어 지원으로 외국인 관광객이 많은 매장에서 주문 자동 연동으로 주문 누락이 없습니다. 오페리오솔루션은 서울 전 지역 25개 시군구, 467개 읍면동에서 직접 방문 설치를 진행하며, 설치 시 매장 환경에 맞게 장비를 세팅하고 직원 교육까지 무상으로 완료합니다.',
+    ],
+    'removal': [
+      '서울특별시 지역에서 매장을 철거할 때는 구조물 안전 분석이 가장 중요합니다. 전기·가스·수도를 안전하게 차단한 뒤, 주변 매장에 피해를 주지 않는 방식으로 철거를 진행합니다. 인테리어 해체 → 설비 해체 → 구조물 철거 → 원상복구 → 폐기물 처리 순서로 체계적으로 시공합니다. 오페리오솔루션은 서울 전 지역에서 25개 시군구, 467개 읍면동을 직접 방문하여 정밀 분석을 진행합니다.',
+    ],
+    'vending': [
+      '서울특별시 매장에 밴딩머신을 도입하면 매출과 운영 흐름이 눈에 띄게 개선됩니다. 음료·과자·커피·컵밥·아이스크림 등 다양한 자동판매기(자판기)를 설치합니다. 무인 매장, 오피스, 학교, 병원, 공장 등 유동인구가 있는 곳이면 전국 어디든 설치 가능합니다. 오페리오솔루션은 서울 전 지역 25개 시군구, 467개 읍면동에서 직접 방문 설치를 진행하며, 설치 후에도 VAN사 수수료 재검토, 장비 업그레이드 안내 등 지속적인 관리를 제공합니다.',
+    ],
+  },
+  // 업종별 가이드 (제품별 고유)
+  guide: {
+    'card-terminal': '<p><strong>음식점·카페:</strong> 서울특별시 음식점·카페는 포스기+카드단말기가 기본이며, 키오스크·테이블오더 추가로 인건비를 월 150~200만원 절감할 수 있습니다. 배달 3사 연동으로 주문을 통합 관리합니다.</p><p><strong>편의점·마트·소매점:</strong> 카드단말기+포스기로 재고 자동 관리, CCTV로 도난 방지. 모든 장비를 한번에 설치하면 패키지 할인이 적용됩니다.</p><p><strong>무인매장:</strong> CCTV 패키지로 24시간 무인 운영, 인건비 100% 절감.</p>',
+    'pos': '<p><strong>음식점·카페:</strong> 서울특별시 음식점·카페는 포스기+카드단말기가 기본이며, 키오스크·테이블오더 추가로 인건비를 월 150~200만원 절감할 수 있습니다. 배달 3사 연동으로 주문을 통합 관리합니다.</p><p><strong>편의점·마트·소매점:</strong> 카드단말기+포스기로 재고 자동 관리, CCTV로 도난 방지. 모든 장비를 한번에 설치하면 패키지 할인이 적용됩니다.</p><p><strong>무인매장:</strong> CCTV 패키지로 24시간 무인 운영, 인건비 100% 절감.</p>',
+    'kiosk': '<p><strong>음식점·카페:</strong> 서울특별시 음식점·카페는 포스기+카드단말기가 기본이며, 키오스크·테이블오더 추가로 인건비를 월 150~200만원 절감할 수 있습니다. 배달 3사 연동으로 주문을 통합 관리합니다.</p><p><strong>편의점·마트·소매점:</strong> 카드단말기+포스기로 재고 자동 관리, CCTV로 도난 방지. 모든 장비를 한번에 설치하면 패키지 할인이 적용됩니다.</p><p><strong>무인매장:</strong> CCTV 패키지로 24시간 무인 운영, 인건비 100% 절감.</p>',
+    'cctv': '<p><strong>음식점·카페:</strong> 서울특별시 음식점·카페는 포스기+카드단말기가 기본이며, 키오스크·테이블오더 추가로 인건비를 월 150~200만원 절감할 수 있습니다. 배달 3사 연동으로 주문을 통합 관리합니다.</p><p><strong>편의점·마트·소매점:</strong> 카드단말기+포스기로 재고 자동 관리, CCTV로 도난 방지. 모든 장비를 한번에 설치하면 패키지 할인이 적용됩니다.</p><p><strong>무인매장:</strong> CCTV 패키지로 24시간 무인 운영, 인건비 100% 절감.</p>',
+    'table-order': '<p><strong>음식점·카페:</strong> 서울특별시 음식점·카페는 포스기+카드단말기가 기본이며, 키오스크·테이블오더 추가로 인건비를 월 150~200만원 절감할 수 있습니다. 배달 3사 연동으로 주문을 통합 관리합니다.</p><p><strong>편의점·마트·소매점:</strong> 카드단말기+포스기로 재고 자동 관리, CCTV로 도난 방지. 모든 장비를 한번에 설치하면 패키지 할인이 적용됩니다.</p><p><strong>무인매장:</strong> CCTV 패키지로 24시간 무인 운영, 인건비 100% 절감.</p>',
+    'removal': '<p><strong>음식점·카페:</strong> 서울특별시 음식점·카페 철거는 주방 설비(후드·배기·가스배관)가 핵심입니다. 가스배관은 반드시 전문가가 안전하게 차단해야 하며, 배수관·전기설비 정리까지 체계적으로 진행합니다.</p><p><strong>편의점·마트·소매점:</strong> 진열대·간판·냉장고 일체 철거, 간판은 관할 구청 허가 확인 후 철거합니다. 원상복구 시 바닥·벽면·천장까지 깔끔하게 처리합니다.</p><p><strong>무인매장:</strong> 파티션·좌식·장비 일체 철거. 배수관·전기설비 안전 정리까지 포함합니다.</p>',
+    'vending': '<p><strong>음식점·카페:</strong> 서울특별시 음식점·카페는 포스기+카드단말기가 기본이며, 키오스크·테이블오더 추가로 인건비를 월 150~200만원 절감할 수 있습니다. 배달 3사 연동으로 주문을 통합 관리합니다.</p><p><strong>편의점·마트·소매점:</strong> 카드단말기+포스기로 재고 자동 관리, CCTV로 도난 방지. 모든 장비를 한번에 설치하면 패키지 할인이 적용됩니다.</p><p><strong>무인매장:</strong> CCTV 패키지로 24시간 무인 운영, 인건비 100% 절감.</p>',
+  },
+};
+
+// 철거 페이지 전용 체크리스트 (다른 제품과 다름)
+const _SPP_REMOVAL_CHECKLIST = [
+  '<strong>업종별 확인</strong> — 비전문 업체에 맡기면 안전사고, 불법 폐기물 투기, 보증금 분쟁 발생할 수 있습니다',
+  '<strong>정찰제 견적</strong> — 추가 비용 없는 정찰제로 운영하는 업체인지 반드시 확인하세요',
+  '<strong>원상복구 범위</strong> — 임대차 계약서상 원상복구 범위를 사전에 확인해 보증금 분쟁을 예방하세요',
+  '<strong>폐기물 처리</strong> — 폐기물 처리 확인증을 발급하는 업체 선택 필수',
+  '<strong>업체 실적 확인</strong> — 오페리오솔루션은 전국 350건+ 실적, 98% 고객 만족도를 기록하고 있습니다',
+];
+
+// 공통 설치 시 확인사항 체크리스트
+const _SPP_CHECKLIST = [
+  '<strong>설치비 무료 여부</strong> — 오페리오솔루션은 VAN사 제휴로 설치비 전액 무료, 숨겨진 비용 없음',
+  '<strong>월 이용료 무료</strong> — 별도 월정액 없음, 카드 수수료만 정상 부과',
+  '<strong>A/S 기간</strong> — A/S 지원, 장애 시 원격 또는 출동 서비스',
+  '<strong>장비 연동</strong> — 카드단말기·포스기·키오스크·CCTV·테이블오더 통합 연동 가능',
+  '<strong>업체 실적 확인</strong> — 오페리오솔루션은 전국 350건+ 실적, 98% 고객 만족도를 기록하고 있습니다',
+];
+
+// 도입 전 체크리스트
+const _SPP_PRECHECK = {
+  default: [
+    '<strong>매장 업종 확인</strong> — 음식점·카페·편의점·미용실·무인매장 등 업종별로 최적의 {kw} 사양이 다릅니다',
+    '<strong>매장 면적·동선 분석</strong> — 장비 배치 위치와 고객 동선을 고려해야 효과가 극대화됩니다',
+    '<strong>기존 장비 확인</strong> — 기존 카드단말기·포스기 등이 있다면 교체 시기와 VAN사 계약 잔여 기간을 확인하세요',
+    '<strong>패키지 설치 여부</strong> — 여러 장비를 한번에 설치하면 패키지 할인이 적용됩니다',
+    '<strong>업체 실적·후기</strong> — 전국 설치 실적과 고객 후기를 반드시 확인하세요. 오페리오솔루션은 350건+ 실적, 98% 만족도',
+  ],
+  removal: [
+    '<strong>매장 업종 확인</strong> — 음식점·카페·편의점·미용실·무인매장 등 업종별로 최적의 철거 사양이 다릅니다',
+    '<strong>매장 면적·동선 분석</strong> — 철거 범위와 작업 동선 사전에 분석해야 효율적인 시공이 가능합니다',
+    '<strong>원상복구 범위</strong> — 임대차 계약서상 원상복구 조건을 반드시 확인하세요',
+    '<strong>정부 보조금</strong> — 소상공인 대상 철거비 보조금(희망리턴패키지) 신청 가능 여부를 확인하세요',
+    '<strong>업체 실적·후기</strong> — 전국 설치 실적과 고객 후기를 반드시 확인하세요. 오페리오솔루션은 350건+ 실적, 98% 만족도',
+  ],
+};
+
+// 메인 렌더 함수 — 서울 한정
+// [CARD-TERMINAL-V3] 카드단말기 전용 새 템플릿 (v3)
+// 섹션: 시군구 칩 → 상세 안내(카드형) → 사기 예방 → 세금 활용 → 체크리스트 → FAQ → CTA → 다른시도 → 태그
+
+function renderSeoulCardTerminalV3() {
+  const heroImg = 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop';
+
+  const cssV3 = `
+<style>
+.sctv3-wrap{max-width:880px;margin:0 auto;padding:0 20px 60px;font-family:'Pretendard','Malgun Gothic',sans-serif;color:#1e293b;line-height:1.6}
+.sctv3-bc{font-size:12.5px;color:#64748b;padding:16px 0}
+.sctv3-bc a{color:#64748b;text-decoration:none}
+.sctv3-bc span{margin:0 6px;color:#cbd5e1}
+.sctv3-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:20px;aspect-ratio:16/5;min-height:190px;background:#1e293b}
+.sctv3-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover}
+.sctv3-hero-ov{position:absolute;inset:0;padding:28px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.sctv3-hero-meta{font-size:12px;opacity:0.8;margin-bottom:10px}
+.sctv3-hero-title{font-size:26px;font-weight:700;letter-spacing:-0.025em;line-height:1.2}
+.sctv3-h1{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin:8px 0 14px;color:#0f172a}
+.sctv3-intro{font-size:13.5px;line-height:1.85;color:#334155;margin-bottom:20px;padding:16px 18px;background:#f8fafc;border-left:3px solid #0f172a;border-radius:0 8px 8px 0}
+.sctv3-intro strong{color:#0f172a;font-weight:700}
+.sctv3-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0 28px}
+.sctv3-stat{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:18px 14px;text-align:center}
+.sctv3-stat-ic{font-size:24px;margin-bottom:6px}
+.sctv3-stat-l{font-size:11.5px;color:#64748b;margin-bottom:4px}
+.sctv3-stat-v{font-size:17px;font-weight:700;color:#0f172a;letter-spacing:-0.02em}
+.sctv3-sec{margin-bottom:26px}
+.sctv3-sec-h{font-size:17px;font-weight:700;letter-spacing:-0.02em;margin-bottom:12px;color:#0f172a;display:flex;align-items:center;gap:7px}
+.sctv3-sec p{font-size:13px;line-height:1.85;color:#334155;margin-bottom:12px}
+.sctv3-sec p:last-child{margin-bottom:0}
+.sctv3-sec strong{font-weight:700;color:#0f172a}
+.sctv3-num-list{display:flex;flex-direction:column;gap:14px;margin:14px 0 8px}
+.sctv3-num-item{display:flex;gap:14px;align-items:flex-start}
+.sctv3-num-badge{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:#0f172a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:700}
+.sctv3-num-body{flex:1;padding-top:3px}
+.sctv3-num-body h4{font-size:14.5px;font-weight:700;color:#0f172a;margin-bottom:5px;letter-spacing:-0.01em}
+.sctv3-num-body p{font-size:12.5px;line-height:1.75;color:#475569;margin:0}
+.sctv3-type-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:14px 0 18px}
+.sctv3-type-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px;transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,0.03)}
+.sctv3-type-card:hover{border-color:#0f172a;transform:translateY(-2px);box-shadow:0 4px 12px rgba(15,23,42,0.08)}
+.sctv3-type-card-head{display:flex;align-items:center;gap:8px;padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid #f1f5f9}
+.sctv3-type-card-icon{font-size:22px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:8px;flex-shrink:0}
+.sctv3-type-card-title{font-size:13.5px;font-weight:700;color:#0f172a;letter-spacing:-0.01em;line-height:1.25}
+.sctv3-type-card-row{display:flex;align-items:flex-start;gap:8px;padding:4px 0;font-size:12px;line-height:1.5}
+.sctv3-type-label{flex-shrink:0;width:36px;font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.03em;padding-top:2px}
+.sctv3-type-value{flex:1;color:#334155}
+.sctv3-type-value.good{color:#059669;font-weight:600}
+.sctv3-callout{background:#fef3c7;border:1px solid #fcd34d;border-radius:10px;padding:14px 16px;margin:14px 0}
+.sctv3-callout-h{font-size:13px;font-weight:700;color:#78350f;margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.sctv3-callout p{font-size:12.5px;color:#78350f;line-height:1.75;margin:0}
+.sctv3-callout strong{color:#78350f}
+.sctv3-warn{background:#fee2e2;border:1px solid #fecaca;border-radius:10px;padding:14px 16px;margin:14px 0}
+.sctv3-warn-h{font-size:13px;font-weight:700;color:#991b1b;margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.sctv3-warn p{font-size:12.5px;color:#991b1b;line-height:1.75;margin:0}
+.sctv3-insight-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.sctv3-insight-card{background:#f0f9ff;border:1px solid #bae6fd;border-radius:10px;padding:13px 15px}
+.sctv3-insight-card h5{font-size:13px;font-weight:700;color:#0c4a6e;margin-bottom:5px;letter-spacing:-0.01em}
+.sctv3-insight-card p{font-size:12px;color:#075985;line-height:1.7;margin:0}
+.sctv3-scene-tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:12.5px}
+.sctv3-scene-tbl td{padding:10px 14px;border-bottom:1px solid #e2e8f0;vertical-align:top}
+.sctv3-scene-tbl tr:last-child td{border-bottom:none}
+.sctv3-scene-tbl td:first-child{width:140px;font-weight:700;color:#0f172a;background:#f8fafc}
+.sctv3-scene-tbl td:last-child{color:#334155;line-height:1.7}
+.sctv3-faqs{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.sctv3-faq-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px 16px}
+.sctv3-faq-q{font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.5;color:#0f172a}
+.sctv3-faq-q-mark{color:#dc2626;margin-right:4px}
+.sctv3-faq-a{font-size:12.5px;color:#475569;line-height:1.75}
+.sctv3-tags{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0 24px;padding:14px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px}
+.sctv3-tags-h{width:100%;font-size:12px;color:#64748b;font-weight:600;margin-bottom:4px}
+.sctv3-tag{display:inline-flex;padding:4px 10px;background:#fff;border:1px solid #cbd5e1;border-radius:100px;font-size:11px;color:#475569}
+.sctv3-gu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px;margin-top:14px}
+.sctv3-gu-chip{display:flex;align-items:center;justify-content:center;padding:10px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-weight:500;color:#334155;text-decoration:none;transition:all .15s;letter-spacing:-0.01em;position:relative}
+.sctv3-gu-chip:hover{border-color:#0f172a;color:#0f172a;background:#f8fafc;transform:translateY(-1px)}
+.sctv3-gu-chip::after{content:"→";position:absolute;right:10px;opacity:0;transition:all .15s;font-size:12px}
+.sctv3-gu-chip:hover::after{opacity:1;right:8px}
+.sctv3-cta{background:#0f172a;color:#fff;border-radius:14px;padding:28px 22px;text-align:center;margin-top:28px}
+.sctv3-cta-h{font-size:17px;font-weight:700;margin-bottom:6px;color:#fff;letter-spacing:-0.02em}
+.sctv3-cta-sub{font-size:12.5px;color:rgba(255,255,255,0.8);margin-bottom:16px;line-height:1.6}
+.sctv3-cta-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.sctv3-cta-btn{display:inline-flex;align-items:center;gap:4px;padding:11px 18px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none}
+.sctv3-cta-btn-primary{background:#f97316;color:#fff}
+.sctv3-cta-btn-sec{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.35)}
+.sctv3-cta-btn-sec:hover{background:rgba(255,255,255,0.08)}
+.sctv3-side-nav{margin-top:22px;padding:14px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px}
+.sctv3-side-nav-h{font-size:12.5px;font-weight:700;color:#0f172a;margin-bottom:10px}
+.sctv3-side-nav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:6px}
+.sctv3-other-chip{display:flex;align-items:center;justify-content:center;padding:8px 10px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;font-weight:500;color:#334155;text-decoration:none;transition:all .15s;letter-spacing:-0.01em}
+.sctv3-other-chip:hover{border-color:#0f172a;color:#0f172a;background:#f1f5f9;transform:translateY(-1px)}
+@media (max-width:640px){.sctv3-hero-title{font-size:20px}.sctv3-h1{font-size:18px}.sctv3-sec-h{font-size:15px}.sctv3-insight-grid{grid-template-columns:1fr}.sctv3-scene-tbl td:first-child{width:100px}}
+</style>`;
+
+  const guChipsHtml = SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="sctv3-gu-chip">${g.name}</a>`).join('');
+  
+  const otherRegions = [['gyeonggi','경기'],['busan','부산'],['incheon','인천'],['daegu','대구'],['daejeon','대전'],['gwangju','광주'],['ulsan','울산'],['sejong','세종'],['gangwon','강원'],['chungbuk','충북'],['chungnam','충남'],['jeonbuk','전북'],['jeonnam','전남'],['gyeongbuk','경북'],['gyeongnam','경남'],['jeju','제주']];
+  const otherRegionsHtml = otherRegions.map(([s,n]) => `<a href="/${s}/card-terminal" class="sctv3-other-chip">${n}</a>`).join('');
+
+  const body = `${cssV3}
+<div class="sctv3-wrap">
+
+<div class="sctv3-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/card-terminal">카드단말기</a><span>›</span>서울특별시</div>
+
+<div class="sctv3-hero">
+  <div class="sctv3-hero-bg"></div>
+  <div class="sctv3-hero-ov">
+    <div class="sctv3-hero-meta">서울 25개 시군구 · 467개 읍면동 전 지역 출장 설치</div>
+    <div class="sctv3-hero-title">서울 카드단말기 설치, 제대로 알아보기</div>
+  </div>
+</div>
+
+<h1 class="sctv3-h1">서울 카드단말기 설치 가이드 — 당일 출장부터 수수료 비교까지</h1>
+
+<p class="sctv3-intro">카드단말기는 "그냥 하나 놓으면 되는 장비"가 아닙니다. <strong>어느 VAN사와 계약했느냐에 따라 1년 수수료 차이가 수십만 원</strong>이 납니다. 서울처럼 결제 빈도가 높은 상권에서는 이 차이가 더 크게 벌어집니다. 이 글에서는 서울에서 카드단말기를 들이시는 사장님이 꼭 짚고 넘어가야 할 것들만 정리해드립니다. VAN사 고르는 법, 단말기 종류 비교, 기존 계약 위약금 처리, 설치 당일 일정까지 실전 기준으로 안내합니다.</p>
+
+<div class="sctv3-stats">
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">🏆</div><div class="sctv3-stat-l">서울 설치 실적</div><div class="sctv3-stat-v">15,000+건</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">⚡</div><div class="sctv3-stat-l">견적 회신</div><div class="sctv3-stat-v">평균 30분</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">💰</div><div class="sctv3-stat-l">설치비</div><div class="sctv3-stat-v">0원</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">🔧</div><div class="sctv3-stat-l">A/S 커버</div><div class="sctv3-stat-v">서울 전 지역</div></div>
+</div>
+
+<section class="sctv3-sec">
+  <div class="sctv3-sec-h">🏢 서울 시군구별 카드단말기 가이드</div>
+  <p style="font-size:12.5px;color:#64748b">지역을 클릭하면 해당 시군구의 카드단말기 설치 상세 페이지로 이동합니다.</p>
+  <div class="sctv3-gu-grid">${guChipsHtml}</div>
+</section>
+
+<section class="sctv3-sec">
+  <div class="sctv3-sec-h">📘 서울 카드단말기 상세 안내</div>
+  <p>카드단말기는 단순히 카드를 긁는 기계가 아닙니다. 매장과 VAN사·카드사·은행을 연결하는 결제 인프라의 시작점이고, 사장님이 1년에 부담하시는 결제 비용 대부분이 이 단말기 한 대를 통해 빠져나갑니다. 서울처럼 결제 빈도가 높은 상권에서는 단말기 선택과 VAN사 계약 조건이 매장 손익에 직접 영향을 줍니다.</p>
+  <p>국내에서 유통되는 카드단말기는 <strong>유선·자동커팅·무선·스마트·간편결제 특화형</strong> 등 5가지 큰 분류로 나뉩니다. 매장 카운터 구조, 홀 면적, 주요 고객 연령대, 결제 수단 비중에 따라 적합한 기종이 달라지고, 잘못 고르면 6개월도 안 돼서 다시 바꾸시는 경우가 생깁니다.</p>
+  <div class="sctv3-type-cards">
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">🖥️</div><div class="sctv3-type-card-title">유선 일체형</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">편의점·소형 식당</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">안정적, 고장 적음</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">공간 차지</span></div></div>
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">🧾</div><div class="sctv3-type-card-title">자동커팅형</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">음식점·영수증 다수</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">영수증 자동 절단</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">유선 기본</span></div></div>
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">📡</div><div class="sctv3-type-card-title">무선 (블루투스)</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">홀 서빙·야외 마켓</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">이동 자유</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">배터리 관리 필요</span></div></div>
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">📱</div><div class="sctv3-type-card-title">스마트 단말기</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">포스기 없는 소형</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">포스 기능 일부 내장</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">월 이용료 있음</span></div></div>
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">💸</div><div class="sctv3-type-card-title">간편결제 특화</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">젊은층 카페·편집샵</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">QR·페이류 우대</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">일부 카드사 제한</span></div></div>
+  </div>
+  <p>오페리오솔루션은 서울 25개 시군구 전 지역에 직접 방문해 매장 환경을 보고 단말기를 추천합니다. 카드·삼성페이·카카오페이·네이버페이·제로페이까지 한 대에서 처리되도록 세팅하며, IC·MS·NFC·QR 모든 결제 방식을 실제 카드로 테스트한 뒤에 영업 투입 상태로 전달합니다.</p>
+</section>
+
+<section class="sctv3-sec">
+  <div class="sctv3-sec-h">🛡️ 서울에서 카드단말기 살 때 사기 안 당하는 법</div>
+  <p>카드단말기 시장은 진입 장벽이 낮아서 영업 직원·중간 대리점이 난립하고 있습니다. 그래서 비슷해 보이는 견적이라도 1년 후 사장님이 부담하시는 금액이 크게 달라집니다. 서울에서 매장 오픈하시는 분들이 자주 걸려드는 함정 5가지를 정리해드립니다.</p>
+  <div class="sctv3-num-list">
+    <div class="sctv3-num-item"><div class="sctv3-num-badge">1</div><div class="sctv3-num-body"><h4>"평생 무료" 광고 — 위약금 조항 확인 필수</h4><p>설치비·월정액 평생 무료라고 광고하지만, 약관 안에는 <strong>3년 이내 해지 시 단말기 원가의 100~150% 위약금</strong> 조항이 숨어 있는 경우가 많습니다. 계약서 위약금 항목을 반드시 직접 확인하세요.</p></div></div>
+    <div class="sctv3-num-item"><div class="sctv3-num-badge">2</div><div class="sctv3-num-body"><h4>"수수료 최저가" 약속 — 우대 수수료율 적용 조건 확인</h4><p>건당 수수료 최저가를 보장한다고 하지만 <strong>월 결제 건수 일정 기준 미달 시 수수료가 두 배로 뛰는</strong> 조건이 붙는 경우가 있습니다. 사장님 매장의 월 평균 결제 건수와 비교해 실제 적용 가능한 조건인지 확인하세요.</p></div></div>
+    <div class="sctv3-num-item"><div class="sctv3-num-badge">3</div><div class="sctv3-num-body"><h4>"바로 설치" 강요 — 같은 자리에서 계약서 사인 요구</h4><p>방문 영업 사원이 견적과 함께 그 자리에서 사인을 요구하는 경우는 일단 의심해야 합니다. 정상 업체는 사장님이 <strong>최소 1~2일 검토 시간을 갖도록</strong> 견적서·계약서 PDF를 보내드리고 기다립니다.</p></div></div>
+    <div class="sctv3-num-item"><div class="sctv3-num-badge">4</div><div class="sctv3-num-body"><h4>"VAN사 직영" 사칭 — 실제로는 중간 대리점인 경우</h4><p>VAN사 본사 직영을 사칭하지만 실제로는 여러 단계를 거친 중간 대리점일 수 있습니다. 이런 경우 A/S 대응이 늦거나 책임 소재가 모호해집니다. 명함·사업자등록증·VAN사 계약 증빙을 요청해 확인하세요.</p></div></div>
+    <div class="sctv3-num-item"><div class="sctv3-num-badge">5</div><div class="sctv3-num-body"><h4>"기존 단말기 무료 회수" — 회수증 발급 안 하면 안 됨</h4><p>기존 단말기를 무료로 가져가준다고 하면서 <strong>회수 확인서를 발급하지 않으면</strong>, 나중에 기존 VAN사에서 단말기 미반납 위약금을 청구할 수 있습니다. 반드시 회수증을 받으세요.</p></div></div>
+  </div>
+  <div class="sctv3-warn"><div class="sctv3-warn-h">⚠️ 한 가지 더</div><p>"오픈 행사로 캐시백 100만원 즉시 입금" 같은 광고는 대부분 <strong>3~5년 약정 + 위약금 조항</strong>이 붙어 있습니다. 캐시백 받으셔도 약정 기간 채우기 전에 해지하시면 결국 사장님 손해입니다.</p></div>
+</section>
+
+<section class="sctv3-sec">
+  <div class="sctv3-sec-h">📊 세금 신고 시 카드단말기 어떻게 활용하나</div>
+  <p>카드단말기는 결제 도구일 뿐 아니라 세무 신고 시 강력한 증빙 도구입니다. 매출 누락·매입 증빙·부가세 환급까지 단말기 데이터를 잘 활용하면 매년 수십~수백만 원을 아끼실 수 있습니다.</p>
+  <table class="sctv3-scene-tbl">
+    <tr><td>매출 신고</td><td>카드결제 매출은 자동으로 국세청에 신고되므로 별도 매출 누락 위험이 없습니다. 사장님이 따로 입력할 필요 없이 단말기에서 출력되는 일·월 마감 영수증만 보관하시면 됩니다.</td></tr>
+    <tr><td>부가세 신고</td><td>분기별·반기별 부가세 신고 시 카드단말기 매출 데이터가 그대로 반영됩니다. 단말기에서 <strong>월별 매출 합계 영수증</strong>을 출력하시면 세무사 전달용 자료가 바로 만들어집니다.</td></tr>
+    <tr><td>의제매입세액공제</td><td>음식점업의 경우 농산물·축산물·수산물 매입에 대해 의제매입세액공제를 받을 수 있는데, 카드단말기 매출 규모가 공제 한도 산정 기준이 됩니다. 매출이 정확히 잡혀야 공제 한도가 제대로 계산됩니다.</td></tr>
+    <tr><td>현금영수증 의무 발급</td><td>일정 업종(음식점·미용·학원 등)은 10만원 이상 거래 시 현금영수증 의무 발급 대상입니다. 최신 카드단말기는 <strong>현금영수증 발급도 한 대에서 처리</strong>되므로 별도 장비가 필요 없습니다.</td></tr>
+    <tr><td>전자세금계산서</td><td>일부 단말기는 사업자 간 거래 시 전자세금계산서 발급을 지원합니다. 매입처·납품처와의 거래에서 별도 회계 시스템 없이도 세금계산서 발급이 가능합니다.</td></tr>
+    <tr><td>세무사 자료 전달</td><td>대부분의 카드단말기는 매출 데이터를 CSV·엑셀로 내보낼 수 있습니다. 매월 자료를 세무사에게 메일로 보내드리면 세무 대행 비용을 절감하실 수 있습니다.</td></tr>
+  </table>
+  <div class="sctv3-callout"><div class="sctv3-callout-h">💡 사장님 Tip</div><p>카드단말기 데이터를 매월 정리하시면 다음 해 종합소득세 신고 때 따로 자료를 모으느라 고생하지 않으셔도 됩니다. 오페리오솔루션은 단말기 설치 후 <strong>세무 자료 출력·정리 방법까지 무료로 안내</strong>해드립니다.</p></div>
+</section>
+
+<section class="sctv3-sec">
+  <div class="sctv3-sec-h">✅ 서울 카드단말기 도입 전 체크리스트</div>
+  <p>카드단말기를 설치하시기 전에 미리 정리해두면 상담·견적이 훨씬 빠르게 진행됩니다. 서울 사장님들께 권해드리는 체크리스트입니다.</p>
+  <div class="sctv3-insight-grid">
+    <div class="sctv3-insight-card"><h5>1. 사업자등록증 준비</h5><p>VAN사 계약에 필수입니다. 미발급 상태면 상담만 먼저 받고, 등록증 나오는 대로 본 계약 진행이 가능합니다.</p></div>
+    <div class="sctv3-insight-card"><h5>2. 매장 평수·카운터 위치</h5><p>유선·무선 결정의 기준이 됩니다. 카운터가 고정인지, 홀 서빙이 필요한지 미리 정리해두세요.</p></div>
+    <div class="sctv3-insight-card"><h5>3. 인터넷·전원 위치 확인</h5><p>유선 단말기는 인터넷 LAN선이, 무선은 와이파이가 필요합니다. 전원 콘센트 위치도 미리 확인해두세요.</p></div>
+    <div class="sctv3-insight-card"><h5>4. 월 예상 결제 건수</h5><p>VAN사 수수료 우대율 산정 기준입니다. 일평균 결제 건수 × 30 으로 대략 예상하시면 됩니다.</p></div>
+    <div class="sctv3-insight-card"><h5>5. 결제 수단 비중</h5><p>카드 vs 간편결제(삼성페이·카카오페이·네이버페이) vs 현금 비중을 미리 파악하시면 단말기 추천이 정확해집니다.</p></div>
+    <div class="sctv3-insight-card"><h5>6. 포스기·키오스크 연동 여부</h5><p>이미 포스기가 있거나 향후 도입 예정이면 단말기 선택 단계에서 연동 가능 여부를 미리 확인해야 합니다.</p></div>
+    <div class="sctv3-insight-card"><h5>7. 기존 VAN 계약 잔여기간</h5><p>기존 단말기가 있으시면 계약서를 미리 꺼내두세요. 약정 기간·해지 위약금을 사전에 확인해야 손해가 없습니다.</p></div>
+    <div class="sctv3-insight-card"><h5>8. 영업시간·오픈 일정</h5><p>당일 설치를 원하시면 매장 영업 전·후 시간대로 일정을 잡으면 영업 차질이 없습니다.</p></div>
+  </div>
+</section>
+
+<section class="sctv3-sec">
+  <div class="sctv3-sec-h">❓ 서울 카드단말기 설치 자주 묻는 질문</div>
+  <div class="sctv3-faqs">
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>오늘 연락하면 오늘 설치가 가능한가요?</div><div class="sctv3-faq-a">서울 안이면 오전 10시 전에 연락 주시면 당일 오후 설치가 가능한 경우가 많습니다. 단, 특정 기종(자동커팅형 일부, 최신 스마트 단말기)은 재고 확인에 하루 정도 필요합니다. 일반 유선 단말기는 대부분 당일 처리됩니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>설치비는 정말 무료인가요?</div><div class="sctv3-faq-a">네, 설치비는 무료로 지원해드립니다. 다만 <strong>월 이용료는 기종·VAN사 조건에 따라 부과될 수 있습니다.</strong> 상담 시 사장님 매장 조건에 맞춰 정확한 비용을 안내드립니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>사업자등록증이 아직 안 나왔는데 미리 알아볼 수 있나요?</div><div class="sctv3-faq-a">네, 상담은 사업자 등록 전에도 가능합니다. 다만 VAN사 계약은 사업자등록증이 있어야 진행되므로, 미리 견적·기종 선정까지만 해두시고 등록증 나오는 대로 설치 일정을 잡는 식으로 많이 하십니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>VAN사를 나중에 바꾸고 싶으면 어떻게 하나요?</div><div class="sctv3-faq-a">계약 만료 후에는 자유롭게 바꾸실 수 있습니다. 오페리오솔루션에서 설치하신 경우 계약 기간을 저희가 관리하고 있어서, 만료 시점에 더 좋은 조건이 나오면 먼저 알려드리고 무료로 전환해드립니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>매출이 적어도 설치가 가능한가요?</div><div class="sctv3-faq-a">네. 다만 일부 VAN사는 최소 결제 건수 조건이 있어서, 이런 경우 다른 VAN사로 매칭해드립니다. 월 매출 300만 원 이하 소규모 매장도 설치 실적 많습니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>고장 났을 때 바로 대응 가능한가요?</div><div class="sctv3-faq-a">대부분 전화·원격으로 해결됩니다(약 7할). 원격으로 안 되면 서울 내 당일 출동이 원칙입니다. 예비기를 들고 방문하므로 영업 차질 없이 교체 완료됩니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>기존 포스기와 연동이 안 되면 어떻게 하나요?</div><div class="sctv3-faq-a">오래된 포스기는 통신 프로토콜이 맞지 않아 연동이 어려운 경우가 있습니다. 이 경우 (1) 포스기 펌웨어 업데이트, (2) 호환 브릿지 설치, (3) 포스기 교체 중 사장님 상황에 맞는 방식을 제안드립니다.</div></div>
+  </div>
+</section>
+
+<div class="sctv3-cta">
+  <div class="sctv3-cta-h">📞 서울 카드단말기, 5분 상담으로 견적받기</div>
+  <div class="sctv3-cta-sub">업종·매장 규모만 말씀해주시면 VAN사 3곳 조건을 비교해 돌려드립니다.</div>
+  <div class="sctv3-cta-btns">
+    <a href="tel:${SITE.phone}" class="sctv3-cta-btn sctv3-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
+    <a href="sms:${SITE.phone}" class="sctv3-cta-btn sctv3-cta-btn-sec">💬 문자상담</a>
+    <a href="/contact" class="sctv3-cta-btn sctv3-cta-btn-sec">📝 상담 문의</a>
+  </div>
+</div>
+
+<div class="sctv3-side-nav">
+  <div class="sctv3-side-nav-h">📍 다른 시·도의 카드단말기 설치</div>
+  <div class="sctv3-side-nav-grid">${otherRegionsHtml}</div>
+</div>
+
+<div class="sctv3-tags">
+  <div class="sctv3-tags-h">🏷️ 관련 태그</div>
+  <span class="sctv3-tag">#서울카드단말기</span>
+  <span class="sctv3-tag">#VAN사수수료비교</span>
+  <span class="sctv3-tag">#자동커팅단말기</span>
+  <span class="sctv3-tag">#무선카드단말기</span>
+  <span class="sctv3-tag">#카드단말기위약금</span>
+  <span class="sctv3-tag">#서울당일설치</span>
+  <span class="sctv3-tag">#포스기연동</span>
+  <span class="sctv3-tag">#간편결제단말기</span>
+  <span class="sctv3-tag">#카드결제수수료</span>
+  <span class="sctv3-tag">#서울상권별추천</span>
+</div>
+
+</div>`;
+
+  return htmlWrap({
+    title: '서울 카드단말기 설치 가이드 — VAN사 수수료 비교·당일 출장 | 오페리오솔루션',
+    description: '서울 25개 시군구 467개 읍면동 전 지역 카드단말기 설치. VAN사 수수료 비교, 당일 출장, 사기 방지 가이드, 세금 신고 활용법까지.',
+    canonical: `${SITE.domain}/seoul/card-terminal`,
+    body,
+  });
+}
+
+function renderSeoulProductPage(productSlug) {
+  // [v3] 카드단말기는 새 템플릿
+  if (productSlug === 'card-terminal') return renderSeoulCardTerminalV3();
+  const cfg = _SPP_CONFIG[productSlug];
+  if (!cfg) return null;
+  
+  const kw = cfg.kw;
+  const action = cfg.action;
+  const actionH = cfg.actionH;
+  
+  const introV = _seoulPick('intro-'+productSlug, _SPP_V.install).replace(/\{kw\}/g, kw).replace(/\{action\}/g, action);
+  const costV = _seoulPick('cost-'+productSlug, _SPP_V.cost).replace(/\{kw\}/g, kw).replace(/\{action\}/g, action);
+  const detailV = (_SPP_V.detail[productSlug] || _SPP_V.detail['card-terminal'])[0];
+  const guideV = _SPP_V.guide[productSlug] || _SPP_V.guide['card-terminal'];
+  
+  const checklistHtml = _SPP_CHECKLIST.map(c => `<li><span class="spp-check">✓</span><div>${c}</div></li>`).join('');
+  const removalChecklistHtml = _SPP_REMOVAL_CHECKLIST.map(c => `<li><span class="spp-check">✓</span><div>${c}</div></li>`).join('');
+  const checklist = productSlug === 'removal' ? removalChecklistHtml : checklistHtml;
+  
+  const precheckData = productSlug === 'removal' ? _SPP_PRECHECK.removal : _SPP_PRECHECK.default;
+  const precheckHtml = precheckData.map(c => `<li><span class="spp-check">✓</span><div>${c.replace(/\{kw\}/g, kw)}</div></li>`).join('');
+  
+  const guChipsHtml = SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="spp-gu-chip">${g.name}</a>`).join('');
+  
+  const tagsHtml = cfg.tags.map(t => `<span class="spp-tag">#${t}</span>`).join('');
+  
+  // 다른 지역 & 다른 제품 칩
+  const otherRegions = [['gyeonggi','경기'],['busan','부산'],['incheon','인천'],['daegu','대구'],['daejeon','대전'],['gwangju','광주'],['ulsan','울산'],['sejong','세종'],['gangwon','강원'],['chungbuk','충북'],['chungnam','충남'],['jeonbuk','전북'],['jeonnam','전남'],['gyeongbuk','경북'],['gyeongnam','경남'],['jeju','제주']];
+  const otherRegionsHtml = otherRegions.map(([s,n]) => `<a href="/${s}/${productSlug}" class="spp-other-chip">${n}</a>`).join('');
+  
+  const otherProducts = [['card-terminal','💳 카드단말기'],['pos','🖥️ 포스기'],['kiosk','🤖 키오스크'],['cctv','📷 CCTV'],['table-order','📋 테이블오더'],['removal','🔨 철거'],['vending','🥤 밴딩머신']];
+  const otherProductsHtml = otherProducts.filter(([s])=>s!==productSlug).map(([s,n]) => `<a href="/seoul/${s}" class="spp-prod-chip">${n}</a>`).join('');
+  
+  const body = `
+<section class="spp-page">
+<div class="container spp-wrap">
+
+<div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/${productSlug}">${kw}</a><span>›</span>서울특별시</div>
+
+<div class="spp-hero">
+  <div class="spp-hero-bg" style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${cfg.heroImg}') center/cover"></div>
+  <div class="spp-hero-ov">
+    <div class="spp-hero-meta">서울 25개 시군구 · 467개 읍면동</div>
+    <div class="spp-hero-title">서울특별시 ${kw} ${actionH}</div>
+  </div>
+</div>
+
+<h1 class="spp-h1">서울특별시 ${kw} ${actionH}</h1>
+
+<p class="spp-intro">서울특별시 전 지역(25개 시군구, 467개 읍면동)에 ${kw} ${action}를 전문으로 합니다. ${cfg.introBody}. 아래에서 서울 시군구를 선택하시면 읍면동별 ${kw} ${action} 가이드를 확인할 수 있습니다.</p>
+
+<div class="spp-stats">
+  <div class="spp-stat"><div class="spp-stat-ic">🏆</div><div class="spp-stat-l">서울 누적</div><div class="spp-stat-v">15,000+건</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">빠른 ${actionH}</div><div class="spp-stat-v">신속 완료</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">💰</div><div class="spp-stat-l">${cfg.statLabel}</div><div class="spp-stat-v">${cfg.statValue}</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">🔧</div><div class="spp-stat-l">A/S</div><div class="spp-stat-v">빠른 대응</div></div>
+</div>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">${cfg.emoji} 서울 ${kw} ${actionH} 안내</div>
+  <p>${introV}</p>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">⚡ 서울 ${kw} ${actionH} 프로세스</div>
+  <ul class="spp-check-list">
+    <li><span class="spp-check">✓</span><div><strong>1단계 무료 상담</strong> — 전화 또는 온라인으로 매장 업종, 규모, 필요 사항을 상담합니다</div></li>
+    <li><span class="spp-check">✓</span><div><strong>2단계 무료 견적</strong> — 서울 전 지역 직접 방문하여 매장 환경을 분석합니다</div></li>
+    <li><span class="spp-check">✓</span><div><strong>3단계 장비 선정·${actionH}</strong> — 업종별 최적 장비를 선정하고 전문 기사가 ${actionH}합니다</div></li>
+    <li><span class="spp-check">✓</span><div><strong>4단계 교육·A/S</strong> — 사용법 교육 후 A/S를 지원합니다</div></li>
+  </ul>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">💰 서울 ${kw} 비용 안내</div>
+  <p>${costV}</p>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">🏪 서울 ${kw} 도입 추천 업종</div>
+  <table class="spp-tbl">
+    <thead><tr><th>업종</th><th>${kw} 효과</th><th>추천</th></tr></thead>
+    <tbody>
+      <tr><td>음식점·식당</td><td>주문 정확도 향상</td><td>★★★★★</td></tr>
+      <tr><td>카페·베이커리</td><td>메뉴 자동화</td><td>★★★★★</td></tr>
+      <tr><td>편의점·마트</td><td>재고 연동</td><td>★★★★</td></tr>
+      <tr><td>미용실·네일샵</td><td>예약·결제 통합</td><td>★★★★</td></tr>
+      <tr><td>스터디카페</td><td>무인 운영</td><td>★★★★★</td></tr>
+    </tbody>
+  </table>
+  <div class="spp-tip">
+    <div class="spp-tip-h">💡 서울 사장님 Tip</div>
+    <p>${kw}를 오페리오솔루션에서 다른 장비와 함께 패키지로 ${actionH}하면 카드단말기·포스기·키오스크·테이블오더는 설치비 무료로 제공됩니다. CCTV는 별도 견적.</p>
+  </div>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">🗓️ 서울 ${kw} 도입 추천 업종 상세</div>
+  <p>서울특별시에서 ${kw}를 도입하면 매장 운영 방식이 근본적으로 달라집니다. 음식점·카페는 주문 정확도가 100%에 가까워지고, 편의점·마트는 재고 관리가 자동화됩니다. 미용실·네일샵은 예약과 결제가 통합되어 관리가 편해지며, 스터디카페·코인세탁소는 24시간 무인 운영이 가능해집니다. 오페리오솔루션은 서울 지역 업종 특성을 분석하여 불필요한 장비 없이 꼭 필요한 장비만 추천합니다.</p>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">✅ 서울 ${kw} ${actionH} 시 확인사항</div>
+  <ul class="spp-check-list">${checklist}</ul>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">🏢 서울 ${kw} 상세 안내</div>
+  <p>${detailV}</p>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">🔎 서울 ${kw} 도입 전 체크리스트</div>
+  <ul class="spp-check-list">${precheckHtml}</ul>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">📊 서울 업종별 ${kw} 가이드</div>
+  ${guideV}
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">❓ 서울 ${kw} ${actionH} 자주 묻는 질문</div>
+  <div class="spp-faqs">
+    <div class="spp-faq-item">
+      <div class="spp-faq-q"><span class="spp-faq-q-mark">Q.</span>서울 전 지역 출장 ${actionH}가 가능한가요?</div>
+      <div class="spp-faq-a">네, 서울특별시 전체 25개 시군구, 467개 읍면동에 직접 방문 ${actionH}를 제공합니다. 상담 후 빠른 일정으로 방문합니다.</div>
+    </div>
+    <div class="spp-faq-item">
+      <div class="spp-faq-q"><span class="spp-faq-q-mark">Q.</span>${cfg.statLabel}가 정말 무료인가요?</div>
+      <div class="spp-faq-a">네, 오페리오솔루션은 VAN사 제휴를 통해 ${actionH}비를 전액 지원합니다. 월 이용료도 무료이며, 카드 결제 시 VAN사 수수료만 정상 부과됩니다. 숨겨진 비용이 전혀 없습니다.</div>
+    </div>
+    <div class="spp-faq-item">
+      <div class="spp-faq-q"><span class="spp-faq-q-mark">Q.</span>기존 장비를 교체할 수도 있나요?</div>
+      <div class="spp-faq-a">네, 기존 카드단말기·포스기 교체도 무료 견적 후 빠르게 진행됩니다. VAN사 변경 시 위약금 여부도 사전에 확인해드립니다.</div>
+    </div>
+    <div class="spp-faq-item">
+      <div class="spp-faq-q"><span class="spp-faq-q-mark">Q.</span>${kw} 비용은 얼마인가요?</div>
+      <div class="spp-faq-a">오페리오솔루션은 ${actionH}비 무료, 월 이용료 무료로 진행됩니다. VAN사 제휴를 통해 ${actionH}비를 전액 지원합니다.</div>
+    </div>
+    <div class="spp-faq-item">
+      <div class="spp-faq-q"><span class="spp-faq-q-mark">Q.</span>다른 장비와 함께 ${actionH}할 수 있나요?</div>
+      <div class="spp-faq-a">네, 카드단말기·포스기·키오스크·CCTV·테이블오더를 한번에 ${actionH}하면 패키지 할인이 적용됩니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">📈 서울 ${kw} 도입 효과</div>
+  <p>서울특별시 매장에 ${kw}를 도입하면 평균 매출 15~25% 증가, 인건비 20~50% 절감 효과를 기대할 수 있습니다. 특히 여러 장비를 패키지로 함께 도입하시면 시너지 효과가 극대화되며, 오페리오솔루션은 통합 관리 서비스로 VAN사 수수료 최적화, 매출 데이터 분석, 장비 업그레이드까지 지속적으로 지원할 수 있습니다.</p>
+</section>
+
+<div class="spp-tags">
+  <div class="spp-tags-h">🏷️ 관련 태그</div>
+  ${tagsHtml}
+</div>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">🏢 서울 ${kw} ${actionH} 지역 선택</div>
+  <p style="font-size:12.5px;color:#64748b;margin-bottom:10px">시군구를 선택하면 읍면동별 ${kw} ${actionH} 가이드를 확인할 수 있습니다.</p>
+  <div class="spp-gu-grid">${guChipsHtml}</div>
+</section>
+
+<div class="spp-cta">
+  <div class="spp-cta-h">🎁 서울 ${kw} 무료 견적 받기</div>
+  <div class="spp-cta-sub">서울특별시 ${kw} ${actionH}를 전문가가 책임집니다.</div>
+  <div class="spp-cta-btns">
+    <a href="tel:${SITE.phone}" class="spp-cta-btn spp-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
+    <a href="sms:${SITE.phone}" class="spp-cta-btn">💬 문자상담</a>
+    <a href="/contact" class="spp-cta-btn">📝 상담 문의</a>
+  </div>
+</div>
+
+<div class="spp-side-nav">
+  <div class="spp-side-nav-h">📍 다른 시·도의 ${kw} ${actionH}</div>
+  <div class="spp-side-nav-grid">${otherRegionsHtml}</div>
+</div>
+
+<div class="spp-side-nav">
+  <div class="spp-side-nav-h">🛒 서울의 다른 제품 전문</div>
+  <div class="spp-prod-nav">${otherProductsHtml}</div>
+</div>
+
+</div>
+</section>`;
+  
+  return htmlWrap({
+    title: `서울특별시 ${kw} ${actionH} · 전 지역 당일 ${actionH}·VAN사 수수료 비교 | 오페리오솔루션`,
+    description: `서울 25개 시군구 전 지역 ${kw} ${actionH} 전문. 설치비 무료, 월 이용료 무료, A/S 지원. 오페리오솔루션 무료 견적.`,
+    canonical: `${SITE.domain}/seoul/${productSlug}`,
+    body,
+  });
+}
+
 function renderInstallPage(region, product) {
+  // [서울 전용] 7개 제품 페이지는 서울 엔진으로 처리
+  if (region.slug === 'seoul') {
+    const seoulHtml = renderSeoulProductPage(product.slug);
+    if (seoulHtml) return seoulHtml;
+  }
   const districtsList = region.majorDistricts.slice(0, 6).map(d => `<li>${d} ${product.name} 설치</li>`).join('');
   const featCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
 
