@@ -601,6 +601,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .nav-menu a:hover::after{content:"";position:absolute;bottom:-26px;left:0;right:0;height:2px;background:var(--ink)}
 .nav-cta{background:var(--ink);color:#fff;padding:10px 20px;border-radius:100px;font-size:13.5px;font-weight:500;display:inline-flex;align-items:center;gap:6px;transition:background .2s}
 .nav-cta:hover{background:var(--ink-2)}
+.nav-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px;width:40px;height:40px;flex-direction:column;justify-content:center;align-items:center;gap:4px;margin-left:8px}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s}
+.nav-toggle.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.nav-drawer{position:absolute;top:100%;right:16px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(15,23,42,0.14);padding:10px;display:none;flex-direction:column;min-width:200px;z-index:60;margin-top:8px}
+.nav-drawer.open{display:flex}
+.nav-drawer a{padding:13px 16px;font-size:14.5px;font-weight:500;color:var(--ink);border-radius:10px;transition:background .15s}
+.nav-drawer a:hover{background:var(--paper-2)}
+.nav-backdrop{display:none;position:fixed;inset:0;background:rgba(15,23,42,0.18);z-index:49}
+.nav-backdrop.open{display:block}
 
 /* Hero Banner Section (상단 배너 - 풀폭 검정 배경) */
 .hero-banner-section{background:#0c0f14;padding:0;margin-top:0;line-height:0}
@@ -1394,8 +1405,15 @@ footer .logo{color:#fff}
   .why-cell{padding:18px}
   .slider-arrow{width:40px;height:40px;font-size:20px}
   .nav-menu{display:none}
-  .nav{gap:12px;padding:12px 20px}
-  .nav-brand{font-size:15px}
+  .nav{gap:8px;padding:10px 16px;position:relative}
+  .nav-brand{font-size:16px}
+  .logo{font-size:16px;gap:8px;flex:0 0 auto;min-width:0;font-weight:700}
+  .logo-dot{width:36px;height:36px;flex-shrink:0}
+  .logo-dot svg{width:22px;height:22px}
+  .nav-cta{padding:6px 10px;font-size:11px;gap:4px;margin-left:auto;white-space:nowrap}
+  .nav-cta svg{width:10px!important;height:10px!important}
+  .nav-cta-phone{display:none}
+  .nav-toggle{display:flex}
   .related-grid{grid-template-columns:repeat(2,1fr)}
   .index-grid.cols-4,.index-grid.cols-3{grid-template-columns:repeat(2,1fr)}
   .feat-grid-2{grid-template-columns:1fr}
@@ -1532,8 +1550,29 @@ function renderHeader() {
 <li><a href="/industry">업종별</a></li>
 <li><a href="/contact">문의하기</a></li>
 </ul>
-<a href="tel:${SITE.phone}" class="nav-cta">${ICONS.phone.replace('<svg ', '<svg style="width:14px;height:14px" ')} 무료 상담 ${SITE.phoneDisplay}</a>
+<a href="tel:${SITE.phone}" class="nav-cta">${ICONS.phone.replace('<svg ', '<svg style="width:14px;height:14px" ')} <span class="nav-cta-label">무료 상담</span> <span class="nav-cta-phone">${SITE.phoneDisplay}</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+<span></span><span></span><span></span>
+</button>
+<div class="nav-drawer" id="navDrawer">
+<a href="/region">지역별 설치</a>
+<a href="/product">제품 안내</a>
+<a href="/industry">업종별 카테고리</a>
+<a href="/contact">문의하기</a>
 </div>
+</div>
+<div class="nav-backdrop" id="navBackdrop"></div>
+<script>
+(function(){
+  var t=document.getElementById('navToggle'),d=document.getElementById('navDrawer'),b=document.getElementById('navBackdrop');
+  if(!t||!d)return;
+  function close(){d.classList.remove('open');b.classList.remove('open');t.classList.remove('open');t.setAttribute('aria-label','메뉴 열기')}
+  function open(){d.classList.add('open');b.classList.add('open');t.classList.add('open');t.setAttribute('aria-label','메뉴 닫기')}
+  t.onclick=function(e){e.stopPropagation();d.classList.contains('open')?close():open()};
+  b.onclick=close;
+  d.querySelectorAll('a').forEach(function(a){a.onclick=close});
+})();
+</script>
 </header>`;
 }
 
