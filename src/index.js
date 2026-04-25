@@ -2067,8 +2067,11 @@ function renderRegionPage(region) {
   const districtsList = region.majorDistricts.map(d => `<li>${d}</li>`).join('');
   const areasList = region.commercialAreas.map(a => `<li>${a}</li>`).join('');
 
+  const heroImg = _seoulPick('rhero-'+region.slug, _SEOUL_HERO_POOL);
+  const heroBgInline = `style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover;"`;
+
   const body = `
-<section class="detail-hero${region.slug === 'seoul' ? ' seoul-hero' : ''}">
+<section class="detail-hero seoul-hero" ${heroBgInline}>
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/region">지역별 설치</a><span class="sep">›</span>${region.name}</div>
 <h1 class="detail-title">${region.emoji} ${region.slug === 'seoul' ? region.name : region.fullName} <em>매장 설비 설치</em></h1>
@@ -3044,8 +3047,11 @@ function renderInstallPage(region, product) {
   const districtsList = region.majorDistricts.slice(0, 6).map(d => `<li>${d} ${product.name} 설치</li>`).join('');
   const featCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
 
+  const heroImg = _seoulPick('ihero-'+region.slug+'-'+product.slug, _SEOUL_HERO_POOL);
+  const heroBgInline = `style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover;"`;
+
   const body = `
-<section class="detail-hero">
+<section class="detail-hero seoul-hero" ${heroBgInline}>
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/region/${region.slug}">${region.name}</a><span class="sep">›</span>${product.name}</div>
 <h1 class="detail-title">${region.emoji} ${region.name} ${product.name} <em>설치</em></h1>
