@@ -925,6 +925,12 @@ footer .logo{color:#fff}
 .related-item:hover{background:var(--ink);color:#fff;transform:translateY(-2px);border-color:var(--ink)}
 .related-item .emoji{font-size:20px;display:block;margin-bottom:5px}
 .related-item .name{font-size:12px;font-weight:500}
+@media(max-width:600px){
+  .related-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+  .related-item{padding:7px 11px;border-radius:100px;display:inline-flex;align-items:center;gap:4px;text-align:left}
+  .related-item .emoji{font-size:12px;display:inline;margin-bottom:0}
+  .related-item .name{font-size:11.5px}
+}
 
 .seoul-gu-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .seoul-gu-chip{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:100px;font-size:14px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;line-height:1.2;min-width:72px;text-decoration:none;transition:all .12s}a.seoul-gu-chip:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-1px)}
