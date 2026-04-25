@@ -1368,13 +1368,12 @@ footer .logo{color:#fff}
   .stat-card .n span{font-size:14px;opacity:0.6}
   .stat-card .l{font-size:10.5px;margin-top:4px;line-height:1.25;color:var(--muted-2);letter-spacing:0}
   .strengths-section{padding:44px 0}
-  .strengths-tabs{grid-template-columns:1fr;gap:12px;margin-top:14px}
-  /* 탭을 가로 스크롤로 */
-  .strength-menu{flex-direction:row;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px 0 4px;scroll-snap-type:x mandatory}
-  .strength-menu::-webkit-scrollbar{display:none}
-  .strength-tab{flex:0 0 auto;padding:9px 14px;font-size:12.5px;border-radius:100px;gap:8px;scroll-snap-align:start;white-space:nowrap}
-  .strength-tab .st-num{font-size:11px}
-  .strength-tab .st-check{display:none}
+  .strengths-tabs{grid-template-columns:1fr;gap:14px;margin-top:16px}
+  /* 세로 스택 탭 - 5개 모두 보이게 */
+  .strength-menu{display:flex;flex-direction:column;gap:7px}
+  .strength-tab{padding:11px 16px;font-size:13px;border-radius:100px;gap:12px;width:100%}
+  .strength-tab .st-num{font-size:11.5px}
+  .strength-tab .st-check{width:20px;height:20px;font-size:12px}
   .strength-tab:hover{transform:none}
   .strength-panels{min-height:auto;border-radius:12px}
   .strength-panel.active{grid-template-columns:1fr;display:flex;flex-direction:column}
@@ -1401,7 +1400,20 @@ footer .logo{color:#fff}
   .feature-cell p{font-size:11.5px;line-height:1.5}
   .reviews-slider{padding:0 48px}
   .review-card{flex:0 0 calc((100% - 20px) / 2)}
-  .why-grid{grid-template-columns:1fr;gap:12px}
+  .why-grid{grid-template-columns:1fr;gap:10px;margin-top:18px}
+  .why-item{padding:18px 20px;gap:14px;align-items:flex-start;border-radius:12px;opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+  .why-item.in{opacity:1;transform:translateY(0)}
+  .why-item:nth-child(1){transition-delay:0s}
+  .why-item:nth-child(2){transition-delay:.1s}
+  .why-item:nth-child(3){transition-delay:.2s}
+  .why-item:nth-child(4){transition-delay:.3s}
+  .why-item .wicon{width:40px;height:40px;border-radius:10px;margin-top:1px}
+  .why-item .wicon svg{width:20px;height:20px}
+  .why-item h4{font-size:16.5px;margin-bottom:5px;line-height:1.3}
+  .why-item p{font-size:13px;line-height:1.55}
+  @media (prefers-reduced-motion: reduce){
+    .why-item{opacity:1;transform:none;transition:none}
+  }
   .why-cell{padding:18px}
   .slider-arrow{width:40px;height:40px;font-size:20px}
   .nav-menu{display:none}
@@ -1900,6 +1912,23 @@ function renderHome() {
   window.addEventListener('resize', function(){ go(current); });
   renderDots();
   startAuto();
+})();
+</script>
+
+<script>
+(function(){
+  if(!window.IntersectionObserver) return;
+  var items = document.querySelectorAll('.why-section .why-item');
+  if(!items.length) return;
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.2});
+  items.forEach(function(el){ observer.observe(el); });
 })();
 </script>
 
