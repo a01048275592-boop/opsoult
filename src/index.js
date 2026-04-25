@@ -1379,6 +1379,8 @@ footer .logo{color:#fff}
   .products-slider{padding:0 48px}
   .product-card{flex:0 0 calc((100% - 20px) / 2)}
   .product-photo{height:180px}
+  .product-card[href="/product/kiosk"] .product-photo,
+  .product-card[href="/product/pos"] .product-photo{background-size:contain;background-repeat:no-repeat;background-color:#fff}
   /* Hero 스탯 - 모바일에서 4칸 한 줄 컴팩트 */
   .stats-grid{grid-template-columns:repeat(4,1fr);gap:0;padding:0 8px}
   .stat-card{border-right:1px solid rgba(255,255,255,0.08);padding:4px 6px;text-align:center}
