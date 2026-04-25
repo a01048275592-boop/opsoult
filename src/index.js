@@ -1143,23 +1143,23 @@ footer .logo{color:#fff}
 .sgu-dong-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .sgu-dong-chip{display:inline-flex;align-items:center;justify-content:center;padding:6px 12px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:100px;font-size:11.5px;color:#475569;text-decoration:none;line-height:1.2;transition:all .12s}
 .sgu-dong-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
-.sgu-cta{background:#fefce8;border:1px solid #fde68a;border-radius:16px;padding:32px 24px;text-align:center;margin-top:28px}
-.sgu-cta h3{font-size:20px;font-weight:700;margin:0 0 6px;color:#0f172a;letter-spacing:-0.02em}
-.sgu-cta p{font-size:14px;color:#78716c;margin:0 0 18px;line-height:1.5}
-.sgu-cta-h{font-size:20px;font-weight:700;margin-bottom:6px;color:#0f172a}
-.sgu-cta-sub{font-size:14px;color:#78716c;margin-bottom:18px}
-.sgu-cta-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.sgu-cta-btn{display:inline-flex;align-items:center;gap:6px;padding:13px 22px;border-radius:100px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid #e2e8f0;background:#fff;color:#0f172a;transition:all .15s;letter-spacing:-0.01em}
-.sgu-cta-btn:hover{background:#0f172a;color:#fff;border-color:#0f172a;transform:translateY(-1px)}
-.sgu-cta-btn-primary{background:#0f172a;color:#fff;border-color:#0f172a;padding:13px 26px;font-size:15px}
-.sgu-cta-btn-primary:hover{background:#334155;border-color:#334155}
+/* 통일 견적 CTA (시·구·동 페이지 공통) - OPT 1 디자인 */
+.ncta{background:#fefce8;border:1px solid #fde68a;border-radius:14px;padding:22px 20px;margin-top:28px;margin-bottom:48px}
+.ncta-h{font-size:17px;font-weight:700;margin-bottom:5px;color:#0f172a;text-align:center;letter-spacing:-0.02em}
+.ncta-sub{font-size:13px;color:#78716c;margin-bottom:16px;line-height:1.55;text-align:center}
+.ncta-phone{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:#0f172a;color:#fff;padding:15px;border-radius:100px;font-size:17px;font-weight:700;text-decoration:none;letter-spacing:-0.01em;margin-bottom:10px;transition:background .15s}
+.ncta-phone:hover{background:#334155}
+.ncta-links{display:flex;gap:4px;justify-content:center;font-size:13px}
+.ncta-links a{color:#78716c;text-decoration:none;padding:6px 12px;transition:color .15s}
+.ncta-links a:hover{color:#0f172a}
+.ncta-links span{color:#d6d3d1}
 @media(max-width:600px){
-  .sgu-cta{padding:26px 18px}
-  .sgu-cta h3,.sgu-cta-h{font-size:17px}
-  .sgu-cta p,.sgu-cta-sub{font-size:13px;margin-bottom:14px}
-  .sgu-cta-btn{padding:11px 18px;font-size:13px;flex:1;min-width:0;justify-content:center}
-  .sgu-cta-btn-primary{padding:11px 20px;font-size:14px;flex:0 0 100%}
-  .sgu-cta-btns{gap:8px}
+  .ncta{padding:18px 16px;margin-top:24px;margin-bottom:36px}
+  .ncta-h{font-size:15px;margin-bottom:4px}
+  .ncta-sub{font-size:12px;margin-bottom:14px}
+  .ncta-phone{padding:14px;font-size:16px}
+  .ncta-links{font-size:12.5px}
+  .ncta-links a{padding:6px 10px}
 }
 
 /* DONG PAGE */
@@ -1216,15 +1216,7 @@ footer .logo{color:#fff}
 .sdo-faq-q{font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.5;color:#0f172a}
 .sdo-faq-q-mark{color:#dc2626;margin-right:4px}
 .sdo-faq-a{font-size:12px;color:#475569;line-height:1.75}
-.sdo-cta{background:#fefce8;border:1px solid #fde68a;border-radius:12px;padding:20px;text-align:center;margin-top:24px}
-.sdo-cta-h{font-size:15px;font-weight:700;margin-bottom:4px;color:#0f172a}
-.sdo-cta-sub{font-size:12px;color:#78716c;margin-bottom:4px;line-height:1.6}
-.sdo-cta-prod{font-size:12px;color:#78716c;margin-bottom:14px}
-.sdo-cta-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.sdo-cta-btn{display:inline-flex;align-items:center;gap:4px;padding:10px 16px;border-radius:100px;font-size:12.5px;font-weight:600;text-decoration:none;border:1px solid #e2e8f0;background:#fff;color:#0f172a;transition:all .15s}
-.sdo-cta-btn:hover{background:#0f172a;color:#fff;border-color:#0f172a}
-.sdo-cta-btn-primary{background:#0f172a;color:#fff;border-color:#0f172a}
-.sdo-cta-btn-primary:hover{background:#334155;border-color:#334155}
+/* sdo-cta는 .ncta로 통합됨 */
 
 /* ===== SEOUL PRODUCT PAGES ===== */
 .spp-wrap{max-width:880px;margin:0 auto;padding:0 20px 60px;font-family:'Pretendard','Malgun Gothic',sans-serif;color:#1e293b;line-height:1.6}
@@ -1506,7 +1498,12 @@ footer .logo{color:#fff}
   .floating-stack{bottom:20px;right:20px;gap:8px}
   .floating-call{padding:14px 18px;font-size:13px}
   .related-grid{grid-template-columns:1fr}
-  .index-grid.cols-4,.index-grid.cols-3{grid-template-columns:1fr}
+  .index-grid.cols-4,.index-grid.cols-3{grid-template-columns:repeat(3,1fr);gap:8px;padding:20px 0 40px}
+  .index-card{padding:18px 8px;border-radius:11px;text-align:center}
+  .index-card .big{font-size:24px;margin-bottom:6px}
+  .index-card.index-card-img .big{height:60px;margin-bottom:6px}
+  .index-card h3{font-size:13.5px;margin-bottom:0;letter-spacing:-0.01em}
+  .index-card p{display:none}
   .cta-phone{font-size:20px;padding:16px 26px;gap:10px}
   .cta-phone svg{width:20px;height:20px}
   .reviews-slider{padding:0 8px}
@@ -3584,13 +3581,12 @@ function renderSubcityPage(city) {
   </div>
 </section>
 
-<div class="sgu-cta">
-  <h3>📞 ${name} 무료 상담·견적</h3>
-  <p>전화 한 통이면 예상 견적까지 바로 안내드립니다</p>
-  <div class="sgu-cta-btns">
-    <a href="tel:${SITE.phone}" class="sgu-cta-btn sgu-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
-    <a href="sms:${SITE.phone}" class="sgu-cta-btn">💬 문자상담</a>
-    <a href="/contact" class="sgu-cta-btn">📝 상담 문의</a>
+<div class="ncta">
+  <div class="ncta-h">📞 ${name} 무료 상담·견적</div>
+  <div class="ncta-sub">전화 한 통이면 예상 견적까지 바로 안내드립니다</div>
+  <a href="tel:${SITE.phone}" class="ncta-phone"><span>📞</span> ${SITE.phoneDisplay}</a>
+  <div class="ncta-links">
+    <a href="sms:${SITE.phone}">💬 문자상담</a><span>·</span><a href="/contact">📝 상담 문의</a>
   </div>
 </div>
 
@@ -3781,13 +3777,12 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
   </div>
 </section>
 
-<div class="sgu-cta">
-  <div class="sgu-cta-h">📞 ${name} 무료 상담 · 견적</div>
-  <div class="sgu-cta-sub">전화 한 통이면 예상 견적까지 바로 안내드립니다</div>
-  <div class="sgu-cta-btns">
-    <a href="tel:${SITE.phone}" class="sgu-cta-btn sgu-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
-    <a href="sms:${SITE.phone}" class="sgu-cta-btn">💬 문자상담</a>
-    <a href="/contact" class="sgu-cta-btn">📝 상담 문의</a>
+<div class="ncta">
+  <div class="ncta-h">📞 ${name} 무료 상담 · 견적</div>
+  <div class="ncta-sub">전화 한 통이면 예상 견적까지 바로 안내드립니다</div>
+  <a href="tel:${SITE.phone}" class="ncta-phone"><span>📞</span> ${SITE.phoneDisplay}</a>
+  <div class="ncta-links">
+    <a href="sms:${SITE.phone}">💬 문자상담</a><span>·</span><a href="/contact">📝 상담 문의</a>
   </div>
 </div>
 
@@ -4200,14 +4195,12 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
 
 </div>
 
-<div class="sdo-cta">
-  <div class="sdo-cta-h">📞 ${name} 카드단말기 무료 견적 받기</div>
-  <div class="sdo-cta-sub">${regionFullName} ${parent} ${name} 매장에 딱 맞는 장비를 전문가가 직접 추천해 드립니다.</div>
-  <div class="sdo-cta-prod">카드단말기 · 포스기 · 키오스크 · CCTV 통합 상담</div>
-  <div class="sdo-cta-btns">
-    <a href="tel:${SITE.phone}" class="sdo-cta-btn sdo-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
-    <a href="sms:${SITE.phone}" class="sdo-cta-btn">💬 문자상담</a>
-    <a href="/contact" class="sdo-cta-btn">📝 상담 문의</a>
+<div class="ncta">
+  <div class="ncta-h">📞 ${name} 카드단말기 무료 견적 받기</div>
+  <div class="ncta-sub">${name} 매장에 딱 맞는 장비를 전문가가 직접 추천해 드립니다</div>
+  <a href="tel:${SITE.phone}" class="ncta-phone"><span>📞</span> ${SITE.phoneDisplay}</a>
+  <div class="ncta-links">
+    <a href="sms:${SITE.phone}">💬 문자상담</a><span>·</span><a href="/contact">📝 상담 문의</a>
   </div>
 </div>
 
