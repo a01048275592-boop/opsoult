@@ -2669,8 +2669,28 @@ const _SPP_PRECHECK = {
 // [CARD-TERMINAL-V3] 카드단말기 전용 새 템플릿 (v3)
 // 섹션: 시군구 칩 → 상세 안내(카드형) → 사기 예방 → 세금 활용 → 체크리스트 → FAQ → CTA → 다른시도 → 태그
 
-function renderSeoulCardTerminalV3() {
-  const heroImg = 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop';
+function renderRegionCardTerminalV3(region) {
+  // 광역별 동적 데이터
+  const heroImg = _pickRegionProductHero(region.slug, 'card-terminal');
+  // 시군구 데이터: 서울은 SEOUL_GUS, 그 외는 REGIONS_DATA[slug]
+  const regionGus = region.slug === 'seoul' ? SEOUL_GUS : (REGIONS_DATA[region.slug] || []);
+  const totalDongCount = regionGus.reduce((acc, gu) => acc + ((gu.dongs || []).length), 0);
+  // 커버리지 텍스트: 서울만 25개 시군구·N개 읍면동, 그 외는 region.coverage
+  const coverageText = region.slug === 'seoul'
+    ? `${region.name} ${regionGus.length}개 시군구 · ${totalDongCount}개 읍면동`
+    : region.coverage;
+  // 시군구 칩
+  const guChipsHtml = regionGus.length > 0
+    ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}" class="sctv3-gu-chip">${g.name}</a>`).join('')
+    : (region.majorDistricts || []).map(d => `<span class="sctv3-gu-chip">${d}</span>`).join('');
+  // 본문 톤: 서울은 기존 묘사 유지, 그 외는 region.description 활용
+  const regionLeadDesc = region.slug === 'seoul'
+    ? '서울처럼 결제 빈도가 높은 상권에서는 이 차이가 더 크게 벌어집니다'
+    : (region.description ? `${region.name} 같은 활성 상권에서는 이 차이가 더 크게 벌어집니다` : `${region.name}처럼 매장 회전율이 높은 지역에서는 이 차이가 더 크게 벌어집니다`);
+  // 메타 description
+  const metaDesc = region.slug === 'seoul'
+    ? `${coverageText} 전 지역 카드단말기 설치. VAN사 수수료 비교, 당일 출장, 사기 방지 가이드, 세금 신고 활용법까지.`
+    : `${coverageText} 카드단말기 설치 전문. VAN사 수수료 비교, 빠른 출장, 사기 방지 가이드, 세금 신고 활용법까지.`;
 
   const cssV3 = `
 <style>
@@ -2702,16 +2722,17 @@ function renderSeoulCardTerminalV3() {
 .sctv3-num-body{flex:1;padding-top:3px}
 .sctv3-num-body h4{font-size:14.5px;font-weight:700;color:#0f172a;margin-bottom:5px;letter-spacing:-0.01em}
 .sctv3-num-body p{font-size:12.5px;line-height:1.75;color:#475569;margin:0}
-.sctv3-type-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:14px 0 18px}
-.sctv3-type-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px;transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,0.03)}
-.sctv3-type-card:hover{border-color:#0f172a;transform:translateY(-2px);box-shadow:0 4px 12px rgba(15,23,42,0.08)}
-.sctv3-type-card-head{display:flex;align-items:center;gap:8px;padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid #f1f5f9}
-.sctv3-type-card-icon{font-size:22px;width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:8px;flex-shrink:0}
-.sctv3-type-card-title{font-size:13.5px;font-weight:700;color:#0f172a;letter-spacing:-0.01em;line-height:1.25}
-.sctv3-type-card-row{display:flex;align-items:flex-start;gap:8px;padding:4px 0;font-size:12px;line-height:1.5}
-.sctv3-type-label{flex-shrink:0;width:36px;font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.03em;padding-top:2px}
-.sctv3-type-value{flex:1;color:#334155}
-.sctv3-type-value.good{color:#059669;font-weight:600}
+.sctv3-type-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0 18px}
+.sctv3-type-card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:14px;display:flex;flex-direction:column;transition:all .15s;box-shadow:0 1px 2px rgba(15,23,42,0.03)}
+.sctv3-type-card:hover{border-color:#0f172a;transform:translateY(-1px);box-shadow:0 3px 10px rgba(15,23,42,0.06)}
+.sctv3-type-card-head{display:flex;align-items:center;gap:9px;padding-bottom:11px;margin-bottom:11px;border-bottom:1px solid #f1f5f9}
+.sctv3-type-card-icon{font-size:18px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:#f1f5f9;border-radius:7px;flex-shrink:0}
+.sctv3-type-card-title{font-size:13px;font-weight:700;color:#0f172a;letter-spacing:-0.01em;line-height:1.25}
+.sctv3-type-card-body{display:flex;flex-direction:column;gap:7px}
+.sctv3-type-row{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;line-height:1.45}
+.sctv3-type-k{flex-shrink:0;width:30px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:0.03em;padding-top:1px}
+.sctv3-type-v{flex:1;color:#475569}
+.sctv3-type-v.good{color:#059669;font-weight:600}
 .sctv3-callout{background:#fef3c7;border:1px solid #fcd34d;border-radius:10px;padding:14px 16px;margin:14px 0}
 .sctv3-callout-h{font-size:13px;font-weight:700;color:#78350f;margin-bottom:6px;display:flex;align-items:center;gap:5px}
 .sctv3-callout p{font-size:12.5px;color:#78350f;line-height:1.75;margin:0}
@@ -2757,58 +2778,55 @@ function renderSeoulCardTerminalV3() {
 @media (max-width:640px){.sctv3-hero-title{font-size:20px}.sctv3-h1{font-size:18px}.sctv3-sec-h{font-size:15px}.sctv3-insight-grid{grid-template-columns:1fr}.sctv3-scene-tbl td:first-child{width:100px}}
 </style>`;
 
-  const guChipsHtml = SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="sctv3-gu-chip">${g.name}</a>`).join('');
-  
-  const otherRegions = [['gyeonggi','경기'],['busan','부산'],['incheon','인천'],['daegu','대구'],['daejeon','대전'],['gwangju','광주'],['ulsan','울산'],['sejong','세종'],['gangwon','강원'],['chungbuk','충북'],['chungnam','충남'],['jeonbuk','전북'],['jeonnam','전남'],['gyeongbuk','경북'],['gyeongnam','경남'],['jeju','제주']];
-  const otherRegionsHtml = otherRegions.map(([s,n]) => `<a href="/${s}/card-terminal" class="sctv3-other-chip">${n}</a>`).join('');
+  const otherRegionsHtml = REGIONS.filter(r => r.slug !== region.slug).map(r => `<a href="/${r.slug}/card-terminal" class="sctv3-other-chip">${r.name}</a>`).join('');
 
   const body = `${cssV3}
 <div class="sctv3-wrap">
 
-<div class="sctv3-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/card-terminal">카드단말기</a><span>›</span>서울특별시</div>
+<div class="sctv3-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/card-terminal">카드단말기</a><span>›</span>${region.fullName}</div>
 
 <div class="sctv3-hero">
   <div class="sctv3-hero-bg"></div>
   <div class="sctv3-hero-ov">
-    <div class="sctv3-hero-meta">서울 25개 시군구 · 467개 읍면동 전 지역 출장 설치</div>
-    <div class="sctv3-hero-title">서울 카드단말기 설치, 제대로 알아보기</div>
+    <div class="sctv3-hero-meta">${coverageText} 전 지역 출장 설치</div>
+    <div class="sctv3-hero-title">${region.name} 카드단말기 설치, 제대로 알아보기</div>
   </div>
 </div>
 
-<h1 class="sctv3-h1">서울 카드단말기 설치 가이드 — 당일 출장부터 수수료 비교까지</h1>
+<h1 class="sctv3-h1">${region.name} 카드단말기 설치 가이드 — 빠른 출장부터 수수료 비교까지</h1>
 
-<p class="sctv3-intro">카드단말기는 "그냥 하나 놓으면 되는 장비"가 아닙니다. <strong>어느 VAN사와 계약했느냐에 따라 1년 수수료 차이가 수십만 원</strong>이 납니다. 서울처럼 결제 빈도가 높은 상권에서는 이 차이가 더 크게 벌어집니다. 이 글에서는 서울에서 카드단말기를 들이시는 사장님이 꼭 짚고 넘어가야 할 것들만 정리해드립니다. VAN사 고르는 법, 단말기 종류 비교, 기존 계약 위약금 처리, 설치 당일 일정까지 실전 기준으로 안내합니다.</p>
+<p class="sctv3-intro">카드단말기는 "그냥 하나 놓으면 되는 장비"가 아닙니다. <strong>어느 VAN사와 계약했느냐에 따라 1년 수수료 차이가 수십만 원</strong>이 납니다. ${regionLeadDesc}. 이 글에서는 ${region.name}에서 카드단말기를 들이시는 사장님이 꼭 짚고 넘어가야 할 것들만 정리해드립니다. VAN사 고르는 법, 단말기 종류 비교, 기존 계약 위약금 처리, 설치 당일 일정까지 실전 기준으로 안내합니다.</p>
 
 <div class="sctv3-stats">
-  <div class="sctv3-stat"><div class="sctv3-stat-ic">🏆</div><div class="sctv3-stat-l">서울 설치 실적</div><div class="sctv3-stat-v">15,000+건</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">🏆</div><div class="sctv3-stat-l">전국 설치 실적</div><div class="sctv3-stat-v">15,000+건</div></div>
   <div class="sctv3-stat"><div class="sctv3-stat-ic">⚡</div><div class="sctv3-stat-l">견적 회신</div><div class="sctv3-stat-v">평균 30분</div></div>
   <div class="sctv3-stat"><div class="sctv3-stat-ic">💰</div><div class="sctv3-stat-l">설치비</div><div class="sctv3-stat-v">0원</div></div>
-  <div class="sctv3-stat"><div class="sctv3-stat-ic">🔧</div><div class="sctv3-stat-l">A/S 커버</div><div class="sctv3-stat-v">서울 전 지역</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">🔧</div><div class="sctv3-stat-l">A/S 커버</div><div class="sctv3-stat-v">${region.name} 전 지역</div></div>
 </div>
 
 <section class="sctv3-sec">
-  <div class="sctv3-sec-h">🏢 서울 시군구별 카드단말기 가이드</div>
+  <div class="sctv3-sec-h">🏢 ${region.name} 시군구별 카드단말기 가이드</div>
   <p style="font-size:12.5px;color:#64748b">지역을 클릭하면 해당 시군구의 카드단말기 설치 상세 페이지로 이동합니다.</p>
   <div class="sctv3-gu-grid">${guChipsHtml}</div>
 </section>
 
 <section class="sctv3-sec">
-  <div class="sctv3-sec-h">📘 서울 카드단말기 상세 안내</div>
-  <p>카드단말기는 단순히 카드를 긁는 기계가 아닙니다. 매장과 VAN사·카드사·은행을 연결하는 결제 인프라의 시작점이고, 사장님이 1년에 부담하시는 결제 비용 대부분이 이 단말기 한 대를 통해 빠져나갑니다. 서울처럼 결제 빈도가 높은 상권에서는 단말기 선택과 VAN사 계약 조건이 매장 손익에 직접 영향을 줍니다.</p>
+  <div class="sctv3-sec-h">📘 ${region.name} 카드단말기 상세 안내</div>
+  <p>카드단말기는 단순히 카드를 긁는 기계가 아닙니다. 매장과 VAN사·카드사·은행을 연결하는 결제 인프라의 시작점이고, 사장님이 1년에 부담하시는 결제 비용 대부분이 이 단말기 한 대를 통해 빠져나갑니다. ${regionLeadDesc.replace('이 차이가 더 크게 벌어집니다','단말기 선택과 VAN사 계약 조건이 매장 손익에 직접 영향을 줍니다')}.</p>
   <p>국내에서 유통되는 카드단말기는 <strong>유선·자동커팅·무선·스마트·간편결제 특화형</strong> 등 5가지 큰 분류로 나뉩니다. 매장 카운터 구조, 홀 면적, 주요 고객 연령대, 결제 수단 비중에 따라 적합한 기종이 달라지고, 잘못 고르면 6개월도 안 돼서 다시 바꾸시는 경우가 생깁니다.</p>
   <div class="sctv3-type-cards">
-    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">🖥️</div><div class="sctv3-type-card-title">유선 일체형</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">편의점·소형 식당</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">안정적, 고장 적음</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">공간 차지</span></div></div>
-    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">🧾</div><div class="sctv3-type-card-title">자동커팅형</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">음식점·영수증 다수</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">영수증 자동 절단</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">유선 기본</span></div></div>
-    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">📡</div><div class="sctv3-type-card-title">무선 (블루투스)</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">홀 서빙·야외 마켓</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">이동 자유</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">배터리 관리 필요</span></div></div>
-    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">📱</div><div class="sctv3-type-card-title">스마트 단말기</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">포스기 없는 소형</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">포스 기능 일부 내장</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">월 이용료 있음</span></div></div>
-    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">💸</div><div class="sctv3-type-card-title">간편결제 특화</div></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">적합</span><span class="sctv3-type-value">젊은층 카페·편집샵</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">장점</span><span class="sctv3-type-value good">QR·페이류 우대</span></div><div class="sctv3-type-card-row"><span class="sctv3-type-label">주의</span><span class="sctv3-type-value">일부 카드사 제한</span></div></div>
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">🖥️</div><div class="sctv3-type-card-title">유선 일체형</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">편의점·소형 식당</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">안정적, 고장 적음</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">공간 차지</span></div></div></div>
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">🧾</div><div class="sctv3-type-card-title">자동커팅형</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">음식점·영수증 다수</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">영수증 자동 절단</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">유선 기본</span></div></div></div>
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">📡</div><div class="sctv3-type-card-title">무선 (블루투스)</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">홀 서빙·야외 마켓</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">이동 자유</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">배터리 관리 필요</span></div></div></div>
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">📱</div><div class="sctv3-type-card-title">스마트 단말기</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">포스기 없는 소형</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">포스 기능 일부 내장</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">월 이용료 있음</span></div></div></div>
+    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">💸</div><div class="sctv3-type-card-title">간편결제 특화</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">젊은층 카페·편집샵</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">QR·페이류 우대</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">일부 카드사 제한</span></div></div></div>
   </div>
-  <p>오페리오솔루션은 서울 25개 시군구 전 지역에 직접 방문해 매장 환경을 보고 단말기를 추천합니다. 카드·삼성페이·카카오페이·네이버페이·제로페이까지 한 대에서 처리되도록 세팅하며, IC·MS·NFC·QR 모든 결제 방식을 실제 카드로 테스트한 뒤에 영업 투입 상태로 전달합니다.</p>
+  <p>오페리오솔루션은 ${coverageText} 전 지역에 직접 방문해 매장 환경을 보고 단말기를 추천합니다. 카드·삼성페이·카카오페이·네이버페이·제로페이까지 한 대에서 처리되도록 세팅하며, IC·MS·NFC·QR 모든 결제 방식을 실제 카드로 테스트한 뒤에 영업 투입 상태로 전달합니다.</p>
 </section>
 
 <section class="sctv3-sec">
-  <div class="sctv3-sec-h">🛡️ 서울에서 카드단말기 살 때 사기 안 당하는 법</div>
-  <p>카드단말기 시장은 진입 장벽이 낮아서 영업 직원·중간 대리점이 난립하고 있습니다. 그래서 비슷해 보이는 견적이라도 1년 후 사장님이 부담하시는 금액이 크게 달라집니다. 서울에서 매장 오픈하시는 분들이 자주 걸려드는 함정 5가지를 정리해드립니다.</p>
+  <div class="sctv3-sec-h">🛡️ ${region.name}에서 카드단말기 살 때 사기 안 당하는 법</div>
+  <p>카드단말기 시장은 진입 장벽이 낮아서 영업 직원·중간 대리점이 난립하고 있습니다. 그래서 비슷해 보이는 견적이라도 1년 후 사장님이 부담하시는 금액이 크게 달라집니다. ${region.name}에서 매장 오픈하시는 분들이 자주 걸려드는 함정 5가지를 정리해드립니다.</p>
   <div class="sctv3-num-list">
     <div class="sctv3-num-item"><div class="sctv3-num-badge">1</div><div class="sctv3-num-body"><h4>"평생 무료" 광고 — 위약금 조항 확인 필수</h4><p>설치비·월정액 평생 무료라고 광고하지만, 약관 안에는 <strong>3년 이내 해지 시 단말기 원가의 100~150% 위약금</strong> 조항이 숨어 있는 경우가 많습니다. 계약서 위약금 항목을 반드시 직접 확인하세요.</p></div></div>
     <div class="sctv3-num-item"><div class="sctv3-num-badge">2</div><div class="sctv3-num-body"><h4>"수수료 최저가" 약속 — 우대 수수료율 적용 조건 확인</h4><p>건당 수수료 최저가를 보장한다고 하지만 <strong>월 결제 건수 일정 기준 미달 시 수수료가 두 배로 뛰는</strong> 조건이 붙는 경우가 있습니다. 사장님 매장의 월 평균 결제 건수와 비교해 실제 적용 가능한 조건인지 확인하세요.</p></div></div>
@@ -2834,8 +2852,8 @@ function renderSeoulCardTerminalV3() {
 </section>
 
 <section class="sctv3-sec">
-  <div class="sctv3-sec-h">✅ 서울 카드단말기 도입 전 체크리스트</div>
-  <p>카드단말기를 설치하시기 전에 미리 정리해두면 상담·견적이 훨씬 빠르게 진행됩니다. 서울 사장님들께 권해드리는 체크리스트입니다.</p>
+  <div class="sctv3-sec-h">✅ ${region.name} 카드단말기 도입 전 체크리스트</div>
+  <p>카드단말기를 설치하시기 전에 미리 정리해두면 상담·견적이 훨씬 빠르게 진행됩니다. ${region.name} 사장님들께 권해드리는 체크리스트입니다.</p>
   <div class="sctv3-insight-grid">
     <div class="sctv3-insight-card"><h5>1. 사업자등록증 준비</h5><p>VAN사 계약에 필수입니다. 미발급 상태면 상담만 먼저 받고, 등록증 나오는 대로 본 계약 진행이 가능합니다.</p></div>
     <div class="sctv3-insight-card"><h5>2. 매장 평수·카운터 위치</h5><p>유선·무선 결정의 기준이 됩니다. 카운터가 고정인지, 홀 서빙이 필요한지 미리 정리해두세요.</p></div>
@@ -2849,20 +2867,20 @@ function renderSeoulCardTerminalV3() {
 </section>
 
 <section class="sctv3-sec">
-  <div class="sctv3-sec-h">❓ 서울 카드단말기 설치 자주 묻는 질문</div>
+  <div class="sctv3-sec-h">❓ ${region.name} 카드단말기 설치 자주 묻는 질문</div>
   <div class="sctv3-faqs">
-    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>오늘 연락하면 오늘 설치가 가능한가요?</div><div class="sctv3-faq-a">서울 안이면 오전 10시 전에 연락 주시면 당일 오후 설치가 가능한 경우가 많습니다. 단, 특정 기종(자동커팅형 일부, 최신 스마트 단말기)은 재고 확인에 하루 정도 필요합니다. 일반 유선 단말기는 대부분 당일 처리됩니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>오늘 연락하면 오늘 설치가 가능한가요?</div><div class="sctv3-faq-a">${region.name} 안이면 오전 10시 전에 연락 주시면 ${region.installTime || '당일~익일'} 설치가 가능한 경우가 많습니다. 단, 특정 기종(자동커팅형 일부, 최신 스마트 단말기)은 재고 확인에 하루 정도 필요합니다. 일반 유선 단말기는 대부분 빠르게 처리됩니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>설치비는 정말 무료인가요?</div><div class="sctv3-faq-a">네, 설치비는 무료로 지원해드립니다. 다만 <strong>월 이용료는 기종·VAN사 조건에 따라 부과될 수 있습니다.</strong> 상담 시 사장님 매장 조건에 맞춰 정확한 비용을 안내드립니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>사업자등록증이 아직 안 나왔는데 미리 알아볼 수 있나요?</div><div class="sctv3-faq-a">네, 상담은 사업자 등록 전에도 가능합니다. 다만 VAN사 계약은 사업자등록증이 있어야 진행되므로, 미리 견적·기종 선정까지만 해두시고 등록증 나오는 대로 설치 일정을 잡는 식으로 많이 하십니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>VAN사를 나중에 바꾸고 싶으면 어떻게 하나요?</div><div class="sctv3-faq-a">계약 만료 후에는 자유롭게 바꾸실 수 있습니다. 오페리오솔루션에서 설치하신 경우 계약 기간을 저희가 관리하고 있어서, 만료 시점에 더 좋은 조건이 나오면 먼저 알려드리고 무료로 전환해드립니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>매출이 적어도 설치가 가능한가요?</div><div class="sctv3-faq-a">네. 다만 일부 VAN사는 최소 결제 건수 조건이 있어서, 이런 경우 다른 VAN사로 매칭해드립니다. 월 매출 300만 원 이하 소규모 매장도 설치 실적 많습니다.</div></div>
-    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>고장 났을 때 바로 대응 가능한가요?</div><div class="sctv3-faq-a">대부분 전화·원격으로 해결됩니다(약 7할). 원격으로 안 되면 서울 내 당일 출동이 원칙입니다. 예비기를 들고 방문하므로 영업 차질 없이 교체 완료됩니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>고장 났을 때 바로 대응 가능한가요?</div><div class="sctv3-faq-a">대부분 전화·원격으로 해결됩니다(약 7할). 원격으로 안 되면 ${region.name} 내 ${region.installTime || '빠른'} 출동이 원칙입니다. 예비기를 들고 방문하므로 영업 차질 없이 교체 완료됩니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>기존 포스기와 연동이 안 되면 어떻게 하나요?</div><div class="sctv3-faq-a">오래된 포스기는 통신 프로토콜이 맞지 않아 연동이 어려운 경우가 있습니다. 이 경우 (1) 포스기 펌웨어 업데이트, (2) 호환 브릿지 설치, (3) 포스기 교체 중 사장님 상황에 맞는 방식을 제안드립니다.</div></div>
   </div>
 </section>
 
 <div class="sctv3-cta">
-  <div class="sctv3-cta-h">📞 서울 카드단말기, 5분 상담으로 견적받기</div>
+  <div class="sctv3-cta-h">📞 ${region.name} 카드단말기, 5분 상담으로 견적받기</div>
   <div class="sctv3-cta-sub">업종·매장 규모만 말씀해주시면 VAN사 3곳 조건을 비교해 돌려드립니다.</div>
   <div class="sctv3-cta-btns">
     <a href="tel:${SITE.phone}" class="sctv3-cta-btn sctv3-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
@@ -2878,31 +2896,31 @@ function renderSeoulCardTerminalV3() {
 
 <div class="sctv3-tags">
   <div class="sctv3-tags-h">🏷️ 관련 태그</div>
-  <span class="sctv3-tag">#서울카드단말기</span>
+  <span class="sctv3-tag">#${region.name}카드단말기</span>
   <span class="sctv3-tag">#VAN사수수료비교</span>
   <span class="sctv3-tag">#자동커팅단말기</span>
   <span class="sctv3-tag">#무선카드단말기</span>
   <span class="sctv3-tag">#카드단말기위약금</span>
-  <span class="sctv3-tag">#서울당일설치</span>
+  <span class="sctv3-tag">#${region.name}당일설치</span>
   <span class="sctv3-tag">#포스기연동</span>
   <span class="sctv3-tag">#간편결제단말기</span>
   <span class="sctv3-tag">#카드결제수수료</span>
-  <span class="sctv3-tag">#서울상권별추천</span>
+  <span class="sctv3-tag">#${region.name}상권별추천</span>
 </div>
 
 </div>`;
 
   return htmlWrap({
-    title: '서울 카드단말기 설치 가이드 — VAN사 수수료 비교·당일 출장 | 오페리오솔루션',
-    description: '서울 25개 시군구 467개 읍면동 전 지역 카드단말기 설치. VAN사 수수료 비교, 당일 출장, 사기 방지 가이드, 세금 신고 활용법까지.',
-    canonical: `${SITE.domain}/seoul/card-terminal`,
+    title: `${region.name} 카드단말기 설치 가이드 — VAN사 수수료 비교·빠른 출장 | 오페리오솔루션`,
+    description: metaDesc,
+    canonical: `${SITE.domain}/${region.slug}/card-terminal`,
     body,
   });
 }
 
-function renderSeoulProductPage(productSlug) {
+function renderRegionProductPage(region, productSlug) {
   // [v3] 카드단말기는 새 템플릿
-  if (productSlug === 'card-terminal') return renderSeoulCardTerminalV3();
+  if (productSlug === 'card-terminal') return renderRegionCardTerminalV3(region);
   const cfg = _SPP_CONFIG[productSlug];
   if (!cfg) return null;
   
@@ -2910,8 +2928,8 @@ function renderSeoulProductPage(productSlug) {
   const action = cfg.action;
   const actionH = cfg.actionH;
   
-  const introV = _seoulPick('intro-'+productSlug, _SPP_V.install).replace(/\{kw\}/g, kw).replace(/\{action\}/g, action);
-  const costV = _seoulPick('cost-'+productSlug, _SPP_V.cost).replace(/\{kw\}/g, kw).replace(/\{action\}/g, action);
+  const introV = _seoulPick('intro-'+region.slug+'-'+productSlug, _SPP_V.install).replace(/\{kw\}/g, kw).replace(/\{action\}/g, action);
+  const costV = _seoulPick('cost-'+region.slug+'-'+productSlug, _SPP_V.cost).replace(/\{kw\}/g, kw).replace(/\{action\}/g, action);
   const detailV = (_SPP_V.detail[productSlug] || _SPP_V.detail['card-terminal'])[0];
   const guideV = _SPP_V.guide[productSlug] || _SPP_V.guide['card-terminal'];
   
@@ -2922,64 +2940,35 @@ function renderSeoulProductPage(productSlug) {
   const precheckData = productSlug === 'removal' ? _SPP_PRECHECK.removal : _SPP_PRECHECK.default;
   const precheckHtml = precheckData.map(c => `<li><span class="spp-check">✓</span><div>${c.replace(/\{kw\}/g, kw)}</div></li>`).join('');
   
-  const guChipsHtml = SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="spp-gu-chip">${g.name}</a>`).join('');
+  // 광역별 시군구 데이터 (서울은 SEOUL_GUS, 그 외는 REGIONS_DATA[slug])
+  const regionGus = region.slug === 'seoul' ? SEOUL_GUS : (REGIONS_DATA[region.slug] || []);
+  const totalDongCount = regionGus.reduce((acc, gu) => acc + ((gu.dongs || []).length), 0);
+  const coverageText = region.slug === 'seoul'
+    ? `${region.name} ${regionGus.length}개 시군구 · ${totalDongCount}개 읍면동`
+    : region.coverage;
+  const guChipsHtml = regionGus.length > 0
+    ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}" class="spp-gu-chip">${g.name}</a>`).join('')
+    : (region.majorDistricts || []).map(d => `<span class="spp-gu-chip">${d}</span>`).join('');
   
-  const tagsHtml = cfg.tags.map(t => `<span class="spp-tag">#${t}</span>`).join('');
+  // 광역별 hero 동적 픽 (매장 사진 + 설치/수리 사진 통합 풀)
+  const heroImg = _pickRegionProductHero(region.slug, productSlug);
   
-  // 다른 지역 & 다른 제품 칩
-  const otherRegions = [['gyeonggi','경기'],['busan','부산'],['incheon','인천'],['daegu','대구'],['daejeon','대전'],['gwangju','광주'],['ulsan','울산'],['sejong','세종'],['gangwon','강원'],['chungbuk','충북'],['chungnam','충남'],['jeonbuk','전북'],['jeonnam','전남'],['gyeongbuk','경북'],['gyeongnam','경남'],['jeju','제주']];
-  const otherRegionsHtml = otherRegions.map(([s,n]) => `<a href="/${s}/${productSlug}" class="spp-other-chip">${n}</a>`).join('');
+  // 태그 — 서울은 기존 cfg.tags, 그 외는 #{지역명}{kw}로 광역별 동적
+  const tagsHtml = region.slug === 'seoul'
+    ? cfg.tags.map(t => `<span class="spp-tag">#${t}</span>`).join('')
+    : [`${region.name}${kw}`, `${region.name}${kw}${actionH}`, ...cfg.tags.slice(2)].map(t => `<span class="spp-tag">#${t}</span>`).join('');
   
+  // 다른 지역 — 자기 빼고 16개 동적
+  const otherRegionsHtml = REGIONS.filter(r => r.slug !== region.slug).map(r => `<a href="/${r.slug}/${productSlug}" class="spp-other-chip">${r.name}</a>`).join('');
+  
+  // 다른 제품 — 같은 광역에서 다른 제품
   const otherProducts = [['card-terminal','💳 카드단말기'],['pos','🖥️ 포스기'],['kiosk','🤖 키오스크'],['cctv','📷 CCTV'],['table-order','📋 테이블오더'],['removal','🔨 철거'],['vending','🥤 자동판매기(밴딩머신)']];
-  const otherProductsHtml = otherProducts.filter(([s])=>s!==productSlug).map(([s,n]) => `<a href="/seoul/${s}" class="spp-prod-chip">${n}</a>`).join('');
+  const otherProductsHtml = otherProducts.filter(([s])=>s!==productSlug).map(([s,n]) => `<a href="/${region.slug}/${s}" class="spp-prod-chip">${n}</a>`).join('');
   
-  const body = `
-<section class="spp-page">
-<div class="container spp-wrap">
-
-<div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/${productSlug}">${kw}</a><span>›</span>서울특별시</div>
-
-<div class="spp-hero">
-  <div class="spp-hero-bg" style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${cfg.heroImg}') center/cover"></div>
-  <div class="spp-hero-ov">
-    <div class="spp-hero-meta">서울 25개 시군구 · 467개 읍면동</div>
-    <div class="spp-hero-title">서울특별시 ${kw} ${actionH}</div>
-  </div>
-</div>
-
-<h1 class="spp-h1">서울특별시 ${kw} ${actionH}</h1>
-
-<p class="spp-intro">서울특별시 전 지역(25개 시군구, 467개 읍면동)에 ${kw} ${action}를 전문으로 합니다. ${cfg.introBody}. 아래에서 서울 시군구를 선택하시면 읍면동별 ${kw} ${action} 가이드를 확인할 수 있습니다.</p>
-
-<div class="spp-stats">
-  <div class="spp-stat"><div class="spp-stat-ic">🏆</div><div class="spp-stat-l">서울 누적</div><div class="spp-stat-v">15,000+건</div></div>
-  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">빠른 ${actionH}</div><div class="spp-stat-v">신속 완료</div></div>
-  <div class="spp-stat"><div class="spp-stat-ic">💰</div><div class="spp-stat-l">${cfg.statLabel}</div><div class="spp-stat-v">${cfg.statValue}</div></div>
-  <div class="spp-stat"><div class="spp-stat-ic">🔧</div><div class="spp-stat-l">A/S</div><div class="spp-stat-v">빠른 대응</div></div>
-</div>
-
+  // 도입 추천 업종 섹션 — CCTV는 제외 (보안 장비 특성상 업종 추천 무의미)
+  const recommendIndustrySections = productSlug === 'cctv' ? '' : `
 <section class="spp-sec">
-  <div class="spp-sec-h">${cfg.emoji} 서울 ${kw} ${actionH} 안내</div>
-  <p>${introV}</p>
-</section>
-
-<section class="spp-sec">
-  <div class="spp-sec-h">⚡ 서울 ${kw} ${actionH} 프로세스</div>
-  <ul class="spp-check-list">
-    <li><span class="spp-check">✓</span><div><strong>1단계 무료 상담</strong> — 전화 또는 온라인으로 매장 업종, 규모, 필요 사항을 상담합니다</div></li>
-    <li><span class="spp-check">✓</span><div><strong>2단계 무료 견적</strong> — 서울 전 지역 직접 방문하여 매장 환경을 분석합니다</div></li>
-    <li><span class="spp-check">✓</span><div><strong>3단계 장비 선정·${actionH}</strong> — 업종별 최적 장비를 선정하고 전문 기사가 ${actionH}합니다</div></li>
-    <li><span class="spp-check">✓</span><div><strong>4단계 교육·A/S</strong> — 사용법 교육 후 A/S를 지원합니다</div></li>
-  </ul>
-</section>
-
-<section class="spp-sec">
-  <div class="spp-sec-h">💰 서울 ${kw} 비용 안내</div>
-  <p>${costV}</p>
-</section>
-
-<section class="spp-sec">
-  <div class="spp-sec-h">🏪 서울 ${kw} 도입 추천 업종</div>
+  <div class="spp-sec-h">🏪 ${region.name} ${kw} 도입 추천 업종</div>
   <table class="spp-tbl">
     <thead><tr><th>업종</th><th>${kw} 효과</th><th>추천</th></tr></thead>
     <tbody>
@@ -2991,42 +2980,95 @@ function renderSeoulProductPage(productSlug) {
     </tbody>
   </table>
   <div class="spp-tip">
-    <div class="spp-tip-h">💡 서울 사장님 Tip</div>
+    <div class="spp-tip-h">💡 ${region.name} 사장님 Tip</div>
     <p>${kw}를 오페리오솔루션에서 다른 장비와 함께 패키지로 ${actionH}하면 카드단말기·포스기·키오스크·테이블오더는 설치비 무료로 제공됩니다. CCTV는 별도 견적.</p>
   </div>
 </section>
 
 <section class="spp-sec">
-  <div class="spp-sec-h">🗓️ 서울 ${kw} 도입 추천 업종 상세</div>
-  <p>서울특별시에서 ${kw}를 도입하면 매장 운영 방식이 근본적으로 달라집니다. 음식점·카페는 주문 정확도가 100%에 가까워지고, 편의점·마트는 재고 관리가 자동화됩니다. 미용실·네일샵은 예약과 결제가 통합되어 관리가 편해지며, 스터디카페·코인세탁소는 24시간 무인 운영이 가능해집니다. 오페리오솔루션은 서울 지역 업종 특성을 분석하여 불필요한 장비 없이 꼭 필요한 장비만 추천합니다.</p>
+  <div class="spp-sec-h">🗓️ ${region.name} ${kw} 도입 추천 업종 상세</div>
+  <p>${region.fullName}에서 ${kw}를 도입하면 매장 운영 방식이 근본적으로 달라집니다. 음식점·카페는 주문 정확도가 100%에 가까워지고, 편의점·마트는 재고 관리가 자동화됩니다. 미용실·네일샵은 예약과 결제가 통합되어 관리가 편해지며, 스터디카페·코인세탁소는 24시간 무인 운영이 가능해집니다. 오페리오솔루션은 ${region.name} 지역 업종 특성을 분석하여 불필요한 장비 없이 꼭 필요한 장비만 추천합니다.</p>
+</section>`;
+  
+  const body = `
+<section class="spp-page">
+<div class="container spp-wrap">
+
+<div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/${productSlug}">${kw}</a><span>›</span>${region.fullName}</div>
+
+<div class="spp-hero">
+  <div class="spp-hero-bg" style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover"></div>
+  <div class="spp-hero-ov">
+    <div class="spp-hero-meta">${coverageText}</div>
+    <div class="spp-hero-title">${region.fullName} ${kw} ${actionH}</div>
+  </div>
+</div>
+
+<h1 class="spp-h1">${region.fullName} ${kw} ${actionH}</h1>
+
+<p class="spp-intro">${region.fullName} 전 지역(${coverageText})에 ${kw} ${action}를 전문으로 합니다. ${cfg.introBody}. 아래에서 ${region.name} 시군구를 선택하시면 읍면동별 ${kw} ${action} 가이드를 확인할 수 있습니다.</p>
+
+<div class="spp-stats">
+  <div class="spp-stat"><div class="spp-stat-ic">🏆</div><div class="spp-stat-l">전국 누적</div><div class="spp-stat-v">15,000+건</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">빠른 ${actionH}</div><div class="spp-stat-v">신속 완료</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">💰</div><div class="spp-stat-l">${cfg.statLabel}</div><div class="spp-stat-v">${cfg.statValue}</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">🔧</div><div class="spp-stat-l">A/S</div><div class="spp-stat-v">빠른 대응</div></div>
+</div>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">${cfg.emoji} ${region.name} ${kw} ${actionH} 안내</div>
+  <p>${introV}</p>
 </section>
 
 <section class="spp-sec">
-  <div class="spp-sec-h">✅ 서울 ${kw} ${actionH} 시 확인사항</div>
+  <div class="spp-sec-h">🏢 ${region.name} ${kw} ${actionH} 지역 선택</div>
+  <p style="font-size:12.5px;color:#64748b;margin-bottom:10px">시군구를 선택하면 읍면동별 ${kw} ${actionH} 가이드를 확인할 수 있습니다.</p>
+  <div class="spp-gu-grid">${guChipsHtml}</div>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">⚡ ${region.name} ${kw} ${actionH} 프로세스</div>
+  <ul class="spp-check-list">
+    <li><span class="spp-check">✓</span><div><strong>1단계 무료 상담</strong> — 전화 또는 온라인으로 매장 업종, 규모, 필요 사항을 상담합니다</div></li>
+    <li><span class="spp-check">✓</span><div><strong>2단계 무료 견적</strong> — ${region.name} 전 지역 직접 방문하여 매장 환경을 분석합니다</div></li>
+    <li><span class="spp-check">✓</span><div><strong>3단계 장비 선정·${actionH}</strong> — 업종별 최적 장비를 선정하고 전문 기사가 ${actionH}합니다</div></li>
+    <li><span class="spp-check">✓</span><div><strong>4단계 교육·A/S</strong> — 사용법 교육 후 A/S를 지원합니다</div></li>
+  </ul>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">💰 ${region.name} ${kw} 비용 안내</div>
+  <p>${costV}</p>
+</section>
+
+${recommendIndustrySections}
+
+<section class="spp-sec">
+  <div class="spp-sec-h">✅ ${region.name} ${kw} ${actionH} 시 확인사항</div>
   <ul class="spp-check-list">${checklist}</ul>
 </section>
 
 <section class="spp-sec">
-  <div class="spp-sec-h">🏢 서울 ${kw} 상세 안내</div>
+  <div class="spp-sec-h">🏢 ${region.name} ${kw} 상세 안내</div>
   <p>${detailV}</p>
 </section>
 
 <section class="spp-sec">
-  <div class="spp-sec-h">🔎 서울 ${kw} 도입 전 체크리스트</div>
+  <div class="spp-sec-h">🔎 ${region.name} ${kw} 도입 전 체크리스트</div>
   <ul class="spp-check-list">${precheckHtml}</ul>
 </section>
 
 <section class="spp-sec">
-  <div class="spp-sec-h">📊 서울 업종별 ${kw} 가이드</div>
+  <div class="spp-sec-h">📊 ${region.name} 업종별 ${kw} 가이드</div>
   ${guideV}
 </section>
 
 <section class="spp-sec">
-  <div class="spp-sec-h">❓ 서울 ${kw} ${actionH} 자주 묻는 질문</div>
+  <div class="spp-sec-h">❓ ${region.name} ${kw} ${actionH} 자주 묻는 질문</div>
   <div class="spp-faqs">
     <div class="spp-faq-item">
-      <div class="spp-faq-q"><span class="spp-faq-q-mark">Q.</span>서울 전 지역 출장 ${actionH}가 가능한가요?</div>
-      <div class="spp-faq-a">네, 서울특별시 전체 25개 시군구, 467개 읍면동에 직접 방문 ${actionH}를 제공합니다. 상담 후 빠른 일정으로 방문합니다.</div>
+      <div class="spp-faq-q"><span class="spp-faq-q-mark">Q.</span>${region.name} 전 지역 출장 ${actionH}가 가능한가요?</div>
+      <div class="spp-faq-a">네, ${coverageText}에 직접 방문 ${actionH}를 제공합니다. 상담 후 빠른 일정으로 방문합니다.</div>
     </div>
     <div class="spp-faq-item">
       <div class="spp-faq-q"><span class="spp-faq-q-mark">Q.</span>${cfg.statLabel}가 정말 무료인가요?</div>
@@ -3048,8 +3090,8 @@ function renderSeoulProductPage(productSlug) {
 </section>
 
 <section class="spp-sec">
-  <div class="spp-sec-h">📈 서울 ${kw} 도입 효과</div>
-  <p>서울특별시 매장에 ${kw}를 도입하면 평균 매출 15~25% 증가, 인건비 20~50% 절감 효과를 기대할 수 있습니다. 특히 여러 장비를 패키지로 함께 도입하시면 시너지 효과가 극대화되며, 오페리오솔루션은 통합 관리 서비스로 VAN사 수수료 최적화, 매출 데이터 분석, 장비 업그레이드까지 지속적으로 지원할 수 있습니다.</p>
+  <div class="spp-sec-h">📈 ${region.name} ${kw} 도입 효과</div>
+  <p>${region.fullName} 매장에 ${kw}를 도입하면 평균 매출 15~25% 증가, 인건비 20~50% 절감 효과를 기대할 수 있습니다. 특히 여러 장비를 패키지로 함께 도입하시면 시너지 효과가 극대화되며, 오페리오솔루션은 통합 관리 서비스로 VAN사 수수료 최적화, 매출 데이터 분석, 장비 업그레이드까지 지속적으로 지원할 수 있습니다.</p>
 </section>
 
 <div class="spp-tags">
@@ -3057,15 +3099,9 @@ function renderSeoulProductPage(productSlug) {
   ${tagsHtml}
 </div>
 
-<section class="spp-sec">
-  <div class="spp-sec-h">🏢 서울 ${kw} ${actionH} 지역 선택</div>
-  <p style="font-size:12.5px;color:#64748b;margin-bottom:10px">시군구를 선택하면 읍면동별 ${kw} ${actionH} 가이드를 확인할 수 있습니다.</p>
-  <div class="spp-gu-grid">${guChipsHtml}</div>
-</section>
-
 <div class="spp-cta">
-  <div class="spp-cta-h">🎁 서울 ${kw} 무료 견적 받기</div>
-  <div class="spp-cta-sub">서울특별시 ${kw} ${actionH}를 전문가가 책임집니다.</div>
+  <div class="spp-cta-h">🎁 ${region.name} ${kw} 무료 견적 받기</div>
+  <div class="spp-cta-sub">${region.fullName} ${kw} ${actionH}를 전문가가 책임집니다.</div>
   <div class="spp-cta-btns">
     <a href="tel:${SITE.phone}" class="spp-cta-btn spp-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
     <a href="sms:${SITE.phone}" class="spp-cta-btn">💬 문자상담</a>
@@ -3079,7 +3115,7 @@ function renderSeoulProductPage(productSlug) {
 </div>
 
 <div class="spp-side-nav">
-  <div class="spp-side-nav-h">🛒 서울의 다른 제품 전문</div>
+  <div class="spp-side-nav-h">🛒 ${region.name}의 다른 제품 전문</div>
   <div class="spp-prod-nav">${otherProductsHtml}</div>
 </div>
 
@@ -3087,19 +3123,18 @@ function renderSeoulProductPage(productSlug) {
 </section>`;
   
   return htmlWrap({
-    title: `서울특별시 ${kw} ${actionH} · 전 지역 당일 ${actionH}·VAN사 수수료 비교 | 오페리오솔루션`,
-    description: `서울 25개 시군구 전 지역 ${kw} ${actionH} 전문. 설치비 무료, 월 이용료 무료, A/S 지원. 오페리오솔루션 무료 견적.`,
-    canonical: `${SITE.domain}/seoul/${productSlug}`,
+    title: `${region.fullName} ${kw} ${actionH} · 전 지역 당일 ${actionH}·VAN사 수수료 비교 | 오페리오솔루션`,
+    description: `${coverageText.split(' · ')[0]} 전 지역 ${kw} ${actionH} 전문. 설치비 무료, 월 이용료 무료, A/S 지원. 오페리오솔루션 무료 견적.`,
+    canonical: `${SITE.domain}/${region.slug}/${productSlug}`,
     body,
   });
 }
 
 function renderInstallPage(region, product) {
-  // [서울 전용] 7개 제품 페이지는 서울 엔진으로 처리
-  if (region.slug === 'seoul') {
-    const seoulHtml = renderSeoulProductPage(product.slug);
-    if (seoulHtml) return seoulHtml;
-  }
+  // [동적 생성] 17개 광역 × 7개 제품 = 119개 페이지 모두 일반화 함수로 처리
+  const html = renderRegionProductPage(region, product.slug);
+  if (html) return html;
+  // fallback (혹시 모를 알 수 없는 제품 슬러그)
   const districtsList = region.majorDistricts.slice(0, 6).map(d => `<li>${d} ${product.name} 설치</li>`).join('');
   const featCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
 
@@ -3221,6 +3256,13 @@ const _FEATURE_INSTALL_POOL = [
   'https://images.unsplash.com/photo-1521791136064-7986c2920216?fm=jpg&q=80&w=1200&auto=format&fit=crop',
   'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fm=jpg&q=80&w=1200&auto=format&fit=crop',
 ];
+
+// [지역×제품 hero 풀] 매장 사진(_SEOUL_HERO_POOL) + 설치/수리 사진(_FEATURE_INSTALL_POOL) 통합 — 11장
+// region.slug + product.slug salt로 픽하면 119개 페이지가 분산되어 다른 이미지 노출
+const _REGION_PRODUCT_HERO_POOL = _SEOUL_HERO_POOL.concat(_FEATURE_INSTALL_POOL);
+function _pickRegionProductHero(regionSlug, productSlug) {
+  return _seoulPick('rphero-'+regionSlug+'-'+productSlug, _REGION_PRODUCT_HERO_POOL);
+}
 
 // 상권 특성 변형 뱅크 (구 페이지용) - 지역명 {name} 치환
 // 상권 특성 — 8개 변형
