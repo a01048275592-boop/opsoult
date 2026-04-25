@@ -920,11 +920,11 @@ footer .logo{color:#fff}
 .feat-card p{font-size:13.5px;color:var(--muted);line-height:1.6}
 
 .related-section{background:var(--paper-2);padding:90px 0}
-.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
-.related-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 16px;text-align:center;transition:all .2s;color:var(--ink)}
+.related-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:36px}
+.related-item{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 8px;text-align:center;transition:all .2s;color:var(--ink)}
 .related-item:hover{background:var(--ink);color:#fff;transform:translateY(-2px);border-color:var(--ink)}
-.related-item .emoji{font-size:26px;display:block;margin-bottom:10px}
-.related-item .name{font-size:13.5px;font-weight:500}
+.related-item .emoji{font-size:20px;display:block;margin-bottom:5px}
+.related-item .name{font-size:12px;font-weight:500}
 
 .seoul-gu-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .seoul-gu-chip{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:100px;font-size:14px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;line-height:1.2;min-width:72px;text-decoration:none;transition:all .12s}a.seoul-gu-chip:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-1px)}
@@ -1458,7 +1458,10 @@ footer .logo{color:#fff}
   .nav-cta svg{width:10px!important;height:10px!important}
   .nav-cta-phone{display:none}
   .nav-toggle{display:flex}
-  .related-grid{grid-template-columns:repeat(2,1fr)}
+  .related-grid{display:flex;flex-wrap:wrap;gap:6px}
+  .related-item{padding:8px 14px;border-radius:100px;display:inline-flex;align-items:center;gap:6px;text-align:left}
+  .related-item .emoji{font-size:14px;display:inline;margin-bottom:0}
+  .related-item .name{font-size:13px}
   .index-grid.cols-4,.index-grid.cols-3{grid-template-columns:repeat(2,1fr)}
   .feat-grid-2{grid-template-columns:1fr}
   .info-card .grid-2{grid-template-columns:1fr}
@@ -1497,7 +1500,10 @@ footer .logo{color:#fff}
   .foot-bottom{flex-direction:column;align-items:flex-start}
   .floating-stack{bottom:20px;right:20px;gap:8px}
   .floating-call{padding:14px 18px;font-size:13px}
-  .related-grid{grid-template-columns:1fr}
+  .related-grid{display:flex;flex-wrap:wrap;gap:5px}
+  .related-item{padding:7px 11px;gap:4px}
+  .related-item .emoji{font-size:12px}
+  .related-item .name{font-size:11.5px}
   .index-grid.cols-4,.index-grid.cols-3{grid-template-columns:repeat(3,1fr);gap:8px;padding:20px 0 40px}
   .index-card{padding:18px 8px;border-radius:11px;text-align:center}
   .index-card .big{font-size:24px;margin-bottom:6px}
@@ -2378,11 +2384,16 @@ ${SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug
 
 // [10] 제품별 페이지 렌더 (/product/{slug}) ====================
 function renderProductPage(product) {
-  const topRegions = REGIONS.slice(0, 8).map(r => `<a href="/${r.slug}/${product.slug}" class="related-item"><span class="emoji">${r.emoji}</span><span class="name">${r.name}</span></a>`).join('');
+  const topRegions = REGIONS.map(r => `<a href="/${r.slug}/${product.slug}" class="related-item"><span class="emoji">🔎</span><span class="name">${r.name}</span></a>`).join('');
   const featureCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
+  const sfSlidesP = product.features.map((f) => `<div class="sf-slide"><div class="sf-content"><h4>${f.title}</h4><p>${f.desc}</p><a href="tel:${SITE.phone}" class="sf-cta">지금 상담받기 <span class="arr">→</span></a></div><div class="sf-image" style="background-image:url('${_seoulPick('pf-'+product.slug+'-'+f.title, _SEOUL_HERO_POOL)}')"></div></div>`).join('');
+  const sfDotsP = product.features.map((f, i) => `<button class="sf-dot${i===0?' active':''}" data-idx="${i}" aria-label="${i+1}번"></button>`).join('');
+
+  const heroImg = _seoulPick('phero-'+product.slug, _SEOUL_HERO_POOL);
+  const heroBgInline = `style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover;"`;
 
   const body = `
-<section class="detail-hero">
+<section class="detail-hero seoul-hero" ${heroBgInline}>
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/product">제품 안내</a><span class="sep">›</span>${product.name}</div>
 <h1 class="detail-title">${product.emoji} ${product.name} <em>설치 가이드</em></h1>
@@ -2397,7 +2408,10 @@ function renderProductPage(product) {
 <p>${product.longDesc}</p>
 
 <h2>${product.name}의 핵심 기능</h2>
-<div class="feat-grid-2">${featureCards}</div>
+<div class="sf-carousel pf-carousel" id="pfCarousel">
+<div class="sf-viewport"><div class="sf-track">${sfSlidesP}</div></div>
+<div class="sf-dots">${sfDotsP}</div>
+</div>
 
 <h2>어떤 매장에 어울리나요?</h2>
 <p>${product.name}은 특히 <strong>${product.useCases}</strong> 업종에 추천합니다. 각 업종별 특성과 매장 규모에 맞춰 ${SITE.brandNameKo}가 최적 기종과 설정을 제안합니다. 기존 장비와의 호환성, 네트워크 환경, 매장 동선까지 종합 분석해 가장 적합한 솔루션을 드립니다.</p>
@@ -2438,9 +2452,21 @@ function renderProductPage(product) {
 <div class="related-grid">${topRegions}</div>
 </div>
 </section>
+<script>
+(function(){
+  var c=document.getElementById('pfCarousel');if(!c)return;
+  var t=c.querySelectorAll('.sf-tab'),tr=c.querySelector('.sf-track'),s=tr?tr.querySelectorAll('.sf-slide'):[],d=c.querySelectorAll('.sf-dot'),v=c.querySelector('.sf-viewport');
+  if(!s.length||!tr||!v)return;
+  var cur=0,p=false;
+  function go(i){if(i<0)i=s.length-1;if(i>=s.length)i=0;cur=i;tr.style.transform='translateX(-'+(i*100)+'%)';for(var j=0;j<t.length;j++)t[j].classList.toggle('active',j===i);for(var k=0;k<d.length;k++)d[k].classList.toggle('active',k===i);}
+  for(var i=0;i<t.length;i++)(function(x){t[x].addEventListener('click',function(){go(x);r();});})(i);
+  for(var n=0;n<d.length;n++)(function(x){d[x].addEventListener('click',function(){go(x);r();});})(n);
+  var sx=0;v.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;p=true;},{passive:true});
+  v.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(cur+(dx<0?1:-1));p=false;r();},{passive:true});
+  var a;function st(){a=setInterval(function(){if(!p)go(cur+1);},4500);}function r(){if(a)clearInterval(a);st();}st();
+})();
+</script>
 `;
-
-  const title = `${product.name} 설치 · ${product.shortDesc.slice(0, 40)}`;
   const description = `${product.name} 설치 전문. ${product.shortDesc} 전국 당일 설치 가능.`;
 
   return htmlWrap({
