@@ -673,6 +673,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .product-card{flex:0 0 calc((100% - 40px) / 3);background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;min-width:0;display:flex;flex-direction:column;color:var(--ink)}
 .product-card:hover{border-color:var(--ink);transform:translateY(-4px);box-shadow:0 20px 50px rgba(15,23,42,0.1)}
 .product-photo{width:100%;height:200px;background-size:cover;background-position:center;background-color:var(--paper-2);transition:transform .4s ease}
+.product-card[href="/product/kiosk"] .product-photo,
+.product-card[href="/product/pos"] .product-photo{background-size:contain;background-repeat:no-repeat;background-color:#fff}
 .product-card:hover .product-photo{transform:scale(1.05)}
 .product-body{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
 .product-tag{display:inline-block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px}
@@ -1379,8 +1381,6 @@ footer .logo{color:#fff}
   .products-slider{padding:0 48px}
   .product-card{flex:0 0 calc((100% - 20px) / 2)}
   .product-photo{height:180px}
-  .product-card[href="/product/kiosk"] .product-photo,
-  .product-card[href="/product/pos"] .product-photo{background-size:contain;background-repeat:no-repeat;background-color:#fff}
   /* Hero 스탯 - 모바일에서 4칸 한 줄 컴팩트 */
   .stats-grid{grid-template-columns:repeat(4,1fr);gap:0;padding:0 8px}
   .stat-card{border-right:1px solid rgba(255,255,255,0.08);padding:4px 6px;text-align:center}
