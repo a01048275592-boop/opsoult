@@ -2495,6 +2495,8 @@ function renderProductPage(product) {
 })();
 </script>
 `;
+
+  const title = `${product.name} 설치 · ${product.shortDesc.slice(0, 40)}`;
   const description = `${product.name} 설치 전문. ${product.shortDesc} 전국 당일 설치 가능.`;
 
   return htmlWrap({
