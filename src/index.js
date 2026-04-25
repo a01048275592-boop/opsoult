@@ -422,12 +422,12 @@ const STRENGTHS = [
 ];
 
 const SMART_FEATURES = [
-  { icon: '✏️', title: '맞춤형 UI 설정', desc: '우리 매장에 딱 맞는 메뉴 배치와 결제 동선을 직접 설계하여 계산 시간을 단축하세요.' },
-  { icon: '📊', title: '통합 매출 관리', desc: '배달 앱, 오프라인 결제 데이터를 하나로 모아 실시간 매출 추이를 한눈에 파악합니다.' },
-  { icon: '🔌', title: '원격 지원', desc: '기기 장애 발생 시, 기다릴 필요 없이 즉시 원격 지원을 통해 문제를 해결해 드립니다.' },
-  { icon: '💡', title: 'AI 매출 분석', desc: '요일별·시간대별 방문 패턴을 분석하여 최적의 운영 시간을 제안합니다.' },
-  { icon: '🍽️', title: '테이블 오더 연동', desc: '자리에 앉아 주문부터 결제까지 한 번에 끝내는 테이블 오더 시스템과 완벽하게 연동됩니다.' },
-  { icon: '⭐', title: '스마트 리뷰 연동', desc: '매장 리뷰와 SNS 피드백을 실시간으로 확인하며 고객 소통을 강화할 수 있습니다.' },
+  { icon: '✏️', title: '맞춤형 UI 설정', desc: '우리 매장에 딱 맞는 메뉴 배치와 결제 동선을 직접 설계하여 계산 시간을 단축하세요.', photo: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80' },
+  { icon: '📊', title: '통합 매출 관리', desc: '배달 앱, 오프라인 결제 데이터를 하나로 모아 실시간 매출 추이를 한눈에 파악합니다.', photo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80' },
+  { icon: '🔌', title: '원격 지원', desc: '기기 장애 발생 시, 기다릴 필요 없이 즉시 원격 지원을 통해 문제를 해결해 드립니다.', photo: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80' },
+  { icon: '💡', title: 'AI 매출 분석', desc: '요일별·시간대별 방문 패턴을 분석하여 최적의 운영 시간을 제안합니다.', photo: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=700&q=80' },
+  { icon: '🍽️', title: '테이블 오더 연동', desc: '자리에 앉아 주문부터 결제까지 한 번에 끝내는 테이블 오더 시스템과 완벽하게 연동됩니다.', photo: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&q=80' },
+  { icon: '⭐', title: '스마트 리뷰 연동', desc: '매장 리뷰와 SNS 피드백을 실시간으로 확인하며 고객 소통을 강화할 수 있습니다.', photo: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&q=80' },
 ];
 
 const WHY_US = [
@@ -705,6 +705,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .feature-cell .ficon svg{width:22px;height:22px}
 .feature-cell h4{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;color:var(--ink)}
 .feature-cell p{font-size:14px;color:var(--muted);line-height:1.65}
+/* Smart Features - 모바일 캐러셀 (데스크톱 기본 숨김) */
+.sf-carousel{display:none}
 
 /* Why us */
 .why-section{padding:120px 0;background:var(--paper-2)}
@@ -1389,7 +1391,7 @@ footer .logo{color:#fff}
   .region-chip{padding:10px 6px;border-radius:8px;gap:3px}
   .region-chip .re{font-size:16px}
   .region-chip .rn{font-size:12px}
-  .features-grid{grid-template-columns:repeat(2,1fr);margin-top:16px!important;border-radius:12px}
+  .features-grid{display:none}
   .feature-cell{padding:14px 12px}
   .feature-cell:nth-child(3n){border-right:1px solid var(--line)}
   .feature-cell:nth-child(2n){border-right:0}
@@ -1398,6 +1400,26 @@ footer .logo{color:#fff}
   .feature-cell .ficon svg{width:16px;height:16px}
   .feature-cell h4{font-size:13.5px;margin-bottom:4px}
   .feature-cell p{font-size:11.5px;line-height:1.5}
+  /* Smart Features 모바일 캐러셀 */
+  .sf-carousel{display:block;margin-top:14px}
+  .sf-tabs{display:flex;gap:8px;padding:0 16px 14px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .sf-tabs::-webkit-scrollbar{display:none}
+  .sf-tab{flex-shrink:0;width:46px;height:46px;border-radius:10px;border:0;background:var(--paper-3);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s,color .25s,transform .25s;padding:0}
+  .sf-tab svg{width:20px;height:20px}
+  .sf-tab.active{background:#2563eb;color:#fff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(37,99,235,.3)}
+  .sf-viewport{padding:0 16px;overflow:hidden}
+  .sf-track{display:flex;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+  .sf-slide{flex:0 0 100%;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 2px 12px rgba(15,23,42,.04)}
+  .sf-content{padding:24px 22px 20px}
+  .sf-content h4{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:19px;font-weight:600;letter-spacing:-0.025em;color:var(--ink);margin-bottom:10px;line-height:1.3}
+  .sf-content p{font-size:13.5px;color:var(--muted);line-height:1.65;margin-bottom:18px}
+  .sf-cta{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:#fff;border:1.5px solid #2563eb;color:#2563eb;font-size:13px;font-weight:600;border-radius:100px;text-decoration:none;transition:all .2s}
+  .sf-cta:hover{background:#2563eb;color:#fff}
+  .sf-cta .arr{font-size:14px;line-height:1}
+  .sf-image{width:100%;aspect-ratio:16/10;background-size:cover;background-position:center;background-color:var(--paper-3)}
+  .sf-dots{display:flex;justify-content:center;gap:6px;margin-top:14px;padding:0 16px}
+  .sf-dot{width:6px;height:6px;border-radius:50%;background:var(--line-2);border:0;cursor:pointer;transition:width .25s,background .25s;padding:0}
+  .sf-dot.active{width:18px;background:#2563eb;border-radius:3px}
   .reviews-slider{padding:0 48px}
   .review-card{flex:0 0 calc((100% - 20px) / 2)}
   .why-grid{grid-template-columns:1fr;gap:10px;margin-top:18px}
@@ -1621,6 +1643,9 @@ function renderHome() {
 
   const featureIcons = [ICONS.layout, ICONS.chart, ICONS.wifi, ICONS.brain, ICONS.clipboard, ICONS.chat];
   const smartFeatures = SMART_FEATURES.map((f, i) => `<div class="feature-cell"><div class="ficon">${featureIcons[i] || ICONS.star}</div><h4>${f.title}</h4><p>${f.desc}</p></div>`).join('');
+  const sfTabs = SMART_FEATURES.map((f, i) => `<button class="sf-tab${i===0?' active':''}" data-idx="${i}" aria-label="${f.title}">${featureIcons[i] || ICONS.star}</button>`).join('');
+  const sfSlides = SMART_FEATURES.map((f) => `<div class="sf-slide"><div class="sf-content"><h4>${f.title}</h4><p>${f.desc}</p><a href="#contact" class="sf-cta">지금 상담받기 <span class="arr">→</span></a></div><div class="sf-image" style="background-image:url('${f.photo}')"></div></div>`).join('');
+  const sfDots = SMART_FEATURES.map((f, i) => `<button class="sf-dot${i===0?' active':''}" data-idx="${i}" aria-label="${i+1}번 슬라이드"></button>`).join('');
 
   const whyIcons = [ICONS.target, ICONS.box, ICONS.coin, ICONS.wrench];
   const whyUs = WHY_US.map((w, i) => `<div class="why-item"><div class="wicon">${whyIcons[i] || ICONS.star}</div><div><h4>${w.title}</h4><p>${w.desc}</p></div></div>`).join('');
@@ -1803,6 +1828,11 @@ function renderHome() {
 </div>
 <div class="features-grid">${smartFeatures}</div>
 </div>
+<div class="sf-carousel" id="sfCarousel">
+<div class="sf-tabs">${sfTabs}</div>
+<div class="sf-viewport"><div class="sf-track">${sfSlides}</div></div>
+<div class="sf-dots">${sfDots}</div>
+</div>
 </section>
 
 <section class="why-section">
@@ -1929,6 +1959,57 @@ function renderHome() {
     });
   }, {threshold: 0.2});
   items.forEach(function(el){ observer.observe(el); });
+})();
+</script>
+
+<script>
+(function(){
+  var carousel = document.getElementById('sfCarousel');
+  if(!carousel) return;
+  var tabs = carousel.querySelectorAll('.sf-tab');
+  var track = carousel.querySelector('.sf-track');
+  var slides = track ? track.querySelectorAll('.sf-slide') : [];
+  var dots = carousel.querySelectorAll('.sf-dot');
+  var viewport = carousel.querySelector('.sf-viewport');
+  if(!slides.length || !track || !viewport) return;
+
+  var current = 0;
+  var autoTimer = null;
+  var paused = false;
+
+  function go(idx){
+    if(idx < 0) idx = slides.length - 1;
+    if(idx >= slides.length) idx = 0;
+    current = idx;
+    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    for(var i=0; i<tabs.length; i++) tabs[i].classList.toggle('active', i === idx);
+    for(var j=0; j<dots.length; j++) dots[j].classList.toggle('active', j === idx);
+  }
+
+  for(var i=0; i<tabs.length; i++){
+    (function(ix){ tabs[ix].addEventListener('click', function(){ go(ix); restartAuto(); }); })(i);
+  }
+  for(var k=0; k<dots.length; k++){
+    (function(ix){ dots[ix].addEventListener('click', function(){ go(ix); restartAuto(); }); })(k);
+  }
+
+  var startX = 0;
+  viewport.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; paused = true; }, {passive:true});
+  viewport.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 40) go(current + (dx < 0 ? 1 : -1));
+    paused = false;
+    restartAuto();
+  }, {passive:true});
+
+  function startAuto(){
+    autoTimer = setInterval(function(){ if(!paused) go(current + 1); }, 4000);
+  }
+  function restartAuto(){
+    if(autoTimer) clearInterval(autoTimer);
+    startAuto();
+  }
+  startAuto();
 })();
 </script>
 
