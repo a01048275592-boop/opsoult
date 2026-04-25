@@ -673,6 +673,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .product-card{flex:0 0 calc((100% - 40px) / 3);background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s;min-width:0;display:flex;flex-direction:column;color:var(--ink)}
 .product-card:hover{border-color:var(--ink);transform:translateY(-4px);box-shadow:0 20px 50px rgba(15,23,42,0.1)}
 .product-photo{width:100%;height:200px;background-size:cover;background-position:center;background-color:var(--paper-2);transition:transform .4s ease}
+.product-card[href="/product/card-terminal"] .product-photo,
 .product-card[href="/product/kiosk"] .product-photo,
 .product-card[href="/product/pos"] .product-photo{background-size:contain;background-repeat:no-repeat;background-color:#fff}
 .product-card:hover .product-photo{transform:scale(1.05)}
