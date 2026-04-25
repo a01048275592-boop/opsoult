@@ -2414,7 +2414,7 @@ ${SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug
 function renderProductPage(product) {
   const topRegions = REGIONS.map(r => `<a href="/${r.slug}/${product.slug}" class="related-item"><span class="emoji">🔎</span><span class="name">${r.name}</span></a>`).join('');
   const featureCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
-  const sfSlidesP = product.features.map((f) => `<div class="sf-slide"><div class="sf-content"><h4>${f.title}</h4><p>${f.desc}</p><a href="tel:${SITE.phone}" class="sf-cta">지금 상담받기 <span class="arr">→</span></a></div><div class="sf-image" style="background-image:url('${_seoulPick('pf-'+product.slug+'-'+f.title, _SEOUL_HERO_POOL)}')"></div></div>`).join('');
+  const sfSlidesP = product.features.map((f) => `<div class="sf-slide"><div class="sf-content"><h4>${f.title}</h4><p>${f.desc}</p><a href="tel:${SITE.phone}" class="sf-cta">지금 상담받기 <span class="arr">→</span></a></div><div class="sf-image" style="background-image:url('${_seoulPick('pf-'+product.slug+'-'+f.title, _FEATURE_INSTALL_POOL)}')"></div></div>`).join('');
   const sfDotsP = product.features.map((f, i) => `<button class="sf-dot${i===0?' active':''}" data-idx="${i}" aria-label="${i+1}번"></button>`).join('');
 
   const heroImg = _seoulPick('phero-'+product.slug, _SEOUL_HERO_POOL);
@@ -3211,6 +3211,15 @@ const _SEOUL_HERO_POOL = [
   'https://images.unsplash.com/photo-1742240216264-f0aac25ef4ba?fm=jpg&q=80&w=1400&auto=format&fit=crop',
   'https://images.unsplash.com/photo-1726137569825-7535962addcd?fm=jpg&q=80&w=1400&auto=format&fit=crop',
   'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1400&auto=format&fit=crop',
+];
+
+const _FEATURE_INSTALL_POOL = [
+  'https://images.unsplash.com/photo-1581094794329-c8112a89af12?fm=jpg&q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?fm=jpg&q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1597423498219-04418210827d?fm=jpg&q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1580901368919-7738efb0f87e?fm=jpg&q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1521791136064-7986c2920216?fm=jpg&q=80&w=1200&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fm=jpg&q=80&w=1200&auto=format&fit=crop',
 ];
 
 // 상권 특성 변형 뱅크 (구 페이지용) - 지역명 {name} 치환
