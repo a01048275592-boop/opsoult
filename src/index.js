@@ -2062,7 +2062,7 @@ function renderRegionPage(region) {
   const productsHtml = PRODUCTS.map(p => {
     const imgSrc = PRODUCT_IMAGES[p.slug];
     const thumb = imgSrc ? `<img src="${imgSrc}" alt="${p.name}" loading="lazy">` : p.emoji;
-    return `<a href="/${region.slug}/${p.slug}" class="index-card index-card-img"><div class="big">${thumb}</div><h3>${p.name}</h3></a>`;
+    return `<a href="/${region.slug}/${p.slug}" class="sgu-prod sgu-prod-img"><div class="sgu-prod-ic">${thumb}</div><div class="sgu-prod-name">${p.name}</div></a>`;
   }).join('');
   const districtsList = region.majorDistricts.map(d => `<li>${d}</li>`).join('');
   const areasList = region.commercialAreas.map(a => `<li>${a}</li>`).join('');
@@ -2099,7 +2099,7 @@ ${SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug
 </div>
 ` : '')}
 <h2>🛒 ${region.name} 제품별 <em>설치 페이지</em></h2>
-<div class="index-grid cols-4" style="margin:18px 0 28px">${productsHtml}</div>
+<div class="sgu-prod-grid" style="margin:18px 0 28px">${productsHtml}</div>
 
 <h2>🏪 ${region.name} 매장, 업종별로 달라지는 설비 조합</h2>
 <p>${region.name}에서 매장을 오픈하실 때 가장 흔하게 놓치시는 게 <strong>"같은 업종이라도 평수·고객층에 따라 설비 조합이 다르다"</strong>는 점입니다. 아래는 ${region.name} 내 설치 실적 기준으로 업종별로 자주 나가는 조합 정리입니다.</p>
@@ -4238,13 +4238,11 @@ function renderSigunguPage(sg) {
 </div>`).join('');
 
   // 제품별 짧은 안내 (7개)
-  const productBlocks = PRODUCTS.map(p => `
-<div class="sg-product-mini">
-  <div class="sg-product-emoji">${p.emoji}</div>
-  <h4>${sg.name} ${p.name}</h4>
-  <p>${p.shortDesc}</p>
-  <a href="/product/${p.slug}" class="sg-product-link">자세히 보기 →</a>
-</div>`).join('');
+  const productBlocks = PRODUCTS.map(p => {
+    const imgSrc = PRODUCT_IMAGES[p.slug];
+    const thumb = imgSrc ? `<img src="${imgSrc}" alt="${p.name}" loading="lazy">` : p.emoji;
+    return `<a href="/product/${p.slug}" class="sgu-prod sgu-prod-img"><div class="sgu-prod-ic">${thumb}</div><div class="sgu-prod-name">${p.name}</div></a>`;
+  }).join('');
 
   // FAQ
   const faqBlocks = sg.faqs.map(f => `
@@ -4352,7 +4350,7 @@ function renderSigunguPage(sg) {
 
       <section class="sg-block">
         <h2>🛒 ${sg.name} 제품별 설치 안내</h2>
-        <div class="sg-product-grid">${productBlocks}</div>
+        <div class="sgu-prod-grid">${productBlocks}</div>
       </section>
 
       <section class="sg-block">
