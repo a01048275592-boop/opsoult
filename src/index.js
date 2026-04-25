@@ -1144,7 +1144,7 @@ footer .logo{color:#fff}
 .sgu-dong-chip{display:inline-flex;align-items:center;justify-content:center;padding:6px 12px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:100px;font-size:11.5px;color:#475569;text-decoration:none;line-height:1.2;transition:all .12s}
 .sgu-dong-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
 /* 통일 견적 CTA (시·구·동 페이지 공통) - OPT 1 디자인 */
-.ncta{background:#fefce8;border:1px solid #fde68a;border-radius:14px;padding:22px 20px;margin-top:28px;margin-bottom:48px}
+.ncta{background:#fefce8;border:1px solid #fde68a;border-radius:14px;padding:22px 20px;margin-top:28px;margin-bottom:60px}
 .ncta-h{font-size:17px;font-weight:700;margin-bottom:5px;color:#0f172a;text-align:center;letter-spacing:-0.02em}
 .ncta-sub{font-size:13px;color:#78716c;margin-bottom:16px;line-height:1.55;text-align:center}
 .ncta-phone{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:#0f172a;color:#fff;padding:15px;border-radius:100px;font-size:17px;font-weight:700;text-decoration:none;letter-spacing:-0.01em;margin-bottom:10px;transition:background .15s}
@@ -1154,7 +1154,7 @@ footer .logo{color:#fff}
 .ncta-links a:hover{color:#0f172a}
 .ncta-links span{color:#d6d3d1}
 @media(max-width:600px){
-  .ncta{padding:18px 16px;margin-top:24px;margin-bottom:36px}
+  .ncta{padding:18px 16px;margin-top:24px;margin-bottom:48px}
   .ncta-h{font-size:15px;margin-bottom:4px}
   .ncta-sub{font-size:12px;margin-bottom:14px}
   .ncta-phone{padding:14px;font-size:16px}
