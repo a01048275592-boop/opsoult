@@ -422,12 +422,12 @@ const STRENGTHS = [
 ];
 
 const SMART_FEATURES = [
-  { icon: '✏️', title: '맞춤형 UI 설정', desc: '우리 매장에 딱 맞는 메뉴 배치와 결제 동선을 직접 설계하여 계산 시간을 단축하세요.', photo: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80' },
-  { icon: '📊', title: '통합 매출 관리', desc: '배달 앱, 오프라인 결제 데이터를 하나로 모아 실시간 매출 추이를 한눈에 파악합니다.', photo: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80' },
+  { icon: '✏️', title: '맞춤형 UI 설정', desc: '우리 매장에 딱 맞는 메뉴 배치와 결제 동선을 직접 설계하여 계산 시간을 단축하세요.', photo: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=700&q=80' },
+  { icon: '📊', title: '통합 매출 관리', desc: '배달 앱, 오프라인 결제 데이터를 하나로 모아 실시간 매출 추이를 한눈에 파악합니다.', photo: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80' },
   { icon: '🔌', title: '원격 지원', desc: '기기 장애 발생 시, 기다릴 필요 없이 즉시 원격 지원을 통해 문제를 해결해 드립니다.', photo: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80' },
-  { icon: '💡', title: 'AI 매출 분석', desc: '요일별·시간대별 방문 패턴을 분석하여 최적의 운영 시간을 제안합니다.', photo: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=700&q=80' },
-  { icon: '🍽️', title: '테이블 오더 연동', desc: '자리에 앉아 주문부터 결제까지 한 번에 끝내는 테이블 오더 시스템과 완벽하게 연동됩니다.', photo: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700&q=80' },
-  { icon: '⭐', title: '스마트 리뷰 연동', desc: '매장 리뷰와 SNS 피드백을 실시간으로 확인하며 고객 소통을 강화할 수 있습니다.', photo: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=700&q=80' },
+  { icon: '💡', title: 'AI 매출 분석', desc: '요일별·시간대별 방문 패턴을 분석하여 최적의 운영 시간을 제안합니다.', photo: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=700&q=80' },
+  { icon: '🍽️', title: '테이블 오더 연동', desc: '자리에 앉아 주문부터 결제까지 한 번에 끝내는 테이블 오더 시스템과 완벽하게 연동됩니다.', photo: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=700&q=80' },
+  { icon: '⭐', title: '스마트 리뷰 연동', desc: '매장 리뷰와 SNS 피드백을 실시간으로 확인하며 고객 소통을 강화할 수 있습니다.', photo: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=700&q=80' },
 ];
 
 const WHY_US = [
@@ -1369,7 +1369,7 @@ footer .logo{color:#fff}
   .stat-card .n{font-size:22px;font-weight:700;line-height:1.1;letter-spacing:-0.02em}
   .stat-card .n span{font-size:14px;opacity:0.6}
   .stat-card .l{font-size:10.5px;margin-top:4px;line-height:1.25;color:var(--muted-2);letter-spacing:0}
-  .strengths-section{padding:44px 0}
+  .strengths-section{display:none}
   .strengths-tabs{grid-template-columns:1fr;gap:14px;margin-top:16px}
   /* 세로 스택 탭 - 5개 모두 보이게 */
   .strength-menu{display:flex;flex-direction:column;gap:7px}
@@ -1681,49 +1681,6 @@ function renderHome() {
 </div>
 </section>
 
-<section class="block strengths-section">
-<div class="container">
-<div class="section-head" style="margin-bottom:20px;text-align:center">
-<div class="section-tag">Why ${SITE.brandName}</div>
-<h2 class="section-title" style="text-align:center">전국 사장님이 선택한<br><em>${SITE.brandNameKo}의 강점</em></h2>
-</div>
-<div class="strengths-tabs" id="strengthsTabs">
-<div class="strength-menu">${strengthsMenu}</div>
-<div class="strength-panels">${strengthsPanels}</div>
-</div>
-</div>
-</section>
-
-<script>
-(function(){
-  var tabs = document.querySelectorAll('.strength-tab');
-  var panels = document.querySelectorAll('.strength-panel');
-  var wrap = document.getElementById('strengthsTabs');
-  if(!tabs.length || !panels.length || !wrap) return;
-
-  var current = 0;
-  var autoTimer = null;
-  var paused = false;
-
-  function show(idx){
-    if(idx < 0) idx = tabs.length - 1;
-    if(idx >= tabs.length) idx = 0;
-    current = idx;
-    tabs.forEach(function(t, i){ t.classList.toggle('active', i === idx); });
-    panels.forEach(function(p, i){ p.classList.toggle('active', i === idx); });
-  }
-
-  window.selectStrength = function(idx){ show(idx); restartAuto(); };
-
-  function startAuto(){ autoTimer = setInterval(function(){ if(!paused) show(current + 1); }, 5000); }
-  function restartAuto(){ if(autoTimer) clearInterval(autoTimer); startAuto(); }
-
-  wrap.addEventListener('mouseenter', function(){ paused = true; });
-  wrap.addEventListener('mouseleave', function(){ paused = false; });
-  startAuto();
-})();
-</script>
-
 <section class="products-section" id="products">
 <div class="container">
 <div class="section-head">
@@ -1805,6 +1762,49 @@ function renderHome() {
 
   window.addEventListener('resize', function(){ go(current); });
   renderDots();
+  startAuto();
+})();
+</script>
+
+<section class="block strengths-section">
+<div class="container">
+<div class="section-head" style="margin-bottom:20px;text-align:center">
+<div class="section-tag">Why ${SITE.brandName}</div>
+<h2 class="section-title" style="text-align:center">전국 사장님이 선택한<br><em>${SITE.brandNameKo}의 강점</em></h2>
+</div>
+<div class="strengths-tabs" id="strengthsTabs">
+<div class="strength-menu">${strengthsMenu}</div>
+<div class="strength-panels">${strengthsPanels}</div>
+</div>
+</div>
+</section>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll('.strength-tab');
+  var panels = document.querySelectorAll('.strength-panel');
+  var wrap = document.getElementById('strengthsTabs');
+  if(!tabs.length || !panels.length || !wrap) return;
+
+  var current = 0;
+  var autoTimer = null;
+  var paused = false;
+
+  function show(idx){
+    if(idx < 0) idx = tabs.length - 1;
+    if(idx >= tabs.length) idx = 0;
+    current = idx;
+    tabs.forEach(function(t, i){ t.classList.toggle('active', i === idx); });
+    panels.forEach(function(p, i){ p.classList.toggle('active', i === idx); });
+  }
+
+  window.selectStrength = function(idx){ show(idx); restartAuto(); };
+
+  function startAuto(){ autoTimer = setInterval(function(){ if(!paused) show(current + 1); }, 5000); }
+  function restartAuto(){ if(autoTimer) clearInterval(autoTimer); startAuto(); }
+
+  wrap.addEventListener('mouseenter', function(){ paused = true; });
+  wrap.addEventListener('mouseleave', function(){ paused = false; });
   startAuto();
 })();
 </script>
