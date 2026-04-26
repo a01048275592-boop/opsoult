@@ -2688,7 +2688,7 @@ function renderRegionCardTerminalV3(region) {
     : region.coverage;
   // 시군구 칩
   const guChipsHtml = regionGus.length > 0
-    ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}" class="sctv3-gu-chip">${g.name}</a>`).join('')
+    ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}/card-terminal" class="sctv3-gu-chip">${g.name} 카드단말기</a>`).join('')
     : (region.majorDistricts || []).map(d => `<span class="sctv3-gu-chip">${d}</span>`).join('');
   // 본문 톤: 서울은 기존 묘사 유지, 그 외는 region.description 활용
   const regionLeadDesc = region.slug === 'seoul'
@@ -2954,7 +2954,7 @@ function renderRegionProductPage(region, productSlug) {
     ? `${region.name} ${regionGus.length}개 시군구 · ${totalDongCount}개 읍면동`
     : region.coverage;
   const guChipsHtml = regionGus.length > 0
-    ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}" class="spp-gu-chip">${g.name}</a>`).join('')
+    ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}/${productSlug}" class="spp-gu-chip">${g.name} ${kw}</a>`).join('')
     : (region.majorDistricts || []).map(d => `<span class="spp-gu-chip">${d}</span>`).join('');
   
   // 광역별 hero 동적 픽 (매장 사진 + 설치/수리 사진 통합 풀)
@@ -4339,6 +4339,84 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
   });
 }
 
+// [11-V] 동×제품 / 시군구×제품 페이지 공용 본문 변형 뱅크
+// (name, parent, kw, mainKw, regionFullName) → 8개 변형 뱅크 객체
+// 동×제품: name=동, parent=구, regionFullName=광역
+// 시군구×제품: name=시군구, parent=광역, regionFullName=광역
+function _dppVariants(name, parent, kw, mainKw, regionFullName, phoneDisplay) {
+  return {
+    intro: [
+      `${mainKw} 설치를 알아보고 계시는 ${regionFullName} ${parent} ${name} 사장님이라면, ${kw} 한 대를 들이는 일이 단순히 "장비 하나 사는 것"이 아니라는 점부터 짚으셔야 합니다. ${name}처럼 매장 회전율이 높고 업종이 다양한 상권에서는, 어떤 ${kw}를 쓰느냐에 따라 매월 부담하시는 비용과 매장 운영 효율이 크게 달라집니다. 저희 오페리오솔루션은 ${name}을 비롯한 ${parent} 전 지역에서 ${kw} 설치를 전문으로 하고 있으며, 매장 환경을 직접 보고 그 매장에 맞는 기종과 계약 조건을 제안해 드립니다.`,
+      `${name} 일대에서 ${kw}를 새로 들이거나 교체를 고려 중이신 분들이 가장 많이 묻는 질문은 "어디에서 받아야 가장 합리적인가"입니다. ${mainKw} 한 가지로 검색해 보시면 수많은 업체가 나오지만, 정작 ${name} 상권 특성을 이해하고 매장에 직접 방문해서 추천해 주는 곳은 많지 않습니다. 오페리오솔루션은 ${parent} ${name}을 포함한 ${regionFullName} 전 지역에서 ${kw} 설치를 전담해 왔으며, 업종·매장 규모·매출 패턴까지 따져서 최적의 ${kw}를 제안해 드립니다.`,
+      `${regionFullName} ${parent} ${name}에서 ${kw}를 알아보시는 분들께 가장 먼저 말씀드리고 싶은 것은, ${kw} 선택의 기준이 "기능"이 아니라 "운영 비용과 안정성"이라는 점입니다. ${name} 상권에서 ${kw}를 잘못 들이시면 매월 수만 원의 추가 부담이 생기고, 더 큰 문제는 ${kw} 고장 시 매장 영업이 멈춘다는 점입니다. 오페리오솔루션은 ${mainKw} 설치 전문 업체로서, 매장 방문 → 기종 추천 → 빠른 설치 → A/S까지 일괄 책임집니다.`,
+    ],
+    market: [
+      `${name}은 ${regionFullName} ${parent} 안에서도 ${kw} 수요가 꾸준한 지역입니다. 카페·음식점·편의점·미용실·학원·뷰티샵·소매점 등 다양한 업종이 밀집해 있고, 각 업종마다 ${kw}에 요구하는 조건이 미묘하게 다릅니다. 음식점은 영수증 빈도가 높아 ${kw} 안정성이 중요하고, 카페는 결제 속도가 빨라야 하며, 편의점·마트는 다른 장비와의 연동성을 우선 고려해야 합니다. ${mainKw}를 설치하실 때는 매장 업종에 가장 적합한 사양과 옵션을 선택하는 것이 무엇보다 중요합니다.`,
+      `${parent} ${name} 일대에서 ${mainKw}를 찾으시는 사장님 대부분은 매장 오픈을 준비 중이시거나, 기존 ${kw}의 계약 조건이 불만족스러워 교체를 고려하시는 경우입니다. ${name} 상권은 ${regionFullName} 안에서도 매장 신규 오픈과 업종 전환이 빈번한 지역이라, ${kw} 교체 수요가 꾸준합니다. 저희는 ${name}에서 ${kw} 한 대만 따로 설치해 드리기도 하고, 매장 환경에 맞춰 ${kw} 단독 또는 다른 장비와 연동된 형태로 도입해 드리기도 합니다.`,
+      `${name} 같은 ${parent}의 활성 상권에서는 매장 매출이 ${kw} 안정성에 직접 영향을 받습니다. ${mainKw}를 도입하실 때 가장 흔한 실수는 "초기 비용이 싼 곳"을 선택하는 것입니다. 초기 설치비는 무료여도, ${kw} 사용에 따른 월 결제·관리 비용이 다른 업체보다 비싸면 1년 후 사장님이 부담하시는 총액은 훨씬 커집니다. ${regionFullName} ${parent} ${name}에서 ${kw}를 들이실 때는 반드시 1-3년 단위 총비용으로 비교하시기를 권해드립니다.`,
+    ],
+    benefit: [
+      `오페리오솔루션은 ${mainKw} 설치 시 다음 4가지를 보장합니다. 첫째, ${name} 매장 직접 방문을 통한 무료 견적입니다. 매장 도면이나 사진만으로는 알 수 없는 동선·공간·간섭 요소를 직접 확인합니다. 둘째, 설치비 무료 정책입니다(기종에 따라 일부 예외). 셋째, 빠른 ${kw} A/S 대응입니다. ${name} 안이면 빠른 출동, 원격 처리 가능 시 즉시 해결합니다. 넷째, 1:1 사용법 교육입니다. ${kw} 설치 후 사장님과 직원이 바로 사용할 수 있도록 매장에서 직접 시연하고 안내드립니다.`,
+      `${parent} ${name}에서 ${kw}를 저희에게 맡기시면 다른 업체 대비 분명한 차이가 있습니다. ${mainKw}는 단순히 "장비 한 대 들이는 일"이 아니라 매장 운영의 시작점입니다. 저희는 ${kw}만 따로 설치해 드릴 수도 있고, 사장님 매장 상황에 맞춰 다른 장비와 함께 통합 견적을 드릴 수도 있습니다. ${name} 매장에 직접 방문해 가장 합리적인 구성을 제안하는 것이 저희의 일관된 방식입니다.`,
+      `${mainKw}를 들이실 때 사장님께서 꼭 짚어야 할 것이 ${kw}의 "총 소유 비용"입니다. 첫째, 초기 설치비 — 저희는 무료입니다. 둘째, 월 사용료·수수료 — VAN사·통신사 비교를 통해 가장 합리적인 조건을 제안합니다. 셋째, A/S 비용 — 무상 보증 기간 내 무료 처리, 이후에도 ${name} 안이면 출장비 부담이 적습니다. 넷째, 교체·업그레이드 비용 — 신기종 출시 시 우선 안내드립니다. 이 4가지를 모두 따져 보실 수 있도록 견적서에 명확히 표시해 드립니다.`,
+    ],
+    process: [
+      `${mainKw} 설치 진행 순서는 단순합니다. 1단계 전화 또는 카카오톡 상담(약 5분), 2단계 ${name} 매장 직접 방문해 무료 견적, 3단계 기종·계약 조건 확정, 4단계 빠른 일정으로 출장 설치, 5단계 사용법 교육 및 시운전입니다. ${parent} ${name} 안이면 오전 상담 → 오후 설치까지 가능한 경우가 많고, 특수 기종이라도 1-3일 안에 처리됩니다. 설치 후에도 사용 중 궁금한 점이 생기시면 언제든 연락 주십시오.`,
+      `${name}에서 ${kw}를 도입하실 때 저희가 권해드리는 진행 방식은 이렇습니다. 먼저 매장 업종과 평균 매출 규모, 기존 장비 유무를 알려 주십시오. 그 정보만으로도 ${mainKw}에 적합한 기종 2-3가지를 추려 드릴 수 있습니다. 그다음 ${name} 매장 방문해서 콘센트·인터넷·공간 등 설치 환경을 확인하고, 최종 견적과 계약 조건을 확정합니다. 설치 일정은 사장님 영업 시간을 피해 잡아 드리며, 영업 차질이 없도록 빠르게 진행합니다.`,
+    ],
+    industry: [
+      `${name} 매장에서 ${kw}를 가장 많이 도입하시는 업종은 음식점, 카페, 편의점, 미용실, 학원, 뷰티샵 순입니다. 음식점은 ${kw}를 통해 주문 정확도와 결제 속도를 함께 챙기시고, 카페는 결제 편의와 고객 만족도를 동시에 높이십니다. 편의점·마트는 ${kw}와 다른 결제 장비의 연동성을 통해 매장 운영을 효율화하시고, 미용실·뷰티샵은 예약·결제 통합으로 손님 응대 시간을 줄이십니다. ${mainKw} 한 가지로도 매장 운영 방식이 크게 달라집니다.`,
+      `${parent} ${name}에서 ${mainKw}를 도입하시는 분들은 대체로 두 가지 동기 중 하나입니다. 신규 매장 오픈으로 ${kw}가 처음 필요한 경우, 또는 기존 ${kw}의 계약·기능이 마음에 들지 않아 교체하시는 경우입니다. 어느 쪽이든 저희는 ${name} 상권 데이터를 토대로 비슷한 업종·규모의 다른 매장이 어떤 ${kw}를 잘 쓰고 있는지를 참고해 추천해 드립니다. 막연한 스펙 비교가 아니라, 실제 매장에서 검증된 기종을 우선 제안합니다.`,
+      `${name}처럼 다양한 업종이 모여 있는 상권에서는 ${kw} 한 가지를 일률적으로 추천하기 어렵습니다. 회전율이 높은 음식점은 무선 또는 빠른 결제 처리 모델, 카페는 깔끔한 디자인과 결제 속도, 편의점은 다양한 결제 수단 지원, 학원·병원은 회원·고객 관리 연동을 우선 고려해야 합니다. 저희는 ${mainKw} 추천 시 매장 업종 특성을 가장 먼저 확인하며, 사장님의 운영 스타일까지 반영해 기종을 선택해 드립니다.`,
+    ],
+    faq: [
+      [
+        { q: `${name}에서 ${kw} 설치는 얼마나 걸리나요?`, a: `${parent} ${name} 안이면 일반 모델은 오전 상담 후 당일 오후 설치가 가능한 경우가 많습니다. 특수 기종이나 재고 확인이 필요한 경우 1-3일 정도 소요되며, 일정은 사장님 영업 시간에 맞춰 조정해 드립니다.` },
+        { q: `${kw} 설치비와 월 비용은 어떻게 되나요?`, a: `${mainKw}의 경우 설치비 무료가 기본이며, 월 비용은 기종·VAN사·통신사 조건에 따라 달라집니다. 정확한 견적은 매장 환경과 사용 패턴을 보고 계산해 드리며, 1-3년 단위 총 비용 비교 자료도 함께 제공합니다.` },
+        { q: `${name} 매장에 기존 ${kw}가 있는데 교체할 수 있나요?`, a: `네, 기존 ${kw} 위약금이나 계약 잔여 기간이 있으셔도 저희가 함께 검토해 드립니다. 계약 조건이 더 유리하다면 위약금을 부담해도 1-2년 안에 회수되는 경우가 많습니다. 기존 계약서 한 장만 보내 주시면 비교 분석해 드립니다.` },
+      ],
+      [
+        { q: `${mainKw} 견적은 어떻게 받나요?`, a: `전화(${phoneDisplay}) 또는 카카오톡으로 매장 위치(${name})와 업종, 매출 규모만 알려 주시면 1분 안에 예상 견적을 안내드리고, 정식 견적은 ${name} 매장 방문 후 무료로 제공해 드립니다.` },
+        { q: `${kw} 고장 시 ${name} 안에서 빠른 A/S 가능한가요?`, a: `네, 대부분의 문제는 전화·원격으로 해결되며(약 7할), 원격으로 안 되는 경우 ${name} 매장에 빠른 출장 대응을 원칙으로 합니다. 예비기를 들고 방문하므로 영업 차질이 거의 없습니다.` },
+        { q: `${kw}만 따로 설치할 수 있나요?`, a: `${mainKw} 단독으로도 설치 가능합니다. 다만 결제·매장 운영 장비를 함께 도입하시면 데이터 연동과 견적 측면에서 모두 유리한 경우가 많아, 매장 상황을 보고 적합한 구성을 추천해 드립니다.` },
+      ],
+      [
+        { q: `${name} 매장이 작은데 ${kw} 들일 공간이 부족하면 어떻게 하나요?`, a: `${kw} 기종 중에는 무선·소형·벽걸이형도 있어 좁은 공간에도 충분히 설치 가능합니다. ${parent} ${name} 매장에 직접 방문해 공간을 보고 가장 적합한 기종을 추천해 드립니다.` },
+        { q: `${mainKw} 설치 후 직원 교육은 어떻게 진행되나요?`, a: `설치 당일 사장님과 직원분들께 매장에서 직접 1:1로 사용법을 교육해 드립니다. 추가로 메뉴얼과 동영상 가이드도 제공하며, 사용 중 어려움이 있으시면 전화로 즉시 안내드립니다.` },
+        { q: `${name}의 다른 매장은 어떤 ${kw}를 많이 쓰나요?`, a: `${parent} ${name} 일대에서 가장 많이 도입되는 ${kw} 모델은 업종에 따라 다릅니다. 비슷한 업종·매출 규모의 사례를 익명화해서 보여 드릴 수 있으니, 상담 시 요청해 주시면 참고용 자료를 함께 보내 드립니다.` },
+      ],
+    ],
+    effect: [
+      `${mainKw}를 제대로 들이시면 매장 운영 방식이 눈에 띄게 달라집니다. 결제 속도가 빨라지고, 매출 데이터가 자동으로 정리되며, 직원이 손쉽게 운영할 수 있어 인건비 부담도 줄어듭니다. ${name} 사장님께서 가장 만족하시는 부분은 "신경 쓸 일이 줄어든다"는 점입니다. 장비 한 대를 잘 들이는 것만으로 매장 운영 부담이 크게 가벼워집니다.`,
+      `${name}에서 ${kw}를 ${parent} 동종 업종 평균보다 잘 운영하고 계신 매장들의 공통점은 한 가지입니다. ${kw}를 단순한 결제·관리 장비로 보는 것이 아니라, 매장 운영 데이터의 시작점으로 활용하신다는 점입니다. 매출 패턴, 인기 메뉴, 시간대별 손님 수 같은 정보가 모두 ${kw}를 통해 누적되며, 이 데이터는 매장 개선과 신규 출점 결정의 근거가 됩니다.`,
+      `오페리오솔루션은 ${parent} ${name}을 포함한 ${regionFullName} 전 지역에서 ${kw} 설치를 전담합니다. ${mainKw} 한 건이라도 매장에 직접 방문해 환경을 보고 추천해 드리며, 설치 후에도 빠른 A/S와 무료 사용법 교육을 보장합니다. ${name} 매장 사장님이 본업에 집중하실 수 있도록, 장비 관련된 일은 저희가 책임지겠습니다.`,
+    ],
+    check: [
+      [
+        `${name} 매장의 ${kw} 사용 기간(연 단위)과 결제 빈도를 미리 정리하기`,
+        `현재 사용 중인 ${kw}의 월 비용·VAN사·계약 만료일 확인하기`,
+        `매장 콘센트·인터넷 환경(유선·무선)을 점검하기`,
+        `${kw}와 함께 쓰실 다른 장비 유무 확인하기`,
+        `매장 평면도 또는 ${name} 매장 사진 1-2장 준비하기`,
+      ],
+      [
+        `${kw} 사용 시간대(영업 시간 + 마감 정산 시간)를 미리 알려 주기`,
+        `${parent} ${name} 매장 업종과 평균 객단가, 일 매출 규모 정리`,
+        `${kw} 외 다른 결제·관리 시스템 필요 여부 확인`,
+        `직원 수와 ${kw} 운영 담당자 미리 정해 두기`,
+        `기존 ${kw} 위약금 또는 잔여 계약 조건 확인`,
+      ],
+      [
+        `${name} 매장 면적과 ${kw}를 놓을 공간(카운터·홀·창구) 미리 정하기`,
+        `${kw}에 필요한 결제 수단(IC·MS·NFC·QR·페이류) 우선순위 정리`,
+        `${parent} 인근 매장의 ${kw} 사용 사례 참고하기`,
+        `${kw} 설치 후 직원 교육 일정 미리 잡기`,
+        `${kw} 고장 시 비상 대응 시나리오 미리 점검`,
+      ],
+    ],
+  };
+}
+
 // [11-D] 읍·면·동 × 제품 페이지 — /region/{sido}/{gu}/{dong}/{product}
 // 예: 송도동 포스기, 연수동 키오스크 같은 long-tail SEO 키워드 페이지 (1500~2000자)
 function renderDongProductPage(dong, sidoSlug, regionName, product) {
@@ -4371,96 +4449,21 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
   // 다른 제품 칩 (동 페이지의 다른 제품)
   const otherProductsHtml = PRODUCTS.filter(p => p.slug !== productSlug).map(p => `<a href="/region/${sidoSlug}/${gu.slug}/${dong.slug}/${p.slug}" class="dpp-prod-chip">${p.emoji} ${name} ${p.name}</a>`).join('');
   
-  // 제품별 본문 변형 뱅크 (메인 키워드 자연 삽입, 한글 1500-2000자)
-  const introVariants = [
-    `${mainKw} 설치를 알아보고 계시는 ${regionFullName} ${parent} ${name} 사장님이라면, ${kw} 한 대를 들이는 일이 단순히 "장비 하나 사는 것"이 아니라는 점부터 짚으셔야 합니다. ${name}처럼 매장 회전율이 높고 업종이 다양한 상권에서는, 어떤 ${kw}를 쓰느냐에 따라 매월 부담하시는 비용과 매장 운영 효율이 크게 달라집니다. 저희 오페리오솔루션은 ${name}을 비롯한 ${parent} 전 지역에서 ${kw} 설치를 전문으로 하고 있으며, 매장 환경을 직접 보고 그 매장에 맞는 기종과 계약 조건을 제안해 드립니다.`,
-    `${name} 일대에서 ${kw}를 새로 들이거나 교체를 고려 중이신 분들이 가장 많이 묻는 질문은 "어디에서 받아야 가장 합리적인가"입니다. ${mainKw} 한 가지로 검색해 보시면 수많은 업체가 나오지만, 정작 ${name} 상권 특성을 이해하고 매장에 직접 방문해서 추천해 주는 곳은 많지 않습니다. 오페리오솔루션은 ${parent} ${name}을 포함한 ${regionFullName} 전 지역에서 ${kw} 설치를 전담해 왔으며, 업종·매장 규모·매출 패턴까지 따져서 최적의 ${kw}를 제안해 드립니다.`,
-    `${regionFullName} ${parent} ${name}에서 ${kw}를 알아보시는 분들께 가장 먼저 말씀드리고 싶은 것은, ${kw} 선택의 기준이 "기능"이 아니라 "운영 비용과 안정성"이라는 점입니다. ${name} 상권에서 ${kw}를 잘못 들이시면 매월 수만 원의 추가 부담이 생기고, 더 큰 문제는 ${kw} 고장 시 매장 영업이 멈춘다는 점입니다. 오페리오솔루션은 ${mainKw} 설치 전문 업체로서, 매장 방문 → 기종 추천 → 빠른 설치 → A/S까지 일괄 책임집니다.`,
-  ];
-  const introP = introVariants[_seoulHash('di-'+varKey) % introVariants.length];
-  
-  const marketVariants = [
-    `${name}은 ${regionFullName} ${parent} 안에서도 ${kw} 수요가 꾸준한 지역입니다. 카페·음식점·편의점·미용실·학원·뷰티샵·소매점 등 다양한 업종이 밀집해 있고, 각 업종마다 ${kw}에 요구하는 조건이 미묘하게 다릅니다. 음식점은 영수증 빈도가 높아 ${kw} 안정성이 중요하고, 카페는 결제 속도가 빨라야 하며, 편의점·마트는 다른 장비와의 연동성을 우선 고려해야 합니다. ${mainKw}를 설치하실 때는 매장 업종에 가장 적합한 사양과 옵션을 선택하는 것이 무엇보다 중요합니다.`,
-    `${parent} ${name} 일대에서 ${mainKw}를 찾으시는 사장님 대부분은 매장 오픈을 준비 중이시거나, 기존 ${kw}의 계약 조건이 불만족스러워 교체를 고려하시는 경우입니다. ${name} 상권은 ${regionFullName} 안에서도 매장 신규 오픈과 업종 전환이 빈번한 지역이라, ${kw} 교체 수요가 꾸준합니다. 저희는 ${name}에서 ${kw} 한 대만 따로 설치해 드리기도 하고, 카드단말기·포스기·키오스크·CCTV·테이블오더 등을 패키지로 묶어 도입해 드리기도 합니다.`,
-    `${name} 같은 ${parent}의 활성 상권에서는 매장 매출이 ${kw} 안정성에 직접 영향을 받습니다. ${mainKw}를 도입하실 때 가장 흔한 실수는 "초기 비용이 싼 곳"을 선택하는 것입니다. 초기 설치비는 무료여도, ${kw} 사용에 따른 월 결제·관리 비용이 다른 업체보다 비싸면 1년 후 사장님이 부담하시는 총액은 훨씬 커집니다. ${regionFullName} ${parent} ${name}에서 ${kw}를 들이실 때는 반드시 1-3년 단위 총비용으로 비교하시기를 권해드립니다.`,
-  ];
-  const marketP = marketVariants[_seoulHash('dm-'+varKey) % marketVariants.length];
-  
-  const benefitVariants = [
-    `오페리오솔루션은 ${mainKw} 설치 시 다음 4가지를 보장합니다. 첫째, ${name} 매장 직접 방문을 통한 무료 견적입니다. 매장 도면이나 사진만으로는 알 수 없는 동선·공간·간섭 요소를 직접 확인합니다. 둘째, 설치비 무료 정책입니다(기종에 따라 일부 예외). 셋째, 빠른 ${product.name} A/S 대응입니다. ${name} 안이면 빠른 출동, 원격 처리 가능 시 즉시 해결합니다. 넷째, 1:1 사용법 교육입니다. ${kw} 설치 후 사장님과 직원이 바로 사용할 수 있도록 매장에서 직접 시연하고 안내드립니다.`,
-    `${parent} ${name}에서 ${kw}를 저희에게 맡기시면 다른 업체 대비 분명한 차이가 있습니다. ${kw} 단독 설치보다 다른 결제·매장 장비와 함께 통합으로 도입하실 때 더 큰 시너지가 납니다. 카드단말기와 포스기를 함께 들이시면 결제 데이터가 매출 분석으로 자동 연결되고, 키오스크와 테이블오더를 함께 들이시면 ${name} 매장의 인건비가 크게 줄어듭니다. ${mainKw} 한 가지만으로도 충분히 가치가 있지만, 통합 도입을 검토해 보시면 운영이 한결 간결해집니다.`,
-    `${mainKw}를 들이실 때 사장님께서 꼭 짚어야 할 것이 ${kw}의 "총 소유 비용"입니다. 첫째, 초기 설치비 — 저희는 무료입니다. 둘째, 월 사용료·수수료 — VAN사·통신사 비교를 통해 가장 합리적인 조건을 제안합니다. 셋째, A/S 비용 — 무상 보증 기간 내 무료 처리, 이후에도 ${name} 안이면 출장비 부담이 적습니다. 넷째, 교체·업그레이드 비용 — 신기종 출시 시 우선 안내드립니다. 이 4가지를 모두 따져 보실 수 있도록 견적서에 명확히 표시해 드립니다.`,
-  ];
-  const benefitP = benefitVariants[_seoulHash('db-'+varKey) % benefitVariants.length];
-  
-  const processVariants = [
-    `${mainKw} 설치 진행 순서는 단순합니다. 1단계 전화 또는 카카오톡 상담(약 5분), 2단계 ${name} 매장 직접 방문해 무료 견적, 3단계 기종·계약 조건 확정, 4단계 빠른 일정으로 출장 설치, 5단계 사용법 교육 및 시운전입니다. ${parent} ${name} 안이면 오전 상담 → 오후 설치까지 가능한 경우가 많고, 특수 기종이라도 1-3일 안에 처리됩니다. 설치 후에도 사용 중 궁금한 점이 생기시면 언제든 연락 주십시오.`,
-    `${name}에서 ${kw}를 도입하실 때 저희가 권해드리는 진행 방식은 이렇습니다. 먼저 매장 업종과 평균 매출 규모, 기존 장비 유무를 알려 주십시오. 그 정보만으로도 ${mainKw}에 적합한 기종 2-3가지를 추려 드릴 수 있습니다. 그다음 ${name} 매장 방문해서 콘센트·인터넷·공간 등 설치 환경을 확인하고, 최종 견적과 계약 조건을 확정합니다. 설치 일정은 사장님 영업 시간을 피해 잡아 드리며, 영업 차질이 없도록 빠르게 진행합니다.`,
-  ];
-  const processP = processVariants[_seoulHash('dp-'+varKey) % processVariants.length];
-  
-  const industryVariants = [
-    `${name} 매장에서 ${kw}를 가장 많이 도입하시는 업종은 음식점, 카페, 편의점, 미용실, 학원, 뷰티샵 순입니다. 음식점은 ${kw}를 통해 주문 정확도와 결제 속도를 함께 챙기시고, 카페는 결제 편의와 고객 만족도를 동시에 높이십니다. 편의점·마트는 ${kw}와 다른 결제 장비의 연동성을 통해 매장 운영을 효율화하시고, 미용실·뷰티샵은 예약·결제 통합으로 손님 응대 시간을 줄이십니다. ${mainKw} 한 가지로도 매장 운영 방식이 크게 달라집니다.`,
-    `${parent} ${name}에서 ${mainKw}를 도입하시는 분들은 대체로 두 가지 동기 중 하나입니다. 신규 매장 오픈으로 ${kw}가 처음 필요한 경우, 또는 기존 ${kw}의 계약·기능이 마음에 들지 않아 교체하시는 경우입니다. 어느 쪽이든 저희는 ${name} 상권 데이터를 토대로 비슷한 업종·규모의 다른 매장이 어떤 ${kw}를 잘 쓰고 있는지를 참고해 추천해 드립니다. 막연한 스펙 비교가 아니라, 실제 매장에서 검증된 기종을 우선 제안합니다.`,
-    `${name}처럼 다양한 업종이 모여 있는 상권에서는 ${kw} 한 가지를 일률적으로 추천하기 어렵습니다. 회전율이 높은 음식점은 무선 또는 빠른 결제 처리 모델, 카페는 깔끔한 디자인과 결제 속도, 편의점은 다양한 결제 수단 지원, 학원·병원은 회원·고객 관리 연동을 우선 고려해야 합니다. 저희는 ${mainKw} 추천 시 매장 업종 특성을 가장 먼저 확인하며, 사장님의 운영 스타일까지 반영해 기종을 선택해 드립니다.`,
-  ];
-  const industryP = industryVariants[_seoulHash('din-'+varKey) % industryVariants.length];
-  
-  const faqVariants = [
-    [
-      { q: `${name}에서 ${kw} 설치는 얼마나 걸리나요?`, a: `${parent} ${name} 안이면 일반 모델은 오전 상담 후 당일 오후 설치가 가능한 경우가 많습니다. 특수 기종이나 재고 확인이 필요한 경우 1-3일 정도 소요되며, 일정은 사장님 영업 시간에 맞춰 조정해 드립니다.` },
-      { q: `${kw} 설치비와 월 비용은 어떻게 되나요?`, a: `${mainKw}의 경우 설치비 무료가 기본이며, 월 비용은 기종·VAN사·통신사 조건에 따라 달라집니다. 정확한 견적은 매장 환경과 사용 패턴을 보고 계산해 드리며, 1-3년 단위 총 비용 비교 자료도 함께 제공합니다.` },
-      { q: `${name} 매장에 기존 ${kw}가 있는데 교체할 수 있나요?`, a: `네, 기존 ${kw} 위약금이나 계약 잔여 기간이 있으셔도 저희가 함께 검토해 드립니다. 계약 조건이 더 유리하다면 위약금을 부담해도 1-2년 안에 회수되는 경우가 많습니다. 기존 계약서 한 장만 보내 주시면 비교 분석해 드립니다.` },
-    ],
-    [
-      { q: `${mainKw} 견적은 어떻게 받나요?`, a: `전화(${SITE.phoneDisplay}) 또는 카카오톡으로 매장 위치(${name})와 업종, 매출 규모만 알려 주시면 1분 안에 예상 견적을 안내드리고, 정식 견적은 ${name} 매장 방문 후 무료로 제공해 드립니다.` },
-      { q: `${kw} 고장 시 ${name} 안에서 빠른 A/S 가능한가요?`, a: `네, 대부분의 문제는 전화·원격으로 해결되며(약 7할), 원격으로 안 되는 경우 ${name} 매장에 빠른 출장 대응을 원칙으로 합니다. 예비기를 들고 방문하므로 영업 차질이 거의 없습니다.` },
-      { q: `${kw}만 따로 설치할 수 있나요? 다른 장비와 함께 들여야 하나요?`, a: `${mainKw} 단독으로도 설치 가능합니다. 다만 카드단말기·포스기·키오스크·CCTV 등을 함께 도입하시면 데이터 연동과 견적 측면에서 모두 유리해 패키지 도입을 검토하시는 분이 많습니다.` },
-    ],
-    [
-      { q: `${name} 매장이 작은데 ${kw} 들일 공간이 부족하면 어떻게 하나요?`, a: `${kw} 기종 중에는 무선·소형·벽걸이형도 있어 좁은 공간에도 충분히 설치 가능합니다. ${parent} ${name} 매장에 직접 방문해 공간을 보고 가장 적합한 기종을 추천해 드립니다.` },
-      { q: `${mainKw} 설치 후 직원 교육은 어떻게 진행되나요?`, a: `설치 당일 사장님과 직원분들께 매장에서 직접 1:1로 사용법을 교육해 드립니다. 추가로 메뉴얼과 동영상 가이드도 제공하며, 사용 중 어려움이 있으시면 전화로 즉시 안내드립니다.` },
-      { q: `${name}의 다른 매장은 어떤 ${kw}를 많이 쓰나요?`, a: `${parent} ${name} 일대에서 가장 많이 도입되는 ${kw} 모델은 업종에 따라 다릅니다. 비슷한 업종·매출 규모의 사례를 익명화해서 보여 드릴 수 있으니, 상담 시 요청해 주시면 참고용 자료를 함께 보내 드립니다.` },
-    ],
-  ];
-  const faqs = faqVariants[_seoulHash('df-'+varKey) % faqVariants.length];
+  // 제품별 본문 변형 뱅크 (외부 _dppVariants에서 가져옴 — 동×제품·시군구×제품 공유)
+  const _v = _dppVariants(name, parent, kw, mainKw, regionFullName, SITE.phoneDisplay);
+  const introP = _v.intro[_seoulHash('di-'+varKey) % _v.intro.length];
+  const marketP = _v.market[_seoulHash('dm-'+varKey) % _v.market.length];
+  const benefitP = _v.benefit[_seoulHash('db-'+varKey) % _v.benefit.length];
+  const processP = _v.process[_seoulHash('dp-'+varKey) % _v.process.length];
+  const industryP = _v.industry[_seoulHash('din-'+varKey) % _v.industry.length];
+  const faqs = _v.faq[_seoulHash('df-'+varKey) % _v.faq.length];
   const faqHtml = faqs.map(f => `
     <div class="dpp-faq-item">
       <div class="dpp-faq-q"><span class="dpp-faq-q-mark">Q.</span>${f.q}</div>
       <div class="dpp-faq-a">${f.a}</div>
     </div>`).join('');
-  
-  const effectVariants = [
-    `${mainKw}를 제대로 들이시면 매장 운영 방식이 눈에 띄게 달라집니다. 결제 속도가 빨라지고, 매출 데이터가 자동으로 정리되며, 직원이 손쉽게 운영할 수 있어 인건비 부담도 줄어듭니다. ${name} 사장님께서 가장 만족하시는 부분은 "신경 쓸 일이 줄어든다"는 점입니다. 장비 한 대를 잘 들이는 것만으로 매장 운영 부담이 크게 가벼워집니다.`,
-    `${name}에서 ${kw}를 ${parent} 동종 업종 평균보다 잘 운영하고 계신 매장들의 공통점은 한 가지입니다. ${kw}를 단순한 결제·관리 장비로 보는 것이 아니라, 매장 운영 데이터의 시작점으로 활용하신다는 점입니다. 매출 패턴, 인기 메뉴, 시간대별 손님 수 같은 정보가 모두 ${kw}를 통해 누적되며, 이 데이터는 매장 개선과 신규 출점 결정의 근거가 됩니다.`,
-    `오페리오솔루션은 ${parent} ${name}을 포함한 ${regionFullName} 전 지역에서 ${kw}를 비롯한 매장 결제·운영 장비 설치를 전담합니다. ${mainKw} 한 건이라도 매장에 직접 방문해 환경을 보고 추천해 드리며, 설치 후에도 빠른 A/S와 무료 사용법 교육을 보장합니다. ${name} 매장 사장님이 본업에 집중하실 수 있도록, 장비 관련된 일은 저희가 책임지겠습니다.`,
-  ];
-  const effectP = effectVariants[_seoulHash('de-'+varKey) % effectVariants.length];
-  
-  const checkVariants = [
-    [
-      `${name} 매장의 ${kw} 사용 기간(연 단위)과 결제 빈도를 미리 정리하기`,
-      `현재 사용 중인 ${kw}의 월 비용·VAN사·계약 만료일 확인하기`,
-      `매장 콘센트·인터넷 환경(유선·무선)을 점검하기`,
-      `${kw}와 함께 쓰실 다른 장비(포스기·CCTV 등) 유무 확인하기`,
-      `매장 평면도 또는 ${name} 매장 사진 1-2장 준비하기`,
-    ],
-    [
-      `${kw} 사용 시간대(영업 시간 + 마감 정산 시간)를 미리 알려 주기`,
-      `${parent} ${name} 매장 업종과 평균 객단가, 일 매출 규모 정리`,
-      `${kw} 외 다른 결제·관리 시스템(배달 앱 연동 등) 필요 여부 확인`,
-      `직원 수와 ${kw} 운영 담당자 미리 정해 두기`,
-      `기존 ${kw} 위약금 또는 잔여 계약 조건 확인`,
-    ],
-    [
-      `${name} 매장 면적과 ${kw}를 놓을 공간(카운터·홀·창구) 미리 정하기`,
-      `${kw}에 필요한 결제 수단(IC·MS·NFC·QR·페이류) 우선순위 정리`,
-      `${parent} 인근 매장의 ${kw} 사용 사례 참고하기`,
-      `${kw} 설치 후 직원 교육 일정 미리 잡기`,
-      `${kw} 고장 시 비상 대응 시나리오 미리 점검`,
-    ],
-  ];
-  const checks = checkVariants[_seoulHash('dch-'+varKey) % checkVariants.length];
+  const effectP = _v.effect[_seoulHash('de-'+varKey) % _v.effect.length];
+  const checks = _v.check[_seoulHash('dch-'+varKey) % _v.check.length];
   const checkHtml = checks.map(c => `<li><span class="dpp-check">✓</span><div>${c}</div></li>`).join('');
   
   const body = `
@@ -4575,6 +4578,268 @@ ${neighbors.length > 0 ? `<section class="dpp-sec">
     title: `${mainKw} 설치 가이드 — ${regionFullName} ${parent} ${name} | 오페리오솔루션`,
     description: `${regionFullName} ${parent} ${name}에서 ${kw} 설치를 알아보세요. ${mainKw} 무료 견적, 빠른 방문 설치, A/S 보장. 매장에 맞는 ${kw}를 전문가가 추천해 드립니다.`,
     canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/${dong.slug}/${productSlug}`,
+    body,
+  });
+}
+
+// [11-E-V] 시·군·구 × 제품 페이지 전용 변형 뱅크 (광역×제품과 다른 텍스트로 차별화)
+// (guName, kw, action, actionH, salt) → 본문 + 섹션 제목 변형 객체
+function _sgppV(guName, kw, action, actionH, phoneDisplay, salt) {
+  const h = (k) => _seoulHash(salt+'-'+k);
+  // 인트로 본문 변형 (시군구 컨텍스트 — 광역과 다른 톤)
+  const intro = [
+    `${guName}에서 ${kw}를 알아보고 계시다면, 가장 먼저 확인해야 할 것은 매장 환경에 맞는 기종과 합리적인 운영 비용입니다. 오페리오솔루션은 ${guName} 일대 매장 사장님들의 ${kw} ${actionH} 의뢰를 다수 처리해 왔으며, 매장에 직접 방문해 동선·콘센트·결제 패턴을 확인한 뒤 가장 적합한 모델을 추천해 드립니다.`,
+    
+    `${guName} 매장 사장님께서 ${kw} ${actionH}를 검토하실 때 가장 중요한 것은 "당장의 설치비"가 아니라 "1-2년 누적 운영비"입니다. 오페리오솔루션은 ${guName} 인근 매장 데이터를 기반으로, 비슷한 규모·업종의 다른 매장이 어떤 조건으로 ${kw}를 쓰고 있는지 비교해 드린 뒤 가장 합리적인 안을 제안해 드립니다.`,
+  ];
+  // 비용 본문
+  const cost = [
+    `${guName} 매장의 ${kw} ${actionH} 비용은 무료가 기본입니다. VAN사 제휴 ${kw}의 경우 ${actionH}비 0원·월 이용료 0원으로 진행되며, 카드 결제 시 발생하는 VAN사 수수료만 정상 부과됩니다. 패키지로 다른 장비를 함께 도입하시면 추가 할인이 적용됩니다.`,
+    
+    `${kw}의 ${guName} 표준 ${actionH} 조건은 설치비 무료, 월 이용료 무료, A/S 무상 보증입니다. 별도로 부담하시는 비용은 카드 결제 시 발생하는 VAN사 수수료뿐이며, 이마저도 매장 결제 패턴에 따라 가장 유리한 VAN사를 골라 드립니다.`,
+  ];
+  // 상세 안내
+  const detail = [
+    `${guName} 매장에 ${kw}를 도입하면 단순히 결제·주문 처리만 빨라지는 것이 아니라, 매출 데이터 누적·재고 자동화·인건비 절감까지 동시에 해결됩니다. 오페리오솔루션은 ${guName} 매장 환경(좌석 수, 카운터 위치, 인터넷 환경, 배달 앱 연동 여부)을 먼저 확인한 뒤, 그 매장에서 가장 효율적인 ${kw} 운영 방식을 안내드립니다.`,
+    
+    `${guName}에서 ${kw}를 새로 들이거나 교체를 검토하실 때는, 단가가 아니라 매장 영업 시간대와 결제 패턴에 맞는 기종을 고르는 것이 핵심입니다. 오페리오솔루션은 ${guName} 매장 방문 시 결제 빈도, 영수증 처리량, 직원 수까지 확인한 뒤 적합한 ${kw}를 2-3개로 압축해 추천해 드립니다.`,
+  ];
+  // 도입 효과
+  const effect = [
+    `${guName} 매장에 ${kw}를 도입하시면 매출 회전이 빨라지고, 결제·주문 누락이 줄며, 직원이 매장 운영 본업에 더 많은 시간을 쓸 수 있습니다. 오페리오솔루션은 ${actionH} 후에도 정기적으로 매출 데이터·VAN사 수수료를 함께 점검해 드려, ${guName} 사장님께서 운영 부담 없이 본업에 집중하실 수 있도록 지원합니다.`,
+    
+    `${guName}에서 오페리오솔루션과 ${kw}를 들이신 사장님들이 공통으로 말씀하시는 것은 두 가지입니다. 첫째, 결제·주문이 빨라져 손님이 매장에 머무는 흐름이 달라졌다는 것. 둘째, A/S 대응이 빠르고 사용 중 의문이 생겼을 때 바로 답을 받을 수 있다는 것. 저희는 ${guName} 매장 한 곳을 ${actionH}하더라도 이 두 가지 기준을 지킵니다.`,
+  ];
+  // FAQ (시군구 전용 — 광역×제품과 다른 질문 + 답변)
+  const faqs = [
+    [
+      { q: `${guName} 안이면 어디든 출장이 가능한가요?`, a: `네, ${guName} 전 지역 출장 가능합니다. 큰 차로 한 번 이동 후 가장 빠른 일정으로 설치해드리며, 긴급하시면 당일 처리도 됩니다. 먼저 전화로 업종·매장 규모만 알려 주시면 일정이 바로 잡힙니다.` },
+      { q: `정말 설치비가 안 드나요?`, a: `네, 저희가 VAN사와 맺은 계약 구조상 단말기 원가가 VAN사 쪽에서 상쇄되는 방식입니다. 사장님께서 내시는 설치비를 이용료·교육비는 0원이고, 카드 결제 발생 시 건당 VAN사 수수료만 정상 부과됩니다. 계약서에도 동일하게 명시됩니다.` },
+      { q: `한 번에 여러 장비를 놓으면 뭐가 좋나요?`, a: `카드단말기·포스기·키오스크·테이블오더·CCTV가 서로 연동되도록 한 번에 세팅됩니다. 나중에 따로따로 설치하시면 연동 호환성 문제가 생기거나 같은 작업을 두 번 반복해야 합니다. 한 번에 설치하시면 패키지 할인도 들어가고, 한 명의 기사가 끝까지 책임지기 때문에 A/S 책임 소재도 명확해집니다.` },
+      { q: `고장 나면 어떻게 대응하시나요?`, a: `먼저 전화 또는 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${guName} 담당 기사가 직접 매장으로 출동하며, 긴급한 경우 당일 처리됩니다.` },
+      { q: `매장을 정리하는 데 철거도 해주시나요?`, a: `${guName} 내 매장·사무실·상가 정리까지 처리합니다. 임대인 원상복구 조건을 먼저 확인해 정확한 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 희망리턴패키지 보조금 신청도 같이 준비해드립니다.` },
+    ],
+    [
+      { q: `${guName} 매장이 작은데 설치 가능한가요?`, a: `${kw}는 무선·소형·벽걸이형 모델도 있어 좁은 공간에 충분히 들어갑니다. ${guName} 매장에 직접 방문해 카운터 폭, 콘센트 위치, 인터넷 환경을 보고 가장 작은 폼팩터로 추천해 드립니다.` },
+      { q: `견적은 어떻게 받나요?`, a: `전화(${phoneDisplay}) 또는 카카오톡으로 매장 위치(${guName})와 업종, 평균 매출만 알려 주시면 1분 안에 예상 견적을 안내드리고, 매장 방문 후 정식 견적은 무료로 드립니다.` },
+      { q: `기존 ${kw}가 있는데 교체할 수 있나요?`, a: `네, 위약금이나 잔여 계약 기간이 있으셔도 함께 검토해 드립니다. 새 계약 조건이 더 유리하면 위약금을 부담해도 1-2년 안에 회수되는 경우가 많습니다. 기존 계약서 한 장만 보내 주시면 비교 분석해 드립니다.` },
+      { q: `${guName} 안에서 다른 매장은 어떤 ${kw}를 쓰나요?`, a: `업종에 따라 다릅니다. 비슷한 업종·매출 규모의 ${guName} 사례를 익명화해서 보여 드릴 수 있으니, 상담 시 요청해 주시면 참고용 자료를 보내 드립니다.` },
+      { q: `설치 후 직원 교육은 어떻게 하나요?`, a: `설치 당일 ${guName} 매장에서 사장님과 직원분께 1:1로 사용법을 알려 드립니다. 메뉴얼·동영상 가이드도 함께 보내 드리며, 사용 중 막히는 부분이 있으면 전화로 즉시 안내드립니다.` },
+    ],
+  ];
+  // 섹션 제목 풀 (allpay 차별화 — 다양한 동의어/관련 키워드)
+  const titles = {
+    intro:    ['도입 가이드', '시작 안내', `${actionH} 흐름`][h('ti') % 3],
+    process:  ['진행 단계', `${actionH} 절차`, '도입 프로세스'][h('tp') % 3],
+    cost:     ['가격대 안내', '투자 금액', '비용 가이드'][h('tc') % 3],
+    industry: ['활용 업종', '맞춤 업종', '도입 사례 업종'][h('tin') % 3],
+    check:    ['필수 체크사항', '준비할 것들', '사전 점검'][h('tch') % 3],
+    detail:   ['심화 가이드', '운영 상세', '전문 안내'][h('td') % 3],
+    precheck: ['도입 전 검토', '사전 준비 사항', '도입 사전 체크'][h('tpc') % 3],
+    guide:    ['업종별 활용', '업종별 솔루션', '업종별 적용 가이드'][h('tg') % 3],
+    faq:      ['사장님 Q&A', '자주 받는 문의', '${guName} FAQ'][h('tf') % 3].replace('${guName}', guName),
+    effect:   ['도입 후 변화', '개선 효과', '운영 성과'][h('te') % 3],
+    nearby:   ['인근 동 가이드', '읍·면·동 ' + actionH + ' 안내', '주변 지역 안내'][h('tn') % 3],
+  };
+  return {
+    introP: intro[h('i') % intro.length],
+    costP: cost[h('c') % cost.length],
+    detailP: detail[h('d') % detail.length],
+    effectP: effect[h('e') % effect.length],
+    faqs: faqs[h('f') % faqs.length],
+    titles,
+  };
+}
+
+// [11-E] 시·군·구 × 제품 페이지 — /region/{sido}/{gu}/{product}
+// 광역×제품의 spp-* 디자인을 사용하되, 본문·섹션 제목은 시군구 전용 변형 뱅크 사용
+function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
+  const productSlug = product.slug;
+  const cfg = _SPP_CONFIG[productSlug];
+  if (!cfg) return null;
+  
+  sidoSlug = sidoSlug || 'seoul';
+  regionName = regionName || '서울';
+  const regionFullName = sidoSlug === 'seoul' ? '서울특별시' : regionName;
+  const guName = gu.name;
+  const guFullName = `${regionFullName} ${guName}`;
+  const kw = cfg.kw;
+  const action = cfg.action;
+  const actionH = cfg.actionH;
+  const dongs = gu.dongs || [];
+  
+  // 시군구 전용 변형 뱅크 호출
+  const _v = _sgppV(guName, kw, action, actionH, SITE.phoneDisplay, sidoSlug+'-'+gu.slug+'-'+productSlug);
+  const T = _v.titles;
+  
+  // 체크리스트 (광역×제품 풀 그대로 — 사이즈 절약)
+  const checklistHtml = _SPP_CHECKLIST.map(c => `<li><span class="spp-check">✓</span><div>${c}</div></li>`).join('');
+  const removalChecklistHtml = _SPP_REMOVAL_CHECKLIST.map(c => `<li><span class="spp-check">✓</span><div>${c}</div></li>`).join('');
+  const checklist = productSlug === 'removal' ? removalChecklistHtml : checklistHtml;
+  
+  const precheckData = productSlug === 'removal' ? _SPP_PRECHECK.removal : _SPP_PRECHECK.default;
+  const precheckHtml = precheckData.map(c => `<li><span class="spp-check">✓</span><div>${c.replace(/\{kw\}/g, kw)}</div></li>`).join('');
+  
+  // 시군구 안 동 칩
+  const dongChipsHtml = dongs.length > 0
+    ? dongs.map(d => `<a href="/region/${sidoSlug}/${gu.slug}/${d.slug}/${productSlug}" class="spp-gu-chip">${d.name} ${kw}</a>`).join('')
+    : '';
+  
+  // 인근 시군구 칩
+  const allGus = REGIONS_DATA[sidoSlug] || [];
+  const nearGus = allGus.filter(g => g.slug !== gu.slug).slice(0, 16);
+  const nearGuChipsHtml = nearGus.map(g => `<a href="/region/${sidoSlug}/${g.slug}/${productSlug}" class="spp-other-chip">${g.name} ${kw}</a>`).join('');
+  
+  // hero 동적 픽 — 시군구+제품 salt로 다른 광역 같은 시군구일지라도 다른 사진
+  const heroImg = _seoulPick('sgphero-'+sidoSlug+'-'+gu.slug+'-'+productSlug, _REGION_PRODUCT_HERO_POOL);
+  
+  // 태그 — 시군구명+제품 동적
+  const tagsHtml = [`${guName}${kw}`, `${guName}${kw}${actionH}`, ...cfg.tags.slice(2)].map(t => `<span class="spp-tag">#${t}</span>`).join('');
+  
+  // 다른 제품 — 같은 시군구의 다른 제품
+  const otherProducts = [['card-terminal','💳 카드단말기'],['pos','🖥️ 포스기'],['kiosk','🤖 키오스크'],['cctv','📷 CCTV'],['table-order','📋 테이블오더'],['removal','🔨 철거'],['vending','🥤 자동판매기(밴딩머신)']];
+  const otherProductsHtml = otherProducts.filter(([s])=>s!==productSlug).map(([s,n]) => `<a href="/region/${sidoSlug}/${gu.slug}/${s}" class="spp-prod-chip">${n}</a>`).join('');
+  
+  // 도입 추천 업종 — CCTV 제외
+  const recommendIndustrySections = productSlug === 'cctv' ? '' : `
+<section class="spp-sec">
+  <div class="spp-sec-h">🏪 ${guName} ${kw} ${T.industry}</div>
+  <table class="spp-tbl">
+    <thead><tr><th>업종</th><th>${kw} 활용 포인트</th><th>적합도</th></tr></thead>
+    <tbody>
+      <tr><td>음식점·식당</td><td>주문 정확도·회전율 개선</td><td>★★★★★</td></tr>
+      <tr><td>카페·베이커리</td><td>피크타임 대응·메뉴 자동화</td><td>★★★★★</td></tr>
+      <tr><td>편의점·마트</td><td>재고 연동·자동 발주 처리</td><td>★★★★</td></tr>
+      <tr><td>미용실·네일샵</td><td>예약과 결제 일원화</td><td>★★★★</td></tr>
+      <tr><td>스터디카페</td><td>24시간 무인 운영 대응</td><td>★★★★★</td></tr>
+      <tr><td>코인세탁소</td><td>무인 결제·원격 관리</td><td>★★★★★</td></tr>
+    </tbody>
+  </table>
+  <div class="spp-tip">
+    <div class="spp-tip-h">💡 ${guName} 사장님 Tip</div>
+    <p>${kw}와 함께 다른 매장 장비를 패키지로 ${actionH}하시면 설치비·월 이용료가 함께 무료로 처리되고, 장비 간 데이터 연동까지 한 번에 잡힙니다. 자세한 안내는 ${SITE.phoneDisplay}로 문의해 주십시오.</p>
+  </div>
+</section>`;
+  
+  const body = `
+<section class="spp-page">
+<div class="container spp-wrap">
+
+<div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/${productSlug}">${kw}</a><span>›</span><a href="/${sidoSlug}/${productSlug}">${regionFullName}</a><span>›</span>${guName}</div>
+
+<div class="spp-hero">
+  <div class="spp-hero-bg" style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover"></div>
+  <div class="spp-hero-ov">
+    <div class="spp-hero-title">${guName} ${kw} ${actionH}</div>
+  </div>
+</div>
+
+<h1 class="spp-h1">${guName} ${kw} ${actionH}</h1>
+
+<p class="spp-intro">${guFullName} 일대 매장 사장님을 위한 ${kw} ${action} 전문 서비스입니다. ${cfg.introBody}.</p>
+
+<div class="spp-stats">
+  <div class="spp-stat"><div class="spp-stat-ic">🏬</div><div class="spp-stat-l">${guName} 출장</div><div class="spp-stat-v">매장 직접 방문</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">${actionH} 일정</div><div class="spp-stat-v">당일 가능</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">🔄</div><div class="spp-stat-l">VAN사 비교</div><div class="spp-stat-v">최적 조건</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">💬</div><div class="spp-stat-l">무료 견적</div><div class="spp-stat-v">1분 응답</div></div>
+</div>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">${cfg.emoji} ${guName} ${kw} ${T.intro}</div>
+  <p>${_v.introP}</p>
+</section>
+
+${dongChipsHtml ? `<section class="spp-sec">
+  <div class="spp-sec-h">📍 ${guName} ${kw} 설치 지역 선택</div>
+  <p style="font-size:12.5px;color:#64748b;margin-bottom:10px">읍면동을 선택하시면 상세 ${kw} ${actionH} 가이드를 확인하실 수 있습니다.</p>
+  <div class="spp-gu-grid">${dongChipsHtml}</div>
+</section>` : ''}
+
+<section class="spp-sec">
+  <div class="spp-sec-h">⚡ ${guName} ${kw} ${T.process}</div>
+  <ul class="spp-check-list">
+    <li><span class="spp-check">✓</span><div><strong>1단계 사전 상담</strong> — 전화·카카오톡으로 ${guName} 매장 업종, 평균 매출, 필요 장비 확인</div></li>
+    <li><span class="spp-check">✓</span><div><strong>2단계 출장 견적</strong> — ${guName} 매장 직접 방문, 콘센트·동선·인터넷 환경 점검</div></li>
+    <li><span class="spp-check">✓</span><div><strong>3단계 ${actionH}·세팅</strong> — VAN사·계약 조건 확정 후 ${actionH}, 다른 장비와 연동까지 처리</div></li>
+    <li><span class="spp-check">✓</span><div><strong>4단계 사용 교육·A/S 연결</strong> — 사장님과 직원분이 직접 조작해 보실 때까지 같이 써봅니다</div></li>
+  </ul>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">💰 ${guName} ${kw} ${T.cost}</div>
+  <p>${_v.costP}</p>
+</section>
+
+${recommendIndustrySections}
+
+<section class="spp-sec">
+  <div class="spp-sec-h">✅ ${guName}에서 오페리오솔루션을 선택해야 하는 이유</div>
+  <ul class="spp-check-list">${checklist}</ul>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">🏢 ${guName} ${kw} ${T.detail}</div>
+  <p>${_v.detailP}</p>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">🔎 ${guName} ${kw} ${T.precheck}</div>
+  <ul class="spp-check-list">${precheckHtml}</ul>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">📊 ${guName} ${T.guide}</div>
+  ${_SPP_V.guide[productSlug] || _SPP_V.guide['card-terminal']}
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">❓ ${guName} ${kw} ${T.faq}</div>
+  <div class="spp-faqs">
+    ${_v.faqs.map(f => `<div class="spp-faq-item">
+      <div class="spp-faq-q"><span class="spp-faq-q-mark">Q.</span>${f.q}</div>
+      <div class="spp-faq-a">${f.a}</div>
+    </div>`).join('')}
+  </div>
+</section>
+
+<section class="spp-sec">
+  <div class="spp-sec-h">📈 ${guName} ${kw} ${T.effect}</div>
+  <p>${_v.effectP}</p>
+</section>
+
+<div class="spp-tags">
+  <div class="spp-tags-h">🏷️ 관련 태그</div>
+  ${tagsHtml}
+</div>
+
+<div class="spp-cta">
+  <div class="spp-cta-h">🎁 ${guName} ${kw} 무료 견적·상담</div>
+  <div class="spp-cta-sub">전화 한 통이면 예상 견적까지 바로 안내드립니다.</div>
+  <div class="spp-cta-btns">
+    <a href="tel:${SITE.phone}" class="spp-cta-btn spp-cta-btn-primary">📞 ${SITE.phoneDisplay}</a>
+    <a href="sms:${SITE.phone}" class="spp-cta-btn">💬 문자상담</a>
+    <a href="/contact" class="spp-cta-btn">📝 상담 문의</a>
+  </div>
+</div>
+
+${nearGuChipsHtml ? `<div class="spp-side-nav">
+  <div class="spp-side-nav-h">📍 ${regionFullName}의 다른 시·군·구 ${kw} ${actionH}</div>
+  <div class="spp-side-nav-grid">${nearGuChipsHtml}</div>
+</div>` : ''}
+
+<div class="spp-side-nav">
+  <div class="spp-side-nav-h">🛒 ${guName}의 다른 제품 전문</div>
+  <div class="spp-prod-nav">${otherProductsHtml}</div>
+</div>
+
+</div>
+</section>`;
+  
+  return htmlWrap({
+    title: `${guFullName} ${kw} ${actionH}·${T.cost}·${T.faq} | 오페리오솔루션`,
+    description: `${guFullName} 매장의 ${kw} ${actionH} 전문. 무료 견적·VAN사 수수료 비교·A/S 보장. ${guName} 사장님 1:1 출장 상담.`,
+    canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/${productSlug}`,
     body,
   });
 }
@@ -5305,10 +5570,17 @@ export default {
         }
       }
     }
-    // [서울] 동 페이지: /region/seoul/{gu}/{dong}
+    // [서울] /region/seoul/{gu}/{X} — X가 product slug면 시군구×제품, 아니면 dong
     const seoulDongMatch = pathname.match(/^\/region\/seoul\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
     if (seoulDongMatch) {
-      const dong = findSeoulDong(seoulDongMatch[1], seoulDongMatch[2]);
+      const guSlug = seoulDongMatch[1], thirdSeg = seoulDongMatch[2];
+      // product slug 우선 검사
+      const product = findProduct(thirdSeg);
+      if (product) {
+        const gu = findSeoulGu(guSlug);
+        if (gu) return new Response(renderSigunguProductPage(gu, 'seoul', '서울', product), { headers: htmlHeaders });
+      }
+      const dong = findSeoulDong(guSlug, thirdSeg);
       if (dong) return new Response(renderSeoulDongPage(dong), { headers: htmlHeaders });
     }
     // [서울] 구 페이지: /region/seoul/{gu}
@@ -5317,16 +5589,21 @@ export default {
       const gu = findSeoulGu(seoulGuMatch[1]);
       if (gu) return new Response(renderSeoulGuPage(gu), { headers: htmlHeaders });
     }
-    // [서울 외 16개 광역시도] 동 페이지: /region/{sido}/{gu}/{dong}
+    // [서울 외] /region/{sido}/{gu}/{X} — X가 product slug면 시군구×제품, 아니면 dong
     const regionDongMatch = pathname.match(/^\/region\/([a-z-]+)\/([a-z0-9-]+)\/([a-z0-9-]+)$/);
     if (regionDongMatch) {
-      const dong = findRegionDong(regionDongMatch[1], regionDongMatch[2], regionDongMatch[3]);
-      if (dong) {
-        const region = findRegion(regionDongMatch[1]);
-        if (region) {
-          const html = renderSeoulDongPage(dong, regionDongMatch[1], region.name);
-          if (html) return new Response(html, { headers: htmlHeaders });
-        }
+      const sidoSlug = regionDongMatch[1], guSlug = regionDongMatch[2], thirdSeg = regionDongMatch[3];
+      const region = findRegion(sidoSlug);
+      // product slug 우선 검사
+      const product = findProduct(thirdSeg);
+      if (product && region) {
+        const gu = findRegionGu(sidoSlug, guSlug);
+        if (gu) return new Response(renderSigunguProductPage(gu, sidoSlug, region.name, product), { headers: htmlHeaders });
+      }
+      const dong = findRegionDong(sidoSlug, guSlug, thirdSeg);
+      if (dong && region) {
+        const html = renderSeoulDongPage(dong, sidoSlug, region.name);
+        if (html) return new Response(html, { headers: htmlHeaders });
       }
     }
     // [서울 외] 시 페이지 (수원시·성남시 등): /region/{sido}/{city}
