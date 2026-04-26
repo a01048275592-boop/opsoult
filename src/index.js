@@ -488,51 +488,81 @@ const SIGUNGU = [
 const INDUSTRIES = [
   {
     slug: 'restaurant', name: '음식점', emoji: '🍽️',
-    shortDesc: '일반식당·한식·중식·분식·주점 — 주문부터 결제까지 회전율을 끌어올리는 조합',
+    shortDesc: '일반식당·한식·중식·분식 — 회전율을 끌어올리는 매장 솔루션',
     recommended: ['pos', 'card-terminal', 'table-order', 'kiosk', 'cctv'],
-    description: '좌석 회전율과 주문 정확도가 매출에 직결되는 음식점에는 POS · 카드단말기 · 테이블오더 · 키오스크 조합이 가장 효과적입니다. 주방 프린터 자동 연동으로 주문 누락을 방지하고, 배달앱 통합 매출 관리로 정산까지 한 번에 처리합니다.',
+    description: '회전율과 주문 정확도가 핵심인 음식점은 POS·카드단말기·테이블오더 조합이 효과적입니다. 주방 프린터와 배달앱 매출까지 통합 처리합니다.',
   },
   {
-    slug: 'cafe', name: '카페·디저트', emoji: '☕',
-    shortDesc: '스페셜티 카페·디저트샵·베이커리 — 감성 매장에 맞는 깔끔한 결제 동선',
+    slug: 'cafe', name: '카페', emoji: '☕',
+    shortDesc: '스페셜티 카페·테이크아웃 — 빠른 결제 동선과 포인트 적립',
     recommended: ['pos', 'kiosk', 'card-terminal', 'table-order'],
-    description: '피크타임 대기열 관리가 핵심인 카페에는 미니 키오스크 · POS · 무선 단말기 조합을 추천합니다. 포장·매장·배달 주문 분리, 스탬프·포인트 적립 연동까지 완벽 지원합니다.',
+    description: '피크타임 대기열 관리가 핵심인 카페는 미니 키오스크·POS·무선 단말기 조합을 추천합니다. 포장·매장 분리와 포인트 적립까지 지원합니다.',
   },
   {
-    slug: 'convenience-store', name: '편의점·소매점', emoji: '🏪',
-    shortDesc: '편의점·슈퍼·잡화점·무인매장 — 재고·매출 관리 자동화 솔루션',
+    slug: 'dessert-cafe', name: '디저트카페', emoji: '🧁',
+    shortDesc: '디저트샵·베이커리·아이스크림 — 진열 결제와 빠른 회전',
+    recommended: ['pos', 'kiosk', 'card-terminal'],
+    description: '진열 결제와 빠른 회전이 핵심인 디저트카페는 POS·카드단말기·키오스크로 결제 속도를 높이고 메뉴 분리로 정산을 단순화합니다.',
+  },
+  {
+    slug: 'convenience-store', name: '편의점', emoji: '🏪',
+    shortDesc: '편의점·슈퍼·잡화점·무인매장 — 재고·매출 관리 자동화',
     recommended: ['pos', 'card-terminal', 'cctv', 'vending'],
-    description: '다품목 재고 관리가 중요한 소매 매장에는 POS 재고 자동 차감 · 바코드 스캐너 · CCTV 연동 패키지가 효과적입니다. 24시간 무인 운영도 가능합니다.',
+    description: '다품목 재고 관리가 중요한 편의점은 POS 자동 차감·바코드 스캐너·CCTV 연동이 효과적입니다. 24시간 무인 운영까지 구축합니다.',
   },
   {
-    slug: 'salon', name: '미용실·네일', emoji: '💇',
-    shortDesc: '헤어살롱·네일샵·에스테틱·피부관리 — 예약과 결제가 매끄럽게',
-    recommended: ['pos', 'card-terminal', 'table-order'],
-    description: '예약 관리와 회원 포인트가 중요한 미용 업종은 POS 회원 관리 · 카드단말기 · 결제 연동 예약 시스템 조합이 유리합니다. 시술별 매출 분석으로 수익성 높은 메뉴를 파악할 수 있습니다.',
+    slug: 'salon', name: '미용실', emoji: '💇',
+    shortDesc: '헤어살롱·바버샵·뷰티샵 — 예약과 결제가 매끄럽게',
+    recommended: ['pos', 'card-terminal'],
+    description: '예약과 회원 포인트가 중요한 미용실은 POS 회원 관리·카드단말기·예약 연동이 유리합니다. 시술별 매출 분석까지 한 번에 처리합니다.',
+  },
+  {
+    slug: 'nail-shop', name: '네일샵', emoji: '💅',
+    shortDesc: '네일·페디·속눈썹·왁싱 — 시술 예약과 회원 관리',
+    recommended: ['pos', 'card-terminal'],
+    description: '시술 단가가 높고 예약이 많은 네일샵은 POS 회원 관리·카드단말기 조합이 유리합니다. 시술별 매출과 단골 회원을 한 번에 정리합니다.',
   },
   {
     slug: 'franchise', name: '프랜차이즈', emoji: '🏢',
     shortDesc: '다점포 운영·본사 관리 — 통합 매출·재고 대시보드',
     recommended: ['pos', 'kiosk', 'table-order', 'cctv', 'card-terminal'],
-    description: '프랜차이즈 본사 또는 다점포 운영자는 매장별 매출·재고 통합 관리가 핵심입니다. 본사 대시보드에서 전 매장 실시간 확인, 신규 매장 오픈 시 풀패키지 원스톱 설치를 제공합니다.',
+    description: '프랜차이즈 본사·다점포는 매장별 매출·재고 통합 관리가 핵심입니다. 대시보드 실시간 확인, 신규 매장 원스톱 풀패키지를 제공합니다.',
   },
   {
-    slug: 'academy', name: '학원·스터디카페', emoji: '📚',
-    shortDesc: '학원·독서실·스터디카페·무인 스터디룸 — 출입·결제 자동화',
+    slug: 'academy', name: '학원', emoji: '📚',
+    shortDesc: '학원·교습소·과외 — 출결과 수강료 결제 자동화',
+    recommended: ['kiosk', 'card-terminal', 'cctv'],
+    description: '출결·수강료 관리가 핵심인 학원은 키오스크 출결·카드단말기·CCTV 조합이 효과적입니다. 자동 출결 알림과 정기 결제까지 정리됩니다.',
+  },
+  {
+    slug: 'study-cafe', name: '스터디카페', emoji: '📖',
+    shortDesc: '스터디카페·독서실·무인 스터디룸 — 24시간 무인 운영',
     recommended: ['kiosk', 'card-terminal', 'cctv', 'vending'],
-    description: '무인 운영이 확산되는 스터디카페·독서실에는 키오스크 · 자동판매기 · CCTV 조합이 필수입니다. 좌석 예약, 시간제 결제, 보안 모니터링까지 한 번에 구축할 수 있습니다.',
+    description: '무인 운영이 표준인 스터디카페는 키오스크·자동판매기·CCTV가 필수입니다. 좌석 예약·시간제 결제·보안 모니터링까지 구축합니다.',
   },
   {
-    slug: 'fitness', name: '헬스장·필라테스', emoji: '💪',
-    shortDesc: '헬스장·필라테스·요가·PT — 회원권 결제와 출입 관리',
+    slug: 'fitness', name: '헬스장', emoji: '💪',
+    shortDesc: '헬스장·요가·PT 스튜디오 — 회원권 결제와 출입 관리',
     recommended: ['pos', 'card-terminal', 'kiosk', 'cctv'],
-    description: '회원권 관리가 매출의 핵심인 피트니스 업종은 POS 회원 관리 · 자동 결제 · 출입 연동 시스템을 권장합니다. 락커·라커룸 CCTV 설치로 회원 신뢰도도 높일 수 있습니다.',
+    description: '회원권 관리가 핵심인 헬스장은 POS 회원 관리·자동 결제·출입 연동을 권장합니다. 락커룸 CCTV로 회원 신뢰도까지 강화합니다.',
   },
   {
-    slug: 'medical', name: '병원·약국', emoji: '🏥',
-    shortDesc: '병원·의원·약국·한의원 — 접수부터 수납까지 효율화',
+    slug: 'pilates', name: '필라테스', emoji: '🧘',
+    shortDesc: '필라테스·요가·소그룹 PT — 예약과 시간제 결제',
+    recommended: ['pos', 'card-terminal', 'kiosk'],
+    description: '소수 인원 예약 관리가 핵심인 필라테스는 POS 예약·카드단말기·키오스크가 효과적입니다. 정기 결제와 1:1 회원 관리를 깔끔하게 정리합니다.',
+  },
+  {
+    slug: 'hospital', name: '병원', emoji: '🏥',
+    shortDesc: '병원·의원·치과·한의원 — 접수부터 수납까지 효율화',
     recommended: ['pos', 'kiosk', 'card-terminal', 'cctv'],
-    description: '접수·수납 대기가 긴 의료 업종에는 키오스크 · 카드단말기 · CCTV 패키지가 효과적입니다. 환자 개인정보 보호와 영상 기록으로 의료 분쟁 대응까지 가능합니다.',
+    description: '접수·수납 대기가 긴 병원은 키오스크 접수·카드단말기·CCTV가 효과적입니다. 환자 개인정보 보호와 의료 분쟁 대응까지 영상으로 관리합니다.',
+  },
+  {
+    slug: 'pharmacy', name: '약국', emoji: '💊',
+    shortDesc: '일반약국·전문약국·드럭스토어 — 빠른 결제와 처방전 연동',
+    recommended: ['pos', 'card-terminal', 'kiosk'],
+    description: '회전율이 높은 약국은 POS·카드단말기·키오스크가 효과적입니다. 처방전 입력 단축, 빠른 결제, 약품 재고 관리까지 한 번에 정리됩니다.',
   },
 ];
 
@@ -5092,7 +5122,14 @@ function renderIndustryPage(industry) {
   const recommendedProducts = industry.recommended
     .map(slug => PRODUCTS.find(p => p.slug === slug))
     .filter(Boolean);
-  const productCards = recommendedProducts.map(p => `<a href="/product/${p.slug}" class="index-card"><div class="big">${p.emoji}</div><h3>${p.name}</h3><p>${p.shortDesc}</p></a>`).join('');
+  const productCards = recommendedProducts.map(p => {
+    const imgSrc = PRODUCT_IMAGES[p.slug];
+    const thumb = imgSrc ? `<img src="${imgSrc}" alt="${p.name}" loading="lazy">` : p.emoji;
+    return `<a href="/product/${p.slug}" class="index-card index-card-img"><div class="big">${thumb}</div><h3>${p.name}</h3><p>${p.shortDesc}</p></a>`;
+  }).join('');
+  
+  // 광역 17개 칩 — /region/{sido}/{industry.slug} 로 링크 (광역×업종 페이지)
+  const regionChipsHtml = REGIONS.map(r => `<a href="/region/${r.slug}/${industry.slug}" class="spp-gu-chip">${r.name} ${industry.name}</a>`).join('');
 
   const body = `
 <section class="detail-hero">
@@ -5115,6 +5152,10 @@ function renderIndustryPage(industry) {
 <p>아래는 ${industry.name} 매장에서 가장 많이 설치되는 장비입니다. 매장 상황에 따라 필요한 것만 골라 구성할 수도 있습니다.</p>
 
 <div class="index-grid cols-3" style="margin:32px 0">${productCards}</div>
+
+<h2>${industry.name} 설치 지역 선택</h2>
+<p style="font-size:13.5px;color:var(--muted);margin-bottom:14px">광역도시를 선택하시면 해당 지역의 ${industry.name} 매장 설치 안내를 확인하실 수 있습니다.</p>
+<div class="spp-gu-grid" style="margin:18px 0 36px">${regionChipsHtml}</div>
 
 <h2>설치 절차</h2>
 <ol>
