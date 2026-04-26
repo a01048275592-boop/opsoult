@@ -2805,10 +2805,10 @@ function renderRegionCardTerminalV3(region) {
 <p class="sctv3-intro">카드단말기는 "그냥 하나 놓으면 되는 장비"가 아닙니다. <strong>어느 VAN사와 계약했느냐에 따라 1년 수수료 차이가 수십만 원</strong>이 납니다. ${regionLeadDesc}. 이 글에서는 ${region.name}에서 카드단말기를 들이시는 사장님이 꼭 짚고 넘어가야 할 것들만 정리해드립니다. VAN사 고르는 법, 단말기 종류 비교, 기존 계약 위약금 처리, 설치 당일 일정까지 실전 기준으로 안내합니다.</p>
 
 <div class="sctv3-stats">
-  <div class="sctv3-stat"><div class="sctv3-stat-ic">🏆</div><div class="sctv3-stat-l">전국 설치 실적</div><div class="sctv3-stat-v">15,000+건</div></div>
-  <div class="sctv3-stat"><div class="sctv3-stat-ic">⚡</div><div class="sctv3-stat-l">견적 회신</div><div class="sctv3-stat-v">평균 30분</div></div>
-  <div class="sctv3-stat"><div class="sctv3-stat-ic">💰</div><div class="sctv3-stat-l">설치비</div><div class="sctv3-stat-v">0원</div></div>
-  <div class="sctv3-stat"><div class="sctv3-stat-ic">🔧</div><div class="sctv3-stat-l">A/S 커버</div><div class="sctv3-stat-v">${region.name} 전 지역</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">🏬</div><div class="sctv3-stat-l">${region.name} 출장</div><div class="sctv3-stat-v">매장 직접 방문</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">⚡</div><div class="sctv3-stat-l">설치 일정</div><div class="sctv3-stat-v">당일 가능</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">🔄</div><div class="sctv3-stat-l">VAN사 비교</div><div class="sctv3-stat-v">최적 조건</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">💬</div><div class="sctv3-stat-l">무료 견적</div><div class="sctv3-stat-v">1분 응답</div></div>
 </div>
 
 <section class="sctv3-sec">
@@ -3016,10 +3016,10 @@ function renderRegionProductPage(region, productSlug) {
 <p class="spp-intro">${region.fullName} 전 지역(${coverageText})에 ${kw} ${action}를 전문으로 합니다. ${cfg.introBody}. 아래에서 ${region.name} 시군구를 선택하시면 읍면동별 ${kw} ${action} 가이드를 확인할 수 있습니다.</p>
 
 <div class="spp-stats">
-  <div class="spp-stat"><div class="spp-stat-ic">🏆</div><div class="spp-stat-l">전국 누적</div><div class="spp-stat-v">15,000+건</div></div>
-  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">빠른 ${actionH}</div><div class="spp-stat-v">신속 완료</div></div>
-  <div class="spp-stat"><div class="spp-stat-ic">💰</div><div class="spp-stat-l">${cfg.statLabel}</div><div class="spp-stat-v">${cfg.statValue}</div></div>
-  <div class="spp-stat"><div class="spp-stat-ic">🔧</div><div class="spp-stat-l">A/S</div><div class="spp-stat-v">빠른 대응</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">🏬</div><div class="spp-stat-l">${region.name} 출장</div><div class="spp-stat-v">매장 직접 방문</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">${actionH} 일정</div><div class="spp-stat-v">당일 가능</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">🔄</div><div class="spp-stat-l">VAN사 비교</div><div class="spp-stat-v">최적 조건</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">💬</div><div class="spp-stat-l">무료 견적</div><div class="spp-stat-v">1분 응답</div></div>
 </div>
 
 <section class="spp-sec">
