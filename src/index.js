@@ -1558,8 +1558,9 @@ footer .logo{color:#fff}
   .feature-cell h4{font-size:13px}
   .feature-cell p{font-size:11px;line-height:1.5}
   .foot-bottom{flex-direction:column;align-items:flex-start}
-  .floating-stack{bottom:16px;right:12px;left:12px;gap:8px;align-items:stretch;max-width:none}
-  .floating-call{padding:12px 16px;font-size:13px;justify-content:center}
+  .floating-stack{bottom:16px;right:14px;left:auto;gap:8px;align-items:flex-end}
+  .floating-call{padding:10px 14px;font-size:12px;border-radius:100px}
+  .floating-call svg{width:14px;height:14px}
   .related-grid{display:flex;flex-wrap:wrap;gap:5px}
   .related-item{padding:7px 11px;gap:4px}
   .related-item .emoji{font-size:12px}
