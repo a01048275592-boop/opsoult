@@ -5524,8 +5524,7 @@ ${data.message || '(문의 내용 없음)'}
         body: JSON.stringify({
           from: env.RESEND_FROM || 'onboarding@resend.dev',
           to: [env.CONTACT_EMAIL || 'a01048275592@gmail.com'],
-          reply_to: `${data.name} <noreply@opsoult.com>`,
-          subject: `[opsoult 문의] ${data.name} - ${data.product}`,
+          subject: `[opsoult 문의] ${data.name} (${data.phone}) - ${data.product}`,
           text: emailBody,
         }),
       });
@@ -5599,11 +5598,11 @@ Sitemap: ${SITE.domain}/sitemap.xml
 //   #f5f1ea = 베이지
 function renderFavicon() {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-<rect width="64" height="64" rx="14" fill="#0c0f14"/>
-<rect x="14" y="14" width="16" height="16" rx="3" fill="#e8512c"/>
-<rect x="34" y="14" width="16" height="16" rx="3" fill="#f5f1ea"/>
-<rect x="14" y="34" width="16" height="16" rx="3" fill="#f5f1ea"/>
-<rect x="34" y="34" width="16" height="16" rx="3" fill="#e8512c"/>
+<rect width="64" height="64" rx="12" fill="#0c0f14"/>
+<rect x="10" y="10" width="20" height="20" rx="3" fill="#e8512c"/>
+<rect x="34" y="10" width="20" height="20" rx="3" fill="#f5f1ea"/>
+<rect x="10" y="34" width="20" height="20" rx="3" fill="#f5f1ea"/>
+<rect x="34" y="34" width="20" height="20" rx="3" fill="#e8512c"/>
 </svg>`;
 }
 
