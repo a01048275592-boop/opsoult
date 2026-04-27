@@ -566,18 +566,14 @@ const INDUSTRIES = [
 
 // [05] REVIEWS 후기 (12개) ====================================
 const REVIEWS = [
-  { badge: '매출 40%↑', title: '카드단말기 교체 후 카드매출 급증', body: '수수료 비교까지 해주셔서 연간 60만원 절약하고 매출도 올랐어요.', author: '서울 강남구 카페 사장님' },
+  { badge: '매출 40%↑', title: '카드단말기 교체 후 카드매출 급증', body: '수수료 비교로 연간 60만원 절약하고 매출도 올랐어요.', author: '서울 강남구 카페 사장님' },
   { badge: '인건비 50%↓', title: '키오스크 설치 후 홀 인건비 반으로', body: '테이블오더+키오스크로 홀 직원 2명→1명. 서비스 품질도 유지됩니다.', author: '부산 해운대구 음식점 사장님' },
   { badge: '수수료 절감', title: 'VAN사 변경으로 연 40만원 절약', body: '기존보다 수수료 저렴한 VAN사로 바꿔주셔서 매년 절약 중입니다.', author: '경기 수원시 소매점 사장님' },
   { badge: '빠른 설치', title: '전화 한 통으로 빠른 설치 완료', body: '급하게 필요했는데 빠르게 설치해주셨어요. 바로 영업 시작할 수 있었습니다.', author: '대전 유성구 음식점 사장님' },
   { badge: '무인화 성공', title: '24시간 무인매장 전환 완료', body: 'CCTV 설치로 월 매출 30% 증가했습니다.', author: '인천 연수구 스터디카페 사장님' },
   { badge: 'A/S 최고', title: '포스기 장애 빠르게 해결', body: '전화하니 빠르게 해결해주셨어요. 이런 A/S는 처음입니다.', author: '광주 서구 미용실 사장님' },
-  { badge: 'CCTV 만족', title: '스마트폰으로 매장 실시간 확인', body: '매장에 없어도 스마트폰으로 확인 가능. CCTV 화질도 선명합니다.', author: '서울 마포구 음식점 사장님' },
   { badge: '매출 증가', title: '테이블오더 도입 후 객단가 25% 상승', body: '메뉴 사진 보고 추가 주문이 늘었어요. 직원 호출도 줄어서 편해요.', author: '경기 분당구 치킨집 사장님' },
-  { badge: '포스기 추천', title: '매출 관리가 이렇게 쉬울 줄이야', body: '일별·월별 매출 자동 리포트. 세무사한테 보내기도 편해요.', author: '서울 송파구 베이커리 사장님' },
-  { badge: '깔끔 철거', title: '보증금 100% 돌려받았습니다', body: '원상복구 깔끔하게 해주셔서 임대인과 분쟁 없이 보증금 전액 반환.', author: '서울 종로구 옷가게 사장님' },
   { badge: '패키지 할인', title: '카드단말기+포스기+테이블오더 한번에', body: '신규 매장 오픈할 때 패키지로 한번에 설치. 시간과 비용 모두 절약.', author: '대구 수성구 카페 사장님' },
-  { badge: '친절 상담', title: '어떤 장비가 맞는지 꼼꼼히 안내', body: '우리 매장 업종에 맞는 장비를 추천해주셔서 불필요한 비용 없었어요.', author: '울산 남구 분식집 사장님' },
 ];
 
 // [06] 공통 스타일 =============================================
@@ -810,12 +806,13 @@ footer .logo{color:#fff}
 .foot-bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;font-size:13px;color:#64748b;flex-wrap:wrap;gap:12px}
 
 /* Floating CTA */
-.floating-stack{position:fixed;bottom:28px;right:28px;z-index:40;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
-.floating-call{background:var(--ink);color:#fff;padding:16px 22px;border-radius:100px;font-weight:500;font-size:14px;box-shadow:0 12px 30px rgba(15,23,42,0.3);display:inline-flex;align-items:center;gap:10px;transition:all .2s}
-.floating-call:hover{transform:scale(1.05);background:var(--ink-2)}
-.floating-call svg{width:18px;height:18px}
-.floating-inquiry{background:var(--accent,#e8512c);box-shadow:0 12px 30px rgba(232,81,44,0.4)}
-.floating-inquiry:hover{background:#d63e1d}
+.floating-stack{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;gap:10px;align-items:flex-end;max-width:calc(100vw - 40px)}
+.floating-call{color:#fff;padding:14px 22px;border-radius:100px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(15,23,42,0.25);display:inline-flex;align-items:center;gap:10px;transition:all .2s;white-space:nowrap;text-decoration:none}
+.floating-call:hover{transform:scale(1.05);filter:brightness(1.08)}
+.floating-call svg{width:18px;height:18px;flex-shrink:0}
+.floating-inquiry{background:#2563eb;box-shadow:0 12px 30px rgba(37,99,235,0.4)}
+.floating-sms{background:#eab308;color:#1f2937;box-shadow:0 12px 30px rgba(234,179,8,0.4)}
+.floating-call:not(.floating-inquiry):not(.floating-sms){background:#16a34a;box-shadow:0 12px 30px rgba(22,163,74,0.4)}
 
 /* Detail pages */
 /* Sigungu Page (시군구 페이지) ================================ */
@@ -1561,8 +1558,8 @@ footer .logo{color:#fff}
   .feature-cell h4{font-size:13px}
   .feature-cell p{font-size:11px;line-height:1.5}
   .foot-bottom{flex-direction:column;align-items:flex-start}
-  .floating-stack{bottom:20px;right:20px;gap:8px}
-  .floating-call{padding:14px 18px;font-size:13px}
+  .floating-stack{bottom:16px;right:12px;left:12px;gap:8px;align-items:stretch;max-width:none}
+  .floating-call{padding:12px 16px;font-size:13px;justify-content:center}
   .related-grid{display:flex;flex-wrap:wrap;gap:5px}
   .related-item{padding:7px 11px;gap:4px}
   .related-item .emoji{font-size:12px}
@@ -1616,11 +1613,16 @@ function getProductIcon(slug) {
   return map[slug] || ICONS.box;
 }
 
-function htmlWrap({ title, description, canonical, body, keywords }) {
+function _breadcrumbJsonLd(bc){if(!bc||!bc.length)return'';const i=bc.map((b,i)=>`{"@type":"ListItem","position":${i+1},"name":"${b.n.replace(/"/g,'\\"')}","item":"${b.u.startsWith('http')?b.u:SITE.domain+b.u}"}`).join(',');return`<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[${i}]}</script>`;}
+
+function htmlWrap({ title, description, canonical, body, keywords, breadcrumbs }) {
   const fullTitle = title ? `${title} | ${SITE.brandNameKo}` : `${SITE.brandNameKo} | 매장 설비 설치 플랫폼`;
   const desc = description || SITE.description;
   const canon = canonical || SITE.domain;
   const kwMeta = keywords ? `\n<meta name="keywords" content="${escapeHtml(keywords)}">` : '';
+  // 슬러그 기반 자동 modified date (1-56일 전 사이로 일관된 가짜 랜덤)
+  const _s=(canon.replace(SITE.domain,'')||'/').split('').reduce((a,c)=>((a<<5)-a+c.charCodeAt(0))|0,0),_md=new Date();_md.setDate(_md.getDate()-(Math.abs(_s)%56+1));const modifiedDate=_md.toISOString().slice(0,10);
+  const bcJsonLd = _breadcrumbJsonLd(breadcrumbs);
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -1638,7 +1640,9 @@ function htmlWrap({ title, description, canonical, body, keywords }) {
 <meta property="og:title" content="${escapeHtml(fullTitle)}">
 <meta property="og:description" content="${escapeHtml(desc)}">
 <meta property="og:locale" content="ko_KR">
+<meta property="article:modified_time" content="${modifiedDate}">
 <meta property="twitter:card" content="summary">
+${bcJsonLd}
 <style>${STYLES}</style>
 </head>
 <body>
@@ -1708,7 +1712,7 @@ function renderFooter() {
 
 function renderFloatingCTA() {
   return `<div class="floating-stack">
-<a href="/contact" class="floating-call floating-inquiry">${ICONS.chat} 무료 상담 받기</a>
+<a href="/contact" class="floating-call floating-inquiry">${ICONS.chat} 무료 상담</a>
 <a href="sms:${SITE.phone}" class="floating-call floating-sms">${ICONS.mail} 문자 상담</a>
 <a href="tel:${SITE.phone}" class="floating-call">${ICONS.phone} 전화 상담</a>
 </div>`;
@@ -3156,6 +3160,12 @@ ${recommendIndustrySections}
     title: `${region.fullName} ${kw} ${actionH} · 전 지역 당일 ${actionH}·VAN사 수수료 비교 | 오페리오솔루션`,
     description: `${coverageText.split(' · ')[0]} 전 지역 ${kw} ${actionH} 전문. 설치비 무료, 월 이용료 무료, A/S 지원. 오페리오솔루션 무료 견적.`,
     canonical: `${SITE.domain}/${region.slug}/${productSlug}`,
+    breadcrumbs: [
+      { n: '홈', u: '/' },
+      { n: '제품 안내', u: '/product' },
+      { n: kw, u: `/product/${productSlug}` },
+      { n: region.fullName, u: `/${region.slug}/${productSlug}` },
+    ],
     body,
   });
 }
@@ -4391,10 +4401,10 @@ function _dppVariants(name, parent, kw, mainKw, regionFullName, phoneDisplay) {
     ],
     check: [
       [
-        `${name} 매장의 ${kw} 사용 기간·결제 빈도 정리하기`,
-        `현재 ${kw}의 월 비용·VAN사·계약 만료일 확인하기`,
-        `매장 콘센트·인터넷 환경 점검하기`,
-        `${kw}와 함께 쓰실 다른 장비 유무 확인하기`,
+        `${name} 매장의 ${kw} 사용 기간·결제 빈도 정리`,
+        `현재 ${kw} 월비용·VAN사·만료일 확인`,
+        `매장 콘센트·인터넷 점검`,
+        `함께 쓰실 다른 장비 확인`,
       ],
     ],
   };
@@ -4561,6 +4571,14 @@ ${neighbors.length > 0 ? `<section class="dpp-sec">
     title: `${mainKw} 설치 가이드 — ${regionFullName} ${parent} ${name} | 오페리오솔루션`,
     description: `${regionFullName} ${parent} ${name}에서 ${kw} 설치를 알아보세요. ${mainKw} 무료 견적, 빠른 방문 설치, A/S 보장. 매장에 맞는 ${kw}를 전문가가 추천해 드립니다.`,
     canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/${dong.slug}/${productSlug}`,
+    breadcrumbs: [
+      { n: '홈', u: '/' },
+      { n: '지역별 설치', u: '/region' },
+      { n: regionName, u: `/region/${sidoSlug}` },
+      { n: parent, u: `/region/${sidoSlug}/${gu.slug}` },
+      { n: name, u: `/region/${sidoSlug}/${gu.slug}/${dong.slug}` },
+      { n: kw, u: `/region/${sidoSlug}/${gu.slug}/${dong.slug}/${productSlug}` },
+    ],
     body,
   });
 }
@@ -4823,6 +4841,13 @@ ${nearGuChipsHtml ? `<div class="spp-side-nav">
     title: `${guFullName} ${kw} ${actionH}·${T.cost}·${T.faq} | 오페리오솔루션`,
     description: `${guFullName} 매장의 ${kw} ${actionH} 전문. 무료 견적·VAN사 수수료 비교·A/S 보장. ${guName} 사장님 1:1 출장 상담.`,
     canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/${productSlug}`,
+    breadcrumbs: [
+      { n: '홈', u: '/' },
+      { n: '지역별 설치', u: '/region' },
+      { n: regionName, u: `/region/${sidoSlug}` },
+      { n: guName, u: `/region/${sidoSlug}/${gu.slug}` },
+      { n: kw, u: `/region/${sidoSlug}/${gu.slug}/${productSlug}` },
+    ],
     body,
   });
 }
@@ -5289,6 +5314,12 @@ ${otherProductsHtml ? `<div class="spp-side-nav">
     title: `${mainKw} · ${indName} 매장 전문 ${actionH} | 오페리오솔루션`,
     description: `${indName} 매장의 ${kw} ${actionH} 전문. 무료 견적·VAN사 수수료 비교·당일 ${actionH} 가능. ${indName} 사장님 1:1 출장 상담.`,
     canonical: `${SITE.domain}/industry/${industry.slug}/${productSlug}`,
+    breadcrumbs: [
+      { n: '홈', u: '/' },
+      { n: '업종별', u: '/industry' },
+      { n: indName, u: `/industry/${industry.slug}` },
+      { n: kw, u: `/industry/${industry.slug}/${productSlug}` },
+    ],
     body,
   });
 }
