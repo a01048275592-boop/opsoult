@@ -4376,10 +4376,10 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
 function _dppVariants(name, parent, kw, mainKw, regionFullName, phoneDisplay) {
   return {
     intro: [
-      `${mainKw} 설치를 알아보고 계시는 ${regionFullName} ${parent} ${name} 사장님이라면, ${kw} 선택은 단순 장비 구매가 아닙니다. ${name} 상권에서는 ${kw}에 따라 월 비용과 운영 효율이 달라집니다. 오페리오솔루션은 ${name} 등 ${parent} 전 지역에서 ${kw} 설치를 전담하며, 매장 환경을 보고 적합한 기종을 제안합니다.`,
+      `${regionFullName} ${parent} ${name}에서 ${mainKw}를 알아보시는 사장님이라면, ${kw} 선택은 단순 장비 구매가 아닙니다. ${name} 상권에서는 ${kw}에 따라 월 비용과 운영 효율이 달라집니다. 오페리오솔루션은 ${name}을 비롯한 ${parent} 전 지역 ${kw} 설치를 전담하며, 매장 환경에 맞는 기종을 제안합니다.`,
     ],
     market: [
-      `${name}은 ${regionFullName} ${parent}에서 ${kw} 수요가 꾸준한 지역입니다. 카페·음식점·편의점·미용실·학원 등 업종이 밀집해 있고, ${kw}에 요구되는 조건이 다릅니다. 음식점은 안정성, 카페는 속도, 편의점은 연동성이 우선. ${mainKw}는 업종 맞춤 사양 선택이 핵심입니다.`,
+      `${name}은 ${regionFullName} ${parent}에서 ${kw} 수요가 꾸준한 지역입니다. 카페·음식점·편의점·미용실·학원 등 업종마다 ${kw} 요구 조건이 다릅니다. 음식점은 안정성, 카페는 속도, 편의점은 연동성이 우선. ${mainKw}는 업종 맞춤 사양이 핵심입니다.`,
     ],
     benefit: [
       `오페리오솔루션은 ${mainKw} 설치 시 ① ${name} 매장 방문 무료 견적 ② 설치비 무료(기종 일부 예외) ③ 빠른 ${kw} A/S — ${name} 안이면 출동, 원격 가능 시 즉시 해결 ④ 1:1 사용법 교육 — 매장에서 직접 시연합니다.`,
@@ -5551,34 +5551,60 @@ ${data.message || '(문의 내용 없음)'}
   }
 }
 
-// [13] sitemap.xml ============================================
-function renderSitemap() {
-  const today = new Date().toISOString().slice(0, 10);
-  const urls = [];
-  urls.push({ loc: SITE.domain + '/', priority: '1.0' });
-  urls.push({ loc: SITE.domain + '/region', priority: '0.9' });
-  urls.push({ loc: SITE.domain + '/product', priority: '0.9' });
-  urls.push({ loc: SITE.domain + '/industry', priority: '0.9' });
-  urls.push({ loc: SITE.domain + '/contact', priority: '0.9' });
-  for (const r of REGIONS) {
-    urls.push({ loc: `${SITE.domain}/region/${r.slug}`, priority: '0.8' });
-  }
-  for (const p of PRODUCTS) {
-    urls.push({ loc: `${SITE.domain}/product/${p.slug}`, priority: '0.8' });
-  }
-  for (const i of INDUSTRIES) {
-    urls.push({ loc: `${SITE.domain}/industry/${i.slug}`, priority: '0.8' });
-  }
-  for (const r of REGIONS) {
-    for (const p of PRODUCTS) {
-      urls.push({ loc: `${SITE.domain}/${r.slug}/${p.slug}`, priority: '0.7' });
+// [13] sitemap (인덱스+7분할)
+function _xmlUrl(loc) {
+  return `<url><loc>${loc}</loc></url>`;
+}
+function _xmlWrap(items) {
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${items}</urlset>`;
+}
+
+function _allSigungus() {
+  const out = [];
+  for (const sidoSlug of Object.keys(REGIONS_DATA)) {
+    for (const gu of REGIONS_DATA[sidoSlug] || []) {
+      out.push({ sidoSlug, guSlug: gu.slug, dongs: gu.dongs || [] });
     }
   }
-  const items = urls.map(u => `<url><loc>${u.loc}</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>${u.priority}</priority></url>`).join('');
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${items}
-</urlset>`;
+  return out;
+}
+
+function _allDongs() {
+  const out = [];
+  for (const sidoSlug of Object.keys(REGIONS_DATA)) {
+    for (const gu of REGIONS_DATA[sidoSlug] || []) {
+      for (const d of gu.dongs || []) {
+        out.push({ sidoSlug, guSlug: gu.slug, dongSlug: d.slug });
+      }
+    }
+  }
+  return out;
+}
+
+function renderSitemapDispatch(kind) {
+  const D = SITE.domain;
+  if (kind === 'index') {
+    const items = ['main','region-product','industry-product','sigungu','dong-1','dong-2','dong-3','dong-4'].map(s => `<sitemap><loc>${D}/sitemap-${s}.xml</loc></sitemap>`).join('');
+    return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${items}</sitemapindex>`;
+  }
+  const u = [];
+  if (kind === 'main') {
+    u.push(_xmlUrl(D + '/'), _xmlUrl(D + '/region'), _xmlUrl(D + '/product'), _xmlUrl(D + '/industry'), _xmlUrl(D + '/contact'));
+    for (const r of REGIONS) u.push(_xmlUrl(`${D}/region/${r.slug}`));
+    for (const p of PRODUCTS) u.push(_xmlUrl(`${D}/product/${p.slug}`));
+    for (const i of INDUSTRIES) u.push(_xmlUrl(`${D}/industry/${i.slug}`));
+  } else if (kind === 'region-product') {
+    for (const r of REGIONS) for (const p of PRODUCTS) u.push(_xmlUrl(`${D}/${r.slug}/${p.slug}`));
+  } else if (kind === 'industry-product') {
+    for (const i of INDUSTRIES) for (const ps of i.recommended) u.push(_xmlUrl(`${D}/industry/${i.slug}/${ps}`));
+  } else if (kind === 'sigungu') {
+    for (const sg of _allSigungus()) for (const p of PRODUCTS) u.push(_xmlUrl(`${D}/region/${sg.sidoSlug}/${sg.guSlug}/${p.slug}`));
+  } else if (kind.startsWith('dong-')) {
+    const part = parseInt(kind.slice(5));
+    const slice = _allDongs().slice((part-1)*1500, part*1500);
+    for (const d of slice) for (const p of PRODUCTS) u.push(_xmlUrl(`${D}/region/${d.sidoSlug}/${d.guSlug}/${d.dongSlug}/${p.slug}`));
+  }
+  return _xmlWrap(u.join(''));
 }
 
 // [14] robots.txt =============================================
@@ -5653,11 +5679,11 @@ export default {
       return new Response(renderHome(), { headers: htmlHeaders });
     }
 
-    // sitemap.xml
-    if (pathname === '/sitemap.xml' || pathname === '/sitemap-index.xml') {
-      return new Response(renderSitemap(), {
-        headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public,max-age=3600' }
-      });
+    // sitemap
+    const smMatch = pathname.match(/^\/sitemap(?:-(main|region-product|industry-product|sigungu|dong-[1-4])|-index)?\.xml$/);
+    if (smMatch) {
+      const kind = smMatch[1] || 'index';
+      return new Response(renderSitemapDispatch(kind), { headers: { 'Content-Type': 'application/xml; charset=utf-8', 'Cache-Control': 'public,max-age=3600' } });
     }
 
     // robots.txt
