@@ -806,13 +806,12 @@ footer .logo{color:#fff}
 .foot-bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;font-size:13px;color:#64748b;flex-wrap:wrap;gap:12px}
 
 /* Floating CTA */
-.floating-stack{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;gap:10px;align-items:flex-end;max-width:calc(100vw - 40px)}
-.floating-call{color:#fff;padding:14px 22px;border-radius:100px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(15,23,42,0.25);display:inline-flex;align-items:center;gap:10px;transition:all .2s;white-space:nowrap;text-decoration:none}
-.floating-call:hover{transform:scale(1.05);filter:brightness(1.08)}
-.floating-call svg{width:18px;height:18px;flex-shrink:0}
-.floating-inquiry{background:#2563eb;box-shadow:0 12px 30px rgba(37,99,235,0.4)}
-.floating-sms{background:#eab308;color:#1f2937;box-shadow:0 12px 30px rgba(234,179,8,0.4)}
-.floating-call:not(.floating-inquiry):not(.floating-sms){background:#16a34a;box-shadow:0 12px 30px rgba(22,163,74,0.4)}
+.floating-stack{position:fixed;bottom:28px;right:28px;z-index:40;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+.floating-call{background:var(--ink);color:#fff;padding:16px 22px;border-radius:100px;font-weight:500;font-size:14px;box-shadow:0 12px 30px rgba(15,23,42,0.3);display:inline-flex;align-items:center;gap:10px;transition:all .2s}
+.floating-call:hover{transform:scale(1.05);background:var(--ink-2)}
+.floating-call svg{width:18px;height:18px}
+.floating-inquiry{background:var(--accent,#e8512c);box-shadow:0 12px 30px rgba(232,81,44,0.4)}
+.floating-inquiry:hover{background:#d63e1d}
 
 /* Detail pages */
 /* Sigungu Page (시군구 페이지) ================================ */
@@ -1558,9 +1557,8 @@ footer .logo{color:#fff}
   .feature-cell h4{font-size:13px}
   .feature-cell p{font-size:11px;line-height:1.5}
   .foot-bottom{flex-direction:column;align-items:flex-start}
-  .floating-stack{bottom:16px;right:14px;left:auto;gap:8px;align-items:flex-end}
-  .floating-call{padding:10px 14px;font-size:12px;border-radius:100px}
-  .floating-call svg{width:14px;height:14px}
+  .floating-stack{bottom:20px;right:20px;gap:8px}
+  .floating-call{padding:14px 18px;font-size:13px}
   .related-grid{display:flex;flex-wrap:wrap;gap:5px}
   .related-item{padding:7px 11px;gap:4px}
   .related-item .emoji{font-size:12px}
