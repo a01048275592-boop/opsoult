@@ -928,7 +928,7 @@ footer .logo{color:#fff}
 .ipro-bd{padding:18px 20px}
 .ipro-n{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:16px;font-weight:600;letter-spacing:-0.02em;margin-bottom:6px;color:var(--ink)}
 .ipro-d{font-size:13px;color:var(--muted);line-height:1.55;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-@media(max-width:600px){.ipro-grid{grid-template-columns:1fr;gap:14px}.ipro-photo{height:160px}.ipro-bd{padding:14px 16px}}
+@media(max-width:600px){.ipro-grid{display:flex;grid-template-columns:none;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:24px -14px 36px;padding:0 14px 12px;-webkit-overflow-scrolling:touch}.ipro-card{flex:0 0 78%;scroll-snap-align:start}.ipro-photo{height:140px}.ipro-bd{padding:14px 16px}.ipro-grid::-webkit-scrollbar{display:none}}
 .related-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:36px}
 .related-item{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 8px;text-align:center;transition:all .2s;color:var(--ink)}
 .related-item:hover{background:var(--ink);color:#fff;transform:translateY(-2px);border-color:var(--ink)}
@@ -1528,6 +1528,12 @@ footer .logo{color:#fff}
   .related-item .emoji{font-size:12px}
   .related-item .name{font-size:11.5px}
   .index-grid.cols-4,.index-grid.cols-3{grid-template-columns:repeat(3,1fr);gap:8px;padding:20px 0 40px}
+  .index-grid.cols-3.ir{display:flex;grid-template-columns:none;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -14px;padding:20px 14px 30px;-webkit-overflow-scrolling:touch}
+  .index-grid.cols-3.ir::-webkit-scrollbar{display:none}
+  .index-grid.cols-3.ir .index-card{flex:0 0 78%;scroll-snap-align:start;text-align:left;padding:18px}
+  .index-grid.cols-3.ir .index-card .big{height:140px;margin-bottom:14px}
+  .index-grid.cols-3.ir .index-card h3{font-size:16px;margin-bottom:6px}
+  .index-grid.cols-3.ir .index-card p{display:block;font-size:13px;color:var(--muted);line-height:1.55}
   .index-card{padding:18px 8px;border-radius:11px;text-align:center}
   .index-card .big{font-size:24px;margin-bottom:6px}
   .index-card.index-card-img .big{height:60px;margin-bottom:6px}
@@ -4952,7 +4958,7 @@ function renderIndustryPage(industry) {
 <h2>${industry.name} 추천 장비 조합</h2>
 <p>아래는 ${industry.name} 매장에서 가장 많이 설치되는 장비입니다. 매장 상황에 따라 필요한 것만 골라 구성할 수도 있습니다.</p>
 
-<div class="index-grid cols-3" style="margin:32px 0">${productCards}</div>
+<div class="index-grid cols-3 ir" style="margin:32px 0">${productCards}</div>
 
 <h2>${industry.name} 설치 지역 선택</h2>
 <p style="font-size:13.5px;color:var(--muted);margin-bottom:14px">광역도시를 선택하시면 해당 지역의 ${industry.name} 매장 설치 안내를 확인하실 수 있습니다.</p>
@@ -5045,13 +5051,13 @@ function renderRegionIndustryPage(region, industry) {
 </div>
 
 <h2>${region.name} ${industry.name} 도입 시나리오</h2>
-<p>${region.name} ${industry.name} 매장에서 자주 발생하는 4가지 도입 케이스입니다. 비슷한 상황이라면 동일 패턴으로 빠른 진행이 가능합니다.</p>
+<p>${region.name} ${industry.name} 매장에서 자주 발생하는 4가지 도입 케이스입니다.</p>
 
 <div class="feat-grid-2">
-<div class="feat-card"><h5>🆕 신규 오픈 매장</h5><p>인테리어 마감 직전 풀패키지 일괄 설치. POS·키오스크·CCTV·네트워크까지 하루에 정리해 오픈 당일 영업 시작이 가능합니다.</p></div>
-<div class="feat-card"><h5>🔄 단말기 교체</h5><p>기존 카드단말기 VAN사 재협상 + 기종 교체. 매출 자료 기반으로 <strong>월 수수료 30~50% 절감</strong> 사례가 가장 많습니다.</p></div>
-<div class="feat-card"><h5>🔗 배달앱 통합</h5><p>배민·쿠팡이츠·요기요 매출이 POS와 따로 도는 매장은 POS 통합 모듈로 한 화면에서 정산까지 정리할 수 있습니다.</p></div>
-<div class="feat-card"><h5>💡 인건비 절감 전환</h5><p>홀 인력 1명 감축 + 키오스크·테이블오더 도입. <strong>월 200만원대 인건비 절감</strong> + 주문 실수율 감소를 동시에.</p></div>
+<div class="feat-card"><h5>🆕 신규 오픈 매장</h5><p>인테리어 마감 직전 풀패키지 일괄 설치. POS·키오스크·CCTV·네트워크 하루에 정리, 오픈 당일 영업 가능.</p></div>
+<div class="feat-card"><h5>🔄 단말기 교체</h5><p>기존 카드단말기 VAN사 재협상 + 기종 교체. <strong>월 수수료 30~50% 절감</strong> 사례 다수.</p></div>
+<div class="feat-card"><h5>🔗 배달앱 통합</h5><p>배민·쿠팡이츠·요기요 매출이 따로 도는 매장은 POS 통합 모듈로 정산까지 한 화면에.</p></div>
+<div class="feat-card"><h5>💡 인건비 절감 전환</h5><p>홀 인력 1명 감축 + 키오스크·테이블오더. <strong>월 200만원대 절감</strong> + 주문 실수율 감소.</p></div>
 </div>
 
 <h2>${region.name} ${industry.name} 매장 운영 효과</h2>
@@ -5068,10 +5074,10 @@ function renderRegionIndustryPage(region, industry) {
 <p>설치 후 매장 운영에서 매출·비용 차이를 만드는 실전 팁입니다.</p>
 
 <div class="feat-grid-2">
-<div class="feat-card"><h5>📈 메뉴별 수익률 분석 (ABC)</h5><p>POS 매출 데이터로 메뉴별 회전·마진 ABC 분석. 잘 안 팔리는 C군 정리 + 효자 A군 강화로 객단가가 자연스럽게 상승합니다.</p></div>
-<div class="feat-card"><h5>⚡ 피크타임 동선 설계</h5><p>주문 → 결제 → 픽업 동선을 일직선으로. 키오스크 위치 한 끗 차이가 회전율 20~30%까지 좌우합니다.</p></div>
-<div class="feat-card"><h5>📊 재고 자동 차감</h5><p>POS 재고 모듈 실시간 차감 설정. 발주 알림 자동화로 품절 사고와 과잉 발주를 동시에 방지합니다.</p></div>
-<div class="feat-card"><h5>🎯 정산 시점 맞추기</h5><p>카드·배달앱 정산 주기가 모두 다릅니다. POS 통합 대시보드로 한 번에 확인하면 자금 흐름 예측이 가능합니다.</p></div>
+<div class="feat-card"><h5>📈 메뉴별 수익률 분석 (ABC)</h5><p>POS 매출 데이터로 메뉴별 회전·마진 ABC 분석. C군 정리 + A군 강화로 객단가 상승.</p></div>
+<div class="feat-card"><h5>⚡ 피크타임 동선 설계</h5><p>주문 → 결제 → 픽업 동선을 일직선으로. 키오스크 위치가 회전율 20~30%를 좌우합니다.</p></div>
+<div class="feat-card"><h5>📊 재고 자동 차감</h5><p>POS 재고 모듈 실시간 차감. 발주 알림 자동화로 품절·과잉 발주 동시 방지.</p></div>
+<div class="feat-card"><h5>🎯 정산 시점 맞추기</h5><p>카드·배달앱 정산 주기가 다릅니다. POS 통합 대시보드로 자금 흐름 예측 가능.</p></div>
 </div>
 
 <h2>설치 절차</h2>
