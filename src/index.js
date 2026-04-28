@@ -58,7 +58,7 @@ const REGIONS = [
     landmarks: '강남역, 명동, 홍대, 이태원, 여의도, 광화문, 잠실, 성수동',
     commercialAreas: ['강남역 상권', '홍대 상권', '명동 상권', '가로수길', '성수동 카페거리'],
     description: '대한민국 수도 서울은 전국에서 매장 설비 수요가 가장 많은 지역입니다. 카페·음식점·미용실·편의점까지 업종을 가리지 않고, 결제·주문 시스템이 매출에 바로 영향을 주는 경쟁 밀도 높은 상권입니다.',
-    installTime: '당일 설치 가능',
+    installTime: '빠른 설치 가능',
     coverage: '서울 25개 자치구 전 지역',
   },
   {
@@ -242,15 +242,15 @@ const SIGUNGU_DETAILS = [
     recentTrend: '최근 강남구는 무인매장·셀프 주문 전환이 매우 빠릅니다. 특히 압구정·가로수길 카페는 키오스크+모바일 앱 주문을 기본 세팅으로 갖추는 경우가 80% 이상입니다. 2024년 기준 키오스크 설치 문의가 전년 대비 2.4배 증가했습니다.',
     specialTip: '강남구에서 매장을 오픈하실 때는 오픈 2주 전에는 반드시 카드단말기·POS 설치를 완료하세요. 주말·공휴일 오픈이 많은 지역 특성상, 설치가 늦어지면 첫 주말 매출에 직접적인 영향이 생깁니다. 또한 강남 상권은 VAN사 수수료 협상 여지가 큰 지역이니, 계약 전 반드시 여러 곳에서 견적을 비교하세요.',
     faqs: [
-      { q: '강남구 전 지역 출장 설치가 가능한가요?', a: '네, 강남구 22개 동 전역에 출장 설치가 가능합니다. 개포동·세곡동 등 비교적 외곽 지역도 당일 또는 다음날 설치를 원칙으로 합니다.' },
-      { q: '강남역 근처 매장인데 당일 설치 되나요?', a: '강남역·역삼역 일대는 특히 설치 수요가 많은 곳이라 전담 설치 기사가 상주하고 있습니다. 오전에 상담 주시면 당일 오후 설치가 가능합니다.' },
+      { q: '강남구 전 지역 출장 설치가 가능한가요?', a: '네, 강남구 22개 동 전역에 출장 설치가 가능합니다. 개포동·세곡동 등 비교적 외곽 지역도 1-2일 안 설치를 원칙으로 합니다.' },
+      { q: '강남역 근처 매장인데 빠른 설치 되나요?', a: '강남역·역삼역 일대는 특히 설치 수요가 많은 곳이라 전담 설치 기사가 상주하고 있습니다. 오전에 상담 주시면 오후 설치가 가능합니다.' },
       { q: '병원 전용 카드단말기도 설치 해주시나요?', a: '물론입니다. 성형외과·피부과·치과 등 고액 결제가 잦은 업종에 특화된 단말기와 무이자 할부 설정까지 함께 세팅해드립니다.' },
       { q: '오피스 구내 카페인데 법인카드 관리 POS 설치 가능한가요?', a: '법인카드 분리 결제, 영수증 자동 메일 발송, 월별 정산 리포트까지 제공하는 POS 시스템이 준비되어 있습니다. 역삼·선릉 일대 스타트업 구내식당 설치 경험도 풍부합니다.' }
     ],
     relatedSigungus: ['seocho', 'songpa', 'yongsan', 'gwangjin', 'seongdong'],
     tags: ['강남구 카드단말기', '강남 포스기 설치', '강남역 키오스크', '청담동 CCTV', '압구정 테이블오더', '강남구 매장 설비', '가로수길 POS', '대치동 학원 POS', '강남 무인매장', '강남구 카페 설치'],
-    metaTitle: '강남구 카드단말기·포스기·키오스크 설치 - 당일 출장',
-    metaDesc: '서울 강남구 카드단말기, 포스기, 키오스크, CCTV 설치 전문. 강남역·가로수길·청담동 등 22개 동 전역 당일 출장 설치. VAN사 수수료 비교, 무료 견적·상담.',
+    metaTitle: '강남구 카드단말기·포스기·키오스크 설치 - 빠른 방문',
+    metaDesc: '서울 강남구 카드단말기, 포스기, 키오스크, CCTV 설치 전문. 강남역·가로수길·청담동 등 22개 동 전역 빠른 방문 설치. VAN사 수수료 비교, 무료 견적·상담.',
   },
 ];
 
@@ -273,12 +273,12 @@ const PRODUCTS = [
     name: '카드단말기', emoji: '💳',
     shortDesc: '유선·무선·블루투스·토스단말기까지. VAN사 수수료 비교로 최저가 제공.',
     photo: 'data:image/webp;base64,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',
-    longDesc: '카드단말기는 매장 결제의 기본이자 핵심 장비입니다. 오페리오솔루션는 10개 이상의 VAN사와 협력해 매장 매출 규모와 업종에 맞는 최적의 수수료 조건을 제안합니다. 유선·무선·블루투스·토스 단말기 등 전 기종을 취급하며, 당일 출장 설치와 사용법 교육까지 원스톱으로 제공합니다. 기존 단말기 교체 시에는 VAN사 비교를 통해 월 평균 3-7만원, 연 40-80만원의 수수료를 절약할 수 있습니다.',
+    longDesc: '카드단말기는 매장 결제의 기본이자 핵심 장비입니다. 오페리오솔루션는 10개 이상의 VAN사와 협력해 매장 매출 규모와 업종에 맞는 최적의 수수료 조건을 제안합니다. 유선·무선·블루투스·토스 단말기 등 전 기종을 취급하며, 빠른 방문 설치와 사용법 교육까지 원스톱으로 제공합니다. 기존 단말기 교체 시에는 VAN사 비교를 통해 월 평균 3-7만원, 연 40-80만원의 수수료를 절약할 수 있습니다.',
     keywords: '카드단말기 설치, VAN사 비교, 카드결제기, 신용카드 단말기',
     features: [
       { title: 'VAN사 수수료 비교', desc: '10개 이상 VAN사 중 매장에 유리한 조건 선별' },
       { title: '전 기종 취급', desc: '유선·무선·블루투스·토스·IC 단말기까지' },
-      { title: '당일 설치', desc: '오전 문의 시 당일 출장 설치 가능' },
+      { title: '빠른 설치', desc: '오전 문의 시 빠른 방문 설치 가능' },
       { title: '무상 A/S', desc: '장애 발생 시 원격 우선, 필요 시 현장 출동' },
     ],
     useCases: '카페, 음식점, 미용실, 소매점, 편의점, 학원',
@@ -389,7 +389,7 @@ const STRENGTHS = [
     num: '02',
     menuTitle: '신속 설치',
     headline: '기다림 없는<br>빠른 설치',
-    body: '오전 상담 시 당일 출장이 원칙입니다. 전체 설치의 94%가 당일 또는 다음 날까지 완료됩니다. 오픈 일정에 쫓기는 매장도 일정 맞춰드립니다.',
+    body: '오전 상담 시 빠른 방문이 원칙입니다. 전체 설치의 94%가 1-2일 안까지 완료됩니다. 오픈 일정에 쫓기는 매장도 일정 맞춰드립니다.',
     note: '* 지역·재고 상황에 따라 일정 조율 가능',
     photo: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80',
   },
@@ -475,7 +475,7 @@ const SIGUNGU = [
       { name: 'IT·오피스', note: '테헤란로 스타트업. 법인카드 대량 결제·회계 연동 수요' },
     ],
     avgInstall: '180+',
-    specialNote: '강남은 설치 당일 가동이 중요합니다. 매장 오픈 일정에 맞춰 오전 상담·당일 출장 설치가 기본입니다. 고객 결제 경험이 브랜드 이미지로 직결되기 때문에 장비 선택·설치 품질에 민감한 상권입니다.',
+    specialNote: '강남은 설치 바로 가동이 중요합니다. 매장 오픈 일정에 맞춰 오전 상담·빠른 방문 설치가 기본입니다. 고객 결제 경험이 브랜드 이미지로 직결되기 때문에 장비 선택·설치 품질에 민감한 상권입니다.',
     seoKeywords: ['강남구 카드단말기', '강남 포스기', '강남 키오스크 설치', '강남 CCTV', '강남구 매장 설비', '역삼동 포스기', '삼성동 카드단말기', '청담동 키오스크'],
     relatedAreas: ['서초구', '송파구', '강동구', '성남시 분당구', '용산구'],
   },
@@ -1761,7 +1761,7 @@ function renderHome() {
 <section class="stats-section">
 <div class="container stats-grid">
 <div class="stat-card"><div class="n">${SITE.stats.coverage}<span>+</span></div><div class="l">전국 읍면동 출장</div></div>
-<div class="stat-card"><div class="n">${SITE.stats.installRate}</div><div class="l">당일·익일 설치</div></div>
+<div class="stat-card"><div class="n">${SITE.stats.installRate}</div><div class="l">1-2일 안 설치</div></div>
 <div class="stat-card"><div class="n">${SITE.stats.renewalRate}</div><div class="l">재계약·추천률</div></div>
 <div class="stat-card"><div class="n">24<span>H</span></div><div class="l">A/S 대응 체계</div></div>
 </div>
@@ -2403,12 +2403,12 @@ ${SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug
 <li><strong>현장 방문 견적</strong> — ${region.name} 지역 담당 엔지니어가 현장을 방문해 동선·전원·네트워크를 점검합니다.</li>
 <li><strong>장비 추천</strong> — 업종·매장 규모에 맞는 최적 조합을 제안합니다.</li>
 <li><strong>설치 및 교육</strong> — 평균 2~3시간 내 설치 완료, 사용법 교육 진행.</li>
-<li><strong>사후 관리</strong> — A/S 발생 시 원격 우선, 필요 시 ${region.name} 내 당일 출장 대응.</li>
+<li><strong>사후 관리</strong> — A/S 발생 시 원격 우선, 필요 시 ${region.name} 내 빠른 방문 대응.</li>
 </ol>
 
 <h2>❓ ${region.name} 매장 설비 설치 자주 묻는 질문</h2>
 <div class="region-faqs">
-<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> ${region.name} 안에서 당일 설치가 정말 가능한가요?</div><div class="region-faq-a">${region.name} 내 주요 지역은 오전 10시 전 상담 시 당일 오후 설치가 가능한 경우가 많습니다. 일반 카드단말기·무선 단말기는 대부분 당일, 키오스크·CCTV처럼 맞춤 세팅이 필요한 장비는 1~3일 소요됩니다.</div></div>
+<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> ${region.name} 안에서 설치가 빠르게 가능한가요?</div><div class="region-faq-a">${region.name} 내 주요 지역은 오전 10시 전 상담 시 오후에 방문해 설치하는 경우가 많습니다. 일반 카드단말기·무선 단말기는 대부분 빠르게, 키오스크·CCTV처럼 맞춤 세팅이 필요한 장비는 1~3일 소요됩니다.</div></div>
 <div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 외곽 지역도 출장 설치되나요?</div><div class="region-faq-a">네, ${region.coverage} 전 지역 출장 가능합니다. 외곽 지역도 중심 상권과 같은 조건으로 시공해드리며, 출장비 별도 청구 없습니다.</div></div>
 <div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 설치비는 정말 무료인가요? 숨겨진 비용은요?</div><div class="region-faq-a">설치비는 VAN사 제휴로 무료 지원합니다. 다만 <strong>월 이용료는 기종·VAN사 조건에 따라 부과</strong>될 수 있으므로 상담 시 정확한 조건을 안내드립니다. 계약서에 명시되지 않은 숨겨진 비용은 일절 없습니다.</div></div>
 <div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 기존 장비가 있는 매장도 교체 설치 가능한가요?</div><div class="region-faq-a">가능합니다. 기존 카드단말기·포스기의 VAN사 계약 잔여 기간, 위약금 여부를 사전에 확인해드리고, 교체 시점을 최적화해드립니다. 기존 장비 회수도 저희가 책임지며 회수 확인서를 발급해드립니다.</div></div>
@@ -2489,7 +2489,7 @@ function renderProductPage(product) {
 
 <h2>자주 묻는 질문 (FAQ)</h2>
 <h3>Q. ${product.name} 설치까지 얼마나 걸리나요?</h3>
-<p>상담 접수 후 당일~3일 이내 설치가 일반적입니다. 지역과 매장 상황에 따라 달라지며, 서울·경기·인천 주요 상권은 당일 설치도 가능합니다.</p>
+<p>상담 접수 후 1-3일 이내 설치가 일반적입니다. 지역과 매장 상황에 따라 달라지며, 서울·경기·인천 주요 상권은 빠르게 설치 가능합니다.</p>
 
 <h3>Q. 설치 후 A/S는 어떻게 되나요?</h3>
 <p>장애 발생 시 전화·원격으로 1차 대응하며, 원격으로 해결되지 않는 경우 현장 방문 A/S를 진행합니다. 24시간 대응 체계를 갖추고 있어 영업에 지장이 없도록 신속하게 처리합니다.</p>
@@ -2502,7 +2502,7 @@ function renderProductPage(product) {
 <p style="font-size:17px;margin:12px 0">
 <strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
 </p>
-<p style="opacity:.9;font-size:14px">무료 견적·상담. 전국 당일~3일 이내 설치.</p>
+<p style="opacity:.9;font-size:14px">무료 견적·상담. 전국 1-3일 이내 설치.</p>
 </div>
 </div>
 </div>
@@ -2531,7 +2531,7 @@ function renderProductPage(product) {
 `;
 
   const title = `${product.name} 설치 · ${product.shortDesc.slice(0, 40)}`;
-  const description = `${product.name} 설치 전문. ${product.shortDesc} 전국 당일 설치 가능.`;
+  const description = `${product.name} 설치 전문. ${product.shortDesc} 전국 빠른 설치 가능.`;
 
   return htmlWrap({
     title,
@@ -2723,7 +2723,7 @@ function renderRegionCardTerminalV3(region) {
     : (region.description ? `${region.name} 같은 활성 상권에서는 이 차이가 더 크게 벌어집니다` : `${region.name}처럼 매장 회전율이 높은 지역에서는 이 차이가 더 크게 벌어집니다`);
   // 메타 description
   const metaDesc = region.slug === 'seoul'
-    ? `${coverageText} 전 지역 카드단말기 설치. VAN사 수수료 비교, 당일 출장, 사기 방지 가이드, 세금 신고 활용법까지.`
+    ? `${coverageText} 전 지역 카드단말기 설치. VAN사 수수료 비교, 빠른 방문, 사기 방지 가이드, 세금 신고 활용법까지.`
     : `${coverageText} 카드단말기 설치 전문. VAN사 수수료 비교, 빠른 출장, 사기 방지 가이드, 세금 신고 활용법까지.`;
 
   const cssV3 = `
@@ -2829,11 +2829,11 @@ function renderRegionCardTerminalV3(region) {
 
 <h1 class="sctv3-h1">${region.name} 카드단말기 설치 가이드 — 빠른 출장부터 수수료 비교까지</h1>
 
-<p class="sctv3-intro">카드단말기는 "그냥 하나 놓으면 되는 장비"가 아닙니다. <strong>어느 VAN사와 계약했느냐에 따라 1년 수수료 차이가 수십만 원</strong>이 납니다. ${regionLeadDesc}. 이 글에서는 ${region.name}에서 카드단말기를 들이시는 사장님이 꼭 짚고 넘어가야 할 것들만 정리해드립니다. VAN사 고르는 법, 단말기 종류 비교, 기존 계약 위약금 처리, 설치 당일 일정까지 실전 기준으로 안내합니다.</p>
+<p class="sctv3-intro">카드단말기는 "그냥 하나 놓으면 되는 장비"가 아닙니다. <strong>어느 VAN사와 계약했느냐에 따라 1년 수수료 차이가 수십만 원</strong>이 납니다. ${regionLeadDesc}. 이 글에서는 ${region.name}에서 카드단말기를 들이시는 사장님이 꼭 짚고 넘어가야 할 것들만 정리해드립니다. VAN사 고르는 법, 단말기 종류 비교, 기존 계약 위약금 처리, 설치 같은 날 일정까지 실전 기준으로 안내합니다.</p>
 
 <div class="sctv3-stats">
   <div class="sctv3-stat"><div class="sctv3-stat-ic">🏬</div><div class="sctv3-stat-l">${region.name} 출장</div><div class="sctv3-stat-v">매장 직접 방문</div></div>
-  <div class="sctv3-stat"><div class="sctv3-stat-ic">⚡</div><div class="sctv3-stat-l">설치 일정</div><div class="sctv3-stat-v">당일 가능</div></div>
+  <div class="sctv3-stat"><div class="sctv3-stat-ic">⚡</div><div class="sctv3-stat-l">설치 일정</div><div class="sctv3-stat-v">빠르게 가능</div></div>
   <div class="sctv3-stat"><div class="sctv3-stat-ic">🔄</div><div class="sctv3-stat-l">VAN사 비교</div><div class="sctv3-stat-v">최적 조건</div></div>
   <div class="sctv3-stat"><div class="sctv3-stat-ic">💬</div><div class="sctv3-stat-l">무료 견적</div><div class="sctv3-stat-v">1분 응답</div></div>
 </div>
@@ -2863,7 +2863,7 @@ function renderRegionCardTerminalV3(region) {
   <p>카드단말기 시장은 진입 장벽이 낮아서 영업 직원·중간 대리점이 난립하고 있습니다. 그래서 비슷해 보이는 견적이라도 1년 후 사장님이 부담하시는 금액이 크게 달라집니다. ${region.name}에서 매장 오픈하시는 분들이 자주 걸려드는 함정 5가지를 정리해드립니다.</p>
   <div class="sctv3-num-list">
     <div class="sctv3-num-item"><div class="sctv3-num-badge">1</div><div class="sctv3-num-body"><h4>"평생 무료" 광고 — 위약금 조항 확인 필수</h4><p>설치비·월정액 평생 무료라고 광고하지만, 약관 안에는 <strong>3년 이내 해지 시 단말기 원가의 100~150% 위약금</strong> 조항이 숨어 있는 경우가 많습니다. 계약서 위약금 항목을 반드시 직접 확인하세요.</p></div></div>
-    <div class="sctv3-num-item"><div class="sctv3-num-badge">2</div><div class="sctv3-num-body"><h4>"수수료 최저가" 약속 — 우대 수수료율 적용 조건 확인</h4><p>건당 수수료 최저가를 보장한다고 하지만 <strong>월 결제 건수 일정 기준 미달 시 수수료가 두 배로 뛰는</strong> 조건이 붙는 경우가 있습니다. 사장님 매장의 월 평균 결제 건수와 비교해 실제 적용 가능한 조건인지 확인하세요.</p></div></div>
+    <div class="sctv3-num-item"><div class="sctv3-num-badge">2</div><div class="sctv3-num-body"><h4>"수수료 최저가" 약속 — 우대 수수료율 적용 조건 확인</h4><p>건당 수수료 최저가를 보장한다고 하지만 <strong>일정 매출 기준 미달 시 수수료가 두 배로 뛰는</strong> 조건이 붙는 경우가 있습니다. 사장님 매장 매출 규모와 비교해 실제 적용 가능한 조건인지 확인하세요.</p></div></div>
     <div class="sctv3-num-item"><div class="sctv3-num-badge">3</div><div class="sctv3-num-body"><h4>"바로 설치" 강요 — 같은 자리에서 계약서 사인 요구</h4><p>방문 영업 사원이 견적과 함께 그 자리에서 사인을 요구하는 경우는 일단 의심해야 합니다. 정상 업체는 사장님이 <strong>최소 1~2일 검토 시간을 갖도록</strong> 견적서·계약서 PDF를 보내드리고 기다립니다.</p></div></div>
     <div class="sctv3-num-item"><div class="sctv3-num-badge">4</div><div class="sctv3-num-body"><h4>"VAN사 직영" 사칭 — 실제로는 중간 대리점인 경우</h4><p>VAN사 본사 직영을 사칭하지만 실제로는 여러 단계를 거친 중간 대리점일 수 있습니다. 이런 경우 A/S 대응이 늦거나 책임 소재가 모호해집니다. 명함·사업자등록증·VAN사 계약 증빙을 요청해 확인하세요.</p></div></div>
     <div class="sctv3-num-item"><div class="sctv3-num-badge">5</div><div class="sctv3-num-body"><h4>"기존 단말기 무료 회수" — 회수증 발급 안 하면 안 됨</h4><p>기존 단말기를 무료로 가져가준다고 하면서 <strong>회수 확인서를 발급하지 않으면</strong>, 나중에 기존 VAN사에서 단말기 미반납 위약금을 청구할 수 있습니다. 반드시 회수증을 받으세요.</p></div></div>
@@ -2892,22 +2892,21 @@ function renderRegionCardTerminalV3(region) {
     <div class="sctv3-insight-card"><h5>1. 사업자등록증 준비</h5><p>VAN사 계약에 필수입니다. 미발급 상태면 상담만 먼저 받고, 등록증 나오는 대로 본 계약 진행이 가능합니다.</p></div>
     <div class="sctv3-insight-card"><h5>2. 매장 평수·카운터 위치</h5><p>유선·무선 결정의 기준이 됩니다. 카운터가 고정인지, 홀 서빙이 필요한지 미리 정리해두세요.</p></div>
     <div class="sctv3-insight-card"><h5>3. 인터넷·전원 위치 확인</h5><p>유선 단말기는 인터넷 LAN선이, 무선은 와이파이가 필요합니다. 전원 콘센트 위치도 미리 확인해두세요.</p></div>
-    <div class="sctv3-insight-card"><h5>4. 월 예상 결제 건수</h5><p>VAN사 수수료 우대율 산정 기준입니다. 일평균 결제 건수 × 30 으로 대략 예상하시면 됩니다.</p></div>
-    <div class="sctv3-insight-card"><h5>5. 결제 수단 비중</h5><p>카드 vs 간편결제(삼성페이·카카오페이·네이버페이) vs 현금 비중을 미리 파악하시면 단말기 추천이 정확해집니다.</p></div>
-    <div class="sctv3-insight-card"><h5>6. 포스기·키오스크 연동 여부</h5><p>이미 포스기가 있거나 향후 도입 예정이면 단말기 선택 단계에서 연동 가능 여부를 미리 확인해야 합니다.</p></div>
-    <div class="sctv3-insight-card"><h5>7. 기존 VAN 계약 잔여기간</h5><p>기존 단말기가 있으시면 계약서를 미리 꺼내두세요. 약정 기간·해지 위약금을 사전에 확인해야 손해가 없습니다.</p></div>
-    <div class="sctv3-insight-card"><h5>8. 영업시간·오픈 일정</h5><p>당일 설치를 원하시면 매장 영업 전·후 시간대로 일정을 잡으면 영업 차질이 없습니다.</p></div>
+    <div class="sctv3-insight-card"><h5>4. 결제 수단 비중</h5><p>카드 vs 간편결제(삼성페이·카카오페이·네이버페이) vs 현금 비중을 미리 파악하시면 단말기 추천이 정확해집니다.</p></div>
+    <div class="sctv3-insight-card"><h5>5. 포스기·키오스크 연동 여부</h5><p>이미 포스기가 있거나 향후 도입 예정이면 단말기 선택 단계에서 연동 가능 여부를 미리 확인해야 합니다.</p></div>
+    <div class="sctv3-insight-card"><h5>6. 기존 VAN 계약 잔여기간</h5><p>기존 단말기가 있으시면 계약서를 미리 꺼내두세요. 약정 기간·해지 위약금을 사전에 확인해야 손해가 없습니다.</p></div>
+    <div class="sctv3-insight-card"><h5>7. 영업시간·오픈 일정</h5><p>빠른 설치를 원하시면 매장 영업 전·후 시간대로 일정을 잡으면 영업 차질이 없습니다.</p></div>
   </div>
 </section>
 
 <section class="sctv3-sec">
   <div class="sctv3-sec-h">❓ ${region.name} 카드단말기 설치 자주 묻는 질문</div>
   <div class="sctv3-faqs">
-    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>오늘 연락하면 오늘 설치가 가능한가요?</div><div class="sctv3-faq-a">${region.name} 안이면 오전 10시 전에 연락 주시면 ${region.installTime || '당일~익일'} 설치가 가능한 경우가 많습니다. 단, 특정 기종(자동커팅형 일부, 최신 스마트 단말기)은 재고 확인에 하루 정도 필요합니다. 일반 유선 단말기는 대부분 빠르게 처리됩니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>오늘 연락하면 오늘 설치가 가능한가요?</div><div class="sctv3-faq-a">${region.name} 안이면 오전 10시 전에 연락 주시면 ${region.installTime || '1-2일'} 설치가 가능한 경우가 많습니다. 단, 특정 기종(자동커팅형 일부, 최신 스마트 단말기)은 재고 확인에 하루 정도 필요합니다. 일반 유선 단말기는 대부분 빠르게 처리됩니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>설치비는 정말 무료인가요?</div><div class="sctv3-faq-a">네, 설치비는 무료로 지원해드립니다. 다만 <strong>월 이용료는 기종·VAN사 조건에 따라 부과될 수 있습니다.</strong> 상담 시 사장님 매장 조건에 맞춰 정확한 비용을 안내드립니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>사업자등록증이 아직 안 나왔는데 미리 알아볼 수 있나요?</div><div class="sctv3-faq-a">네, 상담은 사업자 등록 전에도 가능합니다. 다만 VAN사 계약은 사업자등록증이 있어야 진행되므로, 미리 견적·기종 선정까지만 해두시고 등록증 나오는 대로 설치 일정을 잡는 식으로 많이 하십니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>VAN사를 나중에 바꾸고 싶으면 어떻게 하나요?</div><div class="sctv3-faq-a">계약 만료 후에는 자유롭게 바꾸실 수 있습니다. 오페리오솔루션에서 설치하신 경우 계약 기간을 저희가 관리하고 있어서, 만료 시점에 더 좋은 조건이 나오면 먼저 알려드리고 무료로 전환해드립니다.</div></div>
-    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>매출이 적어도 설치가 가능한가요?</div><div class="sctv3-faq-a">네. 다만 일부 VAN사는 최소 결제 건수 조건이 있어서, 이런 경우 다른 VAN사로 매칭해드립니다. 월 매출 300만 원 이하 소규모 매장도 설치 실적 많습니다.</div></div>
+    <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>매출이 적어도 설치가 가능한가요?</div><div class="sctv3-faq-a">네. 다만 일부 VAN사는 매출 규모 조건이 있어서, 이런 경우 다른 VAN사로 매칭해드립니다. 소규모 매장도 설치 실적 많습니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>고장 났을 때 바로 대응 가능한가요?</div><div class="sctv3-faq-a">대부분 전화·원격으로 해결됩니다(약 7할). 원격으로 안 되면 ${region.name} 내 ${region.installTime || '빠른'} 출동이 원칙입니다. 예비기를 들고 방문하므로 영업 차질 없이 교체 완료됩니다.</div></div>
     <div class="sctv3-faq-item"><div class="sctv3-faq-q"><span class="sctv3-faq-q-mark">Q.</span>기존 포스기와 연동이 안 되면 어떻게 하나요?</div><div class="sctv3-faq-a">오래된 포스기는 통신 프로토콜이 맞지 않아 연동이 어려운 경우가 있습니다. 이 경우 (1) 포스기 펌웨어 업데이트, (2) 호환 브릿지 설치, (3) 포스기 교체 중 사장님 상황에 맞는 방식을 제안드립니다.</div></div>
   </div>
@@ -2935,7 +2934,7 @@ function renderRegionCardTerminalV3(region) {
   <span class="sctv3-tag">#자동커팅단말기</span>
   <span class="sctv3-tag">#무선카드단말기</span>
   <span class="sctv3-tag">#카드단말기위약금</span>
-  <span class="sctv3-tag">#${region.name}당일설치</span>
+  <span class="sctv3-tag">#${region.name}빠른설치</span>
   <span class="sctv3-tag">#포스기연동</span>
   <span class="sctv3-tag">#간편결제단말기</span>
   <span class="sctv3-tag">#카드결제수수료</span>
@@ -3044,7 +3043,7 @@ function renderRegionProductPage(region, productSlug) {
 
 <div class="spp-stats">
   <div class="spp-stat"><div class="spp-stat-ic">🏬</div><div class="spp-stat-l">${region.name} 출장</div><div class="spp-stat-v">매장 직접 방문</div></div>
-  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">${actionH} 일정</div><div class="spp-stat-v">당일 가능</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">${actionH} 일정</div><div class="spp-stat-v">빠르게 가능</div></div>
   <div class="spp-stat"><div class="spp-stat-ic">🔄</div><div class="spp-stat-l">VAN사 비교</div><div class="spp-stat-v">최적 조건</div></div>
   <div class="spp-stat"><div class="spp-stat-ic">💬</div><div class="spp-stat-l">무료 견적</div><div class="spp-stat-v">1분 응답</div></div>
 </div>
@@ -3157,7 +3156,7 @@ ${recommendIndustrySections}
 </section>`;
   
   return htmlWrap({
-    title: `${region.fullName} ${kw} ${actionH} · 전 지역 당일 ${actionH}·VAN사 수수료 비교 | 오페리오솔루션`,
+    title: `${region.fullName} ${kw} ${actionH} · 전 지역 빠른 ${actionH}·VAN사 수수료 비교 | 오페리오솔루션`,
     description: `${coverageText.split(' · ')[0]} 전 지역 ${kw} ${actionH} 전문. 설치비 무료, 월 이용료 무료, A/S 지원. 오페리오솔루션 무료 견적.`,
     canonical: `${SITE.domain}/${region.slug}/${productSlug}`,
     breadcrumbs: [
@@ -3216,7 +3215,7 @@ function renderInstallPage(region, product) {
 
 <h3>${region.name} 내 주요 설치 가능 지역</h3>
 <ul>${districtsList}</ul>
-<p style="font-size:14px;color:var(--muted)">그 외 ${region.coverage} 당일 출장 설치 가능합니다.</p>
+<p style="font-size:14px;color:var(--muted)">그 외 ${region.coverage} 빠른 방문 설치 가능합니다.</p>
 
 <h2>설치 절차</h2>
 <ol>
@@ -3224,7 +3223,7 @@ function renderInstallPage(region, product) {
 <li><strong>현장 방문 견적</strong> — ${region.name} 담당 엔지니어가 현장 점검 후 견적을 제시합니다.</li>
 <li><strong>장비 주문·준비</strong> — 매장 조건에 맞는 ${product.name} 기종을 준비합니다.</li>
 <li><strong>설치 및 교육</strong> — ${region.installTime} 내 설치 완료, 사용법 교육 진행.</li>
-<li><strong>사후 관리</strong> — ${region.name} 지역 당일 출장 A/S 대응.</li>
+<li><strong>사후 관리</strong> — ${region.name} 지역 빠른 방문 A/S 대응.</li>
 </ol>
 
 <h2>자주 묻는 질문</h2>
@@ -3321,7 +3320,7 @@ const _SEOUL_MARKET_V = [
 const _SEOUL_FLOW_V = [
   '오페리오솔루션은 {name}에서 매장을 여시는 사장님의 <strong>동선과 피크타임</strong>을 먼저 살피고 시작합니다. 오피스 상권은 점심 2시간에 매출이 몰리는 구조라 결제 지연이 바로 이탈로 이어지고, 주거·배달 상권은 POS·배달앱 연동이 더 중요합니다. 매장이 자리한 위치와 업종을 보고 필요한 장비만 골라드리는 것이 저희 방식입니다.',
   '{name} 매장은 상권 성격에 따라 필요한 장비 조합이 완전히 다릅니다. 오페리오솔루션은 현장을 직접 방문해 카운터 구조·동선·결제 수단 비중을 확인한 뒤, 카드단말기·포스기·키오스크 중 <strong>실제로 필요한 것만</strong> 제안드립니다. 불필요한 장비는 권하지 않습니다.',
-  '{name}에서 매장을 준비하신다면 오픈 전 2~3주가 가장 중요합니다. 오페리오솔루션은 오픈 일정을 먼저 여쭤본 뒤 <strong>설치·메뉴 등록·직원 교육</strong>까지 역산해서 일정을 짜드립니다. 당일 영업 개시에 지장이 없도록 사전 테스트까지 끝내드립니다.',
+  '{name}에서 매장을 준비하신다면 오픈 전 2~3주가 가장 중요합니다. 오페리오솔루션은 오픈 일정을 먼저 여쭤본 뒤 <strong>설치·메뉴 등록·직원 교육</strong>까지 역산해서 일정을 짜드립니다. 바로 영업 개시에 지장이 없도록 사전 테스트까지 끝내드립니다.',
   '{name} 매장은 카운터 면적·직원 수·결제 비중에 따라 장비 조합이 달라집니다. 좁은 카운터에는 일체형 유선 단말기, 홀 서빙이 많은 매장은 무선 블루투스, 배달 비중이 높으면 POS 전면 배치가 효율적입니다. 현장을 보고 판단하는 게 가장 확실합니다.',
   '오페리오솔루션은 {name} 담당 기사가 처음 방문부터 A/S까지 <strong>고정 배정</strong>되는 구조라, 매번 새 기사에게 매장 상황을 설명하실 필요가 없습니다. 장비가 어떻게 세팅됐는지 히스토리를 그대로 갖고 있어서 문제 발생 시 빠르게 해결됩니다.',
   '{name} 사장님이 자주 놓치시는 게 <strong>장비 간 연동 설정</strong>입니다. 카드단말기·포스기·CCTV·배달앱이 서로 데이터를 주고받도록 처음부터 세팅해두면 나중에 매출 대조·분쟁 대응이 압도적으로 빨라집니다.',
@@ -3351,12 +3350,12 @@ const _SEOUL_KIOSK_CONTEXT_V = [
 
 // FAQ 첫 질문 답변 — 6개 변형
 const _SEOUL_FAQ1A_V = [
-  '{name} 전 지역을 직접 방문합니다. 오전에 연락 주시면 오후 설치가 가능한 경우가 많지만, 당일 일정은 지역과 장비 재고에 따라 다르니 먼저 전화 상담으로 확인하시는 게 빠릅니다.',
-  '{name} 전 지역 출장 설치 가능합니다. 재고 확인 후 가장 빠른 일정으로 설치해드리며, 긴급하시면 당일 처리도 됩니다. 먼저 전화로 업종·매장 규모를 말씀해 주시면 일정이 바로 잡힙니다.',
-  '네, {name} 어디든 방문합니다. 설치 일정은 보통 상담 후 2~3일 이내에 잡히고, 장비 재고가 있으시면 당일 설치도 가능합니다. 미리 전화 주시면 기사 일정을 더 유리하게 배정해드립니다.',
-  '{name} 전역 출장 가능하며, 평일·주말 모두 대응합니다. 오픈 일정이 촉박하시면 최우선 배정으로 당일 마감까지 해드립니다. 먼저 전화 주세요.',
+  '{name} 전 지역을 직접 방문합니다. 오전에 연락 주시면 오후 설치가 가능한 경우가 많지만, 같은 날 일정은 지역과 장비 재고에 따라 다르니 먼저 전화 상담으로 확인하시는 게 빠릅니다.',
+  '{name} 전 지역 출장 설치 가능합니다. 재고 확인 후 가장 빠른 일정으로 설치해드리며, 긴급하시면 빠르게 처리해드립니다. 먼저 전화로 업종·매장 규모를 말씀해 주시면 일정이 바로 잡힙니다.',
+  '네, {name} 어디든 방문합니다. 설치 일정은 보통 상담 후 2~3일 이내에 잡히고, 장비 재고가 있으시면 빠르게 설치 가능합니다. 미리 전화 주시면 기사 일정을 더 유리하게 배정해드립니다.',
+  '{name} 전역 출장 가능하며, 평일·주말 모두 대응합니다. 오픈 일정이 촉박하시면 최우선 배정으로 바로 마감까지 해드립니다. 먼저 전화 주세요.',
   '네, 가능합니다. {name} 매장 주소를 말씀해 주시면 담당 기사가 바로 일정을 잡아드리며, 긴급 건은 2~4시간 내 도착도 가능합니다.',
-  '{name} 내 이동은 시간 손실이 적어 당일 설치 비율이 매우 높은 편입니다. 전화 주시면 재고·일정을 바로 확인해 가장 빠른 방문 시간을 안내드립니다.',
+  '{name} 내 이동은 시간 손실이 적어 설치 비율이 매우 높은 편입니다. 전화 주시면 재고·일정을 바로 확인해 가장 빠른 방문 시간을 안내드립니다.',
 ];
 
 // 카드단말기 섹션 — 1문단 (2문단 중 첫 번째) 변형 6개
@@ -3393,7 +3392,7 @@ const _SEOUL_CCTV_B_V = [
   '영상 저장 기간은 30일·60일·90일 중 선택하실 수 있고, 클라우드 백업을 함께 신청하시면 장비 도난·훼손 시에도 영상이 남습니다. 사고 발생 시 경찰·보험사 요청용 영상 추출도 무상으로 지원해드립니다.',
   '카메라 해상도는 얼굴·번호판·지폐 식별이 중요한 카운터는 4K, 동선 확인 위주의 홀·주방은 QHD가 적정합니다. {name} 매장 평수에 맞춰 과하지 않은 구성으로 견적을 드리고, 후에 카메라 추가 설치도 간단합니다.',
   'CCTV 설치 후에는 <strong>영상 관리·백업·보안 설정</strong>까지 한 번에 끝냅니다. 암호를 기본값으로 두면 외부 해킹 위험이 있어, 설치일에 사장님 전용 비밀번호로 바꿔드리고 2단계 인증까지 적용해드립니다.',
-  '보험사 제출용 CCTV 사양서, 보안 인증서까지 설치 당일 발급해드립니다. 화재·도난 보험료 할인 혜택은 설치 후 1개월 내 신청하시는 게 가장 좋고, 신청서 양식도 같이 준비해드립니다.',
+  '보험사 제출용 CCTV 사양서, 보안 인증서까지 설치 빠른 발급해드립니다. 화재·도난 보험료 할인 혜택은 설치 후 1개월 내 신청하시는 게 가장 좋고, 신청서 양식도 같이 준비해드립니다.',
 ];
 
 // 철거 섹션 — 1문단 변형 4개
@@ -3523,7 +3522,7 @@ function renderSubcityPage(city) {
   <div class="sgu-hero-bg" style="${heroBgStyle}"></div>
   <div class="sgu-hero-ov">
     <div class="sgu-hero-title">${name} 카드단말기·포스기·키오스크 설치 전문</div>
-    <div class="sgu-hero-sub">${name} 매장 당일 출장 | 설치비 무료 | VAN사 수수료 비교 견적</div>
+    <div class="sgu-hero-sub">${name} 매장 빠른 방문 | 설치비 무료 | VAN사 수수료 비교 견적</div>
   </div>
 </div>
 
@@ -3536,7 +3535,7 @@ function renderSubcityPage(city) {
   <div class="sct-stats">
     <div class="sct-stat"><div class="sct-stat-num">${city.subGus.length}</div><div class="sct-stat-lbl">자치구</div></div>
     <div class="sct-stat"><div class="sct-stat-num">${city.subGus.reduce((s,g)=>s+g.dongs.length,0)}</div><div class="sct-stat-lbl">읍·면·동</div></div>
-    <div class="sct-stat"><div class="sct-stat-num">당일</div><div class="sct-stat-lbl">출장 가능</div></div>
+    <div class="sct-stat"><div class="sct-stat-num">빠른</div><div class="sct-stat-lbl">출장 가능</div></div>
     <div class="sct-stat"><div class="sct-stat-num">0원</div><div class="sct-stat-lbl">설치비</div></div>
   </div>
   <p>${marketP}</p>
@@ -3684,7 +3683,7 @@ function renderSubcityPage(city) {
       <div class="sct-why-item">
         <div class="sct-why-ic">📞</div>
         <div class="sct-why-t">A/S는 전화 한 통</div>
-        <div class="sct-why-d">원격 지원으로 대부분 해결. 필요 시 ${name} 내 당일 출동</div>
+        <div class="sct-why-d">원격 지원으로 대부분 해결. 필요 시 ${name} 내 빠른 출동</div>
       </div>
       <div class="sct-why-item">
         <div class="sct-why-ic">🔨</div>
@@ -3706,7 +3705,7 @@ function renderSubcityPage(city) {
   <div class="sgu-h2"><span class="sgu-ic">❓</span>${name} 설치 자주 묻는 질문</div>
   <div class="sct-faq">
     <details class="sct-faq-item" open>
-      <summary>${name} 전 지역 당일 출장이 가능한가요?</summary>
+      <summary>${name} 전 지역 빠른 방문이 가능한가요?</summary>
       <div class="sct-faq-a">${faq1A}</div>
     </details>
     <details class="sct-faq-item">
@@ -3719,7 +3718,7 @@ function renderSubcityPage(city) {
     </details>
     <details class="sct-faq-item">
       <summary>고장 나면 어떻게 대응하세요?</summary>
-      <div class="sct-faq-a">먼저 전화로 1차 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${name} 담당 기사가 직접 매장으로 출동하며, 긴급한 건은 당일 처리됩니다.</div>
+      <div class="sct-faq-a">먼저 전화로 1차 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${name} 담당 기사가 직접 매장으로 출동하며, 긴급한 건은 빠른 처리됩니다.</div>
     </details>
     <details class="sct-faq-item">
       <summary>매장 철거만 따로 맡겨도 되나요?</summary>
@@ -3787,7 +3786,7 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
   <div class="sgu-hero-bg" style="${heroBgStyle}"></div>
   <div class="sgu-hero-ov">
     <div class="sgu-hero-title">${name} 카드단말기·포스기·키오스크 설치 전문</div>
-    <div class="sgu-hero-sub">${name} 매장 당일 출장 | 설치비 무료 | VAN사 수수료 비교 견적</div>
+    <div class="sgu-hero-sub">${name} 매장 빠른 방문 | 설치비 무료 | VAN사 수수료 비교 견적</div>
   </div>
 </div>
 
@@ -3858,7 +3857,7 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
 
 <div class="sgu-tip">
   <div class="sgu-tip-h">💡 ${name} 사장님 Tip</div>
-  <p><strong>오픈 전 2~3주가 가장 중요합니다.</strong> 장비만 도착한다고 영업이 시작되는 게 아니라, 메뉴 등록·배달앱 연동·직원 교육까지 끝나야 문을 열 수 있습니다. 오페리오솔루션은 오픈 일정을 먼저 여쭤보고 거기서 거꾸로 계산해 설치 일정을 잡습니다. 당일 설치가 급하시면 일정 조율해드리고, 여유가 있으시면 교육 시간을 충분히 확보하는 쪽을 권해드립니다.</p>
+  <p><strong>오픈 전 2~3주가 가장 중요합니다.</strong> 장비만 도착한다고 영업이 시작되는 게 아니라, 메뉴 등록·배달앱 연동·직원 교육까지 끝나야 문을 열 수 있습니다. 오페리오솔루션은 오픈 일정을 먼저 여쭤보고 거기서 거꾸로 계산해 설치 일정을 잡습니다. 설치가 급하시면 일정 조율해드리고, 여유가 있으시면 교육 시간을 충분히 확보하는 쪽을 권해드립니다.</p>
 </div>
 
 <section class="sgu-sec">
@@ -3881,7 +3880,7 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
     <li><span class="sgu-check">✓</span><div><strong>${name} 담당 기사 고정 배정</strong> — 처음 오신 기사가 A/S도 끝까지 담당하기 때문에 매장 상황을 매번 처음부터 설명하실 필요가 없습니다</div></li>
     <li><span class="sgu-check">✓</span><div><strong>업종에 쓸 장비만 추천</strong> — 음식점에 필요 없는 예약 관리 POS, 미용실에 과한 테이블오더는 권해드리지 않습니다</div></li>
     <li><span class="sgu-check">✓</span><div><strong>오픈 일정 역산 설계</strong> — 장비 배송·설치·교육까지 오픈일에 맞춰 거꾸로 일정을 짜드립니다</div></li>
-    <li><span class="sgu-check">✓</span><div><strong>A/S는 전화 한 통</strong> — 원격 지원으로 대부분 해결되고, 필요하면 ${name} 내 당일 출동합니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>A/S는 전화 한 통</strong> — 원격 지원으로 대부분 해결되고, 필요하면 ${name} 내 빠른 출동합니다</div></li>
     <li><span class="sgu-check">✓</span><div><strong>폐업 때도 저희가 남아있습니다</strong> — 철거·원상복구·폐기물 처리·희망리턴패키지 보조금 신청까지 연결해드립니다</div></li>
   </ul>
 </section>
@@ -3914,7 +3913,7 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
     </div>
     <div class="sgu-faq-item">
       <div class="sgu-faq-q"><span class="sgu-faq-q-mark">Q.</span>고장 나면 어떻게 대응하세요?</div>
-      <div class="sgu-faq-a">먼저 전화 또는 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${name} 담당 기사가 직접 매장으로 출동하며, 긴급한 경우 당일 처리됩니다.</div>
+      <div class="sgu-faq-a">먼저 전화 또는 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${name} 담당 기사가 직접 매장으로 출동하며, 긴급한 경우 빠른 처리됩니다.</div>
     </div>
     <div class="sgu-faq-item">
       <div class="sgu-faq-q"><span class="sgu-faq-q-mark">Q.</span>매장을 정리하는데 철거도 해주시나요?</div>
@@ -3949,10 +3948,10 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
 // 인트로 문단 — 6가지 변형
 const _DONG_INTRO_V = [
   `{full}에서 카드단말기·포스기 설치를 고민하고 계신가요? 오페리오솔루션은 <strong>{name} 전 지역</strong>을 직접 방문해 무료 견적·빠른 설치·A/S까지 책임집니다. 카드단말기·포스기·키오스크·테이블오더는 설치비 무료입니다. 이 글에서는 {name} 사장님들이 꼭 알아야 할 카드단말기·포스기 선택 기준, 비용 절감 방법, 키오스크·CCTV 연동 혜택을 빠짐없이 안내드립니다.`,
-  `{name} 매장을 준비하시는 사장님께서 가장 많이 물어보시는 게 "어느 VAN사가 수수료가 제일 싸냐"인데, 사실 월 결제 건수와 평균 객단가에 따라 유리한 VAN사가 달라집니다. 오페리오솔루션은 {full} 사장님 매장 조건에 맞춰 10곳 이상 VAN사 수수료를 직접 비교해드리고, 카드단말기·포스기·키오스크까지 패키지로 한 번에 세팅합니다. {name} 지역 당일 출장 가능합니다.`,
+  `{name} 매장을 준비하시는 사장님께서 가장 많이 물어보시는 게 "어느 VAN사가 수수료가 제일 싸냐"인데, 사실 매장 매출 규모와 객단가에 따라 유리한 VAN사가 달라집니다. 오페리오솔루션은 {full} 사장님 매장 조건에 맞춰 10곳 이상 VAN사 수수료를 직접 비교해드리고, 카드단말기·포스기·키오스크까지 패키지로 한 번에 세팅합니다. {name} 지역 빠르게 방문 가능합니다.`,
   `{full} {name}은 매장 운영에 필요한 장비가 업종·평수·고객층에 따라 달라지는 지역입니다. 카페 한 곳과 음식점 한 곳은 추천하는 카드단말기부터 다르며, 포스기도 배달 비중이 높은 매장이냐 홀 중심이냐에 따라 기능이 갈립니다. 오페리오솔루션은 {name} 현장을 먼저 방문한 뒤 매장에 실제 맞는 조합만 제안드립니다. 설치비·교육비는 없습니다.`,
   `{name}에서 신규 오픈하시거나 기존 장비를 교체하시는 사장님이라면, 카드단말기 하나만 바꾸는 게 아니라 포스·키오스크·CCTV까지 한꺼번에 정리하시는 쪽이 1년 후를 봤을 때 훨씬 유리합니다. 장비가 서로 연동되어야 매출·재고·고객 데이터가 한 화면에서 보이고, A/S도 한 곳 창구로 처리됩니다. {full} 담당 기사가 직접 방문 설치 후 사장님이 손에 익을 때까지 1:1로 알려드립니다.`,
-  `{name} 매장 카드단말기·포스기 설치를 알아보실 때 첫 번째로 확인하셔야 하는 건 VAN사 계약 약관입니다. "평생 무료"라는 문구 뒤에 3년 이내 해지 시 단말기 원가의 120% 위약금 같은 조항이 숨어있는 경우가 있어서, 오페리오솔루션은 계약서 조항까지 같이 검토해드립니다. {full} 안이면 당일 방문 상담 가능합니다.`,
+  `{name} 매장 카드단말기·포스기 설치를 알아보실 때 첫 번째로 확인하셔야 하는 건 VAN사 계약 약관입니다. "평생 무료"라는 문구 뒤에 3년 이내 해지 시 단말기 원가의 120% 위약금 같은 조항이 숨어있는 경우가 있어서, 오페리오솔루션은 계약서 조항까지 같이 검토해드립니다. {full} 안이면 빠르게 방문 상담 가능합니다.`,
   `{full} {name}에서 매장을 준비 중이시라면 지금이 카드단말기·포스기 계약 조건을 비교하기 가장 좋은 시점입니다. 오픈 2주 전 ~ D-Day 사이에 저희를 부르시면 {name} 매장 동선에 맞춰 장비 위치를 같이 잡고, VAN사 수수료 최저 조건을 확보해드립니다. 메뉴·배달앱 연동까지 하루 안에 끝냅니다.`,
 ];
 
@@ -3961,7 +3960,7 @@ const _DONG_MARKET_V = [
   `{full} {name}은 도심 상업 지역으로, 유동 인구가 많고 경쟁이 치열한 지역입니다. {name}에서 주로 운영되는 업종으로는 카페, 음식점, 편의점, 의류매장 등이 있으며, 각 업종 특성에 맞는 카드단말기와 포스기 설치가 필요합니다.`,
   `{name} 상권은 매장 밀도가 높아 결제 속도 자체가 매출에 직결됩니다. 피크타임에 단말기가 멈추거나 카드 승인이 지연되면 손님 한 팀이 바로 떠나는 구조라, {full}에서 매장을 준비하시는 사장님이라면 단말기 안정성과 VAN사 통신 품질을 우선 고려하셔야 합니다.`,
   `{full} {name}에는 작은 개인 매장부터 중대형 프랜차이즈까지 다양한 업종이 밀집해 있어, 어느 한 장비 세팅으로 모든 상황을 커버하기 어렵습니다. 카페·음식점·편의점·미용·의류 매장마다 필요한 포스 기능이 다르고, 포스와 카드단말기 연동 방식도 업종별 표준이 다릅니다.`,
-  `{name} 지역은 주거·상업이 공존하는 복합 상권이라, 같은 업종이라도 골목 안쪽 가게와 대로변 가게의 매출 구조가 완전히 다릅니다. 매장 위치를 먼저 보고 결제 빈도·평균 객단가·배달 비중을 파악한 뒤 카드단말기·포스기 조합을 맞추는 게 장기적으로 유리합니다.`,
+  `{name} 지역은 주거·상업이 공존하는 복합 상권이라, 같은 업종이라도 골목 안쪽 가게와 대로변 가게의 매출 구조가 완전히 다릅니다. 매장 위치를 먼저 보고 결제 빈도·객단가·배달 비중을 파악한 뒤 카드단말기·포스기 조합을 맞추는 게 장기적으로 유리합니다.`,
   `{full} {name}에서 신규 창업 비율이 꾸준히 높은 편입니다. 카드결제·간편결제 비중이 빠르게 늘고 있어, 단말기를 고르실 때 IC·NFC·QR·삼성페이·카카오페이까지 한 대에서 처리되는 기종을 선택하시는 게 추후 업그레이드 비용을 줄이는 방법입니다.`,
   `{name}은 평일 오피스 수요와 주말 가족·관광 수요가 섞인 지역입니다. 요일별·시간대별 매출 패턴이 크게 달라지기 때문에, 포스기에 시간대별 매출 리포트 기능이 잘 정리되어 있어야 인력·재고 운영이 효율화됩니다.`,
 ];
@@ -3969,7 +3968,7 @@ const _DONG_MARKET_V = [
 // 사장님 Tip 문단 — 5가지 변형
 const _DONG_TIP_V = [
   `카드단말기 단독 설치보다 <strong>포스기와 함께 설치</strong>하면 월 수수료 절감 + 재고·매출 자동 관리가 가능합니다. 오페리오솔루션 패키지 설치 시 추가 할인 혜택을 드립니다.`,
-  `오픈 2주 전까지 카드단말기·포스기 설치를 마치시면 메뉴 등록·직원 교육까지 여유 있게 끝납니다. 오픈 당일 급하게 설치하려다 첫 손님 응대가 어긋나는 경우가 많아 미리 잡으시길 권해드립니다.`,
+  `오픈 2주 전까지 카드단말기·포스기 설치를 마치시면 메뉴 등록·직원 교육까지 여유 있게 끝납니다. 오픈 임박해 급하게 설치하려다 첫 손님 응대가 어긋나는 경우가 많아 미리 잡으시길 권해드립니다.`,
   `VAN사는 중간에 바꾸기가 번거로우니 처음 계약하실 때 최소 3~5곳 조건을 비교하신 뒤 결정하시는 게 좋습니다. 오페리오솔루션은 10곳 이상 VAN사 수수료·위약금 조건을 한 번에 보여드립니다.`,
   `카드단말기 말고도 포스·CCTV·테이블오더까지 한 번에 설치하시면 패키지 할인이 들어가고, A/S 책임 소재가 한 곳으로 모아져서 고장 시 대응이 훨씬 빠릅니다.`,
   `기존 VAN사 계약이 남아있으시면 해지 위약금부터 확인하세요. 만료 1~2개월 전에 옮기시면 새 VAN사 혜택을 최대로 받을 수 있습니다.`,
@@ -4145,7 +4144,7 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
 
 <div class="sdo-meta">
   <span class="sdo-meta-tag">카드단말기 설치</span>
-  <span>빠른 설치 · 당일 상담</span>
+  <span>빠른 설치 · 즉시 상담</span>
   <span class="sdo-meta-sep">·</span>
   <span>📍 ${regionFullName} ${parent} ${name}</span>
 </div>
@@ -4238,7 +4237,7 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
 
 <section class="sdo-sec">
   <div class="sdo-h2"><span class="sdo-ic">📋</span>${name} 매장 오픈 체크리스트</div>
-  <p>${name}에서 매장을 오픈하시기 전에 카드단말기·포스기·키오스크·CCTV까지 빠짐없이 준비하셔야 오픈 당일 매끄럽게 영업을 시작하실 수 있습니다. 오페리오솔루션이 정리한 <strong>${name} 매장 필수 준비 항목</strong>입니다.</p>
+  <p>${name}에서 매장을 오픈하시기 전에 카드단말기·포스기·키오스크·CCTV까지 빠짐없이 준비하셔야 오픈일에 매끄럽게 영업을 시작하실 수 있습니다. 오페리오솔루션이 정리한 <strong>${name} 매장 필수 준비 항목</strong>입니다.</p>
   <ul class="sdo-check-list">
     ${checklistItems}
   </ul>
@@ -4298,7 +4297,7 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
 
 <section class="sdo-sec">
   <div class="sdo-h2"><span class="sdo-ic">📋</span>${name} 매장 오픈 체크리스트</div>
-  <p>${name}에서 매장을 오픈하시기 전에 카드단말기·포스기·키오스크·CCTV까지 빠짐없이 준비하셔야 오픈 당일 매끄럽게 영업을 시작하실 수 있습니다. 오페리오솔루션이 정리한 <strong>${name} 매장 필수 준비 항목</strong>입니다.</p>
+  <p>${name}에서 매장을 오픈하시기 전에 카드단말기·포스기·키오스크·CCTV까지 빠짐없이 준비하셔야 오픈일에 매끄럽게 영업을 시작하실 수 있습니다. 오페리오솔루션이 정리한 <strong>${name} 매장 필수 준비 항목</strong>입니다.</p>
   <ul class="sdo-check-list">
     <li><span class="sdo-check-mark">✓</span><div><strong>사업자등록증·임대차계약서 사본 준비</strong> — 카드단말기 VAN사 심사에 필요한 기본 서류입니다</div></li>
     <li><span class="sdo-check-mark">✓</span><div><strong>${name} 매장 평수·카운터 위치 확인</strong> — 카드단말기 유선/무선, 포스기 설치 위치가 여기서 결정됩니다</div></li>
@@ -4392,7 +4391,7 @@ function _dppVariants(name, parent, kw, mainKw, regionFullName, phoneDisplay) {
     ],
     faq: [
       [
-        { q: `${name}에서 ${kw} 설치는 얼마나 걸리나요?`, a: `${parent} ${name} 안이면 일반 모델은 오전 상담→당일 오후 설치 가능한 경우가 많습니다. 특수 기종은 1-3일 소요되며, 영업 시간에 맞춰 일정 조정합니다.` },
+        { q: `${name}에서 ${kw} 설치는 얼마나 걸리나요?`, a: `${parent} ${name} 안이면 일반 모델은 오전 상담→오후 설치 가능한 경우가 많습니다. 특수 기종은 1-3일 소요되며, 영업 시간에 맞춰 일정 조정합니다.` },
         { q: `${kw} 설치비와 월 비용은 어떻게 되나요?`, a: `${mainKw}는 설치비 무료가 기본이고, 월 비용은 기종·VAN사 조건에 따라 달라집니다. 정확한 견적은 매장 환경 보고 계산하며, 1-3년 누적 비용 비교 자료도 함께 제공합니다.` },
       ],
     ],
@@ -4614,10 +4613,10 @@ function _sgppV(guName, kw, action, actionH, phoneDisplay, salt) {
   // FAQ (시군구 전용 — 광역×제품과 다른 질문 + 답변)
   const faqs = [
     [
-      { q: `${guName} 안이면 어디든 출장이 가능한가요?`, a: `네, ${guName} 전 지역 출장 가능합니다. 큰 차로 한 번 이동 후 가장 빠른 일정으로 설치해드리며, 긴급하시면 당일 처리도 됩니다. 먼저 전화로 업종·매장 규모만 알려 주시면 일정이 바로 잡힙니다.` },
+      { q: `${guName} 안이면 어디든 출장이 가능한가요?`, a: `네, ${guName} 전 지역 출장 가능합니다. 큰 차로 한 번 이동 후 가장 빠른 일정으로 설치해드리며, 긴급하시면 빠르게 처리해드립니다. 먼저 전화로 업종·매장 규모만 알려 주시면 일정이 바로 잡힙니다.` },
       { q: `정말 설치비가 안 드나요?`, a: `네, 저희가 VAN사와 맺은 계약 구조상 단말기 원가가 VAN사 쪽에서 상쇄되는 방식입니다. 사장님께서 내시는 설치비를 이용료·교육비는 0원이고, 카드 결제 발생 시 건당 VAN사 수수료만 정상 부과됩니다. 계약서에도 동일하게 명시됩니다.` },
       { q: `한 번에 여러 장비를 놓으면 뭐가 좋나요?`, a: `카드단말기·포스기·키오스크·테이블오더·CCTV가 서로 연동되도록 한 번에 세팅됩니다. 나중에 따로따로 설치하시면 연동 호환성 문제가 생기거나 같은 작업을 두 번 반복해야 합니다. 한 번에 설치하시면 패키지 할인도 들어가고, 한 명의 기사가 끝까지 책임지기 때문에 A/S 책임 소재도 명확해집니다.` },
-      { q: `고장 나면 어떻게 대응하시나요?`, a: `먼저 전화 또는 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${guName} 담당 기사가 직접 매장으로 출동하며, 긴급한 경우 당일 처리됩니다.` },
+      { q: `고장 나면 어떻게 대응하시나요?`, a: `먼저 전화 또는 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${guName} 담당 기사가 직접 매장으로 출동하며, 긴급한 경우 빠른 처리됩니다.` },
       { q: `매장을 정리하는 데 철거도 해주시나요?`, a: `${guName} 내 매장·사무실·상가 정리까지 처리합니다. 임대인 원상복구 조건을 먼저 확인해 정확한 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 희망리턴패키지 보조금 신청도 같이 준비해드립니다.` },
     ],
     [
@@ -4625,7 +4624,7 @@ function _sgppV(guName, kw, action, actionH, phoneDisplay, salt) {
       { q: `견적은 어떻게 받나요?`, a: `전화(${phoneDisplay}) 또는 카카오톡으로 매장 위치(${guName})와 업종, 평균 매출만 알려 주시면 1분 안에 예상 견적을 안내드리고, 매장 방문 후 정식 견적은 무료로 드립니다.` },
       { q: `기존 ${kw}가 있는데 교체할 수 있나요?`, a: `네, 위약금이나 잔여 계약 기간이 있으셔도 함께 검토해 드립니다. 새 계약 조건이 더 유리하면 위약금을 부담해도 1-2년 안에 회수되는 경우가 많습니다. 기존 계약서 한 장만 보내 주시면 비교 분석해 드립니다.` },
       { q: `${guName} 안에서 다른 매장은 어떤 ${kw}를 쓰나요?`, a: `업종에 따라 다릅니다. 비슷한 업종·매출 규모의 ${guName} 사례를 익명화해서 보여 드릴 수 있으니, 상담 시 요청해 주시면 참고용 자료를 보내 드립니다.` },
-      { q: `설치 후 직원 교육은 어떻게 하나요?`, a: `설치 당일 ${guName} 매장에서 사장님과 직원분께 1:1로 사용법을 알려 드립니다. 메뉴얼·동영상 가이드도 함께 보내 드리며, 사용 중 막히는 부분이 있으면 전화로 즉시 안내드립니다.` },
+      { q: `설치 후 직원 교육은 어떻게 하나요?`, a: `설치하러 ${guName} 매장에 방문해 사장님과 직원분께 1:1로 사용법을 알려 드립니다. 메뉴얼·동영상 가이드도 함께 보내 드리며, 사용 중 막히는 부분이 있으면 전화로 즉시 안내드립니다.` },
     ],
   ];
   // 섹션 제목 풀 (allpay 차별화 — 다양한 동의어/관련 키워드)
@@ -4741,7 +4740,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
 
 <div class="spp-stats">
   <div class="spp-stat"><div class="spp-stat-ic">🏬</div><div class="spp-stat-l">${guName} 출장</div><div class="spp-stat-v">매장 직접 방문</div></div>
-  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">${actionH} 일정</div><div class="spp-stat-v">당일 가능</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">${actionH} 일정</div><div class="spp-stat-v">빠르게 가능</div></div>
   <div class="spp-stat"><div class="spp-stat-ic">🔄</div><div class="spp-stat-l">VAN사 비교</div><div class="spp-stat-v">최적 조건</div></div>
   <div class="spp-stat"><div class="spp-stat-ic">💬</div><div class="spp-stat-l">무료 견적</div><div class="spp-stat-v">1분 응답</div></div>
 </div>
@@ -4926,7 +4925,7 @@ function renderSigunguPage(sg) {
       </div>
     </div>
     <h1 class="sg-h1">${sg.name} 카드단말기·포스기·키오스크 설치</h1>
-    <p class="sg-lead">${sg.fullName} 전 지역 당일·익일 출장 설치. ${sg.name} 월 평균 <strong>${sg.monthlyInstalls}+건</strong>의 설치를 진행하고 있습니다.</p>
+    <p class="sg-lead">${sg.fullName} 전 지역 1-2일 안 방문 설치를 진행하고 있습니다.</p>
   </div>
 </section>
 
@@ -4956,9 +4955,8 @@ function renderSigunguPage(sg) {
         <p>${sg.fullName}은(는) 인구 ${sg.population}명, 면적 ${sg.area} 규모의 ${sg.dongCount}개 법정동으로 구성된 지역입니다. ${sg.landmarks.slice(0, 4).join(', ')} 등의 주요 랜드마크를 중심으로 서로 다른 성격의 상권이 형성되어 있습니다.</p>
         <p>${sg.localInsight}</p>
         <div class="sg-stats">
-          <div class="sg-stat"><div class="sg-stat-n">${sg.monthlyInstalls}+</div><div class="sg-stat-l">월 설치 건수</div></div>
           <div class="sg-stat"><div class="sg-stat-n">${sg.dongCount}</div><div class="sg-stat-l">커버 동 수</div></div>
-          <div class="sg-stat"><div class="sg-stat-n">당일</div><div class="sg-stat-l">평균 설치</div></div>
+          <div class="sg-stat"><div class="sg-stat-n">빠른</div><div class="sg-stat-l">평균 설치</div></div>
           <div class="sg-stat"><div class="sg-stat-n">무료</div><div class="sg-stat-l">출장·견적</div></div>
         </div>
       </section>
@@ -5007,7 +5005,7 @@ function renderSigunguPage(sg) {
 
       <section class="sg-block sg-bottom-cta">
         <h2>📞 ${sg.name} 무료 견적 받기</h2>
-        <p>${sg.name} 전 지역 당일·익일 출장 설치. 전화 한 통이면 매장에 맞는 장비를 추천해드립니다.</p>
+        <p>${sg.name} 전 지역 1-2일 안 방문 설치. 전화 한 통이면 매장에 맞는 장비를 추천해드립니다.</p>
         <div class="sg-cta-buttons">
           <a href="tel:${SITE.phone}" class="btn btn-primary">📞 ${SITE.phoneDisplay}</a>
           <a href="/contact" class="btn btn-ghost">💬 상담 문의</a>
@@ -5140,7 +5138,7 @@ function renderIndustryPage(industry) {
 <li><strong>무료 상담</strong> — ${SITE.phoneDisplay} 또는 카카오톡으로 매장 정보(업종·평수·예상 좌석 수)를 알려주세요.</li>
 <li><strong>현장 방문 견적</strong> — 담당 엔지니어가 매장 동선과 네트워크·전기 조건을 점검합니다.</li>
 <li><strong>맞춤 패키지 제안</strong> — ${industry.name} 특성에 맞춘 최적 조합을 여러 옵션으로 제시합니다.</li>
-<li><strong>설치·교육</strong> — 짧게는 당일, 풀패키지도 1-2일 내 설치 완료 후 사용 교육까지 진행합니다.</li>
+<li><strong>설치·교육</strong> — 짧게는 1일, 풀패키지도 1-2일 내 설치 완료 후 사용 교육까지 진행합니다.</li>
 <li><strong>사후 관리</strong> — A/S 발생 시 원격 우선 대응, 필요 시 현장 출동합니다.</li>
 </ol>
 
@@ -5187,7 +5185,7 @@ function renderIndustryProductPage(industry, product) {
   const detailP = `${indName}에서 ${kw}를 잘 활용하시는 매장의 공통점은 ${kw}를 매장 운영 데이터의 시작점으로 본다는 점입니다. 매출 패턴, 인기 메뉴, 시간대별 흐름이 ${kw}에 누적되어 매장 개선의 근거가 됩니다.`;
   const effectP = `${indName} 매장에 ${kw}를 ${actionH}하시면 결제·주문 속도가 빨라지고, 매출 데이터가 자동 정리되며, 인건비 부담도 줄어듭니다. ${indName} 사장님들이 가장 만족하시는 표현은 "신경 쓸 일이 줄었다"입니다.`;
   const faqs = [
-    { q: `${indName}에서 ${kw} ${actionH}은 얼마나 걸리나요?`, a: `오전 상담 후 당일 오후 ${actionH} 가능한 경우가 많습니다. ${indName} 매장 환경에 따라 1-3일 일정으로 진행하며, 영업 시간을 피해 처리합니다.` },
+    { q: `${indName}에서 ${kw} ${actionH}은 얼마나 걸리나요?`, a: `오전 상담 후 오후 ${actionH} 가능한 경우가 많습니다. ${indName} 매장 환경에 따라 1-3일 일정으로 진행하며, 영업 시간을 피해 처리합니다.` },
     { q: `${indName} ${kw} ${actionH} 비용은 어떻게 되나요?`, a: `${actionH}비 무료, 월 이용료 무료가 기본입니다. ${indName} 업종 맞춤 옵션도 견적에 포함되어 별도 비용이 없습니다.` },
     { q: `${indName}에서 ${kw}만 따로 ${actionH}할 수 있나요?`, a: `${kw} 단독 ${actionH}도 가능합니다. 다만 ${indName}에서는 다른 매장 장비와 함께 도입하시면 데이터 연동과 견적이 더 유리합니다.` },
     { q: `${kw} 고장 시 빠른 A/S 가능한가요?`, a: `네, 대부분 전화·원격으로 해결됩니다. 원격이 안 되는 경우 ${indName} 매장에 빠른 출장 대응합니다.` },];
@@ -5228,7 +5226,7 @@ function renderIndustryProductPage(industry, product) {
 <p class="spp-intro">${indName} 업종에 특화된 ${kw} ${actionH} 전문 서비스입니다. ${cfg.introBody}.</p>
 
 <div class="spp-stats">
-  <div class="spp-stat"><div class="spp-stat-ic">🏬</div><div class="spp-stat-l">${indName} 전문</div><div class="spp-stat-v">매장 직접 방문</div></div><div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">${actionH} 일정</div><div class="spp-stat-v">당일 가능</div></div><div class="spp-stat"><div class="spp-stat-ic">🔄</div><div class="spp-stat-l">VAN사 비교</div><div class="spp-stat-v">최적 조건</div></div><div class="spp-stat"><div class="spp-stat-ic">💬</div><div class="spp-stat-l">무료 견적</div><div class="spp-stat-v">1분 응답</div></div>
+  <div class="spp-stat"><div class="spp-stat-ic">🏬</div><div class="spp-stat-l">${indName} 전문</div><div class="spp-stat-v">매장 직접 방문</div></div><div class="spp-stat"><div class="spp-stat-ic">⚡</div><div class="spp-stat-l">${actionH} 일정</div><div class="spp-stat-v">빠르게 가능</div></div><div class="spp-stat"><div class="spp-stat-ic">🔄</div><div class="spp-stat-l">VAN사 비교</div><div class="spp-stat-v">최적 조건</div></div><div class="spp-stat"><div class="spp-stat-ic">💬</div><div class="spp-stat-l">무료 견적</div><div class="spp-stat-v">1분 응답</div></div>
 </div>
 
 <section class="spp-sec">
@@ -5312,7 +5310,7 @@ ${otherProductsHtml ? `<div class="spp-side-nav">
   
   return htmlWrap({
     title: `${mainKw} · ${indName} 매장 전문 ${actionH} | 오페리오솔루션`,
-    description: `${indName} 매장의 ${kw} ${actionH} 전문. 무료 견적·VAN사 수수료 비교·당일 ${actionH} 가능. ${indName} 사장님 1:1 출장 상담.`,
+    description: `${indName} 매장의 ${kw} ${actionH} 전문. 무료 견적·VAN사 수수료 비교·빠른 ${actionH} 가능. ${indName} 사장님 1:1 출장 상담.`,
     canonical: `${SITE.domain}/industry/${industry.slug}/${productSlug}`,
     breadcrumbs: [
       { n: '홈', u: '/' },
