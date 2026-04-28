@@ -1575,13 +1575,14 @@ function getProductIcon(slug) {
 
 function _breadcrumbJsonLd(bc){if(!bc||!bc.length)return'';const i=bc.map((b,i)=>`{"@type":"ListItem","position":${i+1},"name":"${b.n.replace(/"/g,'\\"')}","item":"${b.u.startsWith('http')?b.u:SITE.domain+b.u}"}`).join(',');return`<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[${i}]}</script>`;}
 
-function htmlWrap({ title, description, canonical, body, keywords, breadcrumbs }) {
+function htmlWrap({ title, description, canonical, body, keywords, breadcrumbs, ogImage }) {
   const fullTitle = title ? `${title} | ${SITE.brandNameKo}` : `${SITE.brandNameKo} | 매장 설비 설치 플랫폼`;
   const desc = description || SITE.description;
   const canon = canonical || SITE.domain;
   const kwMeta = keywords ? `\n<meta name="keywords" content="${escapeHtml(keywords)}">` : '';
   const _s=(canon.replace(SITE.domain,'')||'/').split('').reduce((a,c)=>((a<<5)-a+c.charCodeAt(0))|0,0),_md=new Date();_md.setDate(_md.getDate()-(Math.abs(_s)%56+1));const modifiedDate=_md.toISOString().slice(0,10);
   const bcJsonLd = _breadcrumbJsonLd(breadcrumbs);
+  const ogImg = ogImage || `${SITE.domain}/og-default.jpg`;
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -1599,8 +1600,12 @@ function htmlWrap({ title, description, canonical, body, keywords, breadcrumbs }
 <meta property="og:title" content="${escapeHtml(fullTitle)}">
 <meta property="og:description" content="${escapeHtml(desc)}">
 <meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="${ogImg}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="article:modified_time" content="${modifiedDate}">
-<meta property="twitter:card" content="summary">
+<meta property="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${ogImg}">
 ${bcJsonLd}
 <style>${STYLES}</style>
 </head>
@@ -2392,6 +2397,7 @@ ${SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug
     description,
     canonical: `${SITE.domain}/region/${region.slug}`,
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -2488,6 +2494,7 @@ function renderProductPage(product) {
     description,
     canonical: `${SITE.domain}/product/${product.slug}`,
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -2874,6 +2881,7 @@ function renderRegionCardTerminalV3(region) {
     description: metaDesc,
     canonical: `${SITE.domain}/${region.slug}/card-terminal`,
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -3085,6 +3093,7 @@ ${recommendIndustrySections}
       { n: region.fullName, u: `/${region.slug}/${productSlug}` },
     ],
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -3182,6 +3191,7 @@ ${PRODUCTS.filter(p => p.slug !== product.slug).slice(0, 4).map(p => `<a href="/
     description,
     canonical: `${SITE.domain}/${region.slug}/${product.slug}`,
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -3630,6 +3640,7 @@ function renderSubcityPage(city) {
     description: `${regionName} ${name} 카드단말기·포스기·키오스크·CCTV·테이블오더 설치. ${name} 전 지역 무료 견적·빠른 출장. 설치비 무료, VAN사 수수료 비교.`,
     canonical: `${SITE.domain}/region/${sidoSlug}/${city.slug}`,
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -3825,6 +3836,7 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
     description: `${regionName} ${name} 카드단말기·포스기·키오스크·CCTV·테이블오더 설치. ${name} 전 지역 무료 견적·빠른 출장. 설치비 무료, VAN사 수수료 비교.`,
     canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}`,
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -4225,6 +4237,7 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
     description: `${regionName} ${parent} ${name} 카드단말기·포스기·키오스크·CCTV 설치. 무료 견적·빠른 방문·설치비 무료. ${name} 매장 오픈 필수 장비를 전문가가 세팅합니다.`,
     canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/${dong.slug}`,
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -4428,6 +4441,7 @@ ${neighbors.length > 0 ? `<section class="dpp-sec">
       { n: kw, u: `/region/${sidoSlug}/${gu.slug}/${dong.slug}/${productSlug}` },
     ],
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -4679,6 +4693,7 @@ ${nearGuChipsHtml ? `<div class="spp-side-nav">
       { n: kw, u: `/region/${sidoSlug}/${gu.slug}/${productSlug}` },
     ],
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -5119,6 +5134,7 @@ function renderRegionIndustryPage(region, industry) {
     keywords: `${region.name} ${industry.name},${region.name} ${industry.name} 카드단말기,${region.name} ${industry.name} 포스기,${region.name} ${industry.name} 키오스크`,
     canonical: `${SITE.domain}/region/${region.slug}/${industry.slug}`,
     body,
+    ogImage: heroImg,
   });
 }
 
@@ -5271,6 +5287,7 @@ ${otherProductsHtml ? `<div class="spp-side-nav">
       { n: kw, u: `/industry/${industry.slug}/${productSlug}` },
     ],
     body,
+    ogImage: heroImg,
   });
 }
 
