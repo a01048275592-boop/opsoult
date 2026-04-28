@@ -806,8 +806,8 @@ footer .logo{color:#fff}
 .foot-bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;font-size:13px;color:#64748b;flex-wrap:wrap;gap:12px}
 
 /* Floating CTA */
-.floating-stack{position:fixed;bottom:28px;right:28px;z-index:40;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
-.floating-call{color:#fff;padding:16px 22px;border-radius:100px;font-weight:500;font-size:14px;display:inline-flex;align-items:center;gap:10px;transition:all .2s;background:#16a34a}
+.floating-stack{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;gap:10px;align-items:flex-end;pointer-events:none}
+.floating-call{color:#fff;padding:16px 22px;border-radius:100px;font-weight:500;font-size:14px;display:inline-flex;align-items:center;gap:10px;transition:all .2s;background:#16a34a;pointer-events:auto;text-decoration:none}
 .floating-call:hover{transform:scale(1.05);filter:brightness(1.08)}
 .floating-call svg{width:18px;height:18px}
 .floating-inquiry{background:#2563eb!important}
