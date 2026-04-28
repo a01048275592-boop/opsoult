@@ -1558,7 +1558,8 @@ footer .logo{color:#fff}
   .feature-cell p{font-size:11px;line-height:1.5}
   .foot-bottom{flex-direction:column;align-items:flex-start}
   .floating-stack{bottom:20px;right:20px;gap:8px}
-  .floating-call{padding:14px 18px;font-size:13px}
+  .floating-call{padding:11px 16px;font-size:12px}
+  .floating-call svg{width:15px;height:15px}
   .related-grid{display:flex;flex-wrap:wrap;gap:5px}
   .related-item{padding:7px 11px;gap:4px}
   .related-item .emoji{font-size:12px}
