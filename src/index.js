@@ -864,7 +864,7 @@ footer .logo{color:#fff}
 }
 
 /* Detail hero */
-.detail-hero{padding:80px 0 50px;background:var(--paper-2);border-bottom:1px solid var(--line)}
+.detail-hero{padding:80px 0 50px;background:var(--paper-2);border-bottom:1px solid var(--line);max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden}
 .detail-hero.seoul-hero{position:relative;padding:120px 0 90px;max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop') center/cover;border-bottom:none}
 .detail-hero.seoul-hero .breadcrumb, .detail-hero.seoul-hero .breadcrumb a{color:rgba(255,255,255,0.78)}
 .detail-hero.seoul-hero .breadcrumb .sep{color:rgba(255,255,255,0.4)}
@@ -1046,7 +1046,7 @@ footer .logo{color:#fff}
 .sgu-bc{font-size:12.5px;color:#64748b;margin-bottom:16px}
 .sgu-bc a{color:#64748b;text-decoration:none}
 .sgu-bc span{margin:0 6px;color:#cbd5e1}
-.sgu-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:22px;aspect-ratio:16/5;min-height:160px;background:#1e293b}
+.sgu-hero{position:relative;border-radius:12px;overflow:hidden;margin:0 auto 22px;aspect-ratio:16/5;min-height:160px;background:#1e293b;max-width:880px}
 .sgu-hero-bg{position:absolute;inset:0;background:#1e293b}
 .sgu-hero-ov{position:absolute;inset:0;padding:24px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center}
 .sgu-hero-title{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
@@ -1178,7 +1178,7 @@ footer .logo{color:#fff}
 }
 
 /* DONG PAGE */
-.sdo-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:14px;aspect-ratio:16/5;min-height:160px;background:#1e293b}
+.sdo-hero{position:relative;border-radius:12px;overflow:hidden;margin:0 auto 14px;aspect-ratio:16/5;min-height:160px;background:#1e293b;max-width:880px}
 .sdo-hero-bg{position:absolute;inset:0;background:#1e293b}
 .sdo-hero-tag{position:absolute;top:14px;right:14px;background:#fff;color:#0f172a;font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:100px;letter-spacing:-0.01em}
 .sdo-hero-ov{position:absolute;inset:0;padding:24px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center}
@@ -1245,7 +1245,7 @@ footer .logo{color:#fff}
 .spp-bc{font-size:12.5px;color:#64748b;padding:16px 0}
 .spp-bc a{color:#64748b;text-decoration:none}
 .spp-bc span{margin:0 6px;color:#cbd5e1}
-.spp-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:20px;aspect-ratio:16/5;min-height:190px;background:#1e293b}
+.spp-hero{position:relative;border-radius:12px;overflow:hidden;margin:0 auto 20px;aspect-ratio:16/5;min-height:190px;background:#1e293b;max-width:880px}
 .spp-hero-bg{position:absolute;inset:0}
 .spp-hero-ov{position:absolute;inset:0;padding:28px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center}
 .spp-hero-meta{font-size:12px;opacity:0.8;margin-bottom:10px;letter-spacing:-0.01em}
@@ -2665,7 +2665,7 @@ function renderRegionCardTerminalV3(region) {
 .sctv3-bc{font-size:12.5px;color:#64748b;padding:16px 0}
 .sctv3-bc a{color:#64748b;text-decoration:none}
 .sctv3-bc span{margin:0 6px;color:#cbd5e1}
-.sctv3-hero{position:relative;border-radius:12px;overflow:hidden;margin-bottom:20px;aspect-ratio:16/5;min-height:190px;background:#1e293b}
+.sctv3-hero{position:relative;border-radius:12px;overflow:hidden;margin:0 auto 20px;aspect-ratio:16/5;min-height:190px;background:#1e293b;max-width:880px}
 .sctv3-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover}
 .sctv3-hero-ov{position:absolute;inset:0;padding:28px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center}
 .sctv3-hero-meta{font-size:12px;opacity:0.8;margin-bottom:10px}
@@ -5002,7 +5002,7 @@ function renderRegionIndustryPage(region, industry) {
   const heroImg = _industryHero(industry.slug, 'rihero-'+region.slug+'-'+industry.slug);
   const heroBgInline = `style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover;"`;
   const productCards = recProducts.map(p => `<a href="/${region.slug}/${p.slug}" class="ipro-card"><div class="ipro-photo" style="background-image:url('${p.photo}')"></div><div class="ipro-bd"><div class="ipro-n">${region.name} ${industry.name} ${p.name}</div><div class="ipro-d">${p.shortDesc}</div></div></a>`).join('');
-  const _ribTips = ['유동인구가 많아 빠른 결제 회전이 핵심. 키오스크·POS 우선 도입으로 피크타임 대기열을 줄일 수 있습니다.','체류시간이 긴 매장이 많아 테이블오더·POS 조합으로 객단가를 자연스럽게 올리는 환경입니다.','신규 창업이 활발한 상권. 풀패키지 일괄 설치로 오픈 일정을 단축하는 사례가 많습니다.','경쟁 밀도가 높아 결제 동선·고객 데이터 관리가 매출 차이로 이어집니다.','관광·외부 유입 고객 비중이 높아 다양한 결제 수단·다국어 UI 지원이 필수입니다.'];
+  const _ribTips = ['유동인구가 많아 빠른 결제 회전이 핵심. 키오스크·POS 우선 도입을 추천합니다.','체류시간이 길어 테이블오더·POS 조합으로 객단가를 올리기 좋은 환경입니다.','신규 창업이 활발해 풀패키지 일괄 설치로 오픈 일정을 단축할 수 있습니다.','경쟁 밀도가 높아 결제 동선·고객 데이터 관리가 매출 차이로 이어집니다.','관광·외부 유입 고객 비중이 높아 다양한 결제 수단 지원이 필수입니다.'];
   const areaCards = (region.commercialAreas || []).map((a,i) => `<div class="feat-card"><h5>📍 ${a}</h5><p>${_ribTips[i % _ribTips.length]}</p></div>`).join('');
   const otherIndustries = INDUSTRIES.filter(i => i.slug !== industry.slug).slice(0, 8).map(i => `<a href="/region/${region.slug}/${i.slug}" class="related-item"><span class="emoji">${i.emoji}</span><span class="name">${region.name} ${i.name}</span></a>`).join('');
   const otherRegions = REGIONS.filter(r => r.slug !== region.slug).slice(0, 8).map(r => `<a href="/region/${r.slug}/${industry.slug}" class="related-item"><span class="emoji">${r.emoji}</span><span class="name">${r.name} ${industry.name}</span></a>`).join('');
@@ -5045,13 +5045,13 @@ function renderRegionIndustryPage(region, industry) {
 <div class="feat-grid-2">${areaCards}</div>
 
 <h2>매장 규모별 ${industry.name} 장비 조합</h2>
-<p>${industry.name} 매장은 평수와 좌석 수에 따라 필요한 장비 조합이 달라집니다. ${region.name} 지역 ${industry.name} 매장 설치 데이터를 기준으로 정리했습니다.</p>
+<p>${industry.name} 매장은 평수와 좌석 수에 따라 필요한 장비 조합이 달라집니다.</p>
 
 <div class="feat-grid-2">
-<div class="feat-card"><h5>🏪 소형 매장 (10평 이하)</h5><p>테이크아웃 위주 · 1~2인 운영. <strong>카드단말기 + POS</strong> 최소 구성을 추천합니다. 무선 단말기 도입 시 결제 동선이 매끄러워집니다. 결제 장비 설치비 무료.</p></div>
-<div class="feat-card"><h5>🏬 중형 매장 (20~30평)</h5><p>홀 운영 · 피크타임 대응이 필요한 매장. <strong>POS + 키오스크 + 카드단말기</strong> 표준 조합으로 인건비 절감 효과가 가장 큽니다. 결제 장비 설치비 무료, CCTV 별도 견적.</p></div>
-<div class="feat-card"><h5>🏢 대형 매장 (50평 이상)</h5><p>다인 운영 · 다층 구조 매장. <strong>POS + 키오스크 + 테이블오더 + CCTV</strong> 풀패키지를 권장합니다. 멀티 단말기로 결제 분산이 가능합니다.</p></div>
-<div class="feat-card"><h5>🌐 무인 · 24시간 매장</h5><p>인건비 절감 효과 최대. <strong>키오스크 + 자동판매기 + CCTV</strong> 조합이 필수입니다. ${region.name} 지역 무인 매장 설치 사례 다수 확보.</p></div>
+<div class="feat-card"><h5>🏪 소형 매장 (10평 이하)</h5><p>테이크아웃 위주 · 1~2인 운영. <strong>카드단말기 + POS</strong> 최소 구성을 추천합니다. 결제 장비 설치비 무료.</p></div>
+<div class="feat-card"><h5>🏬 중형 매장 (20~30평)</h5><p>홀 운영 · 피크타임 대응 매장. <strong>POS + 키오스크 + 카드단말기</strong> 표준 조합으로 인건비 절감 효과가 큽니다.</p></div>
+<div class="feat-card"><h5>🏢 대형 매장 (50평 이상)</h5><p>다인 운영 · 다층 구조. <strong>POS + 키오스크 + 테이블오더 + CCTV</strong> 풀패키지를 권장합니다.</p></div>
+<div class="feat-card"><h5>🌐 무인 · 24시간 매장</h5><p>인건비 절감 효과 최대. <strong>키오스크 + 자판기 + CCTV</strong> 조합이 필수입니다.</p></div>
 </div>
 
 <h2>${region.name} ${industry.name} 도입 시나리오</h2>
