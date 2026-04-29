@@ -1324,10 +1324,6 @@ footer .logo{color:#fff}
 .cta-inline p{font-size:14px;color:var(--muted-2);margin-top:10px}
 
 /* Index pages */
-.index-header{padding:90px 0 50px;background:var(--paper-2);border-bottom:1px solid var(--line)}
-.index-header h1{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:clamp(36px,5vw,56px);letter-spacing:-0.03em;font-weight:600;margin-bottom:18px;color:var(--ink)}
-.index-header h1 em{font-style:italic}
-.index-header p{font-size:17px;color:var(--muted);max-width:720px;line-height:1.6}
 .index-grid{display:grid;gap:16px;padding:60px 0 120px}
 .index-grid.cols-4{grid-template-columns:repeat(4,1fr)}
 .index-grid.cols-3{grid-template-columns:repeat(3,1fr)}
@@ -3206,6 +3202,7 @@ ${PRODUCTS.filter(p => p.slug !== product.slug).slice(0, 4).map(p => `<a href="/
 
 function _seoulHash(s) { let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))|0; return Math.abs(h); }
 function _seoulPick(salt, arr) { return arr[_seoulHash(salt)%arr.length]; }
+const _idxBg=i=>`background:linear-gradient(135deg,#0f172ad1,#0f172a8c),url('${_SEOUL_HERO_POOL[i]}') center/cover`;
 
 const _SEOUL_HERO_POOL = [
   'https://images.unsplash.com/photo-1726137569854-ce11cc10cf67?fm=jpg&q=80&w=1400&auto=format&fit=crop',
@@ -4867,11 +4864,11 @@ function renderSigunguPage(sg) {
 function renderRegionIndex() {
   const cards = REGIONS.map(r => `<a href="/region/${r.slug}" class="index-card"><div class="big">${r.emoji}</div><h3>${r.name}</h3><p>${r.coverage} · ${r.installTime}</p></a>`).join('');
   const body = `
-<section class="index-header">
+<section class="detail-hero seoul-hero" style="${_idxBg(0)}">
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span>지역별 설치</div>
-<h1><em>전국 17개</em> 광역시도 설치</h1>
-<p>서울부터 제주까지 전국 어디서든 ${SITE.brandNameKo}가 찾아갑니다. 지역을 선택하면 해당 지역의 상권 정보와 제품별 설치 가이드를 확인할 수 있습니다.</p>
+<h1 class="detail-title"><em>전국 17개</em> 광역시도 설치</h1>
+<p class="detail-sub">서울부터 제주까지 전국 어디서든 ${SITE.brandNameKo}가 찾아갑니다. 지역을 선택하면 해당 지역의 상권 정보와 제품별 설치 가이드를 확인할 수 있습니다.</p>
 </div>
 </section>
 <section class="container">
@@ -4890,11 +4887,11 @@ function renderProductIndex() {
   const cardHtml = p => `<a href="/product/${p.slug}" class="pcar-card"><div class="pcar-img" style="background-image:url('${p.photo}')"></div><div class="pcar-body"><div class="pcar-tag">${p.emoji} ${p.name}</div><div class="pcar-name">${p.name}</div><div class="pcar-desc">${p.shortDesc}</div></div></a>`;
   const cards = PRODUCTS.map(cardHtml).join('') + PRODUCTS.map(cardHtml).join('');
   const body = `
-<section class="index-header">
+<section class="detail-hero seoul-hero" style="${_idxBg(1)}">
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span>제품 안내</div>
-<h1>매장 설비 <em>전 제품 안내</em></h1>
-<p>카드단말기부터 철거까지 매장 운영에 필요한 7개 카테고리. 각 제품의 상세 기능과 설치 가이드를 확인하세요.</p>
+<h1 class="detail-title">매장 설비 <em>전 제품 안내</em></h1>
+<p class="detail-sub">카드단말기부터 철거까지 매장 운영에 필요한 7개 카테고리. 각 제품의 상세 기능과 설치 가이드를 확인하세요.</p>
 </div>
 </section>
 <section class="product-carousel">
@@ -4912,11 +4909,11 @@ function renderProductIndex() {
 function renderIndustryIndex() {
   const cards = INDUSTRIES.map(i => `<a href="/industry/${i.slug}" class="index-card"><div class="big">${i.emoji}</div><h3>${i.name}</h3><p>${i.shortDesc}</p></a>`).join('');
   const body = `
-<section class="index-header">
+<section class="detail-hero seoul-hero" style="${_idxBg(4)}">
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span>업종별</div>
-<h1>업종별 <em>맞춤 설치 가이드</em></h1>
-<p>음식점·카페·편의점·미용실 등 업종마다 필요한 장비가 다릅니다. 업종별 추천 조합과 설치 사례를 확인하세요.</p>
+<h1 class="detail-title">업종별 <em>맞춤 설치 가이드</em></h1>
+<p class="detail-sub">음식점·카페·편의점·미용실 등 업종마다 필요한 장비가 다릅니다. 업종별 추천 조합과 설치 사례를 확인하세요.</p>
 </div>
 </section>
 <section class="container">
