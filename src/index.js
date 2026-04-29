@@ -705,6 +705,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .sf-cta:hover{background:#2563eb;color:#fff}
 .sf-cta .arr{font-size:15px;line-height:1}
 .sf-image{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;background-color:var(--paper-3)}
+.pf-carousel .sf-image{min-height:280px;position:relative;overflow:hidden}
+.pf-carousel .sf-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .sf-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
 .sf-dot{width:7px;height:7px;border-radius:50%;background:var(--line-2);border:0;cursor:pointer;transition:width .25s,background .25s;padding:0}
 .sf-dot.active{width:22px;background:#2563eb;border-radius:4px}
@@ -2412,7 +2414,7 @@ ${SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug
 function renderProductPage(product) {
   const topRegions = REGIONS.map(r => `<a href="/${r.slug}/${product.slug}" class="related-item"><span class="emoji">🔎</span><span class="name">${r.name}</span></a>`).join('');
   const featureCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
-  const sfSlidesP = product.features.map((f) => `<div class="sf-slide"><div class="sf-content"><h4>${f.title}</h4><p>${f.desc}</p><a href="tel:${SITE.phone}" class="sf-cta">지금 상담받기 <span class="arr">→</span></a></div><div class="sf-image" style="background-image:url('${_productImg(product.slug, 'pf-'+product.slug+'-'+f.title)}')"></div></div>`).join('');
+  const sfSlidesP = product.features.map((f, i) => `<div class="sf-slide"><div class="sf-content"><h4>${f.title}</h4><p>${f.desc}</p><a href="tel:${SITE.phone}" class="sf-cta">지금 상담받기 <span class="arr">→</span></a></div><div class="sf-image"><img src="${_featImg(f.title,i)}" alt="${f.title}" loading="lazy"></div></div>`).join('');
   const sfDotsP = product.features.map((f, i) => `<button class="sf-dot${i===0?' active':''}" data-idx="${i}" aria-label="${i+1}번"></button>`).join('');
 
   const heroImg = _productImg(product.slug, 'phero-'+product.slug);
@@ -3216,8 +3218,12 @@ const _SEOUL_HERO_POOL = [
 const _REGION_PRODUCT_HERO_POOL = _SEOUL_HERO_POOL;
 const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1775059956734-78ffd2075cec','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1497032628192-86f99bcd76bc','convenience-store':'1567516866894-432cab1b73f9',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1497486751825-1233686d5d80',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
 function _industryHero(slug, salt) { const id = _IND_HERO_IDS[slug]; return id ? `https://images.unsplash.com/photo-${id}?fm=jpg&q=80&w=1400&auto=format&fit=crop` : _seoulPick(salt, _SEOUL_HERO_POOL); }
-const _PROD_POOLS={'card-terminal':['1556742044-3c52d6e88c62','1556742111-a301076d9d18'],'pos':['1556740758-90de374c12ad','1554224155-6726b3ff858f'],'kiosk':['1556742031-c6961e8560b0','1611162616305-c69b3fa7fbe0'],'table-order':['1551218808-94e220e084d2','1559925393-8be0ec4767c8'],'cctv':['1582139329536-e7284fece509','1557597774-9d273605dfa9'],'vending':['1525184782191-0acb5e0f7427','1593504049359-74330189a345'],'removal':['1504917595217-d4dc5ebe6122','1556909114-f6e7ad7d3136']};
-function _productImg(slug, salt) { const pool = _PROD_POOLS[slug]; return pool ? `https://images.unsplash.com/photo-${pool[Math.abs(_seoulHash(salt))%pool.length]}?fm=jpg&q=80&w=1400&auto=format&fit=crop` : _seoulPick(salt, _REGION_PRODUCT_HERO_POOL); }
+function _productImg(s,salt){return _seoulPick(salt,_REGION_PRODUCT_HERO_POOL)}
+function _featImg(t,i){
+if(/다국어|언어/.test(t))return 'https://images.unsplash.com/photo-1673515334669-1e445e4f4c3f?fm=jpg&q=80&w=1400&auto=format&fit=crop';
+if(/인건비|절감|수익|수수료|할인|객단가|견적|이중|보험/.test(t))return 'https://images.unsplash.com/photo-1656049471454-ff3c59812741?fm=jpg&q=80&w=1400&auto=format&fit=crop';
+return _SEOUL_HERO_POOL[i%_SEOUL_HERO_POOL.length];
+}
 
 const _SEOUL_MARKET_V = [
   '{name}은 서울 주요 상권 중 하나로, 관광·직장인·주거 수요가 함께 모이는 지역입니다. 대로변 프랜차이즈부터 골목의 한식당, 카페, 의류 편집샵까지 업종 폭이 유난히 넓어 한 가지 장비 세팅으로 모든 매장을 대응하기는 어렵습니다.',
