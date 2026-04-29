@@ -705,8 +705,6 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .sf-cta:hover{background:#2563eb;color:#fff}
 .sf-cta .arr{font-size:15px;line-height:1}
 .sf-image{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;background-color:var(--paper-3)}
-.pf-carousel .sf-image{min-height:280px;position:relative;overflow:hidden}
-.pf-carousel .sf-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .sf-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
 .sf-dot{width:7px;height:7px;border-radius:50%;background:var(--line-2);border:0;cursor:pointer;transition:width .25s,background .25s;padding:0}
 .sf-dot.active{width:22px;background:#2563eb;border-radius:4px}
@@ -2410,7 +2408,8 @@ ${SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug
 function renderProductPage(product) {
   const topRegions = REGIONS.map(r => `<a href="/${r.slug}/${product.slug}" class="related-item"><span class="emoji">🔎</span><span class="name">${r.name}</span></a>`).join('');
   const featureCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
-  const sfSlidesP = product.features.map((f, i) => `<div class="sf-slide"><div class="sf-content"><h4>${f.title}</h4><p>${f.desc}</p><a href="tel:${SITE.phone}" class="sf-cta">지금 상담받기 <span class="arr">→</span></a></div><div class="sf-image"><img src="${_featImg(f.title,i)}" alt="${f.title}" loading="lazy"></div></div>`).join('');
+  const _featIcon=(t)=>/다국어|언어/.test(t)?'🌐':/인건비|절감|이중/.test(t)?'💰':/수익|객단가|매출|할인|수수료|견적|보험/.test(t)?'📈':/직원|근태|홀|인력/.test(t)?'👥':/재고|관리|적법|폐기/.test(t)?'📦':/세무|연동|정산|통합/.test(t)?'📊':/QR|태블릿|간편|결제/.test(t)?'📱':/원격|스마트폰|공지|알림/.test(t)?'📡':/AI|움직임|감지|CCTV|보안/.test(t)?'🛡️':/A\/S|보증|시공|정찰/.test(t)?'✅':/주문|정확|회전/.test(t)?'⚡':/원상복구|철거/.test(t)?'🔧':'✨';
+  const sfSlidesP = product.features.map(f => `<div class="why-item"><div class="wicon" style="font-size:24px">${_featIcon(f.title)}</div><div><h4>${f.title}</h4><p>${f.desc}</p></div></div>`).join('');
   const sfDotsP = product.features.map((f, i) => `<button class="sf-dot${i===0?' active':''}" data-idx="${i}" aria-label="${i+1}번"></button>`).join('');
 
   const heroImg = _productImg(product.slug, 'phero-'+product.slug);
@@ -2432,10 +2431,7 @@ function renderProductPage(product) {
 <p>${product.longDesc}</p>
 
 <h2>${product.name}의 핵심 기능</h2>
-<div class="sf-carousel pf-carousel" id="pfCarousel">
-<div class="sf-viewport"><div class="sf-track">${sfSlidesP}</div></div>
-<div class="sf-dots">${sfDotsP}</div>
-</div>
+<div class="why-grid">${sfSlidesP}</div>
 
 <h2>어떤 매장에 어울리나요?</h2>
 <p>${product.name}은 특히 <strong>${product.useCases}</strong> 업종에 추천합니다. 각 업종별 특성과 매장 규모에 맞춰 ${SITE.brandNameKo}가 최적 기종과 설정을 제안합니다. 기존 장비와의 호환성, 네트워크 환경, 매장 동선까지 종합 분석해 가장 적합한 솔루션을 드립니다.</p>
