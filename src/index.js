@@ -1282,8 +1282,8 @@ footer .logo{color:#fff}
 .spp-faq-q{font-size:13px;font-weight:600;margin-bottom:6px;line-height:1.5;color:#0f172a}
 .spp-faq-q-mark{color:#dc2626;margin-right:4px}
 .spp-faq-a{font-size:12.5px;color:#475569;line-height:1.75}
-.spp-gu-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.spp-gu-chip{display:inline-flex;align-items:center;justify-content:center;padding:7px 14px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:100px;font-size:12px;color:#475569;text-decoration:none;line-height:1.2;transition:all .12s}
+.spp-gu-grid{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.spp-gu-chip{display:inline-flex;align-items:center;justify-content:center;padding:5px 11px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:100px;font-size:11px;color:#475569;text-decoration:none;line-height:1.2;transition:all .12s}
 .spp-gu-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
 .spp-tags{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 24px;padding:14px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px}
 .spp-tags-h{width:100%;font-size:12px;color:#64748b;font-weight:600;margin-bottom:4px}
@@ -2656,8 +2656,8 @@ function renderRegionCardTerminalV3(region) {
     ? `${region.name} ${regionGus.length}개 시군구 · ${totalDongCount}개 읍면동`
     : region.coverage;
   const guChipsHtml = regionGus.length > 0
-    ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}/card-terminal" class="sctv3-gu-chip">${g.name} 카드단말기</a>`).join('')
-    : (region.majorDistricts || []).map(d => region.slug==='sejong'&&_SDM[d]?`<a href="/region/sejong/${_SDM[d]}/card-terminal" class="sctv3-gu-chip">${d} 카드단말기</a>`:`<span class="sctv3-gu-chip">${d}</span>`).join('');
+    ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}/card-terminal" class="sctv3-gu-chip">${g.name}</a>`).join('')
+    : (region.majorDistricts || []).map(d => region.slug==='sejong'&&_SDM[d]?`<a href="/region/sejong/${_SDM[d]}/card-terminal" class="sctv3-gu-chip">${d}</a>`:`<span class="sctv3-gu-chip">${d}</span>`).join('');
   const regionLeadDesc = region.slug === 'seoul'
     ? '서울처럼 결제 빈도가 높은 상권에서는 이 차이가 더 크게 벌어집니다'
     : (region.description ? `${region.name} 같은 활성 상권에서는 이 차이가 더 크게 벌어집니다` : `${region.name}처럼 매장 회전율이 높은 지역에서는 이 차이가 더 크게 벌어집니다`);
@@ -2730,8 +2730,8 @@ function renderRegionCardTerminalV3(region) {
 .sctv3-tags{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0 24px;padding:14px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px}
 .sctv3-tags-h{width:100%;font-size:12px;color:#64748b;font-weight:600;margin-bottom:4px}
 .sctv3-tag{display:inline-flex;padding:4px 10px;background:#fff;border:1px solid #cbd5e1;border-radius:100px;font-size:11px;color:#475569}
-.sctv3-gu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:6px;margin-top:14px}
-.sctv3-gu-chip{display:flex;align-items:center;justify-content:center;padding:10px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;font-weight:500;color:#334155;text-decoration:none;transition:all .15s;letter-spacing:-0.01em;position:relative}
+.sctv3-gu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(75px,1fr));gap:5px;margin-top:14px}
+.sctv3-gu-chip{display:flex;align-items:center;justify-content:center;padding:7px 9px;background:#fff;border:1px solid #e2e8f0;border-radius:7px;font-size:11.5px;font-weight:500;color:#334155;text-decoration:none;transition:all .15s;letter-spacing:-0.01em;position:relative;line-height:1.3}
 .sctv3-gu-chip:hover{border-color:#0f172a;color:#0f172a;background:#f8fafc;transform:translateY(-1px)}
 .sctv3-gu-chip::after{content:"→";position:absolute;right:10px;opacity:0;transition:all .15s;font-size:12px}
 .sctv3-gu-chip:hover::after{opacity:1;right:8px}
@@ -2786,10 +2786,9 @@ function renderRegionCardTerminalV3(region) {
 <section class="sctv3-sec">
   <div class="sctv3-sec-h">📘 ${region.name} 카드단말기 상세 안내</div>
   <p>카드단말기는 단순히 카드를 긁는 기계가 아닙니다. 매장과 VAN사·카드사·은행을 연결하는 결제 인프라의 시작점이고, 사장님이 1년에 부담하시는 결제 비용 대부분이 이 단말기 한 대를 통해 빠져나갑니다. ${regionLeadDesc.replace('이 차이가 더 크게 벌어집니다','단말기 선택과 VAN사 계약 조건이 매장 손익에 직접 영향을 줍니다')}.</p>
-  <p>국내에서 유통되는 카드단말기는 <strong>유선·자동커팅·무선·스마트·간편결제 특화형</strong> 등 5가지 큰 분류로 나뉩니다. 매장 카운터 구조, 홀 면적, 주요 고객 연령대, 결제 수단 비중에 따라 적합한 기종이 달라지고, 잘못 고르면 6개월도 안 돼서 다시 바꾸시는 경우가 생깁니다.</p>
+  <p>국내에서 유통되는 카드단말기는 <strong>유선·무선·스마트·간편결제 특화형</strong> 등 4가지 큰 분류로 나뉩니다. 매장 카운터 구조, 홀 면적, 주요 고객 연령대, 결제 수단 비중에 따라 적합한 기종이 달라지고, 잘못 고르면 6개월도 안 돼서 다시 바꾸시는 경우가 생깁니다.</p>
   <div class="sctv3-type-cards">
     <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">🖥️</div><div class="sctv3-type-card-title">유선 일체형</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">편의점·소형 식당</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">안정적, 고장 적음</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">공간 차지</span></div></div></div>
-    <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">🧾</div><div class="sctv3-type-card-title">자동커팅형</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">음식점·영수증 다수</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">영수증 자동 절단</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">유선 기본</span></div></div></div>
     <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">📡</div><div class="sctv3-type-card-title">무선 (블루투스)</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">홀 서빙·야외 마켓</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">이동 자유</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">배터리 관리 필요</span></div></div></div>
     <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">📱</div><div class="sctv3-type-card-title">스마트 단말기</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">포스기 없는 소형</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">포스 기능 일부 내장</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">월 이용료 있음</span></div></div></div>
     <div class="sctv3-type-card"><div class="sctv3-type-card-head"><div class="sctv3-type-card-icon">💸</div><div class="sctv3-type-card-title">간편결제 특화</div></div><div class="sctv3-type-card-body"><div class="sctv3-type-row"><span class="sctv3-type-k">적합</span><span class="sctv3-type-v">젊은층 카페·편집샵</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">장점</span><span class="sctv3-type-v good">QR·페이류 우대</span></div><div class="sctv3-type-row"><span class="sctv3-type-k">주의</span><span class="sctv3-type-v">일부 카드사 제한</span></div></div></div>
