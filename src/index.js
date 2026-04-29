@@ -4529,7 +4529,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
   const precheckHtml = precheckData.map(c => `<li><span class="spp-check">✓</span><div>${c.replace(/\{kw\}/g, kw)}</div></li>`).join('');
   
   const dongChipsHtml = dongs.length > 0
-    ? dongs.map(d => `<a href="/region/${sidoSlug}/${gu.slug}/${d.slug}/${productSlug}" class="spp-gu-chip">${d.name} ${kw}</a>`).join('')
+    ? dongs.map(d => `<a href="/region/${sidoSlug}/${gu.slug}/${d.slug}/${productSlug}" class="spp-gu-chip">${d.name}</a>`).join('')
     : '';
   
   const allGus = REGIONS_DATA[sidoSlug] || [];
