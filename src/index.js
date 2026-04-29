@@ -870,10 +870,10 @@ footer .logo{color:#fff}
 /* Detail hero */
 .detail-hero{padding:80px 0 50px;background:var(--paper-2);border-bottom:1px solid var(--line);max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden}
 .detail-hero.seoul-hero{position:relative;padding:120px 0 90px;max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden;background:url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop') center/cover;border-bottom:none}
-.detail-hero.seoul-hero .breadcrumb, .detail-hero.seoul-hero .breadcrumb a{color:rgba(255,255,255,0.78)}
+.detail-hero.seoul-hero .breadcrumb, .detail-hero.seoul-hero .breadcrumb a{color:rgba(255,255,255,0.78);text-shadow:0 2px 8px rgba(0,0,0,.7)}
 .detail-hero.seoul-hero .breadcrumb .sep{color:rgba(255,255,255,0.4)}
-.detail-hero.seoul-hero .detail-title{color:#fff}
-.detail-hero.seoul-hero .detail-sub{color:rgba(255,255,255,0.88)}
+.detail-hero.seoul-hero .detail-title{color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.85),0 1px 3px rgba(0,0,0,.9)}
+.detail-hero.seoul-hero .detail-sub{color:rgba(255,255,255,0.95);text-shadow:0 2px 10px rgba(0,0,0,.8),0 1px 3px rgba(0,0,0,.9)}
 @media (max-width:920px){.detail-hero.seoul-hero{max-width:calc(100% - 28px);margin:14px 14px 0;padding:60px 0 50px;border-radius:12px}}
 .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:24px}
 .breadcrumb a{color:var(--muted);transition:color .2s}
@@ -3213,7 +3213,7 @@ const _SEOUL_HERO_POOL = [
 ];
 
 const _REGION_PRODUCT_HERO_POOL = _SEOUL_HERO_POOL;
-const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1775059956734-78ffd2075cec','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1764728671460-34931d8261f5','convenience-store':'1758445515620-e6039c1cd913',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1654366677760-b1aaa51b9e02',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
+const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1709548145082-04d0cde481d4','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1764728671460-34931d8261f5','convenience-store':'1758570764602-d57bc2922dea',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1654366677760-b1aaa51b9e02',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
 function _industryHero(slug, salt) { const id = _IND_HERO_IDS[slug]; return id ? `https://images.unsplash.com/photo-${id}?fm=jpg&q=80&w=1400&auto=format&fit=crop` : _seoulPick(salt, _SEOUL_HERO_POOL); }
 function _productImg(s,salt){return _seoulPick(salt,_REGION_PRODUCT_HERO_POOL)}
 function _featImg(t,i){
@@ -4941,7 +4941,7 @@ function renderIndustryPage(industry) {
   const regionChipsHtml = REGIONS.map(r => `<a href="/region/${r.slug}/${industry.slug}" class="spp-gu-chip">${r.name} ${industry.name}</a>`).join('');
 
   const body = `
-<section class="detail-hero">
+<section class="detail-hero seoul-hero" style="background:url('${_industryHero(industry.slug,'ih-'+industry.slug)}') center/cover">
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/industry">업종별</a><span class="sep">›</span>${industry.name}</div>
 <h1 class="detail-title">${industry.emoji} ${industry.name} <em>맞춤 설치</em></h1>
