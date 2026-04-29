@@ -4324,10 +4324,9 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
 <div class="dpp-bc"><a href="/">홈</a><span>›</span><a href="/region">지역별 설치</a><span>›</span><a href="/region/${sidoSlug}">${regionName}</a><span>›</span><a href="/region/${sidoSlug}/${gu.slug}">${parent}</a><span>›</span><a href="/region/${sidoSlug}/${gu.slug}/${dong.slug}">${name}</a><span>›</span>${kw}</div>
 
 <section class="dpp-hero" style="${heroBgStyle}">
-  <div class="dpp-hero-meta">${regionFullName} ${parent} ${name}</div>
-  <h1 class="dpp-hero-title">${product.emoji} ${mainKw} 설치 가이드</h1>
-  <div class="dpp-hero-sub">${name} 매장에 맞는 ${kw}, 직접 방문해서 추천해 드립니다</div>
-  <a href="tel:${SITE.phone}" class="dpp-hero-cta">📞 ${SITE.phoneDisplay} · 무료 상담</a>
+  <div class="dpp-hero-meta">${parent.includes(regionFullName)?'':regionFullName+' '}${parent} ${name}</div>
+  <h1 class="dpp-hero-title">${product.emoji} ${mainKw} 설치 · 구매 · 무료 상담</h1>
+  <div class="dpp-hero-sub">${regionFullName} ${name} 매장 맞춤 ${kw} 추천 · 당일 출장 · 무료 견적</div>
 </section>
 
 <section class="dpp-sec">
@@ -4396,11 +4395,10 @@ ${neighbors.length > 0 ? `<section class="dpp-sec">
 .dpp-bc{font-size:12.5px;color:#64748b;padding:12px 0 20px}
 .dpp-bc a{color:#64748b;text-decoration:none}
 .dpp-bc span{margin:0 6px;color:#cbd5e1}
-.dpp-hero{padding:36px 24px;border-radius:16px;color:#fff;margin-bottom:24px}
-.dpp-hero-meta{font-size:12.5px;opacity:.85;margin-bottom:6px}
-.dpp-hero-title{font-size:24px;font-weight:800;letter-spacing:-0.02em;line-height:1.3;margin:4px 0 8px}
-.dpp-hero-sub{font-size:14px;opacity:.9;margin-bottom:18px}
-.dpp-hero-cta{display:inline-flex;align-items:center;padding:11px 20px;background:#fff;color:#0f172a;border-radius:100px;font-size:13.5px;font-weight:700;text-decoration:none;letter-spacing:-0.01em}
+.dpp-hero{padding:56px 28px;border-radius:16px;color:#fff;margin-bottom:24px}
+.dpp-hero-meta{font-size:13px;opacity:.85;margin-bottom:8px}
+.dpp-hero-title{font-size:28px;font-weight:800;letter-spacing:-0.02em;line-height:1.3;margin:4px 0 10px}
+.dpp-hero-sub{font-size:15px;opacity:.92}
 .dpp-sec{margin:28px 0}
 .dpp-sec-h{font-size:17px;font-weight:700;color:#0f172a;margin-bottom:12px;letter-spacing:-0.015em}
 .dpp-sec p{font-size:14px;color:#334155;line-height:1.8;margin:0}
@@ -4422,7 +4420,7 @@ ${neighbors.length > 0 ? `<section class="dpp-sec">
 .dpp-check-list{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:8px}
 .dpp-check-list li{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;color:#334155;line-height:1.6}
 .dpp-check{flex-shrink:0;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;background:#0f172a;color:#fff;border-radius:50%;font-size:11px;font-weight:700;margin-top:1px}
-@media (max-width:640px){.dpp-hero-title{font-size:20px}.dpp-sec-h{font-size:15px}.dpp-sec p{font-size:13.5px}}
+@media (max-width:640px){.dpp-hero{padding:42px 20px}.dpp-hero-title{font-size:22px}.dpp-sec-h{font-size:15px}.dpp-sec p{font-size:13.5px}}
 </style>`;
   
   return htmlWrap({
