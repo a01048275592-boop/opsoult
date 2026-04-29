@@ -176,6 +176,8 @@ const REGIONS = [
   },
 ];
 
+const _SDM={조치원읍:'jochiwon',한솔동:'hansol',도담동:'dodam',새롬동:'saerom',다정동:'dajeong',소담동:'sodam',대평동:'daepyeong',보람동:'boram'};
+
 const SIGUNGU_DETAILS = [
   {
     slug: 'gangnam',
@@ -2118,7 +2120,7 @@ function renderRegionPage(region) {
 <div class="container">
 <div class="prose">
 <h2>${region.name} 지역 개요</h2>
-<p>${region.description} ${SITE.brandNameKo}은 ${region.coverage}에서 카드단말기·포스기·키오스크·테이블오더·CCTV·자동판매기(밴딩머신)·철거까지 매장 운영에 필요한 모든 설비를 원스톱으로 설치합니다. 업종과 매장 동선을 먼저 살펴본 뒤 1:1 컨설팅으로 조합을 맞춰드리기 때문에, 신규 오픈이든 기존 매장 리뉴얼이든 장비 선택으로 고민하실 일이 없습니다.</p>
+<p>${region.description} ${SITE.brandNameKo}은 ${region.coverage}에서 카드단말기·포스기·키오스크·테이블오더·CCTV·자동판매기·철거까지 매장 모든 설비를 원스톱 설치합니다. 업종과 매장 동선을 먼저 살펴본 뒤 1:1 컨설팅으로 조합을 맞춰드려, 신규/리뉴얼 모두 장비 고민 없이 진행됩니다.</p>
 <p>${region.name} 지역은 ${region.landmarks} 같은 핵심 상권을 중심으로 카페·음식점·편의점·미용실 등 다양한 업종이 밀집해 있습니다. 같은 업종이라도 매장 위치·평수·고객층에 따라 필요한 장비 조합이 달라지기 때문에, 일괄적인 추천보다는 매장별 조건에 맞춘 맞춤 제안이 중요합니다. 오페리오솔루션은 ${region.coverage} 상권 데이터를 기반으로 매장 환경에 맞춰 조합을 다르게 제안드립니다.</p>
 <p>최근 신규 오픈하시는 매장 중 <strong>카드단말기·포스기·키오스크를 동시에 들이시는 경우가 약 80%</strong>에 이릅니다. 장비를 따로따로 구매해 설치하시는 것보다 패키지로 한번에 하시는 쪽이 비용도 낮고 장비 간 연동 문제도 없어서, 처음 시작하시는 분들께 이 방식을 권해드리고 있습니다.</p>
 ${region.slug === 'seoul' ? `
@@ -2657,7 +2659,7 @@ function renderRegionCardTerminalV3(region) {
     : region.coverage;
   const guChipsHtml = regionGus.length > 0
     ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}/card-terminal" class="sctv3-gu-chip">${g.name} 카드단말기</a>`).join('')
-    : (region.majorDistricts || []).map(d => `<span class="sctv3-gu-chip">${d}</span>`).join('');
+    : (region.majorDistricts || []).map(d => region.slug==='sejong'&&_SDM[d]?`<a href="/region/sejong/${_SDM[d]}/card-terminal" class="sctv3-gu-chip">${d} 카드단말기</a>`:`<span class="sctv3-gu-chip">${d}</span>`).join('');
   const regionLeadDesc = region.slug === 'seoul'
     ? '서울처럼 결제 빈도가 높은 상권에서는 이 차이가 더 크게 벌어집니다'
     : (region.description ? `${region.name} 같은 활성 상권에서는 이 차이가 더 크게 벌어집니다` : `${region.name}처럼 매장 회전율이 높은 지역에서는 이 차이가 더 크게 벌어집니다`);
@@ -2828,12 +2830,12 @@ function renderRegionCardTerminalV3(region) {
   <div class="sctv3-sec-h">✅ ${region.name} 카드단말기 도입 전 체크리스트</div>
   <p>카드단말기를 설치하시기 전에 미리 정리해두면 상담·견적이 훨씬 빠르게 진행됩니다. ${region.name} 사장님들께 권해드리는 체크리스트입니다.</p>
   <div class="sctv3-insight-grid">
-    <div class="sctv3-insight-card"><h5>1. 사업자등록증 준비</h5><p>VAN사 계약에 필수입니다. 미발급 상태면 상담만 먼저 받고, 등록증 나오는 대로 본 계약 진행이 가능합니다.</p></div>
-    <div class="sctv3-insight-card"><h5>2. 매장 평수·카운터 위치</h5><p>유선·무선 결정의 기준이 됩니다. 카운터가 고정인지, 홀 서빙이 필요한지 미리 정리해두세요.</p></div>
-    <div class="sctv3-insight-card"><h5>3. 인터넷·전원 위치 확인</h5><p>유선 단말기는 인터넷 LAN선이, 무선은 와이파이가 필요합니다. 전원 콘센트 위치도 미리 확인해두세요.</p></div>
-    <div class="sctv3-insight-card"><h5>4. 결제 수단 비중</h5><p>카드 vs 간편결제(삼성페이·카카오페이·네이버페이) vs 현금 비중을 미리 파악하시면 단말기 추천이 정확해집니다.</p></div>
-    <div class="sctv3-insight-card"><h5>5. 기존 VAN 계약 잔여기간</h5><p>기존 단말기가 있으시면 계약서를 미리 꺼내두세요. 약정 기간·해지 위약금을 사전에 확인해야 손해가 없습니다.</p></div>
-    <div class="sctv3-insight-card"><h5>6. 영업시간·오픈 일정</h5><p>빠른 설치를 원하시면 매장 영업 전·후 시간대로 일정을 잡으면 영업 차질이 없습니다.</p></div>
+    <div class="sctv3-insight-card"><h5>1. 사업자등록증 준비</h5><p>VAN사 계약에 필수. 미발급이면 상담 먼저 받고, 발급 후 본 계약 진행 가능합니다.</p></div>
+    <div class="sctv3-insight-card"><h5>2. 매장 평수·카운터 위치</h5><p>유선·무선 결정 기준. 카운터 고정 여부, 홀 서빙 필요 여부를 정리해두세요.</p></div>
+    <div class="sctv3-insight-card"><h5>3. 인터넷·전원 위치 확인</h5><p>유선은 LAN, 무선은 와이파이가 필요. 전원 콘센트 위치도 미리 확인하세요.</p></div>
+    <div class="sctv3-insight-card"><h5>4. 결제 수단 비중</h5><p>카드 vs 간편결제(삼성·카카오·네이버페이) vs 현금 비중 파악 시 추천이 정확해집니다.</p></div>
+    <div class="sctv3-insight-card"><h5>5. 기존 VAN 계약 잔여기간</h5><p>기존 단말기 있으면 계약서 확인. 약정·해지 위약금 사전 확인이 필요합니다.</p></div>
+    <div class="sctv3-insight-card"><h5>6. 영업시간·오픈 일정</h5><p>매장 영업 전·후 시간대로 잡으면 영업 차질 없이 빠른 설치가 가능합니다.</p></div>
   </div>
 </section>
 
@@ -2918,7 +2920,7 @@ function renderRegionProductPage(region, productSlug) {
     : region.coverage;
   const guChipsHtml = regionGus.length > 0
     ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}/${productSlug}" class="spp-gu-chip">${g.name} ${kw}</a>`).join('')
-    : (region.majorDistricts || []).map(d => `<span class="spp-gu-chip">${d}</span>`).join('');
+    : (region.majorDistricts || []).map(d => region.slug==='sejong'&&_SDM[d]?`<a href="/region/sejong/${_SDM[d]}/${productSlug}" class="spp-gu-chip">${d} ${kw}</a>`:`<span class="spp-gu-chip">${d}</span>`).join('');
   
   const heroImg = _productImg(productSlug, 'rphero-'+region.slug+'-'+productSlug);
   
@@ -4997,7 +4999,7 @@ function renderRegionIndustryPage(region, industry) {
   const heroImg = _industryHero(industry.slug, 'rihero-'+region.slug+'-'+industry.slug);
   const heroBgInline = `style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover;"`;
   const productCards = recProducts.map(p => `<a href="/${region.slug}/${p.slug}" class="ipro-card"><div class="ipro-photo" style="background-image:url('${p.photo}')"></div><div class="ipro-bd"><div class="ipro-n">${region.name} ${industry.name} ${p.name}</div><div class="ipro-d">${p.shortDesc}</div></div></a>`).join('');
-  const _ribTips = ['유동인구가 많아 빠른 결제 회전이 핵심. 키오스크·POS 우선 도입을 추천합니다.','체류시간이 길어 테이블오더·POS 조합으로 객단가를 올리기 좋은 환경입니다.','신규 창업이 활발해 풀패키지 일괄 설치로 오픈 일정을 단축할 수 있습니다.','경쟁 밀도가 높아 결제 동선·고객 데이터 관리가 매출 차이로 이어집니다.','관광·외부 유입 고객 비중이 높아 다양한 결제 수단 지원이 필수입니다.'];
+  const _ribTips = ['유동인구 많아 빠른 결제 회전이 핵심. 키오스크·POS 우선 추천.','체류시간 길어 테이블오더·POS 조합으로 객단가 올리기 좋습니다.','신규 창업 활발. 풀패키지 일괄 설치로 오픈 단축 가능.','경쟁 밀도 높아 결제 동선·고객 데이터 관리가 매출 차이로 이어집니다.','관광·외부 유입 비중 높아 다양한 결제 수단 지원이 필수입니다.'];
   const areaCards = (region.commercialAreas || []).map((a,i) => `<div class="feat-card"><h5>📍 ${a}</h5><p>${_ribTips[i % _ribTips.length]}</p></div>`).join('');
   const otherIndustries = INDUSTRIES.filter(i => i.slug !== industry.slug).slice(0, 8).map(i => `<a href="/region/${region.slug}/${i.slug}" class="related-item"><span class="emoji">${i.emoji}</span><span class="name">${region.name} ${i.name}</span></a>`).join('');
   const otherRegions = REGIONS.filter(r => r.slug !== region.slug).slice(0, 8).map(r => `<a href="/region/${r.slug}/${industry.slug}" class="related-item"><span class="emoji">${r.emoji}</span><span class="name">${r.name} ${industry.name}</span></a>`).join('');
@@ -5733,6 +5735,10 @@ export default {
       const sidoSlug = regionDongMatch[1], guSlug = regionDongMatch[2], thirdSeg = regionDongMatch[3];
       const region = findRegion(sidoSlug);
       const product = findProduct(thirdSeg);
+      if (sidoSlug==='sejong'&&product) {
+        const _dn=Object.keys(_SDM).find(k=>_SDM[k]===guSlug);
+        if (_dn) return new Response(renderDongProductPage({name:_dn,slug:guSlug},'sejong','세종',product),{headers:htmlHeaders});
+      }
       if (product && region) {
         const gu = findRegionGu(sidoSlug, guSlug);
         if (gu) return new Response(renderSigunguProductPage(gu, sidoSlug, region.name, product), { headers: htmlHeaders });
