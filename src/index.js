@@ -869,7 +869,7 @@ footer .logo{color:#fff}
 
 /* Detail hero */
 .detail-hero{padding:80px 0 50px;background:var(--paper-2);border-bottom:1px solid var(--line);max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden}
-.detail-hero.seoul-hero{position:relative;padding:120px 0 90px;max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop') center/cover;border-bottom:none}
+.detail-hero.seoul-hero{position:relative;padding:120px 0 90px;max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden;background:url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop') center/cover;border-bottom:none}
 .detail-hero.seoul-hero .breadcrumb, .detail-hero.seoul-hero .breadcrumb a{color:rgba(255,255,255,0.78)}
 .detail-hero.seoul-hero .breadcrumb .sep{color:rgba(255,255,255,0.4)}
 .detail-hero.seoul-hero .detail-title{color:#fff}
@@ -2103,7 +2103,7 @@ function renderRegionPage(region) {
   const areasList = region.commercialAreas.map(a => `<li>${a}</li>`).join('');
 
   const heroImg = _seoulPick('rhero-'+region.slug, _SEOUL_HERO_POOL);
-  const heroBgInline = `style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover;"`;
+  const heroBgInline = `style="background:url('${heroImg}') center/cover;"`;
 
   const body = `
 <section class="detail-hero seoul-hero" ${heroBgInline}>
@@ -2414,7 +2414,7 @@ function renderProductPage(product) {
   const sfDotsP = product.features.map((f, i) => `<button class="sf-dot${i===0?' active':''}" data-idx="${i}" aria-label="${i+1}번"></button>`).join('');
 
   const heroImg = _productImg(product.slug, 'phero-'+product.slug);
-  const heroBgInline = `style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover;"`;
+  const heroBgInline = `style="background:url('${heroImg}') center/cover;"`;
 
   const body = `
 <section class="detail-hero seoul-hero" ${heroBgInline}>
@@ -2672,7 +2672,7 @@ function renderRegionCardTerminalV3(region) {
 .sctv3-bc a{color:#64748b;text-decoration:none}
 .sctv3-bc span{margin:0 6px;color:#cbd5e1}
 .sctv3-hero{position:relative;border-radius:12px;overflow:hidden;margin:0 auto 20px;aspect-ratio:16/5;min-height:190px;background:#1e293b;max-width:880px}
-.sctv3-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover}
+.sctv3-hero-bg{position:absolute;inset:0;background:url('${heroImg}') center/cover}
 .sctv3-hero-ov{position:absolute;inset:0;padding:28px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center}
 .sctv3-hero-meta{font-size:12px;opacity:0.8;margin-bottom:10px}
 .sctv3-hero-title{font-size:26px;font-weight:700;letter-spacing:-0.025em;line-height:1.2}
@@ -2962,7 +2962,7 @@ function renderRegionProductPage(region, productSlug) {
 <div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/${productSlug}">${kw}</a><span>›</span>${region.fullName}</div>
 
 <div class="spp-hero">
-  <div class="spp-hero-bg" style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover"></div>
+  <div class="spp-hero-bg" style="background:url('${heroImg}') center/cover"></div>
   <div class="spp-hero-ov">
     <div class="spp-hero-meta">${coverageText}</div>
     <div class="spp-hero-title">${region.fullName} ${kw} ${actionH}</div>
@@ -3109,7 +3109,7 @@ function renderInstallPage(region, product) {
   const featCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
 
   const heroImg = _productImg(product.slug, 'ihero-'+region.slug+'-'+product.slug);
-  const heroBgInline = `style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover;"`;
+  const heroBgInline = `style="background:url('${heroImg}') center/cover;"`;
 
   const body = `
 <section class="detail-hero seoul-hero" ${heroBgInline}>
@@ -3202,7 +3202,7 @@ ${PRODUCTS.filter(p => p.slug !== product.slug).slice(0, 4).map(p => `<a href="/
 
 function _seoulHash(s) { let h=0; for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))|0; return Math.abs(h); }
 function _seoulPick(salt, arr) { return arr[_seoulHash(salt)%arr.length]; }
-const _idxBg=i=>`background:linear-gradient(135deg,#0f172ad1,#0f172a8c),url('${_SEOUL_HERO_POOL[i]}') center/cover`;
+const _idxBg=i=>`background:url('${_SEOUL_HERO_POOL[i]}') center/cover`;
 
 const _SEOUL_HERO_POOL = [
   'https://images.unsplash.com/photo-1726137569854-ce11cc10cf67?fm=jpg&q=80&w=1400&auto=format&fit=crop',
@@ -3213,7 +3213,7 @@ const _SEOUL_HERO_POOL = [
 ];
 
 const _REGION_PRODUCT_HERO_POOL = _SEOUL_HERO_POOL;
-const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1775059956734-78ffd2075cec','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1764728671460-34931d8261f5','convenience-store':'1758445515620-e6039c1cd913',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1497486751825-1233686d5d80',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
+const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1775059956734-78ffd2075cec','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1764728671460-34931d8261f5','convenience-store':'1758445515620-e6039c1cd913',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1654366677760-b1aaa51b9e02',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
 function _industryHero(slug, salt) { const id = _IND_HERO_IDS[slug]; return id ? `https://images.unsplash.com/photo-${id}?fm=jpg&q=80&w=1400&auto=format&fit=crop` : _seoulPick(salt, _SEOUL_HERO_POOL); }
 function _productImg(s,salt){return _seoulPick(salt,_REGION_PRODUCT_HERO_POOL)}
 function _featImg(t,i){
@@ -3394,7 +3394,7 @@ function renderSubcityPage(city) {
   const faq1A = _seoulPick('fq1-'+varKey, _SEOUL_FAQ1A_V).replace(/\{name\}/g, name);
   
   const heroImg = _seoulPick('chero-'+varKey, _SEOUL_HERO_POOL);
-  const heroBgStyle = `background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('${heroImg}') center/cover`;
+  const heroBgStyle = `background:url('${heroImg}') center/cover`;
   
   const guChips = city.subGus.map(g => {
     const shortName = g.name.includes(' ') ? g.name.split(' ')[1] : g.name;
@@ -3668,7 +3668,7 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
   const opsB = _seoulPick('opb-'+varKey, _SEOUL_OPS_B_V).replace(/\{name\}/g, name);
   
   const heroImg = _seoulPick('hero-'+varKey, _SEOUL_HERO_POOL);
-  const heroBgStyle = `background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('${heroImg}') center/cover`;
+  const heroBgStyle = `background:url('${heroImg}') center/cover`;
   
   const dongChips = gu.dongs.map(d => `<a href="/region/${sidoSlug}/${gu.slug}/${d.slug}" class="sgu-dong-chip">${d.name}</a>`).join('');
   
@@ -3963,7 +3963,7 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
   const dc = gu.dongs.length;
   
   const heroImg = _seoulPick('dhero-'+sidoSlug+'-'+gu.slug+'-'+dong.slug, _SEOUL_HERO_POOL);
-  const heroBgStyle = `background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('${heroImg}') center/cover`;
+  const heroBgStyle = `background:url('${heroImg}') center/cover`;
   
   const idx = gu.dongs.findIndex(d => d.slug === dong.slug);
   const neighbors = [];
@@ -4290,7 +4290,7 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
   const productSlug = product.slug;
   
   const heroImg = _productImg(productSlug, 'dphero-'+sidoSlug+'-'+gu.slug+'-'+dong.slug+'-'+productSlug);
-  const heroBgStyle = `background:linear-gradient(135deg,rgba(15,23,42,0.78) 0%,rgba(15,23,42,0.45) 100%),url('${heroImg}') center/cover`;
+  const heroBgStyle = `background:url('${heroImg}') center/cover`;
   
   const varKey = sidoSlug + '-' + gu.slug + '-' + dong.slug + '-' + productSlug;
   
@@ -4571,7 +4571,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
 <div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/${productSlug}">${kw}</a><span>›</span><a href="/${sidoSlug}/${productSlug}">${regionFullName}</a><span>›</span>${guName}</div>
 
 <div class="spp-hero">
-  <div class="spp-hero-bg" style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover"></div>
+  <div class="spp-hero-bg" style="background:url('${heroImg}') center/cover"></div>
   <div class="spp-hero-ov">
     <div class="spp-hero-title">${guName} ${kw} ${actionH}</div>
   </div>
@@ -4998,7 +4998,7 @@ function renderIndustryPage(industry) {
 function renderRegionIndustryPage(region, industry) {
   const recProducts = industry.recommended.map(ps => PRODUCTS.find(x => x.slug === ps)).filter(Boolean);
   const heroImg = _industryHero(industry.slug, 'rihero-'+region.slug+'-'+industry.slug);
-  const heroBgInline = `style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover;"`;
+  const heroBgInline = `style="background:url('${heroImg}') center/cover;"`;
   const productCards = recProducts.map(p => `<a href="/${region.slug}/${p.slug}" class="ipro-card"><div class="ipro-photo" style="background-image:url('${p.photo}')"></div><div class="ipro-bd"><div class="ipro-n">${region.name} ${industry.name} ${p.name}</div><div class="ipro-d">${p.shortDesc}</div></div></a>`).join('');
   const _ribTips = ['유동인구 많아 빠른 결제 회전이 핵심. 키오스크·POS 우선 추천.','체류시간 길어 테이블오더·POS 조합으로 객단가 올리기 좋습니다.','신규 창업 활발. 풀패키지 일괄 설치로 오픈 단축 가능.','경쟁 밀도 높아 결제 동선·고객 데이터 관리가 매출 차이로 이어집니다.','관광·외부 유입 비중 높아 다양한 결제 수단 지원이 필수입니다.'];
   const areaCards = (region.commercialAreas || []).map((a,i) => `<div class="feat-card"><h5>📍 ${a}</h5><p>${_ribTips[i % _ribTips.length]}</p></div>`).join('');
@@ -5181,7 +5181,7 @@ function renderIndustryProductPage(industry, product) {
 <div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/industry">업종별</a><span>›</span><a href="/industry/${industry.slug}">${indName}</a><span>›</span>${kw}</div>
 
 <div class="spp-hero">
-  <div class="spp-hero-bg" style="background:linear-gradient(135deg,rgba(15,23,42,0.82) 0%,rgba(15,23,42,0.55) 100%),url('${heroImg}') center/cover"></div>
+  <div class="spp-hero-bg" style="background:url('${heroImg}') center/cover"></div>
   <div class="spp-hero-ov">
     <div class="spp-hero-title">${mainKw}</div>
   </div>
