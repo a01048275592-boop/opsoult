@@ -2121,8 +2121,8 @@ function renderRegionPage(region) {
 <div class="prose">
 <h2>${region.name} 지역 개요</h2>
 <p>${region.description} ${SITE.brandNameKo}은 ${region.coverage}에서 카드단말기·포스기·키오스크·테이블오더·CCTV·자동판매기·철거까지 매장 모든 설비를 원스톱 설치합니다. 업종과 매장 동선을 먼저 살펴본 뒤 1:1 컨설팅으로 조합을 맞춰드려, 신규/리뉴얼 모두 장비 고민 없이 진행됩니다.</p>
-<p>${region.name} 지역은 ${region.landmarks} 같은 핵심 상권을 중심으로 카페·음식점·편의점·미용실 등 다양한 업종이 밀집해 있습니다. 같은 업종이라도 매장 위치·평수·고객층에 따라 필요한 장비 조합이 달라지기 때문에, 일괄적인 추천보다는 매장별 조건에 맞춘 맞춤 제안이 중요합니다. 오페리오솔루션은 ${region.coverage} 상권 데이터를 기반으로 매장 환경에 맞춰 조합을 다르게 제안드립니다.</p>
-<p>최근 신규 오픈하시는 매장 중 <strong>카드단말기·포스기·키오스크를 동시에 들이시는 경우가 약 80%</strong>에 이릅니다. 장비를 따로따로 구매해 설치하시는 것보다 패키지로 한번에 하시는 쪽이 비용도 낮고 장비 간 연동 문제도 없어서, 처음 시작하시는 분들께 이 방식을 권해드리고 있습니다.</p>
+<p>${region.name} 지역은 ${region.landmarks} 같은 핵심 상권을 중심으로 카페·음식점·편의점·미용실 등 다양한 업종이 밀집해 있습니다. 같은 업종도 매장 위치·평수·고객층에 따라 장비 조합이 달라져, 일괄 추천보다 매장별 맞춤 제안이 중요합니다. 오페리오솔루션은 ${region.coverage} 상권 데이터 기반으로 조합을 제안드립니다.</p>
+<p>최근 신규 오픈 매장 중 <strong>카드단말기·포스기·키오스크를 동시 도입하는 경우가 약 80%</strong>입니다. 따로 구매보다 패키지가 비용도 낮고 연동 문제도 없어, 신규 매장에 권해드립니다.</p>
 ${region.slug === 'seoul' ? `
 <div class="seoul-districts-inline">
 <h2>🏙️ 서울 <em>지역별 바로가기</em></h2>
@@ -5737,7 +5737,12 @@ export default {
       const product = findProduct(thirdSeg);
       if (sidoSlug==='sejong'&&product) {
         const _dn=Object.keys(_SDM).find(k=>_SDM[k]===guSlug);
-        if (_dn) return new Response(renderDongProductPage({name:_dn,slug:guSlug},'sejong','세종',product),{headers:htmlHeaders});
+        if (_dn) {
+          const _gd=Object.keys(_SDM).map(k=>({name:k,slug:_SDM[k]}));
+          const _fg={slug:'sejong',name:'세종특별자치시',dongs:_gd};
+          const _fd={name:_dn,slug:guSlug,gu:_fg};
+          return new Response(renderDongProductPage(_fd,'sejong','세종',product),{headers:htmlHeaders});
+        }
       }
       if (product && region) {
         const gu = findRegionGu(sidoSlug, guSlug);
