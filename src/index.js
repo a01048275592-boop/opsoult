@@ -3216,7 +3216,7 @@ const _SEOUL_HERO_POOL = [
 ];
 
 const _REGION_PRODUCT_HERO_POOL = _SEOUL_HERO_POOL;
-const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1775059956734-78ffd2075cec','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1497032628192-86f99bcd76bc','convenience-store':'1567516866894-432cab1b73f9',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1497486751825-1233686d5d80',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
+const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1775059956734-78ffd2075cec','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1764728671460-34931d8261f5','convenience-store':'1758445515620-e6039c1cd913',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1497486751825-1233686d5d80',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
 function _industryHero(slug, salt) { const id = _IND_HERO_IDS[slug]; return id ? `https://images.unsplash.com/photo-${id}?fm=jpg&q=80&w=1400&auto=format&fit=crop` : _seoulPick(salt, _SEOUL_HERO_POOL); }
 function _productImg(s,salt){return _seoulPick(salt,_REGION_PRODUCT_HERO_POOL)}
 function _featImg(t,i){
