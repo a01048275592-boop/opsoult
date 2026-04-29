@@ -1048,11 +1048,11 @@ footer .logo{color:#fff}
 .sgu-bc{font-size:12.5px;color:#64748b;margin-bottom:16px}
 .sgu-bc a{color:#64748b;text-decoration:none}
 .sgu-bc span{margin:0 6px;color:#cbd5e1}
-.sgu-hero{position:relative;border-radius:12px;overflow:hidden;margin:0 auto 22px;aspect-ratio:16/5;min-height:160px;background:#1e293b;max-width:880px}
+.sgu-hero{position:relative;border-radius:12px;overflow:hidden;margin:0 auto 22px;aspect-ratio:16/5;min-height:280px;background:#1e293b;max-width:880px}
 .sgu-hero-bg{position:absolute;inset:0;background:#1e293b}
-.sgu-hero-ov{position:absolute;inset:0;padding:24px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center}
-.sgu-hero-title{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
-.sgu-hero-sub{font-size:12.5px;opacity:0.82}
+.sgu-hero-ov{position:absolute;inset:0;padding:50px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.sgu-hero-title{font-size:36px;font-weight:800;letter-spacing:-0.025em;margin-bottom:10px;line-height:1.25}
+.sgu-hero-sub{font-size:15px;opacity:0.92;line-height:1.5}
 .sgu-h1{font-size:22px;font-weight:700;letter-spacing:-0.025em;margin:14px 0 20px;line-height:1.35;color:#0f172a}
 .sgu-body{}
 .sgu-sec{margin:0 0 20px}
@@ -1180,12 +1180,12 @@ footer .logo{color:#fff}
 }
 
 /* DONG PAGE */
-.sdo-hero{position:relative;border-radius:12px;overflow:hidden;margin:0 auto 14px;aspect-ratio:16/5;min-height:160px;background:#1e293b;max-width:880px}
+.sdo-hero{position:relative;border-radius:12px;overflow:hidden;margin:0 auto 14px;aspect-ratio:16/5;min-height:280px;background:#1e293b;max-width:880px}
 .sdo-hero-bg{position:absolute;inset:0;background:#1e293b}
 .sdo-hero-tag{position:absolute;top:14px;right:14px;background:#fff;color:#0f172a;font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:100px;letter-spacing:-0.01em}
-.sdo-hero-ov{position:absolute;inset:0;padding:24px 28px;color:#fff;display:flex;flex-direction:column;justify-content:center}
-.sdo-hero-title{font-size:22px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px;line-height:1.25}
-.sdo-hero-sub{font-size:12.5px;opacity:0.85}
+.sdo-hero-ov{position:absolute;inset:0;padding:50px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.sdo-hero-title{font-size:36px;font-weight:800;letter-spacing:-0.025em;margin-bottom:10px;line-height:1.25}
+.sdo-hero-sub{font-size:15px;opacity:0.92;line-height:1.5}
 .sdo-meta{display:flex;align-items:center;gap:10px;font-size:12px;color:#64748b;margin-bottom:14px;flex-wrap:wrap}
 .sdo-meta-tag{background:#f1f5f9;padding:3px 10px;border-radius:100px;font-size:11.5px;font-weight:500;color:#475569}
 .sdo-meta-sep{color:#cbd5e1}
@@ -2079,7 +2079,7 @@ function renderHome() {
 `;
 
   return htmlWrap({
-    title: null,
+    title: '카드단말기·포스기·키오스크·CCTV 설치 전문',
     description: SITE.description,
     canonical: SITE.domain + '/',
     body,
