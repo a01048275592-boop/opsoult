@@ -5634,11 +5634,15 @@ export default {
     }
     const htmlHeaders = { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'public,max-age=3600' };
 
+    if (pathname === '/blog' || pathname.startsWith('/blog/')) {
+      return Response.redirect(SITE.domain + '/', 301);
+    }
+
     if (pathname === '/' || pathname === '') {
       return new Response(renderHome(), { headers: htmlHeaders });
     }
 
-    const smMatch = pathname.match(/^\/sitemap(?:-(main|region-product|industry-product|sigungu|dong-[1-4])|-index)?\.xml$/);
+    const smMatch = pathname.match(/^\/sitemap(?:-(main|region-product|industry-product|sigungu|dong-metro)|-index)?\.xml$/);
     if (smMatch) {
       const kind = smMatch[1] || 'index';
       return new Response(renderSitemapDispatch(kind), { headers: { 'Content-Type': 'application/xml;charset=utf-8', 'Cache-Control': 'public,max-age=3600' } });
