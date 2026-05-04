@@ -4424,7 +4424,7 @@ ${neighbors.length > 0 ? `<section class="dpp-sec">
   return htmlWrap({
     title: `${mainKw} 설치 가이드 — ${regionFullName} ${parent} ${name} | 오페리오솔루션`,
     description: `${regionFullName} ${parent} ${name}에서 ${kw} 설치를 알아보세요. ${mainKw} 무료 견적, 빠른 방문 설치, A/S 보장. 매장에 맞는 ${kw}를 전문가가 추천해 드립니다.`,
-    canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/${dong.slug}/${productSlug}`,
+    canonical: `${SITE.domain}${sidoSlug==='sejong'?`/region/sejong/${dong.slug}/${productSlug}`:/^(seoul|busan|daegu|incheon|gwangju|daejeon|ulsan)$/.test(sidoSlug)?`/region/${sidoSlug}/${gu.slug}/${dong.slug}/${productSlug}`:`/region/${sidoSlug}/${gu.slug}/${productSlug}`}`,
     breadcrumbs: [
       { n: '홈', u: '/' },
       { n: '지역별 설치', u: '/region' },
@@ -5555,7 +5555,7 @@ function _allDongs() {
 function renderSitemapDispatch(kind) {
   const D = SITE.domain;
   if (kind === 'index') {
-    const items = ['main','region-product','industry-product','sigungu','dong-1','dong-2','dong-3','dong-4'].map(s => `<sitemap><loc>${D}/sitemap-${s}.xml</loc></sitemap>`).join('');
+    const items = ['main','region-product','industry-product','sigungu','dong-metro'].map(s => `<sitemap><loc>${D}/sitemap-${s}.xml</loc></sitemap>`).join('');
     return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${items}</sitemapindex>`;
   }
   const u = [];
@@ -5570,10 +5570,10 @@ function renderSitemapDispatch(kind) {
     for (const i of INDUSTRIES) for (const ps of i.recommended) u.push(_xmlUrl(`${D}/industry/${i.slug}/${ps}`));
   } else if (kind === 'sigungu') {
     for (const sg of _allSigungus()) for (const p of PRODUCTS) u.push(_xmlUrl(`${D}/region/${sg.sidoSlug}/${sg.guSlug}/${p.slug}`));
-  } else if (kind.startsWith('dong-')) {
-    const part = parseInt(kind.slice(5));
-    const slice = _allDongs().slice((part-1)*1500, part*1500);
-    for (const d of slice) for (const p of PRODUCTS) u.push(_xmlUrl(`${D}/region/${d.sidoSlug}/${d.guSlug}/${d.dongSlug}/${p.slug}`));
+  } else if (kind === 'dong-metro') {
+    for (const g of SEOUL_GUS) for (const d of g.dongs) for (const p of PRODUCTS) u.push(_xmlUrl(`${D}/region/seoul/${g.slug}/${d.slug}/${p.slug}`));
+    for (const m of ['busan','daegu','incheon','gwangju','daejeon','ulsan']) for (const gu of REGIONS_DATA[m]||[]) for (const d of gu.dongs||[]) for (const p of PRODUCTS) u.push(_xmlUrl(`${D}/region/${m}/${gu.slug}/${d.slug}/${p.slug}`));
+    for (const ds of Object.values(_SDM)) for (const p of PRODUCTS) u.push(_xmlUrl(`${D}/region/sejong/${ds}/${p.slug}`));
   }
   return _xmlWrap(u.join(''));
 }
