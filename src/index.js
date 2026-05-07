@@ -242,7 +242,6 @@ const PRODUCTS = [
     photos: [
       'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/card-terminal.webp',
       'https://images.unsplash.com/photo-1556742031-c6961e8560b0?fm=jpg&q=80&w=1080&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1716388163697-bfb3989d15c8?fm=jpg&q=80&w=1080&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1742239633796-859c355b3c66?fm=jpg&q=80&w=1080&auto=format&fit=crop'
     ],
     longDesc: '카드단말기는 매장 결제의 기본이자 핵심 장비입니다. 오페리오솔루션는 10개 이상의 VAN사와 협력해 매장 매출 규모와 업종에 맞는 최적의 수수료 조건을 제안합니다. 유선·무선·블루투스·토스 단말기 등 전 기종을 취급하며, 빠른 방문 설치와 사용법 교육까지 원스톱으로 제공합니다. 기존 단말기 교체 시에는 VAN사 비교를 통해 월 평균 3-7만원, 연 40-80만원의 수수료를 절약할 수 있습니다.',
@@ -305,7 +304,6 @@ const PRODUCTS = [
     shortDesc: 'QR·태블릿 기반 주문 시스템. 객단가 상승과 홀 인력 절감 동시에.',
     photo: 'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order.webp',
     photos: [
-      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order.webp',
       'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order-2.webp',
       'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order-3.webp',
       'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order-4.webp'
@@ -904,7 +902,12 @@ footer .logo{color:#fff}
 
 /* Detail hero */
 .detail-hero{padding:80px 0 50px;background:var(--paper-2);border-bottom:1px solid var(--line);max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden}
-.detail-hero.seoul-hero{position:relative;padding:120px 0 90px;max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden;background:url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop') center/cover;border-bottom:none}
+.detail-hero.seoul-hero{position:relative;padding:120px 0 90px;max-width:880px;margin:24px auto 0;border-radius:16px;overflow:hidden;background-color:#1a1f2e;isolation:isolate;border-bottom:none}
+.detail-hero.seoul-hero::before{content:'';position:absolute;inset:0;background-image:var(--hero-bg);background-size:cover;background-position:center;filter:blur(28px) brightness(0.55);transform:scale(1.15);z-index:0}
+.detail-hero.seoul-hero::after{content:'';position:absolute;inset:0;background-image:var(--hero-bg);background-size:cover;background-position:center;background-repeat:no-repeat;z-index:1}
+@media (min-width:769px){.detail-hero.seoul-hero::after{background-size:contain}}
+.spp-hero-bg[data-product='kiosk']::after,.dpp-hero-bg[data-product='kiosk']::after,.detail-hero.seoul-hero[data-product='kiosk']::after{background-size:contain !important}
+.detail-hero.seoul-hero > *{position:relative;z-index:2}
 .detail-hero.seoul-hero .breadcrumb, .detail-hero.seoul-hero .breadcrumb a{color:rgba(255,255,255,0.95);text-shadow:0 0 4px rgba(0,0,0,1),0 0 10px rgba(0,0,0,.9),0 2px 6px rgba(0,0,0,.95)}
 .detail-hero.seoul-hero .breadcrumb .sep{color:rgba(255,255,255,0.6)}
 .detail-hero.seoul-hero .detail-title{color:#fff;text-shadow:0 0 6px rgba(0,0,0,1),0 0 14px rgba(0,0,0,.95),0 2px 8px rgba(0,0,0,1),0 4px 16px rgba(0,0,0,.9)}
@@ -1285,7 +1288,9 @@ footer .logo{color:#fff}
 .spp-bc a{color:#64748b;text-decoration:none}
 .spp-bc span{margin:0 6px;color:#cbd5e1}
 .spp-hero{display:flex;align-items:stretch;border-radius:12px;overflow:hidden;margin:0 auto 20px;aspect-ratio:16/5;min-height:190px;background:#1e293b;max-width:880px}
-.spp-hero-bg{position:relative;flex:0 0 45%;background-color:#fff;background-position:center;background-size:contain;background-repeat:no-repeat;border-right:1px solid rgba(255,255,255,0.1);min-height:280px}
+.spp-hero-bg{position:relative;flex:0 0 45%;background-color:#1e293b;border-right:1px solid rgba(255,255,255,0.1);min-height:280px;overflow:hidden;isolation:isolate}
+.spp-hero-bg::before{content:'';position:absolute;inset:0;background-image:var(--hero-bg);background-size:cover;background-position:center;filter:blur(20px) brightness(0.5);transform:scale(1.15);z-index:0}
+.spp-hero-bg::after{content:'';position:absolute;inset:0;background-image:var(--hero-bg);background-size:cover;background-position:center;background-repeat:no-repeat;z-index:1}
 .spp-hero-ov{position:relative;flex:1;padding:36px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center;background:#1a1f2e}
 .spp-hero-meta{font-size:12px;margin-bottom:10px;letter-spacing:-0.01em;text-shadow:-1px -1px 0 #000,0 -1px 0 #000,1px -1px 0 #000,1px 0 0 #000,1px 1px 0 #000,0 1px 0 #000,-1px 1px 0 #000,-1px 0 0 #000}
 .spp-hero-title{font-size:26px;font-weight:800;letter-spacing:-0.025em;line-height:1.2;text-shadow:-2px -2px 0 #000,0 -2px 0 #000,2px -2px 0 #000,2px 0 0 #000,2px 2px 0 #000,0 2px 0 #000,-2px 2px 0 #000,-2px 0 0 #000}
@@ -2141,10 +2146,11 @@ function renderRegionPage(region) {
   const areasList = region.commercialAreas.map(a => `<li>${a}</li>`).join('');
 
   const heroImg = _seoulPick('rhero-'+region.slug, _SEOUL_HERO_POOL);
-  const heroBgInline = `style="background:url('${heroImg}') center/cover;"`;
+  const product = {slug: 'region'};
+  const heroBgInline = `style="--hero-bg:url('${heroImg}');"`;
 
   const body = `
-<section class="detail-hero seoul-hero" ${heroBgInline}>
+<section class="detail-hero seoul-hero" data-product="${product.slug}" ${heroBgInline}>
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/region">지역별 설치</a><span class="sep">›</span>${region.name}</div>
 <h1 class="detail-title">${region.emoji} ${region.slug === 'seoul' ? region.name : region.fullName} <em>매장 설비 설치</em></h1>
@@ -2453,10 +2459,10 @@ function renderProductPage(product) {
   const sfDotsP = product.features.map((f, i) => `<button class="sf-dot${i===0?' active':''}" data-idx="${i}" aria-label="${i+1}번"></button>`).join('');
 
   const heroImg = _productImg(product.slug, 'phero-'+product.slug);
-  const heroBgInline = `style="background:url('${heroImg}') center/cover;"`;
+  const heroBgInline = `style="--hero-bg:url('${heroImg}');"`;
 
   const body = `
-<section class="detail-hero seoul-hero" ${heroBgInline}>
+<section class="detail-hero seoul-hero" data-product="${product.slug}" ${heroBgInline}>
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/product">제품 안내</a><span class="sep">›</span>${product.name}</div>
 <h1 class="detail-title">${product.emoji} ${product.name} <em>설치 가이드</em></h1>
@@ -2997,7 +3003,7 @@ function renderRegionProductPage(region, productSlug) {
 <div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/${productSlug}">${kw}</a><span>›</span>${region.fullName}</div>
 
 <div class="spp-hero">
-  <div class="spp-hero-bg" style="background-image:url('${heroImg}')"></div>
+  <div class="spp-hero-bg" data-product="${productSlug}" style="--hero-bg:url('${heroImg}')"></div>
   <div class="spp-hero-ov">
     <div class="spp-hero-meta">${coverageText}</div>
     <div class="spp-hero-title">${region.fullName} ${kw} ${actionH}</div>
@@ -3144,10 +3150,10 @@ function renderInstallPage(region, product) {
   const featCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
 
   const heroImg = _productImg(product.slug, 'ihero-'+region.slug+'-'+product.slug);
-  const heroBgInline = `style="background:url('${heroImg}') center/cover;"`;
+  const heroBgInline = `style="--hero-bg:url('${heroImg}');"`;
 
   const body = `
-<section class="detail-hero seoul-hero" ${heroBgInline}>
+<section class="detail-hero seoul-hero" data-product="${product.slug}" ${heroBgInline}>
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/region/${region.slug}">${region.name}</a><span class="sep">›</span>${product.name}</div>
 <h1 class="detail-title">${region.emoji} ${region.name} ${product.name} <em>설치</em></h1>
@@ -3248,7 +3254,7 @@ const _SEOUL_HERO_POOL = [
 ];
 
 const _REGION_PRODUCT_HERO_POOL = _SEOUL_HERO_POOL;
-const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1709548145082-04d0cde481d4','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1764728671460-34931d8261f5','convenience-store':'1758570764602-d57bc2922dea',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1654366677760-b1aaa51b9e02',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
+const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1709548145082-04d0cde481d4','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1764728671460-34931d8261f5','convenience-store':'1758570764602-d57bc2922dea',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1635424239131-32dc44986b56',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
 function _industryHero(slug, salt) { const id = _IND_HERO_IDS[slug]; return id ? `https://images.unsplash.com/photo-${id}?fm=jpg&q=80&w=1400&auto=format&fit=crop` : _seoulPick(salt, _SEOUL_HERO_POOL); }
 function _productImg(s,salt){
   const p = PRODUCTS.find(x => x.slug === s);
@@ -4369,7 +4375,7 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
 <div class="dpp-bc"><a href="/">홈</a><span>›</span><a href="/region">지역별 설치</a><span>›</span><a href="/region/${sidoSlug}">${regionName}</a><span>›</span><a href="/region/${sidoSlug}/${gu.slug}">${parent}</a><span>›</span><a href="/region/${sidoSlug}/${gu.slug}/${dong.slug}">${name}</a><span>›</span>${kw}</div>
 
 <section class="dpp-hero">
-  <div class="dpp-hero-bg" style="background-image:url('${heroImg}')"></div>
+  <div class="dpp-hero-bg" data-product="${productSlug}" style="--hero-bg:url('${heroImg}')"></div>
   <div class="dpp-hero-ov">
     <div class="dpp-hero-meta">${parent.includes(regionFullName)?'':regionFullName+' '}${parent} ${name}</div>
     <h1 class="dpp-hero-title">${product.emoji} ${mainKw} 설치 · 구매 · 무료 상담</h1>
@@ -4443,7 +4449,9 @@ ${neighbors.length > 0 ? `<section class="dpp-sec">
 .dpp-bc{font-size:12.5px;color:#64748b;padding:12px 0 20px}
 .dpp-bc a{color:#64748b;text-decoration:none}
 .dpp-bc span{margin:0 6px;color:#cbd5e1}
-.dpp-hero{display:flex;align-items:stretch;border-radius:12px;overflow:hidden;margin:0 auto 24px;min-height:280px;background:#1e293b;max-width:880px}.dpp-hero-bg{position:relative;flex:0 0 45%;background-color:#fff;background-position:center;background-size:contain;background-repeat:no-repeat;border-right:1px solid rgba(255,255,255,0.1)}.dpp-hero-ov{position:relative;flex:1;padding:36px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center;background:#1a1f2e}
+.dpp-hero{display:flex;align-items:stretch;border-radius:12px;overflow:hidden;margin:0 auto 24px;min-height:280px;background:#1e293b;max-width:880px}.dpp-hero-bg{position:relative;flex:0 0 45%;background-color:#1e293b;border-right:1px solid rgba(255,255,255,0.1);overflow:hidden;isolation:isolate}
+.dpp-hero-bg::before{content:'';position:absolute;inset:0;background-image:var(--hero-bg);background-size:cover;background-position:center;filter:blur(20px) brightness(0.5);transform:scale(1.15);z-index:0}
+.dpp-hero-bg::after{content:'';position:absolute;inset:0;background-image:var(--hero-bg);background-size:cover;background-position:center;background-repeat:no-repeat;z-index:1}.dpp-hero-ov{position:relative;flex:1;padding:36px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center;background:#1a1f2e}
 .dpp-hero-meta{font-size:13.5px;margin-bottom:10px;text-shadow:-1px -1px 0 #000,0 -1px 0 #000,1px -1px 0 #000,1px 0 0 #000,1px 1px 0 #000,0 1px 0 #000,-1px 1px 0 #000,-1px 0 0 #000}
 .dpp-hero-title{font-size:28px;font-weight:800;letter-spacing:-0.025em;line-height:1.25;margin:4px 0 14px;text-shadow:-2px -2px 0 #000,0 -2px 0 #000,2px -2px 0 #000,2px 0 0 #000,2px 2px 0 #000,0 2px 0 #000,-2px 2px 0 #000,-2px 0 0 #000}
 .dpp-hero-sub{font-size:14.5px;line-height:1.5;text-shadow:-1px -1px 0 #000,0 -1px 0 #000,1px -1px 0 #000,1px 0 0 #000,1px 1px 0 #000,0 1px 0 #000,-1px 1px 0 #000,-1px 0 0 #000}
@@ -4616,7 +4624,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
 <div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/product">제품 안내</a><span>›</span><a href="/product/${productSlug}">${kw}</a><span>›</span><a href="/${sidoSlug}/${productSlug}">${regionFullName}</a><span>›</span>${guName}</div>
 
 <div class="spp-hero">
-  <div class="spp-hero-bg" style="background-image:url('${heroImg}')"></div>
+  <div class="spp-hero-bg" data-product="${productSlug}" style="--hero-bg:url('${heroImg}')"></div>
   <div class="spp-hero-ov">
     <div class="spp-hero-title">${guName} ${kw} ${actionH}</div>
   </div>
@@ -4986,7 +4994,7 @@ function renderIndustryPage(industry) {
   const regionChipsHtml = REGIONS.map(r => `<a href="/region/${r.slug}/${industry.slug}" class="spp-gu-chip">${r.name} ${industry.name}</a>`).join('');
 
   const body = `
-<section class="detail-hero seoul-hero" style="background:url('${_industryHero(industry.slug,'ih-'+industry.slug)}') center/cover">
+<section class="detail-hero seoul-hero" style="--hero-bg:url('${_industryHero(industry.slug,'ih-'+industry.slug)}')">
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/industry">업종별</a><span class="sep">›</span>${industry.name}</div>
 <h1 class="detail-title">${industry.emoji} ${industry.name} <em>맞춤 설치</em></h1>
@@ -5043,7 +5051,8 @@ function renderIndustryPage(industry) {
 function renderRegionIndustryPage(region, industry) {
   const recProducts = industry.recommended.map(ps => PRODUCTS.find(x => x.slug === ps)).filter(Boolean);
   const heroImg = _industryHero(industry.slug, 'rihero-'+region.slug+'-'+industry.slug);
-  const heroBgInline = `style="background:url('${heroImg}') center/cover;"`;
+  const product = recProducts[0] || {slug: industry.slug};
+  const heroBgInline = `style="--hero-bg:url('${heroImg}');"`;
   const productCards = recProducts.map(p => `<a href="/${region.slug}/${p.slug}" class="ipro-card"><div class="ipro-photo" style="background-image:url('${p.photo}')"></div><div class="ipro-bd"><div class="ipro-n">${region.name} ${industry.name} ${p.name}</div><div class="ipro-d">${p.shortDesc}</div></div></a>`).join('');
   const _ribTips = ['유동인구 많아 빠른 결제 회전이 핵심. 키오스크·POS 우선 추천.','체류시간 길어 테이블오더·POS 조합으로 객단가 올리기 좋습니다.','신규 창업 활발. 풀패키지 일괄 설치로 오픈 단축 가능.','경쟁 밀도 높아 결제 동선·고객 데이터 관리가 매출 차이로 이어집니다.','관광·외부 유입 비중 높아 다양한 결제 수단 지원이 필수입니다.'];
   const areaCards = (region.commercialAreas || []).map((a,i) => `<div class="feat-card"><h5>📍 ${a}</h5><p>${_ribTips[i % _ribTips.length]}</p></div>`).join('');
@@ -5052,7 +5061,7 @@ function renderRegionIndustryPage(region, industry) {
   const recProductNames = recProducts.map(p => p.name).join('·');
   
   const body = `
-<section class="detail-hero seoul-hero" ${heroBgInline}>
+<section class="detail-hero seoul-hero" data-product="${product.slug}" ${heroBgInline}>
 <div class="container">
 <div class="breadcrumb"><a href="/">홈</a><span class="sep">›</span><a href="/region/${region.slug}">${region.name}</a><span class="sep">›</span>${industry.name}</div>
 <h1 class="detail-title">${region.emoji} ${region.name} ${industry.name} <em>설치</em></h1>
@@ -5226,7 +5235,7 @@ function renderIndustryProductPage(industry, product) {
 <div class="spp-bc"><a href="/">홈</a><span>›</span><a href="/industry">업종별</a><span>›</span><a href="/industry/${industry.slug}">${indName}</a><span>›</span>${kw}</div>
 
 <div class="spp-hero">
-  <div class="spp-hero-bg" style="background-image:url('${heroImg}')"></div>
+  <div class="spp-hero-bg" data-product="${productSlug}" style="--hero-bg:url('${heroImg}')"></div>
   <div class="spp-hero-ov">
     <div class="spp-hero-title">${mainKw}</div>
   </div>
