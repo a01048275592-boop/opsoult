@@ -725,7 +725,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 .feature-cell h4{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:20px;font-weight:600;letter-spacing:-0.02em;margin-bottom:10px;color:var(--ink)}
 .feature-cell p{font-size:14px;color:var(--muted);line-height:1.65}
 /* Smart Features 캐러셀 (데스크톱 + 모바일 공통, 모바일에선 미디어 쿼리에서 사이즈 조정) */
-.sf-carousel{display:block;margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto}
+.sf-carousel{display:block;margin-top:48px;max-width:760px;margin-left:auto;margin-right:auto;position:relative}
+.sf-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--ink);font-size:22px;font-family:inherit;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(15,23,42,0.08);transition:all .2s;line-height:1;padding:0 0 3px}
+.sf-arrow:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-50%) scale(1.05)}
+.sf-prev{left:-22px}
+.sf-next{right:-22px}
 .sf-tabs{display:flex;gap:10px;justify-content:center;padding:0 0 24px;flex-wrap:wrap}
 .sf-tab{flex-shrink:0;width:54px;height:54px;border-radius:12px;border:0;background:var(--paper-3);color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .25s,color .25s,transform .25s;padding:0}
 .sf-tab svg{width:22px;height:22px}
@@ -1484,6 +1488,10 @@ footer .logo{color:#fff}
   .feature-cell p{font-size:11.5px;line-height:1.5}
   /* Smart Features 캐러셀 - 모바일 오버라이드 */
   .sf-carousel{margin-top:14px;max-width:none;margin-left:0;margin-right:0}
+  .sf-arrow{width:36px;height:36px;font-size:18px;background:rgba(255,255,255,0.95);box-shadow:0 4px 14px rgba(15,23,42,0.18);padding:0 0 2px}
+  .sf-arrow:hover{transform:translateY(-50%) scale(1)}
+  .sf-prev{left:6px}
+  .sf-next{right:6px}
   .sf-tabs{gap:8px;padding:0 16px 14px;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .sf-tabs::-webkit-scrollbar{display:none}
   .sf-tab{width:46px;height:46px;border-radius:10px}
@@ -1939,7 +1947,9 @@ function renderHome() {
 </div>
 <div class="sf-carousel" id="sfCarousel">
 <div class="sf-tabs">${sfTabs}</div>
+<button class="sf-arrow sf-prev" aria-label="이전 슬라이드">‹</button>
 <div class="sf-viewport"><div class="sf-track">${sfSlides}</div></div>
+<button class="sf-arrow sf-next" aria-label="다음 슬라이드">›</button>
 <div class="sf-dots">${sfDots}</div>
 </div>
 </section>
@@ -2100,6 +2110,10 @@ function renderHome() {
   for(var k=0; k<dots.length; k++){
     (function(ix){ dots[ix].addEventListener('click', function(){ go(ix); restartAuto(); }); })(k);
   }
+  var prev = carousel.querySelector('.sf-prev');
+  var next = carousel.querySelector('.sf-next');
+  if(prev) prev.addEventListener('click', function(){ go(current - 1); restartAuto(); });
+  if(next) next.addEventListener('click', function(){ go(current + 1); restartAuto(); });
 
   var startX = 0;
   viewport.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; paused = true; }, {passive:true});
