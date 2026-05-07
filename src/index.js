@@ -941,11 +941,14 @@ footer .logo{color:#fff}
 .feat-card p{font-size:13.5px;color:var(--muted);line-height:1.6}
 
 /* 제품 안내 무한 슬라이드 캐러셀 (/product) */
-.product-carousel{padding:50px 0;overflow:hidden;background:#fff}
-.pcar-viewport{overflow:hidden;width:100%}
-.pcar-track{display:flex;gap:20px;animation:pcar-scroll 35s linear infinite;width:max-content}
-.pcar-track:hover{animation-play-state:paused}
-@keyframes pcar-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.product-carousel{padding:50px 0;background:#fff;position:relative;max-width:1280px;margin:0 auto}
+.pcar-viewport{overflow:hidden;width:100%;padding:0 60px}
+.pcar-track{display:flex;gap:20px;width:max-content;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.pcar-arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--ink);font-size:22px;font-family:inherit;cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(15,23,42,0.08);transition:all .2s;line-height:1;padding:0 0 3px}
+.pcar-arrow:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-50%) scale(1.05)}
+.pcar-prev{left:8px}
+.pcar-next{right:8px}
+
 .pcar-card{flex:0 0 320px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--ink);transition:all .25s}
 .pcar-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,23,42,0.1);border-color:var(--ink)}
 .pcar-img{width:100%;height:200px;background-size:contain;background-repeat:no-repeat;background-position:center;background-color:#fff}
@@ -955,12 +958,17 @@ footer .logo{color:#fff}
 .pcar-desc{font-size:12.5px;color:var(--muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 @media(max-width:600px){
   .product-carousel{padding:30px 0}
-  .pcar-track{gap:14px;animation-duration:30s}
+  .pcar-viewport{padding:0 44px}
+  .pcar-track{gap:14px}
   .pcar-card{flex:0 0 240px}
   .pcar-img{height:160px}
   .pcar-body{padding:14px 16px}
   .pcar-name{font-size:15.5px}
   .pcar-desc{font-size:11.5px}
+  .pcar-arrow{width:36px;height:36px;font-size:18px;background:rgba(255,255,255,0.95);box-shadow:0 4px 14px rgba(15,23,42,0.18);padding:0 0 2px}
+  .pcar-arrow:hover{transform:translateY(-50%) scale(1)}
+  .pcar-prev{left:4px}
+  .pcar-next{right:4px}
 }
 .related-section{background:var(--paper-2);padding:90px 0}
 .ipro-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:24px 0 36px}
@@ -4941,7 +4949,7 @@ function renderRegionIndex() {
 
 function renderProductIndex() {
   const cardHtml = p => `<a href="/product/${p.slug}" class="pcar-card"><div class="pcar-img" style="background-image:url('${p.photo}')"></div><div class="pcar-body"><div class="pcar-tag">${p.emoji} ${p.name}</div><div class="pcar-name">${p.name}</div><div class="pcar-desc">${p.shortDesc}</div></div></a>`;
-  const cards = PRODUCTS.map(cardHtml).join('') + PRODUCTS.map(cardHtml).join('');
+  const cards = PRODUCTS.map(cardHtml).join('');
   const body = `
 <section class="detail-hero seoul-hero" style="${_idxBg(1)}">
 <div class="container">
@@ -4950,9 +4958,31 @@ function renderProductIndex() {
 <p class="detail-sub">카드단말기부터 철거까지 매장 운영에 필요한 7개 카테고리. 각 제품의 상세 기능과 설치 가이드를 확인하세요.</p>
 </div>
 </section>
-<section class="product-carousel">
-<div class="pcar-viewport"><div class="pcar-track">${cards}</div></div>
+<section class="product-carousel" id="pcarSection">
+<button class="pcar-arrow pcar-prev" aria-label="이전 제품" onclick="slidePcar(-1)">‹</button>
+<div class="pcar-viewport"><div class="pcar-track" id="pcarTrack">${cards}</div></div>
+<button class="pcar-arrow pcar-next" aria-label="다음 제품" onclick="slidePcar(1)">›</button>
 </section>
+<script>
+(function(){
+  let pcarIdx = 0;
+  window.slidePcar = function(dir){
+    const track = document.getElementById('pcarTrack');
+    if(!track) return;
+    const card = track.querySelector('.pcar-card');
+    if(!card) return;
+    const cardW = card.offsetWidth;
+    const gap = parseInt(getComputedStyle(track).gap) || 20;
+    const step = cardW + gap;
+    const viewport = track.parentElement;
+    const visible = Math.max(1, Math.floor(viewport.offsetWidth / step));
+    const total = track.children.length;
+    const maxIdx = Math.max(0, total - visible);
+    pcarIdx = Math.max(0, Math.min(maxIdx, pcarIdx + dir));
+    track.style.transform = 'translateX(-' + (pcarIdx * step) + 'px)';
+  };
+})();
+</script>
 `;
   return htmlWrap({
     title: '제품 안내 · 카드단말기·포스기·키오스크·CCTV',
