@@ -1631,7 +1631,10 @@ function htmlWrap({ title, description, canonical, body, keywords, breadcrumbs, 
   const kwMeta = keywords ? `\n<meta name="keywords" content="${escapeHtml(keywords)}">` : '';
   const _s=(canon.replace(SITE.domain,'')||'/').split('').reduce((a,c)=>((a<<5)-a+c.charCodeAt(0))|0,0),_md=new Date();_md.setDate(_md.getDate()-(Math.abs(_s)%56+1));const modifiedDate=_md.toISOString().slice(0,10);
   const bcJsonLd = _breadcrumbJsonLd(breadcrumbs);
-  const ogImg = ogImage || `${SITE.domain}/og-default.jpg`;
+  const ogImg = ogImage || 'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/og-default.jpg';
+  const _ogIsDefault = ogImg.includes('og-default.jpg');
+  const ogW = _ogIsDefault ? 1200 : 1080;
+  const ogH = _ogIsDefault ? 630 : 1080;
   return `<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -1650,8 +1653,8 @@ function htmlWrap({ title, description, canonical, body, keywords, breadcrumbs, 
 <meta property="og:description" content="${escapeHtml(desc)}">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="${ogImg}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="${ogW}">
+<meta property="og:image:height" content="${ogH}">
 <meta property="article:modified_time" content="${modifiedDate}">
 <meta property="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${ogImg}">
