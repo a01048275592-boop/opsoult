@@ -239,6 +239,12 @@ const PRODUCTS = [
     name: '카드단말기', emoji: '💳',
     shortDesc: '유선·무선·블루투스·토스단말기까지. VAN사 수수료 비교로 최저가 제공.',
     photo: 'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/card-terminal.webp',
+    photos: [
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/card-terminal.webp',
+      'https://images.unsplash.com/photo-1556742031-c6961e8560b0?fm=jpg&q=80&w=1080&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1716388163697-bfb3989d15c8?fm=jpg&q=80&w=1080&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1742239633796-859c355b3c66?fm=jpg&q=80&w=1080&auto=format&fit=crop'
+    ],
     longDesc: '카드단말기는 매장 결제의 기본이자 핵심 장비입니다. 오페리오솔루션는 10개 이상의 VAN사와 협력해 매장 매출 규모와 업종에 맞는 최적의 수수료 조건을 제안합니다. 유선·무선·블루투스·토스 단말기 등 전 기종을 취급하며, 빠른 방문 설치와 사용법 교육까지 원스톱으로 제공합니다. 기존 단말기 교체 시에는 VAN사 비교를 통해 월 평균 3-7만원, 연 40-80만원의 수수료를 절약할 수 있습니다.',
     keywords: '카드단말기 설치, VAN사 비교, 카드결제기, 신용카드 단말기',
     features: [
@@ -254,6 +260,14 @@ const PRODUCTS = [
     name: '포스기', emoji: '🖥️',
     shortDesc: '주문·결제·매출·재고를 한 번에. 배달앱·오프라인 통합 대시보드.',
     photo: 'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/pos.webp',
+    photos: [
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/pos.webp',
+      'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1080&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1586864030223-a918b07d357d?fm=jpg&q=80&w=1080&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?fm=jpg&q=80&w=1080&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1726137570078-1faa70beb6ad?fm=jpg&q=80&w=1080&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1726065235239-b20b88d43eea?fm=jpg&q=80&w=1080&auto=format&fit=crop'
+    ],
     longDesc: 'POS 시스템은 주문 접수부터 결제, 재고 관리, 매출 분석까지 매장 운영의 모든 데이터를 한 곳에서 관리하는 핵심 장비입니다. 배달의민족, 쿠팡이츠, 요기요 등 주요 배달앱과 오프라인 매출을 통합해 실시간 대시보드로 확인할 수 있습니다. 직원 근태 관리, 세무 보고서 자동 생성 기능까지 포함해 매장 운영 효율을 극대화합니다.',
     keywords: '포스기 설치, POS 시스템, 매장 포스기, 음식점 포스',
     features: [
@@ -269,6 +283,12 @@ const PRODUCTS = [
     name: '키오스크', emoji: '🤖',
     shortDesc: '무인 주문·결제 시스템으로 인건비 절감. 소형·대형 모두 지원.',
     photo: 'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/kiosk.webp',
+    photos: [
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/kiosk.webp',
+      'https://images.unsplash.com/photo-1613652038578-a9a988b54a60?fm=jpg&q=80&w=1080&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1613652072912-526703fcbfc4?fm=jpg&q=80&w=1080&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1613652056837-fda5bddd1503?fm=jpg&q=80&w=1080&auto=format&fit=crop'
+    ],
     longDesc: '키오스크는 고객이 직접 주문·결제를 완료하는 무인 시스템으로, 인건비 절감과 주문 정확도 향상을 동시에 달성합니다. 21~32인치 대형 키오스크부터 10인치 미니 키오스크까지 매장 규모에 맞는 기종을 제안하며, POS·테이블오더와 완벽 연동됩니다. 다국어 지원으로 외국인 고객도 쉽게 주문할 수 있으며, 평균 객단가 15-25% 상승 효과가 검증되었습니다.',
     keywords: '키오스크 설치, 무인 주문기, 셀프오더, 키오스크 대여',
     features: [
@@ -284,6 +304,12 @@ const PRODUCTS = [
     name: '테이블오더', emoji: '📋',
     shortDesc: 'QR·태블릿 기반 주문 시스템. 객단가 상승과 홀 인력 절감 동시에.',
     photo: 'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order.webp',
+    photos: [
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order.webp',
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order-2.webp',
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order-3.webp',
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/table-order-4.webp'
+    ],
     longDesc: '테이블오더는 고객이 자리에서 직접 주문·결제하는 시스템으로, 홀 직원의 주문 받기·결제 업무를 없애 객단가 상승과 인력 절감 효과를 동시에 제공합니다. 태블릿 설치형과 QR 스캔 방식을 매장 특성에 맞게 선택할 수 있으며, POS 연동으로 주문 즉시 주방 프린터 출력까지 자동 처리됩니다. 메뉴 사진 노출로 추가 주문이 평균 22% 증가합니다.',
     keywords: '테이블오더 설치, QR 주문, 태블릿 주문, 스마트오더',
     features: [
@@ -299,6 +325,11 @@ const PRODUCTS = [
     name: 'CCTV', emoji: '📷',
     shortDesc: 'HD~4K 고화질, AI 움직임 감지, 스마트폰 원격 모니터링까지.',
     photo: 'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/cctv.webp',
+    photos: [
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/cctv.webp',
+      'https://images.unsplash.com/photo-1549109926-58f039549485?fm=jpg&q=80&w=1080&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1585206031650-9e9a7c87dcfe?fm=jpg&q=80&w=1080&auto=format&fit=crop'
+    ],
     longDesc: '매장 CCTV는 도난·사고 방지, 직원 관리, 보험료 절감을 위한 필수 장비입니다. 오페리오솔루션는 HD부터 4K까지 다양한 화질 선택과 AI 움직임 감지, 스마트폰 원격 확인, POS 연동 영상 매칭까지 제공합니다. 결제 시점 영상 자동 매칭으로 매출 누락을 사전 방지하며, CCTV 설치 매장은 화재·도난 보험료 10-20% 할인 혜택을 받을 수 있습니다.',
     keywords: 'CCTV 설치, 매장 CCTV, 원격 감시, 4K CCTV, AI CCTV',
     features: [
@@ -314,6 +345,9 @@ const PRODUCTS = [
     name: '자동판매기(밴딩머신)', emoji: '🏭',
     shortDesc: '판매 + 광고 이중 수익. 23인치 터치스크린 자동판매기.',
     photo: 'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/vending.webp',
+    photos: [
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/vending.webp'
+    ],
     longDesc: '최신 LK 밴딩머신은 판매 수익과 광고 수익을 동시에 창출하는 차세대 자판기입니다. 23.4인치 터치스크린으로 광고 송출, 매장 공지, 메뉴판 표시까지 가능하며, 원격 재고 관리와 매출 분석 기능을 제공합니다. 카드·삼성페이·카카오페이·제로페이 등 모든 간편결제를 지원해 무인 운영 환경에서도 안정적인 결제가 가능합니다.',
     keywords: '밴딩머신, 자동판매기, 자판기 설치, 터치스크린 자판기',
     features: [
@@ -329,6 +363,9 @@ const PRODUCTS = [
     name: '매장철거', emoji: '🔨',
     shortDesc: '매장·사무실 철거 + 원상복구 원스톱. 보증금 반환까지 책임.',
     photo: 'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/removal.webp',
+    photos: [
+      'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/removal.webp'
+    ],
     longDesc: '매장 철거는 폐업·이전 시 보증금 반환에 직결되는 중요한 공정입니다. 오페리오솔루션는 정밀 현장 분석부터 철거·원상복구·폐기물 처리까지 원스톱으로 처리하며, 시공 보증서 발급으로 사후 책임까지 확실히 합니다. 추가 비용 없는 정찰제 운영과 실시간 공정 보고로 임대인과의 분쟁을 사전 예방합니다.',
     keywords: '매장 철거, 원상복구, 사무실 철거, 상가 철거',
     features: [
@@ -1303,7 +1340,7 @@ footer .logo{color:#fff}
 .spp-prod-chip{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:100px;font-size:11.5px;color:#475569;text-decoration:none}
 .spp-prod-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
 @media (max-width:640px){
-  .spp-hero-title{font-size:20px}.spp-hero{flex-direction:column}.spp-hero-bg{flex:0 0 240px !important;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1)}.spp-hero-ov{padding:24px 22px}
+  .spp-hero-title{font-size:20px}.spp-hero{flex-direction:column;aspect-ratio:auto;min-height:auto}.spp-hero-bg{flex:0 0 280px !important;min-height:280px !important;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1)}.spp-hero-ov{padding:24px 22px}
   .spp-h1{font-size:18px}
   .spp-sec-h{font-size:14.5px}
 }
@@ -2645,8 +2682,7 @@ const _SPP_PRECHECK = {
 };
 
 function renderRegionCardTerminalV3(region) {
-  const _pp = (PRODUCTS.find(p=>p.slug==='card-terminal')||{}).photo;
-  const heroImg = _pp || _productImg('card-terminal', 'rphero-'+region.slug+'-card-terminal');
+  const heroImg = _productImg('card-terminal', 'rphero-'+region.slug+'-card-terminal');
   const regionGus = region.slug === 'seoul' ? SEOUL_GUS : (REGIONS_DATA[region.slug] || []);
   const totalDongCount = regionGus.reduce((acc, gu) => acc + ((gu.dongs || []).length), 0);
   const coverageText = region.slug === 'seoul'
@@ -2745,7 +2781,7 @@ function renderRegionCardTerminalV3(region) {
 .sctv3-side-nav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:6px}
 .sctv3-other-chip{display:flex;align-items:center;justify-content:center;padding:8px 10px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;font-size:12px;font-weight:500;color:#334155;text-decoration:none;transition:all .15s;letter-spacing:-0.01em}
 .sctv3-other-chip:hover{border-color:#0f172a;color:#0f172a;background:#f1f5f9;transform:translateY(-1px)}
-@media (max-width:640px){.sctv3-hero-title{font-size:20px}.sctv3-hero{flex-direction:column}.sctv3-hero-bg{flex:0 0 240px !important;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1)}.sctv3-hero-ov{padding:24px 22px}.sctv3-h1{font-size:18px}.sctv3-sec-h{font-size:15px}.sctv3-insight-grid{grid-template-columns:1fr}.sctv3-scene-tbl td:first-child{width:100px}}
+@media (max-width:640px){.sctv3-hero-title{font-size:20px}.sctv3-hero{flex-direction:column;min-height:auto}.sctv3-hero-bg{flex:0 0 280px !important;min-height:280px !important;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1)}.sctv3-hero-ov{padding:24px 22px}.sctv3-h1{font-size:18px}.sctv3-sec-h{font-size:15px}.sctv3-insight-grid{grid-template-columns:1fr}.sctv3-scene-tbl td:first-child{width:100px}}
 </style>`;
 
   const otherRegionsHtml = REGIONS.filter(r => r.slug !== region.slug).map(r => `<a href="/${r.slug}/card-terminal" class="sctv3-other-chip">${r.name}</a>`).join('');
@@ -2916,8 +2952,7 @@ function renderRegionProductPage(region, productSlug) {
     ? regionGus.map(g => `<a href="/region/${region.slug}/${g.slug}/${productSlug}" class="spp-gu-chip">${g.name} ${kw}</a>`).join('')
     : (region.majorDistricts || []).map(d => region.slug==='sejong'&&_SDM[d]?`<a href="/region/sejong/${_SDM[d]}/${productSlug}" class="spp-gu-chip">${d} ${kw}</a>`:`<span class="spp-gu-chip">${d}</span>`).join('');
   
-  const _pp = (PRODUCTS.find(p=>p.slug===productSlug)||{}).photo;
-  const heroImg = _pp || _productImg(productSlug, 'rphero-'+region.slug+'-'+productSlug);
+  const heroImg = _productImg(productSlug, 'rphero-'+region.slug+'-'+productSlug);
   
   const tagsHtml = region.slug === 'seoul'
     ? cfg.tags.map(t => `<span class="spp-tag">#${t}</span>`).join('')
@@ -3212,7 +3247,14 @@ const _SEOUL_HERO_POOL = [
 const _REGION_PRODUCT_HERO_POOL = _SEOUL_HERO_POOL;
 const _IND_HERO_IDS={restaurant:'1632558610168-8377309e34c7',cafe:'1709548145082-04d0cde481d4','dessert-cafe':'1582659042116-63f96b514135','study-cafe':'1764728671460-34931d8261f5','convenience-store':'1758570764602-d57bc2922dea',salon:'1759142449398-89357aa1bb36','nail-shop':'1632345031435-8727f6897d53',fitness:'1689877020200-403d8542d95d',pilates:'1518611012118-696072aa579a',academy:'1654366677760-b1aaa51b9e02',franchise:'1559329007-40df8a9345d8',hospital:'1538108149393-fbbd81895907',pharmacy:'1587854692152-cbe660dbde88'};
 function _industryHero(slug, salt) { const id = _IND_HERO_IDS[slug]; return id ? `https://images.unsplash.com/photo-${id}?fm=jpg&q=80&w=1400&auto=format&fit=crop` : _seoulPick(salt, _SEOUL_HERO_POOL); }
-function _productImg(s,salt){return _seoulPick(salt,_REGION_PRODUCT_HERO_POOL)}
+function _productImg(s,salt){
+  const p = PRODUCTS.find(x => x.slug === s);
+  if (p && Array.isArray(p.photos) && p.photos.length > 0) {
+    return _seoulPick(salt, p.photos);
+  }
+  if (p && p.photo) return p.photo;
+  return _seoulPick(salt, _REGION_PRODUCT_HERO_POOL);
+}
 function _featImg(t,i){
 if(/다국어|언어/.test(t))return 'https://images.unsplash.com/photo-1673515334669-1e445e4f4c3f?fm=jpg&q=80&w=1400&auto=format&fit=crop';
 if(/인건비|절감|수익|수수료|할인|객단가|견적|이중|보험/.test(t))return 'https://images.unsplash.com/photo-1656049471454-ff3c59812741?fm=jpg&q=80&w=1400&auto=format&fit=crop';
@@ -4323,10 +4365,13 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
 
 <div class="dpp-bc"><a href="/">홈</a><span>›</span><a href="/region">지역별 설치</a><span>›</span><a href="/region/${sidoSlug}">${regionName}</a><span>›</span><a href="/region/${sidoSlug}/${gu.slug}">${parent}</a><span>›</span><a href="/region/${sidoSlug}/${gu.slug}/${dong.slug}">${name}</a><span>›</span>${kw}</div>
 
-<section class="dpp-hero" style="${heroBgStyle}">
-  <div class="dpp-hero-meta">${parent.includes(regionFullName)?'':regionFullName+' '}${parent} ${name}</div>
-  <h1 class="dpp-hero-title">${product.emoji} ${mainKw} 설치 · 구매 · 무료 상담</h1>
-  <div class="dpp-hero-sub">${regionFullName} ${name} 매장 맞춤 ${kw} 추천 · 당일 출장 · 무료 견적</div>
+<section class="dpp-hero">
+  <div class="dpp-hero-bg" style="background-image:url('${heroImg}')"></div>
+  <div class="dpp-hero-ov">
+    <div class="dpp-hero-meta">${parent.includes(regionFullName)?'':regionFullName+' '}${parent} ${name}</div>
+    <h1 class="dpp-hero-title">${product.emoji} ${mainKw} 설치 · 구매 · 무료 상담</h1>
+    <div class="dpp-hero-sub">${regionFullName} ${name} 매장 맞춤 ${kw} 추천 · 당일 출장 · 무료 견적</div>
+  </div>
 </section>
 
 <section class="dpp-sec">
@@ -4395,10 +4440,10 @@ ${neighbors.length > 0 ? `<section class="dpp-sec">
 .dpp-bc{font-size:12.5px;color:#64748b;padding:12px 0 20px}
 .dpp-bc a{color:#64748b;text-decoration:none}
 .dpp-bc span{margin:0 6px;color:#cbd5e1}
-.dpp-hero{padding:90px 32px;border-radius:16px;color:#fff;margin-bottom:24px}
-.dpp-hero-meta{font-size:13.5px;opacity:.85;margin-bottom:10px}
-.dpp-hero-title{font-size:36px;font-weight:800;letter-spacing:-0.025em;line-height:1.25;margin:4px 0 14px}
-.dpp-hero-sub{font-size:16.5px;opacity:.92;line-height:1.5}
+.dpp-hero{display:flex;align-items:stretch;border-radius:12px;overflow:hidden;margin:0 auto 24px;min-height:280px;background:#1e293b;max-width:880px}.dpp-hero-bg{position:relative;flex:0 0 45%;background-color:#fff;background-position:center;background-size:contain;background-repeat:no-repeat;border-right:1px solid rgba(255,255,255,0.1)}.dpp-hero-ov{position:relative;flex:1;padding:36px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center;background:#1a1f2e}
+.dpp-hero-meta{font-size:13.5px;margin-bottom:10px;text-shadow:-1px -1px 0 #000,0 -1px 0 #000,1px -1px 0 #000,1px 0 0 #000,1px 1px 0 #000,0 1px 0 #000,-1px 1px 0 #000,-1px 0 0 #000}
+.dpp-hero-title{font-size:28px;font-weight:800;letter-spacing:-0.025em;line-height:1.25;margin:4px 0 14px;text-shadow:-2px -2px 0 #000,0 -2px 0 #000,2px -2px 0 #000,2px 0 0 #000,2px 2px 0 #000,0 2px 0 #000,-2px 2px 0 #000,-2px 0 0 #000}
+.dpp-hero-sub{font-size:14.5px;line-height:1.5;text-shadow:-1px -1px 0 #000,0 -1px 0 #000,1px -1px 0 #000,1px 0 0 #000,1px 1px 0 #000,0 1px 0 #000,-1px 1px 0 #000,-1px 0 0 #000}
 .dpp-sec{margin:28px 0}
 .dpp-sec-h{font-size:17px;font-weight:700;color:#0f172a;margin-bottom:12px;letter-spacing:-0.015em}
 .dpp-sec p{font-size:14px;color:#334155;line-height:1.8;margin:0}
@@ -4420,7 +4465,7 @@ ${neighbors.length > 0 ? `<section class="dpp-sec">
 .dpp-check-list{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:8px}
 .dpp-check-list li{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;font-size:13px;color:#334155;line-height:1.6}
 .dpp-check{flex-shrink:0;width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;background:#0f172a;color:#fff;border-radius:50%;font-size:11px;font-weight:700;margin-top:1px}
-@media (max-width:640px){.dpp-hero{padding:60px 22px}.dpp-hero-title{font-size:24px}.dpp-hero-sub{font-size:14.5px}.dpp-sec-h{font-size:15px}.dpp-sec p{font-size:13.5px}}
+@media (max-width:640px){.dpp-hero{flex-direction:column;min-height:auto}.dpp-hero-bg{flex:0 0 280px !important;min-height:280px !important;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1)}.dpp-hero-ov{padding:24px 22px}.dpp-hero-title{font-size:22px}.dpp-hero-sub{font-size:13.5px}.dpp-sec-h{font-size:15px}.dpp-sec p{font-size:13.5px}}
 </style>`;
   
   return htmlWrap({
@@ -5144,7 +5189,7 @@ function renderIndustryProductPage(industry, product) {
   const mainKw = `${indName} ${kw} ${actionH}`;  // "음식점 포스기 설치"
   const productSlug = product.slug;
   
-  const heroImg = _productImg(productSlug, 'iphero-'+industry.slug+'-'+productSlug);
+  const heroImg = _industryHero(industry.slug, 'iphero-'+industry.slug+'-'+productSlug);
   
   const introP = `${indName} 매장에 ${kw}를 도입하실 때 핵심은 매장 환경에 맞는 기종 선택입니다. ${indName} 업종 특성상 ${kw}는 매장 운영 흐름의 중심이라, 동선·영업 패턴에 맞는 모델 선정이 중요합니다. 오페리오솔루션은 ${indName} 매장 ${kw} ${actionH} 경험을 바탕으로 최적 모델을 제안합니다.`;
   const costP = `${indName} ${kw} ${actionH} 비용은 무료가 기본입니다. VAN사 제휴로 ${actionH}비 0원·월 이용료 0원이며, ${indName} 업종 맞춤 옵션 추가 비용도 견적에 포함되어 별도 청구가 없습니다.`;
