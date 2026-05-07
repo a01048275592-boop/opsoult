@@ -1578,7 +1578,10 @@ footer .logo{color:#fff}
   .cta-phone svg{width:20px;height:20px}
   .reviews-slider{padding:0 8px}
   .review-card{flex:0 0 100%;padding:20px}
-  .slider-arrow{display:none}
+  .slider-arrow{width:36px;height:36px;font-size:18px;background:rgba(255,255,255,0.95);box-shadow:0 4px 14px rgba(15,23,42,0.18);padding:0 0 2px}
+  .slider-arrow:hover{transform:translateY(-50%) scale(1)}
+  .slider-prev{left:-4px}
+  .slider-next{right:-4px}
   .slider-dots{margin-top:20px}
 }
 `;
