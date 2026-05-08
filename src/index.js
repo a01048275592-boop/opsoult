@@ -1216,15 +1216,22 @@ footer .logo{color:#fff}
 .region-chips-collapsible{position:relative}
 .region-chips-collapsible .region-chips-grid{overflow:hidden;transition:max-height .35s ease}
 .region-chips-collapsible.region-chips-lg .region-chips-grid{max-height:42px}
+.region-chips-collapsible.region-chips-md .region-chips-grid{max-height:34px}
 .region-chips-collapsible.region-chips-sm .region-chips-grid{max-height:30px}
-.region-chips-collapsible.expanded .region-chips-grid{max-height:2000px}
+.region-chips-collapsible.region-chips-lg.expanded .region-chips-grid,
+.region-chips-collapsible.region-chips-md.expanded .region-chips-grid,
+.region-chips-collapsible.region-chips-sm.expanded .region-chips-grid{max-height:2000px}
 .region-chips-more-wrap{display:flex;justify-content:center;margin-top:14px}
 .region-chips-more{display:none;align-items:center;gap:5px;padding:7px 16px;background:#fff;border:1px solid var(--line);border-radius:100px;font-size:12px;font-weight:500;color:#475569;cursor:pointer;letter-spacing:-0.01em;transition:all .12s;font-family:inherit}
 .region-chips-more:hover{background:#0f172a;color:#fff;border-color:#0f172a}
 .region-chips-collapsible.has-overflow .region-chips-more{display:inline-flex}
 @media(max-width:600px){
 .region-chips-collapsible.region-chips-lg .region-chips-grid{max-height:36px}
+.region-chips-collapsible.region-chips-md .region-chips-grid{max-height:30px}
 .region-chips-collapsible.region-chips-sm .region-chips-grid{max-height:28px}
+.region-chips-collapsible.region-chips-lg.expanded .region-chips-grid,
+.region-chips-collapsible.region-chips-md.expanded .region-chips-grid,
+.region-chips-collapsible.region-chips-sm.expanded .region-chips-grid{max-height:2000px}
 .region-chips-more{font-size:11.5px;padding:6px 14px}
 .region-chips-more-wrap{margin-top:12px}
 }
@@ -1620,6 +1627,21 @@ footer .logo{color:#fff}
   .slider-prev{left:-4px}
   .slider-next{right:-4px}
   .slider-dots{margin-top:20px}
+}
+
+/* === 모바일 가로 잘림 방지 (한국어 단어 줄바꿈 + 큰 hero 타이틀 축소) === */
+.sgu-hero-title,.sdo-hero-title,.sgu-hero-sub,.sdo-hero-sub,.detail-title,.section-title,.hero h1,.detail-body h2,.sg-thumb-title,.contact-header h1,.cta-section h2{word-break:keep-all;overflow-wrap:break-word}
+@media(max-width:600px){
+  .sgu-hero,.sdo-hero{aspect-ratio:auto;min-height:auto;height:190px;border-radius:10px;margin:0 auto 16px}
+  .sgu-hero-ov,.sdo-hero-ov{padding:22px 18px}
+  .sgu-hero-title,.sdo-hero-title{font-size:21px;letter-spacing:-0.03em;line-height:1.3;margin-bottom:6px}
+  .sgu-hero-sub,.sdo-hero-sub{font-size:12.5px;line-height:1.5}
+  .detail-body h2{font-size:22px;margin:36px 0 14px}
+  .hero h1 .hl{white-space:normal}
+}
+@media(max-width:380px){
+  .sgu-hero,.sdo-hero{height:170px}
+  .sgu-hero-title,.sdo-hero-title{font-size:19px}
 }
 `;
 
@@ -2903,7 +2925,7 @@ function renderRegionCardTerminalV3(region) {
 <section class="sctv3-sec">
   <div class="sctv3-sec-h">🏢 ${region.name} 시군구별 카드단말기 가이드</div>
   <p style="font-size:12.5px;color:#64748b">지역을 클릭하면 해당 시군구의 카드단말기 설치 상세 페이지로 이동합니다.</p>
-  <div class="sctv3-gu-grid">${guChipsHtml}</div>
+  ${_collapsibleChips(guChipsHtml, 'sctv3-gu-grid', 'md')}
 </section>
 
 <section class="sctv3-sec">
@@ -3110,7 +3132,7 @@ function renderRegionProductPage(region, productSlug) {
 <section class="spp-sec">
   <div class="spp-sec-h">🏢 ${region.name} ${kw} ${actionH} 지역 선택</div>
   <p style="font-size:12.5px;color:#64748b;margin-bottom:10px">시군구를 선택하면 읍면동별 ${kw} ${actionH} 가이드를 확인할 수 있습니다.</p>
-  <div class="spp-gu-grid">${guChipsHtml}</div>
+  ${_collapsibleChips(guChipsHtml, 'spp-gu-grid', 'sm')}
 </section>
 
 <section class="spp-sec">
@@ -4730,7 +4752,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
 ${dongChipsHtml ? `<section class="spp-sec">
   <div class="spp-sec-h">📍 ${guName} ${kw} 설치 지역 선택</div>
   <p style="font-size:12.5px;color:#64748b;margin-bottom:10px">읍면동을 선택하시면 상세 ${kw} ${actionH} 가이드를 확인하실 수 있습니다.</p>
-  <div class="spp-gu-grid">${dongChipsHtml}</div>
+  ${_collapsibleChips(dongChipsHtml, 'spp-gu-grid', 'sm')}
 </section>` : ''}
 
 <section class="spp-sec">
@@ -5120,7 +5142,7 @@ function renderIndustryPage(industry) {
 
 <h2>${industry.name} 설치 지역 선택</h2>
 <p style="font-size:13.5px;color:var(--muted);margin-bottom:14px">광역도시를 선택하시면 해당 지역의 ${industry.name} 매장 설치 안내를 확인하실 수 있습니다.</p>
-<div class="spp-gu-grid" style="margin:18px 0 36px">${regionChipsHtml}</div>
+<div style="margin:18px 0 36px">${_collapsibleChips(regionChipsHtml, 'spp-gu-grid', 'sm')}</div>
 
 <h2>설치 절차</h2>
 <ol>
@@ -5405,7 +5427,7 @@ function renderIndustryProductPage(industry, product) {
 <section class="spp-sec">
   <div class="spp-sec-h">📍 ${mainKw} 광역 지역 선택</div>
   <p style="font-size:12.5px;color:#64748b;margin-bottom:10px">광역도시를 선택하시면 ${kw} ${actionH} 가이드를 확인하실 수 있습니다.</p>
-  <div class="spp-gu-grid">${regionChips}</div>
+  ${_collapsibleChips(regionChips, 'spp-gu-grid', 'sm')}
 </section>
 
 <div class="spp-tags">
