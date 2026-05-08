@@ -1212,6 +1212,22 @@ footer .logo{color:#fff}
 .sgu-dong-grid{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .sgu-dong-chip{display:inline-flex;align-items:center;justify-content:center;padding:6px 12px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:100px;font-size:11.5px;color:#475569;text-decoration:none;line-height:1.2;transition:all .12s}
 .sgu-dong-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+/* 지역 칩 1줄 표시 + 전체 보기 토글 */
+.region-chips-collapsible{position:relative}
+.region-chips-collapsible .region-chips-grid{overflow:hidden;transition:max-height .35s ease}
+.region-chips-collapsible.region-chips-lg .region-chips-grid{max-height:42px}
+.region-chips-collapsible.region-chips-sm .region-chips-grid{max-height:30px}
+.region-chips-collapsible.expanded .region-chips-grid{max-height:2000px}
+.region-chips-more-wrap{display:flex;justify-content:center;margin-top:14px}
+.region-chips-more{display:none;align-items:center;gap:5px;padding:7px 16px;background:#fff;border:1px solid var(--line);border-radius:100px;font-size:12px;font-weight:500;color:#475569;cursor:pointer;letter-spacing:-0.01em;transition:all .12s;font-family:inherit}
+.region-chips-more:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.region-chips-collapsible.has-overflow .region-chips-more{display:inline-flex}
+@media(max-width:600px){
+.region-chips-collapsible.region-chips-lg .region-chips-grid{max-height:36px}
+.region-chips-collapsible.region-chips-sm .region-chips-grid{max-height:28px}
+.region-chips-more{font-size:11.5px;padding:6px 14px}
+.region-chips-more-wrap{margin-top:12px}
+}
 /* 통일 견적 CTA (시·구·동 페이지 공통) - OPT 1 디자인 */
 .ncta{background:#fefce8;border:1px solid #fde68a;border-radius:14px;padding:22px 20px;margin-top:28px;margin-bottom:60px}
 .ncta-h{font-size:17px;font-weight:700;margin-bottom:5px;color:#0f172a;text-align:center;letter-spacing:-0.02em}
@@ -1640,6 +1656,16 @@ function getProductIcon(slug) {
 
 function _breadcrumbJsonLd(bc){if(!bc||!bc.length)return'';const i=bc.map((b,i)=>`{"@type":"ListItem","position":${i+1},"name":"${b.n.replace(/"/g,'\\"')}","item":"${b.u.startsWith('http')?b.u:SITE.domain+b.u}"}`).join(',');return`<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[${i}]}</script>`;}
 
+// 1줄까지만 표시하고 "전체 보기"로 펼치는 칩 컨테이너
+// gridClass: 'seoul-gu-grid' | 'sgu-dong-grid'
+// size: 'lg' (큰칩) | 'sm' (작은칩)
+function _collapsibleChips(chipsHtml, gridClass, size){
+  return `<div class="region-chips-collapsible region-chips-${size}" data-rcc>
+<div class="region-chips-grid ${gridClass}">${chipsHtml}</div>
+<div class="region-chips-more-wrap"><button type="button" class="region-chips-more" data-rcc-btn><span class="rcc-label">전체 보기</span><span class="rcc-arrow">▼</span></button></div>
+</div>`;
+}
+
 function htmlWrap({ title, description, canonical, body, keywords, breadcrumbs, ogImage }) {
   const fullTitle = title ? `${title} | ${SITE.brandNameKo}` : `${SITE.brandNameKo} | 매장 설비 설치 플랫폼`;
   const desc = description || SITE.description;
@@ -1682,6 +1708,36 @@ ${renderHeader()}
 <main>${body}</main>
 ${renderFooter()}
 ${renderFloatingCTA()}
+<script>
+(function(){
+  var boxes=document.querySelectorAll('.region-chips-collapsible');
+  if(!boxes.length)return;
+  function check(box){
+    var grid=box.querySelector('.region-chips-grid');
+    if(!grid)return;
+    if(box.classList.contains('expanded'))return;
+    if(grid.scrollHeight>grid.clientHeight+2){box.classList.add('has-overflow');}
+    else{box.classList.remove('has-overflow');}
+  }
+  boxes.forEach(function(box){
+    var btn=box.querySelector('[data-rcc-btn]');
+    if(!btn)return;
+    requestAnimationFrame(function(){check(box);});
+    btn.addEventListener('click',function(){
+      var on=box.classList.toggle('expanded');
+      var lbl=btn.querySelector('.rcc-label');
+      var arr=btn.querySelector('.rcc-arrow');
+      if(lbl)lbl.textContent=on?'접기':'전체 보기';
+      if(arr)arr.textContent=on?'▲':'▼';
+    });
+  });
+  var rt=null;
+  window.addEventListener('resize',function(){
+    if(rt)clearTimeout(rt);
+    rt=setTimeout(function(){boxes.forEach(check);},150);
+  });
+})();
+</script>
 </body>
 </html>`;
 }
@@ -2193,15 +2249,15 @@ function renderRegionPage(region) {
 ${region.slug === 'seoul' ? `
 <div class="seoul-districts-inline">
 <h2>🏙️ 서울 <em>지역별 바로가기</em></h2>
-<div class="seoul-gu-grid" style="margin-top:16px">
-${SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="seoul-gu-chip">${g.name}</a>`).join('')}
+<div style="margin-top:16px">
+${_collapsibleChips(SEOUL_GUS.map(g => `<a href="/region/seoul/${g.slug}" class="seoul-gu-chip">${g.name}</a>`).join(''), 'seoul-gu-grid', 'lg')}
 </div>
 </div>
 ` : (SUBCITIES_DATA[region.slug] ? `
 <div class="seoul-districts-inline">
 <h2>🏙️ ${region.name} <em>지역별 바로가기</em></h2>
-<div class="seoul-gu-grid" style="margin-top:16px">
-${SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug}" class="seoul-gu-chip">${c.name}</a>`).join('')}
+<div style="margin-top:16px">
+${_collapsibleChips(SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${region.slug}/${c.slug}" class="seoul-gu-chip">${c.name}</a>`).join(''), 'seoul-gu-grid', 'lg')}
 </div>
 </div>
 ` : '')}
@@ -3512,7 +3568,7 @@ function renderSubcityPage(city) {
 
 <section class="sgu-sec">
   <div class="sgu-h2"><span class="sgu-ic">🏙️</span>${name} 구별 바로가기</div>
-  <div class="sgu-dong-grid">${guChips}</div>
+  ${_collapsibleChips(guChips, 'sgu-dong-grid', 'sm')}
 </section>
 
 <section class="sgu-sec">
@@ -3771,7 +3827,7 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
 
 <section class="sgu-sec">
   <div class="sgu-h2"><span class="sgu-ic">🏘️</span>${name} 읍면동 바로가기</div>
-  <div class="sgu-dong-grid">${dongChips}</div>
+  ${_collapsibleChips(dongChips, 'sgu-dong-grid', 'sm')}
 </section>
 
 <section class="sgu-sec">
