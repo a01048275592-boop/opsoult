@@ -1643,6 +1643,250 @@ footer .logo{color:#fff}
   .sgu-hero,.sdo-hero{height:170px}
   .sgu-hero-title,.sdo-hero-title{font-size:19px}
 }
+
+/* ============================================== */
+/* 매장 철거 페이지 NEW DESIGN (rh-*, legacy-*) */
+/* ============================================== */
+.rh-page{--ink:#0f172a;--ink-2:#1e293b;--ink-3:#334155;--paper:#fafaf9;--paper-2:#f4f4f2;--paper-3:#ebebe8;--line:#e5e7eb;--line-2:#d4d4d4;--muted:#64748b;--gold:#fbbf24;--gold-2:#f59e0b;--gold-3:#fef3c7;font-family:'Pretendard Variable',Pretendard,-apple-system,system-ui,'Noto Sans KR',sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+.rh-page *{box-sizing:border-box}
+.rh-container{max-width:1100px;margin:0 auto;padding:0 24px}
+.rh-eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.rh-page h2{font-size:34px;font-weight:700;letter-spacing:-0.025em;line-height:1.2;color:var(--ink);word-break:keep-all}
+.rh-page h2 em{font-style:normal;color:var(--ink);position:relative;display:inline-block}
+.rh-page h2 em::after{content:"";position:absolute;left:0;right:0;bottom:4%;height:35%;background:var(--gold);opacity:.4;z-index:-1;border-radius:3px}
+.rh-page h3{font-size:18px;font-weight:700;letter-spacing:-0.02em;color:var(--ink);word-break:keep-all}
+
+/* HERO */
+.rh-hero{position:relative;min-height:560px;background:#0f172a;overflow:hidden}
+.rh-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1604754742629-3e5728249d73?w=1600&auto=format&fit=crop&q=80') center/cover;opacity:.4}
+.rh-hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0.65) 0%,rgba(15,23,42,0.85) 80%,rgba(15,23,42,0.95) 100%)}
+.rh-hero-inner{position:relative;padding:90px 24px 100px;max-width:1100px;margin:0 auto;color:#fff}
+.rh-hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#cbd5e1;margin-bottom:18px}
+.rh-hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#1f2937;padding:7px 14px;border-radius:100px;font-size:13px;font-weight:700;margin-bottom:32px;letter-spacing:-0.01em;box-shadow:0 6px 20px rgba(251,191,36,0.32)}
+.rh-hero-title{font-size:46px;font-weight:800;line-height:1.2;letter-spacing:-0.03em;color:#fff;margin-bottom:18px;word-break:keep-all;max-width:850px}
+.rh-hero-title .light{font-weight:400;color:#cbd5e1}
+.rh-hero-title em{font-style:normal;color:var(--gold);font-weight:800}
+.rh-hero-sub{font-size:17px;color:#cbd5e1;line-height:1.65;margin-bottom:36px;max-width:700px}
+.rh-hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+.rh-btn-primary{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#1f2937;padding:14px 24px;border-radius:100px;font-size:15px;font-weight:700;text-decoration:none;letter-spacing:-0.01em;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 24px rgba(251,191,36,0.35)}
+.rh-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(251,191,36,0.45)}
+.rh-btn-ghost{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.1);color:#fff;padding:14px 24px;border-radius:100px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.25);letter-spacing:-0.01em;backdrop-filter:blur(8px);transition:all .15s}
+.rh-btn-ghost:hover{background:rgba(255,255,255,0.18);border-color:rgba(255,255,255,0.4)}
+
+/* 4 STRENGTHS */
+.rh-feats{background:var(--paper);padding:70px 0}
+.rh-feats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.rh-feat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 22px;text-align:center;transition:transform .15s,box-shadow .15s}
+.rh-feat:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(15,23,42,0.06)}
+.rh-feat-ic{width:54px;height:54px;display:inline-flex;align-items:center;justify-content:center;background:var(--paper-2);border-radius:14px;font-size:26px;margin-bottom:14px}
+.rh-feat-t{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.4;letter-spacing:-0.02em;word-break:keep-all}
+
+/* 3 PRINCIPLES */
+.rh-prin{background:#fff;padding:90px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rh-prin-wrap{display:grid;grid-template-columns:5fr 7fr;gap:60px;align-items:start}
+.rh-prin-h2{font-size:34px;font-weight:700;letter-spacing:-0.025em;line-height:1.25;word-break:keep-all}
+.rh-prin-h2 em{font-style:normal;position:relative;display:inline-block}
+.rh-prin-h2 em::after{content:"";position:absolute;left:0;right:0;bottom:4%;height:35%;background:var(--gold);opacity:.45;z-index:-1;border-radius:3px}
+.rh-prin-list{list-style:none;display:flex;flex-direction:column;gap:24px;padding:0;margin:0}
+.rh-prin-item{display:flex;gap:18px;align-items:flex-start}
+.rh-prin-num{flex-shrink:0;width:38px;height:38px;background:#0f172a;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;letter-spacing:-0.02em}
+.rh-prin-body h3{font-size:18px;font-weight:700;margin-bottom:5px;letter-spacing:-0.02em}
+.rh-prin-body p{font-size:14px;color:var(--ink-3);line-height:1.7;margin:0}
+
+/* 2 SERVICES */
+.rh-svc{background:var(--paper-2);padding:80px 0}
+.rh-svc-head{text-align:center;margin-bottom:40px}
+.rh-svc-head h2{margin-bottom:8px}
+.rh-svc-head p{font-size:15.5px;color:var(--muted)}
+.rh-svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.rh-svc-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.rh-svc-img{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center}
+.rh-svc-body{padding:24px 26px}
+.rh-svc-body h3{margin-bottom:8px;font-size:18px}
+.rh-svc-body p{font-size:14px;color:var(--ink-3);line-height:1.7;margin:0}
+
+/* INTEGRATED */
+.rh-int{background:#0f172a;color:#fff;padding:90px 0}
+.rh-int-wrap{display:grid;grid-template-columns:5fr 7fr;gap:50px;align-items:center}
+.rh-int-img{width:100%;aspect-ratio:4/5;background:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=900&auto=format&fit=crop&q=80') center/cover;border-radius:18px}
+.rh-int-eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.rh-int h2{font-size:34px;color:#fff;letter-spacing:-0.025em;line-height:1.25;margin-bottom:24px}
+.rh-int h2 em{color:var(--gold);font-style:normal}
+.rh-int p{font-size:15.5px;color:#cbd5e1;line-height:1.8;margin-bottom:14px}
+.rh-int .rh-hl{background:var(--gold);color:#1f2937;padding:2px 8px;border-radius:4px;font-weight:700}
+
+/* PROCESS */
+.rh-proc{padding:64px 0;background:var(--paper)}
+.rh-proc-head{margin-bottom:34px;text-align:center}
+.rh-proc-head h2{font-size:28px;margin-top:8px}
+.rh-proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto}
+.rh-proc-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .2s, box-shadow .2s}
+.rh-proc-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(15,23,42,.08)}
+.rh-proc-img{width:100%;aspect-ratio:16/10;background-size:cover;background-position:center;background-color:#f4f4f2}
+.rh-proc-body{padding:16px 18px 18px}
+.rh-proc-title{font-size:15px;font-weight:700;color:var(--ink);margin:0 0 8px;display:flex;align-items:center;gap:6px;line-height:1.4}
+.rh-proc-num{color:var(--ink);font-weight:700}
+.rh-proc-arrow{margin-left:auto;color:var(--gold);font-size:13px}
+.rh-proc-body p{font-size:13px;line-height:1.65;color:var(--muted);margin:0}
+
+/* SUCCESS GALLERY */
+.rh-succ{background:#0f172a;color:#fff;padding:80px 0}
+.rh-succ-head{margin-bottom:36px}
+.rh-succ h2{color:#fff;margin-bottom:6px}
+.rh-succ-eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.rh-succ-sub{font-size:15px;color:#cbd5e1}
+.rh-gal{display:grid;grid-template-columns:1fr;gap:14px}
+.rh-gal-item{background:#1e293b;padding:8px;border-radius:14px;overflow:hidden}
+.rh-gal-item img{width:100%;height:auto;display:block;border-radius:8px}
+
+/* REVIEWS - 슬라이더 */
+.rh-rev{background:var(--paper);padding:80px 0}
+.rh-rev-head{margin-bottom:30px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
+.rh-rev-head-l h2{margin-bottom:6px}
+.rh-rev-head-l p{color:var(--muted);margin:0}
+.rh-rev-nav{display:flex;gap:8px;flex-shrink:0}
+.rh-rev-btn{width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--line);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;color:var(--ink);font-size:18px;transition:all .15s;font-family:inherit;padding:0}
+.rh-rev-btn:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.rh-rev-btn:active{transform:scale(0.95)}
+.rh-rev-slider{position:relative;margin:0 -24px;padding:0 24px}
+.rh-rev-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 6px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.rh-rev-track::-webkit-scrollbar{display:none}
+.rh-rev-card{flex:0 0 calc(40% - 10px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 26px;position:relative;transition:transform .15s,box-shadow .15s}
+.rh-rev-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(15,23,42,0.08)}
+.rh-rev-card::before{content:"";position:absolute;top:22px;right:24px;width:32px;height:24px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 36' fill='%23fbbf24' opacity='0.4'><path d='M0 36V18C0 8 8 0 18 0v6c-7 0-12 5-12 12h12v18H0zm32 0V18C32 8 40 0 50 0v6c-7 0-12 5-12 12h12v18H32z'/></svg>") no-repeat center/contain}
+.rh-rev-stars{color:var(--gold);font-size:17px;margin-bottom:14px;letter-spacing:2px}
+.rh-rev-body{font-size:14px;color:var(--ink-2);line-height:1.8;margin-bottom:18px;font-weight:500;letter-spacing:-0.01em;word-break:keep-all;padding-right:24px;min-height:88px}
+.rh-rev-meta{display:flex;align-items:center;gap:10px;border-top:1px solid var(--line);padding-top:14px}
+.rh-rev-avatar{width:36px;height:36px;border-radius:50%;background:var(--paper-2);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--ink);font-size:14px;flex-shrink:0}
+.rh-rev-meta-info{display:flex;flex-direction:column;gap:1px}
+.rh-rev-meta-name{font-size:13px;color:var(--ink);font-weight:700;letter-spacing:-0.01em}
+.rh-rev-meta-loc{font-size:11.5px;color:var(--muted)}
+
+/* FAQ */
+.rh-faq{background:#fff;padding:80px 0;border-top:1px solid var(--line)}
+.rh-faq-head{text-align:center;margin-bottom:40px}
+.rh-faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.rh-faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.rh-faq-q{padding:18px 22px;font-size:15px;font-weight:600;color:var(--ink);display:flex;justify-content:space-between;align-items:center;cursor:pointer;letter-spacing:-0.01em}
+.rh-faq-q::before{content:"Q";color:var(--gold);font-weight:800;margin-right:10px;font-size:16px}
+.rh-faq-q::after{content:"+";font-weight:400;color:var(--muted);font-size:22px;transition:transform .2s}
+.rh-faq-a{padding:0 22px 18px 49px;font-size:14px;color:var(--ink-3);line-height:1.75;display:none}
+.rh-faq-item.open .rh-faq-q::after{transform:rotate(45deg)}
+.rh-faq-item.open .rh-faq-a{display:block}
+
+/* GRAY CTA */
+.rh-cta2{background:#1e293b;color:#fff;padding:64px 0;text-align:center}
+.rh-cta2 h2{color:#fff;margin-bottom:8px;font-size:30px}
+.rh-cta2 p{color:#cbd5e1;font-size:15.5px;margin-bottom:28px}
+.rh-cta2-btns{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.rh-btn-line{display:inline-flex;align-items:center;gap:6px;background:transparent;color:#fff;padding:14px 24px;border-radius:100px;font-size:15px;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,0.5);letter-spacing:-0.01em;transition:all .15s}
+.rh-btn-line:hover{background:#fff;color:#0f172a;border-color:#fff}
+
+/* LONG ARTICLE */
+.rh-long{background:linear-gradient(180deg,#fffbeb 0%,var(--paper) 30%);padding:80px 0}
+.rh-long-wrap{max-width:780px;margin:0 auto}
+.rh-long-title{position:relative;background:#0f172a;color:#fff;padding:30px 32px;border-radius:14px;margin-bottom:36px;overflow:hidden}
+.rh-long-title::before{content:"";position:absolute;top:0;left:0;width:5px;height:100%;background:var(--gold)}
+.rh-long-title h2{color:#fff;font-size:24px;line-height:1.4;letter-spacing:-0.02em;margin:0;font-weight:700;word-break:keep-all}
+.rh-long-title h2 em{color:var(--gold);font-style:normal}
+.rh-long-intro{font-size:16px;line-height:1.85;color:var(--ink-2);margin-bottom:36px;word-break:keep-all}
+.rh-long-intro strong{color:var(--ink);background:var(--gold-3);padding:1px 6px;border-radius:3px}
+.rh-long-section{margin-bottom:36px}
+.rh-long-section h3{font-size:19px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:10px;letter-spacing:-0.02em}
+.rh-long-section h3 .ic{font-size:22px}
+.rh-long-section p{font-size:15px;line-height:1.85;color:var(--ink-3);margin-bottom:12px;word-break:keep-all}
+.rh-long-section strong{color:var(--ink);font-weight:700}
+.rh-long-section ol{margin:14px 0 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px}
+.rh-long-section ol li{font-size:14.5px;line-height:1.75;color:var(--ink-3);word-break:keep-all}
+.rh-long-highlight{background:#fffbeb;border-left:4px solid var(--gold);padding:22px 26px;border-radius:8px;font-size:15px;line-height:1.85;color:var(--ink-2);margin:30px 0;word-break:keep-all}
+.rh-long-highlight strong{color:var(--ink);font-weight:700}
+.rh-long-final{background:#0f172a;color:#fff;padding:28px 30px;border-radius:14px;font-size:15.5px;line-height:1.85;margin-top:36px;word-break:keep-all;text-align:center}
+.rh-long-final strong{color:var(--gold);font-weight:700}
+
+/* 유지 영역 (이미지 1, 2, 3 내용) */
+.rh-legacy-section{padding:50px 0;background:var(--paper);border-top:1px solid var(--line)}
+.rh-legacy-section + .rh-legacy-section{padding-top:0;border-top:none}
+.rh-legacy-block{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 32px;margin-bottom:20px}
+.rh-legacy-block-h{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.rh-legacy-block-h .ic{font-size:20px}
+.rh-legacy-block p{font-size:14.5px;color:var(--ink-3);line-height:1.75;word-break:keep-all;margin:0}
+.rh-legacy-block-sub{font-size:13.5px;color:var(--muted);margin-bottom:14px}
+.rh-legacy-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.rh-legacy-chip{display:inline-block;padding:8px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:100px;font-size:13px;color:var(--ink-2);text-decoration:none;transition:all .15s}
+.rh-legacy-chip:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+.rh-legacy-toggle{display:block;margin:14px auto 0;padding:8px 18px;background:#fff;border:1px solid var(--line);border-radius:100px;font-size:13px;color:var(--ink-2);cursor:pointer;font-family:inherit}
+.rh-legacy-toggle:hover{background:var(--paper-2)}
+.rh-legacy-checklist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.rh-legacy-checklist li{padding:14px 18px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;font-size:14px;color:var(--ink-2);line-height:1.6;word-break:keep-all}
+.rh-legacy-checklist li::before{content:"✓ ";color:#16a34a;font-weight:800;margin-right:6px}
+.rh-legacy-checklist li strong{color:var(--ink);font-weight:700}
+.rh-legacy-tags-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 28px;margin-bottom:18px}
+.rh-legacy-tags-h{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.rh-legacy-tags{display:flex;flex-wrap:wrap;gap:8px}
+.rh-legacy-tag{display:inline-block;padding:6px 14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:100px;font-size:12.5px;color:var(--ink-3)}
+.rh-legacy-cta-box{background:#fffbeb;border:2px solid #fde68a;border-radius:14px;padding:32px 28px;text-align:center;margin-bottom:18px}
+.rh-legacy-cta-box h3{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-0.02em}
+.rh-legacy-cta-box-sub{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+.rh-legacy-cta-btns{display:inline-flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.rh-legacy-cta-btn{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;letter-spacing:-0.01em}
+.rh-legacy-cta-btn-phone{background:#0f172a;color:#fff}
+.rh-legacy-cta-btn-out{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.rh-legacy-region-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 28px}
+.rh-legacy-region-h{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.rh-legacy-region-grid{display:flex;flex-wrap:wrap;gap:8px}
+.rh-legacy-region{display:inline-block;padding:7px 16px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:100px;font-size:13px;color:var(--ink-2);text-decoration:none;transition:all .15s}
+.rh-legacy-region:hover{background:#0f172a;color:#fff;border-color:#0f172a}
+
+/* 반응형 */
+@media(max-width:900px){
+  .rh-feats-grid{grid-template-columns:repeat(2,1fr)}
+  .rh-prin-wrap{grid-template-columns:1fr;gap:30px}
+  .rh-svc-grid{grid-template-columns:1fr}
+  .rh-int-wrap{grid-template-columns:1fr;gap:30px}
+  .rh-int-img{aspect-ratio:16/10}
+  .rh-proc-grid{grid-template-columns:repeat(2,1fr)}
+  .rh-rev-card{flex:0 0 calc(60% - 8px)}
+  .rh-hero-title{font-size:36px}
+  .rh-hero-inner{padding:70px 20px 80px}
+  .rh-page h2,.rh-prin-h2{font-size:28px}
+  .rh-int h2{font-size:28px}
+}
+@media(max-width:680px){
+  .rh-feats-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .rh-feat{padding:20px 16px}
+  .rh-proc-grid{grid-template-columns:1fr}
+  .rh-rev-card{flex:0 0 100%;padding:24px 22px}
+  .rh-rev-body{min-height:auto;padding-right:0}
+  .rh-hero-title{font-size:28px}
+  .rh-hero-sub{font-size:15px}
+  .rh-page h2,.rh-prin-h2{font-size:24px}
+  .rh-int h2{font-size:24px}
+  .rh-cta2 h2{font-size:22px}
+  .rh-long-title{padding:22px 22px}
+  .rh-long-title h2{font-size:19px}
+  .rh-long-intro{font-size:15px}
+  .rh-long-section h3{font-size:17px}
+  .rh-long-section p,.rh-long-section ol li{font-size:13.5px}
+  .rh-long-highlight,.rh-long-final{font-size:14px;padding:22px 22px}
+  .rh-faq-a{padding:0 16px 14px 38px;font-size:13px}
+  .rh-legacy-block{padding:22px 20px}
+  .rh-legacy-cta-box{padding:24px 20px}
+  .rh-legacy-cta-box h3{font-size:18px}
+  .rh-legacy-chips,.rh-legacy-region-grid{gap:6px}
+  .rh-legacy-chip,.rh-legacy-region{font-size:12px;padding:6px 12px}
+
+  /* ★ 모바일에서 후기 슬라이더 화살표를 카드 양 옆에 배치 */
+  .rh-rev-head{margin-bottom:24px}
+  .rh-rev-head-l{width:100%}
+  .rh-rev-nav{display:none}
+  .rh-rev-slider{position:relative;margin:0 -24px;padding:0}
+  .rh-rev-track{padding:6px 24px 14px}
+  .rh-rev-nav-mobile{display:flex;position:absolute;top:50%;left:0;right:0;justify-content:space-between;align-items:center;transform:translateY(-50%);pointer-events:none;padding:0 6px;z-index:2}
+  .rh-rev-nav-mobile .rh-rev-btn{pointer-events:auto;width:38px;height:38px;font-size:16px;background:#fff;box-shadow:0 4px 14px rgba(15,23,42,0.18)}
+}
+@media(min-width:681px){
+  .rh-rev-nav-mobile{display:none}
+}
 `;
 
 const ICONS = {
@@ -1767,6 +2011,484 @@ ${renderFloatingCTA()}
 function escapeHtml(s) {
   if (!s) return '';
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+/* ============================================== */
+/* 매장 철거 페이지 NEW 빌더 (모든 매장철거 페이지에 공통 사용) */
+/* ctx = { 
+ *   regionName,        // 예: '서울', '경기', '경기 수원시', '서울 강남구', '서울 강남구 역삼동'
+ *   regionSlug,        // 예: 'seoul', 'gyeonggi/suwon-si'
+ *   shortLocLabel,     // 예: '경기', '수원시', '서울 강남구'
+ *   thumbHtml,         // 페이지 상단 썸네일 HTML
+ *   regionsList,       // 시군구/지역 칩 데이터 [{name, url}]
+ *   regionsTitle,      // 예: '경기 철거 전문 지역 선택'
+ *   regionsSub,        // 예: '시군구를 선택하면 읍면동별 철거 전문 가이드를 확인할 수 있습니다.'
+ *   tags,              // 관련 태그 배열
+ *   otherSidos,        // 다른 시·도 [{name, slug}]
+ *   showOtherSidos,    // 다른 시·도 섹션 노출 여부
+ * }
+ */
+function renderRemovalNewBody(ctx) {
+  const loc = ctx.shortLocLabel || ctx.regionName || '전국';
+  const fullLoc = ctx.regionName || '전국';
+
+  // 썸네일 (선택)
+  const thumb = ctx.thumbHtml || '';
+
+  // 지역 칩 렌더
+  let regionsBlockHtml = '';
+  if (ctx.regionsList && ctx.regionsList.length) {
+    const chipsHtml = ctx.regionsList.map(r =>
+      `<a href="${r.url}" class="rh-legacy-chip">${r.name} 철거</a>`
+    ).join('');
+    regionsBlockHtml = `
+    <div class="rh-legacy-block">
+      <h3 class="rh-legacy-block-h"><span class="ic">🗂️</span>${ctx.regionsTitle || (loc + ' 철거 전문 지역 선택')}</h3>
+      <p class="rh-legacy-block-sub">${ctx.regionsSub || '시군구를 선택하면 읍면동별 철거 전문 가이드를 확인할 수 있습니다.'}</p>
+      <div class="rh-legacy-chips">${chipsHtml}</div>
+    </div>`;
+  }
+
+  // 태그
+  const tagsArr = ctx.tags && ctx.tags.length ? ctx.tags : [
+    loc+'철거', loc+'매장철거', '상가철거', '사무실철거', '원상복구',
+    '희망리턴패키지', '폐기물적법처리', '정찰제철거', loc+'인테리어철거', '임대인원상복구'
+  ];
+  const tagsHtml = tagsArr.map(t => `<span class="rh-legacy-tag">#${t}</span>`).join('');
+
+  // 다른 시·도
+  let otherSidosHtml = '';
+  if (ctx.showOtherSidos !== false) {
+    const sidos = ctx.otherSidos || [
+      {name:'서울',slug:'seoul'},{name:'인천',slug:'incheon'},{name:'부산',slug:'busan'},
+      {name:'대구',slug:'daegu'},{name:'대전',slug:'daejeon'},{name:'광주',slug:'gwangju'},
+      {name:'울산',slug:'ulsan'},{name:'세종',slug:'sejong'},{name:'강원',slug:'gangwon'},
+      {name:'충북',slug:'chungbuk'},{name:'충남',slug:'chungnam'},{name:'전북',slug:'jeonbuk'},
+      {name:'전남',slug:'jeonnam'},{name:'경북',slug:'gyeongbuk'},{name:'경남',slug:'gyeongnam'},
+      {name:'제주',slug:'jeju'}
+    ];
+    const sidosHtml = sidos.map(s => `<a href="/region/${s.slug}/removal" class="rh-legacy-region">${s.name}</a>`).join('');
+    otherSidosHtml = `
+    <div class="rh-legacy-region-wrap">
+      <div class="rh-legacy-region-h">📍 다른 시·도의 철거 전문</div>
+      <div class="rh-legacy-region-grid">${sidosHtml}</div>
+    </div>`;
+  }
+
+  return `<div class="rh-page">
+
+${thumb}
+
+<!-- 1. HERO -->
+<section class="rh-hero">
+  <div class="rh-hero-bg"></div>
+  <div class="rh-hero-grad"></div>
+  <div class="rh-hero-inner">
+    <div class="rh-hero-eyebrow">Operio Solution · ${loc} 매장 철거 전문</div>
+    <div class="rh-hero-badge">🏆 소상공인시장진흥공단 · 폐업지원금 최대 400만원</div>
+    <h1 class="rh-hero-title">전국 철거 파트너사와 협력해<br><span class="light">신속하고 깔끔한 마무리,</span> <em>고객 만족 100%</em></h1>
+    <p class="rh-hero-sub">${fullLoc} 매장·사무실·상가·공장 철거부터 원상복구·폐기물 적법 처리·희망리턴패키지 보조금 신청까지 — 오페리오솔루션이 한 번에 끝내드립니다.</p>
+    <div class="rh-hero-ctas">
+      <a href="tel:${SITE.phone}" class="rh-btn-primary">📞 전화 상담 ${SITE.phoneDisplay}</a>
+      <a href="/contact" class="rh-btn-ghost">💬 무료 상담</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2. 4 STRENGTHS -->
+<section class="rh-feats">
+  <div class="rh-container">
+    <div class="rh-feats-grid">
+      <div class="rh-feat"><div class="rh-feat-ic">🏆</div><div class="rh-feat-t">100% 무료<br>방문 견적 서비스</div></div>
+      <div class="rh-feat"><div class="rh-feat-ic">🏅</div><div class="rh-feat-t">전국 출장<br>체계적 지원</div></div>
+      <div class="rh-feat"><div class="rh-feat-ic">⚡</div><div class="rh-feat-t">진행은 빠르고<br>마감은 철저하게</div></div>
+      <div class="rh-feat"><div class="rh-feat-ic">🛡️</div><div class="rh-feat-t">A/S 1년 보증<br>책임 시공</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. 3 PRINCIPLES -->
+<section class="rh-prin">
+  <div class="rh-container">
+    <div class="rh-prin-wrap">
+      <div>
+        <div class="rh-eyebrow">절대 원칙</div>
+        <h2 class="rh-prin-h2">오페리오솔루션 매장철거가<br>목숨같이 지키고 있는<br><em>절대 원칙 3가지</em></h2>
+      </div>
+      <ul class="rh-prin-list">
+        <li class="rh-prin-item">
+          <div class="rh-prin-num">1</div>
+          <div class="rh-prin-body">
+            <h3>전국 최저가 견적을 약속합니다</h3>
+            <p>어디에서도 찾을 수 없는 합리적인 가격으로 고객님의 부담을 덜어드립니다. 정찰제 견적으로 중간 추가 비용 없이 깔끔하게.</p>
+          </div>
+        </li>
+        <li class="rh-prin-item">
+          <div class="rh-prin-num">2</div>
+          <div class="rh-prin-body">
+            <h3>한번 시작한 공사는 끝까지 책임집니다</h3>
+            <p>철거 작업부터 완료까지 고객의 만족을 최우선으로 끝까지 책임지고 마무리합니다. 시공 보증서 발급으로 사후 책임도 확실히.</p>
+          </div>
+        </li>
+        <li class="rh-prin-item">
+          <div class="rh-prin-num">3</div>
+          <div class="rh-prin-body">
+            <h3>추가 비용 없이 신속·정확하게</h3>
+            <p>처음 약속한 견적 그대로 일정에 맞춰 깔끔하게 처리합니다. 임대인 원상복구 확인까지 책임지고 마무리해 보증금 반환이 순조롭게 이어지도록.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 4. 2 SERVICES -->
+<section class="rh-svc">
+  <div class="rh-container">
+    <div class="rh-svc-head">
+      <div class="rh-eyebrow">주요 서비스</div>
+      <h2>주거지·상업시설·공장 — <em>어디든 가능합니다</em></h2>
+      <p>업종과 시설 특성에 맞춘 맞춤형 철거 서비스를 제공합니다.</p>
+    </div>
+    <div class="rh-svc-grid">
+      <div class="rh-svc-card">
+        <div class="rh-svc-img" style="background-image:url('https://images.unsplash.com/photo-1604014237800-1c9102c219da?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="rh-svc-body">
+          <h3>📍 어디든 가능합니다</h3>
+          <p>주거지·상업시설·공장·사무실 등 업종을 가리지 않고 시공합니다. 전국 협력 파트너사 네트워크로 어떤 지역이든 빠르게 출장합니다.</p>
+        </div>
+      </div>
+      <div class="rh-svc-card">
+        <div class="rh-svc-img" style="background-image:url('https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="rh-svc-body">
+          <h3>🔧 정확한 견적 · 완벽한 시공</h3>
+          <p>현장을 직접 분석한 정찰제 견적으로 추가 비용 없이 시공합니다. 폐기물 적법 처리부터 원상복구 마감까지 완벽하게 마무리합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PROCESS STEPS -->
+<section class="rh-proc">
+  <div class="rh-container">
+    <div class="rh-proc-head">
+      <div class="rh-eyebrow">철거 진행 단계</div>
+      <h2>철거부터 원상복구까지, <em>6단계 시공 절차</em></h2>
+    </div>
+    <div class="rh-proc-grid">
+      <article class="rh-proc-card">
+        <div class="rh-proc-img" style="background-image:url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="rh-proc-body">
+          <h3 class="rh-proc-title"><span class="rh-proc-num">01.</span> 현장답사 <span class="rh-proc-arrow" aria-hidden="true">▸</span></h3>
+          <p>전문 시공팀이 현장을 직접 방문해 구조·전기·가스 등 시설 상태를 정밀하게 점검합니다.</p>
+        </div>
+      </article>
+      <article class="rh-proc-card">
+        <div class="rh-proc-img" style="background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="rh-proc-body">
+          <h3 class="rh-proc-title"><span class="rh-proc-num">02.</span> 견적안내 <span class="rh-proc-arrow" aria-hidden="true">▸</span></h3>
+          <p>현장 분석 결과를 토대로 정찰제 견적을 제공합니다. 추가 비용 없이 투명하게 안내합니다.</p>
+        </div>
+      </article>
+      <article class="rh-proc-card">
+        <div class="rh-proc-img" style="background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="rh-proc-body">
+          <h3 class="rh-proc-title"><span class="rh-proc-num">03.</span> 계약체결 <span class="rh-proc-arrow" aria-hidden="true">▸</span></h3>
+          <p>견적 확정 후 계약서를 작성합니다. 작업 범위·일정·보증 조건까지 모두 명시합니다.</p>
+        </div>
+      </article>
+      <article class="rh-proc-card">
+        <div class="rh-proc-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="rh-proc-body">
+          <h3 class="rh-proc-title"><span class="rh-proc-num">04.</span> 사전준비 <span class="rh-proc-arrow" aria-hidden="true">▸</span></h3>
+          <p>가스·전기 차단, 주변 시설 보호 등 안전 조치를 완벽하게 진행한 후 작업을 시작합니다.</p>
+        </div>
+      </article>
+      <article class="rh-proc-card">
+        <div class="rh-proc-img" style="background-image:url('https://images.unsplash.com/photo-1572177812156-58036aae439c?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="rh-proc-body">
+          <h3 class="rh-proc-title"><span class="rh-proc-num">05.</span> 해체작업 <span class="rh-proc-arrow" aria-hidden="true">▸</span></h3>
+          <p>구조물·내장재·설비를 순차적으로 해체합니다. 중장비와 수작업을 병행해 안전하게 진행하며 폐기물은 적법 처리합니다.</p>
+        </div>
+      </article>
+      <article class="rh-proc-card">
+        <div class="rh-proc-img" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&auto=format&fit=crop&q=80')"></div>
+        <div class="rh-proc-body">
+          <h3 class="rh-proc-title"><span class="rh-proc-num">06.</span> 원상복구 완료 <span class="rh-proc-arrow" aria-hidden="true">▸</span></h3>
+          <p>임대인 요구사항에 맞춰 바닥·벽체·천장 등을 원상복구하고, 고객 확인 후 최종 완료 처리합니다.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 6. INTEGRATED SERVICE -->
+<section class="rh-int">
+  <div class="rh-container">
+    <div class="rh-int-wrap">
+      <div class="rh-int-img"></div>
+      <div>
+        <div class="rh-int-eyebrow">소상공인 폐업 지원 통합 서비스</div>
+        <h2>국내 최고 소상공인 <em>폐업 지원</em><br>통합 서비스 제공</h2>
+        <p>오페리오솔루션은 사업을 정리하시는 소상공인 분들의 철거 공사를 <span class="rh-hl">정부 지원금 적용 후</span> 처리합니다.</p>
+        <p><strong style="color:#fff">희망리턴패키지 폐업철거지원금</strong>으로 철거비 일부를 정부가 지원하며, 신청서 작성이 복잡해 포기하시는 분이 많아 저희가 무상으로 같이 챙겨드립니다.</p>
+        <p>전국적으로 협력 업체를 두고 지역에 구분 없이 전국 출장 서비스를 제공하는 폐업 및 철거 전문 종합 플랫폼입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. SUCCESS GALLERY -->
+<section class="rh-succ">
+  <div class="rh-container">
+    <div class="rh-succ-head">
+      <div class="rh-succ-eyebrow">시공 사례</div>
+      <h2 style="color:#fff">Before & After <em style="color:var(--gold)">한눈에 보는 변화</em></h2>
+      <p class="rh-succ-sub">우리의 노력이 당신의 만족으로 이어집니다.</p>
+    </div>
+    <div class="rh-gal">
+      <div class="rh-gal-item"><img src="https://thesave.realstudying.com/wp-content/uploads/2026/04/20-1024x309.png" alt="Before & After 시공 사례 1" loading="lazy"></div>
+      <div class="rh-gal-item"><img src="https://thesave.realstudying.com/wp-content/uploads/2026/04/20-1024x309.png" alt="Before & After 시공 사례 2" loading="lazy"></div>
+      <div class="rh-gal-item"><img src="https://thesave.realstudying.com/wp-content/uploads/2026/04/20-1024x309.png" alt="Before & After 시공 사례 3" loading="lazy"></div>
+      <div class="rh-gal-item"><img src="https://thesave.realstudying.com/wp-content/uploads/2026/04/20-1024x309.png" alt="Before & After 시공 사례 4" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. REVIEWS -->
+<section class="rh-rev">
+  <div class="rh-container">
+    <div class="rh-rev-head">
+      <div class="rh-rev-head-l">
+        <div class="rh-eyebrow">고객 후기</div>
+        <h2>실제 고객들의 <em>생생한 이야기</em></h2>
+      </div>
+      <div class="rh-rev-nav">
+        <button type="button" class="rh-rev-btn" data-rev-prev aria-label="이전 후기">‹</button>
+        <button type="button" class="rh-rev-btn" data-rev-next aria-label="다음 후기">›</button>
+      </div>
+    </div>
+    <div class="rh-rev-slider">
+      <div class="rh-rev-track">
+        <div class="rh-rev-card">
+          <div class="rh-rev-stars">★★★★★</div>
+          <div class="rh-rev-body">철거 작업이 시간에 신속하고 깔끔하게 잘 끝나주셨고, 약속하신 견적 그대로 진행해주셔서 정말 만족합니다.</div>
+          <div class="rh-rev-meta">
+            <div class="rh-rev-avatar">박</div>
+            <div class="rh-rev-meta-info"><div class="rh-rev-meta-name">박○○ 사장님</div><div class="rh-rev-meta-loc">서울 강남구 · 음식점 철거</div></div>
+          </div>
+        </div>
+        <div class="rh-rev-card">
+          <div class="rh-rev-stars">★★★★★</div>
+          <div class="rh-rev-body">폐업 지원금 신청까지 도와주셔서 정말 큰 도움이 되었습니다. 복잡한 절차를 대신 처리해주시고 친절하게 안내해주셨어요.</div>
+          <div class="rh-rev-meta">
+            <div class="rh-rev-avatar">김</div>
+            <div class="rh-rev-meta-info"><div class="rh-rev-meta-name">김○○ 대표님</div><div class="rh-rev-meta-loc">서울 송파구 · 카페 철거</div></div>
+          </div>
+        </div>
+        <div class="rh-rev-card">
+          <div class="rh-rev-stars">★★★★★</div>
+          <div class="rh-rev-body">매장 인테리어 철거 후 원상복구까지 완벽하게! 임대인 분께서도 깜짝 놀라실 정도로 정리되어 보증금도 무사히 받았습니다.</div>
+          <div class="rh-rev-meta">
+            <div class="rh-rev-avatar">정</div>
+            <div class="rh-rev-meta-info"><div class="rh-rev-meta-name">정○○ 사장님</div><div class="rh-rev-meta-loc">서울 마포구 · 사무실 철거</div></div>
+          </div>
+        </div>
+        <div class="rh-rev-card">
+          <div class="rh-rev-stars">★★★★★</div>
+          <div class="rh-rev-body">처음에는 불안했는데 추가 비용 없이 일정대로 깔끔하게 마무리되어 만족했습니다. 다음에 다른 매장 정리할 때도 또 부르고 싶어요.</div>
+          <div class="rh-rev-meta">
+            <div class="rh-rev-avatar">이</div>
+            <div class="rh-rev-meta-info"><div class="rh-rev-meta-name">이○○ 점주님</div><div class="rh-rev-meta-loc">서울 강서구 · 편의점 철거</div></div>
+          </div>
+        </div>
+        <div class="rh-rev-card">
+          <div class="rh-rev-stars">★★★★★</div>
+          <div class="rh-rev-body">공장 시설 철거 + 폐기물 처리까지 한 번에 처리해주셔서 정말 편했어요. 일정도 약속한 대로 정확히 끝났습니다.</div>
+          <div class="rh-rev-meta">
+            <div class="rh-rev-avatar">최</div>
+            <div class="rh-rev-meta-info"><div class="rh-rev-meta-name">최○○ 대표님</div><div class="rh-rev-meta-loc">경기 화성시 · 공장 철거</div></div>
+          </div>
+        </div>
+        <div class="rh-rev-card">
+          <div class="rh-rev-stars">★★★★★</div>
+          <div class="rh-rev-body">상가 철거할 때 인근 민원 대응까지 알아서 해주셔서 신경 쓸 일이 없었습니다. 진짜 전문가들이세요.</div>
+          <div class="rh-rev-meta">
+            <div class="rh-rev-avatar">윤</div>
+            <div class="rh-rev-meta-info"><div class="rh-rev-meta-name">윤○○ 사장님</div><div class="rh-rev-meta-loc">인천 부평구 · 미용실 철거</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="rh-rev-nav-mobile">
+        <button type="button" class="rh-rev-btn" data-rev-prev aria-label="이전 후기">‹</button>
+        <button type="button" class="rh-rev-btn" data-rev-next aria-label="다음 후기">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="rh-faq">
+  <div class="rh-container">
+    <div class="rh-faq-head">
+      <div class="rh-eyebrow">자주 묻는 질문</div>
+      <h2>FAQ — <em>미리 확인해보세요</em></h2>
+    </div>
+    <div class="rh-faq-list">
+      <div class="rh-faq-item open">
+        <div class="rh-faq-q" onclick="this.parentElement.classList.toggle('open')">철거 견적은 어떻게 받을 수 있나요?</div>
+        <div class="rh-faq-a">홈페이지 또는 전화로 무료 견적을 요청하실 수 있습니다. 전화 상담을 통해 빠르게 견적을 받아보실 수 있습니다.</div>
+      </div>
+      <div class="rh-faq-item">
+        <div class="rh-faq-q" onclick="this.parentElement.classList.toggle('open')">철거 작업은 얼마나 걸리나요?</div>
+        <div class="rh-faq-a">작업 규모와 현장 상황에 따라 다르지만, 일반적으로 1-3일 정도 소요됩니다.</div>
+      </div>
+      <div class="rh-faq-item">
+        <div class="rh-faq-q" onclick="this.parentElement.classList.toggle('open')">작업 중 발생하는 폐기물은 어떻게 처리되나요?</div>
+        <div class="rh-faq-a">철거 과정에서 발생한 폐기물은 환경법에 따라 안전하고 적합하게 처리하며, 고객님이 따로 신경 쓰실 필요 없습니다.</div>
+      </div>
+      <div class="rh-faq-item">
+        <div class="rh-faq-q" onclick="this.parentElement.classList.toggle('open')">추가 비용이 발생할 가능성이 있나요?</div>
+        <div class="rh-faq-a">처음 약속드린 견적에서 추가 비용은 발생하지 않습니다. 현장 상황에 따른 모든 변수는 견적에 반영하여 제공합니다.</div>
+      </div>
+      <div class="rh-faq-item">
+        <div class="rh-faq-q" onclick="this.parentElement.classList.toggle('open')">철거와 원상복구를 동시에 진행할 수 있나요?</div>
+        <div class="rh-faq-a">가능합니다. 철거 작업 완료 후 바로 원상복구를 시행할 수 있도록 계획하여, 두 작업 모두 원활하게 진행할 수 있도록 책임지고 관리합니다.</div>
+      </div>
+      <div class="rh-faq-item">
+        <div class="rh-faq-q" onclick="this.parentElement.classList.toggle('open')">오페리오솔루션은 철거 시공을 직접 수행하나요?</div>
+        <div class="rh-faq-a">오페리오솔루션은 철거 시공을 직접 수행하지 않습니다. 전국 신뢰성 있는 철거 파트너사와 협력하여, 고객님이 최적의 철거 서비스를 받을 수 있도록 중개합니다. 모든 협력 업체는 자격 검증을 거쳐 안정적인 서비스를 제공합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. GRAY CTA BANNER -->
+<section class="rh-cta2">
+  <div class="rh-container">
+    <h2>정확한 견적, 추가 비용 없는 깔끔한 마무리</h2>
+    <p>믿을 수 있는 철거 서비스 — 지금 견적 받기</p>
+    <div class="rh-cta2-btns">
+      <a href="tel:${SITE.phone}" class="rh-btn-primary">📞 전화 상담 ${SITE.phoneDisplay}</a>
+      <a href="/contact" class="rh-btn-line">💬 무료 상담</a>
+    </div>
+  </div>
+</section>
+
+<!-- 11. LONG ARTICLE -->
+<section class="rh-long">
+  <div class="rh-container">
+    <div class="rh-long-wrap">
+      <div class="rh-long-title">
+        <h2>오페리오솔루션이 소상공인 폐업지원금<br>최대 <em>400만원</em> 받고 전국 최저가<br>철거 및 원상복구 서비스를 제공하는 비결</h2>
+      </div>
+      <p class="rh-long-intro">소상공인 여러분, 사업 정리를 결정하시고 가장 먼저 부딪히는 벽이 <strong>"철거 비용"</strong>입니다. 철거 비용이 부담스러운 사장님들을 위해 오페리오솔루션은 대한민국 NO.1 폐업 및 철거 전문 종합 플랫폼으로 고객 만족 100%를 목표로 운영되고 있습니다.</p>
+      <div class="rh-long-section">
+        <h3><span class="ic">🏛️</span>정부지원금 절차와 폐업지원금 최대 400만원 혜택</h3>
+        <p>사업을 정리할 때 가장 부담이 되는 건 단연 철거 비용입니다. 오페리오솔루션은 <strong>정부지원금 절차 관리 및 폐업지원금 최대 400만원</strong>을 통해 사장님들의 부담을 덜어드립니다. 폐업철거지원금을 활용해 철거 비용을 줄이고 새로운 시작을 준비할 수 있도록 도와드립니다.</p>
+      </div>
+      <div class="rh-long-section">
+        <h3><span class="ic">🛡️</span>오페리오솔루션이 목숨같이 지키는 3대 원칙</h3>
+        <p>오페리오솔루션은 철거 시공을 진행할 때 무엇보다 다음 세 가지 원칙을 엄격히 지키고 있습니다.</p>
+        <ol>
+          <li><strong>전국 최저가 견적 보장</strong> — 100% 무료 방문 견적 서비스를 제공하며 가장 합리적이고 경제적인 가격을 안내합니다.</li>
+          <li><strong>끝까지 책임지는 시공과 1년 A/S 보증</strong> — 모든 시공 후 1년간 A/S 보증을 통해 고객의 만족도를 끝까지 책임집니다.</li>
+          <li><strong>추가 비용 없는 깔끔한 마무리</strong> — 처음 견적에서 약속한 금액 그대로 공사가 마무리되어, 사장님께 추가 비용에 대한 걱정을 덜어드립니다.</li>
+        </ol>
+      </div>
+      <div class="rh-long-section">
+        <h3><span class="ic">🏗️</span>주요 서비스</h3>
+        <p>오페리오솔루션은 다양한 환경에서 최적의 철거 서비스를 제공합니다.</p>
+        <ol>
+          <li><strong>철거 가능한 모든 시설</strong> — 주거지부터 상업시설, 공장, 사무실까지 모든 시설에서 철거 작업을 진행합니다.</li>
+          <li><strong>정확한 견적과 완벽한 시공</strong> — 현장 분석을 통해 사장님들에게 정확한 견적을 제공하며, 어떤 환경에서도 완벽한 시공을 보장합니다.</li>
+          <li><strong>신속·안전한 처리</strong> — 빠르고 안전하게 모든 작업을 진행해 만족도를 최우선으로 합니다. 고객님의 시간과 자산이 손실되지 않도록 책임지고 관리합니다.</li>
+        </ol>
+      </div>
+      <div class="rh-long-section">
+        <h3><span class="ic">💡</span>믿을 수 있는 철거 파트너</h3>
+        <p>오페리오솔루션은 단순 철거 업체를 넘어, 전국 어느 지역에서나 신뢰할 수 있는 철거 파트너사들과의 협업으로 완벽한 서비스를 제공합니다. 따라서 지역에 관계없이 오페리오솔루션을 통해 안전하게 철거 서비스를 받으실 수 있습니다.</p>
+      </div>
+      <div class="rh-long-highlight">
+        실제 서비스를 이용하신 많은 고객님들께서는 <strong>"지원금 신청 등 복잡한 절차 대행"</strong>, <strong>"추가 비용 없는 정확한 견적"</strong>, <strong>"신속하고 깔끔한 작업 완료"</strong> 등에 만족감을 느끼시며 후기를 남겨주시고 계십니다.
+      </div>
+      <div class="rh-long-final">
+        막막한 철거 작업, 비용 부담, 폐기물 처리, 정부 지원금까지<br><strong>오페리오솔루션이 책임지고 마무리</strong>해 사장님이 새 출발을 잘 시작하실 수 있도록 최선을 다해 돕겠습니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 유지: 경기 철거 전문 안내 + 지역 선택 -->
+<section class="rh-legacy-section">
+  <div class="rh-container">
+    <div class="rh-legacy-block">
+      <h3 class="rh-legacy-block-h"><span class="ic">🔨</span>${loc} 철거 전문 안내</h3>
+      <p>${fullLoc}에 철거를 전문하면 매장 운영 효율이 획기적으로 개선됩니다. 오페리오솔루션은 ${fullLoc} 전 지역에 업종별 최적화된 철거를 직접 방문 전문합니다. 카드단말기·포스기·키오스크·테이블오더는 설치비 무료이며, CCTV는 별도 견적입니다. VAN사 수수료 비교를 통해 가장 유리한 조건을 찾아드립니다.</p>
+    </div>
+    ${regionsBlockHtml}
+  </div>
+</section>
+
+<!-- 유지: 도입 전 체크리스트 -->
+<section class="rh-legacy-section" style="padding-top:0">
+  <div class="rh-container">
+    <div class="rh-legacy-block">
+      <h3 class="rh-legacy-block-h"><span class="ic">🔍</span>${loc} 철거 도입 전 체크리스트</h3>
+      <ul class="rh-legacy-checklist">
+        <li><strong>매장 업종 확인</strong> — 음식점·카페·편의점·미용실·무인매장 등 업종별로 최적의 철거 사양이 다릅니다</li>
+        <li><strong>매장 면적·동선 분석</strong> — 철거 범위와 작업 동선 사전에 분석해야 효율적인 시공이 가능합니다</li>
+        <li><strong>원상복구 범위</strong> — 임대차 계약서상 원상복구 조건을 반드시 확인하세요</li>
+        <li><strong>정부 보조금</strong> — 소상공인 대상 철거비 보조금(희망리턴패키지) 신청 가능 여부를 확인하세요</li>
+        <li><strong>업체 실적·후기</strong> — 전국 설치 실적과 고객 후기를 반드시 확인하세요. 오페리오솔루션은 350건+ 실적, 98% 만족도</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 유지: 관련 태그 + 무료 견적 받기 + 다른 시·도 -->
+<section class="rh-legacy-section" style="padding-top:0;padding-bottom:80px">
+  <div class="rh-container">
+    <div class="rh-legacy-tags-wrap">
+      <div class="rh-legacy-tags-h">🏷️ 관련 태그</div>
+      <div class="rh-legacy-tags">${tagsHtml}</div>
+    </div>
+    <div class="rh-legacy-cta-box">
+      <h3>🎁 ${loc} 철거 무료 견적 받기</h3>
+      <div class="rh-legacy-cta-box-sub">${fullLoc} 철거 전문을 전문가가 책임집니다.</div>
+      <div class="rh-legacy-cta-btns">
+        <a href="tel:${SITE.phone}" class="rh-legacy-cta-btn rh-legacy-cta-btn-phone">📞 ${SITE.phoneDisplay}</a>
+        <a href="sms:${SITE.phone}" class="rh-legacy-cta-btn rh-legacy-cta-btn-out">💬 문자상담</a>
+        <a href="/contact" class="rh-legacy-cta-btn rh-legacy-cta-btn-out">📝 상담문의</a>
+      </div>
+    </div>
+    ${otherSidosHtml}
+  </div>
+</section>
+
+</div>
+<script>
+(function(){
+  var sliders = document.querySelectorAll('.rh-rev-slider');
+  sliders.forEach(function(s){
+    var track = s.querySelector('.rh-rev-track');
+    var btns = s.parentElement.querySelectorAll('[data-rev-prev], [data-rev-next]');
+    var mobileBtns = s.querySelectorAll('[data-rev-prev], [data-rev-next]');
+    var allBtns = [];
+    btns.forEach(function(b){ allBtns.push(b); });
+    mobileBtns.forEach(function(b){ allBtns.push(b); });
+    function step(){ return track.clientWidth * 0.7; }
+    allBtns.forEach(function(btn){
+      if (btn.hasAttribute('data-rev-prev')){
+        btn.addEventListener('click', function(){ track.scrollBy({left: -step(), behavior:'smooth'}); });
+      } else {
+        btn.addEventListener('click', function(){ track.scrollBy({left: step(), behavior:'smooth'}); });
+      }
+    });
+  });
+})();
+</script>`;
 }
 
 function renderHeader() {
@@ -2555,6 +3277,27 @@ ${_collapsibleChips(SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${reg
 }
 
 function renderProductPage(product) {
+  // ★ 매장철거 페이지는 새 디자인 사용
+  if (product && product.slug === 'removal') {
+    const body = renderRemovalNewBody({
+      regionName: '전국',
+      shortLocLabel: '전국',
+      regionsList: REGIONS.map(r => ({ name: r.name, url: `/region/${r.slug}/removal` })),
+      regionsTitle: '시·도별 매장철거 전문 지역 선택',
+      regionsSub: '아래에서 시·도를 선택하면 지역별 매장철거 가이드를 확인할 수 있습니다.',
+      tags: product.tags || null,
+      showOtherSidos: false,
+    });
+    return htmlWrap({
+      title: `${product.name} 설치 가이드`,
+      description: product.longDesc || product.shortDesc,
+      canonical: `${SITE.domain}/product/${product.slug}`,
+      body,
+      keywords: product.keywords,
+      breadcrumbs: [{n:'홈',u:'/'},{n:'제품 안내',u:'/product'},{n:product.name,u:`/product/${product.slug}`}],
+    });
+  }
+
   const topRegions = REGIONS.map(r => `<a href="/${r.slug}/${product.slug}" class="related-item"><span class="emoji">🔎</span><span class="name">${r.name}</span></a>`).join('');
   const featureCards = product.features.map(f => `<div class="feat-card"><h5>${f.title}</h5><p>${f.desc}</p></div>`).join('');
   const _featIcon=(t)=>/다국어|언어/.test(t)?'🌐':/인건비|절감|이중/.test(t)?'💰':/수익|객단가|매출|할인|수수료|견적|보험/.test(t)?'📈':/직원|근태|홀|인력/.test(t)?'👥':/재고|관리|적법|폐기/.test(t)?'📦':/세무|연동|정산|통합/.test(t)?'📊':/QR|태블릿|간편|결제/.test(t)?'📱':/원격|스마트폰|공지|알림/.test(t)?'📡':/AI|움직임|감지|CCTV|보안/.test(t)?'🛡️':/A\/S|보증|시공|정찰/.test(t)?'✅':/주문|정확|회전/.test(t)?'⚡':/원상복구|철거/.test(t)?'🔧':'✨';
@@ -3036,6 +3779,33 @@ function renderRegionCardTerminalV3(region) {
 
 function renderRegionProductPage(region, productSlug) {
   if (productSlug === 'card-terminal') return renderRegionCardTerminalV3(region);
+  // ★ 매장철거 페이지는 새 디자인 사용
+  if (productSlug === 'removal') {
+    const regionGus = region.slug === 'seoul' ? SEOUL_GUS : (REGIONS_DATA[region.slug] || []);
+    const regionsList = regionGus.map(gu => ({
+      name: gu.name,
+      url: `/region/${region.slug}/${gu.slug}/removal`,
+    }));
+    const otherSidos = REGIONS.filter(r => r.slug !== region.slug).map(r => ({ name: r.name, slug: r.slug }));
+    const body = renderRemovalNewBody({
+      regionName: region.fullName || region.name,
+      shortLocLabel: region.name,
+      regionsList,
+      regionsTitle: `${region.name} 철거 전문 지역 선택`,
+      regionsSub: '시군구를 선택하면 읍면동별 철거 전문 가이드를 확인할 수 있습니다.',
+      tags: [region.name+'철거', region.name+'매장철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거', region.name+'인테리어철거', '임대인원상복구'],
+      otherSidos,
+      showOtherSidos: true,
+    });
+    return htmlWrap({
+      title: `${region.name} 매장철거`,
+      description: `${region.fullName || region.name} 매장·사무실·상가·공장 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.`,
+      canonical: `${SITE.domain}/${region.slug}/removal`,
+      body,
+      keywords: `${region.name} 철거, ${region.name} 매장철거, 상가철거, 사무실철거, 원상복구`,
+      breadcrumbs: [{n:'홈',u:'/'},{n:region.name,u:`/region/${region.slug}`},{n:'매장철거',u:`/${region.slug}/removal`}],
+    });
+  }
   const cfg = _SPP_CONFIG[productSlug];
   if (!cfg) return null;
   
@@ -4436,6 +5206,38 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
   const gu = dong.gu;
   const name = dong.name;            // 예: "송도동"
   const parent = gu.name;            // 예: "연수구"
+
+  // ★ 매장철거 페이지는 새 디자인 사용
+  if (product && product.slug === 'removal') {
+    const fullLoc = `${regionName} ${parent} ${name}`;
+    const shortLoc = name;
+    // 같은 구 안의 다른 동을 칩으로
+    const siblings = (gu.dongs || []).filter(d => d.slug !== dong.slug).slice(0, 12);
+    const regionsList = siblings.map(d => ({
+      name: d.name,
+      url: `/region/${sidoSlug}/${gu.slug}/${d.slug}/removal`,
+    }));
+    const otherSidos = REGIONS.filter(r => r.slug !== sidoSlug).map(r => ({ name: r.name, slug: r.slug }));
+    const body = renderRemovalNewBody({
+      regionName: fullLoc,
+      shortLocLabel: shortLoc,
+      regionsList,
+      regionsTitle: `${parent} 다른 동 철거 전문`,
+      regionsSub: `${parent} 안에서 동을 선택하면 해당 지역 매장철거 가이드를 확인할 수 있습니다.`,
+      tags: [shortLoc+'철거', shortLoc+'매장철거', parent+'철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거'],
+      otherSidos,
+      showOtherSidos: true,
+    });
+    return htmlWrap({
+      title: `${shortLoc} 매장철거`,
+      description: `${fullLoc} 매장·사무실·상가 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.`,
+      canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/${dong.slug}/removal`,
+      body,
+      keywords: `${shortLoc} 철거, ${shortLoc} 매장철거, ${parent} 철거, 상가철거, 사무실철거, 원상복구`,
+      breadcrumbs: [{n:'홈',u:'/'},{n:regionName,u:`/region/${sidoSlug}`},{n:parent,u:`/region/${sidoSlug}/${gu.slug}`},{n:name,u:`/region/${sidoSlug}/${gu.slug}/${dong.slug}`},{n:'매장철거',u:`/region/${sidoSlug}/${gu.slug}/${dong.slug}/removal`}],
+    });
+  }
+
   const kw = product.name;           // 예: "포스기"
   const mainKw = `${name} ${kw}`;    // 메인 키워드: "송도동 포스기"
   const productSlug = product.slug;
@@ -4670,6 +5472,35 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
   const regionFullName = sidoSlug === 'seoul' ? '서울특별시' : regionName;
   const guName = gu.name;
   const guFullName = `${regionFullName} ${guName}`;
+
+  // ★ 매장철거 페이지는 새 디자인 사용
+  if (productSlug === 'removal') {
+    const dongs = gu.dongs || [];
+    const regionsList = dongs.map(d => ({
+      name: d.name,
+      url: `/region/${sidoSlug}/${gu.slug}/${d.slug}/removal`,
+    }));
+    const otherSidos = REGIONS.filter(r => r.slug !== sidoSlug).map(r => ({ name: r.name, slug: r.slug }));
+    const body = renderRemovalNewBody({
+      regionName: guFullName,
+      shortLocLabel: guName,
+      regionsList,
+      regionsTitle: `${guName} 동별 철거 전문 지역 선택`,
+      regionsSub: '동을 선택하면 해당 지역 매장철거 가이드를 확인할 수 있습니다.',
+      tags: [guName+'철거', guName+'매장철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거', '임대인원상복구'],
+      otherSidos,
+      showOtherSidos: true,
+    });
+    return htmlWrap({
+      title: `${guName} 매장철거`,
+      description: `${guFullName} 매장·사무실·상가 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.`,
+      canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/removal`,
+      body,
+      keywords: `${guName} 철거, ${guName} 매장철거, ${regionName} 철거, 상가철거, 사무실철거, 원상복구`,
+      breadcrumbs: [{n:'홈',u:'/'},{n:regionName,u:`/region/${sidoSlug}`},{n:guName,u:`/region/${sidoSlug}/${gu.slug}`},{n:'매장철거',u:`/region/${sidoSlug}/${gu.slug}/removal`}],
+    });
+  }
+
   const kw = cfg.kw;
   const action = cfg.action;
   const actionH = cfg.actionH;
@@ -5320,6 +6151,28 @@ function renderIndustryProductPage(industry, product) {
   if (!cfg) return null;
   
   const indName = industry.name;        // 음식점
+  // ★ 매장철거 페이지는 새 디자인 사용
+  if (product.slug === 'removal') {
+    const regionsList = REGIONS.map(r => ({ name: r.name, url: `/region/${r.slug}/removal` }));
+    const body = renderRemovalNewBody({
+      regionName: `전국 ${indName}`,
+      shortLocLabel: indName,
+      regionsList,
+      regionsTitle: `${indName} 매장철거 지역 선택`,
+      regionsSub: '시·도를 선택하면 해당 지역 매장철거 가이드를 확인할 수 있습니다.',
+      tags: [indName+'철거', indName+'매장철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거', indName+'폐업', '임대인원상복구'],
+      showOtherSidos: false,
+    });
+    return htmlWrap({
+      title: `${indName} 매장철거`,
+      description: `${indName} 매장·사무실·상가 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.`,
+      canonical: `${SITE.domain}/industry/${industry.slug}/removal`,
+      body,
+      keywords: `${indName} 철거, ${indName} 매장철거, 상가철거, 사무실철거, 원상복구`,
+      breadcrumbs: [{n:'홈',u:'/'},{n:'업종',u:'/industry'},{n:indName,u:`/industry/${industry.slug}`},{n:'매장철거',u:`/industry/${industry.slug}/removal`}],
+    });
+  }
+
   const kw = cfg.kw;                     // 포스기
   const action = cfg.action;
   const actionH = cfg.actionH;
