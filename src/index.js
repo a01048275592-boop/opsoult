@@ -800,6 +800,17 @@ footer .logo{color:#fff}
 .foot-brand{margin-bottom:40px}
 .foot-brand p{font-size:14px;color:#94a3b8;margin-top:16px;max-width:480px;line-height:1.7}
 .foot-bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;font-size:13px;color:#64748b;flex-wrap:wrap;gap:12px}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.foot-col h4{color:#fff;font-size:14px;font-weight:600;margin-bottom:18px;letter-spacing:-0.01em}
+.foot-col h4 a{color:inherit;text-decoration:none}
+.foot-col h4 a:hover{color:var(--accent)}
+.foot-links{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+.foot-links a{color:#94a3b8;font-size:13px;text-decoration:none;line-height:1.6;transition:color .2s}
+.foot-links a:hover{color:#fff}
+@media(max-width:768px){
+  .foot-cols{grid-template-columns:1fr;gap:32px;margin-bottom:32px;padding-bottom:32px}
+  .foot-links{grid-template-columns:1fr 1fr 1fr}
+}
 
 /* Floating CTA */
 .floating-stack{position:fixed;bottom:28px;right:28px;z-index:9999;display:flex;flex-direction:column;gap:10px;align-items:flex-end;pointer-events:none}
@@ -2527,11 +2538,19 @@ function renderHeader() {
 }
 
 function renderFooter() {
+  const regionLinks = REGIONS.map(r => `<a href="/region/${r.slug}">${r.name}</a>`).join('');
+  const productLinks = PRODUCTS.map(p => `<a href="/product/${p.slug}">${p.name}</a>`).join('');
+  const industryLinks = INDUSTRIES.map(i => `<a href="/industry/${i.slug}">${i.name}</a>`).join('');
   return `<footer>
 <div class="container">
 <div class="foot-brand">
 <a href="/" class="logo"><span class="logo-dot">${ICONS.brandLogo}</span>${SITE.brandName}</a>
 <p>1인 매장부터 프랜차이즈까지. 매장 설비를 한 곳에서.</p>
+</div>
+<div class="foot-cols">
+<div class="foot-col"><h4><a href="/region">지역별 설치</a></h4><div class="foot-links">${regionLinks}</div></div>
+<div class="foot-col"><h4><a href="/product">제품 안내</a></h4><div class="foot-links">${productLinks}</div></div>
+<div class="foot-col"><h4><a href="/industry">업종별 카테고리</a></h4><div class="foot-links">${industryLinks}</div></div>
 </div>
 <div class="foot-bottom">
 <span>© 2026 ${SITE.brandName}. All rights reserved.</span>
@@ -2937,7 +2956,7 @@ function renderHome() {
 <section class="cta-section" id="contact">
 <div class="container">
 <span class="eyebrow">무료 상담 · 빠른 설치</span>
-<h2 class="cta-lead">카드단말기·포스기·키오스크·<br>CCTV·테이블오더<br><span class="cta-lead-accent">매장에 필요한 모든 장비,<br>한 통화로 해결하세요</span></h2>
+<h2 class="cta-lead">카드단말기·포스기·키오스크·<br>CCTV·테이블오더, 원상복구 철거<br><span class="cta-lead-accent">매장에 필요한 모든 장비,<br>한 통화로 해결하세요</span></h2>
 <a href="tel:${SITE.phone}" class="cta-phone">${ICONS.phone} ${SITE.phoneDisplay}</a>
 </div>
 </section>
