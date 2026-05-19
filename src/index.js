@@ -2852,44 +2852,6 @@ function renderHome() {
 })();
 </script>
 
-<section class="regions-section" id="regions">
-<div class="container">
-<div class="section-head">
-<div class="section-tag">Nationwide Service</div>
-<h2 class="section-title">전국 17개 광역시도<br><em>어디든</em> 설치합니다</h2>
-<p class="section-desc">서울·경기부터 제주까지. 우리 지역을 선택하면 상권 정보와 제품별 설치 가이드를 확인할 수 있습니다.</p>
-</div>
-<div class="region-grid">${regionChips}</div>
-</div>
-</section>
-
-<section class="features-section" id="features">
-<div class="container">
-<div class="section-head">
-<div class="section-tag">Smart Features</div>
-<h2 class="section-title">매장이 쉬워집니다<br><em>운영은 더 똑똑해집니다</em></h2>
-</div>
-<div class="features-grid">${smartFeatures}</div>
-</div>
-<div class="sf-carousel" id="sfCarousel">
-<div class="sf-tabs">${sfTabs}</div>
-<button class="sf-arrow sf-prev" aria-label="이전 슬라이드">‹</button>
-<div class="sf-viewport"><div class="sf-track">${sfSlides}</div></div>
-<button class="sf-arrow sf-next" aria-label="다음 슬라이드">›</button>
-<div class="sf-dots">${sfDots}</div>
-</div>
-</section>
-
-<section class="why-section">
-<div class="container">
-<div class="section-head">
-<div class="section-tag">Our Commitment</div>
-<h2 class="section-title">견적이 끝이 아닙니다<br><em>설치 후가 진짜 시작입니다</em></h2>
-</div>
-<div class="why-grid">${whyUs}</div>
-</div>
-</section>
-
 <section class="rv2-section" id="reviews">
 <div class="container">
 <div class="section-head">
@@ -2998,6 +2960,44 @@ function renderHome() {
   startAuto();
 })();
 </script>
+
+<section class="features-section" id="features">
+<div class="container">
+<div class="section-head">
+<div class="section-tag">Smart Features</div>
+<h2 class="section-title">매장이 쉬워집니다<br><em>운영은 더 똑똑해집니다</em></h2>
+</div>
+<div class="features-grid">${smartFeatures}</div>
+</div>
+<div class="sf-carousel" id="sfCarousel">
+<div class="sf-tabs">${sfTabs}</div>
+<button class="sf-arrow sf-prev" aria-label="이전 슬라이드">‹</button>
+<div class="sf-viewport"><div class="sf-track">${sfSlides}</div></div>
+<button class="sf-arrow sf-next" aria-label="다음 슬라이드">›</button>
+<div class="sf-dots">${sfDots}</div>
+</div>
+</section>
+
+<section class="why-section">
+<div class="container">
+<div class="section-head">
+<div class="section-tag">Our Commitment</div>
+<h2 class="section-title">견적이 끝이 아닙니다<br><em>설치 후가 진짜 시작입니다</em></h2>
+</div>
+<div class="why-grid">${whyUs}</div>
+</div>
+</section>
+
+<section class="regions-section" id="regions">
+<div class="container">
+<div class="section-head">
+<div class="section-tag">Nationwide Service</div>
+<h2 class="section-title">전국 17개 광역시도<br><em>어디든</em> 설치합니다</h2>
+<p class="section-desc">서울·경기부터 제주까지. 우리 지역을 선택하면 상권 정보와 제품별 설치 가이드를 확인할 수 있습니다.</p>
+</div>
+<div class="region-grid">${regionChips}</div>
+</div>
+</section>
 
 <script>
 (function(){
