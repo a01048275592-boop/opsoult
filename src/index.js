@@ -808,8 +808,9 @@ footer .logo{color:#fff}
 .foot-links a{color:#94a3b8;font-size:13px;text-decoration:none;line-height:1.6;transition:color .2s}
 .foot-links a:hover{color:#fff}
 @media(max-width:768px){
-  .foot-cols{grid-template-columns:1fr;gap:32px;margin-bottom:32px;padding-bottom:32px}
-  .foot-links{grid-template-columns:1fr 1fr 1fr}
+  .foot-cols{grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:28px;padding-bottom:28px;text-align:center}
+  .foot-links{display:none}
+  .foot-col h4{margin-bottom:0;font-size:13px}
 }
 
 /* Floating CTA */
