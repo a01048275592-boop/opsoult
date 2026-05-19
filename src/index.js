@@ -2151,8 +2151,11 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — 사이트 view-source에서 'OPSOULT-V35-REMOVAL' 검색 시 보이면 새 디자인 적용됨
-  const _v35Marker = '<!-- OPSOULT-V35-REMOVAL-NEW-DESIGN -->';
+  // BUILD MARKER — view-source에서 'OPSOULT-V36-REMOVAL' 검색 (보이면 v36 적용됨)
+  const _v36Marker = ctx._v36Forced
+    ? '<!-- OPSOULT-V36-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V36-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+  const _v35Marker = _v36Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
 
@@ -6838,6 +6841,61 @@ export default {
     if (pathname === '/blog' || pathname.startsWith('/blog/')) {
       return Response.redirect(SITE.domain + '/', 301);
     }
+
+    // === [v36] 매장철거 안전망 ===
+    // 매장철거 URL이 어떤 경로든 무조건 새 디자인(renderRemovalNewBody)으로 라우팅 강제
+    if (pathname === '/removal' || pathname.endsWith('/removal')) {
+      const _v36Parts = pathname.split('/').filter(Boolean);
+      let _v36Region = null, _v36Gu = null;
+      // URL 패턴 분석
+      if (_v36Parts[0] === 'region' && _v36Parts.length >= 2) {
+        _v36Region = findRegion(_v36Parts[1]);
+        if (_v36Region && _v36Parts.length === 4 && _v36Parts[3] === 'removal') {
+          const _gus = _v36Region.slug === 'seoul' ? SEOUL_GUS : (typeof REGIONS_DATA !== 'undefined' ? (REGIONS_DATA[_v36Region.slug] || []) : []);
+          _v36Gu = _gus.find(g => g.slug === _v36Parts[2]) || null;
+        }
+      } else if (_v36Parts.length === 2 && _v36Parts[1] === 'removal' && _v36Parts[0] !== 'product') {
+        // /{sido}/removal
+        _v36Region = findRegion(_v36Parts[0]);
+      }
+      // ctx 구성
+      const _v36RegionName = _v36Gu
+        ? ((_v36Region.fullName || _v36Region.name) + ' ' + _v36Gu.name)
+        : (_v36Region ? (_v36Region.fullName || _v36Region.name) : '전국');
+      const _v36ShortLoc = _v36Gu ? _v36Gu.name : (_v36Region ? _v36Region.name : '전국');
+      let _v36RegionsList, _v36RegionsTitle, _v36Tags, _v36OtherSidos;
+      if (_v36Region) {
+        const _gus = _v36Region.slug === 'seoul' ? SEOUL_GUS : (typeof REGIONS_DATA !== 'undefined' ? (REGIONS_DATA[_v36Region.slug] || []) : []);
+        _v36RegionsList = _gus.map(g => ({ name: g.name, url: '/region/' + _v36Region.slug + '/' + g.slug + '/removal' }));
+        _v36RegionsTitle = _v36Region.name + ' 철거 전문 지역 선택';
+        _v36Tags = [_v36Region.name+'철거', _v36Region.name+'매장철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거', _v36Region.name+'인테리어철거', '임대인원상복구'];
+        _v36OtherSidos = REGIONS.filter(r => r.slug !== _v36Region.slug).map(r => ({ name: r.name, slug: r.slug }));
+      } else {
+        _v36RegionsList = REGIONS.map(r => ({ name: r.name, url: '/region/' + r.slug + '/removal' }));
+        _v36RegionsTitle = '전국 철거 전문 지역 선택';
+        _v36Tags = ['매장철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거'];
+        _v36OtherSidos = REGIONS.map(r => ({ name: r.name, slug: r.slug }));
+      }
+      const _v36Body = renderRemovalNewBody({
+        regionName: _v36RegionName,
+        shortLocLabel: _v36ShortLoc,
+        regionsList: _v36RegionsList,
+        regionsTitle: _v36RegionsTitle,
+        regionsSub: '시군구를 선택하면 읍면동별 철거 전문 가이드를 확인할 수 있습니다.',
+        tags: _v36Tags,
+        otherSidos: _v36OtherSidos,
+        showOtherSidos: true,
+        _v36Forced: true,
+      });
+      return new Response(htmlWrap({
+        title: _v36Region ? (_v36RegionName + ' 매장철거') : '매장철거 — 정찰제·원상복구·희망리턴패키지',
+        description: _v36RegionName + ' 매장·사무실·상가·공장 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.',
+        canonical: SITE.domain + pathname,
+        body: _v36Body,
+        keywords: _v36ShortLoc + ' 철거, ' + _v36ShortLoc + ' 매장철거, 상가철거, 사무실철거, 원상복구',
+      }), { headers: htmlHeaders });
+    }
+    // === [v36] 안전망 끝 ===
 
     // [GSC fix] 옛 잘못된 URL 호환: /region/sejong/sejong/... → /region/sejong/...
     // 세종은 시군구 없이 동만 있어서 /region/sejong/{동}/{제품}이 정상.
