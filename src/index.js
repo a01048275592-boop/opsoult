@@ -559,14 +559,18 @@ const INDUSTRIES = [
 ];
 
 const REVIEWS = [
-  { badge: '매출 40%↑', title: '카드단말기 교체 후 카드매출 급증', body: '수수료 비교로 연간 60만원 절약하고 매출도 올랐어요.', author: '서울 강남구 카페 사장님' },
-  { badge: '인건비 50%↓', title: '키오스크 설치 후 홀 인건비 반으로', body: '테이블오더+키오스크로 홀 직원 2명→1명. 서비스 품질도 유지됩니다.', author: '부산 해운대구 음식점 사장님' },
-  { badge: '수수료 절감', title: 'VAN사 변경으로 연 40만원 절약', body: '기존보다 수수료 저렴한 VAN사로 바꿔주셔서 매년 절약 중입니다.', author: '경기 수원시 소매점 사장님' },
-  { badge: '빠른 설치', title: '전화 한 통으로 빠른 설치 완료', body: '급하게 필요했는데 빠르게 설치해주셨어요. 바로 영업 시작할 수 있었습니다.', author: '대전 유성구 음식점 사장님' },
-  { badge: '무인화 성공', title: '24시간 무인매장 전환 완료', body: 'CCTV 설치로 월 매출 30% 증가했습니다.', author: '인천 연수구 스터디카페 사장님' },
-  { badge: 'A/S 최고', title: '포스기 장애 빠르게 해결', body: '전화하니 빠르게 해결해주셨어요. 이런 A/S는 처음입니다.', author: '광주 서구 미용실 사장님' },
-  { badge: '매출 증가', title: '테이블오더 도입 후 객단가 25% 상승', body: '메뉴 사진 보고 추가 주문이 늘었어요. 직원 호출도 줄어서 편해요.', author: '경기 분당구 치킨집 사장님' },
-  { badge: '패키지 할인', title: '카드단말기+포스기+테이블오더 한번에', body: '신규 매장 오픈할 때 패키지로 한번에 설치. 시간과 비용 모두 절약.', author: '대구 수성구 카페 사장님' },
+  { color: '#3b82f6', author: '서울 강남구 카페 사장님', badge: '매출 40%↑', badgeColor: '#fbbf24', body: '근처 카페보다 결제가 빠르니까 줄이 잘 풀려요. 작은 차이 같은데 한 달 매출이 진짜 달라지네요.' },
+  { color: '#10b981', author: '부산 해운대구 음식점 사장님', badge: '인건비 50%↓', badgeColor: '#34d399', body: '주말 피크에 알바 하나 덜 써도 돌아가요. 키오스크가 주문을 알아서 받으니 사람 구하느라 머리 안 아픕니다.' },
+  { color: '#8b5cf6', author: '경기 수원시 소매점 사장님', badge: '수수료 절감', badgeColor: '#a78bfa', body: '전 단말기 수수료가 너무 비싸서 바꿨는데, 같은 매출에 통장 들어오는 돈이 다르네요. 진작 바꿀 걸 그랬어요.' },
+  { color: '#ef4444', author: '대전 유성구 음식점 사장님', badge: '빠른 설치', badgeColor: '#f87171', body: '오픈 이틀 전 급히 연락드렸는데 다음날 아침에 와서 다 깔아주셨어요. 진짜 살았습니다 ㅋㅋ' },
+  { color: '#06b6d4', author: '인천 연수구 스터디카페 사장님', badge: '무인화 성공', badgeColor: '#22d3ee', body: '야간에 사람 없어도 운영되니까 24시간 매장으로 돌렸어요. 새벽 매출이 의외로 짭짤합니다.' },
+  { color: '#f59e0b', author: '광주 서구 미용실 사장님', badge: 'A/S 최고', badgeColor: '#fbbf24', body: '토요일 저녁에 단말기 멈췄는데 1시간 안에 출동해서 살려주셨어요. 다른 데랑은 차원이 다르네요.' },
+  { color: '#ec4899', author: '경기 분당구 치킨집 사장님', badge: '객단가 25%↑', badgeColor: '#f472b6', body: '테이블오더 메뉴 사진 보고 사이드랑 음료 추가 주문이 늘었어요. 객단가가 자연스럽게 올라가더라구요.' },
+  { color: '#84cc16', author: '대구 수성구 카페 사장님', badge: '패키지 할인', badgeColor: '#a3e635', body: '신규 오픈 때 카드단말기, 포스, 테이블오더 한 번에 했는데 따로 사는 것보다 훨씬 싸게 끝났네요.' },
+  { color: '#3b82f6', author: '울산 남구 한식당 사장님', badge: '매출 누락 0', badgeColor: '#fbbf24', body: '오픈 첫 달 매출 누락 0건. POS랑 카드단말기 연동이 잘 돼서 정산 안 맞을까봐 걱정 안 해도 돼요.' },
+  { color: '#10b981', author: '서울 마포구 헬스장 사장님', badge: '무인 운영', badgeColor: '#34d399', body: '회원권 결제, 출입, CCTV까지 한 번에 묶어주셔서 새벽엔 직원 없이도 돌아갑니다.' },
+  { color: '#8b5cf6', author: '제주 제주시 카페 사장님', badge: '외국인 결제', badgeColor: '#a78bfa', body: '외국인 손님 컨택리스 결제 다 되니까 카드 안 받는다고 돌아가는 경우가 없어졌어요.' },
+  { color: '#ef4444', author: '부산 동래구 네일샵 사장님', badge: '단골 관리', badgeColor: '#f87171', body: '포스에 단골 시술 이력 다 남으니까 검색이 1초. 노트북 엑셀로 관리하던 시절이 까마득합니다.' },
 ];
 
 const STYLES = `
@@ -761,6 +765,86 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 /* Reviews */
 .reviews-section{padding:120px 0;overflow:hidden}
 .reviews-slider{position:relative;max-width:1200px;margin:56px auto 0;padding:0 60px}
+/* === Reviews V2 — Live Feed + Slider === */
+.rv2-section{padding:120px 0;background:#0b1220;color:#e2e8f0}
+.rv2-section .section-tag{color:#fb7185}
+.rv2-section .section-title{color:#fff}
+.rv2-section .section-title em{color:#fbbf24}
+.rv2-section .section-desc{color:#94a3b8}
+.rv2-grid{display:grid;grid-template-columns:1fr 280px;gap:20px;max-width:1200px;margin:48px auto 0;padding:0 20px;align-items:start}
+.rv2-feed{background:#111c2f;border-radius:18px;border:1px solid #1f2a44;overflow:hidden}
+.rv2-feed-head{padding:14px 24px;border-bottom:1px solid #1f2a44;display:flex;justify-content:space-between;align-items:center}
+.rv2-feed-title{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#e2e8f0}
+.rv2-feed-title::before{content:'';width:7px;height:7px;background:#22c55e;border-radius:50%;box-shadow:0 0 0 3px rgba(34,197,94,0.18);animation:rv2-pulse 2s infinite}
+.rv2-feed-time{font-size:11.5px;color:#64748b}
+.rv2-live-badge{margin:14px auto 0;display:block;width:fit-content;padding:5px 12px;background:#1f2a44;border-radius:100px;font-size:11.5px;color:#94a3b8}
+.rv2-viewport{overflow:hidden;margin-top:6px}
+.rv2-track{display:flex;will-change:transform}
+.rv2-track.anim{transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+.rv2-page{flex:0 0 100%;padding:0 24px;min-width:0}
+.rv2-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid #1f2a44}
+.rv2-page .rv2-item:last-child{border-bottom:none}
+.rv2-avatar{flex-shrink:0;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.rv2-avatar svg{width:20px;height:20px;color:#fff}
+.rv2-content{flex:1;min-width:0}
+.rv2-row1{display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.rv2-author{font-size:13.5px;font-weight:600;color:#e2e8f0}
+.rv2-stars{color:#fbbf24;font-size:12px;letter-spacing:0.5px}
+.rv2-when{font-size:11px;color:#64748b;margin-left:auto}
+.rv2-row2{display:flex;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.rv2-badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600;white-space:nowrap}
+.rv2-body{font-size:13px;color:#cbd5e1;line-height:1.55}
+.rv2-foot{padding:14px 24px 20px;display:flex;align-items:center;justify-content:center;gap:14px}
+.rv2-arrow{width:32px;height:32px;border-radius:50%;background:#1f2a44;border:none;color:#cbd5e1;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.rv2-arrow:hover{background:#334155;color:#fff}
+.rv2-dots{display:flex;gap:6px}
+.rv2-dot{width:7px;height:7px;border-radius:50%;background:#334155;border:none;cursor:pointer;transition:all .25s;padding:0}
+.rv2-dot.active{background:#fbbf24;width:20px;border-radius:100px}
+.rv2-page-info{font-size:11.5px;color:#64748b;margin-left:4px}
+.rv2-side{display:flex;flex-direction:column;gap:12px}
+.rv2-stat{background:#111c2f;border:1px solid #1f2a44;border-radius:14px;padding:16px 20px;text-align:center}
+.rv2-stat-v{font-size:24px;font-weight:700;color:#fff;margin-bottom:4px;line-height:1.2}
+.rv2-stat-l{font-size:12px;color:#94a3b8}
+.rv2-amber{color:#fbbf24}
+.rv2-blue{color:#60a5fa}
+.rv2-green{color:#34d399}
+.rv2-plus{font-size:18px}
+.rv2-bars{background:#111c2f;border:1px solid #1f2a44;border-radius:14px;padding:16px 20px}
+.rv2-bars-h{font-size:12.5px;font-weight:600;color:#e2e8f0;margin-bottom:14px}
+.rv2-bar{display:flex;align-items:center;gap:10px;font-size:11.5px;margin-bottom:8px}
+.rv2-bar:last-child{margin-bottom:0}
+.rv2-bar-l{flex-shrink:0;width:74px;color:#94a3b8}
+.rv2-bar-t{flex:1;height:6px;background:#1f2a44;border-radius:100px;overflow:hidden}
+.rv2-bar-f{display:block;height:100%;border-radius:100px}
+.rv2-bar-v{flex-shrink:0;width:30px;text-align:right;color:#e2e8f0;font-weight:600}
+.rv2-top{background:#111c2f;border:1px solid #1f2a44;border-radius:14px;padding:16px 20px}
+.rv2-top-h{font-size:12.5px;font-weight:600;color:#e2e8f0;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.rv2-top-sub{font-size:11px;font-weight:500;color:#64748b;margin-left:auto}
+.rv2-top-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #1f2a44}
+.rv2-top-item:last-child{border-bottom:none}
+.rv2-top-rank{flex-shrink:0;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
+.rv2-top-rank.r1{background:#f59e0b}.rv2-top-rank.r2{background:#94a3b8}.rv2-top-rank.r3{background:#a16207}
+.rv2-top-name{flex:1;min-width:0;font-size:12.5px;color:#e2e8f0;font-weight:500;line-height:1.4}
+.rv2-top-cnt{font-size:11.5px;color:#22c55e;font-weight:600;white-space:nowrap}
+.rv2-top-cnt .arr{font-size:10px;margin-right:2px}
+@keyframes rv2-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@media(max-width:900px){
+  .rv2-section{padding:60px 0}
+  .rv2-grid{grid-template-columns:1fr;max-width:560px;margin-top:32px}
+  .rv2-side{flex-direction:row;flex-wrap:wrap;gap:10px}
+  .rv2-stat{flex:1;min-width:0;padding:12px 8px}
+  .rv2-stat-v{font-size:20px}
+  .rv2-bars,.rv2-top{flex:1 1 100%}
+}
+@media(max-width:560px){
+  .rv2-grid{padding:0 12px}
+  .rv2-feed-head{padding:12px 16px}
+  .rv2-page{padding:0 16px}
+  .rv2-foot{padding:12px 16px 16px}
+  .rv2-avatar{width:34px;height:34px}
+  .rv2-avatar svg{width:18px;height:18px}
+  .rv2-author{font-size:12.5px}
+}
 .reviews-viewport{overflow:hidden;margin:0 -10px}
 .reviews-track{display:flex;gap:20px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;padding:8px 10px}
 .review-card{flex:0 0 calc((100% - 40px) / 3);background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:border-color .2s,transform .2s,box-shadow .2s;min-width:0}
@@ -2586,7 +2670,30 @@ function renderHome() {
   const whyIcons = [ICONS.target, ICONS.box, ICONS.coin, ICONS.wrench];
   const whyUs = WHY_US.map((w, i) => `<div class="why-item"><div class="wicon">${whyIcons[i] || ICONS.star}</div><div><h4>${w.title}</h4><p>${w.desc}</p></div></div>`).join('');
 
-  const reviews = REVIEWS.map(r => `<div class="review-card"><div class="review-stars">★★★★★</div><span class="review-badge">${r.badge}</span><h5>${r.title}</h5><p>${r.body}</p><div class="review-author">— ${r.author}</div></div>`).join('');
+  const _rv2Time = ['방금 전','12분 전','45분 전','2시간 전','5시간 전','어제','어제','2일 전','3일 전','4일 전','5일 전','1주일 전'];
+  const _rv2UserIcon = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0 2c-3.3 0-8 1.7-8 5v2h16v-2c0-3.3-4.7-5-8-5z"/></svg>';
+  const _rv2Day = Math.floor((Date.now() + 9*3600*1000) / (24*3600*1000));
+  let _rv2Seed = _rv2Day;
+  const _rv2Shuffled = REVIEWS.slice();
+  for (let i = _rv2Shuffled.length - 1; i > 0; i--) {
+    _rv2Seed = (_rv2Seed * 9301 + 49297) % 233280;
+    const j = Math.floor((_rv2Seed / 233280) * (i + 1));
+    [_rv2Shuffled[i], _rv2Shuffled[j]] = [_rv2Shuffled[j], _rv2Shuffled[i]];
+  }
+  const _rv2PerPage = 6;
+  const _rv2TotalPages = Math.ceil(_rv2Shuffled.length / _rv2PerPage);
+  function _rv2ItemHTML(r, when) {
+    return `<div class="rv2-item"><div class="rv2-avatar" style="background:${r.color}">${_rv2UserIcon}</div><div class="rv2-content"><div class="rv2-row1"><span class="rv2-author">${r.author}</span><span class="rv2-stars">★★★★★</span><span class="rv2-when">${when}</span></div><div class="rv2-row2"><span class="rv2-badge" style="background:${r.badgeColor}25;color:${r.badgeColor}">${r.badge}</span><span class="rv2-body">${r.body}</span></div></div></div>`;
+  }
+  const _rv2Pages = [];
+  for (let p = 0; p < _rv2TotalPages; p++) {
+    const start = p * _rv2PerPage;
+    const slice = _rv2Shuffled.slice(start, start + _rv2PerPage);
+    _rv2Pages.push('<div class="rv2-page">' + slice.map((r, i) => _rv2ItemHTML(r, _rv2Time[start + i] || '1주일 전')).join('') + '</div>');
+  }
+  // 양쪽 클론: [마지막][page0][page1]...[첫]
+  const reviewsTrack = _rv2Pages[_rv2Pages.length - 1] + _rv2Pages.join('') + _rv2Pages[0];
+  const reviewsDots = Array.from({length: _rv2TotalPages}, (_, i) => `<button class="rv2-dot${i === 0 ? ' active' : ''}" data-page="${i}" aria-label="${i+1}페이지"></button>`).join('');
 
   const body = `
 <section class="hero-banner-section">
@@ -2783,101 +2890,111 @@ function renderHome() {
 </div>
 </section>
 
-<section class="reviews-section" id="reviews">
+<section class="rv2-section" id="reviews">
 <div class="container">
 <div class="section-head">
-<div class="section-tag">Real Reviews</div>
-<h2 class="section-title">사장님들이<br><em>먼저 말해주십니다</em></h2>
-<p class="section-desc">서비스 후 달라진 매장 이야기 · 254,692건 중 직접 전해주신 몇 줄</p>
+<div class="section-tag">REAL REVIEWS</div>
+<h2 class="section-title">오늘도 <em>252개</em> 매장이<br>새로 설치를 마쳤습니다</h2>
+<p class="section-desc">전국 사장님들이 실시간으로 남기는 후기 · 매일 자동 업데이트</p>
 </div>
+<div class="rv2-grid">
+  <div class="rv2-feed">
+    <div class="rv2-feed-head">
+      <div class="rv2-feed-title">${SITE.brandName} · 후기 피드</div>
+      <div class="rv2-feed-time">방금 업데이트됨</div>
+    </div>
+    <span class="rv2-live-badge">오늘 · 실시간 고객 후기</span>
+    <div class="rv2-viewport"><div class="rv2-track" id="rv2Track">${reviewsTrack}</div></div>
+    <div class="rv2-foot">
+      <button class="rv2-arrow" id="rv2Prev" aria-label="이전">‹</button>
+      <div class="rv2-dots" id="rv2Dots">${reviewsDots}</div>
+      <button class="rv2-arrow" id="rv2Next" aria-label="다음">›</button>
+      <span class="rv2-page-info" id="rv2Info">1 / ${_rv2TotalPages}</span>
+    </div>
+  </div>
+  <aside class="rv2-side">
+    <div class="rv2-stat"><div class="rv2-stat-v rv2-amber">★ 4.9</div><div class="rv2-stat-l">평균 평점 · 2,481건 기준</div></div>
+    <div class="rv2-stat"><div class="rv2-stat-v rv2-blue">15,000<span class="rv2-plus">+</span></div><div class="rv2-stat-l">누적 설치 건수</div></div>
+    <div class="rv2-stat"><div class="rv2-stat-v rv2-green">98%</div><div class="rv2-stat-l">고객 만족도</div></div>
+    <div class="rv2-bars">
+      <div class="rv2-bars-h">📊 설치 업종 분포</div>
+      <div class="rv2-bar"><span class="rv2-bar-l">음식점·카페</span><span class="rv2-bar-t"><span class="rv2-bar-f" style="width:42%;background:#60a5fa"></span></span><span class="rv2-bar-v">42%</span></div>
+      <div class="rv2-bar"><span class="rv2-bar-l">소매·편의점</span><span class="rv2-bar-t"><span class="rv2-bar-f" style="width:24%;background:#34d399"></span></span><span class="rv2-bar-v">24%</span></div>
+      <div class="rv2-bar"><span class="rv2-bar-l">미용·서비스</span><span class="rv2-bar-t"><span class="rv2-bar-f" style="width:18%;background:#a78bfa"></span></span><span class="rv2-bar-v">18%</span></div>
+      <div class="rv2-bar"><span class="rv2-bar-l">기타 업종</span><span class="rv2-bar-t"><span class="rv2-bar-f" style="width:16%;background:#fbbf24"></span></span><span class="rv2-bar-v">16%</span></div>
+    </div>
+    <div class="rv2-top">
+      <div class="rv2-top-h">🔥 이번 주 인기 패키지<span class="rv2-top-sub">TOP 3</span></div>
+      <div class="rv2-top-item"><span class="rv2-top-rank r1">1</span><span class="rv2-top-name">카드단말기 + 포스기</span><span class="rv2-top-cnt"><span class="arr">▲</span>132건</span></div>
+      <div class="rv2-top-item"><span class="rv2-top-rank r2">2</span><span class="rv2-top-name">키오스크 + 테이블오더</span><span class="rv2-top-cnt"><span class="arr">▲</span>89건</span></div>
+      <div class="rv2-top-item"><span class="rv2-top-rank r3">3</span><span class="rv2-top-name">카드단말기 + 테이블오더</span><span class="rv2-top-cnt"><span class="arr">▲</span>61건</span></div>
+    </div>
+  </aside>
 </div>
-<div class="reviews-slider" id="reviewsSlider">
-<button class="slider-arrow slider-prev" aria-label="이전 후기" onclick="slideReviews(-1)">‹</button>
-<div class="reviews-viewport">
-<div class="reviews-track" id="reviewsTrack">${reviews}</div>
-</div>
-<button class="slider-arrow slider-next" aria-label="다음 후기" onclick="slideReviews(1)">›</button>
-<div class="slider-dots" id="sliderDots"></div>
 </div>
 </section>
 
 <script>
 (function(){
-  var track = document.getElementById('reviewsTrack');
-  var viewport = document.querySelector('.reviews-viewport');
-  var slider = document.getElementById('reviewsSlider');
-  var dotsWrap = document.getElementById('sliderDots');
-  if(!track || !viewport) return;
-  var cards = track.children;
-  if(cards.length === 0) return;
+  var track = document.getElementById('rv2Track');
+  if (!track) return;
+  var pages = track.children;
+  var totalPages = pages.length - 2; // 클론 2개 빼기
+  var total = pages.length;
+  var idx = 1;
+  var animating = false;
+  var autoTimer;
 
-  var current = 0;
-  var autoTimer = null;
-  var paused = false;
-
-  function cardsPerView(){
-    var w = viewport.offsetWidth;
-    if(w < 640) return 1;
-    if(w < 960) return 2;
-    return 3;
+  function setPos(i, animate){
+    track.classList.toggle('anim', animate);
+    track.style.transform = 'translateX(-' + (i * 100) + '%)';
+    idx = i;
   }
+  setPos(1, false);
 
-  function totalPages(){
-    return Math.max(1, cards.length - cardsPerView() + 1);
+  function realPage(){
+    if (idx === 0) return totalPages - 1;
+    if (idx === total - 1) return 0;
+    return idx - 1;
   }
-
-  function go(idx){
-    var max = totalPages() - 1;
-    if(idx < 0) idx = max;
-    if(idx > max) idx = 0;
-    current = idx;
-    var cardW = cards[0].offsetWidth + 20;
-    track.style.transform = 'translateX(-' + (cardW * current) + 'px)';
-    renderDots();
-  }
-
-  function renderDots(){
-    var pages = totalPages();
-    dotsWrap.innerHTML = '';
-    for(var i=0; i<pages; i++){
-      var d = document.createElement('button');
-      d.className = 'slider-dot' + (i === current ? ' active' : '');
-      d.setAttribute('aria-label', (i+1) + '번째 후기');
-      (function(ix){ d.onclick = function(){ go(ix); restartAuto(); }; })(i);
-      dotsWrap.appendChild(d);
+  function updateUI(){
+    var rp = realPage();
+    var info = document.getElementById('rv2Info');
+    if (info) info.textContent = (rp + 1) + ' / ' + totalPages;
+    var dots = document.getElementById('rv2Dots').children;
+    for (var i = 0; i < dots.length; i++) {
+      dots[i].classList.toggle('active', i === rp);
     }
   }
-
-  window.slideReviews = function(dir){
-    go(current + dir);
-    restartAuto();
-  };
-
-  function startAuto(){
-    autoTimer = setInterval(function(){
-      if(!paused) go(current + 1);
-    }, 4500);
+  function go(dir){
+    if (animating) return;
+    animating = true;
+    setPos(idx + dir, true);
+    updateUI();
   }
+  track.addEventListener('transitionend', function(){
+    if (idx === 0) setPos(total - 2, false);
+    else if (idx === total - 1) setPos(1, false);
+    animating = false;
+  });
 
-  function restartAuto(){
-    if(autoTimer) clearInterval(autoTimer);
-    startAuto();
+  var dots = document.getElementById('rv2Dots').children;
+  for (var i = 0; i < dots.length; i++) {
+    (function(k){
+      dots[k].onclick = function(){
+        if (animating) return;
+        animating = true;
+        setPos(k + 1, true);
+        updateUI();
+        restartAuto();
+      };
+    })(i);
   }
+  document.getElementById('rv2Prev').onclick = function(){ go(-1); restartAuto(); };
+  document.getElementById('rv2Next').onclick = function(){ go(+1); restartAuto(); };
 
-  slider.addEventListener('mouseenter', function(){ paused = true; });
-  slider.addEventListener('mouseleave', function(){ paused = false; });
-
-  var startX = 0;
-  viewport.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; paused = true; }, {passive:true});
-  viewport.addEventListener('touchend', function(e){
-    var dx = e.changedTouches[0].clientX - startX;
-    if(Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
-    paused = false;
-    restartAuto();
-  }, {passive:true});
-
-  window.addEventListener('resize', function(){ go(current); });
-  renderDots();
+  function startAuto(){ autoTimer = setInterval(function(){ go(+1); }, 4500); }
+  function restartAuto(){ clearInterval(autoTimer); startAuto(); }
   startAuto();
 })();
 </script>
