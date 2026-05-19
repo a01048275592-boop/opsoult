@@ -2151,6 +2151,8 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
+  // BUILD MARKER — 사이트 view-source에서 'OPSOULT-V35-REMOVAL' 검색 시 보이면 새 디자인 적용됨
+  const _v35Marker = '<!-- OPSOULT-V35-REMOVAL-NEW-DESIGN -->';
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
 
@@ -2197,7 +2199,7 @@ function renderRemovalNewBody(ctx) {
     </div>`;
   }
 
-  return `<div class="rh-page">
+  return `${_v35Marker}<div class="rh-page">
 
 ${thumb}
 
