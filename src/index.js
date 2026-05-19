@@ -837,13 +837,39 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
   .rv2-bars,.rv2-top{flex:1 1 100%}
 }
 @media(max-width:560px){
-  .rv2-grid{padding:0 12px}
-  .rv2-feed-head{padding:12px 16px}
-  .rv2-page{padding:0 16px}
-  .rv2-foot{padding:12px 16px 16px}
-  .rv2-avatar{width:34px;height:34px}
-  .rv2-avatar svg{width:18px;height:18px}
-  .rv2-author{font-size:12.5px}
+  .rv2-section{padding:48px 0}
+  .rv2-section .section-title{font-size:22px}
+  .rv2-section .section-desc{font-size:12px;margin-top:8px}
+  .rv2-grid{padding:0 10px;margin-top:24px;gap:12px}
+  .rv2-feed-head{padding:10px 14px}
+  .rv2-feed-title{font-size:11.5px}
+  .rv2-feed-time{font-size:10px}
+  .rv2-live-badge{margin-top:10px;padding:4px 10px;font-size:10.5px}
+  .rv2-page{padding:0 14px}
+  .rv2-item{padding:11px 0;gap:10px}
+  .rv2-avatar{width:30px;height:30px}
+  .rv2-avatar svg{width:16px;height:16px}
+  .rv2-author{font-size:12px}
+  .rv2-stars{font-size:10.5px}
+  .rv2-when{font-size:10px}
+  .rv2-badge{font-size:10px;padding:2px 8px}
+  .rv2-body{font-size:11.5px;line-height:1.5}
+  .rv2-row1{margin-bottom:4px;gap:6px}
+  .rv2-row2{gap:6px}
+  .rv2-foot{padding:10px 14px 14px;gap:10px}
+  .rv2-arrow{width:28px;height:28px;font-size:13px}
+  .rv2-page-info{font-size:10.5px}
+  .rv2-stat{padding:10px 6px}
+  .rv2-stat-v{font-size:17px}
+  .rv2-stat-l{font-size:10.5px}
+  .rv2-bars,.rv2-top{padding:12px 14px}
+  .rv2-bars-h,.rv2-top-h{font-size:11.5px;margin-bottom:10px}
+  .rv2-bar{font-size:10.5px;margin-bottom:6px;gap:8px}
+  .rv2-bar-l{width:64px}
+  .rv2-top-item{padding:7px 0;gap:8px}
+  .rv2-top-name{font-size:11.5px}
+  .rv2-top-cnt{font-size:10.5px}
+  .rv2-top-rank{width:20px;height:20px;font-size:11px}
 }
 .reviews-viewport{overflow:hidden;margin:0 -10px}
 .reviews-track{display:flex;gap:20px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;padding:8px 10px}
@@ -2680,7 +2706,7 @@ function renderHome() {
     const j = Math.floor((_rv2Seed / 233280) * (i + 1));
     [_rv2Shuffled[i], _rv2Shuffled[j]] = [_rv2Shuffled[j], _rv2Shuffled[i]];
   }
-  const _rv2PerPage = 6;
+  const _rv2PerPage = 4;
   const _rv2TotalPages = Math.ceil(_rv2Shuffled.length / _rv2PerPage);
   function _rv2ItemHTML(r, when) {
     return `<div class="rv2-item"><div class="rv2-avatar" style="background:${r.color}">${_rv2UserIcon}</div><div class="rv2-content"><div class="rv2-row1"><span class="rv2-author">${r.author}</span><span class="rv2-stars">★★★★★</span><span class="rv2-when">${when}</span></div><div class="rv2-row2"><span class="rv2-badge" style="background:${r.badgeColor}25;color:${r.badgeColor}">${r.badge}</span><span class="rv2-body">${r.body}</span></div></div></div>`;
