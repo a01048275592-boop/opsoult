@@ -364,7 +364,7 @@ const PRODUCTS = [
     photos: [
       'https://cdn.jsdelivr.net/gh/a01048275592-boop/opsoult@main/public/products/removal.webp'
     ],
-    longDesc: '매장 철거는 폐업·이전 시 보증금 반환에 직결되는 중요한 공정입니다. 오페리오솔루션는 정밀 현장 분석부터 철거·원상복구·폐기물 처리까지 원스톱으로 처리하며, 시공 보증서 발급으로 사후 책임까지 확실히 합니다. 추가 비용 없는 정찰제 운영과 실시간 공정 보고로 임대인과의 분쟁을 사전 예방합니다.',
+    longDesc: '매장 철거는 폐업·이전 시 보증금 반환에 직결되는 중요한 공정입니다. 오페리오솔루션는 정밀 현장 분석부터 철거·원상복구·폐기물 처리까지 원스톱으로 처리하며, 시공 보증서 발급으로 사후 책임까지 확실히 합니다. 추가 비용 없는 운영과 실시간 공정 보고로 임대인과의 분쟁을 사전 예방합니다.',
     keywords: '매장 철거, 원상복구, 사무실 철거, 상가 철거',
     features: [
       { title: '정확한 정찰 견적', desc: '현장 실측 후 확정, 추가비 없음' },
@@ -2157,10 +2157,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V41-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V42-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V41-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V41-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V42-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V42-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -2185,7 +2185,7 @@ function renderRemovalNewBody(ctx) {
   // 태그
   const tagsArr = ctx.tags && ctx.tags.length ? ctx.tags : [
     loc+'철거', loc+'매장철거', '상가철거', '사무실철거', '원상복구',
-    '희망리턴패키지', '폐기물적법처리', '정찰제철거', loc+'인테리어철거', '임대인원상복구'
+    '소상공인 폐업 지원 통합 서비스', '폐기물적법처리', loc+'인테리어철거', '임대인원상복구'
   ];
   const tagsHtml = tagsArr.map(t => `<span class="rh-legacy-tag">#${t}</span>`).join('');
 
@@ -2218,9 +2218,9 @@ ${thumb}
   <div class="rh-hero-grad"></div>
   <div class="rh-hero-inner">
     <div class="rh-hero-eyebrow">Operio Solution · ${loc} 매장 철거 전문</div>
-    <div class="rh-hero-badge">🏆 소상공인시장진흥공단 · 폐업지원금 최대 400만원</div>
-    <h1 class="rh-hero-title">전국 철거 파트너사와 협력해<br><span class="light">신속하고 깔끔한 마무리,</span> <em>고객 만족 100%</em></h1>
-    <p class="rh-hero-sub">${fullLoc} 매장·사무실·상가·공장 철거부터 원상복구·폐기물 적법 처리·희망리턴패키지 보조금 신청까지 —<br>오페리오솔루션이 한 번에 끝내드립니다.</p>
+    <div class="rh-hero-badge">🏆 소상공인 폐업 지원 통합 서비스 · 전국 254,692건 시공 실적</div>
+    <h1 class="rh-hero-title">${loc} 매장철거 전문<br><span class="light">원상복구와 깔끔한 마무리,</span> <em>고객 만족 100%</em></h1>
+    <p class="rh-hero-sub">${fullLoc} 매장·사무실·상가·공장 철거부터 원상복구·폐기물 적법 처리·소상공인 폐업 지원 통합 서비스까지 —<br>오페리오솔루션이 한 번에 끝내드립니다.</p>
     <div class="rh-hero-ctas">
       <a href="tel:${SITE.phone}" class="rh-btn-primary">📞 전화 상담 ${SITE.phoneDisplay}</a>
       <a href="/contact" class="rh-btn-ghost">💬 무료 상담</a>
@@ -2253,7 +2253,7 @@ ${thumb}
           <div class="rh-prin-num">1</div>
           <div class="rh-prin-body">
             <h3>전국 최저가 견적을 약속합니다</h3>
-            <p>어디에서도 찾을 수 없는 합리적인 가격으로 고객님의 부담을 덜어드립니다. 정찰제 견적으로 중간 추가 비용 없이 깔끔하게.</p>
+            <p>어디에서도 찾을 수 없는 합리적인 가격으로 고객님의 부담을 덜어드립니다. 확정 견적으로 추가 비용 없이 깔끔하게.</p>
           </div>
         </li>
         <li class="rh-prin-item">
@@ -2295,7 +2295,7 @@ ${thumb}
         <div class="rh-svc-img" style="background-image:url('data:image/webp;base64,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')"></div>
         <div class="rh-svc-body">
           <h3>🔧 정확한 견적 · 완벽한 시공</h3>
-          <p>현장을 직접 분석한 정찰제 견적으로 추가 비용 없이 시공합니다. 폐기물 적법 처리부터 원상복구 마감까지 완벽하게 마무리합니다.</p>
+          <p>현장을 직접 분석한 확정 견적으로 추가 비용 없이 시공합니다. 폐기물 적법 처리부터 원상복구 마감까지 완벽하게 마무리합니다.</p>
         </div>
       </div>
     </div>
@@ -2365,7 +2365,7 @@ ${thumb}
         <div class="rh-int-eyebrow">소상공인 폐업 지원 통합 서비스</div>
         <h2>국내 최고 소상공인 <em>폐업 지원</em><br>통합 서비스 제공</h2>
         <p>오페리오솔루션은 사업을 정리하시는 소상공인 분들의 철거 공사를 <span class="rh-hl">정부 지원금 적용 후</span> 처리합니다.</p>
-        <p><strong style="color:#fff">희망리턴패키지 폐업철거지원금</strong>으로 철거비 일부를 정부가 지원하며, 신청서 작성이 복잡해 포기하시는 분이 많아 저희가 무상으로 같이 챙겨드립니다.</p>
+        <p><strong style="color:#fff">소상공인 폐업 지원 통합 서비스</strong>으로 철거비 일부를 정부가 지원하며, 신청서 작성이 복잡해 포기하시는 분이 많아 저희가 무상으로 같이 챙겨드립니다.</p>
         <p>전국적으로 협력 업체를 두고 지역에 구분 없이 전국 출장 서비스를 제공하는 폐업 및 철거 전문 종합 플랫폼입니다.</p>
       </div>
     </div>
@@ -2513,12 +2513,12 @@ ${thumb}
   <div class="rh-container">
     <div class="rh-long-wrap">
       <div class="rh-long-title">
-        <h2>오페리오솔루션이 소상공인 폐업지원금<br>최대 <em>400만원</em> 받고 전국 최저가<br>철거 및 원상복구 서비스를 제공하는 비결</h2>
+        <h2>오페리오솔루션이 소상공인 <br>최대 <em></em> 받고 전국 최저가<br>철거 및 원상복구 서비스를 제공하는 비결</h2>
       </div>
       <p class="rh-long-intro">소상공인 여러분, 사업 정리를 결정하시고 가장 먼저 부딪히는 벽이 <strong>"철거 비용"</strong>입니다. 철거 비용이 부담스러운 사장님들을 위해 오페리오솔루션은 대한민국 NO.1 폐업 및 철거 전문 종합 플랫폼으로 고객 만족 100%를 목표로 운영되고 있습니다.</p>
       <div class="rh-long-section">
-        <h3><span class="ic">🏛️</span>정부지원금 절차와 폐업지원금 최대 400만원 혜택</h3>
-        <p>사업을 정리할 때 가장 부담이 되는 건 단연 철거 비용입니다. 오페리오솔루션은 <strong>정부지원금 절차 관리 및 폐업지원금 최대 400만원</strong>을 통해 사장님들의 부담을 덜어드립니다. 폐업철거지원금을 활용해 철거 비용을 줄이고 새로운 시작을 준비할 수 있도록 도와드립니다.</p>
+        <h3><span class="ic">🏛️</span>정부지원금 절차와  혜택</h3>
+        <p>사업을 정리할 때 가장 부담이 되는 건 단연 철거 비용입니다. 오페리오솔루션은 <strong>정부지원금 절차 관리 및 </strong>을 통해 사장님들의 부담을 덜어드립니다. 폐업철거지원금을 활용해 철거 비용을 줄이고 새로운 시작을 준비할 수 있도록 도와드립니다.</p>
       </div>
       <div class="rh-long-section">
         <h3><span class="ic">🛡️</span>오페리오솔루션이 목숨같이 지키는 3대 원칙</h3>
@@ -2572,7 +2572,7 @@ ${thumb}
         <li><strong>매장 업종 확인</strong> — 음식점·카페·편의점·미용실·무인매장 등 업종별로 최적의 철거 사양이 다릅니다</li>
         <li><strong>매장 면적·동선 분석</strong> — 철거 범위와 작업 동선 사전에 분석해야 효율적인 시공이 가능합니다</li>
         <li><strong>원상복구 범위</strong> — 임대차 계약서상 원상복구 조건을 반드시 확인하세요</li>
-        <li><strong>정부 보조금</strong> — 소상공인 대상 철거비 보조금(희망리턴패키지) 신청 가능 여부를 확인하세요</li>
+        <li><strong>폐업 지원 서비스</strong> — 소상공인 폐업 지원 통합 서비스 이용 가능 여부를 확인하세요</li>
         <li><strong>업체 실적·후기</strong> — 전국 설치 실적과 고객 후기를 반드시 확인하세요. 오페리오솔루션은 350건+ 실적, 98% 만족도</li>
       </ul>
     </div>
@@ -3617,8 +3617,8 @@ const _SPP_CONFIG = {
     heroImg: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?fm=jpg&q=80&w=1600&auto=format&fit=crop',
     statLabel: '견적비', statValue: '무료',
     introLead: '철거 전문',
-    introBody: '전문 엔지니어팀이 정밀 현장 분석 후 정찰제 견적을 확정하며, 원상복구·폐기물 적법 처리까지 원스톱으로 처리합니다. 음식점·카페·편의점·미용실·사무실 등 모든 업종의 철거를 전문적으로 시공하며, 폐기물 처리 확인증과 시공 보증서를 발급합니다. 소상공인진흥공단 희망리턴패키지를 통해 철거비 보조금을 지원받을 수도 있도록 신청 절차까지 안내',
-    tags: ['서울철거','서울매장철거','상가철거','사무실철거','원상복구','희망리턴패키지','폐기물적법처리','정찰제철거','서울인테리어철거','임대인원상복구'],
+    introBody: '전문 엔지니어팀이 정밀 현장 분석 후 확정 견적을 드리며, 원상복구·폐기물 적법 처리까지 원스톱으로 처리합니다. 음식점·카페·편의점·미용실·사무실 등 모든 업종의 철거를 전문적으로 시공하며, 폐기물 처리 확인증과 시공 보증서를 발급합니다. 소상공인 폐업 지원 통합 서비스로 폐업 절차 전반을 함께 안내',
+    tags: ['서울철거','서울매장철거','상가철거','사무실철거','원상복구','소상공인 폐업 지원 통합 서비스','폐기물적법처리','철거','서울인테리어철거','임대인원상복구'],
   },
   'vending': {
     kw: '밴딩머신', action: '설치', actionH: '설치',
@@ -3678,7 +3678,7 @@ const _SPP_V = {
 
 const _SPP_REMOVAL_CHECKLIST = [
   '<strong>업종별 확인</strong> — 비전문 업체에 맡기면 안전사고, 불법 폐기물 투기, 보증금 분쟁 발생할 수 있습니다',
-  '<strong>정찰제 견적</strong> — 추가 비용 없는 정찰제로 운영하는 업체인지 반드시 확인하세요',
+  '<strong>확정 견적</strong> — 추가 비용 없이 운영하는 업체인지 반드시 확인하세요',
   '<strong>원상복구 범위</strong> — 임대차 계약서상 원상복구 범위를 사전에 확인해 보증금 분쟁을 예방하세요',
   '<strong>폐기물 처리</strong> — 폐기물 처리 확인증을 발급하는 업체 선택 필수',
   '<strong>업체 실적 확인</strong> — 오페리오솔루션은 전국 350건+ 실적, 98% 고객 만족도를 기록하고 있습니다',
@@ -3704,7 +3704,7 @@ const _SPP_PRECHECK = {
     '<strong>매장 업종 확인</strong> — 음식점·카페·편의점·미용실·무인매장 등 업종별로 최적의 철거 사양이 다릅니다',
     '<strong>매장 면적·동선 분석</strong> — 철거 범위와 작업 동선 사전에 분석해야 효율적인 시공이 가능합니다',
     '<strong>원상복구 범위</strong> — 임대차 계약서상 원상복구 조건을 반드시 확인하세요',
-    '<strong>정부 보조금</strong> — 소상공인 대상 철거비 보조금(희망리턴패키지) 신청 가능 여부를 확인하세요',
+    '<strong>폐업 지원 서비스</strong> — 소상공인 폐업 지원 통합 서비스 이용 가능 여부를 확인하세요',
     '<strong>업체 실적·후기</strong> — 전국 설치 실적과 고객 후기를 반드시 확인하세요. 오페리오솔루션은 350건+ 실적, 98% 만족도',
   ],
 };
@@ -3966,13 +3966,13 @@ function renderRegionProductPage(region, productSlug) {
       regionsList,
       regionsTitle: `${region.name} 철거 전문 지역 선택`,
       regionsSub: '시군구를 선택하면 읍면동별 철거 전문 가이드를 확인할 수 있습니다.',
-      tags: [region.name+'철거', region.name+'매장철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거', region.name+'인테리어철거', '임대인원상복구'],
+      tags: [region.name+'철거', region.name+'매장철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리', region.name+'인테리어철거', '임대인원상복구'],
       otherSidos,
       showOtherSidos: true,
     });
     return htmlWrap({
-      title: `${region.name} 매장철거`,
-      description: `${region.fullName || region.name} 매장·사무실·상가·공장 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.`,
+      title: `${region.name} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
+      description: `${region.fullName || region.name} 매장철거 전문업체. 평균 5분 이내 견적 안내, 임대인 원상복구, 폐기물 적법 처리, 소상공인 폐업 지원 통합 서비스까지 원스톱. 254,692건 시공 실적·만족도 98%. ☎ ${SITE.phoneDisplay}`,
       canonical: `${SITE.domain}/${region.slug}/removal`,
       body,
       keywords: `${region.name} 철거, ${region.name} 매장철거, 상가철거, 사무실철거, 원상복구`,
@@ -4401,14 +4401,14 @@ const _SEOUL_CCTV_B_V = [
 const _SEOUL_DEMO_A_V = [
   '폐업을 결정하실 때쯤이면 이미 많이 힘드신 상태입니다. 그 뒤에 남는 철거·원상복구·폐기물 처리까지 사장님이 직접 챙기시다 보면 마지막까지 진이 빠지게 됩니다.',
   '{name}에서 매장을 정리하실 때 가장 예상치 못한 부담이 바로 <strong>원상복구 비용</strong>입니다. 임대차 계약 종료 시 임대인과의 범위 합의가 안 되면 보증금 공제로 이어지는 일이 많아, 처음부터 명확히 정리해두는 게 중요합니다.',
-  '매장 철거는 단순히 장비를 빼내는 게 아닙니다. {name} 건물마다 다른 임대차 원상복구 조건, 폐기물 적법 처리, 희망리턴패키지 보조금 신청까지 한 번에 챙겨야 하는 복잡한 절차입니다.',
+  '매장 철거는 단순히 장비를 빼내는 게 아닙니다. {name} 건물마다 다른 임대차 원상복구 조건, 폐기물 적법 처리, 소상공인 폐업 지원 통합 서비스까지 한 번에 챙겨야 하는 복잡한 절차입니다.',
   '{name} 매장 폐업 시 저희가 가장 먼저 확인하는 건 <strong>임대차 계약서의 원상복구 조항</strong>입니다. 임대인마다 요구 범위가 다르고, 불필요한 철거로 예산이 새어나가는 일이 많아서 먼저 정리해야 합니다.',
 ];
 
 const _SEOUL_DEMO_B_V = [
-  '오페리오솔루션은 {name} 현장을 먼저 방문해 임대차 계약서상 <strong>원상복구 범위를 임대인과 같이 확인</strong>한 뒤 정찰제로 견적을 드립니다. "이건 추가입니다"가 중간에 끼어들지 않는 구조라 예산이 흔들리지 않습니다. 철거 후 폐기물은 업종별 분리 배출 기준에 맞춰 처리하고, 완료 보증서도 같이 드립니다. 소상공인진흥공단 <strong>희망리턴패키지</strong>로 철거비 일부를 정부가 지원하는데, 신청서 작성이 복잡해 포기하시는 분이 많아서 이 서류도 저희가 같이 챙겨드립니다.',
-  '저희는 {name}에서 철거 작업 전에 먼저 <strong>임대인과의 원상복구 범위 미팅</strong>을 주선합니다. 불필요한 작업을 줄여 예산을 아끼고, 완료 후에는 임대인 확인까지 받아 보증금 반환이 순조롭게 이어지도록 지원합니다. 희망리턴패키지 보조금 서류 작성도 무상으로 도와드립니다.',
-  '{name} 매장 철거는 정찰제 견적으로 시작합니다. 현장을 직접 보고 확정 금액을 드리기 때문에 중간에 추가 비용이 붙지 않고, 폐기물 처리는 업종·품목별 분리 배출 기준에 맞춰 적법하게 처리합니다. 소상공인진흥공단 희망리턴패키지 보조금 신청은 서류 작성 자체가 복잡해 저희가 대신 챙겨드립니다.',
+  '오페리오솔루션은 {name} 현장을 먼저 방문해 임대차 계약서상 <strong>원상복구 범위를 임대인과 같이 확인</strong>한 뒤 확정 견적을 드립니다. "이건 추가입니다"가 중간에 끼어들지 않는 구조라 예산이 흔들리지 않습니다. 철거 후 폐기물은 업종별 분리 배출 기준에 맞춰 처리하고, 완료 보증서도 같이 드립니다. <strong>소상공인 폐업 지원 통합 서비스</strong>로 폐업 절차 전반을 함께 안내드립니다. 복잡한 폐업 행정 처리를 혼자 해내기 어려우신 분이 많아서 이 서류도 저희가 같이 챙겨드립니다.',
+  '저희는 {name}에서 철거 작업 전에 먼저 <strong>임대인과의 원상복구 범위 미팅</strong>을 주선합니다. 불필요한 작업을 줄여 예산을 아끼고, 완료 후에는 임대인 확인까지 받아 보증금 반환이 순조롭게 이어지도록 지원합니다. 소상공인 폐업 지원 통합 서비스로 폐업 절차 안내까지 무상으로 도와드립니다.',
+  '{name} 매장 철거는 확정 견적으로 시작합니다. 현장을 직접 보고 확정 금액을 드리기 때문에 중간에 추가 비용이 붙지 않고, 폐기물 처리는 업종·품목별 분리 배출 기준에 맞춰 적법하게 처리합니다. 소상공인 폐업 지원 통합 서비스로 복잡한 폐업 절차를 함께 안내드립니다.',
   '철거 일정은 임대차 종료 2~3주 전부터 시작하시는 게 안전합니다. {name}에서는 건물 공용부 훼손 여부, 폐기물 수거 동선까지 미리 정리해야 해서 여유가 필요합니다. 저희가 일정 전체를 관리하고 임대인 확인 절차까지 지원합니다.',
 ];
 
@@ -4420,8 +4420,8 @@ const _SEOUL_COST_A_V = [
 ];
 
 const _SEOUL_COST_B_V = [
-  '포스기·키오스크·테이블오더도 오페리오솔루션 패키지로 묶어 설치하시면 설치비가 들지 않습니다. CCTV는 매장 면적·카메라 대수에 따라 따로 견적이 나옵니다. 철거는 정찰제이며, 희망리턴패키지 보조금이 적용되면 사장님 부담이 상당 부분 줄어듭니다.',
-  '여러 장비를 함께 설치하시면 <strong>패키지 할인</strong>이 적용됩니다. CCTV는 카메라 대수·저장 용량에 따라 견적이 달라지고, 철거는 매장 평수·복구 범위에 따라 정찰제 견적을 드립니다. 희망리턴패키지 보조금으로 철거비는 상당 부분 충당이 가능합니다.',
+  '포스기·키오스크·테이블오더도 오페리오솔루션 패키지로 묶어 설치하시면 설치비가 들지 않습니다. CCTV는 매장 면적·카메라 대수에 따라 따로 견적이 나옵니다. 철거는 확정 견적으로 진행하며, 소상공인 폐업 지원 통합 서비스로 폐업 절차 전반을 한 번에 진행할 수 있습니다.',
+  '여러 장비를 함께 설치하시면 <strong>패키지 할인</strong>이 적용됩니다. CCTV는 카메라 대수·저장 용량에 따라 견적이 달라지고, 철거는 매장 평수·복구 범위에 따라 확정 견적을 드립니다. 소상공인 폐업 지원 통합 서비스로 폐업 절차 전반을 한 번에 안내받을 수 있습니다.',
   '{name} 매장에서 한 번에 여러 장비를 설치하시면 장비별 호환·연동이 첫날부터 정리되어 나중에 생기는 문제가 사라집니다. CCTV·철거만 별도 견적이고, 나머지는 무료입니다.',
   '장비 구매 외에 고려하실 건 월 단위 운영비입니다. VAN 수수료는 결제 건당 부과되고, 배달앱 연동·클라우드 POS 같은 부가 기능은 기본 제공됩니다. 사장님이 예상 못한 청구서를 받는 일이 없도록 계약 단계에서 모두 명시해드립니다.',
 ];
@@ -4598,12 +4598,12 @@ function renderSubcityPage(city) {
 
 <section class="sgu-sec">
   <div class="sgu-h2"><span class="sgu-ic">🔨</span>${name} 매장 사무실 철거</div>
-  <p>폐업을 결정하실 때부터 이미 힘드신 상태입니다. 원상복구·폐기물 처리까지 한 번에 끝내드리고, 희망리턴패키지 정부 보조금 신청서도 같이 챙겨드립니다.</p>
+  <p>폐업을 결정하실 때부터 이미 힘드신 상태입니다. 원상복구·폐기물 처리까지 한 번에 끝내드리고, 소상공인 폐업 지원 통합 서비스로 폐업 절차까지 함께 안내해드립니다.</p>
   <div class="sct-steps">
     <div class="sct-step"><span class="sct-step-n">1</span><div class="sct-step-t">현장 방문</div><div class="sct-step-d">임대차 원상복구 범위를 임대인과 함께 확인</div></div>
-    <div class="sct-step"><span class="sct-step-n">2</span><div class="sct-step-t">정찰제 견적</div><div class="sct-step-d">중간 추가 금액 없이 확정 견적</div></div>
+    <div class="sct-step"><span class="sct-step-n">2</span><div class="sct-step-t">확정 견적</div><div class="sct-step-d">중간 추가 금액 없이 확정 견적</div></div>
     <div class="sct-step"><span class="sct-step-n">3</span><div class="sct-step-t">철거·폐기물 처리</div><div class="sct-step-d">업종별 기준에 맞춰 적법 처리, 완료 보증서 발급</div></div>
-    <div class="sct-step"><span class="sct-step-n">4</span><div class="sct-step-t">보조금 신청 지원</div><div class="sct-step-d">희망리턴패키지 서류 작성 동행</div></div>
+    <div class="sct-step"><span class="sct-step-n">4</span><div class="sct-step-t">소상공인 폐업 지원 안내</div><div class="sct-step-d">소상공인 폐업 지원 통합 서비스 서류 작성 동행</div></div>
   </div>
 </section>
 
@@ -4632,7 +4632,7 @@ function renderSubcityPage(city) {
       <tr><td>키오스크</td><td class="sct-free">0원</td><td class="sct-free">0원</td><td>1대 기준, 2대 이상 별도 문의</td></tr>
       <tr><td>테이블오더</td><td class="sct-free">0원</td><td class="sct-free">0원</td><td>QR 태블릿 포함</td></tr>
       <tr><td>CCTV</td><td class="sct-paid">견적</td><td class="sct-free">0원</td><td>평수·카메라 대수별 견적</td></tr>
-      <tr><td>철거 / 원상복구</td><td class="sct-paid">견적</td><td>-</td><td>희망리턴패키지 보조금 대상</td></tr>
+      <tr><td>철거 / 원상복구</td><td class="sct-paid">견적</td><td>-</td><td>소상공인 폐업 지원 통합 서비스 대상</td></tr>
     </tbody>
   </table>
   <p style="font-size:12px;color:#64748b;margin-top:6px">* VAN 수수료는 카드 결제 발생 시 건당 부과되며, 오페리오솔루션이 최저 조건으로 계약 지원</p>
@@ -4677,7 +4677,7 @@ function renderSubcityPage(city) {
       <div class="sct-why-item">
         <div class="sct-why-ic">🔨</div>
         <div class="sct-why-t">폐업까지 원스톱</div>
-        <div class="sct-why-d">철거·원상복구·폐기물·희망리턴패키지 보조금 신청까지 연결</div>
+        <div class="sct-why-d">철거·원상복구·폐기물·소상공인 폐업 지원 통합 서비스까지 연결</div>
       </div>
     </div>
     <div class="sct-why-dots" id="whyDots"></div>
@@ -4711,7 +4711,7 @@ function renderSubcityPage(city) {
     </details>
     <details class="sct-faq-item">
       <summary>매장 철거만 따로 맡겨도 되나요?</summary>
-      <div class="sct-faq-a">${name} 내 매장 철거·사무실·상가 철거까지 전문 엔지니어팀이 시공합니다. 임대차 원상복구 조건을 먼저 확인해 정찰제로 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 희망리턴패키지 보조금 신청서도 같이 준비해드립니다.</div>
+      <div class="sct-faq-a">${name} 내 매장 철거·사무실·상가 철거까지 전문 엔지니어팀이 시공합니다. 임대차 원상복구 조건을 먼저 확인해 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 소상공인 폐업 지원 통합 서비스로 폐업 절차 안내까지 함께 준비해드립니다.</div>
     </details>
   </div>
 </section>
@@ -4871,7 +4871,7 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
     <li><span class="sgu-check">✓</span><div><strong>업종에 쓸 장비만 추천</strong> — 음식점에 필요 없는 예약 관리 POS, 미용실에 과한 테이블오더는 권해드리지 않습니다</div></li>
     <li><span class="sgu-check">✓</span><div><strong>오픈 일정 역산 설계</strong> — 장비 배송·설치·교육까지 오픈일에 맞춰 거꾸로 일정을 짜드립니다</div></li>
     <li><span class="sgu-check">✓</span><div><strong>A/S는 전화 한 통</strong> — 원격 지원으로 대부분 해결되고, 필요하면 ${name} 내 빠른 출동합니다</div></li>
-    <li><span class="sgu-check">✓</span><div><strong>폐업 때도 저희가 남아있습니다</strong> — 철거·원상복구·폐기물 처리·희망리턴패키지 보조금 신청까지 연결해드립니다</div></li>
+    <li><span class="sgu-check">✓</span><div><strong>폐업 때도 저희가 남아있습니다</strong> — 철거·원상복구·폐기물 처리·소상공인 폐업 지원 통합 서비스까지 연결해드립니다</div></li>
   </ul>
 </section>
 
@@ -4907,7 +4907,7 @@ function renderSeoulGuPage(gu, sidoSlug, regionName) {
     </div>
     <div class="sgu-faq-item">
       <div class="sgu-faq-q"><span class="sgu-faq-q-mark">Q.</span>매장을 정리하는데 철거도 해주시나요?</div>
-      <div class="sgu-faq-a">${name} 내 매장·사무실·상가 철거까지 전문 엔지니어팀이 시공합니다. 임대인 원상복구 조건을 먼저 확인해 정찰제로 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 희망리턴패키지 보조금 신청서도 같이 준비해드립니다.</div>
+      <div class="sgu-faq-a">${name} 내 매장·사무실·상가 철거까지 전문 엔지니어팀이 시공합니다. 임대인 원상복구 조건을 먼저 확인해 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 소상공인 폐업 지원 통합 서비스로 폐업 절차 안내까지 함께 준비해드립니다.</div>
     </div>
   </div>
 </section>
@@ -5001,7 +5001,7 @@ const _DONG_FAQ_POOL = [
   { q: `카드단말기·포스기·키오스크·CCTV를 따로 계약해야 하나요?`, a: `오페리오솔루션은 원스톱 통합 계약으로 처리됩니다. 한 번의 상담으로 {name} 매장에 최적화된 솔루션을 제안드립니다.` },
   { q: `{name} 견적은 어떻게 받나요?`, a: `전화(${'${SITE.phoneDisplay}'}) 또는 카카오톡으로 문의 주시면 됩니다. 업종과 매장 규모를 말씀해 주시면 <strong>1분 안에 예상 견적</strong>을 안내드리며 무료 견적도 가능합니다.` },
   { q: `설치비가 정말 무료인가요?`, a: `네, 카드단말기·포스기·키오스크·테이블오더는 설치비·월 이용료·교육비 모두 0원입니다. VAN사 제휴 구조로 단말기 원가가 상쇄되는 방식이며, 사장님이 내시는 비용은 카드결제 발생 시 건당 VAN사 수수료뿐입니다.` },
-  { q: `{name} 매장 철거도 함께 의뢰할 수 있나요?`, a: `가능합니다. 임대차 원상복구 조건을 먼저 확인해 정찰제로 견적을 드리고, 희망리턴패키지 정부 보조금 신청서까지 같이 챙겨드립니다. 폐기물 적법 처리·완료 보증서 발급 포함입니다.` },
+  { q: `{name} 매장 철거도 함께 의뢰할 수 있나요?`, a: `가능합니다. 임대차 원상복구 조건을 먼저 확인해 견적을 드리고, 소상공인 폐업 지원 통합 서비스로 폐업 절차까지 함께 안내해드립니다. 폐기물 적법 처리·완료 보증서 발급 포함입니다.` },
   { q: `프랜차이즈 본사 계약이 있는데도 가능한가요?`, a: `본사 지정 VAN사가 있으시면 그 조건을 먼저 확인한 뒤 카드단말기 설치만 저희가 진행하거나, 본사 승인 범위 안에서 가능한 장비만 추가로 설치해드리는 방식도 있습니다. 상담 시 본사 계약서를 같이 검토합니다.` },
 ];
 
@@ -5397,13 +5397,13 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
       regionsList,
       regionsTitle: `${parent} 다른 동 철거 전문`,
       regionsSub: `${parent} 안에서 동을 선택하면 해당 지역 매장철거 가이드를 확인할 수 있습니다.`,
-      tags: [shortLoc+'철거', shortLoc+'매장철거', parent+'철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거'],
+      tags: [shortLoc+'철거', shortLoc+'매장철거', parent+'철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리'],
       otherSidos,
       showOtherSidos: true,
     });
     return htmlWrap({
-      title: `${shortLoc} 매장철거`,
-      description: `${fullLoc} 매장·사무실·상가 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.`,
+      title: `${shortLoc} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
+      description: `${fullLoc} 매장철거 전문업체. 평균 5분 이내 견적 안내, 임대인 원상복구, 폐기물 적법 처리, 소상공인 폐업 지원 통합 서비스까지 원스톱. 254,692건 시공 실적·만족도 98%. ☎ ${SITE.phoneDisplay}`,
       canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/${dong.slug}/removal`,
       body,
       keywords: `${shortLoc} 철거, ${shortLoc} 매장철거, ${parent} 철거, 상가철거, 사무실철거, 원상복구`,
@@ -5457,7 +5457,7 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
   <div class="dpp-hero-ov">
     <div class="dpp-hero-meta">${parent.includes(regionFullName)?'':regionFullName+' '}${parent} ${name}</div>
     <h1 class="dpp-hero-title">${product.emoji} ${mainKw} 설치 · 구매 · 무료 상담</h1>
-    <div class="dpp-hero-sub">${regionFullName} ${name} 매장 맞춤 ${kw} 추천 · 당일 출장 · 무료 견적</div>
+    <div class="dpp-hero-sub">${regionFullName} ${name} 매장 맞춤 ${kw} 추천 · 무료 견적</div>
   </div>
 </section>
 
@@ -5602,7 +5602,7 @@ function _sgppV(guName, kw, action, actionH, phoneDisplay, salt) {
       { q: `정말 설치비가 안 드나요?`, a: `네, 저희가 VAN사와 맺은 계약 구조상 단말기 원가가 VAN사 쪽에서 상쇄되는 방식입니다. 사장님께서 내시는 설치비를 이용료·교육비는 0원이고, 카드 결제 발생 시 건당 VAN사 수수료만 정상 부과됩니다. 계약서에도 동일하게 명시됩니다.` },
       { q: `한 번에 여러 장비를 놓으면 뭐가 좋나요?`, a: `카드단말기·포스기·키오스크·테이블오더·CCTV가 서로 연동되도록 한 번에 세팅됩니다. 나중에 따로따로 설치하시면 연동 호환성 문제가 생기거나 같은 작업을 두 번 반복해야 합니다. 한 번에 설치하시면 패키지 할인도 들어가고, 한 명의 기사가 끝까지 책임지기 때문에 A/S 책임 소재도 명확해집니다.` },
       { q: `고장 나면 어떻게 대응하시나요?`, a: `먼저 전화 또는 원격 지원으로 진단합니다. 이 단계에서 7할 이상이 해결됩니다. 원격으로 안 되면 ${guName} 담당 기사가 직접 매장으로 출동하며, 긴급한 경우 빠른 처리됩니다.` },
-      { q: `매장을 정리하는 데 철거도 해주시나요?`, a: `${guName} 내 매장·사무실·상가 정리까지 처리합니다. 임대인 원상복구 조건을 먼저 확인해 정확한 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 희망리턴패키지 보조금 신청도 같이 준비해드립니다.` },
+      { q: `매장을 정리하는 데 철거도 해주시나요?`, a: `${guName} 내 매장·사무실·상가 정리까지 처리합니다. 임대인 원상복구 조건을 먼저 확인해 정확한 견적 드리고, 폐기물은 업종별 기준에 맞춰 적법 처리합니다. 소상공인 폐업 지원 통합 서비스로 폐업 절차 안내까지 함께 준비해드립니다.` },
     ],
     [
       { q: `${guName} 매장이 작은데 설치 가능한가요?`, a: `${kw}는 무선·소형·벽걸이형 모델도 있어 좁은 공간에 충분히 들어갑니다. ${guName} 매장에 직접 방문해 카운터 폭, 콘센트 위치, 인터넷 환경을 보고 가장 작은 폼팩터로 추천해 드립니다.` },
@@ -5660,13 +5660,13 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
       regionsList,
       regionsTitle: `${guName} 동별 철거 전문 지역 선택`,
       regionsSub: '동을 선택하면 해당 지역 매장철거 가이드를 확인할 수 있습니다.',
-      tags: [guName+'철거', guName+'매장철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거', '임대인원상복구'],
+      tags: [guName+'철거', guName+'매장철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리', '임대인원상복구'],
       otherSidos,
       showOtherSidos: true,
     });
     return htmlWrap({
-      title: `${guName} 매장철거`,
-      description: `${guFullName} 매장·사무실·상가 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.`,
+      title: `${guName} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
+      description: `${guFullName} 매장철거 전문업체. 평균 5분 이내 견적 안내, 임대인 원상복구, 폐기물 적법 처리, 소상공인 폐업 지원 통합 서비스까지 원스톱. 254,692건 시공 실적·만족도 98%. ☎ ${SITE.phoneDisplay}`,
       canonical: `${SITE.domain}/region/${sidoSlug}/${gu.slug}/removal`,
       body,
       keywords: `${guName} 철거, ${guName} 매장철거, ${regionName} 철거, 상가철거, 사무실철거, 원상복구`,
@@ -6333,12 +6333,12 @@ function renderIndustryProductPage(industry, product) {
       regionsList,
       regionsTitle: `${indName} 매장철거 지역 선택`,
       regionsSub: '시·도를 선택하면 해당 지역 매장철거 가이드를 확인할 수 있습니다.',
-      tags: [indName+'철거', indName+'매장철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거', indName+'폐업', '임대인원상복구'],
+      tags: [indName+'철거', indName+'매장철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리', indName+'폐업', '임대인원상복구'],
       showOtherSidos: false,
     });
     return htmlWrap({
-      title: `${indName} 매장철거`,
-      description: `${indName} 매장·사무실·상가 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.`,
+      title: `${indName} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
+      description: `${indName} 매장철거 전문업체. 평균 5분 이내 견적 안내, 임대인 원상복구, 폐기물 적법 처리, 소상공인 폐업 지원 통합 서비스까지 원스톱. 254,692건 시공 실적·만족도 98%. ☎ ${SITE.phoneDisplay}`,
       canonical: `${SITE.domain}/industry/${industry.slug}/removal`,
       body,
       keywords: `${indName} 철거, ${indName} 매장철거, 상가철거, 사무실철거, 원상복구`,
@@ -6850,7 +6850,7 @@ export default {
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v41';
+      const _ver = 'v42';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
@@ -6881,12 +6881,12 @@ export default {
         const _gus = _v36Region.slug === 'seoul' ? SEOUL_GUS : (typeof REGIONS_DATA !== 'undefined' ? (REGIONS_DATA[_v36Region.slug] || []) : []);
         _v36RegionsList = _gus.map(g => ({ name: g.name, url: '/region/' + _v36Region.slug + '/' + g.slug + '/removal' }));
         _v36RegionsTitle = _v36Region.name + ' 철거 전문 지역 선택';
-        _v36Tags = [_v36Region.name+'철거', _v36Region.name+'매장철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거', _v36Region.name+'인테리어철거', '임대인원상복구'];
+        _v36Tags = [_v36Region.name+'철거', _v36Region.name+'매장철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리', _v36Region.name+'인테리어철거', '임대인원상복구'];
         _v36OtherSidos = REGIONS.filter(r => r.slug !== _v36Region.slug).map(r => ({ name: r.name, slug: r.slug }));
       } else {
         _v36RegionsList = REGIONS.map(r => ({ name: r.name, url: '/region/' + r.slug + '/removal' }));
         _v36RegionsTitle = '전국 철거 전문 지역 선택';
-        _v36Tags = ['매장철거', '상가철거', '사무실철거', '원상복구', '희망리턴패키지', '폐기물적법처리', '정찰제철거'];
+        _v36Tags = ['매장철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리'];
         _v36OtherSidos = REGIONS.map(r => ({ name: r.name, slug: r.slug }));
       }
       const _v36Body = renderRemovalNewBody({
@@ -6901,8 +6901,8 @@ export default {
         _v36Forced: true,
       });
       return new Response(htmlWrap({
-        title: _v36Region ? (_v36RegionName + ' 매장철거') : '매장철거 — 정찰제·원상복구·희망리턴패키지',
-        description: _v36RegionName + ' 매장·사무실·상가·공장 철거 전문. 정찰제 견적, 원상복구, 폐기물 적법 처리, 희망리턴패키지 신청까지 원스톱.',
+        title: _v36Region ? (_v36RegionName + ' 매장철거 전문 - 원상복구·폐기물 적법 처리 | ' + SITE.brandName) : ('전국 매장철거 전문 - 원상복구·폐기물 적법 처리 | ' + SITE.brandName),
+        description: _v36RegionName + ' 매장철거 전문업체. 평균 5분 이내 견적 안내, 임대인 원상복구, 폐기물 적법 처리, 소상공인 폐업 지원 통합 서비스까지 원스톱. 254,692건 시공 실적·만족도 98%. ☎ ' + SITE.phoneDisplay,
         canonical: SITE.domain + pathname,
         body: _v36Body,
         keywords: _v36ShortLoc + ' 철거, ' + _v36ShortLoc + ' 매장철거, 상가철거, 사무실철거, 원상복구',
