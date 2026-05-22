@@ -2157,10 +2157,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V46-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V47-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V46-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V46-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V47-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V47-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -2213,10 +2213,6 @@ function renderRemovalNewBody(ctx) {
 ${thumb}
 
 <!-- 1. HERO -->
-<!-- [v45] OG 풀폭 배너 (페이지 최상단) -->
-${ctx.ogImage ? `<section class="rh-og-banner-wrap" style="padding:16px 24px;">
-  <img src="${ctx.ogImage}" alt="${loc} 매장 철거 - 원상복구, 깔끔한 마무리" loading="eager" style="display:block;max-width:1100px;width:100%;height:300px;object-fit:cover;margin:0 auto;border-radius:16px;box-shadow:0 4px 20px rgba(15,23,42,0.08);" />
-</section>` : ''}
 <section class="rh-hero">
   <div class="rh-hero-bg"></div>
   <div class="rh-hero-grad"></div>
@@ -2393,6 +2389,10 @@ ${ctx.ogImage ? `<section class="rh-og-banner-wrap" style="padding:16px 24px;">
 </section>
 
 <!-- 8. REVIEWS -->
+<!-- [v47] OG 썸네일 배너 (고객 후기 위) -->
+${ctx.ogImage ? `<section class="rh-og-banner-wrap" style="padding:16px 24px;">
+  <img src="${ctx.ogImage}" alt="${loc} 매장 철거 - 원상복구, 깔끔한 마무리" loading="lazy" style="display:block;max-width:1100px;width:100%;height:300px;object-fit:cover;margin:0 auto;border-radius:16px;box-shadow:0 4px 20px rgba(15,23,42,0.08);" />
+</section>` : ''}
 <section class="rh-rev">
   <div class="rh-container">
     <div class="rh-rev-head">
@@ -6884,7 +6884,7 @@ export default {
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v46';
+      const _ver = 'v47';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
