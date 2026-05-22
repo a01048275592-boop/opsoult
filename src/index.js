@@ -1780,7 +1780,7 @@ footer .logo{color:#fff}
 
 /* HERO */
 .rh-hero{position:relative;min-height:560px;background:#0f172a;overflow:hidden}
-.rh-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.65}
+.rh-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1604754742629-3e5728249d73?w=1600&auto=format&fit=crop&q=80') center/cover;opacity:.4}
 .rh-hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0.65) 0%,rgba(15,23,42,0.85) 80%,rgba(15,23,42,0.95) 100%)}
 .rh-hero-inner{position:relative;padding:90px 24px 100px;max-width:1100px;margin:0 auto;color:#fff}
 .rh-hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#cbd5e1;margin-bottom:18px}
@@ -2157,10 +2157,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V44-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V45-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V44-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V44-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V45-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V45-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -2213,8 +2213,12 @@ function renderRemovalNewBody(ctx) {
 ${thumb}
 
 <!-- 1. HERO -->
+<!-- [v45] OG 풀폭 배너 (페이지 최상단) -->
+${ctx.ogImage ? `<section class="rh-og-banner-wrap" style="background:#f1f5f9;padding:20px 16px;">
+  <img src="${ctx.ogImage}" alt="${loc} 매장 철거 - 원상복구, 깔끔한 마무리" loading="eager" style="display:block;max-width:1200px;width:100%;margin:0 auto;border-radius:12px;box-shadow:0 4px 24px rgba(15,23,42,0.12);" />
+</section>` : ''}
 <section class="rh-hero">
-  <div class="rh-hero-bg" style="background-image: url('${ctx.ogImage || ''}')"></div>
+  <div class="rh-hero-bg"></div>
   <div class="rh-hero-grad"></div>
   <div class="rh-hero-inner">
     <div class="rh-hero-eyebrow">Operio Solution · ${loc} 매장 철거 전문</div>
@@ -6880,7 +6884,7 @@ export default {
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v44';
+      const _ver = 'v45';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
