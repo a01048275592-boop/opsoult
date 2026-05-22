@@ -2157,10 +2157,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V47-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V50-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V47-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V47-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V50-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V50-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -5408,7 +5408,7 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
       tags: [shortLoc+'철거', shortLoc+'매장철거', parent+'철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리'],
       otherSidos,
       showOtherSidos: true,
-      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}.jpg`,
+      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}-${gu.slug}.jpg`,
     });
     return htmlWrap({
       title: `${shortLoc} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
@@ -5417,7 +5417,7 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
       body,
       keywords: `${shortLoc} 철거, ${shortLoc} 매장철거, ${parent} 철거, 상가철거, 사무실철거, 원상복구`,
       breadcrumbs: [{n:'홈',u:'/'},{n:regionName,u:`/region/${sidoSlug}`},{n:parent,u:`/region/${sidoSlug}/${gu.slug}`},{n:name,u:`/region/${sidoSlug}/${gu.slug}/${dong.slug}`},{n:'매장철거',u:`/region/${sidoSlug}/${gu.slug}/${dong.slug}/removal`}],
-      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}.jpg`,
+      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}-${gu.slug}.jpg`,
     });
   }
 
@@ -5673,7 +5673,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
       tags: [guName+'철거', guName+'매장철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리', '임대인원상복구'],
       otherSidos,
       showOtherSidos: true,
-      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}.jpg`,
+      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}-${gu.slug}.jpg`,
     });
     return htmlWrap({
       title: `${guName} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
@@ -5682,7 +5682,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
       body,
       keywords: `${guName} 철거, ${guName} 매장철거, ${regionName} 철거, 상가철거, 사무실철거, 원상복구`,
       breadcrumbs: [{n:'홈',u:'/'},{n:regionName,u:`/region/${sidoSlug}`},{n:guName,u:`/region/${sidoSlug}/${gu.slug}`},{n:'매장철거',u:`/region/${sidoSlug}/${gu.slug}/removal`}],
-      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}.jpg`,
+      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}-${gu.slug}.jpg`,
     });
   }
 
@@ -6862,13 +6862,19 @@ export default {
       return Response.redirect(SITE.domain + '/', 301);
     }
 
-    // === [v43] 매장철거 OG 이미지 동적 서빙 ===
+    // === [v48] 매장철거 OG 이미지 동적 서빙 (시도 + 시군구) ===
     // /og/og-removal-{slug}.jpg → GitHub raw 에서 가져와서 응답 + CF 캐싱
+    // 시도 18개 + 시군구 251개 = 269개 OG 지원
     if (pathname.startsWith('/og/og-removal-') && pathname.endsWith('.jpg')) {
       const _slug = pathname.slice('/og/og-removal-'.length, -4);
-      const _validSlugs = ['national','seoul','busan','daegu','incheon','gwangju','daejeon','ulsan','sejong','gyeonggi','gangwon','chungbuk','chungnam','jeonbuk','jeonnam','gyeongbuk','gyeongnam','jeju'];
-      if (_validSlugs.includes(_slug)) {
-        const _ghUrl = `https://raw.githubusercontent.com/a01048275592-boop/opsoult/main/og-removal-${_slug}.jpg`;
+      // 보안: 영문 소문자/숫자/하이픈만 허용 (Path traversal 방지)
+      if (!/^[a-z][a-z0-9-]*$/.test(_slug)) {
+        return new Response('Not Found', { status: 404 });
+      }
+      // 3개 폴더 순차 시도 (CF 캐싱으로 두 번째 요청부터 빠름)
+      const _basePaths = ['og-removal-part1/og', 'og-removal-part2/og', 'og-removal-part3/og'];
+      for (const _bp of _basePaths) {
+        const _ghUrl = `https://raw.githubusercontent.com/a01048275592-boop/opsoult/main/${_bp}/og-removal-${_slug}.jpg`;
         const _resp = await fetch(_ghUrl, { cf: { cacheTtl: 86400, cacheEverything: true } });
         if (_resp.ok) {
           return new Response(_resp.body, {
@@ -6884,7 +6890,7 @@ export default {
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v47';
+      const _ver = 'v50';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
