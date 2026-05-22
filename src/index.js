@@ -2157,10 +2157,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V42-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V43-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V42-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V42-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V43-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V43-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -3468,6 +3468,7 @@ function renderProductPage(product) {
       body,
       keywords: product.keywords,
       breadcrumbs: [{n:'홈',u:'/'},{n:'제품 안내',u:'/product'},{n:product.name,u:`/product/${product.slug}`}],
+      ogImage: `${SITE.domain}/og/og-removal-national.jpg`,
     });
   }
 
@@ -3977,6 +3978,7 @@ function renderRegionProductPage(region, productSlug) {
       body,
       keywords: `${region.name} 철거, ${region.name} 매장철거, 상가철거, 사무실철거, 원상복구`,
       breadcrumbs: [{n:'홈',u:'/'},{n:region.name,u:`/region/${region.slug}`},{n:'매장철거',u:`/${region.slug}/removal`}],
+      ogImage: `${SITE.domain}/og/og-removal-${region.slug}.jpg`,
     });
   }
   const cfg = _SPP_CONFIG[productSlug];
@@ -5408,6 +5410,7 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
       body,
       keywords: `${shortLoc} 철거, ${shortLoc} 매장철거, ${parent} 철거, 상가철거, 사무실철거, 원상복구`,
       breadcrumbs: [{n:'홈',u:'/'},{n:regionName,u:`/region/${sidoSlug}`},{n:parent,u:`/region/${sidoSlug}/${gu.slug}`},{n:name,u:`/region/${sidoSlug}/${gu.slug}/${dong.slug}`},{n:'매장철거',u:`/region/${sidoSlug}/${gu.slug}/${dong.slug}/removal`}],
+      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}.jpg`,
     });
   }
 
@@ -5671,6 +5674,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
       body,
       keywords: `${guName} 철거, ${guName} 매장철거, ${regionName} 철거, 상가철거, 사무실철거, 원상복구`,
       breadcrumbs: [{n:'홈',u:'/'},{n:regionName,u:`/region/${sidoSlug}`},{n:guName,u:`/region/${sidoSlug}/${gu.slug}`},{n:'매장철거',u:`/region/${sidoSlug}/${gu.slug}/removal`}],
+      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}.jpg`,
     });
   }
 
@@ -6343,6 +6347,7 @@ function renderIndustryProductPage(industry, product) {
       body,
       keywords: `${indName} 철거, ${indName} 매장철거, 상가철거, 사무실철거, 원상복구`,
       breadcrumbs: [{n:'홈',u:'/'},{n:'업종',u:'/industry'},{n:indName,u:`/industry/${industry.slug}`},{n:'매장철거',u:`/industry/${industry.slug}/removal`}],
+      ogImage: `${SITE.domain}/og/og-removal-national.jpg`,
     });
   }
 
@@ -6848,9 +6853,29 @@ export default {
       return Response.redirect(SITE.domain + '/', 301);
     }
 
+    // === [v43] 매장철거 OG 이미지 동적 서빙 ===
+    // /og/og-removal-{slug}.jpg → GitHub raw 에서 가져와서 응답 + CF 캐싱
+    if (pathname.startsWith('/og/og-removal-') && pathname.endsWith('.jpg')) {
+      const _slug = pathname.slice('/og/og-removal-'.length, -4);
+      const _validSlugs = ['national','seoul','busan','daegu','incheon','gwangju','daejeon','ulsan','sejong','gyeonggi','gangwon','chungbuk','chungnam','jeonbuk','jeonnam','gyeongbuk','gyeongnam','jeju'];
+      if (_validSlugs.includes(_slug)) {
+        const _ghUrl = `https://raw.githubusercontent.com/a01048275592-boop/opsoult/main/og-removal-${_slug}.jpg`;
+        const _resp = await fetch(_ghUrl, { cf: { cacheTtl: 86400, cacheEverything: true } });
+        if (_resp.ok) {
+          return new Response(_resp.body, {
+            headers: {
+              'Content-Type': 'image/jpeg',
+              'Cache-Control': 'public, max-age=86400, s-maxage=86400'
+            }
+          });
+        }
+      }
+      return new Response('Not Found', { status: 404 });
+    }
+
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v42';
+      const _ver = 'v43';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
@@ -6906,6 +6931,7 @@ export default {
         canonical: SITE.domain + pathname,
         body: _v36Body,
         keywords: _v36ShortLoc + ' 철거, ' + _v36ShortLoc + ' 매장철거, 상가철거, 사무실철거, 원상복구',
+        ogImage: SITE.domain + '/og/og-removal-' + (_v36Region ? _v36Region.slug : 'national') + '.jpg',
       }), { headers: htmlHeaders });
     }
     // === [v36] 안전망 끝 ===
