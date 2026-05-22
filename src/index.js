@@ -1780,7 +1780,7 @@ footer .logo{color:#fff}
 
 /* HERO */
 .rh-hero{position:relative;min-height:560px;background:#0f172a;overflow:hidden}
-.rh-hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1604754742629-3e5728249d73?w=1600&auto=format&fit=crop&q=80') center/cover;opacity:.4}
+.rh-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.65}
 .rh-hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,0.65) 0%,rgba(15,23,42,0.85) 80%,rgba(15,23,42,0.95) 100%)}
 .rh-hero-inner{position:relative;padding:90px 24px 100px;max-width:1100px;margin:0 auto;color:#fff}
 .rh-hero-eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#cbd5e1;margin-bottom:18px}
@@ -2157,10 +2157,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V43-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V44-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V43-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V43-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V44-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V44-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -2214,7 +2214,7 @@ ${thumb}
 
 <!-- 1. HERO -->
 <section class="rh-hero">
-  <div class="rh-hero-bg"></div>
+  <div class="rh-hero-bg" style="background-image: url('${ctx.ogImage || ''}')"></div>
   <div class="rh-hero-grad"></div>
   <div class="rh-hero-inner">
     <div class="rh-hero-eyebrow">Operio Solution · ${loc} 매장 철거 전문</div>
@@ -3460,6 +3460,7 @@ function renderProductPage(product) {
       regionsSub: '아래에서 시·도를 선택하면 지역별 매장철거 가이드를 확인할 수 있습니다.',
       tags: product.tags || null,
       showOtherSidos: false,
+      ogImage: `${SITE.domain}/og/og-removal-national.jpg`,
     });
     return htmlWrap({
       title: `${product.name} 설치 가이드`,
@@ -3970,6 +3971,7 @@ function renderRegionProductPage(region, productSlug) {
       tags: [region.name+'철거', region.name+'매장철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리', region.name+'인테리어철거', '임대인원상복구'],
       otherSidos,
       showOtherSidos: true,
+      ogImage: `${SITE.domain}/og/og-removal-${region.slug}.jpg`,
     });
     return htmlWrap({
       title: `${region.name} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
@@ -5402,6 +5404,7 @@ function renderDongProductPage(dong, sidoSlug, regionName, product) {
       tags: [shortLoc+'철거', shortLoc+'매장철거', parent+'철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리'],
       otherSidos,
       showOtherSidos: true,
+      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}.jpg`,
     });
     return htmlWrap({
       title: `${shortLoc} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
@@ -5666,6 +5669,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
       tags: [guName+'철거', guName+'매장철거', regionName+'철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리', '임대인원상복구'],
       otherSidos,
       showOtherSidos: true,
+      ogImage: `${SITE.domain}/og/og-removal-${sidoSlug}.jpg`,
     });
     return htmlWrap({
       title: `${guName} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
@@ -6339,6 +6343,7 @@ function renderIndustryProductPage(industry, product) {
       regionsSub: '시·도를 선택하면 해당 지역 매장철거 가이드를 확인할 수 있습니다.',
       tags: [indName+'철거', indName+'매장철거', '상가철거', '사무실철거', '원상복구', '소상공인 폐업 지원 통합 서비스', '폐기물적법처리', indName+'폐업', '임대인원상복구'],
       showOtherSidos: false,
+      ogImage: `${SITE.domain}/og/og-removal-national.jpg`,
     });
     return htmlWrap({
       title: `${indName} 매장철거 전문 - 원상복구·폐기물 적법 처리 | ${SITE.brandName}`,
@@ -6875,7 +6880,7 @@ export default {
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v43';
+      const _ver = 'v44';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
@@ -6924,6 +6929,7 @@ export default {
         otherSidos: _v36OtherSidos,
         showOtherSidos: true,
         _v36Forced: true,
+        ogImage: SITE.domain + '/og/og-removal-' + (_v36Region ? _v36Region.slug : 'national') + '.jpg',
       });
       return new Response(htmlWrap({
         title: _v36Region ? (_v36RegionName + ' 매장철거 전문 - 원상복구·폐기물 적법 처리 | ' + SITE.brandName) : ('전국 매장철거 전문 - 원상복구·폐기물 적법 처리 | ' + SITE.brandName),
