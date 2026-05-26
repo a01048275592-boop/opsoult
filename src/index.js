@@ -2157,10 +2157,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V51-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V52-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V51-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V51-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V52-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V52-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -6862,6 +6862,70 @@ export default {
       return Response.redirect(SITE.domain + '/', 301);
     }
 
+
+    // === [v52] CCTV 서비스 준비 중 페이지 (모든 CCTV URL 가로채기) ===
+    // /product/cctv, /seoul/cctv, /region/.../cctv, /industry/.../cctv 등 모든 cctv URL
+    if (pathname.endsWith('/cctv') || pathname.includes('/cctv/')) {
+      const _cctvHtml = `<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>CCTV 서비스 준비 중 — 오페리오솔루션</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:linear-gradient(180deg,#f8fafc 0%,#e2e8f0 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;color:#0f172a;line-height:1.6}
+.card{background:#fff;border-radius:20px;padding:48px 40px 40px;max-width:520px;width:100%;box-shadow:0 8px 40px rgba(15,23,42,0.08),0 2px 8px rgba(15,23,42,0.04);text-align:center}
+.logo{display:inline-flex;align-items:center;gap:10px;margin-bottom:32px}
+.logo-icon{width:32px;height:32px;background:#0f172a;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fbbf24;font-weight:900;font-size:16px}
+.logo-text{font-size:15px;font-weight:800;color:#0f172a;letter-spacing:-0.01em}
+.icon-wrap{width:100px;height:100px;background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:50%;margin:0 auto 28px;display:flex;align-items:center;justify-content:center}
+.icon-wrap svg{width:48px;height:48px}
+.title{font-size:24px;font-weight:900;color:#0f172a;margin-bottom:14px;letter-spacing:-0.02em}
+.desc{font-size:15px;color:#475569;margin-bottom:20px;line-height:1.7}
+.other-services{font-size:13px;color:#64748b;padding:14px 16px;background:#f8fafc;border-radius:10px;margin-bottom:28px;line-height:1.7}
+.other-services b{color:#0f172a;font-weight:700}
+.btn-group{display:flex;gap:10px;margin-bottom:16px}
+.btn{flex:1;padding:14px 20px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:0;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;transition:all 0.15s ease}
+.btn-primary{background:#0f172a;color:#fff}
+.btn-primary:hover{background:#1e293b}
+.btn-secondary{background:#f1f5f9;color:#0f172a}
+.btn-secondary:hover{background:#e2e8f0}
+.btn-phone{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e;border-radius:10px;font-size:14px;font-weight:800;text-decoration:none;transition:all 0.15s ease}
+.btn-phone:hover{background:linear-gradient(135deg,#fde68a,#fcd34d)}
+@media (max-width:500px){.card{padding:36px 24px 28px}.title{font-size:20px}.desc{font-size:14px}.icon-wrap{width:80px;height:80px}.icon-wrap svg{width:40px;height:40px}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo"><div class="logo-icon">O</div><div class="logo-text">오페리오솔루션</div></div>
+  <div class="icon-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+  </div>
+  <h1 class="title">CCTV 서비스 준비 중</h1>
+  <p class="desc">현재 CCTV 서비스를 일시적으로 점검 중입니다.<br>곧 더 좋은 서비스로 다시 찾아뵙겠습니다.</p>
+  <div class="other-services"><b>매장 철거 · POS · 키오스크</b> 서비스는 정상 운영 중입니다.</div>
+  <div class="btn-group">
+    <a href="/" class="btn btn-primary">메인으로 가기</a>
+    <a href="/products" class="btn btn-secondary">제품 안내</a>
+  </div>
+  <a href="tel:01048275592" class="btn-phone">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    010-4827-5592 문의
+  </a>
+</div>
+</body>
+</html>`;
+      return new Response(_cctvHtml, {
+        headers: {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Cache-Control': 'public, max-age=3600',
+          'X-Robots-Tag': 'noindex, nofollow'
+        }
+      });
+    }
+
     // === [v48] 매장철거 OG 이미지 동적 서빙 (시도 + 시군구) ===
     // /og/og-removal-{slug}.jpg → GitHub raw 에서 가져와서 응답 + CF 캐싱
     // 시도 18개 + 시군구 251개 = 269개 OG 지원
@@ -6890,7 +6954,7 @@ export default {
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v51';
+      const _ver = 'v52';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
