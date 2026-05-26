@@ -2157,10 +2157,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V52-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V53-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V52-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V52-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V53-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V53-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -6926,6 +6926,85 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
       });
     }
 
+
+    // === [v53] 매장 철거 - 충청도(충북·충남) 외 지역 준비 중 페이지 ===
+    if (pathname.endsWith('/removal') || pathname.includes('/removal/')) {
+      const _rmParts = pathname.split('/').filter(Boolean);
+      let _allowedRegion = false;
+      
+      // 패턴 1: /{sido}/removal (예: /chungbuk/removal)
+      if (_rmParts.length === 2 && _rmParts[1] === 'removal') {
+        _allowedRegion = (_rmParts[0] === 'chungbuk' || _rmParts[0] === 'chungnam');
+      }
+      // 패턴 2: /region/{sido}/... (시도/시군구/동 매장철거 모두)
+      else if (_rmParts[0] === 'region' && _rmParts.length >= 3) {
+        _allowedRegion = (_rmParts[1] === 'chungbuk' || _rmParts[1] === 'chungnam');
+      }
+      // /product/removal, /industry/.../removal → _allowedRegion = false (막힘)
+      
+      if (!_allowedRegion) {
+        const _rmHtml = `<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>매장 철거 서비스 준비 중 — 오페리오솔루션</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:linear-gradient(180deg,#f8fafc 0%,#e2e8f0 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;color:#0f172a;line-height:1.6}
+.card{background:#fff;border-radius:20px;padding:48px 40px 40px;max-width:520px;width:100%;box-shadow:0 8px 40px rgba(15,23,42,0.08),0 2px 8px rgba(15,23,42,0.04);text-align:center}
+.logo{display:inline-flex;align-items:center;gap:10px;margin-bottom:32px}
+.logo-icon{width:32px;height:32px;background:#0f172a;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fbbf24;font-weight:900;font-size:16px}
+.logo-text{font-size:15px;font-weight:800;color:#0f172a;letter-spacing:-0.01em}
+.icon-wrap{width:100px;height:100px;background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:50%;margin:0 auto 28px;display:flex;align-items:center;justify-content:center}
+.icon-wrap svg{width:48px;height:48px}
+.title{font-size:24px;font-weight:900;color:#0f172a;margin-bottom:14px;letter-spacing:-0.02em}
+.desc{font-size:15px;color:#475569;margin-bottom:20px;line-height:1.7}
+.desc b{color:#0f172a;font-weight:800}
+.region-info{font-size:13px;color:#64748b;padding:14px 16px;background:#f8fafc;border-radius:10px;margin-bottom:28px;line-height:1.7}
+.region-info b{color:#0f172a;font-weight:700}
+.btn-group{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.btn{flex:1;min-width:120px;padding:14px 16px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;border:0;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:6px;transition:all 0.15s ease}
+.btn-primary{background:#0f172a;color:#fff}
+.btn-primary:hover{background:#1e293b}
+.btn-secondary{background:#f1f5f9;color:#0f172a}
+.btn-secondary:hover{background:#e2e8f0}
+.btn-phone{display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:linear-gradient(135deg,#fef3c7,#fde68a);color:#92400e;border-radius:10px;font-size:14px;font-weight:800;text-decoration:none;transition:all 0.15s ease}
+.btn-phone:hover{background:linear-gradient(135deg,#fde68a,#fcd34d)}
+@media (max-width:500px){.card{padding:36px 24px 28px}.title{font-size:20px}.desc{font-size:14px}.icon-wrap{width:80px;height:80px}.icon-wrap svg{width:40px;height:40px}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo"><div class="logo-icon">O</div><div class="logo-text">오페리오솔루션</div></div>
+  <div class="icon-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#92400e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  </div>
+  <h1 class="title">매장 철거 서비스 준비 중</h1>
+  <p class="desc">현재 매장 철거 서비스는 <b>충청도 지역(충북·충남)</b>에서만<br>운영 중입니다. 그 외 지역은 곧 다시 찾아뵙겠습니다.</p>
+  <div class="region-info"><b>POS · 키오스크</b> 서비스는 전국 정상 운영 중입니다.</div>
+  <div class="btn-group">
+    <a href="/region/chungbuk/removal" class="btn btn-primary">충북 매장 철거 보기</a>
+    <a href="/region/chungnam/removal" class="btn btn-secondary">충남 매장 철거 보기</a>
+  </div>
+  <a href="tel:01048275592" class="btn-phone">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    010-4827-5592 문의
+  </a>
+</div>
+</body>
+</html>`;
+        return new Response(_rmHtml, {
+          headers: {
+            'Content-Type': 'text/html; charset=utf-8',
+            'Cache-Control': 'public, max-age=3600',
+            'X-Robots-Tag': 'noindex, nofollow'
+          }
+        });
+      }
+    }
+
     // === [v48] 매장철거 OG 이미지 동적 서빙 (시도 + 시군구) ===
     // /og/og-removal-{slug}.jpg → GitHub raw 에서 가져와서 응답 + CF 캐싱
     // 시도 18개 + 시군구 251개 = 269개 OG 지원
@@ -6954,7 +7033,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v52';
+      const _ver = 'v53';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
