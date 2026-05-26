@@ -2157,10 +2157,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V50-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V51-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V50-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V50-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V51-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V51-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -2390,7 +2390,7 @@ ${thumb}
 
 <!-- 8. REVIEWS -->
 <!-- [v47] OG 썸네일 배너 (고객 후기 위) -->
-${ctx.ogImage ? `<section class="rh-og-banner-wrap" style="padding:16px 24px;">
+${ctx.ogImage ? `<section class="rh-og-banner-wrap" style="padding:16px 24px 40px 24px;">
   <img src="${ctx.ogImage}" alt="${loc} 매장 철거 - 원상복구, 깔끔한 마무리" loading="lazy" style="display:block;max-width:1100px;width:100%;height:300px;object-fit:cover;margin:0 auto;border-radius:16px;box-shadow:0 4px 20px rgba(15,23,42,0.08);" />
 </section>` : ''}
 <section class="rh-rev">
@@ -6890,7 +6890,7 @@ export default {
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v50';
+      const _ver = 'v51';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
@@ -6904,6 +6904,11 @@ export default {
       if (_v36Parts[0] === 'region' && _v36Parts.length >= 2) {
         _v36Region = findRegion(_v36Parts[1]);
         if (_v36Region && _v36Parts.length === 4 && _v36Parts[3] === 'removal') {
+          // /region/{sido}/{gu}/removal
+          const _gus = _v36Region.slug === 'seoul' ? SEOUL_GUS : (typeof REGIONS_DATA !== 'undefined' ? (REGIONS_DATA[_v36Region.slug] || []) : []);
+          _v36Gu = _gus.find(g => g.slug === _v36Parts[2]) || null;
+        } else if (_v36Region && _v36Parts.length === 5 && _v36Parts[4] === 'removal') {
+          // /region/{sido}/{gu}/{dong}/removal — 동 페이지도 시군구까지 잡기
           const _gus = _v36Region.slug === 'seoul' ? SEOUL_GUS : (typeof REGIONS_DATA !== 'undefined' ? (REGIONS_DATA[_v36Region.slug] || []) : []);
           _v36Gu = _gus.find(g => g.slug === _v36Parts[2]) || null;
         }
@@ -6939,7 +6944,7 @@ export default {
         otherSidos: _v36OtherSidos,
         showOtherSidos: true,
         _v36Forced: true,
-        ogImage: SITE.domain + '/og/og-removal-' + (_v36Region ? _v36Region.slug : 'national') + '.jpg',
+        ogImage: SITE.domain + '/og/og-removal-' + (_v36Region ? (_v36Region.slug + (_v36Gu ? '-' + _v36Gu.slug : '')) : 'national') + '.jpg',
       });
       return new Response(htmlWrap({
         title: _v36Region ? (_v36RegionName + ' 매장철거 전문 - 원상복구·폐기물 적법 처리 | ' + SITE.brandName) : ('전국 매장철거 전문 - 원상복구·폐기물 적법 처리 | ' + SITE.brandName),
@@ -6947,7 +6952,7 @@ export default {
         canonical: SITE.domain + pathname,
         body: _v36Body,
         keywords: _v36ShortLoc + ' 철거, ' + _v36ShortLoc + ' 매장철거, 상가철거, 사무실철거, 원상복구',
-        ogImage: SITE.domain + '/og/og-removal-' + (_v36Region ? _v36Region.slug : 'national') + '.jpg',
+        ogImage: SITE.domain + '/og/og-removal-' + (_v36Region ? (_v36Region.slug + (_v36Gu ? '-' + _v36Gu.slug : '')) : 'national') + '.jpg',
       }), { headers: htmlHeaders });
     }
     // === [v36] 안전망 끝 ===
