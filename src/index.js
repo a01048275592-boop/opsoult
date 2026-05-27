@@ -830,46 +830,51 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
 @keyframes rv2-pulse{0%,100%{opacity:1}50%{opacity:.4}}
 @media(max-width:900px){
   .rv2-section{padding:60px 0}
-  .rv2-grid{grid-template-columns:1fr;max-width:560px;margin-top:32px}
-  .rv2-side{flex-direction:row;flex-wrap:wrap;gap:10px}
-  .rv2-stat{flex:1;min-width:0;padding:12px 8px}
+  .rv2-grid{grid-template-columns:1fr 180px;gap:14px;margin-top:32px}
+  .rv2-side{flex-direction:column;gap:8px}
+  .rv2-stat{padding:12px 10px}
   .rv2-stat-v{font-size:20px}
-  .rv2-bars,.rv2-top{flex:1 1 100%}
 }
 @media(max-width:560px){
-  .rv2-section{padding:48px 0}
-  .rv2-section .section-title{font-size:22px}
-  .rv2-section .section-desc{font-size:12px;margin-top:8px}
-  .rv2-grid{padding:0 10px;margin-top:24px;gap:12px}
-  .rv2-feed-head{padding:10px 14px}
-  .rv2-feed-title{font-size:11.5px}
-  .rv2-feed-time{font-size:10px}
-  .rv2-live-badge{margin-top:10px;padding:4px 10px;font-size:10.5px}
-  .rv2-page{padding:0 14px}
-  .rv2-item{padding:11px 0;gap:10px}
-  .rv2-avatar{width:30px;height:30px}
-  .rv2-avatar svg{width:16px;height:16px}
-  .rv2-author{font-size:12px}
-  .rv2-stars{font-size:10.5px}
-  .rv2-when{font-size:10px}
-  .rv2-badge{font-size:10px;padding:2px 8px}
-  .rv2-body{font-size:11.5px;line-height:1.5}
-  .rv2-row1{margin-bottom:4px;gap:6px}
-  .rv2-row2{gap:6px}
-  .rv2-foot{padding:10px 14px 14px;gap:10px}
-  .rv2-arrow{width:28px;height:28px;font-size:13px}
-  .rv2-page-info{font-size:10.5px}
-  .rv2-stat{padding:10px 6px}
-  .rv2-stat-v{font-size:17px}
-  .rv2-stat-l{font-size:10.5px}
-  .rv2-bars,.rv2-top{padding:12px 14px}
-  .rv2-bars-h,.rv2-top-h{font-size:11.5px;margin-bottom:10px}
-  .rv2-bar{font-size:10.5px;margin-bottom:6px;gap:8px}
-  .rv2-bar-l{width:64px}
-  .rv2-top-item{padding:7px 0;gap:8px}
-  .rv2-top-name{font-size:11.5px}
-  .rv2-top-cnt{font-size:10.5px}
-  .rv2-top-rank{width:20px;height:20px;font-size:11px}
+  .rv2-section{padding:40px 0}
+  .rv2-section .section-title{font-size:18px}
+  .rv2-section .section-desc{font-size:10px;margin-top:6px}
+  .rv2-grid{grid-template-columns:1fr 110px;padding:0 8px;margin-top:20px;gap:6px}
+  .rv2-feed-head{padding:7px 10px}
+  .rv2-feed-title{font-size:9.5px;gap:5px}
+  .rv2-feed-title::before{width:5px;height:5px}
+  .rv2-feed-time{font-size:8.5px}
+  .rv2-live-badge{margin-top:6px;padding:2.5px 7px;font-size:8.5px}
+  .rv2-page{padding:0 10px}
+  .rv2-item{padding:8px 0;gap:6px}
+  .rv2-avatar{width:24px;height:24px}
+  .rv2-avatar svg{width:13px;height:13px}
+  .rv2-author{font-size:9.5px}
+  .rv2-stars{font-size:8.5px;letter-spacing:0}
+  .rv2-when{font-size:8.5px}
+  .rv2-badge{font-size:8.5px;padding:1px 5px;border-radius:4px}
+  .rv2-body{font-size:9.5px;line-height:1.4}
+  .rv2-row1{margin-bottom:3px;gap:4px}
+  .rv2-row2{gap:4px}
+  .rv2-foot{padding:6px 10px 8px;gap:6px}
+  .rv2-arrow{width:18px;height:18px;font-size:9px}
+  .rv2-page-info{font-size:9px}
+  .rv2-dot{width:4px;height:4px}
+  .rv2-dot.active{width:12px}
+  .rv2-stat{padding:6px 4px;border-radius:8px}
+  .rv2-stat-v{font-size:13px}
+  .rv2-stat-l{font-size:7.5px;line-height:1.2}
+  .rv2-bars,.rv2-top{padding:6px 6px;border-radius:8px}
+  .rv2-bars-h,.rv2-top-h{font-size:8.5px;margin-bottom:5px}
+  .rv2-top-sub{font-size:7px}
+  .rv2-bar{font-size:7.5px;margin-bottom:3px;gap:3px}
+  .rv2-bar-l{width:38px;line-height:1.1}
+  .rv2-bar-t{height:3px}
+  .rv2-bar-v{width:20px;font-size:7px}
+  .rv2-top-item{padding:4px 0;gap:4px}
+  .rv2-top-name{font-size:7.5px;line-height:1.3}
+  .rv2-top-cnt{font-size:7px}
+  .rv2-top-rank{width:14px;height:14px;font-size:8px;border-radius:3px}
 }
 .reviews-viewport{overflow:hidden;margin:0 -10px}
 .reviews-track{display:flex;gap:20px;transition:transform .6s cubic-bezier(.22,.61,.36,1);will-change:transform;padding:8px 10px}
@@ -2202,10 +2207,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V62-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V63-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V62-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V62-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V63-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V63-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -6963,7 +6968,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v62';
+      const _ver = 'v63';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
