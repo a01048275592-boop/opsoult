@@ -836,6 +836,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,250,249,0.88);backdr
   .rv2-stat-v{font-size:20px}
 }
 @media(max-width:560px){
+  .rv2-page .rv2-item:nth-child(n+3){display:none}
   .rv2-section{padding:40px 0}
   .rv2-section .section-title{font-size:18px}
   .rv2-section .section-desc{font-size:10px;margin-top:6px}
@@ -2207,10 +2208,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V63-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V64-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V63-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V63-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V64-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V64-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -6968,7 +6969,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v63';
+      const _ver = 'v64';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
