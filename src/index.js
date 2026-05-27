@@ -1979,9 +1979,9 @@ footer .logo{color:#fff}
   .rh-proc-card{border-radius:10px}
   .rh-proc-img{aspect-ratio:auto;height:65px}
   .rh-proc-body{padding:7px 8px}
-  .rh-proc-title{font-size:8.5px;letter-spacing:-0.025em;margin-bottom:4px;gap:2px;line-height:1.25;white-space:nowrap}
-  .rh-proc-num{font-size:8px}
-  .rh-proc-arrow{display:none}
+  .rh-proc-title{font-size:8px !important;letter-spacing:-0.03em !important;margin-bottom:4px;gap:2px !important;line-height:1.25;white-space:nowrap !important;overflow:hidden !important}
+  .rh-proc-num{font-size:7.5px !important;flex-shrink:0 !important}
+  .rh-proc-arrow{display:none !important}
   .rh-proc-body p{font-size:8.5px;line-height:1.4;letter-spacing:-0.02em}
   .rh-rev-card{flex:0 0 100%;padding:24px 22px}
   .rh-rev-body{min-height:auto;padding-right:0}
@@ -2162,10 +2162,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V58-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V59-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V58-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V58-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V59-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V59-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -6923,7 +6923,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v58';
+      const _ver = 'v59';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
