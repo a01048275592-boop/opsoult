@@ -2,8 +2,8 @@ const SITE = {
   brandName: '오페리오솔루션',
   brandNameKo: '오페리오솔루션',
   domain: 'https://opsoult.com',
-  phone: '010-4827-5592',
-  phoneDisplay: '010-4827-5592',
+  phone: '010-5827-5592',
+  phoneDisplay: '010-5827-5592',
   businessHours: '평일 09:00 - 19:00 / 토 09:00 - 15:00',
   description: '전국 매장 설비 설치 전문. 카드단말기·포스기·키오스크·테이블오더·CCTV까지 원스톱 설치.',
   naverVerification: '669cd60625b7336f4e33d5cc0a3af618bc9fbfbb',
@@ -1591,6 +1591,13 @@ footer .logo{color:#fff}
 .contact-phone-card .pt{flex:1}
 .contact-phone-card .pt a{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:24px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;display:inline-block;margin-bottom:2px}
 .contact-phone-card .pt .ps{font-size:13px;color:var(--muted)}
+@media (max-width:560px){
+  .contact-phone-card{padding:14px 16px;gap:12px;margin-bottom:18px}
+  .contact-phone-card .pi{width:42px;height:42px;border-radius:12px}
+  .contact-phone-card .pi svg{width:20px;height:20px}
+  .contact-phone-card .pt a{font-size:18px;white-space:nowrap;letter-spacing:-0.03em}
+  .contact-phone-card .pt .ps{font-size:11.5px}
+}
 .contact-form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px}
 .contact-form-card svg{max-width:100%;max-height:28px}
 .contact-form-card h2{font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:19px;font-weight:600;letter-spacing:-0.02em;color:var(--ink);margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
@@ -2208,10 +2215,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V64-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V65-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V64-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V64-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V65-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V65-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -6951,9 +6958,9 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
     <a href="/" class="btn btn-primary">메인으로 가기</a>
     <a href="/products" class="btn btn-secondary">제품 안내</a>
   </div>
-  <a href="tel:01048275592" class="btn-phone">
+  <a href="tel:01058275592" class="btn-phone">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    010-4827-5592 문의
+    010-5827-5592 문의
   </a>
 </div>
 </body>
@@ -6969,7 +6976,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v64';
+      const _ver = 'v65';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
