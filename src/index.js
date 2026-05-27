@@ -1143,12 +1143,46 @@ footer .logo{color:#fff}
 .region-vs-good .region-vs-v strong{color:#059669;font-weight:700}
 .region-vs-divider{display:flex;align-items:center;justify-content:center;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:18px;font-weight:700;color:var(--muted);letter-spacing:0.05em;padding:0 4px;position:relative;align-self:center}
 @media (max-width:700px){
-  .region-vs-wrap{grid-template-columns:1fr;gap:12px}
-  .region-vs-divider{padding:2px 0;font-size:14px}
-  .region-vs-card{padding:18px 16px}
-  .region-vs-k{width:66px;font-size:11.5px}
-  .region-vs-list li{font-size:13px}
+  .region-vs-wrap{grid-template-columns:1fr auto 1fr;gap:5px;margin:14px 0}
+  .region-vs-card{padding:10px 8px;border-radius:10px}
+  .region-vs-head{flex-direction:column;align-items:flex-start;gap:4px;padding-bottom:6px;margin-bottom:6px}
+  .region-vs-icon{width:22px;height:22px;font-size:13px}
+  .region-vs-label{font-size:11px;line-height:1.2}
+  .region-vs-divider{font-size:11px;min-width:16px;padding:0}
+  .region-vs-ribbon{font-size:9px;padding:1.5px 6px;top:-7px;right:6px}
+  .region-vs-list{gap:5px}
+  .region-vs-list li{flex-direction:column;gap:1px;font-size:9.5px;line-height:1.35}
+  .region-vs-k{width:auto;font-size:8.5px;padding-top:0}
 }
+
+/* === Install steps card style (모바일 친화적) === */
+.proc-steps{display:flex;flex-direction:column;gap:10px;margin:16px 0 24px}
+.proc-step{display:flex;gap:12px;padding:14px 14px;background:#f8fafc;border-radius:12px;border-left:3px solid #c19a3a;transition:transform .2s}
+.proc-step:hover{transform:translateX(2px)}
+.proc-step-num{flex-shrink:0;width:28px;height:28px;background:#0f172a;color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif}
+.proc-step-body{flex:1;min-width:0}
+.proc-step-title{font-size:14.5px;font-weight:700;color:#0f172a;margin:0 0 3px;letter-spacing:-0.02em}
+.proc-step-desc{font-size:13px;color:#64748b;line-height:1.5;margin:0;letter-spacing:-0.02em}
+@media (max-width:680px){
+  .proc-steps{gap:8px;margin:14px 0 20px}
+  .proc-step{padding:10px 11px;gap:10px;border-radius:10px}
+  .proc-step-num{width:22px;height:22px;font-size:11px}
+  .proc-step-title{font-size:12.5px;margin-bottom:2px}
+  .proc-step-desc{font-size:11px;line-height:1.45}
+}
+
+/* === FAQ accordion (region-faq) === */
+.region-faq-item{cursor:pointer;transition:background .15s}
+.region-faq-item:hover{background:#f8fafc}
+.region-faq-q{display:flex;align-items:center;gap:10px}
+.region-faq-q span:first-child{color:#c19a3a;font-weight:800;flex-shrink:0}
+.region-faq-q-text{flex:1;min-width:0}
+.region-faq-arrow{flex-shrink:0;font-size:11px;color:#94a3b8;transition:transform .2s;margin-left:8px}
+.region-faq-item.open .region-faq-arrow{transform:rotate(180deg)}
+.region-faq-a{display:none;padding-top:10px;margin-top:8px;border-top:1px solid #e5e7eb}
+.region-faq-item.open .region-faq-a{display:block}
+
+
 
 /* Seoul region page - industry combo slider (auto-slide with buttons) */
 .region-combo-wrap{position:relative;margin:18px 0 28px}
@@ -2162,10 +2196,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V59-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V60-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V59-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V59-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V60-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V60-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -3411,21 +3445,21 @@ ${_collapsibleChips(SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${reg
 <p>오픈 일정이 빡빡한 매장에서는 <strong>설치 소요 시간이 며칠 vs 반나절</strong> 차이가 영업 시작일에 직접 영향을 줍니다. 저희 실적상 신규 오픈 매장 중 약 80%가 패키지 일괄 설치로 진행되고 있습니다.</p>
 
 <h2>설치 절차</h2>
-<ol>
-<li><strong>무료 상담</strong> — 전화 또는 카카오톡으로 매장 정보를 알려주세요.</li>
-<li><strong>현장 방문 견적</strong> — ${region.name} 지역 담당 엔지니어가 현장을 방문해 동선·전원·네트워크를 점검합니다.</li>
-<li><strong>장비 추천</strong> — 업종·매장 규모에 맞는 최적 조합을 제안합니다.</li>
-<li><strong>설치 및 교육</strong> — 평균 2~3시간 내 설치 완료, 사용법 교육 진행.</li>
-<li><strong>사후 관리</strong> — A/S 발생 시 원격 우선, 필요 시 ${region.name} 내 빠른 방문 대응.</li>
-</ol>
+<div class="proc-steps">
+  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc">전화 또는 카카오톡으로 매장 정보를 알려주세요.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">2</div><div class="proc-step-body"><p class="proc-step-title">현장 방문 견적</p><p class="proc-step-desc">${region.name} 지역 담당 엔지니어가 현장을 방문해 동선·전원·네트워크를 점검합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">3</div><div class="proc-step-body"><p class="proc-step-title">장비 추천</p><p class="proc-step-desc">업종·매장 규모에 맞는 최적 조합을 제안합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">4</div><div class="proc-step-body"><p class="proc-step-title">설치 및 교육</p><p class="proc-step-desc">평균 2~3시간 내 설치 완료, 사용법 교육 진행.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">5</div><div class="proc-step-body"><p class="proc-step-title">사후 관리</p><p class="proc-step-desc">A/S 발생 시 원격 우선, 필요 시 ${region.name} 내 빠른 방문 대응.</p></div></div>
+</div>
 
 <h2>❓ ${region.name} 매장 설비 설치 자주 묻는 질문</h2>
 <div class="region-faqs">
-<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> ${region.name} 안에서 설치가 빠르게 가능한가요?</div><div class="region-faq-a">${region.name} 내 주요 지역은 오전 10시 전 상담 시 오후에 방문해 설치하는 경우가 많습니다. 일반 카드단말기·무선 단말기는 대부분 빠르게, 키오스크·CCTV처럼 맞춤 세팅이 필요한 장비는 1~3일 소요됩니다.</div></div>
-<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 외곽 지역도 출장 설치되나요?</div><div class="region-faq-a">네, ${region.coverage} 전 지역 출장 가능합니다. 외곽 지역도 중심 상권과 같은 조건으로 시공해드리며, 출장비 별도 청구 없습니다.</div></div>
-<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 설치비는 정말 무료인가요? 숨겨진 비용은요?</div><div class="region-faq-a">설치비는 VAN사 제휴로 무료 지원합니다. 다만 <strong>월 이용료는 기종·VAN사 조건에 따라 부과</strong>될 수 있으므로 상담 시 정확한 조건을 안내드립니다. 계약서에 명시되지 않은 숨겨진 비용은 일절 없습니다.</div></div>
-<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 기존 장비가 있는 매장도 교체 설치 가능한가요?</div><div class="region-faq-a">가능합니다. 기존 카드단말기·포스기의 VAN사 계약 잔여 기간, 위약금 여부를 사전에 확인해드리고, 교체 시점을 최적화해드립니다. 기존 장비 회수도 저희가 책임지며 회수 확인서를 발급해드립니다.</div></div>
-<div class="region-faq-item"><div class="region-faq-q"><span>Q.</span> 여러 매장을 한번에 설치하려면 어떻게 하나요?</div><div class="region-faq-a">프랜차이즈·다점포 사장님을 위한 다점포 설치 서비스를 제공합니다. 매장별 동시 시공, 통합 계약, 본사-지점 매출 리포트 연동까지 한 번에 처리됩니다. 상담 시 매장 수를 미리 알려주시면 맞춤 제안드립니다.</div></div>
+<div class="region-faq-item open"><div class="region-faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Q.</span><span class="region-faq-q-text">${region.name} 안에서 설치가 빠르게 가능한가요?</span><span class="region-faq-arrow">▼</span></div><div class="region-faq-a">${region.name} 내 주요 지역은 오전 10시 전 상담 시 오후에 방문해 설치하는 경우가 많습니다. 일반 카드단말기·무선 단말기는 대부분 빠르게, 키오스크·CCTV처럼 맞춤 세팅이 필요한 장비는 1~3일 소요됩니다.</div></div>
+<div class="region-faq-item"><div class="region-faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Q.</span><span class="region-faq-q-text">외곽 지역도 출장 설치되나요?</span><span class="region-faq-arrow">▼</span></div><div class="region-faq-a">네, ${region.coverage} 전 지역 출장 가능합니다. 외곽 지역도 중심 상권과 같은 조건으로 시공해드리며, 출장비 별도 청구 없습니다.</div></div>
+<div class="region-faq-item"><div class="region-faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Q.</span><span class="region-faq-q-text">설치비는 정말 무료인가요? 숨겨진 비용은요?</span><span class="region-faq-arrow">▼</span></div><div class="region-faq-a">설치비는 VAN사 제휴로 무료 지원합니다. 다만 <strong>월 이용료는 기종·VAN사 조건에 따라 부과</strong>될 수 있으므로 상담 시 정확한 조건을 안내드립니다. 계약서에 명시되지 않은 숨겨진 비용은 일절 없습니다.</div></div>
+<div class="region-faq-item"><div class="region-faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Q.</span><span class="region-faq-q-text">기존 장비가 있는 매장도 교체 설치 가능한가요?</span><span class="region-faq-arrow">▼</span></div><div class="region-faq-a">가능합니다. 기존 카드단말기·포스기의 VAN사 계약 잔여 기간, 위약금 여부를 사전에 확인해드리고, 교체 시점을 최적화해드립니다. 기존 장비 회수도 저희가 책임지며 회수 확인서를 발급해드립니다.</div></div>
+<div class="region-faq-item"><div class="region-faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Q.</span><span class="region-faq-q-text">여러 매장을 한번에 설치하려면 어떻게 하나요?</span><span class="region-faq-arrow">▼</span></div><div class="region-faq-a">프랜차이즈·다점포 사장님을 위한 다점포 설치 서비스를 제공합니다. 매장별 동시 시공, 통합 계약, 본사-지점 매출 리포트 연동까지 한 번에 처리됩니다. 상담 시 매장 수를 미리 알려주시면 맞춤 제안드립니다.</div></div>
 </div>
 </div>
 </div>
@@ -3511,13 +3545,13 @@ function renderProductPage(product) {
 <p>${product.name}은 특히 <strong>${product.useCases}</strong> 업종에 추천합니다. 각 업종별 특성과 매장 규모에 맞춰 ${SITE.brandNameKo}가 최적 기종과 설정을 제안합니다. 기존 장비와의 호환성, 네트워크 환경, 매장 동선까지 종합 분석해 가장 적합한 솔루션을 드립니다.</p>
 
 <h2>설치 절차</h2>
-<ol>
-<li><strong>무료 상담</strong> — 매장 업종·규모·현재 장비 상황을 전화 또는 카카오톡으로 공유해주세요.</li>
-<li><strong>견적 제안</strong> — 매장 조건에 맞는 ${product.name} 기종과 설치 비용을 24시간 내 회신드립니다.</li>
-<li><strong>현장 방문 설치</strong> — 전문 엔지니어가 매장 방문해 설치·설정·테스트까지 완료합니다.</li>
-<li><strong>사용법 교육</strong> — 사장님·직원 대상 기본 사용법 교육을 진행합니다.</li>
-<li><strong>사후 관리</strong> — 설치 후 장애 발생 시 원격 우선 대응, 필요 시 현장 출동합니다.</li>
-</ol>
+<div class="proc-steps">
+  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc">매장 업종·규모·현재 장비 상황을 전화 또는 카카오톡으로 공유해주세요.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">2</div><div class="proc-step-body"><p class="proc-step-title">견적 제안</p><p class="proc-step-desc">매장 조건에 맞는 ${product.name} 기종과 설치 비용을 24시간 내 회신드립니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">3</div><div class="proc-step-body"><p class="proc-step-title">현장 방문 설치</p><p class="proc-step-desc">전문 엔지니어가 매장 방문해 설치·설정·테스트까지 완료합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">4</div><div class="proc-step-body"><p class="proc-step-title">사용법 교육</p><p class="proc-step-desc">사장님·직원 대상 기본 사용법 교육을 진행합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">5</div><div class="proc-step-body"><p class="proc-step-title">사후 관리</p><p class="proc-step-desc">설치 후 장애 발생 시 원격 우선 대응, 필요 시 현장 출동합니다.</p></div></div>
+</div>
 
 <h2>자주 묻는 질문 (FAQ)</h2>
 <h3>Q. ${product.name} 설치까지 얼마나 걸리나요?</h3>
@@ -4245,13 +4279,13 @@ function renderInstallPage(region, product) {
 <p style="font-size:14px;color:var(--muted)">그 외 ${region.coverage} 빠른 방문 설치 가능합니다.</p>
 
 <h2>설치 절차</h2>
-<ol>
-<li><strong>무료 상담</strong> — ${SITE.phoneDisplay} 또는 카카오톡으로 매장 정보를 알려주세요.</li>
-<li><strong>현장 방문 견적</strong> — ${region.name} 담당 엔지니어가 현장 점검 후 견적을 제시합니다.</li>
-<li><strong>장비 주문·준비</strong> — 매장 조건에 맞는 ${product.name} 기종을 준비합니다.</li>
-<li><strong>설치 및 교육</strong> — ${region.installTime} 내 설치 완료, 사용법 교육 진행.</li>
-<li><strong>사후 관리</strong> — ${region.name} 지역 빠른 방문 A/S 대응.</li>
-</ol>
+<div class="proc-steps">
+  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc">${SITE.phoneDisplay} 또는 카카오톡으로 매장 정보를 알려주세요.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">2</div><div class="proc-step-body"><p class="proc-step-title">현장 방문 견적</p><p class="proc-step-desc">${region.name} 담당 엔지니어가 현장 점검 후 견적을 제시합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">3</div><div class="proc-step-body"><p class="proc-step-title">장비 주문·준비</p><p class="proc-step-desc">매장 조건에 맞는 ${product.name} 기종을 준비합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">4</div><div class="proc-step-body"><p class="proc-step-title">설치 및 교육</p><p class="proc-step-desc">${region.installTime} 내 설치 완료, 사용법 교육 진행.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">5</div><div class="proc-step-body"><p class="proc-step-title">사후 관리</p><p class="proc-step-desc">${region.name} 지역 빠른 방문 A/S 대응.</p></div></div>
+</div>
 
 <h2>자주 묻는 질문</h2>
 <h3>Q. ${region.name} ${product.name} 설치 비용은 얼마인가요?</h3>
@@ -6158,13 +6192,13 @@ function renderIndustryPage(industry) {
 <div style="margin:18px 0 36px">${_collapsibleChips(regionChipsHtml, 'spp-gu-grid', 'sm')}</div>
 
 <h2>설치 절차</h2>
-<ol>
-<li><strong>무료 상담</strong> — ${SITE.phoneDisplay} 또는 카카오톡으로 매장 정보(업종·평수·예상 좌석 수)를 알려주세요.</li>
-<li><strong>현장 방문 견적</strong> — 담당 엔지니어가 매장 동선과 네트워크·전기 조건을 점검합니다.</li>
-<li><strong>맞춤 패키지 제안</strong> — ${industry.name} 특성에 맞춘 최적 조합을 여러 옵션으로 제시합니다.</li>
-<li><strong>설치·교육</strong> — 짧게는 1일, 풀패키지도 1-2일 내 설치 완료 후 사용 교육까지 진행합니다.</li>
-<li><strong>사후 관리</strong> — A/S 발생 시 원격 우선 대응, 필요 시 현장 출동합니다.</li>
-</ol>
+<div class="proc-steps">
+  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc">${SITE.phoneDisplay} 또는 카카오톡으로 매장 정보(업종·평수·예상 좌석 수)를 알려주세요.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">2</div><div class="proc-step-body"><p class="proc-step-title">현장 방문 견적</p><p class="proc-step-desc">담당 엔지니어가 매장 동선과 네트워크·전기 조건을 점검합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">3</div><div class="proc-step-body"><p class="proc-step-title">맞춤 패키지 제안</p><p class="proc-step-desc">${industry.name} 특성에 맞춘 최적 조합을 여러 옵션으로 제시합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">4</div><div class="proc-step-body"><p class="proc-step-title">설치·교육</p><p class="proc-step-desc">짧게는 1일, 풀패키지도 1-2일 내 설치 완료 후 사용 교육까지 진행합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">5</div><div class="proc-step-body"><p class="proc-step-title">사후 관리</p><p class="proc-step-desc">A/S 발생 시 원격 우선 대응, 필요 시 현장 출동합니다.</p></div></div>
+</div>
 
 <div class="info-card" style="background:var(--accent);color:#fff;margin-top:48px">
 <h4 style="color:#fff">📞 ${industry.name} 설치 문의</h4>
@@ -6275,13 +6309,13 @@ function renderRegionIndustryPage(region, industry) {
 </div>
 
 <h2>설치 절차</h2>
-<ol>
-<li><strong>무료 상담</strong> — ${SITE.phoneDisplay} 또는 카카오톡으로 ${industry.name} 매장 정보를 알려주세요.</li>
-<li><strong>현장 방문 견적</strong> — ${region.name} 담당 엔지니어가 현장 점검 후 견적을 제시합니다.</li>
-<li><strong>장비 주문·준비</strong> — 매장 조건에 맞는 ${recProductNames} 기종을 준비합니다.</li>
-<li><strong>설치 및 교육</strong> — ${region.installTime} 내 설치 완료, 사용법 교육 진행.</li>
-<li><strong>사후 관리</strong> — ${region.name} 지역 빠른 방문 A/S 대응.</li>
-</ol>
+<div class="proc-steps">
+  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc">${SITE.phoneDisplay} 또는 카카오톡으로 ${industry.name} 매장 정보를 알려주세요.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">2</div><div class="proc-step-body"><p class="proc-step-title">현장 방문 견적</p><p class="proc-step-desc">${region.name} 담당 엔지니어가 현장 점검 후 견적을 제시합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">3</div><div class="proc-step-body"><p class="proc-step-title">장비 주문·준비</p><p class="proc-step-desc">매장 조건에 맞는 ${recProductNames} 기종을 준비합니다.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">4</div><div class="proc-step-body"><p class="proc-step-title">설치 및 교육</p><p class="proc-step-desc">${region.installTime} 내 설치 완료, 사용법 교육 진행.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">5</div><div class="proc-step-body"><p class="proc-step-title">사후 관리</p><p class="proc-step-desc">${region.name} 지역 빠른 방문 A/S 대응.</p></div></div>
+</div>
 
 <h2>자주 묻는 질문</h2>
 <h3>Q. ${region.name} ${industry.name} 매장에 어떤 장비가 필요한가요?</h3>
@@ -6923,7 +6957,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v59';
+      const _ver = 'v60';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
