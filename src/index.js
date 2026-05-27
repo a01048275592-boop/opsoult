@@ -1391,6 +1391,12 @@ footer .logo{color:#fff}
 .region-chips-more{font-size:11.5px;padding:6px 14px}
 .region-chips-more-wrap{margin-top:12px}
 }
+/* rh-legacy-chips 콜랩서블 — 2줄 default 노출 (매장철거 페이지용) */
+.region-chips-collapsible .region-chips-grid.rh-legacy-chips{max-height:80px}
+.region-chips-collapsible.expanded .region-chips-grid.rh-legacy-chips{max-height:2000px}
+@media(max-width:680px){
+  .region-chips-collapsible .region-chips-grid.rh-legacy-chips{max-height:74px}
+}
 /* 통일 견적 CTA (시·구·동 페이지 공통) - OPT 1 디자인 */
 .ncta{background:#fefce8;border:1px solid #fde68a;border-radius:14px;padding:22px 20px;margin-top:28px;margin-bottom:60px}
 .ncta-h{font-size:17px;font-weight:700;margin-bottom:5px;color:#0f172a;text-align:center;letter-spacing:-0.02em}
@@ -2196,10 +2202,10 @@ function escapeHtml(s) {
  * }
  */
 function renderRemovalNewBody(ctx) {
-  // BUILD MARKER — view-source에서 'OPSOULT-V60-REMOVAL' 검색 (보이면 v37 적용됨)
+  // BUILD MARKER — view-source에서 'OPSOULT-V62-REMOVAL' 검색 (보이면 v37 적용됨)
   const _v37Marker = ctx._v36Forced
-    ? '<!-- OPSOULT-V60-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
-    : '<!-- OPSOULT-V60-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
+    ? '<!-- OPSOULT-V62-REMOVAL-NEW-DESIGN | VIA: SAFETY-NET (forced) -->'
+    : '<!-- OPSOULT-V62-REMOVAL-NEW-DESIGN | VIA: NORMAL-ROUTE -->';
   const _v35Marker = _v37Marker;
   const loc = ctx.shortLocLabel || ctx.regionName || '전국';
   const fullLoc = ctx.regionName || '전국';
@@ -2214,11 +2220,11 @@ function renderRemovalNewBody(ctx) {
       `<a href="${r.url}" class="rh-legacy-chip">${r.name} 철거</a>`
     ).join('');
     regionsBlockHtml = `
-    <div class="rh-legacy-block">
-      <h3 class="rh-legacy-block-h"><span class="ic">🗂️</span>${ctx.regionsTitle || (loc + ' 철거 전문 지역 선택')}</h3>
-      <p class="rh-legacy-block-sub">${ctx.regionsSub || '시군구를 선택하면 읍면동별 철거 전문 가이드를 확인할 수 있습니다.'}</p>
-      <div class="rh-legacy-chips">${chipsHtml}</div>
-    </div>`;
+      <div class="rh-legacy-block">
+        <h3 class="rh-legacy-block-h"><span class="ic">🗂️</span>${ctx.regionsTitle || (loc + ' 철거 전문 지역 선택')}</h3>
+        <p class="rh-legacy-block-sub">${ctx.regionsSub || '시군구를 선택하면 읍면동별 철거 전문 가이드를 확인할 수 있습니다.'}</p>
+        ${_collapsibleChips(chipsHtml, 'rh-legacy-chips', 'lg')}
+      </div>`;
   }
 
   // 태그
@@ -3965,7 +3971,7 @@ function renderRegionCardTerminalV3(region) {
 
 <div class="sctv3-side-nav">
   <div class="sctv3-side-nav-h">📍 다른 시·도의 카드단말기 설치</div>
-  <div class="sctv3-side-nav-grid">${otherRegionsHtml}</div>
+  ${_collapsibleChips(otherRegionsHtml, 'sctv3-side-nav-grid', 'md')}
 </div>
 
 <div class="sctv3-tags">
@@ -4206,7 +4212,7 @@ ${recommendIndustrySections}
 
 <div class="spp-side-nav">
   <div class="spp-side-nav-h">📍 다른 시·도의 ${kw} ${actionH}</div>
-  <div class="spp-side-nav-grid">${otherRegionsHtml}</div>
+  ${_collapsibleChips(otherRegionsHtml, 'spp-side-nav-grid', 'md')}
 </div>
 
 <div class="spp-side-nav">
@@ -5871,7 +5877,7 @@ ${recommendIndustrySections}
 
 ${nearGuChipsHtml ? `<div class="spp-side-nav">
   <div class="spp-side-nav-h">📍 ${regionFullName}의 다른 시·군·구 ${kw} ${actionH}</div>
-  <div class="spp-side-nav-grid">${nearGuChipsHtml}</div>
+  ${_collapsibleChips(nearGuChipsHtml, 'spp-side-nav-grid', 'md')}
 </div>` : ''}
 
 <div class="spp-side-nav">
@@ -6957,7 +6963,7 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
 
     // === [v37] 버전 확인 페이지 === /version 으로 접속하면 현재 버전 표시
     if (pathname === '/version') {
-      const _ver = 'v60';
+      const _ver = 'v62';
       const _built = new Date().toISOString();
       return new Response(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${_ver}</title><style>body{margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0b1220;color:#fff;font-family:-apple-system,sans-serif;flex-direction:column;gap:16px}h1{font-size:96px;margin:0;color:#fbbf24}p{color:#94a3b8;font-size:14px;margin:0}.ok{color:#22c55e;font-size:18px;font-weight:600}</style></head><body><h1>${_ver}</h1><p class="ok">✓ 최신 버전 적용됨</p><p>매장철거 안전망 동작 중</p><p style="font-size:11px;color:#64748b">build: ${_built}</p></body></html>`, { headers: { 'Content-Type': 'text/html;charset=utf-8', 'Cache-Control': 'no-store' } });
     }
