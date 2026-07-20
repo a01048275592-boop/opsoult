@@ -2,8 +2,8 @@ const SITE = {
   brandName: '오페리오솔루션',
   brandNameKo: '오페리오솔루션',
   domain: 'https://opsoult.com',
-  phone: '010-5827-5592',
-  phoneDisplay: '010-5827-5592',
+  phone: '010-9677-2356',
+  phoneDisplay: '010-9677-2356',
   businessHours: '평일 09:00 - 19:00 / 토 09:00 - 15:00',
   description: '전국 매장 설비 설치 전문. 카드단말기·포스기·키오스크·테이블오더·CCTV까지 원스톱 설치.',
   naverVerification: '669cd60625b7336f4e33d5cc0a3af618bc9fbfbb',
@@ -3490,7 +3490,7 @@ ${_collapsibleChips(SUBCITIES_DATA[region.slug].map(c => `<a href="/region/${reg
 <div class="info-card" style="background:var(--accent);color:var(--paper);margin-top:0">
 <h4 style="color:var(--paper)">📞 ${region.name} 설치 문의</h4>
 <p style="font-size:17px;margin:12px 0">
-<strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
+<a href="tel:${SITE.phone}" style="color:inherit;text-decoration:none"><strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong></a>
 </p>
 <p style="opacity:.9;font-size:14px">${region.name} 전 지역 ${region.installTime}. 무료 견적 상담을 받아보세요.</p>
 </div>
@@ -3585,7 +3585,7 @@ function renderProductPage(product) {
 <div class="info-card" style="background:var(--accent);color:var(--paper);margin-top:48px">
 <h4 style="color:var(--paper)">📞 ${product.name} 설치 문의</h4>
 <p style="font-size:17px;margin:12px 0">
-<strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
+<a href="tel:${SITE.phone}" style="color:inherit;text-decoration:none"><strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong></a>
 </p>
 <p style="opacity:.9;font-size:14px">무료 견적·상담. 전국 1-3일 이내 설치.</p>
 </div>
@@ -4299,7 +4299,7 @@ function renderInstallPage(region, product) {
 
 <h2>설치 절차</h2>
 <div class="proc-steps">
-  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc">${SITE.phoneDisplay} 또는 카카오톡으로 매장 정보를 알려주세요.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc"><a href="tel:${SITE.phone}" style="color:inherit;font-weight:700">${SITE.phoneDisplay}</a> 또는 카카오톡으로 매장 정보를 알려주세요.</p></div></div>
   <div class="proc-step"><div class="proc-step-num">2</div><div class="proc-step-body"><p class="proc-step-title">현장 방문 견적</p><p class="proc-step-desc">${region.name} 담당 엔지니어가 현장 점검 후 견적을 제시합니다.</p></div></div>
   <div class="proc-step"><div class="proc-step-num">3</div><div class="proc-step-body"><p class="proc-step-title">장비 주문·준비</p><p class="proc-step-desc">매장 조건에 맞는 ${product.name} 기종을 준비합니다.</p></div></div>
   <div class="proc-step"><div class="proc-step-num">4</div><div class="proc-step-body"><p class="proc-step-title">설치 및 교육</p><p class="proc-step-desc">${region.installTime} 내 설치 완료, 사용법 교육 진행.</p></div></div>
@@ -4319,7 +4319,7 @@ function renderInstallPage(region, product) {
 <div class="info-card" style="background:var(--accent);color:var(--paper);margin-top:48px">
 <h4 style="color:var(--paper)">📞 ${region.name} ${product.name} 설치 문의</h4>
 <p style="font-size:17px;margin:12px 0">
-<strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
+<a href="tel:${SITE.phone}" style="color:inherit;text-decoration:none"><strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong></a>
 </p>
 <p style="opacity:.9;font-size:14px">${region.name} ${region.installTime}. 지금 전화하시면 오늘 견적을 받으실 수 있습니다.</p>
 </div>
@@ -5166,7 +5166,7 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
   <div class="sdo-hero-tag">카드단말기 설치</div>
   <div class="sdo-hero-ov">
     <div class="sdo-hero-title">${name} 카드단말기·포스기·키오스크·CCTV 설치, 구매, 상담</div>
-    <div class="sdo-hero-sub">${regionFullName} ${parent} ${name} · 무료 설치 · 문의 ${SITE.phoneDisplay}</div>
+    <div class="sdo-hero-sub">${regionFullName} ${parent} ${name} · 무료 설치 · 문의 <a href="tel:${SITE.phone}" style="color:inherit;font-weight:700">${SITE.phoneDisplay}</a></div>
   </div>
 </div>
 
@@ -5360,7 +5360,7 @@ function renderSeoulDongPage(dong, sidoSlug, regionName) {
     </div>
     <div class="sdo-faq-item">
       <div class="sdo-faq-q"><span class="sdo-faq-q-mark">Q.</span>${name} 견적은 어떻게 받나요?</div>
-      <div class="sdo-faq-a">전화(${SITE.phoneDisplay}) 또는 카카오톡으로 문의 주시면 됩니다. 업종과 매장 규모를 말씀해 주시면 <strong>1분 안에 예상 견적</strong>을 안내드리며 무료 견적도 가능합니다.</div>
+      <div class="sdo-faq-a">전화(<a href="tel:${SITE.phone}" style="color:inherit;font-weight:700">${SITE.phoneDisplay}</a>) 또는 카카오톡으로 문의 주시면 됩니다. 업종과 매장 규모를 말씀해 주시면 <strong>1분 안에 예상 견적</strong>을 안내드리며 무료 견적도 가능합니다.</div>
     </div>
   </div>
 </section>
@@ -5782,7 +5782,7 @@ function renderSigunguProductPage(gu, sidoSlug, regionName, product) {
   </table>
   <div class="spp-tip">
     <div class="spp-tip-h">💡 ${guName} 사장님 Tip</div>
-    <p>${kw}와 함께 다른 매장 장비를 패키지로 ${actionH}하시면 설치비·월 이용료가 함께 무료로 처리되고, 장비 간 데이터 연동까지 한 번에 잡힙니다. 자세한 안내는 ${SITE.phoneDisplay}로 문의해 주십시오.</p>
+    <p>${kw}와 함께 다른 매장 장비를 패키지로 ${actionH}하시면 설치비·월 이용료가 함께 무료로 처리되고, 장비 간 데이터 연동까지 한 번에 잡힙니다. 자세한 안내는 <a href="tel:${SITE.phone}" style="color:inherit;font-weight:700">${SITE.phoneDisplay}</a>로 문의해 주십시오.</p>
   </div>
 </section>`;
   
@@ -6212,7 +6212,7 @@ function renderIndustryPage(industry) {
 
 <h2>설치 절차</h2>
 <div class="proc-steps">
-  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc">${SITE.phoneDisplay} 또는 카카오톡으로 매장 정보(업종·평수·예상 좌석 수)를 알려주세요.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc"><a href="tel:${SITE.phone}" style="color:inherit;font-weight:700">${SITE.phoneDisplay}</a> 또는 카카오톡으로 매장 정보(업종·평수·예상 좌석 수)를 알려주세요.</p></div></div>
   <div class="proc-step"><div class="proc-step-num">2</div><div class="proc-step-body"><p class="proc-step-title">현장 방문 견적</p><p class="proc-step-desc">담당 엔지니어가 매장 동선과 네트워크·전기 조건을 점검합니다.</p></div></div>
   <div class="proc-step"><div class="proc-step-num">3</div><div class="proc-step-body"><p class="proc-step-title">맞춤 패키지 제안</p><p class="proc-step-desc">${industry.name} 특성에 맞춘 최적 조합을 여러 옵션으로 제시합니다.</p></div></div>
   <div class="proc-step"><div class="proc-step-num">4</div><div class="proc-step-body"><p class="proc-step-title">설치·교육</p><p class="proc-step-desc">짧게는 1일, 풀패키지도 1-2일 내 설치 완료 후 사용 교육까지 진행합니다.</p></div></div>
@@ -6222,7 +6222,7 @@ function renderIndustryPage(industry) {
 <div class="info-card" style="background:var(--accent);color:#fff;margin-top:48px">
 <h4 style="color:#fff">📞 ${industry.name} 설치 문의</h4>
 <p style="font-size:17px;margin:12px 0">
-<strong style="color:#fff;font-size:28px">${SITE.phoneDisplay}</strong>
+<a href="tel:${SITE.phone}" style="color:inherit;text-decoration:none"><strong style="color:#fff;font-size:28px">${SITE.phoneDisplay}</strong></a>
 </p>
 <p style="opacity:.9;font-size:14px">${industry.name} 전문 상담원이 무료로 맞춤 견적을 드립니다.</p>
 </div>
@@ -6329,7 +6329,7 @@ function renderRegionIndustryPage(region, industry) {
 
 <h2>설치 절차</h2>
 <div class="proc-steps">
-  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc">${SITE.phoneDisplay} 또는 카카오톡으로 ${industry.name} 매장 정보를 알려주세요.</p></div></div>
+  <div class="proc-step"><div class="proc-step-num">1</div><div class="proc-step-body"><p class="proc-step-title">무료 상담</p><p class="proc-step-desc"><a href="tel:${SITE.phone}" style="color:inherit;font-weight:700">${SITE.phoneDisplay}</a> 또는 카카오톡으로 ${industry.name} 매장 정보를 알려주세요.</p></div></div>
   <div class="proc-step"><div class="proc-step-num">2</div><div class="proc-step-body"><p class="proc-step-title">현장 방문 견적</p><p class="proc-step-desc">${region.name} 담당 엔지니어가 현장 점검 후 견적을 제시합니다.</p></div></div>
   <div class="proc-step"><div class="proc-step-num">3</div><div class="proc-step-body"><p class="proc-step-title">장비 주문·준비</p><p class="proc-step-desc">매장 조건에 맞는 ${recProductNames} 기종을 준비합니다.</p></div></div>
   <div class="proc-step"><div class="proc-step-num">4</div><div class="proc-step-body"><p class="proc-step-title">설치 및 교육</p><p class="proc-step-desc">${region.installTime} 내 설치 완료, 사용법 교육 진행.</p></div></div>
@@ -6349,7 +6349,7 @@ function renderRegionIndustryPage(region, industry) {
 <div class="info-card" style="background:var(--accent);color:var(--paper);margin-top:48px">
 <h4 style="color:var(--paper)">📞 ${region.name} ${industry.name} 설치 문의</h4>
 <p style="font-size:17px;margin:12px 0">
-<strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong>
+<a href="tel:${SITE.phone}" style="color:inherit;text-decoration:none"><strong style="color:var(--paper);font-family:'GmarketSansTTF','Gmarket Sans','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:28px">${SITE.phoneDisplay}</strong></a>
 </p>
 <p style="opacity:.9;font-size:14px">${region.name} ${region.installTime}. 지금 전화하시면 오늘 견적을 받으실 수 있습니다.</p>
 </div>
@@ -6651,7 +6651,7 @@ ${industryOptions}
 <div class="success-view" id="successView">
 <div class="sch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
 <h3>문의가 접수되었습니다</h3>
-<p>빠르게 확인 후 연락드리겠습니다.<br>급하시면 <strong>${SITE.phoneDisplay}</strong>로 전화 주세요.</p>
+<p>빠르게 확인 후 연락드리겠습니다.<br>급하시면 <a href="tel:${SITE.phone}" style="color:inherit"><strong>${SITE.phoneDisplay}</strong></a>로 전화 주세요.</p>
 <a href="/" class="btn btn-ghost">홈으로 돌아가기</a>
 </div>
 
@@ -6958,9 +6958,9 @@ body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;b
     <a href="/" class="btn btn-primary">메인으로 가기</a>
     <a href="/products" class="btn btn-secondary">제품 안내</a>
   </div>
-  <a href="tel:01058275592" class="btn-phone">
+  <a href="tel:01096772356" class="btn-phone">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    010-5827-5592 문의
+    010-9677-2356 문의
   </a>
 </div>
 </body>
